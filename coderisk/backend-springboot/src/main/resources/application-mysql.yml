@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: ${CODERISK_DB_URL:jdbc:mysql://127.0.0.1:3306/coderisk?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false}
+    username: ${CODERISK_DB_USERNAME:coderisk}
+    password: ${CODERISK_DB_PASSWORD:coderisk}
+    driver-class-name: com.mysql.cj.jdbc.Driver

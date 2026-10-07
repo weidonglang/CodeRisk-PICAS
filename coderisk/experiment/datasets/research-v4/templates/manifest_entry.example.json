@@ -1,0 +1,42 @@
+{
+  "dataset_version": "coderisk-research-v4-seed-1.0",
+  "cases": [
+    {
+      "pair_id": "MANUAL-JAVA-RENAME-001",
+      "problem_id": "P-MANUAL-ARRAY-001",
+      "problem_type": "array_loop",
+      "problem_group": "G2",
+      "dataset_split": "validation",
+      "split_preregistered": true,
+      "source_id": "SRC-MANUAL-ARRAY-001",
+      "experiment_label": "TRANSFORMED",
+      "case_type": "VARIABLE_RENAME",
+      "language": "java",
+      "language_a": "java",
+      "language_b": "java",
+      "dataset_version": "coderisk-research-v4-seed-1.0",
+      "data_origin": "MANUAL",
+      "source_type": "manual",
+      "synthetic": false,
+      "eligible_for_core_metrics": true,
+      "question": {
+        "title": "Array loop manual sample",
+        "description": "Traceable manual pair for variable rename testing.",
+        "input_format": "",
+        "output_format": "",
+        "constraints_text": ""
+      },
+      "code_a_path": "samples/manual/P-MANUAL-ARRAY-001/A.java",
+      "code_b_path": "samples/manual/P-MANUAL-ARRAY-001/B.java",
+      "code_a_sha256": "sha256:computed-by-helper",
+      "code_b_sha256": "sha256:computed-by-helper",
+      "provenance": {
+        "source": "manual collection by project author",
+        "license_or_authorization": "author-created sample for CodeRisk Research V4",
+        "manual_check_status": "VERIFIED",
+        "functional_check_status": "PASSED"
+      },
+      "notes": "Example only. Use add_research_v4_case.py for real entries."
+    }
+  ]
+}

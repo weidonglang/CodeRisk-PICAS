@@ -1,0 +1,35 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: coderisk-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-coderisk_root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-coderisk}
+      MYSQL_USER: ${MYSQL_USER:-coderisk}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-coderisk}
+    ports:
+      - "3306:3306"
+    volumes:
+      - coderisk_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7.4
+    container_name: coderisk-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - coderisk_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  coderisk_mysql:
+  coderisk_redis:

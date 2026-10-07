@@ -1,0 +1,12 @@
+{
+  "caseId": "parameter_rename_python",
+  "caseType": "VARIABLE_RENAME",
+  "language": "python",
+  "codeA": "code_a.py",
+  "codeB": "code_b.py",
+  "expected": {
+    "canonicalSimilarityMin": 0.95,
+    "canonicalGreaterThanRaw": true,
+    "mappingTypes": ["PARAMETER"]
+  }
+}

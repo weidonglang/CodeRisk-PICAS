@@ -1,0 +1,11 @@
+# Known Issues
+
+1. MySQL 8.0.42 is available locally, but passwordless `root` and the documented example `coderisk/coderisk` credential are rejected with error 1045. Live MySQL E2E still requires a valid local credential; persistent H2 verification is not presented as MySQL verification.
+2. Research V4 now aggregates 91 pairs, but every row is synthetic seed data. Four AI_REWRITE rows are explicit placeholders excluded from core metrics. Reaching the numeric target does not make this a real benchmark.
+3. The validator still reports real-source deficits: 20 manual, 8 verified ai_assisted, and 8 external pairs. AI-assisted samples cannot enter core metrics without model/prompt provenance, manual review, and functional verification.
+4. Validation-only seed calibration selected an experimental dynamic-threshold offset of -0.08. On seed test data it improved F1 from 0.6667 to 0.8085 without changing NaturalSimilar FPR (0.5714). This validates split discipline only; the offset must not modify production coefficients.
+5. JPlag 6.2.0 is manifest-aligned for 72 synthetic seed pairs and records 19 explicit exclusions. The test-only seed table does not support an external-baseline superiority claim. Dolos is reserved and not run.
+6. The cross-language classification subset contains only 6 eligible test pairs, while 7 legacy cross-language cases still have non-preregistered split metadata. IR/control/composite FPR is 1.0 because the common-structure probe is over-scored; these synthetic exploratory metrics are too small and unstable for confirmatory claims.
+7. Unsupported Java lambda/Python generator syntax loses summary coverage and under-scores a related probe. Full CFG, DFG, PDG, symbolic execution, semantic equivalence, and AI-generation detection remain unsupported.
+8. Java AST remains a minimal structural sequence parser. All V4 IR/control/data metrics are experimental, have production weight 0, and do not enter PICAS_STANDARD.
+9. Vite reports a non-blocking bundle-size warning. FastAPI tests emit one third-party Starlette/httpx deprecation warning.

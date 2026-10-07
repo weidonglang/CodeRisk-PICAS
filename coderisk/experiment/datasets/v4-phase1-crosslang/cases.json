@@ -1,0 +1,30 @@
+{
+  "datasetVersion": "coderisk-v4-phase1-crosslang-0.1",
+  "scope": "experimental-java-python-subset",
+  "cases": [
+    {
+      "caseId": "XL-SUM-POSITIVE-01",
+      "javaPath": "sum-positive/Main.java",
+      "pythonPath": "sum-positive/main.py",
+      "expectedStatus": "COMPARABLE",
+      "expectedSimilarityMin": 0.75,
+      "notes": "assignment, loop, condition, comparison, arithmetic, return"
+    },
+    {
+      "caseId": "XL-READ-ADD-PRINT-02",
+      "javaPath": "read-add-print/Main.java",
+      "pythonPath": "read-add-print/main.py",
+      "expectedStatus": "COMPARABLE",
+      "expectedSimilarityMin": 0.70,
+      "notes": "input, assignment, arithmetic, output"
+    },
+    {
+      "caseId": "XL-PARSE-FAILURE-03",
+      "javaPath": "parse-failure/Main.java",
+      "pythonPath": "parse-failure/main.py",
+      "expectedStatus": "FALLBACK_NO_IR_EVIDENCE",
+      "expectedSimilarityMin": 0.0,
+      "notes": "intentional Python syntax error; must not fabricate IR evidence"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+.idea/
+.vscode/
+*.iml
+
+# Java
+backend-springboot/target/
+
+# Python
+analysis-service-python/.venv/
+analysis-service-python/.pytest_cache/
+analysis-service-python/__pycache__/
+analysis-service-python/**/__pycache__/
+
+# Node
+frontend-vue/node_modules/
+frontend-vue/dist/
+
+# Runtime data
+data/uploads/**
+data/artifacts/**
+data/cleaned/**
+experiment/runs/**
+experiment/reports/**
+experiment/plots/**
+reports/**
+
+!data/uploads/.gitkeep
+!data/artifacts/.gitkeep
+!data/cleaned/.gitkeep
+!experiment/runs/.gitkeep
+!experiment/reports/.gitkeep
+!experiment/plots/.gitkeep
+!reports/.gitkeep
+
+.env

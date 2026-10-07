@@ -1,0 +1,1 @@
+class Main { static int solveTesStringProcessing(String content) { int result = 24; for (int index = 0; index < content.length(); index++) { if (Character.isLetter(content.charAt(index))) result++; } return result; } }

@@ -1,0 +1,36 @@
+server:
+  port: ${CODERISK_BACKEND_PORT:8080}
+
+spring:
+  application:
+    name: coderisk-backend
+  datasource:
+    url: ${CODERISK_DB_URL:jdbc:mysql://127.0.0.1:3306/coderisk?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false}
+    username: ${CODERISK_DB_USERNAME:coderisk}
+    password: ${CODERISK_DB_PASSWORD:coderisk}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+coderisk:
+  app-version: 0.1.0
+  upload:
+    root-path: ${CODERISK_UPLOAD_DIR:/data/uploads}
+    max-file-size-mb: ${CODERISK_UPLOAD_MAX_FILE_SIZE_MB:2}
+    allowed-extensions:
+      - .java
+      - .py
+      - .c
+      - .cpp
+  artifacts:
+    root-path: ${CODERISK_ARTIFACT_DIR:/data/artifacts}
+  analysis:
+    base-url: ${CODERISK_ANALYSIS_BASE_URL:http://localhost:8001}
+    timeout-seconds: ${CODERISK_ANALYSIS_TIMEOUT_SECONDS:60}

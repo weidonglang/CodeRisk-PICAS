@@ -1,0 +1,300 @@
+CREATE TABLE question (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    input_format TEXT NULL,
+    output_format TEXT NULL,
+    constraints_text TEXT NULL,
+    sample_text TEXT NULL,
+    source_type VARCHAR(64) NOT NULL DEFAULT 'MANUAL',
+    source_name VARCHAR(128) NULL,
+    manual_difficulty VARCHAR(32) NULL,
+    created_by BIGINT NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    deleted TINYINT NOT NULL DEFAULT 0,
+    INDEX idx_question_title (title),
+    INDEX idx_question_created_by (created_by)
+);
+
+CREATE TABLE problem_feature (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    question_id BIGINT NOT NULL,
+    feature_version VARCHAR(32) NOT NULL,
+    description_length INT NOT NULL DEFAULT 0,
+    io_field_count INT NOT NULL DEFAULT 0,
+    input_output_complexity DECIMAL(8,4) NOT NULL DEFAULT 0,
+    constraint_count INT NOT NULL DEFAULT 0,
+    sample_count INT NOT NULL DEFAULT 0,
+    reference_line_count INT NULL,
+    reference_function_count INT NULL,
+    reference_cyclomatic_complexity DECIMAL(8,4) NULL,
+    api_call_count INT NOT NULL DEFAULT 0,
+    data_structure_count INT NOT NULL DEFAULT 0,
+    data_structure_score DECIMAL(8,4) NOT NULL DEFAULT 0,
+    algorithm_template_score DECIMAL(8,4) NOT NULL DEFAULT 0,
+    historical_similarity_mean DECIMAL(8,4) NULL,
+    historical_similarity_std DECIMAL(8,4) NULL,
+    difficulty_score DECIMAL(8,4) NOT NULL,
+    solution_space_score DECIMAL(8,4) NOT NULL,
+    template_risk_score DECIMAL(8,4) NOT NULL,
+    natural_similarity_risk DECIMAL(8,4) NOT NULL,
+    recommended_base_threshold DECIMAL(8,4) NOT NULL,
+    confidence DECIMAL(8,4) NOT NULL DEFAULT 0,
+    explanation_json JSON NULL,
+    threshold_adjustment_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_problem_feature_version (question_id, feature_version),
+    INDEX idx_problem_score (difficulty_score, natural_similarity_risk)
+);
+
+CREATE TABLE submission (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    question_id BIGINT NOT NULL,
+    student_id VARCHAR(128) NULL,
+    language VARCHAR(32) NOT NULL,
+    support_level VARCHAR(32) NOT NULL,
+    file_name VARCHAR(255) NOT NULL,
+    file_size_bytes BIGINT NOT NULL DEFAULT 0,
+    raw_code_path VARCHAR(512) NOT NULL,
+    clean_code_path VARCHAR(512) NULL,
+    canonical_code_path VARCHAR(512) NULL,
+    code_hash VARCHAR(128) NULL,
+    parser_status VARCHAR(32) NOT NULL DEFAULT 'NOT_PARSED',
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    deleted TINYINT NOT NULL DEFAULT 0,
+    INDEX idx_submission_question (question_id),
+    INDEX idx_submission_hash (code_hash),
+    INDEX idx_submission_language (language)
+);
+
+CREATE TABLE detection_task (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    question_id BIGINT NOT NULL,
+    task_name VARCHAR(255) NOT NULL,
+    task_mode VARCHAR(64) NOT NULL DEFAULT 'PICAS_STANDARD',
+    status VARCHAR(32) NOT NULL DEFAULT 'PENDING',
+    progress DECIMAL(8,4) NOT NULL DEFAULT 0,
+    total_submissions INT NOT NULL DEFAULT 0,
+    total_pairs INT NOT NULL DEFAULT 0,
+    finished_pairs INT NOT NULL DEFAULT 0,
+    failed_pairs INT NOT NULL DEFAULT 0,
+    config_json JSON NULL,
+    error_message TEXT NULL,
+    created_by BIGINT NULL,
+    started_at DATETIME(6) NULL,
+    finished_at DATETIME(6) NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    deleted TINYINT NOT NULL DEFAULT 0,
+    INDEX idx_task_question (question_id),
+    INDEX idx_task_status (status)
+);
+
+CREATE TABLE detection_task_submission (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    task_id BIGINT NOT NULL,
+    submission_id BIGINT NOT NULL,
+    role VARCHAR(32) NOT NULL DEFAULT 'TARGET',
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_task_submission (task_id, submission_id),
+    INDEX idx_dts_task (task_id),
+    INDEX idx_dts_submission (submission_id)
+);
+
+CREATE TABLE analysis_result (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    task_id BIGINT NOT NULL,
+    question_id BIGINT NOT NULL,
+    submission_a_id BIGINT NOT NULL,
+    submission_b_id BIGINT NOT NULL,
+    language_pair VARCHAR(64) NOT NULL,
+    weighted_similarity_score DECIMAL(8,4) NOT NULL,
+    dynamic_threshold DECIMAL(8,4) NOT NULL,
+    risk_margin DECIMAL(8,4) NOT NULL,
+    calibrated_risk_score DECIMAL(8,4) NOT NULL,
+    risk_level VARCHAR(32) NOT NULL,
+    exceed_threshold TINYINT NOT NULL DEFAULT 0,
+    margin_scale DECIMAL(8,4) NOT NULL DEFAULT 0.4000,
+    formula_version VARCHAR(64) NOT NULL DEFAULT 'FORMULA_SPEC_V1',
+    algorithm_version VARCHAR(64) NOT NULL,
+    metric_config_hash VARCHAR(128) NULL,
+    threshold_explanation TEXT NULL,
+    threshold_adjustment_json JSON NULL,
+    evidence_count INT NOT NULL DEFAULT 0,
+    high_confidence_evidence_count INT NOT NULL DEFAULT 0,
+    status VARCHAR(32) NOT NULL DEFAULT 'FINISHED',
+    error_message TEXT NULL,
+    reason_summary TEXT NULL,
+    is_mock TINYINT NOT NULL DEFAULT 0,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_result_pair (task_id, submission_a_id, submission_b_id),
+    INDEX idx_result_task (task_id),
+    INDEX idx_result_question (question_id),
+    INDEX idx_result_risk (risk_level, risk_margin),
+    INDEX idx_result_threshold (exceed_threshold),
+    INDEX idx_result_margin (risk_margin)
+);
+
+CREATE TABLE similarity_metric (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    result_id BIGINT NOT NULL,
+    metric_name VARCHAR(64) NOT NULL,
+    metric_value DECIMAL(8,4) NOT NULL,
+    metric_weight DECIMAL(8,4) NOT NULL DEFAULT 0,
+    metric_status VARCHAR(32) NOT NULL DEFAULT 'VALID',
+    explanation TEXT NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_result_metric (result_id, metric_name),
+    INDEX idx_metric_name_value (metric_name, metric_value)
+);
+
+CREATE TABLE threshold_adjustment (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    result_id BIGINT NOT NULL,
+    base_threshold DECIMAL(8,4) NOT NULL,
+    difficulty_adjustment DECIMAL(8,4) NOT NULL DEFAULT 0,
+    solution_space_adjustment DECIMAL(8,4) NOT NULL DEFAULT 0,
+    template_risk_adjustment DECIMAL(8,4) NOT NULL DEFAULT 0,
+    natural_similarity_adjustment DECIMAL(8,4) NOT NULL DEFAULT 0,
+    historical_distribution_adjustment DECIMAL(8,4) NOT NULL DEFAULT 0,
+    final_threshold DECIMAL(8,4) NOT NULL,
+    formula_version VARCHAR(32) NOT NULL,
+    explanation TEXT NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_threshold_result (result_id)
+);
+
+CREATE TABLE evidence (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    result_id BIGINT NOT NULL,
+    evidence_type VARCHAR(64) NOT NULL,
+    confidence DECIMAL(8,4) NOT NULL,
+    similarity_score DECIMAL(8,4) NOT NULL,
+    code_a_start_line INT NULL,
+    code_a_end_line INT NULL,
+    code_b_start_line INT NULL,
+    code_b_end_line INT NULL,
+    code_a_snippet TEXT NULL,
+    code_b_snippet TEXT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    evidence_payload JSON NULL,
+    visualizable TINYINT NOT NULL DEFAULT 1,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_evidence_result (result_id),
+    INDEX idx_evidence_type (evidence_type),
+    INDEX idx_evidence_confidence (confidence)
+);
+
+CREATE TABLE identifier_mapping (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    result_id BIGINT NOT NULL,
+    mapping_type VARCHAR(32) NOT NULL,
+    name_a VARCHAR(255) NOT NULL,
+    name_b VARCHAR(255) NOT NULL,
+    canonical_name VARCHAR(255) NULL,
+    scope_path VARCHAR(255) NULL,
+    occurrence_a INT NOT NULL DEFAULT 0,
+    occurrence_b INT NOT NULL DEFAULT 0,
+    confidence DECIMAL(8,4) NOT NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_mapping_result (result_id),
+    INDEX idx_mapping_type (mapping_type)
+);
+
+CREATE TABLE report_file (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    task_id BIGINT NULL,
+    experiment_run_id BIGINT NULL,
+    report_type VARCHAR(64) NOT NULL,
+    report_status VARCHAR(32) NOT NULL DEFAULT 'GENERATED',
+    file_format VARCHAR(32) NOT NULL,
+    file_name VARCHAR(255) NOT NULL,
+    file_path VARCHAR(512) NOT NULL,
+    file_hash VARCHAR(128) NULL,
+    generated_by BIGINT NULL,
+    created_at DATETIME(6) NOT NULL,
+    INDEX idx_report_task (task_id),
+    INDEX idx_report_experiment (experiment_run_id)
+);
+
+CREATE TABLE experiment_dataset (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    dataset_name VARCHAR(255) NOT NULL,
+    dataset_version VARCHAR(64) NOT NULL,
+    dataset_type VARCHAR(64) NOT NULL,
+    description TEXT NULL,
+    source_url VARCHAR(512) NULL,
+    license_text VARCHAR(255) NULL,
+    total_questions INT NOT NULL DEFAULT 0,
+    total_submissions INT NOT NULL DEFAULT 0,
+    total_pairs INT NOT NULL DEFAULT 0,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_dataset_version (dataset_name, dataset_version)
+);
+
+CREATE TABLE experiment_run (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    dataset_id BIGINT NULL,
+    experiment_id VARCHAR(64) NOT NULL,
+    run_name VARCHAR(255) NOT NULL,
+    method_name VARCHAR(128) NOT NULL,
+    method_version VARCHAR(64) NOT NULL,
+    formula_version VARCHAR(64) NOT NULL,
+    dataset_version VARCHAR(64) NOT NULL,
+    random_seed BIGINT NOT NULL,
+    git_commit VARCHAR(128) NOT NULL,
+    config_json JSON NULL,
+    result_path VARCHAR(512) NULL,
+    status VARCHAR(32) NOT NULL DEFAULT 'PENDING',
+    total_cases INT NOT NULL DEFAULT 0,
+    finished_cases INT NOT NULL DEFAULT 0,
+    failed_cases INT NOT NULL DEFAULT 0,
+    started_at DATETIME(6) NULL,
+    finished_at DATETIME(6) NULL,
+    created_at DATETIME(6) NOT NULL,
+    updated_at DATETIME(6) NOT NULL,
+    INDEX idx_run_method (method_name, method_version),
+    INDEX idx_run_status (status)
+);
+
+CREATE TABLE experiment_result (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    run_id BIGINT NOT NULL,
+    case_id VARCHAR(128) NOT NULL,
+    experiment_label VARCHAR(32) NOT NULL,
+    predicted_score DECIMAL(8,4) NOT NULL,
+    predicted_label VARCHAR(32) NOT NULL,
+    threshold_value DECIMAL(8,4) NOT NULL,
+    correct TINYINT NULL,
+    runtime_ms BIGINT NULL,
+    result_payload JSON NULL,
+    error_message TEXT NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_run_case (run_id, case_id),
+    INDEX idx_exp_result_run (run_id),
+    INDEX idx_exp_result_label (predicted_label)
+);
+
+CREATE TABLE experiment_summary (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    run_id BIGINT NOT NULL,
+    group_name VARCHAR(128) NOT NULL DEFAULT 'ALL',
+    group_value VARCHAR(128) NOT NULL DEFAULT 'ALL',
+    precision_score DECIMAL(8,4) NULL,
+    recall_score DECIMAL(8,4) NULL,
+    f1_score DECIMAL(8,4) NULL,
+    accuracy_score DECIMAL(8,4) NULL,
+    false_positive_rate DECIMAL(8,4) NULL,
+    false_negative_rate DECIMAL(8,4) NULL,
+    average_runtime_ms DECIMAL(12,4) NULL,
+    sample_count INT NOT NULL DEFAULT 0,
+    summary_json JSON NULL,
+    created_at DATETIME(6) NOT NULL,
+    UNIQUE KEY uk_run_group (run_id, group_name, group_value)
+);

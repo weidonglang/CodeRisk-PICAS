@@ -1,0 +1,15 @@
+package com.coderisk.question;
+
+import java.time.OffsetDateTime;
+
+public record QuestionResponse(
+        long id,
+        String title,
+        String description,
+        String inputFormat,
+        String outputFormat,
+        String constraintsText,
+        OffsetDateTime createdAt,
+        OffsetDateTime updatedAt
+) {
+}

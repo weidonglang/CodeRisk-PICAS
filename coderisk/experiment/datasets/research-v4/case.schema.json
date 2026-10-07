@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coderisk.local/schemas/research-v4-case-0.1.json",
+  "title": "CodeRisk Research V4 manual pair",
+  "type": "object",
+  "required": [
+    "pair_id",
+    "problem_id",
+    "problem_type",
+    "problem_group",
+    "dataset_split",
+    "split_preregistered",
+    "source_id",
+    "experiment_label",
+    "case_type",
+    "language",
+    "language_a",
+    "language_b",
+    "dataset_version",
+    "data_origin",
+    "source_type",
+    "synthetic",
+    "eligible_for_core_metrics",
+    "question",
+    "code_a_path",
+    "code_b_path",
+    "provenance"
+  ],
+  "properties": {
+    "pair_id": {"type": "string", "minLength": 1},
+    "problem_id": {"type": "string", "minLength": 1},
+    "problem_type": {"type": "string", "minLength": 1},
+    "problem_group": {"enum": ["G1", "G2", "G3", "G4"]},
+    "dataset_split": {"enum": ["validation", "test"]},
+    "split_preregistered": {"type": "boolean"},
+    "source_id": {"type": "string", "minLength": 1},
+    "experiment_label": {
+      "enum": ["SIMILAR", "SUSPICIOUS", "TRANSFORMED", "INDEPENDENT", "NATURAL_SIMILAR", "UNCERTAIN"]
+    },
+    "case_type": {
+      "enum": [
+        "ORIGINAL_COPY", "HUMAN_REWRITE", "VARIABLE_RENAME", "PARAMETER_RENAME",
+        "FUNCTION_RENAME", "FORMAT_COMMENT_CHANGE", "LOCAL_REORDER", "SPLIT_MERGE",
+        "CROSSLANG_REWRITE", "AI_REWRITE", "COMMON_STRUCTURE", "UNSUPPORTED_SYNTAX",
+        "PARSER_FAILURE", "NATURAL_TEMPLATE", "INDEPENDENT_SOLUTION"
+      ]
+    },
+    "language": {"type": "string", "minLength": 1},
+    "language_a": {"enum": ["java", "python", "c"]},
+    "language_b": {"enum": ["java", "python", "c"]},
+    "dataset_version": {"const": "coderisk-research-v4-seed-1.0"},
+    "data_origin": {"enum": ["SYNTHETIC", "MANUAL", "PUBLIC", "HISTORICAL_AUTHORIZED"]},
+    "source_type": {"enum": ["manual", "synthetic", "ai_assisted", "external", "placeholder"]},
+    "synthetic": {"type": "boolean"},
+    "eligible_for_core_metrics": {"type": "boolean"},
+    "question": {
+      "type": "object",
+      "required": ["title", "description"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1},
+        "input_format": {"type": "string"},
+        "output_format": {"type": "string"},
+        "constraints_text": {"type": "string"}
+      }
+    },
+    "code_a_path": {"type": "string", "minLength": 1},
+    "code_b_path": {"type": "string", "minLength": 1},
+    "code_a_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "code_b_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "provenance": {
+      "type": "object",
+      "required": ["source", "license_or_authorization"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "license_or_authorization": {"type": "string", "minLength": 1},
+        "model_name": {"type": "string"},
+        "prompt_template": {"type": "string"},
+        "temperature": {"type": ["number", "null"]},
+        "generation_time": {"type": "string"},
+        "manual_check_status": {"enum": ["VERIFIED", "PENDING", "REJECTED"]},
+        "functional_check_status": {"enum": ["PASSED", "FAILED", "NOT_RUN"]}
+      }
+    },
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,15 @@
+{
+  "experimentId": "PICAS-V3-MINIMAL",
+  "experimentName": "V3 expanded reproducible matrix for V4 readiness",
+  "dataset": "experiment/datasets/v4-ready/cases.json",
+  "datasetVersion": "coderisk-v4-ready-synthetic-1.0",
+  "formulaVersion": "FORMULA_SPEC_V1",
+  "algorithmVersion": "picas-v2-rule-1.0",
+  "randomSeed": 20260620,
+  "fixedThresholds": [0.70, 0.75, 0.80, 0.85],
+  "validationSplit": "validation",
+  "evaluationSplit": "test",
+  "calibrationPolicy": "select fixed baseline threshold by validation F1; production dynamic formula remains unchanged",
+  "borderlineMargin": 0.10,
+  "outputRoot": "data/artifacts/experiments"
+}

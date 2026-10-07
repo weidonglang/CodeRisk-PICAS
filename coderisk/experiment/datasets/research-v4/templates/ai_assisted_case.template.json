@@ -1,0 +1,39 @@
+{
+  "pair_id": "AI-REWRITE-JAVA-001",
+  "problem_id": "P-AI-ARRAY-001",
+  "problem_type": "array_loop",
+  "problem_group": "G2",
+  "dataset_split": "test",
+  "split_preregistered": true,
+  "source_id": "SRC-AI-ARRAY-001",
+  "experiment_label": "TRANSFORMED",
+  "case_type": "AI_REWRITE",
+  "language": "java",
+  "language_a": "java",
+  "language_b": "java",
+  "dataset_version": "coderisk-research-v4-seed-1.0",
+  "data_origin": "MANUAL",
+  "source_type": "ai_assisted",
+  "synthetic": false,
+  "eligible_for_core_metrics": true,
+  "question": {
+    "title": "AI-assisted rewrite sample",
+    "description": "Original and AI-assisted rewrite for structural similarity evaluation.",
+    "input_format": "Describe input format.",
+    "output_format": "Describe output format.",
+    "constraints_text": "Describe constraints."
+  },
+  "code_a_path": "samples/ai_assisted/P-AI-ARRAY-001/original.java",
+  "code_b_path": "samples/ai_assisted/P-AI-ARRAY-001/rewrite.java",
+  "provenance": {
+    "source": "original source and rewrite process description",
+    "license_or_authorization": "authorization or author-created sample",
+    "model_name": "provider/model/version",
+    "prompt_template": "exact prompt or prompt file path",
+    "temperature": 0.2,
+    "generation_time": "2026-07-05T12:00:00+08:00",
+    "manual_check_status": "VERIFIED",
+    "functional_check_status": "PASSED"
+  },
+  "notes": "AI_REWRITE evaluates retained structural similarity after assisted rewriting; it is not AI-code detection."
+}

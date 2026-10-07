@@ -1,0 +1,108 @@
+{
+  "dataset_id": "coderisk-research-v4-candidate",
+  "dataset_version": "coderisk-research-v4-seed-1.0",
+  "status": "SYNTHETIC_SEED_READY_AWAITING_REAL_DATA",
+  "description": "Research V4 aggregate manifest with deterministic synthetic seed data. It validates the toolchain and is not a real benchmark.",
+  "case_schema": "case.schema.json",
+  "data_card": "DATA_CARD.md",
+  "target_pair_count": {
+    "minimum": 80,
+    "maximum": 150
+  },
+  "required_problem_types": [
+    "simple_io",
+    "array_loop",
+    "sort_template",
+    "string_processing",
+    "dfs_graph",
+    "bfs_graph",
+    "dp_variant",
+    "simulation"
+  ],
+  "required_case_types": [
+    "INDEPENDENT_SOLUTION",
+    "NATURAL_TEMPLATE",
+    "VARIABLE_RENAME",
+    "FUNCTION_RENAME",
+    "PARAMETER_RENAME",
+    "FORMAT_COMMENT_CHANGE",
+    "HUMAN_REWRITE",
+    "AI_REWRITE",
+    "CROSSLANG_REWRITE",
+    "LOCAL_REORDER",
+    "SPLIT_MERGE",
+    "COMMON_STRUCTURE",
+    "UNSUPPORTED_SYNTAX"
+  ],
+  "minimum_counts": {
+    "problem_type": {
+      "simple_io": 4,
+      "array_loop": 4,
+      "sort_template": 4,
+      "string_processing": 4,
+      "dfs_graph": 4,
+      "bfs_graph": 4,
+      "dp_variant": 4,
+      "simulation": 4
+    },
+    "case_type": {
+      "INDEPENDENT_SOLUTION": 4,
+      "NATURAL_TEMPLATE": 4,
+      "VARIABLE_RENAME": 4,
+      "FUNCTION_RENAME": 3,
+      "PARAMETER_RENAME": 3,
+      "FORMAT_COMMENT_CHANGE": 3,
+      "LOCAL_REORDER": 4,
+      "SPLIT_MERGE": 4,
+      "COMMON_STRUCTURE": 4,
+      "UNSUPPORTED_SYNTAX": 3,
+      "CROSSLANG_REWRITE": 4,
+      "HUMAN_REWRITE": 4,
+      "AI_REWRITE": 4
+    },
+    "experiment_label": {
+      "TRANSFORMED": 20,
+      "INDEPENDENT": 10,
+      "NATURAL_SIMILAR": 8,
+      "SUSPICIOUS": 4,
+      "UNCERTAIN": 4
+    },
+    "source_type": {
+      "synthetic": 40,
+      "placeholder": 4,
+      "manual": 20,
+      "ai_assisted": 8,
+      "external": 8
+    }
+  },
+  "sources": [
+    {
+      "id": "v4-ready-synthetic",
+      "format": "PICAS_V3_INLINE_JSON",
+      "path": "../v4-ready/cases.json",
+      "data_origin": "SYNTHETIC",
+      "include": true
+    },
+    {
+      "id": "v4-phase2-crosslang-synthetic",
+      "format": "PICAS_V4_CROSSLANG_JSON",
+      "path": "../v4-phase2-crosslang/cases.json",
+      "data_origin": "SYNTHETIC",
+      "include": true
+    },
+    {
+      "id": "research-v4-synthetic-seed",
+      "format": "RESEARCH_V4_PAIRS_JSON",
+      "path": "seed_pairs.json",
+      "data_origin": "SYNTHETIC",
+      "include": true
+    },
+    {
+      "id": "manual-supplement",
+      "format": "RESEARCH_V4_PAIRS_JSON",
+      "path": "pairs/manual_pairs.json",
+      "data_origin": "MIXED",
+      "include": true
+    }
+  ]
+}

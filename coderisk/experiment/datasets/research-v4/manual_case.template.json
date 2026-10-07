@@ -1,0 +1,35 @@
+{
+  "pair_id": "MANUAL-UNIQUE-PAIR-ID",
+  "problem_id": "MANUAL-TEST-UNIQUE-PROBLEM-ID",
+  "problem_type": "string_processing",
+  "problem_group": "G2",
+  "dataset_split": "test",
+  "split_preregistered": true,
+  "source_id": "MANUAL-SOURCE-FAMILY-ID",
+  "experiment_label": "TRANSFORMED",
+  "case_type": "HUMAN_REWRITE",
+  "language": "java-python",
+  "language_a": "java",
+  "language_b": "python",
+  "dataset_version": "coderisk-research-v4-seed-1.0",
+  "data_origin": "MANUAL",
+  "source_type": "manual",
+  "synthetic": false,
+  "eligible_for_core_metrics": true,
+  "question": {
+    "title": "Example only; this template is not loaded",
+    "description": "Replace with a traceable problem statement.",
+    "input_format": "",
+    "output_format": "",
+    "constraints_text": ""
+  },
+  "code_a_path": "samples/problem-id/submission-a.java",
+  "code_b_path": "samples/problem-id/submission-b.py",
+  "provenance": {
+    "source": "manual",
+    "license_or_authorization": "required",
+    "manual_check_status": "VERIFIED",
+    "functional_check_status": "PASSED"
+  },
+  "notes": "Template only. Do not report it as an experiment case."
+}

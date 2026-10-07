@@ -1,0 +1,40 @@
+# Local tools and generated files
+.agents/
+.tmp/
+pytest-*/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+node_modules/
+target/
+dist/
+.idea/
+.vscode/
+*.iml
+*.log
+logs/
+output/
+
+# Local configuration and database contents
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.db
+*.db-*
+*.mv.db
+*.trace.db
+*.lock.db
+coderisk/data/db/
+coderisk/data/tools/
+*.jar
+
+# OS files
+Thumbs.db
+.DS_Store

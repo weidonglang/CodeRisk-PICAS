@@ -1,0 +1,26 @@
+{
+  "experimentId": "PICAS-RESEARCH-V4",
+  "experimentName": "Research V4 candidate matrix",
+  "datasetManifest": "experiment/datasets/research-v4/dataset.json",
+  "formulaVersion": "FORMULA_SPEC_V1",
+  "productionAlgorithmVersion": "picas-v2-rule-1.0",
+  "experimentalAlgorithmVersion": "picas-v4-xl-ir0.1-sum0.2-exp",
+  "randomSeed": 20260624,
+  "fixedThresholds": [0.70, 0.75, 0.80, 0.85],
+  "validationSplit": "validation",
+  "evaluationSplit": "test",
+  "borderlineMargin": 0.10,
+  "calibrationOffsets": [-0.08, -0.04, 0.0, 0.04, 0.08],
+  "crossLanguageReviewThreshold": 0.70,
+  "crossLanguageCompositeWeights": {
+    "ir": 0.40,
+    "controlSummary": 0.30,
+    "dataFlowSummary": 0.30
+  },
+  "jplagManifest": "data/artifacts/baselines/jplag/JPLAG-6.2.0-20260621-R1/run_manifest.json",
+  "jplagStandardCsv": "data/artifacts/baselines/jplag/JPLAG-6.2.0-20260621-R1/coderisk-standard.csv",
+  "jplagAlignedManifest": "data/artifacts/baselines/jplag/PICAS-RESEARCH-V4-SEED-J1/run_manifest.json",
+  "jplagAlignedResults": "data/artifacts/baselines/jplag/PICAS-RESEARCH-V4-SEED-J1/baseline_results.csv",
+  "dolosStatus": "RESERVED_NOT_RUN",
+  "outputRoot": "data/artifacts/experiments"
+}

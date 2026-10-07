@@ -1,0 +1,127 @@
+{
+  "datasetId": "coderisk-minimal-v3",
+  "datasetVersion": "coderisk-minimal-v3-1.0",
+  "description": "Small synthetic Java/Python dataset for reproducible V3 smoke experiments. No real student code.",
+  "cases": [
+    {
+      "caseId": "L1-python-variable-rename",
+      "caseType": "VARIABLE_RENAME",
+      "label": "TRANSFORMED",
+      "problemGroup": "G2",
+      "language": "python",
+      "question": {"title": "Array sum", "description": "Read a list of integers and output their sum.", "inputFormat": "n and n integers", "outputFormat": "one integer", "constraintsText": "1 <= n <= 1000"},
+      "codeA": "def solve(numbers):\n    total = 0\n    for value in numbers:\n        total += value\n    return total\n",
+      "codeB": "def solve(items):\n    answer = 0\n    for element in items:\n        answer += element\n    return answer\n"
+    },
+    {
+      "caseId": "L2-python-function-rename",
+      "caseType": "FUNCTION_RENAME",
+      "label": "TRANSFORMED",
+      "problemGroup": "G2",
+      "language": "python",
+      "question": {"title": "Increment", "description": "Return an integer increased by one.", "inputFormat": "one integer", "outputFormat": "one integer", "constraintsText": "-1000 <= n <= 1000"},
+      "codeA": "def increment(value):\n    return value + 1\n\nprint(increment(4))\n",
+      "codeB": "def add_one(value):\n    return value + 1\n\nprint(add_one(4))\n"
+    },
+    {
+      "caseId": "L2-python-parameter-rename",
+      "caseType": "VARIABLE_RENAME",
+      "label": "TRANSFORMED",
+      "problemGroup": "G1",
+      "language": "python",
+      "question": {"title": "Pair sum", "description": "Output the sum of two integers.", "inputFormat": "a b", "outputFormat": "a+b", "constraintsText": "-100 <= a,b <= 100"},
+      "codeA": "def solve(left, right):\n    return left + right\n",
+      "codeB": "def solve(first, second):\n    return first + second\n"
+    },
+    {
+      "caseId": "L3-java-format-comment",
+      "caseType": "FORMAT_COMMENT_CHANGE",
+      "label": "TRANSFORMED",
+      "problemGroup": "G2",
+      "language": "java",
+      "question": {"title": "Absolute value", "description": "Return the absolute value of an integer.", "inputFormat": "one integer", "outputFormat": "absolute value", "constraintsText": "-100000 <= n <= 100000"},
+      "codeA": "class Main { static int abs(int value) { if (value < 0) return -value; return value; } }",
+      "codeB": "// formatting changed\nclass Main\n{\n static int abs(int value)\n {\n  if(value < 0){ return -value; }\n  return value;\n }\n}\n"
+    },
+    {
+      "caseId": "L0-java-identical",
+      "caseType": "ORIGINAL_COPY",
+      "label": "SIMILAR",
+      "problemGroup": "G2",
+      "language": "java",
+      "question": {"title": "Square", "description": "Return the square of an integer.", "inputFormat": "one integer", "outputFormat": "one integer", "constraintsText": "-10000 <= n <= 10000"},
+      "codeA": "class Main { static int square(int n) { return n * n; } }",
+      "codeB": "class Main { static int square(int n) { return n * n; } }"
+    },
+    {
+      "caseId": "N1-natural-sum-template",
+      "caseType": "NATURAL_TEMPLATE",
+      "label": "NATURAL_SIMILAR",
+      "problemGroup": "G1",
+      "language": "python",
+      "question": {"title": "Array sum", "description": "Read integers and output their sum. This is a direct introductory loop exercise.", "inputFormat": "n then n integers", "outputFormat": "sum", "constraintsText": "1 <= n <= 100"},
+      "codeA": "def solve(values):\n    total = 0\n    for value in values:\n        total += value\n    return total\n",
+      "codeB": "def solve(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n"
+    },
+    {
+      "caseId": "N2-natural-even-count",
+      "caseType": "NATURAL_TEMPLATE",
+      "label": "NATURAL_SIMILAR",
+      "problemGroup": "G1",
+      "language": "python",
+      "question": {"title": "Count even numbers", "description": "Count even integers in a short array using the standard loop and modulo template.", "inputFormat": "n then n integers", "outputFormat": "count", "constraintsText": "1 <= n <= 100"},
+      "codeA": "def solve(values):\n    count = 0\n    for value in values:\n        if value % 2 == 0:\n            count += 1\n    return count\n",
+      "codeB": "def solve(values):\n    count = 0\n    for value in values:\n        if value % 2 == 0:\n            count = count + 1\n    return count\n"
+    },
+    {
+      "caseId": "N3-natural-maximum",
+      "caseType": "NATURAL_TEMPLATE",
+      "label": "NATURAL_SIMILAR",
+      "problemGroup": "G1",
+      "language": "java",
+      "question": {"title": "Maximum", "description": "Find the maximum element in an integer array with a direct scan.", "inputFormat": "n and array", "outputFormat": "maximum", "constraintsText": "1 <= n <= 100"},
+      "codeA": "class Main { static int max(int[] a) { int best = a[0]; for (int x : a) if (x > best) best = x; return best; } }",
+      "codeB": "class Main { static int max(int[] a) { int best = a[0]; for (int x : a) { if (x > best) { best = x; } } return best; } }"
+    },
+    {
+      "caseId": "I1-independent-factorial-reverse",
+      "caseType": "INDEPENDENT_SOLUTION",
+      "label": "INDEPENDENT",
+      "problemGroup": "G2",
+      "language": "python",
+      "question": {"title": "Mixed independent controls", "description": "Synthetic negative pair used only to exercise different structures.", "inputFormat": "value", "outputFormat": "result", "constraintsText": "1 <= n <= 100"},
+      "codeA": "def factorial(n):\n    result = 1\n    for value in range(2, n + 1):\n        result *= value\n    return result\n",
+      "codeB": "def reverse_text(text):\n    return ''.join(reversed(text))\n"
+    },
+    {
+      "caseId": "I2-independent-graph-arithmetic",
+      "caseType": "INDEPENDENT_SOLUTION",
+      "label": "INDEPENDENT",
+      "problemGroup": "G4",
+      "language": "python",
+      "question": {"title": "Graph reachability", "description": "Given a directed graph, determine reachable vertices using traversal and visited state.", "inputFormat": "n m edges source", "outputFormat": "reachable vertices", "constraintsText": "1 <= n <= 200000\n0 <= m <= 400000"},
+      "codeA": "def reachable(graph, start):\n    seen = {start}\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        for nxt in graph[node]:\n            if nxt not in seen:\n                seen.add(nxt)\n                stack.append(nxt)\n    return seen\n",
+      "codeB": "def formula(a, b, c):\n    return a * b + c\n"
+    },
+    {
+      "caseId": "B1-borderline-local-change",
+      "caseType": "LOCAL_REORDER",
+      "label": "SUSPICIOUS",
+      "problemGroup": "G3",
+      "language": "python",
+      "question": {"title": "Normalize scores", "description": "Normalize a list of scores and return values above the mean.", "inputFormat": "n scores", "outputFormat": "filtered normalized scores", "constraintsText": "1 <= n <= 10000"},
+      "codeA": "def solve(values):\n    mean = sum(values) / len(values)\n    normalized = [value - mean for value in values]\n    return [value for value in normalized if value > 0]\n",
+      "codeB": "def process(items):\n    average = sum(items) / len(items)\n    shifted = []\n    for item in items:\n        shifted.append(item - average)\n    return [item for item in shifted if item > 0]\n"
+    },
+    {
+      "caseId": "F1-parser-fallback",
+      "caseType": "FORMAT_COMMENT_CHANGE",
+      "label": "UNCERTAIN",
+      "problemGroup": "G2",
+      "language": "python",
+      "question": {"title": "Parser fallback", "description": "Malformed synthetic input retained as a parser failure case.", "inputFormat": "none", "outputFormat": "none", "constraintsText": "none"},
+      "codeA": "def broken(:\n    return 1\n",
+      "codeB": "def solve():\n    return 1\n"
+    }
+  ]
+}

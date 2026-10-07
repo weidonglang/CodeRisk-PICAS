@@ -1,0 +1,35 @@
+{
+  "pair_id": "EXT-PY-NATURAL-001",
+  "problem_id": "P-EXT-SORT-001",
+  "problem_type": "sort_template",
+  "problem_group": "G3",
+  "dataset_split": "test",
+  "split_preregistered": true,
+  "source_id": "SRC-EXT-SORT-001",
+  "experiment_label": "NATURAL_SIMILAR",
+  "case_type": "NATURAL_TEMPLATE",
+  "language": "python",
+  "language_a": "python",
+  "language_b": "python",
+  "dataset_version": "coderisk-research-v4-seed-1.0",
+  "data_origin": "PUBLIC",
+  "source_type": "external",
+  "synthetic": false,
+  "eligible_for_core_metrics": true,
+  "question": {
+    "title": "External sort template sample",
+    "description": "Two independently sourced solutions for a template-like sorting problem.",
+    "input_format": "Describe input format.",
+    "output_format": "Describe output format.",
+    "constraints_text": "Describe constraints."
+  },
+  "code_a_path": "samples/external/P-EXT-SORT-001/A.py",
+  "code_b_path": "samples/external/P-EXT-SORT-001/B.py",
+  "provenance": {
+    "source": "URL, dataset package, or local source note",
+    "license_or_authorization": "license or written authorization",
+    "manual_check_status": "VERIFIED",
+    "functional_check_status": "PASSED"
+  },
+  "notes": "External data must be allowed by license or authorization."
+}
