@@ -53,3 +53,7 @@ GitHub Actions 分别运行 Python 测试、Maven 测试与前端类型检查/�
 - 历史验证记录见 [测试报告](coderisk/TEST_REPORT.md)，限制见 [已知问题](coderisk/KNOWN_ISSUES.md)。
 
 开发前阅读 [项目约定](coderisk_docs/AGENTS.md)；生产公式以 [FORMULA_SPEC.md](coderisk_docs/FORMULA_SPEC.md) 为准。
+
+## 本科毕设推进
+
+当前按开题阶段组织后续工作，见 [毕设后续计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) 和 [论文材料写作约定](coderisk_docs/THESIS_WRITING_WORKFLOW.md)。阶段安排使用相对周次，正式报告按学校模板和导师意见调整。
