@@ -57,3 +57,5 @@ GitHub Actions 分别运行 Python 测试、Maven 测试与前端类型检查/�
 ## 本科毕设推进
 
 当前按开题阶段组织后续工作，见 [毕设后续计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) 和 [论文材料写作约定](coderisk_docs/THESIS_WRITING_WORKFLOW.md)。阶段安排使用相对周次，正式报告按学校模板和导师意见调整。
+
+首批 [开题准备材料](coderisk_docs/proposal/README.md) 包含选题说明、文献矩阵、开题内容初稿与证据核对表。
