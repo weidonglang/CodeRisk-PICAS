@@ -42,14 +42,14 @@ npm --prefix coderisk/frontend-vue ci
 ./coderisk/scripts/run-all-tests.ps1
 ```
 
-GitHub Actions 分别运行 Python 测试、Maven 测试与前端类型检查/构建。
+GitHub Actions 分别运行 Python 测试、Maven 测试与前端类型检查/构建，并验证合成开发数据上的公平评测及图表生成（CI跳过外部JPlag）。
 
 ## 当前范围
 
 - 支持 Java/Python 同语言分析、规则题目画像、动态阈值、作用域标识符规范化、证据展示和 HTML 报告。
 - Java AST 是简化结构序列解析；跨语言 IR 与控制/数据摘要为实验功能，生产评分权重为零。
 - Research V4 的 91 对样本是合成种子数据，用于验证工具链，不能作为真实作业上的效果结论。
-- 本地上传、数据库、日志、构建产物和生成实验结果不纳入版本控制。克隆后实验页面需先运行实验脚本生成结果；JPlag 比较需单独安装并运行基线。
+- 本地上传、数据库、日志、构建产物和常规生成实验结果不纳入版本控制；审核后的开发实验快照保存在 `experiment/evidence/` 供复核。克隆后实验页面需先运行实验脚本生成结果；JPlag 比较需单独安装并运行基线。
 - 历史验证记录见 [测试报告](coderisk/TEST_REPORT.md)，限制见 [已知问题](coderisk/KNOWN_ISSUES.md)。
 
 开发前阅读 [项目约定](coderisk_docs/AGENTS.md)；生产公式以 [FORMULA_SPEC.md](coderisk_docs/FORMULA_SPEC.md) 为准。
@@ -59,3 +59,5 @@ GitHub Actions 分别运行 Python 测试、Maven 测试与前端类型检查/�
 当前按开题阶段组织后续工作，见 [毕设后续计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) 和 [论文材料写作约定](coderisk_docs/THESIS_WRITING_WORKFLOW.md)。阶段安排使用相对周次，正式报告按学校模板和导师意见调整。
 
 首批 [开题准备材料](coderisk_docs/proposal/README.md) 包含选题说明、文献矩阵、开题内容初稿与证据核对表。
+
+新增 [开题交流准备包](coderisk_docs/proposal/OPENING_DISCUSSION.md)、[数据收集与标注规范](coderisk_docs/proposal/DATA_PROTOCOL.md)、[公平评测协议](coderisk_docs/proposal/FAIR_EVALUATION.md) 和 [本轮验证结果](coderisk_docs/proposal/RESULTS_REVIEW.md)。

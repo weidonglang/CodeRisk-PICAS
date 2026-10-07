@@ -1,0 +1,20 @@
+[
+  {
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 16,
+    "nativeCsv": "data/artifacts/experiments/FAIR-V1-DEV-20261008-R3/jplag/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\artifacts\\experiments\\FAIR-V1-DEV-20261008-R3\\jplag\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\artifacts\\experiments\\FAIR-V1-DEV-20261008-R3\\jplag\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [=========================]  0/16 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/16 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \n\nPreparing Submissions   6% [=======================]  6/16 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 16/16 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/120 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 120/120 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 120/120 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "language": "python",
+    "languageFlag": "python3",
+    "exitCode": 0,
+    "inputSubmissionCount": 90,
+    "nativeCsv": "data/artifacts/experiments/FAIR-V1-DEV-20261008-R3/jplag/native/python/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l python3 -M RUN --csv-export -r E:\\ms\\coderisk\\data\\artifacts\\experiments\\FAIR-V1-DEV-20261008-R3\\jplag\\native\\python\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\artifacts\\experiments\\FAIR-V1-DEV-20261008-R3\\jplag\\input\\python",
+    "stderrTail": "\nLoading Submissions   0% [========                 ]  1/90 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 90/90 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 90/90 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/90 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 90/90 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 90/90 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [========               ]  4/90 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 90/90 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 90/90 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/4005 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 4005/4005 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 4005/4005 (0:00:00 / 0:00:00) \n"
+  }
+]

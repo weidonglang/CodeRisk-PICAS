@@ -1,0 +1,7 @@
+2026-10-08-07:43:46_918 [WARN] JPlagVersionChecker - There is a newer version (6.3.0) available. You can download the newest version here: https://github.com/jplag/JPlag/releases
+2026-10-08-07:43:47_954 [INFO] JPlag - Total time for comparing submissions: 0h 00min 00s 105ms
+2026-10-08-07:43:47_956 [WARN] ClusteringFactory - Cluster calculation disabled (as requested)!
+2026-10-08-07:43:48_063 [INFO] ReportObjectFactory - Start writing report...
+2026-10-08-07:43:48_065 [INFO] ReportObjectFactory - Start to export results...
+2026-10-08-07:43:48_220 [INFO] OutputFileGenerator - Successfully written the result: E:\ms\coderisk\data\artifacts\experiments\FAIR-V1-DEV-20261008-R3\jplag\native\java\results.jplag
+2026-10-08-07:43:48_221 [INFO] OutputFileGenerator - View the result using --mode

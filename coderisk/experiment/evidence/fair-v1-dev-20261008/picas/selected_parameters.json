@@ -1,0 +1,14 @@
+{
+  "selectionSplit": "validation",
+  "testUsedForSelection": false,
+  "objective": "max F1, min FPR, then closest-to-zero offset or highest fixed threshold",
+  "parameters": {
+    "FULL_FIXED": 0.35,
+    "FULL_DYNAMIC": -0.06,
+    "NO_CANONICAL_FIXED": 0.5,
+    "NO_CANONICAL_DYNAMIC": -0.18,
+    "RAW_FIXED": 0.0,
+    "CANONICAL_FIXED": 0.65,
+    "FULL_DYNAMIC_PRODUCTION": 0.0
+  }
+}

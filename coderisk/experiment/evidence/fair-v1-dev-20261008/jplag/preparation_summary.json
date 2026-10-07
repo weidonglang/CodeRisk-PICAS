@@ -1,0 +1,11 @@
+{
+  "datasetVersion": "coderisk-research-v4-seed-1.0",
+  "datasetPairCount": 91,
+  "alignedPairCount": 72,
+  "excludedPairCount": 19,
+  "validationValid": true,
+  "languages": [
+    "java",
+    "python"
+  ]
+}
