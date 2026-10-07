@@ -1,0 +1,2 @@
+# Offline plots for reproducible experiment artifacts; not a service dependency.
+matplotlib>=3.8,<4

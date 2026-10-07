@@ -7,6 +7,8 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Protocol
 
+from app.analyzers.java_source import balanced_tokens, mask_comments
+
 
 class SourceToken(Protocol):
     value: str
@@ -101,7 +103,7 @@ def build_identifier_mapping(
         is_consistent = len(left_names) == 1 and len(right_names) == 1
         if is_consistent:
             consistent += 1
-        if left_name == right_name:
+        if left_name == right_name or len(mappings) >= max(limit, 0):
             continue
         first_left = left_items[0]
         first_right = right_items[0]
@@ -120,8 +122,6 @@ def build_identifier_mapping(
                 "confidence": round(min(len(left_items), len(right_items)) / max(len(left_items), len(right_items)), 6),
             }
         )
-        if len(mappings) >= limit:
-            break
     coverage = len(common_keys) / total_symbols
     consistency = consistent / max(len(common_keys), 1)
     similarity = coverage * consistency
@@ -134,9 +134,15 @@ def build_identifier_mapping(
 
 
 class _PythonIndexer:
-    def __init__(self, tokens: list[SourceToken]) -> None:
+    def __init__(self, tokens: list[SourceToken], code: str) -> None:
         self.tokens = tokens
+        self.lines = code.splitlines()
         self.overrides: dict[tuple[int, int], _Symbol] = {}
+
+    def _location(self, line: int, byte_column: int) -> tuple[int, int]:
+        # AST offsets are UTF-8 bytes; tokenize offsets are Unicode characters.
+        prefix = self.lines[line - 1].encode('utf-8')[:byte_column]
+        return line, len(prefix.decode('utf-8'))
 
     def index(self, tree: ast.AST) -> dict[tuple[int, int], _Symbol]:
         module = _Scope("MODULE", None)
@@ -178,7 +184,7 @@ class _PythonIndexer:
             self._predeclare_scope(child, node.body, parameters)
             for argument in parameters:
                 argument_symbol = child.declare(argument.arg, "PARAM")
-                self.overrides[(argument.lineno, argument.col_offset)] = argument_symbol
+                self.overrides[self._location(argument.lineno, argument.col_offset)] = argument_symbol
             for statement in node.body:
                 self._walk(statement, child)
             return
@@ -197,18 +203,19 @@ class _PythonIndexer:
             parameters = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
             self._predeclare_scope(child, [], parameters)
             for argument in parameters:
-                self.overrides[(argument.lineno, argument.col_offset)] = child.declare(argument.arg, "PARAM")
+                self.overrides[self._location(argument.lineno, argument.col_offset)] = child.declare(argument.arg, "PARAM")
             self._walk(node.body, child)
             return
         if isinstance(node, ast.Name):
             symbol = scope.resolve(node.id)
             if symbol is not None:
-                self.overrides[(node.lineno, node.col_offset)] = symbol
+                self.overrides[self._location(node.lineno, node.col_offset)] = symbol
             return
         for child in ast.iter_child_nodes(node):
             self._walk(child, scope)
 
     def _bind_named_token(self, line: int, column: int, raw_name: str, symbol: _Symbol) -> None:
+        _, column = self._location(line, column)
         candidates = [
             token for token in self.tokens
             if token.line == line and token.column >= column and token.value == raw_name
@@ -251,12 +258,12 @@ def _canonicalize_python(code: str, tokens: list[SourceToken]) -> CanonicalAnaly
         tree = ast.parse(code)
     except SyntaxError:
         return _lexical_fallback(tokens, "python")
-    overrides = _PythonIndexer(tokens).index(tree)
+    overrides = _PythonIndexer(tokens, code).index(tree)
     return _apply_overrides(tokens, overrides, "scope-aware-python")
 
 
 def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysis:
-    if not _balanced_delimiters(code) or not tokens:
+    if mask_comments(code)[1] or not balanced_tokens(token.value for token in tokens) or not tokens:
         return _lexical_fallback(tokens, "java")
     values = [token.value for token in tokens]
     paths, parents, brace_children = _java_scope_paths(values)
@@ -269,11 +276,14 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
 
     declarations: dict[int, _Symbol] = {}
     parameter_indices: set[int] = set()
-    method_ranges: dict[int, tuple[int, int]] = {}
+    class_body_paths: set[str] = set()
 
     for index, value in enumerate(values):
         if value == "class" and index + 1 < len(values) and _is_java_identifier(values[index + 1]):
             declarations[index + 1] = scopes[paths[index + 1]].declare(values[index + 1], "CLASS")
+            body = _next_token_index(values, index + 2, "{")
+            if body in brace_children:
+                class_body_paths.add(brace_children[body])
 
     for index, value in enumerate(values):
         if not _is_java_identifier(value) or index + 1 >= len(values) or values[index + 1] != "(":
@@ -283,7 +293,6 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
             continue
         symbol = scopes[paths[index]].declare(value, "FUNC")
         declarations[index] = symbol
-        method_ranges[index] = (index + 2, close_index)
         body_open = _next_token_index(values, close_index + 1, "{")
         body_path = brace_children.get(body_open, paths[index]) if body_open is not None else paths[index]
         for parameter_index in _java_parameter_names(values, index + 2, close_index):
@@ -298,20 +307,18 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
             declarations[index] = scopes[paths[index]].declare(value, "VAR")
 
     overrides: dict[tuple[int, int], _Symbol] = {}
-    function_symbols = {
-        symbol.raw_name: symbol for symbol in declarations.values() if symbol.kind == "FUNC"
-    }
-    class_symbols = {
-        symbol.raw_name: symbol for symbol in declarations.values() if symbol.kind == "CLASS"
-    }
     for index, token in enumerate(tokens):
         symbol = declarations.get(index)
         if symbol is None and _is_java_identifier(token.value):
-            symbol = scopes[paths[index]].resolve(token.value)
-            if symbol is None and index + 1 < len(values) and values[index + 1] == "(":
-                symbol = function_symbols.get(token.value)
-            if symbol is None:
-                symbol = class_symbols.get(token.value)
+            if index > 0 and values[index - 1] == '.':
+                # Without type resolution, external object members must remain raw.
+                if index > 1 and values[index - 2] == 'this':
+                    scope = scopes[paths[index]]
+                    while scope and scope.path not in class_body_paths:
+                        scope = scope.parent
+                    symbol = scope.bindings.get(token.value) if scope else None
+            else:
+                symbol = scopes[paths[index]].resolve(token.value)
         if symbol is not None:
             overrides[(token.line, token.column)] = symbol
     return _apply_overrides(tokens, overrides, "scope-aware-java")
@@ -426,11 +433,13 @@ def _java_parameter_names(values: list[str], start: int, end: int) -> list[int]:
 
 def _is_java_method_declaration(values: list[str], name_index: int, close_index: int) -> bool:
     previous = values[name_index - 1] if name_index > 0 else ""
-    if previous in JAVA_CONTROL_WORDS or previous in {"new", ".", "@"}:
+    if previous in JAVA_CONTROL_WORDS or previous in {"new", ".", "@", "(", "=", ",", "->"}:
         return False
     index = close_index + 1
-    while index < len(values) and values[index] not in {"{", ";", "="}:
+    if index < len(values) and values[index] == 'throws':
         index += 1
+        while index < len(values) and (_is_java_identifier(values[index]) or values[index] in {'.', ','}):
+            index += 1
     return index < len(values) and values[index] == "{"
 
 
@@ -466,18 +475,6 @@ def _next_token_index(values: list[str], start: int, target: str) -> int | None:
         if values[index] == ";":
             return None
     return None
-
-
-def _balanced_delimiters(code: str) -> bool:
-    pairs = {")": "(", "]": "[", "}": "{"}
-    stack: list[str] = []
-    for char in code:
-        if char in "([{":
-            stack.append(char)
-        elif char in pairs:
-            if not stack or stack.pop() != pairs[char]:
-                return False
-    return not stack
 
 
 def _is_java_identifier(value: str) -> bool:

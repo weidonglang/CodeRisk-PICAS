@@ -107,6 +107,7 @@ def validate_cases(
     sources_by_split: dict[str, set[str]] = defaultdict(set)
     code_hash_splits: dict[str, set[str]] = defaultdict(set)
     code_hash_cases: dict[str, set[str]] = defaultdict(set)
+    families_by_split: dict[str, set[str]] = defaultdict(set)
 
     for case in cases:
         case_id = str(case.get("pair_id", case.get("case_id", "<missing>")))
@@ -128,6 +129,11 @@ def validate_cases(
         else:
             problems_by_split[split].add(case["problem_id"])
             sources_by_split[split].add(case["source_id"])
+            families = case.get('source_family_ids', [])
+            if not isinstance(families, list) or any(not isinstance(x, str) or not x.strip() for x in families):
+                errors.append(f'Case {case_id} has invalid source_family_ids')
+            else:
+                families_by_split[split].update(families)
         if not isinstance(case["split_preregistered"], bool):
             errors.append(f"Case {case_id} split_preregistered must be boolean")
 
@@ -182,6 +188,9 @@ def validate_cases(
         errors.append(f"Problem leakage across validation/test: {problem_overlap}")
     if source_overlap:
         errors.append(f"Source leakage across validation/test: {source_overlap}")
+    family_overlap = sorted(families_by_split['validation'] & families_by_split['test'])
+    if family_overlap:
+        errors.append(f'Source-family leakage across validation/test: {family_overlap}')
     if code_overlap:
         errors.append(f"Exact code content leakage across validation/test: {code_overlap}")
 
@@ -233,6 +242,7 @@ def validate_cases(
         "targetGap": target_gap,
         "problemOverlap": problem_overlap,
         "sourceOverlap": source_overlap,
+        "sourceFamilyOverlap": family_overlap,
         "exactCodeOverlapCases": code_overlap,
         "nonPreregisteredSplitCaseCount": len(non_preregistered_split_cases),
         "nonPreregisteredSplitCases": non_preregistered_split_cases,

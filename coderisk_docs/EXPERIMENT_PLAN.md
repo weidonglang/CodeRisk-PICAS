@@ -1,5 +1,7 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-08 更新：本科主实验以 [公平评测协议](proposal/FAIR_EVALUATION.md) 与 [数据标注规范](proposal/DATA_PROTOCOL.md) 为当前可执行约定，入口为 `experiment/run_fair_evaluation.py`。以下历史研究命题均视为待验证问题；历史E3/E4不能替代新版受控比较。真实数据实验尚待收集与冻结。
+
 > 本文件定义 CodeRisk / PICAS 项目的实验设计。它用于指导实验数据构建、脚本开发、结果记录、论文第六章、答辩图表和期刊投稿。任何实验结论都必须能被本文件中的实验流程、指标和数据记录支撑。
 
 ---

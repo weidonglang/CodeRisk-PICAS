@@ -4,6 +4,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import subprocess
 from collections import defaultdict
 from pathlib import Path
@@ -65,7 +66,9 @@ def main() -> int:
         "jarSha256": _file_hash(args.jplag_jar) if args.jplag_jar.is_file() else None,
         "datasetAligned": True,
         "runRecords": run_records,
-        "status": "FINISHED" if args.execute else "PREPARED",
+        "status": ("FAILED" if any(r['exitCode'] != 0 for r in run_records)
+                   else "FINISHED" if all(r['resultStatus'] == 'MATCHED' for r in results)
+                   else "PARTIAL") if args.execute else "PREPARED",
     }
     _write_json(output_dir / "run_manifest.json", manifest)
     print(json.dumps(manifest, ensure_ascii=False))
@@ -134,6 +137,9 @@ def execute_jplag(
     version: str,
     min_tokens: int,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    if min_tokens < 1:
+        raise ValueError('min_tokens must be positive')
+    output_dir, jar, java = output_dir.resolve(), jar.resolve(), java.resolve()
     rows_by_language: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in alignment_rows:
         rows_by_language[row["language"]].append(row)
@@ -148,22 +154,29 @@ def execute_jplag(
         command = [
             str(java), "-jar", str(jar), "-l", language_flag, "-M", "RUN",
             "--csv-export", "-r", str(result_base), "--overwrite", "-n", "-1",
+            "--encoding", "UTF-8", "-m", "0.0", "--cluster-skip",
             "-t", str(min_tokens), str(input_root),
         ]
-        completed = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=180)
+        try:
+            completed = subprocess.run(command, cwd=ROOT, capture_output=True, text=True,
+                                       encoding='utf-8', errors='replace', timeout=180)
+            exit_code, stdout, stderr = completed.returncode, completed.stdout, completed.stderr
+        except subprocess.TimeoutExpired:
+            exit_code, stdout, stderr = -1, '', 'JPlag timed out after 180 seconds'
+        (native_root / 'stdout.txt').write_text(stdout, encoding='utf-8')
+        (native_root / 'stderr.txt').write_text(stderr, encoding='utf-8')
         native_csv = native_root / "results" / "results.csv"
         runs.append({
             "language": language,
             "languageFlag": language_flag,
-            "exitCode": completed.returncode,
+            "exitCode": exit_code,
             "inputSubmissionCount": len({r["submissionA"] for r in rows} | {r["submissionB"] for r in rows}),
             "nativeCsv": _relative(native_csv),
             "command": " ".join(command),
-            "stderrTail": completed.stderr[-1000:],
+            "stderrTail": stderr[-1000:],
         })
-        if completed.returncode != 0 or not native_csv.is_file():
-            continue
-        scores = _native_scores(native_csv)
+        failed = exit_code != 0 or not native_csv.is_file()
+        scores = {} if failed else _native_scores(native_csv)
         for row in rows:
             key = frozenset((row["submissionA"], row["submissionB"]))
             score = scores.get(key)
@@ -172,8 +185,8 @@ def execute_jplag(
                 "method": "JPLAG",
                 "methodVersion": version,
                 "predictedScore": score,
-                "resultStatus": "MATCHED" if score is not None else "NO_NATIVE_COMPARISON",
-                "reason": "" if score is not None else "JPlag did not emit this requested comparison, usually because parsing or minimum-token requirements excluded a submission.",
+                "resultStatus": "RUN_FAILED" if failed else "MATCHED" if score is not None else "NO_NATIVE_COMPARISON",
+                "reason": 'JPlag process failed; inspect native logs.' if failed else "" if score is not None else "JPlag did not emit this requested comparison; inspect native logs. Missing scores are not zero.",
             })
     return results, runs
 
@@ -244,10 +257,16 @@ def _submission_id(problem_id: str, digest: str) -> str:
 def _native_scores(path: Path) -> dict[frozenset[str], float]:
     with path.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    return {
-        frozenset((str(row["submissionName1"]), str(row["submissionName2"]))): float(row["averageSimilarity"])
-        for row in rows
-    }
+    scores = {}
+    for row in rows:
+        key = frozenset((str(row['submissionName1']), str(row['submissionName2'])))
+        value = float(row['averageSimilarity'])
+        if not math.isfinite(value) or not 0 <= value <= 1:
+            raise ValueError(f'Invalid JPlag similarity: {value}')
+        if key in scores and scores[key] != value:
+            raise ValueError('Conflicting duplicate JPlag comparison')
+        scores[key] = value
+    return scores
 
 
 def _file_hash(path: Path) -> str:

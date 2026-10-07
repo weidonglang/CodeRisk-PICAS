@@ -8,6 +8,8 @@ import tokenize
 from dataclasses import dataclass
 from pathlib import Path
 
+from app.analyzers.java_source import balanced_tokens, mask_comments
+
 from app.analyzers.canonicalization import (
     IdentifierMappingAnalysis,
     build_identifier_mapping,
@@ -37,7 +39,8 @@ from app.schemas.analyze_schema import (
 )
 
 JAVA_TOKEN_PATTERN = re.compile(
-    r'"(?:\\.|[^"\\])*"'
+    r'"""(?:\\[\s\S]|(?!""")[^\\])*"""'
+    r'|"(?:\\.|[^"\\])*"'
     r"|'(?:\\.|[^'\\])*'"
     r"|[A-Za-z_$][A-Za-z0-9_$]*"
     r"|\d+(?:\.\d+)?"
@@ -55,6 +58,7 @@ class TokenItem:
     value: str
     line: int
     column: int
+    end_line: int | None = None
 
 
 @dataclass(frozen=True)
@@ -188,6 +192,13 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
                 },
             )
         )
+    if ast_enabled and not canonical_enabled:
+        evidence.append(EvidenceResult(
+            evidenceType="PARSER_WARNING",
+            similarityScore=0.0,
+            description="Scope normalization is unavailable; weighted analysis fell back to raw tokens.",
+            metadata={"normalizationModeA": canonical_a.mode, "normalizationModeB": canonical_b.mode},
+        ))
     if canonical_enabled and canonical_similarity > 0:
         evidence.append(
             EvidenceResult(
@@ -347,13 +358,13 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             MetricResult(
                 name="TOKEN_SIMILARITY",
                 value=round(token_similarity, 6),
-                weight=0.20 if ast_enabled else 1.0,
+                weight=0.20 if canonical_enabled else 1.0,
                 explanation="Raw token n-gram Jaccard similarity.",
             ),
             MetricResult(
                 name="AST_SIMILARITY",
                 value=round(ast_similarity, 6),
-                weight=0.20 if ast_enabled else 0.0,
+                weight=0.20 if canonical_enabled else 0.0,
                 explanation="Basic AST node-type sequence similarity. Falls back to 0 when parsing fails.",
             ),
             MetricResult(
@@ -363,7 +374,7 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
                 explanation=(
                     "Token similarity after scope-aware identifier normalization."
                     if canonical_enabled
-                    else "Unavailable because parsing failed; no canonical evidence was generated."
+                    else "Unavailable because parsing or scope normalization failed; no canonical evidence was generated."
                 ),
             ),
             MetricResult(
@@ -373,7 +384,7 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
                 explanation=(
                     "Coverage and consistency of aligned canonical identifiers."
                     if canonical_enabled
-                    else "Unavailable because parsing failed; no identifier mapping was generated."
+                    else "Unavailable because parsing or scope normalization failed; no identifier mapping was generated."
                 ),
             ),
             *ir_metrics,
@@ -420,20 +431,23 @@ def _parse_python_ast(code: str) -> AstAnalysis:
         return AstAnalysis(False, [], f"Python syntax error at line {error.lineno}: {error.msg}")
     nodes: list[AstNodeItem] = []
 
-    def visit(node: ast.AST) -> None:
-        nodes.append(AstNodeItem(type(node).__name__, int(getattr(node, "lineno", 1) or 1)))
+    def visit(node: ast.AST, parent_line: int = 1) -> None:
+        line = int(getattr(node, "lineno", parent_line) or parent_line)
+        nodes.append(AstNodeItem(type(node).__name__, line))
         for child in ast.iter_child_nodes(node):
-            visit(child)
+            visit(child, line)
 
     visit(tree)
     return AstAnalysis(True, nodes)
 
 
 def _parse_java_structure(code: str) -> AstAnalysis:
-    stripped = _strip_java_comments(code)
-    if not _balanced_delimiters(stripped):
-        return AstAnalysis(False, [], "Java delimiters are not balanced")
+    stripped, error = mask_comments(code)
+    if error:
+        return AstAnalysis(False, [], error)
     tokens = _regex_tokenize_with_lines(stripped)
+    if not balanced_tokens(token.value for token in tokens):
+        return AstAnalysis(False, [], "Java delimiters are not balanced")
     if not tokens:
         return AstAnalysis(False, [], "No Java tokens found")
 
@@ -484,8 +498,8 @@ def _tokenize_python(code: str) -> list[TokenItem]:
         for token in tokenize.generate_tokens(io.StringIO(code).readline):
             if token.type in ignored:
                 continue
-            tokens.append(TokenItem(token.string, max(1, token.start[0]), max(0, token.start[1])))
-    except tokenize.TokenError:
+            tokens.append(TokenItem(token.string, max(1, token.start[0]), max(0, token.start[1]), max(1, token.end[0])))
+    except (tokenize.TokenError, IndentationError):
         return _tokenize_generic(code)
     return tokens
 
@@ -506,62 +520,15 @@ def _regex_tokenize_with_lines(code: str) -> list[TokenItem]:
     for match in JAVA_TOKEN_PATTERN.finditer(code):
         line += code.count("\n", last_index, match.start())
         line_start = code.rfind("\n", 0, match.start()) + 1
-        tokens.append(TokenItem(match.group(0), line, match.start() - line_start))
+        tokens.append(TokenItem(match.group(0), line, match.start() - line_start,
+                                line + code.count("\n", match.start(), match.end())))
         line += code.count("\n", match.start(), match.end())
         last_index = match.end()
     return tokens
 
 
 def _strip_java_comments(code: str) -> str:
-    result: list[str] = []
-    index = 0
-    in_string = False
-    in_char = False
-    escaped = False
-    while index < len(code):
-        current = code[index]
-        next_char = code[index + 1] if index + 1 < len(code) else ""
-
-        if in_string or in_char:
-            result.append(current)
-            if escaped:
-                escaped = False
-            elif current == "\\":
-                escaped = True
-            elif in_string and current == '"':
-                in_string = False
-            elif in_char and current == "'":
-                in_char = False
-            index += 1
-            continue
-
-        if current == '"':
-            in_string = True
-            result.append(current)
-            index += 1
-            continue
-        if current == "'":
-            in_char = True
-            result.append(current)
-            index += 1
-            continue
-        if current == "/" and next_char == "/":
-            index += 2
-            while index < len(code) and code[index] not in "\r\n":
-                index += 1
-            result.append("\n")
-            continue
-        if current == "/" and next_char == "*":
-            index += 2
-            while index + 1 < len(code) and not (code[index] == "*" and code[index + 1] == "/"):
-                result.append("\n" if code[index] in "\r\n" else " ")
-                index += 1
-            index += 2
-            continue
-
-        result.append(current)
-        index += 1
-    return "".join(result)
+    return mask_comments(code)[0]
 
 
 def _fingerprints(tokens: list[str]) -> set[tuple[str, ...]]:
@@ -578,13 +545,13 @@ def _fingerprint_locations(tokens: list[TokenItem]) -> dict[tuple[str, ...], tup
         return {}
     size = _ngram_size(len(tokens))
     if len(tokens) <= size:
-        return {tuple(item.value for item in tokens): (tokens[0].line, tokens[-1].line)}
+        return {tuple(item.value for item in tokens): (tokens[0].line, tokens[-1].end_line or tokens[-1].line)}
 
     locations: dict[tuple[str, ...], tuple[int, int]] = {}
     for index in range(0, len(tokens) - size + 1):
         window = tokens[index : index + size]
         fingerprint = tuple(item.value for item in window)
-        locations.setdefault(fingerprint, (window[0].line, window[-1].line))
+        locations.setdefault(fingerprint, (window[0].line, window[-1].end_line or window[-1].line))
     return locations
 
 
@@ -637,12 +604,12 @@ def _ast_fingerprint_locations(nodes: list[AstNodeItem]) -> dict[tuple[str, ...]
         return {}
     size = _ngram_size(len(nodes))
     if len(nodes) <= size:
-        return {tuple(item.value for item in nodes): (nodes[0].line, nodes[-1].line)}
+        return {tuple(item.value for item in nodes): (min(n.line for n in nodes), max(n.line for n in nodes))}
     locations: dict[tuple[str, ...], tuple[int, int]] = {}
     for index in range(0, len(nodes) - size + 1):
         window = nodes[index : index + size]
         fingerprint = tuple(item.value for item in window)
-        locations.setdefault(fingerprint, (window[0].line, window[-1].line))
+        locations.setdefault(fingerprint, (min(n.line for n in window), max(n.line for n in window)))
     return locations
 
 
@@ -682,18 +649,6 @@ def _weighted_similarity(
             + (0.15 * identifier_mapping_similarity)
         )
     return token_similarity
-
-
-def _balanced_delimiters(code: str) -> bool:
-    pairs = {")": "(", "]": "[", "}": "{"}
-    stack: list[str] = []
-    for char in code:
-        if char in "([{":
-            stack.append(char)
-        elif char in pairs:
-            if not stack or stack.pop() != pairs[char]:
-                return False
-    return not stack
 
 
 def _identifier_kind(tokens: list[str], index: int, language: str) -> str | None:
