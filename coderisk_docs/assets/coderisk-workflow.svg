@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="370" viewBox="0 0 1280 370" role="img" aria-labelledby="title desc">
+  <title id="title">CodeRisk workflow and service architecture</title>
+  <desc id="desc">Question and submissions pass through Vue, Spring Boot and FastAPI. The analyzer returns similarity and review evidence. The business service stores results and exports reports. Experiments use a separate reproducible workflow.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m0 0 10 5-10 5z" fill="#48898a"/></marker></defs>
+  <rect width="1280" height="370" rx="18" fill="#f3f8f8"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="40" y="43" fill="#244653" font-size="15" font-weight="600" letter-spacing="2">FROM SUBMISSION TO REVIEW</text>
+    <g fill="#ffffff" stroke="#c8dcde">
+      <rect x="40" y="74" width="244" height="123" rx="12"/>
+      <rect x="358" y="74" width="244" height="123" rx="12"/>
+      <rect x="677" y="74" width="244" height="123" rx="12"/>
+      <rect x="995" y="74" width="244" height="123" rx="12"/>
+    </g>
+    <g fill="#0d8b87" font-size="11" font-weight="600" letter-spacing="2">
+      <text x="62" y="100">01 / INPUT</text><text x="380" y="100">02 / BUSINESS</text><text x="699" y="100">03 / ANALYSIS</text><text x="1017" y="100">04 / REVIEW</text>
+    </g>
+    <g fill="#173d4a" font-size="21" font-weight="600">
+      <text x="62" y="134">Vue 3</text><text x="380" y="134">Spring Boot</text><text x="699" y="134">FastAPI</text><text x="1017" y="134">Evidence + report</text>
+    </g>
+    <g fill="#587681" font-size="13">
+      <text x="62" y="159">Question, source, version</text><text x="62" y="179">Optional teacher template</text>
+      <text x="380" y="159">Upload, task, persistence</text><text x="380" y="179">Results and HTML export</text>
+      <text x="699" y="159">Tokens, structure, normalization</text><text x="699" y="179">Threshold and review context</text>
+      <text x="1017" y="159">Scores and original-line spans</text><text x="1017" y="179">Limits and human verification</text>
+    </g>
+    <g fill="none" stroke="#48898a" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M284 133h59"/><path d="M602 133h60"/><path d="M921 133h59"/>
+    </g>
+    <path d="M798 199v23H480v-18" stroke="#98b6bf" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+    <text x="566" y="244" fill="#587681" font-size="12">Analysis results return to the business service</text>
+    <rect x="40" y="272" width="1199" height="65" rx="10" fill="#e7f0f1"/>
+    <text x="62" y="299" fill="#244653" font-size="13" font-weight="600">RESEARCH WORKFLOW</text>
+    <text x="62" y="321" fill="#587681" font-size="13">Traceable data → split checks → validation-only selection → common-cohort baselines → archived statistics</text>
+    <rect x="1015" y="291" width="197" height="27" rx="13" fill="#d7e8e7"/>
+    <text x="1113" y="309" fill="#286864" text-anchor="middle" font-size="12">No source-code execution</text>
+  </g>
+</svg>

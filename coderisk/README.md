@@ -1,185 +1,114 @@
-# CodeRisk / PICAS
+# CodeRisk 运行与演示手册
 
-CodeRisk is a problem-aware code similarity risk detection system for programming assignments. It outputs risk levels, dynamic thresholds, similarity metrics, evidence, and review suggestions. It must not directly conclude plagiarism.
+[项目首页](../README.md) · [文档导航](../coderisk_docs/README.md) · [数据库配置](database/README.md) · [测试记录](TEST_REPORT.md)
 
-## Current Scope
+本手册集中说明工程运行。项目定位、语言边界和研究状态以首页及对应规格为准，历史实验记录不代表新版算法已经取得相同效果。
 
-C/HTML experimental detection now covers upload, same-language tasks, structural analysis, evidence and reports. HTML uses an explicitly uncalibrated fixed threshold rather than algorithm-problem profiles. New official-source intake contains 320 CodeNet files and 46 MDN HTML examples; upstream C files require language review. See [scope, intake and validation](../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md). These unlabelled files are not formal benchmark ground truth.
+## 环境与依赖
 
-This repository provides a demonstrable V2 delivery loop, a reproducible V3 experiment loop, and an explicitly isolated Research V4 candidate scaffold:
-
-- Spring Boot backend with unified `ApiResponse<T>`, JDBC persistence, Flyway migrations, question/submission/task/result APIs, evidence storage, and HTML report export.
-- FastAPI analysis service with scope-aware Python/Java identifier normalization, canonical token similarity, identifier mapping evidence, rule-based problem profiles, and bounded dynamic thresholds.
-- Problem profiles expose `DifficultyScore`, `SolutionSpaceScore`, `TemplateRiskScore`, and `NaturalSimilarityRisk`; production risk output follows `FORMULA_SPEC.md` and includes `riskMargin` plus calibrated display score.
-- Vue 3 frontend with question creation, upload, task execution, risk result/evidence detail, report download, and a lightweight page backed by real experiment artifacts.
-- Shared local folders for uploads, artifacts, experiments, and reports.
-- A Research V4 synthetic seed manifest over 91 pairs: 80 same-language cases and 11 Java/Python experimental cases. Validation/test problem, source, and exact-code overlap are all rejected by the validator.
-- Experimental Java/Python normalized IR plus lightweight control/data-flow summaries under `PICAS_CROSSLANG`; all three metrics have weight 0 and are excluded from `PICAS_STANDARD`.
-- A manifest-aligned JPlag 6.2.0 seed run over 72 eligible same-language pairs, validation-only threshold calibration, unified CSV/JSON/Markdown paper tables, and explicit real-data coverage gaps.
-
-Mock analysis is explicitly marked as mock data and must not be used as experiment evidence. The experiments are reproducibility smoke tests, not formal benchmarks. Complete CFG/DFG/PDG, advanced AST subtree matching, semantic equivalence, and AI rewrite enhancement are not claimed by this version.
-
-## Repository Layout
-
-```text
-backend-springboot/        Spring Boot business service
-analysis-service-python/   FastAPI analysis service
-frontend-vue/              Vue 3 frontend
-data/                      uploads, cleaned code, artifacts
-database/                  database migrations and seed data
-deploy/                    Docker Compose files
-experiment/                datasets, configs, runs, reports, plots
-tests/golden_cases/        early algorithm regression cases
-demo_dataset/              demo data for presentation
-```
-
-## Local Run
-
-Use Java 21 for the backend. Set `JAVA_HOME` to your installed JDK 21 directory when it is not already configured:
+需要 Python 3.11+、JDK 21、Maven 3.9+、Node.js 22 与 npm。以下命令均从**仓库根目录**执行，不是在 `coderisk/` 子目录中执行。
 
 ```powershell
-$env:JAVA_HOME = "C:\path\to\jdk-21"
+python -m venv coderisk/analysis-service-python/.venv
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe -m pip install -e './coderisk/analysis-service-python[dev]'
+npm --prefix coderisk/frontend-vue ci
+```
+
+如需指定 JDK，可在后端终端设置：
+
+```powershell
+$env:JAVA_HOME = 'C:\path\to\jdk-21'
 $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 ```
 
-For a local demo, the backend uses a persistent H2 database in MySQL compatibility mode. To run against MySQL 8, initialize the database and select the MySQL profile:
+把示例路径替换成已安装的 JDK 21 目录，确保 `mvn` 能在 PATH 中找到。分析脚本优先使用 `CODERISK_PYTHON`，其次为已有 `.venv-coderisk`、`.venv`，最后为系统 `python`。
+
+## 启动服务
+
+分别打开三个 PowerShell 终端，每个终端均进入仓库根目录：
 
 ```powershell
-Get-Content database\init_mysql.sql -Raw | `
-  & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p
-$env:SPRING_PROFILES_ACTIVE = "mysql"
-.\scripts\start-backend-dev.ps1
-```
-
-Run the backend:
-
-```powershell
-.\scripts\start-backend-dev.ps1
-```
-
-Run the analysis service:
-
-```powershell
-.\scripts\start-analysis-dev.ps1
-```
-
-Run the frontend:
-
-```powershell
-.\scripts\start-frontend-dev.ps1
-```
-
-Frontend URL: `http://127.0.0.1:5173`
-
-Service URLs:
-
-```text
-Frontend: http://127.0.0.1:5173
-Backend:  http://127.0.0.1:8080
-Analysis: http://127.0.0.1:8001
-```
-
-The current development build does not require a login account.
-
-## Demo Flow
-
-1. Create a question from `/questions/create`.
-2. Upload at least two Java or Python files.
-3. Create and start a `PICAS_STANDARD` task.
-4. Inspect the sorted result list, problem profile, dynamic threshold, evidence, code comparison, and identifier mappings.
-5. Export the HTML risk report.
-6. Open `/experiments` to inspect the latest real E1-E5 artifact summary.
-
-Screenshot checklist: question form, upload list, finished task, result list, problem profile and threshold explanation, evidence/code comparison, report download confirmation, and experiment page. Capture desktop and 390px views without presenting mock data as experiment evidence.
-
-## Minimal V3 Experiment
-
-The committed dataset is synthetic and contains no real student submissions:
-
-```powershell
-python experiment\run_minimal_v3.py `
-  --config configs\experiments\minimal_v3.json `
-  --run-id PICAS-V4-READY-20260620-R2
-```
-
-Results are written to `data/artifacts/experiments/<run-id>/`. The latest run can also be inspected through `GET /api/experiments/latest` or the `/experiments` page.
-
-The V3 runner evaluates only the `test` split. The `validation` split selects the fixed-threshold baseline; it does not modify the production dynamic-threshold formula. The JPlag 6.2.0 smoke artifact is stored separately under `data/artifacts/baselines/jplag/` and is not mixed into E1-E5.
-
-## Research V4
-
-If the Windows `python` alias is blocked, use the analysis-service virtualenv interpreter:
-
-```powershell
-$PY = ".\analysis-service-python\.venv\Scripts\python.exe"
+# 终端 1
+./coderisk/scripts/start-analysis-dev.ps1
 ```
 
 ```powershell
-python experiment\run_v4_phase1_crosslang.py --run-id PICAS-V4-PHASE1-XL-20260621-R1
-python experiment\run_v4_phase2_crosslang.py --run-id PICAS-V4-PHASE2-XL-20260623-R2
-python experiment\validate_research_v4_dataset.py --output-dir data\artifacts\experiments\SEED-VALIDATION
-python experiment\run_research_v4.py --config configs\experiments\research_v4.json --run-id PICAS-RESEARCH-V4-SEED-20260624-R2
+# 终端 2
+./coderisk/scripts/start-backend-dev.ps1
 ```
-
-Phase 2 compares raw token, language-specific AST, canonical token, normalized IR, lightweight control summary, and lightweight data-flow summary. Its fixed composite is experiment-only and does not alter production scoring. See `coderisk_docs/IR_SPEC.md` and the generated failure-case files.
-
-The Research V4 manifest is under `experiment/datasets/research-v4/`. The aggregate contains 91 synthetic seed pairs; 4 AI rewrite records are explicit `placeholder` rows and are excluded from core metrics. The seed reaches the workflow-size target but remains a reproducible pre-experiment scaffold, not a formal benchmark. The validator reports remaining real-data requirements: 20 manual, 8 verified AI-assisted, and 8 external pairs. AI-assisted cases are eligible only when model/prompt provenance, manual review, and functional checks are recorded.
-
-The 7 legacy cross-language cases received split metadata during Phase 3 after Phase 2 inspection. No threshold or weight was tuned from that split, but its metrics are exploratory rather than confirmatory test estimates. Newly supplied manual cases must declare `split_preregistered=true` before analysis.
-
-To add a traceable case, place both code files below `experiment/datasets/research-v4/samples/`, preview its metadata with `experiment/add_research_v4_case.py`, fill every reported confirmation field, then append it to `pairs/manual_pairs.json`. Re-run the validator before JPlag preparation or the unified runner. See the dataset `DATA_CARD.md` for the exact contract.
-
-Research V4 workflow guides:
-
-- `experiment/datasets/research-v4/DATA_COLLECTION_GUIDE.md`: what data to collect, where to place it, how to avoid leakage, and what to prioritize next.
-- `experiment/RUN_RESEARCH_V4.md`: copyable PowerShell commands from data validation to calibration, JPlag alignment, full runner output, and report updates.
-- `experiment/RESULT_INTERPRETATION_GUIDE.md`: how to read FPR/Recall/F1, raw vs canonical, ablations, JPlag comparison, common-structure false positives, and unsupported-syntax false negatives.
-- `experiment/PAPER_MATERIALS_GUIDE.md`: which CSV/Markdown artifacts can support paper tables, limitations, threats to validity, and future-work writing.
-- `experiment/RESEARCH_V4_CHECKLIST.md`: pre-data, post-data, pre-run, post-run, paper, defense, and software-copyright checks.
-
-## Database Profiles
-
-- `local`: persistent H2 file database in MySQL compatibility mode. Override with `CODERISK_LOCAL_DB_URL`.
-- `mysql`: MySQL 8 using `CODERISK_DB_URL`, `CODERISK_DB_USERNAME`, and `CODERISK_DB_PASSWORD`.
-
-On the current verified machine, MySQL 8.0 is running but the available `root` and example `coderisk` credentials are rejected. The H2 fallback, Flyway V1/V2 migrations, service restart persistence, and report downloads are verified. MySQL live E2E remains an explicit credential-dependent verification item.
-
-Common checks are documented in `database/README.md`.
-
-## Verification
-
-From workspace root:
 
 ```powershell
-.\scripts\run-all-tests.ps1
+# 终端 3
+./coderisk/scripts/start-frontend-dev.ps1
 ```
 
-Or run each layer separately:
+| 服务 | 默认地址 | 用途 |
+| --- | --- | --- |
+| Vue 前端 | <http://127.0.0.1:5173> | 题目、提交、任务、证据及实验看板 |
+| Spring Boot | <http://127.0.0.1:8080> | 业务 API、结果持久化及报告 |
+| FastAPI | <http://127.0.0.1:8001> | 内部分析服务 |
+
+当前开发版无需登录。脚本采用共享上传与产物目录；[`.env.example`](.env.example) 是配置参考，不会自动加载。
+
+### 配置覆盖
+
+环境变量需在对应服务的终端设置。前后端地址和共享目录必须一致：
+
+| 变量 | 用途 |
+| --- | --- |
+| `CODERISK_PYTHON` | 分析与测试脚本使用的 Python 可执行文件 |
+| `CODERISK_UPLOAD_DIR` | 后端与分析服务共享的源码目录 |
+| `CODERISK_ARTIFACT_DIR` | 产物目录 |
+| `CODERISK_BACKEND_PORT` | 后端端口 |
+| `CODERISK_ANALYSIS_BASE_URL` | 后端连接分析服务的地址 |
+| `VITE_API_BASE_URL` | Vite 开发代理转发到的后端地址，重启开发服务后生效 |
+| `SPRING_PROFILES_ACTIVE` | `local` 或 `mysql` |
+| `CODERISK_LOCAL_DB_URL` | 本地 H2 数据库 URL |
+
+默认 `local` 使用持久化 H2、MySQL 兼容模式，Flyway 自动应用 V1–V4 迁移。MySQL 8 使用 `CODERISK_DB_URL`、`CODERISK_DB_USERNAME`、`CODERISK_DB_PASSWORD`，初始化与配置见 [数据库说明](database/README.md)。H2 验证不能代替 MySQL 实库验证。
+
+## 演示流程
+
+1. 打开前端，在“题目”中创建题目，填写描述与输入输出约束。
+2. 如有教师公开框架，登记模板语言、源码与来源；学生空位标记见 [模板规则](../coderisk_docs/proposal/VERSION_AND_NATURAL_SIMILARITY.md)。
+3. 上传至少两份同语言源码，可选声明版本。初次演示推荐 Java 或 Python。
+4. 创建并启动 `PICAS_STANDARD` 任务，查看完成状态与结果列表。
+5. 打开代码对详情，核对分数、阈值、证据位置和解析限制。短代码或模板主导场景会另附复核提示。
+6. 导出 HTML 报告。合成演示样本不能作为真实检测效果证据。
+
+C/HTML 属于实验检测；HTML 不套用算法题画像。跨语言模式是单独实验功能，不属于生产标准评分。
+
+## 测试与实验
 
 ```powershell
-python -m pip install --upgrade pip
-python -m pip install -r requirements-dev.txt
-python -m pytest
+# 工程检查
+./coderisk/scripts/run-all-tests.ps1
+
+# 合成版本/模板回归：输出目录必须不存在
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe coderisk/experiment/run_context_checks.py --output .tmp/context-demo
 ```
 
-Backend and frontend checks:
+评测与绘图需额外安装实验依赖：
 
 ```powershell
-cd backend-springboot
-mvn test
-
-cd ..\analysis-service-python
-.\.venv\Scripts\python -m pytest
-
-cd ..\frontend-vue
-npm run build
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe -m pip install -r coderisk/experiment/requirements.txt
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe coderisk/experiment/run_fair_evaluation.py --output .tmp/fair-demo --allow-development --skip-jplag
 ```
 
-## Development Rules
+以上评测使用合成开发数据并跳过 JPlag，用于检查工具链。正式数据、验证集选参、基线共同集合与排除规则见 [公平评测协议](../coderisk_docs/proposal/FAIR_EVALUATION.md)。旧 ConPlag 结果须按其冻结版本重现，不能跳过源码指纹检查。
 
-- Use `ApiResponse<T>` for backend external APIs.
-- Use `AnalysisEnvelope<T>` for internal analysis service APIs.
-- Keep Java and Python as `STABLE`; C remains `EXPERIMENTAL`.
-- Do not execute uploaded code.
-- Do not write mock data as real experiment results.
-- Do not show "plagiarism confirmed" style conclusions in UI, API, reports, or docs.
+实验看板读取本地产物；公平评测的自定义 `.tmp` 输出不会自动成为看板的最新运行。生成看板所需的历史 V3/V4 产物，请按 [研究运行指南](experiment/RUN_RESEARCH_V4.md) 操作，留意该指南使用的工作目录。
+
+## 常见问题
+
+| 现象 | 检查方式 |
+| --- | --- |
+| 分析服务未找到 Python 依赖 | 确认安装在脚本实际选用的虚拟环境中，可用 `CODERISK_PYTHON` 指定解释器 |
+| 后端 Java 版本不符 | 在后端终端设置 `JAVA_HOME`，确认 JDK 21 与 Maven 可用 |
+| 前端连接失败 | 检查后端是否启动、端口及 `VITE_API_BASE_URL`，更改后重启前端 |
+| 分析服务找不到提交源码 | 检查两个服务是否使用同一个 `CODERISK_UPLOAD_DIR` |
+| 端口被占用 | 先确认已有服务归属，再选择其它端口并同步相关服务地址 |
+| 实验页面没有结果 | 克隆不包含本地运行产物，先按实验指南生成对应数据 |
+| MySQL 连接被拒绝 | 核对账户、数据库与连接配置；初次演示可用默认 H2 |
+
+更多边界和历史限制见 [KNOWN_ISSUES](KNOWN_ISSUES.md)。开发前阅读 [项目约定](../coderisk_docs/AGENTS.md)，评分实现遵循 [生产公式](../coderisk_docs/FORMULA_SPEC.md)。

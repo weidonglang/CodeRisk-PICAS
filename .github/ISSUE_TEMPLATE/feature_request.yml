@@ -1,0 +1,21 @@
+name: 功能建议
+description: 提出有具体场景与验收方式的改进
+title: "[Feature] "
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景与现有问题
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 期望的行为
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: 验证方法与边界
+      description: 如何确认改进有效？涉及新语言、数据或检测指标时，请说明支持范围及依据。

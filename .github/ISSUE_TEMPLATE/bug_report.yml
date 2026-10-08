@@ -1,0 +1,30 @@
+name: 缺陷反馈
+description: 报告运行、解析、证据或展示问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: 请使用最小可复现样例，去掉密钥与真实学生身份；相似分数本身不能证明关系标签。
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤与样例
+      description: 写明页面或接口、题目背景、代码语言和声明版本，以及样例来源。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为与实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 系统、Python、JDK、Node、数据库配置及提交版本。
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 日志或截图
+      description: 保留错误及任务定位信息，去掉身份、密钥和无关源码。
