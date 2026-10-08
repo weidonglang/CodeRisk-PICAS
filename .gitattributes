@@ -15,3 +15,4 @@ coderisk/experiment/evidence/**/*.svg -whitespace
 # External-tool logs preserve progress output verbatim.
 coderisk/experiment/evidence/**/native/**/*.txt -whitespace
 coderisk/configs/experiments/*.json text eol=lf
+coderisk/experiment/public_dataset_sources.json text eol=lf

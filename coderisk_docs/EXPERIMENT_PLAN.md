@@ -1609,3 +1609,9 @@ validation/test 必须 problem/source/hash-disjoint。
 JPlag 对齐优先使用同语言、可解析、eligible 样例。
 每次正式 run 后更新 TEST_REPORT、PAPER_OUTLINE、EXPERIMENT_PLAN 和 DATA_CARD。
 ```
+
+## 34. 已获取的公开真实数据（2026年10月8日）
+
+AD2022：1,526份解答、42条题目语言记录、533条测试记录，没有发布代码对标签。ConPlag v3：911对Java代码，保留251/660的公开正负标签及raw/template-free配对版本。完整来源、许可与本轮文件核验见[数据接收报告](proposal/PUBLIC_DATA_INTAKE.md)。
+
+二者保存为独立intake；没有填造双人标注或题目画像，不替代91对seed。ConPlag原训练/测试共享全部21个题目、199个提交ID、192个代码哈希；另生成21个来源关联组的分集草案（284对validation、627对test，未预注册）。后续冻结外部公开标签协议或完成课程双人标注后再进入对应正式评测，当前没有新数据上的模型结果。

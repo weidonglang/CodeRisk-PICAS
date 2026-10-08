@@ -33,6 +33,7 @@ output/
 *.lock.db
 coderisk/data/db/
 coderisk/data/tools/
+coderisk/data/public-datasets/
 *.jar
 
 # OS files

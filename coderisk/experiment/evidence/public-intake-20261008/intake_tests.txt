@@ -1,0 +1,13 @@
+test_ad_repeated_rows_preserved_without_inferred_independent_labels (test_public_dataset_intake.PublicIntakeTests.test_ad_repeated_rows_preserved_without_inferred_independent_labels) ... ok
+test_bad_checksum_rejected_before_intake (test_public_dataset_intake.PublicIntakeTests.test_bad_checksum_rejected_before_intake) ... ok
+test_csv_large_fields_and_embedded_line_endings_retained (test_public_dataset_intake.PublicIntakeTests.test_csv_large_fields_and_embedded_line_endings_retained) ... ok
+test_headerless_split_keeps_first_pair_and_rejects_duplicates (test_public_dataset_intake.PublicIntakeTests.test_headerless_split_keeps_first_pair_and_rejects_duplicates) ... ok
+test_intake_inventory_rejects_changed_code_and_outside_paths (test_public_dataset_intake.PublicIntakeTests.test_intake_inventory_rejects_changed_code_and_outside_paths) ... ok
+test_unexpected_split_pair_rejected (test_public_dataset_intake.PublicIntakeTests.test_unexpected_split_pair_rejected) ... ok
+test_untrusted_submission_path_rejected (test_public_dataset_intake.PublicIntakeTests.test_untrusted_submission_path_rejected) ... ok
+test_variant_bytes_are_preserved_and_published_labels_are_not_promoted (test_public_dataset_intake.PublicIntakeTests.test_variant_bytes_are_preserved_and_published_labels_are_not_promoted) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.105s
+
+OK

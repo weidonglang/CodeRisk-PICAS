@@ -1,0 +1,54 @@
+{
+  "schema_version": "coderisk-public-sources-1",
+  "sources": [
+    {
+      "id": "ad2022",
+      "title": "AD 2022: Student Solutions to Algorithm and Data Structure Programming Assignments",
+      "publisher": "University of Hamburg",
+      "authors": [
+        "Fynn Petersen-Frey",
+        "Marcus Soll",
+        "Louis Kobras",
+        "Melf Johannsen",
+        "Peter Kling",
+        "Chris Biemann"
+      ],
+      "landing_url": "https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/ad-lrec",
+      "paper_url": "https://aclanthology.org/2022.lrec-1.101/",
+      "download_url": "https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/ad-lrec/ad2022dataset.zip",
+      "archive_name": "ad2022.zip",
+      "size_bytes": 2527966,
+      "sha256": "5b212503641e524a5c37e9e770548e194db983d0edf157d23b511f7b1457d412",
+      "md5": "54701a443206fcd25e07c0ad552ccdd5",
+      "checksum_basis": "SHA256 and MD5 calculated from the official download; no publisher checksum asserted",
+      "license": "CC-BY-NC-4.0",
+      "license_evidence": "AD2022dataset/Licence.txt and official landing page",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "label_basis": "No published pair relationship labels; correctness is reported by the publisher, not rerun locally"
+    },
+    {
+      "id": "conplag-v3",
+      "title": "ConPlag: a Dataset of Programming Contest Plagiarism in Java",
+      "publisher": "Zenodo / Sirius.Courses",
+      "authors": [
+        "Evgeniy Slobodkin",
+        "Alexander Sadovnikov"
+      ],
+      "doi": "10.5281/zenodo.7332790",
+      "landing_url": "https://zenodo.org/records/7332790",
+      "paper_url": "https://arxiv.org/abs/2303.10763",
+      "metadata_url": "https://zenodo.org/api/records/7332790",
+      "metadata_name": "conplag-record-7332790.json",
+      "download_url": "https://zenodo.org/api/records/7332790/files/conplag.zip/content",
+      "archive_name": "conplag-v3-conplag.zip",
+      "size_bytes": 11910160,
+      "sha256": "df4ea274e82a0d1c8587286612447be2c5ece514f74a5c4d0678236a160495da",
+      "md5": "76451f93984acb0369acc9d8951f82db",
+      "checksum_basis": "MD5 published by Zenodo; SHA256 calculated locally and pinned",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Zenodo record 7332790 API metadata.license.id=cc-by-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "label_basis": "Published verdict 1/0, annotated by the first author; not a local independent double review"
+    }
+  ]
+}

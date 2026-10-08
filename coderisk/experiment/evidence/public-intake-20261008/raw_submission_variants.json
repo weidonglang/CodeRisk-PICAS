@@ -1,0 +1,72 @@
+[
+  {
+    "submission_id": "4548305b",
+    "byte_hashes": [
+      "08b9f6e926231e7f27535a2d01859ad72bc71c2bb99d11b77c23acbe85d78de8",
+      "6b2cbf197d80b87cfd6764879be7acd8131f71a1b78a1ba7c13ebeafa31e37d0"
+    ]
+  },
+  {
+    "submission_id": "45f5632f",
+    "byte_hashes": [
+      "729064fb902236534c49460d7750e9e8a15e37a6616edac163449162a3f71866",
+      "afefbc5ae4543476aeba80a592a3dee0b5d375e07c0baf42cebc109ef7c262f6"
+    ]
+  },
+  {
+    "submission_id": "584b0e9e",
+    "byte_hashes": [
+      "4bf41ccc41bf2678ced00383c72e447042ae37c8aa85563acbd740224e859d7d",
+      "df1f101724def5ba9b57ec315a1767a3f867b497a637fa333c7ba9760fbd3eb0"
+    ]
+  },
+  {
+    "submission_id": "732c98a0",
+    "byte_hashes": [
+      "0117162249c9d71521eb1566106c6b84e0dcc18882967775f481dba7c83c4275",
+      "5659f20742b2f4539aaabe62f010e5f9a817545bb7a78664530df901ef6aaa75"
+    ]
+  },
+  {
+    "submission_id": "734a94be",
+    "byte_hashes": [
+      "219412071bfd68847facb5f477109a5f58680bef347cd838f75625c0d1123792",
+      "a91137e69acf8f4604537f611f67751af59d396c829571f29292b88ddc95be40"
+    ]
+  },
+  {
+    "submission_id": "a195911e",
+    "byte_hashes": [
+      "3171883b8d1bac510a5f12fb29a5f707fad5558c2d395c3ea16cced815420721",
+      "b088785acd2abe09edc87dd15895b62811b33d98b09a2608363d1e1fdacefa31"
+    ]
+  },
+  {
+    "submission_id": "d783d815",
+    "byte_hashes": [
+      "9c6f6853f561f0ed59f4e109658d939d8bb5e1ec61e02e6b152d2e43cb9eb383",
+      "fcfd47fa9b8bb15b722b2fb94c29da3d83a108f5245f85f407b962ace71fdda2"
+    ]
+  },
+  {
+    "submission_id": "d82fa7e3",
+    "byte_hashes": [
+      "433e9d46a5f89b2ba510a5a99dd132aa5233501c86e0f403f0a6e9af4702acfd",
+      "782e1e245ba4914ad554b7539cb74f72c202b2c54ba30d43c6d6e23f3cda49c5"
+    ]
+  },
+  {
+    "submission_id": "f665e87b",
+    "byte_hashes": [
+      "932fba185362154d27c0156363f7852aab4da9deb95a79078b43163fb7a56c35",
+      "f01b7cfb37168ad57a8d1afd6b57fc7eae3118d13624965fb5a5c4b76530bad5"
+    ]
+  },
+  {
+    "submission_id": "f9e08a46",
+    "byte_hashes": [
+      "3226c6b32f0c9264f2a1b4299a6d12cc489641ad8e8d4e3d77f2b098ebf17bea",
+      "4dc5f4b3ae059af9cb31b428cb07f55d4a92bca6b2ebe8c86ffc75dc337c71cb"
+    ]
+  }
+]

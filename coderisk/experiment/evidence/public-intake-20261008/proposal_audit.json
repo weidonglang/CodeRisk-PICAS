@@ -1,0 +1,20 @@
+{
+  "proposal_status": "REVIEW_REQUIRED_NOT_PREREGISTERED",
+  "cross_split_overlap_counts": {
+    "problem": 0,
+    "source_family": 0,
+    "raw_text_hash": 0,
+    "template_free_text_hash": 0
+  },
+  "published_label_counts_by_proposed_split": {
+    "test": {
+      "0": 463,
+      "1": 164
+    },
+    "validation": {
+      "1": 87,
+      "0": 197
+    }
+  },
+  "detector_scores_computed": false
+}

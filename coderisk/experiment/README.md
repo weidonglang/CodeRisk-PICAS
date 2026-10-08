@@ -1,5 +1,17 @@
 # PICAS Reproducible Experiments
 
+## Public real-data intake (2026-10-08)
+
+`acquire_public_datasets.py` imports pinned official archives for AD2022 (1,526 real Java/Python coursework solutions) and ConPlag v3 (911 published labelled Java pairs). The importer preserves original files, published labels, licenses, byte/text hashes and upstream split membership. It creates a separate intake, not a formal Research V4 manifest. No detector scores are calculated and no annotations are invented.
+
+See [Chinese intake report](../../coderisk_docs/proposal/PUBLIC_DATA_INTAKE.md), [source registry](public_dataset_sources.json) and [audit evidence](evidence/public-intake-20261008/README.md). Downloaded content stays under ignored `data/tools/public-datasets/` and `data/public-datasets/`; the repository includes the reproducible importer and audit metadata.
+
+```powershell
+# From the repository root; use a new output directory.
+python coderisk/experiment/acquire_public_datasets.py --output coderisk/data/public-datasets/public-intake-new
+python coderisk/experiment/acquire_public_datasets.py --verify-only --output coderisk/data/public-datasets/public-intake-new
+```
+
 This directory contains the reproducible V3 readiness experiment. It uses the real analysis pipeline and a 36-case synthetic dataset; it does not contain or claim to represent real student submissions.
 
 ## Research V4 handbooks

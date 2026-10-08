@@ -1,0 +1,17 @@
+{
+  "intake_verified_files": 5193,
+  "inventory_verified_by_cli": true,
+  "offline_reconstruction_inventory_identical": true,
+  "inventory_sha256": "5941c2e578c10ee54998b713b7b12169af830413dcec12c9473e1aa0fb17dd4b",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "source_git_parent": "f920675cce4cd38608f97d1ad1fe85abd69e51cd",
+  "working_tree_sources_sha256": {
+    "coderisk/experiment/acquire_public_datasets.py": "fb35e98accc5391885ea2eb9d4fa9c8fc05b43077d857ede91ff6bc84c846e8a",
+    "coderisk/experiment/public_dataset_sources.json": "ff0d501efb4a79560f75932e9a30b0fabbc292807a1301de43b60e91771dcabb",
+    "coderisk/experiment/research_protocol.py": "53cc9d3010207b49b6ae2f838d45ae21a709b6e61ee859ff7add7c7c6c83f397",
+    "coderisk/analysis-service-python/tests/test_public_dataset_intake.py": "56b2cd30b7e767ff88edccb72be30d580d856b1c4fddb66aacdca9eae0f0798f"
+  },
+  "regression_tests_passed": 8,
+  "detector_scores_computed": false,
+  "note": "Source hashes identify the working-tree implementation before committing; summary timestamps intentionally differ across imports."
+}
