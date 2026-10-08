@@ -5,7 +5,8 @@ $root = Split-Path -Parent $PSScriptRoot
 Push-Location $root
 try {
     $venvPython = Join-Path $root 'analysis-service-python/.venv/Scripts/python.exe'
-    $pythonExe = if (Test-Path -LiteralPath $venvPython) { $venvPython } else { 'python' }
+    $recoveryPython = Join-Path $root 'analysis-service-python/.venv-coderisk/Scripts/python.exe'
+    $pythonExe = if ($env:CODERISK_PYTHON) { $env:CODERISK_PYTHON } elseif (Test-Path -LiteralPath $recoveryPython) { $recoveryPython } elseif (Test-Path -LiteralPath $venvPython) { $venvPython } else { 'python' }
     & $pythonExe -m pytest -q
     if ($LASTEXITCODE -ne 0) { throw 'Python tests failed' }
 

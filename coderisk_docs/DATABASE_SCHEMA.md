@@ -1,5 +1,7 @@
 # DATABASE_SCHEMA.md
 
+> 2026-10-08 Flyway V3：`analysis_result.problem_profile_json TEXT NULL` 保存每次结果画像，避免读取题目的最新画像改变旧结果；无快照的历史记录仍使用旧回退逻辑。`threshold_adjustment_json` 原有字段保存的完整 JSON 优先用于接口返回，保留 HTML 的策略标记；既有关系表继续用于兼容查询。HTML 不写入算法题 `problem_feature`，`.cpp` 新上传登记为 `cpp`。迁移已在 H2 MySQL 兼容模式验证，实际 MySQL 重放待完成。
+
 > 本文件定义 CodeRisk / PICAS 的数据库结构。数据库设计必须服务“题目感知型代码相似风险检测”主线，完整保存题目信息、代码提交、任务状态、题目特征、多维相似度、动态阈值、证据链、实验结果和报告元数据。
 
 ---

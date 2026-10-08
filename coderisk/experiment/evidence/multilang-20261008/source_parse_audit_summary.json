@@ -1,0 +1,63 @@
+{
+  "status": "PARSER_COVERAGE_AUDIT_ONLY",
+  "integrity": {
+    "verified_files": 382,
+    "status": "INTAKE_COMPLETE_NO_DETECTOR_SCORES"
+  },
+  "by_language": {
+    "java": {
+      "sources": 107,
+      "syntax_parsed": 106,
+      "syntax_failed": 1,
+      "cxx_syntax_hints": 0,
+      "scope-aware-java": 106,
+      "lexical-fallback": 1
+    },
+    "c": {
+      "sources": 111,
+      "syntax_parsed": 72,
+      "syntax_failed": 39,
+      "cxx_syntax_hints": 9,
+      "lexical-fallback": 72,
+      "scope-aware-c-subset": 39
+    },
+    "python": {
+      "sources": 102,
+      "syntax_parsed": 84,
+      "syntax_failed": 18,
+      "cxx_syntax_hints": 0,
+      "scope-aware-python": 84,
+      "lexical-fallback": 18
+    },
+    "html": {
+      "sources": 46,
+      "syntax_parsed": 46,
+      "syntax_failed": 0,
+      "cxx_syntax_hints": 0,
+      "html-structure-canonical": 46
+    }
+  },
+  "source_count": 366,
+  "runtime": {
+    "python": "3.12.14",
+    "tree-sitter": "0.25.2",
+    "tree-sitter-c": "0.24.2",
+    "tree-sitter-html": "0.23.2"
+  },
+  "parser_implementations": {
+    "java": "simplified structural parser",
+    "python": "Python 3 ast",
+    "c": "tree-sitter-c",
+    "html": "tree-sitter-html"
+  },
+  "scope": "Development coverage audit. Not held-out evaluation. No correctness or plagiarism labels inferred.",
+  "detector_pair_scores_computed": false,
+  "downloaded_sources_executed": false,
+  "implementation_sha256": {
+    "experiment/audit_multilang_sources.py": "8013dc744f34a7fec3df01a2f1dff7a3bf1f38053eae9896c9248f246606dcb9",
+    "experiment/acquire_multilang_dataset.py": "7f03a1453016d7c832a7571bffe285107324bdd3c0049b03fbb3bc2739d81a27",
+    "analysis-service-python/app/analyzers/structured_languages.py": "bbaf2ce03e73a26963cc5fdfbe2fc143c3b9be73aaba14d661ac4a4deb79e153",
+    "analysis-service-python/app/analyzers/token_similarity.py": "72fad03872afcc9e4a3b37d1c40ee82f03dceb4b04612877c4502f89251a509b",
+    "analysis-service-python/app/analyzers/canonicalization.py": "e9667adaf63e6886b678b166020207ad1c525989b3a1234d39a781b05f3566b9"
+  }
+}

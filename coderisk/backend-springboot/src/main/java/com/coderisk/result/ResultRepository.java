@@ -57,7 +57,7 @@ public class ResultRepository {
     ) {
         Map<String, Object> profile = analysis.problemProfile() == null ? Map.of() : analysis.problemProfile();
         Map<String, Object> threshold = analysis.thresholdAdjustment() == null ? Map.of() : analysis.thresholdAdjustment();
-        if (!profile.isEmpty()) {
+        if (!profile.isEmpty() && !"HTML_STRUCTURE_FIXED_V1".equals(analysis.formulaVersion())) {
             featureRepository.save(submissionA.questionId(), profile, threshold);
         }
         OffsetDateTime now = OffsetDateTime.now();
@@ -77,10 +77,13 @@ public class ResultRepository {
         values.put("exceed_threshold", analysis.exceedThreshold() ? 1 : 0);
         values.put("margin_scale", analysis.marginScale());
         values.put("formula_version", analysis.formulaVersion());
-        values.put("algorithm_version", algorithmVersion(metrics));
+        values.put("algorithm_version", "HTML_STRUCTURE_FIXED_V1".equals(analysis.formulaVersion())
+                ? "html-structure-v1-tree0.25.2-exp"
+                : "c".equals(submissionA.language()) ? "picas-c-tree0.25.2-exp1" : algorithmVersion(metrics));
         values.put("metric_config_hash", sha256(json.write(metrics)));
         values.put("threshold_explanation", text(threshold, "explanation"));
         values.put("threshold_adjustment_json", json.write(threshold));
+        values.put("problem_profile_json", json.write(profile));
         values.put("evidence_count", evidence.size());
         values.put("high_confidence_evidence_count", evidence.stream().filter(item -> item.similarityScore() >= 0.8).count());
         values.put("status", "FINISHED");
@@ -169,6 +172,12 @@ public class ResultRepository {
     }
 
     public Map<String, Object> threshold(long resultId) {
+        List<Map<String, Object>> snapshots = jdbc.query(
+                "SELECT threshold_adjustment_json FROM analysis_result WHERE id = ?",
+                (rs, row) -> json.readMap(rs.getString("threshold_adjustment_json")), resultId);
+        if (!snapshots.isEmpty() && !snapshots.getFirst().isEmpty()) {
+            return snapshots.getFirst();
+        }
         List<Map<String, Object>> matches = jdbc.query(
                 """
                 SELECT base_threshold, difficulty_adjustment, solution_space_adjustment,
@@ -235,7 +244,8 @@ public class ResultRepository {
         for (MetricData metric : metrics(resultId)) {
             metricValues.put(metric.name(), metric.value());
         }
-        Map<String, Object> storedProfile = featureRepository.latest(questionId);
+        String snapshot = rs.getString("problem_profile_json");
+        Map<String, Object> storedProfile = snapshot == null ? featureRepository.latest(questionId) : json.readMap(snapshot);
         Map<String, Object> profile = storedProfile == null ? new LinkedHashMap<>() : new LinkedHashMap<>(storedProfile);
         profile.remove("thresholdAdjustment");
         return new ResultResponse(

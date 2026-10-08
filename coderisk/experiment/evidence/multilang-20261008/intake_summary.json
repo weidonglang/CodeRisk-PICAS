@@ -1,0 +1,35 @@
+{
+  "status": "INTAKE_COMPLETE_NO_DETECTOR_SCORES",
+  "schema_version": "coderisk-multilang-intake-1",
+  "codenet": {
+    "archive_read_status": "EXPECTED_TRUNCATED_ARCHIVE_PREFIX",
+    "problem_count": 10,
+    "language_counts": {
+      "java": 107,
+      "c": 111,
+      "python": 102
+    },
+    "selected_source_files": 320,
+    "statement_files": 10,
+    "per_problem_language_limit": 12,
+    "excluded_encoding_or_empty": 0,
+    "published_pair_labels": 0,
+    "author_grouping_available": false
+  },
+  "mdn": {
+    "html_files": 46,
+    "published_pair_labels": 0,
+    "role": "OFFICIAL_TEACHING_REFERENCE"
+  },
+  "language_counts": {
+    "java": 107,
+    "c": 111,
+    "python": 102,
+    "html": 46
+  },
+  "inventory_files": 382,
+  "eligible_for_core_metrics": 0,
+  "detector_scores_computed": false,
+  "downloaded_code_executed": false,
+  "note": "CodeNet prefix is intentionally incomplete; selected members are complete. No judge-status or independence labels are inferred."
+}

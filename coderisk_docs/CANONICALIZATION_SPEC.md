@@ -1,5 +1,7 @@
 # CANONICALIZATION_SPEC.md
 
+> 2026-10-08 C 新增 `scope-aware-c-subset`，HTML 新增 `html-structure-canonical`；解析失败或绑定超出子集返回 `lexical-fallback`，不产生伪造映射。HTML 保留 class/id/URL，不把属性值作为变量名重写。二者均保留原始行列证据。详细支持语法、降级原因和实际覆盖见 [多语言进展](proposal/MULTILANGUAGE_PROGRESS.md)。
+
 > 本文件定义 CodeRisk / PICAS 的置换不变代码规范化方案。它是项目的第二核心创新文件，直接服务于算法实现、实验消融、论文方法章节和专利交底。任何标识符归一化、AST 规范化、局部重排、跨语言结构抽象都必须遵守本文件。
 
 ---

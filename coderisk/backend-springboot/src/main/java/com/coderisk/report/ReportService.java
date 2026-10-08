@@ -146,10 +146,13 @@ public class ReportService {
     }
 
     private void renderResult(StringBuilder html, ResultResponse result, ReportCreateRequest request) {
+        boolean htmlSource = "HTML_STRUCTURE_FIXED_V1".equals(result.formulaVersion());
         html.append("<section class=\"band pair\"><h2>代码对：")
                 .append(escape(result.submissionAFileName())).append(" / ")
                 .append(escape(result.submissionBFileName())).append("</h2>");
-        html.append("<table><tr><th>综合分</th><th>动态阈值</th><th>风险边际</th><th>校准分</th><th>超过阈值</th><th>风险等级</th></tr><tr>")
+        html.append("<table><tr><th>综合分</th><th>")
+                .append(htmlSource ? "固定阈值（待验证）" : "动态阈值")
+                .append("</th><th>风险边际</th><th>校准分</th><th>超过阈值</th><th>风险等级</th></tr><tr>")
                 .append(cell(percent(result.weightedSimilarityScore())))
                 .append(cell(percent(result.dynamicThreshold())))
                 .append(cell(String.format("%+.4f", result.riskMargin())))
@@ -162,12 +165,16 @@ public class ReportService {
                 .append("</td></tr></table>");
         html.append("<p>").append(escape(result.reasonSummary())).append("</p>");
 
+        if (htmlSource) {
+            html.append("<div class=experimental>HTML 源码结构检测为实验功能，固定阈值尚未通过标注数据校准；共同模板需人工复核。嵌入脚本和样式仅作为文本，不执行页面或脚本。</div>");
+        } else {
         html.append("<h3>题目画像</h3><table>");
         profileRow(html, result.problemProfile(), "difficultyScore", "DifficultyScore");
         profileRow(html, result.problemProfile(), "solutionSpaceScore", "SolutionSpaceScore");
         profileRow(html, result.problemProfile(), "templateRiskScore", "TemplateRiskScore");
         profileRow(html, result.problemProfile(), "naturalSimilarityRisk", "NaturalSimilarityRisk");
         html.append("</table>");
+        }
 
         html.append("<h3>多维指标</h3><table><tr><th>指标</th><th>值</th><th>权重</th><th>说明</th></tr>");
         for (MetricData metric : resultService.metricsForResult(result.id())) {
@@ -180,7 +187,7 @@ public class ReportService {
         html.append("</table>");
 
         if (request.includeThresholdExplanation()) {
-            html.append("<h3>动态阈值解释</h3><table>");
+            html.append(htmlSource ? "<h3>固定阈值说明</h3><table>" : "<h3>动态阈值解释</h3><table>");
             result.thresholdAdjustment().forEach((key, value) -> row(html, key, String.valueOf(value)));
             html.append("</table>");
         }

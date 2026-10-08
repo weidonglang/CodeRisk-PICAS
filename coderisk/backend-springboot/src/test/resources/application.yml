@@ -14,6 +14,8 @@ coderisk:
     root-path: target/test-uploads
     max-file-size-mb: 2
     allowed-extensions:
+      - .html
+      - .htm
       - .java
       - .py
       - .c

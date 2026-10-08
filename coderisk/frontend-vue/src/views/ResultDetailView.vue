@@ -38,6 +38,7 @@ const resultId = computed(() => Number(route.params.resultId))
 const loading = ref(false)
 const error = ref('')
 const result = ref<ResultRow | null>(null)
+const isHtmlResult = computed(() => result.value?.formulaVersion === 'HTML_STRUCTURE_FIXED_V1')
 const evidence = ref<EvidenceItem[]>([])
 const metrics = ref<SimilarityMetric[]>([])
 const diffView = ref<DiffView | null>(null)
@@ -219,7 +220,7 @@ onMounted(load)
         <strong>{{ percent(result?.tokenSimilarity) }}</strong>
       </div>
       <div class="metric-tile">
-        <span>AST</span>
+        <span>{{ isHtmlResult ? 'HTML 标签树' : 'AST' }}</span>
         <strong>{{ percent(result?.astSimilarity) }}</strong>
       </div>
       <div class="metric-tile">
@@ -227,7 +228,7 @@ onMounted(load)
         <strong>{{ percent(result?.canonicalTokenSimilarity) }}</strong>
       </div>
       <div class="metric-tile">
-        <span>动态阈值</span>
+        <span>{{ isHtmlResult ? '固定阈值（待验证）' : '动态阈值' }}</span>
         <strong>{{ percent(result?.dynamicThreshold) }}</strong>
       </div>
       <div class="metric-tile">
@@ -250,8 +251,9 @@ onMounted(load)
 
     <section class="profile-layout section-gap">
       <div class="panel">
-        <h2>题目画像</h2>
-        <div class="profile-score-grid">
+        <h2>{{ isHtmlResult ? 'HTML 检测范围' : '题目画像' }}</h2>
+        <p v-if="isHtmlResult" class="profile-meta">比较标签结构、属性、文本和资源引用；模板共性需要人工复核。HTML 暂无经过标注数据校准的题目复杂度模型。</p>
+        <div v-else class="profile-score-grid">
           <div>
             <span>难度</span>
             <strong>{{ percent(result?.problemProfile?.difficultyScore) }}</strong>
@@ -277,12 +279,12 @@ onMounted(load)
         </p>
       </div>
       <div class="panel">
-        <h2>动态阈值分解</h2>
+        <h2>{{ isHtmlResult ? '固定阈值说明' : '动态阈值分解' }}</h2>
         <div class="threshold-line">
           <span>基础阈值</span>
           <strong>{{ percent(result?.thresholdAdjustment?.baseThreshold) }}</strong>
         </div>
-        <div v-for="item in thresholdAdjustments" :key="item.label" class="threshold-line">
+        <div v-for="item in (isHtmlResult ? [] : thresholdAdjustments)" :key="item.label" class="threshold-line">
           <span>{{ item.label }}</span>
           <strong>{{ signedPercent(item.value) }}</strong>
         </div>

@@ -7,6 +7,7 @@ Migrations:
 ```text
 backend-springboot/src/main/resources/db/migration/V1__coderisk_core.sql
 backend-springboot/src/main/resources/db/migration/V2__v4_ready_consistency.sql
+backend-springboot/src/main/resources/db/migration/V3__result_profile_snapshot.sql
 ```
 
 Initialize a local MySQL development database with an administrative account:

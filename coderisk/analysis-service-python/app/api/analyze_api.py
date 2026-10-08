@@ -25,7 +25,10 @@ def analyze_pair(
     settings: Settings = Depends(get_settings),
 ) -> AnalysisEnvelope[AnalyzeMockResult]:
     _validate_submission_paths(request, settings)
-    result = analyze_token_pair(request)
+    try:
+        result = analyze_token_pair(request)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
     return AnalysisEnvelope.success_response(
         result=result,
         analysis_version=settings.analysis_version,

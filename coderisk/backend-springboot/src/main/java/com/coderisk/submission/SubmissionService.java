@@ -28,7 +28,9 @@ public class SubmissionService {
             ".java", "java",
             ".py", "python",
             ".c", "c",
-            ".cpp", "c"
+            ".cpp", "cpp",
+            ".html", "html",
+            ".htm", "html"
     );
 
     private final QuestionService questionService;
@@ -148,7 +150,7 @@ public class SubmissionService {
     }
 
     private LanguageSupportLevel supportLevel(String language) {
-        return "c".equals(language) ? LanguageSupportLevel.EXPERIMENTAL : LanguageSupportLevel.STABLE;
+        return List.of("c", "html", "cpp").contains(language) ? LanguageSupportLevel.EXPERIMENTAL : LanguageSupportLevel.STABLE;
     }
 
     private String normalizeStudentId(String studentId, String storageKey) {

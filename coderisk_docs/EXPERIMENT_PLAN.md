@@ -1,6 +1,8 @@
 # EXPERIMENT_PLAN.md
 
-> 2026-10-08 更新：本科主实验以 [公平评测协议](proposal/FAIR_EVALUATION.md) 与 [数据标注规范](proposal/DATA_PROTOCOL.md) 为当前可执行约定，入口为 `experiment/run_fair_evaluation.py`。以下历史研究命题均视为待验证问题；历史E3/E4不能替代新版受控比较。真实数据实验尚待收集与冻结。
+> 2026-10-08 更新：本科主实验以 [公平评测协议](proposal/FAIR_EVALUATION.md) 与 [数据标注规范](proposal/DATA_PROTOCOL.md) 为当前可执行约定，入口为 `experiment/run_fair_evaluation.py`。以下历史研究命题均视为待验证问题；历史E3/E4不能替代新版受控比较。真实公开数据已接收，正式标签复核与分集冻结仍待完成。
+
+> 多语言开发池见 [记录](proposal/MULTILANGUAGE_PROGRESS.md)：CodeNet Java/Python/C 及 MDN HTML 来源已固定并审计，不推断正负例。C/HTML 尚未加入正式公平共同集合和基线；HTML 必须单独定义结构任务、阈值校准和模板自然相似对照，不能套用算法题复杂度实验。新数据经开发检查后不再作为未见保留测试集。
 
 > 本文件定义 CodeRisk / PICAS 项目的实验设计。它用于指导实验数据构建、脚本开发、结果记录、论文第六章、答辩图表和期刊投稿。任何实验结论都必须能被本文件中的实验流程、指标和数据记录支撑。
 

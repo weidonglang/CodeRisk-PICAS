@@ -1,5 +1,7 @@
 # FORMULA_SPEC.md
 
+> 2026-10-08 实验性 HTML 分支使用独立公式 `HTML_STRUCTURE_FIXED_V1`：规范化可用时 `S=0.25 Token+0.30 HTML结构序列+0.45 Canonical`，阈值 `T=htmlThreshold`（默认 0.85，有限值且在 `[0,1]`），不应用本文件算法题动态调整。风险边际/等级和展示分计算沿用本文件规则；展示分不是抄袭概率。降级时 `S=Token`。C 暂沿用 PICAS 规则但未完成 C 标注数据校准。HTML/C 实际范围和验证见 [多语言进展](proposal/MULTILANGUAGE_PROGRESS.md)。
+
 > 本文件是 CodeRisk / PICAS 生产版公式真源。算法、数据库、API、前端展示、实验脚本和论文写作必须优先遵守本文件。
 
 ---

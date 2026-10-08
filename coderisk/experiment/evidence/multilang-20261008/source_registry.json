@@ -1,0 +1,319 @@
+{
+  "schema_version": "coderisk-multilang-sources-1",
+  "codenet": {
+    "source_id": "codenet-1.0.0-prefix-sample",
+    "publisher": "IBM Research / MIT-IBM Watson AI Lab",
+    "landing_url": "https://github.com/IBM/Project_CodeNet",
+    "paper_url": "https://arxiv.org/abs/2105.12655",
+    "license": "CDLA-Permissive-2.0",
+    "license_evidence_url": "https://jiechenjiechen.github.io/pub/codenet.pdf",
+    "license_evidence_section": "A.6 and B.6: dataset license differs from repository Apache-2.0",
+    "archive_url": "https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-project-codenet/1.0.0/Project_CodeNet.tar.gz",
+    "range_start": 0,
+    "range_end_inclusive": 16777215,
+    "archive_total_bytes_reported": 8343137473,
+    "etag": "\"74257cf20935cb2827f01a9652eaa1b9-1592\"",
+    "cache_name": "codenet-prefix-16m.bin",
+    "sha256": "07095b7ed9e0b542899ef6b9600f1bf5914d496ab3aabf065f4c0443d0233c50",
+    "partial_archive_snapshot": true,
+    "per_problem_language_limit": 12,
+    "selection": "first complete UTF-8 files per problem and language in the pinned archive prefix, up to limit",
+    "license_file": {
+      "cache_name": "CDLA-Permissive-2.0.html",
+      "url": "https://cdla.dev/permissive-2-0/",
+      "sha256": "45670e5a83ae651649495c0f1c294c61dfd90816a9dc48cbc9f3ba03d0fef381"
+    }
+  },
+  "mdn": {
+    "source_id": "mdn-html-learning-module",
+    "publisher": "MDN contributors / Mozilla",
+    "landing_url": "https://github.com/mdn/learning-area",
+    "license": "CC0-1.0",
+    "commit": "d55e1c2e3ff401519811b64e5b2a7d3643b43d0f",
+    "selection": "all .html files under html/ in this pinned commit; excludes non-HTML assets",
+    "role": "official teaching reference sources; not student plagiarism ground truth",
+    "files": [
+      {
+        "upstream_path": "html/forms/custom-radio-styles/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/custom-radio-styles/index.html",
+        "size_bytes": 1564,
+        "sha256": "77fb195cab1c4bde7bdb338e4704e53f74d503d072f8cb7f723415126ddecc30"
+      },
+      {
+        "upstream_path": "html/forms/image-type-xy-coords/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/image-type-xy-coords/index.html",
+        "size_bytes": 558,
+        "sha256": "c594dde08c63ee9450cc6ca9def79be56e30c77fd631596fd20312c05db8c3e9"
+      },
+      {
+        "upstream_path": "html/forms/postcard-example/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/postcard-example/index.html",
+        "size_bytes": 2603,
+        "sha256": "89c96de529c8c631c87702ad45124e1e0843683d67a761660d7691d021e6e15b"
+      },
+      {
+        "upstream_path": "html/forms/postcard-example/postcard-start.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/postcard-example/postcard-start.html",
+        "size_bytes": 226,
+        "sha256": "d1e3bd698f62953f8cb09a34ab502dc8c40ed37759dd6bd6c4ac13891b8facd4"
+      },
+      {
+        "upstream_path": "html/forms/sending-form-data/get-method.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/get-method.html",
+        "size_bytes": 916,
+        "sha256": "8a98e5138ded59fdae45a625109061359d56a36249e221ddfae71cfa4a38178e"
+      },
+      {
+        "upstream_path": "html/forms/sending-form-data/php-example.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/php-example.html",
+        "size_bytes": 909,
+        "sha256": "b076094e693d7b56dfea6c1d3560d9d17e735b7c7b449ab95abc29be66e9efeb"
+      },
+      {
+        "upstream_path": "html/forms/sending-form-data/post-method.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/post-method.html",
+        "size_bytes": 918,
+        "sha256": "d695f7e69bd983feb5eeceb1f99a3d680ae7b7d8a4da19788129cbaeec0b2043"
+      },
+      {
+        "upstream_path": "html/forms/sending-form-data/templates/form.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/templates/form.html",
+        "size_bytes": 949,
+        "sha256": "31fbbfc2a51058bbda2635b040d6404525b251738440b5c77b5428353dbaf25c"
+      },
+      {
+        "upstream_path": "html/forms/sending-form-data/templates/greeting.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/sending-form-data/templates/greeting.html",
+        "size_bytes": 184,
+        "sha256": "b68d8532b2808090cf8f9c42e808ea06907e2902a5a044eaf9e5cf4cfcb3b7e1"
+      },
+      {
+        "upstream_path": "html/forms/toggle-switch-example/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/toggle-switch-example/index.html",
+        "size_bytes": 2746,
+        "sha256": "ccc64e5f5399ba6984a0aa44012a604847a6ba8362c66bbe73e6217a26afd42f"
+      },
+      {
+        "upstream_path": "html/forms/your-first-HTML-form/first-form-styled.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/your-first-HTML-form/first-form-styled.html",
+        "size_bytes": 1966,
+        "sha256": "cd7c192dc6e230737064e053f92947a5159e82e72cd8740d2529c4f1a8abad06"
+      },
+      {
+        "upstream_path": "html/forms/your-first-HTML-form/first-form.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/forms/your-first-HTML-form/first-form.html",
+        "size_bytes": 611,
+        "sha256": "f936ae1ce09defdd1d8494b10777341d2849306d34e3bceecc2005e398a175ac"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/document_and_website_structure/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/document_and_website_structure/index.html",
+        "size_bytes": 3525,
+        "sha256": "8623d0ff8d0696128844a2315d8c23840cf839d52fab09fcd06eabb3e5e966ec"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/getting-started/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/getting-started/index.html",
+        "size_bytes": 224,
+        "sha256": "fd7f1f3a8acffe21225a31986b1af90a267ce5cb1a827ad1e69ab3e961e1ea3c"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/html-text-formatting/text-complete.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/html-text-formatting/text-complete.html",
+        "size_bytes": 1876,
+        "sha256": "d20d6f8f830587fdfeaf9330fbab333a3d2997ceed2f20c4909beafaba64cebb"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/html-text-formatting/text-start.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/html-text-formatting/text-start.html",
+        "size_bytes": 1621,
+        "sha256": "78352f627a439bf263a0e6b423d98a600524289b123cb92336a0bb736f12c75d"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-marked-up/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/index.html",
+        "size_bytes": 501,
+        "sha256": "35860e718cd4dc10b13706e6dd22a20842b042e61fb16f4bd7359bb033dc113b"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-marked-up/pictures.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/pictures.html",
+        "size_bytes": 518,
+        "sha256": "a8ca228fa25c6c5b34d06f8dcde817a48b03fc4fcd59075760ffba694ebdd1e0"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-marked-up/projects.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/projects.html",
+        "size_bytes": 548,
+        "sha256": "86339182e1020d076500f555aa6ef7dde6c6cfa124b3723682576df70960076e"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-marked-up/social.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-marked-up/social.html",
+        "size_bytes": 609,
+        "sha256": "4d3f3c9906f21cfd26d02be454c2100a965647eac332505b67c668b8833aae4e"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-start/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/index.html",
+        "size_bytes": 309,
+        "sha256": "51769ca8a86bacd7848b2f960f6904504c84de84516d34f72410b4f27db00371"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-start/pictures.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/pictures.html",
+        "size_bytes": 329,
+        "sha256": "c4ef678bed2dbbd38d2adf5d762781becf4c4d6e9f47c293d4aaee31f541ee51"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-start/projects.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/projects.html",
+        "size_bytes": 359,
+        "sha256": "ee35b3871660a54927501d0b77506a30b4c62c2daf7c04bcc2592d70222c66fe"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/navigation-menu-start/social.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/navigation-menu-start/social.html",
+        "size_bytes": 418,
+        "sha256": "33c06bb5a6e13c56bdc865a4218e1112d73eeeb4f2cbf39f5511669615d8f698"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/the-html-head/css-and-js.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/css-and-js.html",
+        "size_bytes": 892,
+        "sha256": "ba0452a7b811bea3c900e4b0682a5773d3476aef5c4df951958d2d8398fa3852"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/the-html-head/meta-example.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/meta-example.html",
+        "size_bytes": 796,
+        "sha256": "52b47f566ea8b064bdbd93277bb16306ec320b4e8ce6c70a59d2c7bc95a05d73"
+      },
+      {
+        "upstream_path": "html/introduction-to-html/the-html-head/title-example.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/introduction-to-html/the-html-head/title-example.html",
+        "size_bytes": 237,
+        "sha256": "47e43594bea6ac6ed5cac0afee1e75256a74f57450364b032e530f0481eba73c"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/other-embedding-technologies/iframe-detail.html",
+        "size_bytes": 533,
+        "sha256": "5d5c488c71bd99848987e9281ad6adbf59bd7a4c20c784d7fd57ae5b15954124"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/other-embedding-technologies/object-pdf.html",
+        "size_bytes": 441,
+        "sha256": "1fe6e399ca188bee49f8a505ae8e779882e0f11dca8ee8e60a608c35f8d3e07b"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/responsive-images/not-responsive.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/not-responsive.html",
+        "size_bytes": 1911,
+        "sha256": "6dab518d1269aad384d16bf74480839d70200e2e1da9e92ee253aaa2adea6a57"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/responsive-images/responsive.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/responsive.html",
+        "size_bytes": 2245,
+        "sha256": "4c2ea27d61587e74c0b0dcf5cf3011a0edd93695a71680dadd775b18989d87f0"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/responsive-images/srcset-resolutions.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/responsive-images/srcset-resolutions.html",
+        "size_bytes": 876,
+        "sha256": "fb87689853dc8c88aedf4b7c29ca27761b1c80f7e60547037d1f0fa547626ed4"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/extra-video-features.html",
+        "size_bytes": 683,
+        "sha256": "bb5bc5b81edf64e9b090abbde30e200a34f117124cb05974b3b7f35448316b14"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-audio-formats.html",
+        "size_bytes": 537,
+        "sha256": "87425a64856d157a034ea22166ba5f475fc61ebda7a816c9ac054b6551a60c36"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats-no-controls.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats-no-controls.html",
+        "size_bytes": 534,
+        "sha256": "a2e633eb2804e029854190c19513bd8e7ecd372ac00fc5e5f75dcd7656e33c01"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/multiple-video-formats.html",
+        "size_bytes": 543,
+        "sha256": "c8e5e9e0b238ea864398da91c9c272c69e0177853a4eb8b9aabe90ed9d496cd7"
+      },
+      {
+        "upstream_path": "html/multimedia-and-embedding/video-and-audio-content/simple-video.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/multimedia-and-embedding/video-and-audio-content/simple-video.html",
+        "size_bytes": 427,
+        "sha256": "2b73cc2873c4866a63855747c6e58ba243b881f94cd08415c3c70fcac35c919c"
+      },
+      {
+        "upstream_path": "html/tables/advanced/items-sold-headers.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold-headers.html",
+        "size_bytes": 3179,
+        "sha256": "596e16d053290d570f90078a7776bee55a1e87a011ed369b1d46f3336823f677"
+      },
+      {
+        "upstream_path": "html/tables/advanced/items-sold-scope.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold-scope.html",
+        "size_bytes": 1845,
+        "sha256": "a99ef840137cd1d905c0129cb2e177298f3ee7c59501440b6f160a91bcc22d54"
+      },
+      {
+        "upstream_path": "html/tables/advanced/items-sold.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/items-sold.html",
+        "size_bytes": 1657,
+        "sha256": "ad584189485298c446d7b0ef588605d3d90ed0f82a1974104afca2769d615466"
+      },
+      {
+        "upstream_path": "html/tables/advanced/nested-tables.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/nested-tables.html",
+        "size_bytes": 907,
+        "sha256": "8ee2d0e15ae171e9bbab716a6011739fb79eee1943c0855dc848a2b1b5119641"
+      },
+      {
+        "upstream_path": "html/tables/advanced/spending-record-finished.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/spending-record-finished.html",
+        "size_bytes": 1618,
+        "sha256": "a8150ad3b9dfdcecc8833afda5d86b5e41c028648b82007b998ffa39684f2807"
+      },
+      {
+        "upstream_path": "html/tables/advanced/spending-record.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/spending-record.html",
+        "size_bytes": 1369,
+        "sha256": "92ec192c702b351eff28deae4bf4798925385682a3dec9f3ce3a89cc1bd828ca"
+      },
+      {
+        "upstream_path": "html/tables/advanced/timetable-caption.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/advanced/timetable-caption.html",
+        "size_bytes": 2089,
+        "sha256": "4bd40caabd196b48506000f053e59836409fa97961e6c9a3939961c2e2fd7db7"
+      },
+      {
+        "upstream_path": "html/tables/basic/blank-template.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/basic/blank-template.html",
+        "size_bytes": 298,
+        "sha256": "ed12223069f63c71f0e6f4ca427fa6d4031d354dcf1937775847aec4acac941a"
+      },
+      {
+        "upstream_path": "html/tables/planets-data/index.html",
+        "download_url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/html/tables/planets-data/index.html",
+        "size_bytes": 4302,
+        "sha256": "c6026ae2b296ecd13926b139d65bbe60aa20efeb542a8d7e0993651c780ea215"
+      }
+    ],
+    "license_file": {
+      "cache_name": "mdn-learning-area-LICENSE",
+      "url": "https://raw.githubusercontent.com/mdn/learning-area/d55e1c2e3ff401519811b64e5b2a7d3643b43d0f/LICENSE",
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+    }
+  }
+}

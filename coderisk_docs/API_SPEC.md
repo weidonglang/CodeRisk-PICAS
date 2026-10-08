@@ -1,5 +1,7 @@
 # API_SPEC.md
 
+> 2026-10-08 语言扩展：上传允许 `.java/.py/.c/.cpp/.html/.htm`，HTML/HTM 均登记为 `html`，C/HTML/C++ 标记实验性；C++ 仅词法降级。`POST /api/tasks` 对包含 C/HTML 的混合语言任务返回 HTTP 400 / `TASK_LANGUAGE_DOMAIN_MISMATCH`。`POST /internal/analyze/pair` 对应混合输入或非法 `htmlThreshold` 返回 HTTP 400。HTML 结果 `formulaVersion=HTML_STRUCTURE_FIXED_V1`、`problemProfile.domain=html`、`thresholdAdjustment.policy=FIXED_UNCALIBRATED`；保留 `dynamicThreshold` 字段承载固定阈值以兼容接口，但展示必须标注“固定阈值（待验证）”。无可用算法题画像数值时不得补假值。见 [多语言说明](proposal/MULTILANGUAGE_PROGRESS.md)。
+
 > 本文件定义 CodeRisk / PICAS 的 API 规范。接口设计必须服务“题目创建、代码上传、检测任务、结果证据、实验评测、报告导出”的完整闭环。所有接口必须返回结构化结果，禁止只返回裸字符串或不可解释状态。
 
 ---

@@ -79,6 +79,14 @@ def canonicalize_code(code: str, language: str, tokens: list[SourceToken]) -> Ca
         return _canonicalize_python(code, tokens)
     if normalized == "java":
         return _canonicalize_java(code, tokens)
+    if normalized in {"c", "html", "htm"}:
+        from app.analyzers.structured_languages import analyze_source
+        language_name = 'html' if normalized == 'htm' else normalized
+        result = analyze_source(code, language_name)
+        if not result.parsed or not result.normalization_available:
+            return CanonicalAnalysis([token.value for token in tokens], [], 'lexical-fallback')
+        return CanonicalAnalysis(result.canonical_tokens, result.identifiers,
+                                 'scope-aware-c-subset' if language_name == 'c' else 'html-structure-canonical')
     return _lexical_fallback(tokens, normalized)
 
 

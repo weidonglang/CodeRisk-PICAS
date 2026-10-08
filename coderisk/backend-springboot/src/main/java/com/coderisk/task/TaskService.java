@@ -53,6 +53,11 @@ public class TaskService {
         if (submissions.size() < 2) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_REQUIRES_TWO_SUBMISSIONS", "At least two submissions are required");
         }
+        List<String> languages = submissions.stream().map(SubmissionResponse::language).distinct().toList();
+        if (languages.size() > 1 && languages.stream().anyMatch(language -> List.of("c", "html").contains(language))) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_LANGUAGE_DOMAIN_MISMATCH",
+                    "C and HTML tasks require same-language submissions; create separate tasks for different languages");
+        }
         List<Long> submissionIds = submissions.stream().map(SubmissionResponse::id).toList();
         return repository.save(
                 question.id(),

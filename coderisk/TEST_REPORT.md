@@ -1,5 +1,16 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## C/HTML and public-source coverage verification — 2026-10-08
+
+- Python: 97 tests passed, including C binding boundaries, HTML normalization, source locations, real analysis API responses, empty/comment-only inputs, invalid HTML thresholds and intake integrity fixtures.
+- Backend: 10 integration tests passed with H2 and Flyway V1/V2/V3. New cases cover upload language mapping, mixed-domain rejection, HTML task/result metadata and fixed-threshold report export. AnalysisClient is stubbed in backend integration tests.
+- Frontend: TypeScript check and Vite build succeeded. Existing bundle-size warning remains.
+- Public intake: 382 inventory files verified; offline re-import has an identical inventory. All 366 new sources audited without running code or scoring pairs.
+- Parser audit: Java 106/107, Python 84/102, C 72/111, HTML 46/46 structurally accepted. C normalization covers 39/111; upstream language labels are not individually verified, including C++ contamination in the C folder.
+- Python 3.12.14 / Tree-sitter 0.25.2 / C grammar 0.24.2 / HTML grammar 0.23.2. Java 21 tests used a preloaded Byte Buddy agent to avoid the local sandbox attach restriction.
+
+Details and immutable audit files: [multilanguage progress](../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md). These are engineering/coverage checks, not a formal detection benchmark. The older sections below retain their historical counts.
+
 ## GitHub preparation verification — 2026-10-08
 
 - Python regression: 38 passed; one third-party deprecation warning.

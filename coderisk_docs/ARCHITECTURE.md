@@ -1,5 +1,7 @@
 # ARCHITECTURE.md
 
+> 2026-10-08 新增 `app/analyzers/structured_languages.py`，由 Tree-sitter 解析 C/HTML，再提供词法位置、结构序列及保守规范化。上传后缀映射和任务同语言校验在 Spring Boot，HTML 固定阈值策略在分析服务，Vue/报告展示同一结果。Flyway V3 保存逐结果画像快照，阈值读取原始 JSON，不将 HTML 写入算法题画像表。来源固定配置、导入器和逐源码审计位于 `experiment/`；下载源码不执行。见 [实际边界](proposal/MULTILANGUAGE_PROGRESS.md)。
+
 > 本文件定义 CodeRisk / PICAS 的系统架构、模块边界、数据流、部署模式和扩展策略。架构设计必须服务“题目感知型代码相似风险检测”主线，避免把系统做成普通管理平台。
 
 ---

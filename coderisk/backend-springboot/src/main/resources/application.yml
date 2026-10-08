@@ -29,6 +29,8 @@ coderisk:
       - .py
       - .c
       - .cpp
+      - .html
+      - .htm
   artifacts:
     root-path: ${CODERISK_ARTIFACT_DIR:/data/artifacts}
   analysis:

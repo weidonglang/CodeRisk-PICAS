@@ -4,6 +4,8 @@ CodeRisk is a problem-aware code similarity risk detection system for programmin
 
 ## Current Scope
 
+C/HTML experimental detection now covers upload, same-language tasks, structural analysis, evidence and reports. HTML uses an explicitly uncalibrated fixed threshold rather than algorithm-problem profiles. New official-source intake contains 320 CodeNet files and 46 MDN HTML examples; upstream C files require language review. See [scope, intake and validation](../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md). These unlabelled files are not formal benchmark ground truth.
+
 This repository provides a demonstrable V2 delivery loop, a reproducible V3 experiment loop, and an explicitly isolated Research V4 candidate scaffold:
 
 - Spring Boot backend with unified `ApiResponse<T>`, JDBC persistence, Flyway migrations, question/submission/task/result APIs, evidence storage, and HTML report export.

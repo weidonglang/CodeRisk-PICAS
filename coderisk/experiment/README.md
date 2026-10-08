@@ -1,5 +1,9 @@
 # PICAS Reproducible Experiments
 
+## C/HTML and additional official sources (2026-10-08)
+
+`acquire_multilang_dataset.py` imports a bounded, hash-pinned CodeNet prefix and commit-pinned MDN HTML files. `audit_multilang_sources.py` checks source integrity and parser/normalization coverage only. See [commands and limitations](../../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md) and [frozen evidence](evidence/multilang-20261008/README.md). Upstream C language labels need review; no pair labels are inferred. The formal fair-evaluation runner and JPlag common cohort remain Java/Python; C/HTML protocol/baseline expansion is pending.
+
 ## Public real-data intake (2026-10-08)
 
 `acquire_public_datasets.py` imports pinned official archives for AD2022 (1,526 real Java/Python coursework solutions) and ConPlag v3 (911 published labelled Java pairs). The importer preserves original files, published labels, licenses, byte/text hashes and upstream split membership. It creates a separate intake, not a formal Research V4 manifest. No detector scores are calculated and no annotations are invented.

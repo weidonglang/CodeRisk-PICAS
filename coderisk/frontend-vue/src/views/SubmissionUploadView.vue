@@ -28,6 +28,10 @@ const crossLanguageReady = computed(() => {
   const languages = new Set(submissions.value.map((item) => item.language.toLowerCase()))
   return languages.has('java') && languages.has('python')
 })
+const mixedNewLanguages = computed(() => {
+  const languages = new Set(submissions.value.map((item) => item.language.toLowerCase()))
+  return languages.size > 1 && (languages.has('c') || languages.has('html'))
+})
 const selectableTaskModes = computed(() => taskModes.value.filter((mode) =>
   mode.code === 'PICAS_STANDARD' || mode.code === 'PICAS_CROSSLANG',
 ))
@@ -110,14 +114,16 @@ onMounted(load)
     <div class="page-header">
       <div>
         <h1>{{ question?.title ?? '代码上传' }}</h1>
-        <p>上传同一题目的 Java/Python 代码后，选择稳定标准模式或有限跨语言实验模式。</p>
+        <p>支持 Java、Python、C 和 HTML。C、HTML 请分别建立同语言题目与任务。</p>
       </div>
-      <el-button :icon="VideoPlay" :loading="starting" :disabled="submissions.length < 2 || (selectedTaskMode === 'PICAS_CROSSLANG' && !crossLanguageReady)" type="primary" @click="createAndStartTask">
+      <el-button :icon="VideoPlay" :loading="starting" :disabled="submissions.length < 2 || mixedNewLanguages || (selectedTaskMode === 'PICAS_CROSSLANG' && !crossLanguageReady)" type="primary" @click="createAndStartTask">
         创建并启动
       </el-button>
     </div>
 
     <el-alert v-if="error" class="section-gap" type="error" :title="error" :closable="false" />
+    <el-alert v-if="mixedNewLanguages" class="section-gap" type="warning" title="请将 C、HTML 与其他语言分开建立检测任务" :closable="false" />
+    <el-alert class="section-gap" type="info" title="C 与 HTML 为实验性支持" description="C 支持语法结构和有限作用域规范化；HTML 比较标签、属性和文本，使用待验证的固定阈值，脚本与样式按原文比较。相似页面模板需要人工复核。" :closable="false" />
 
     <div class="upload-grid">
       <section class="panel">
@@ -128,7 +134,7 @@ onMounted(load)
           </el-form-item>
           <el-form-item label="代码文件">
             <div class="file-row">
-              <input type="file" accept=".java,.py,.c,.cpp" @change="onFileChange" />
+              <input type="file" accept=".java,.py,.c,.cpp,.html,.htm" @change="onFileChange" />
               <span>{{ selectedFile?.name ?? '未选择文件' }}</span>
             </div>
           </el-form-item>

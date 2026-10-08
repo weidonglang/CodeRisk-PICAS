@@ -1,5 +1,7 @@
 # Known Issues
 
+2026-10-08 C/HTML extension: both are experimental and require same-language tasks. C macro/typedef/extern/complex prototype normalization falls back to lexical analysis. HTML does not render pages or understand JavaScript/CSS behavior; its fixed threshold is uncalibrated. New CodeNet/MDN intake is unlabelled, upstream C has mixed-language files, and formal C/HTML baselines remain pending. See [coverage audit](../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md). Tree-sitter is pinned to 0.25.2 after a local native crash with 0.26.0; the full audit succeeds with the pin. Flyway V3 is verified in H2 only; historical results without profile snapshots retain the legacy latest-profile fallback.
+
 1. MySQL 8.0.42 is available locally, but passwordless `root` and the documented example `coderisk/coderisk` credential are rejected with error 1045. Live MySQL E2E still requires a valid local credential; persistent H2 verification is not presented as MySQL verification.
 2. Research V4 now aggregates 91 pairs, but every row is synthetic seed data. Four AI_REWRITE rows are explicit placeholders excluded from core metrics. Reaching the numeric target does not make this a real benchmark.
 3. The validator still reports real-source deficits: 20 manual, 8 verified ai_assisted, and 8 external pairs. AI-assisted samples cannot enter core metrics without model/prompt provenance, manual review, and functional verification.

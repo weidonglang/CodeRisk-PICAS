@@ -28,7 +28,7 @@ VALID_CASE_TYPES = {
     "NATURAL_TEMPLATE",
     "INDEPENDENT_SOLUTION",
 }
-VALID_LANGUAGES = {"java", "python", "c"}
+VALID_LANGUAGES = {"java", "python", "c", "html"}
 VALID_SPLITS = {"validation", "test"}
 VALID_DATA_ORIGINS = {"SYNTHETIC", "MANUAL", "PUBLIC", "HISTORICAL_AUTHORIZED"}
 VALID_SOURCE_TYPES = {"manual", "synthetic", "ai_assisted", "external", "placeholder"}

@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 import io
 import keyword
+import math
 import re
 import tokenize
 from dataclasses import dataclass
@@ -29,6 +30,7 @@ from app.analyzers.problem_profile import (
     calibrated_risk_score,
     calculate_dynamic_threshold,
     risk_level_from_margin,
+    ThresholdResult,
 )
 from app.schemas.analyze_schema import (
     AnalyzeMockRequest,
@@ -75,6 +77,10 @@ class AstAnalysis:
 
 
 def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
+    languages = {'python' if s.language.lower() == 'py' else 'html' if s.language.lower() == 'htm' else s.language.lower()
+                 for s in (request.submission_a, request.submission_b)}
+    if len(languages) > 1 and languages & {'c', 'html'}:
+        raise ValueError('C and HTML require same-language pairs; cross-language support remains limited to Java/Python')
     code_a = _read_submission_code(request.submission_a)
     code_b = _read_submission_code(request.submission_b)
     token_items_a = tokenize_code_with_locations(code_a, request.submission_a.language)
@@ -84,16 +90,29 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
 
     fingerprints_a = _fingerprints(tokens_a)
     fingerprints_b = _fingerprints(tokens_b)
-    token_similarity = _jaccard(fingerprints_a, fingerprints_b)
-    problem_profile = build_problem_profile(request.question, request.config)
-    threshold_result = calculate_dynamic_threshold(problem_profile, request.config)
-    dynamic_threshold = threshold_result.dynamic_threshold
+    token_similarity = _jaccard(fingerprints_a, fingerprints_b) if tokens_a and tokens_b else 0.0
+    html_pair = all(s.language.lower() in {'html', 'htm'} for s in (request.submission_a, request.submission_b))
+    problem_profile = None
+    if html_pair:
+        try:
+            fixed = float(request.config.get('htmlThreshold', 0.85))
+        except (TypeError, ValueError) as error:
+            raise ValueError('htmlThreshold must be a finite value in [0, 1]') from error
+        if not math.isfinite(fixed) or not 0 <= fixed <= 1:
+            raise ValueError('htmlThreshold must be a finite value in [0, 1]')
+        threshold_result = ThresholdResult(fixed, fixed, 0, 0, 0, 0, 0,
+            'Experimental HTML fixed threshold; algorithm-problem dynamic adjustments do not apply. Not calibrated on labelled HTML data.')
+        dynamic_threshold = fixed
+    else:
+        problem_profile = build_problem_profile(request.question, request.config)
+        threshold_result = calculate_dynamic_threshold(problem_profile, request.config)
+        dynamic_threshold = threshold_result.dynamic_threshold
 
     ast_a = parse_ast_nodes(code_a, request.submission_a.language)
     ast_b = parse_ast_nodes(code_b, request.submission_b.language)
-    ast_similarity = _sequence_similarity([node.value for node in ast_a.nodes], [node.value for node in ast_b.nodes]) if ast_a.parsed and ast_b.parsed else 0.0
+    ast_similarity = _sequence_similarity([node.value for node in ast_a.nodes], [node.value for node in ast_b.nodes]) if ast_a.parsed and ast_b.parsed and tokens_a and tokens_b else 0.0
 
-    ast_enabled = ast_a.parsed and ast_b.parsed
+    ast_enabled = bool(ast_a.parsed and ast_b.parsed and tokens_a and tokens_b)
     canonical_a = canonicalize_code(code_a, request.submission_a.language, token_items_a)
     canonical_b = canonicalize_code(code_b, request.submission_b.language, token_items_b)
     canonical_enabled = ast_enabled and not (
@@ -140,6 +159,8 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
         ast_enabled,
         canonical_enabled,
     )
+    if html_pair and canonical_enabled:
+        weighted_similarity = 0.25 * token_similarity + 0.30 * ast_similarity + 0.45 * canonical_similarity
     risk_margin = round(weighted_similarity - dynamic_threshold, 6)
     risk_level = risk_level_from_margin(risk_margin)
     calibrated_score = calibrated_risk_score(risk_margin, MARGIN_SCALE)
@@ -163,17 +184,20 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             },
         )
     ]
-    if ast_a.parsed and ast_b.parsed:
+    if ast_enabled:
         evidence.append(
             EvidenceResult(
                 evidenceType="AST_STRUCTURE_MATCH",
                 similarityScore=round(ast_similarity, 6),
-                description="Basic AST node-type sequence similarity. V1 does not perform subtree, CFG, DFG, or IR matching.",
+                description=("HTML source tag/attribute tree sequence similarity; not a rendered browser DOM." if html_pair else
+                             "Basic AST node-type sequence similarity. Does not perform subtree, CFG, DFG, or IR matching."),
                 metadata={
                     "nodeCountA": len(ast_a.nodes),
                     "nodeCountB": len(ast_b.nodes),
                     "fragments": _overlap_ast_fragments(ast_a.nodes, ast_b.nodes),
-                    "parser": "python-ast" if request.submission_a.language.lower() in {"python", "py"} else "minimal-java-structure",
+                    "parser": _parser_name(request.submission_a.language),
+                    "parserA": _parser_name(request.submission_a.language),
+                    "parserB": _parser_name(request.submission_b.language),
                 },
             )
         )
@@ -197,7 +221,8 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             evidenceType="PARSER_WARNING",
             similarityScore=0.0,
             description="Scope normalization is unavailable; weighted analysis fell back to raw tokens.",
-            metadata={"normalizationModeA": canonical_a.mode, "normalizationModeB": canonical_b.mode},
+            metadata={"normalizationModeA": canonical_a.mode, "normalizationModeB": canonical_b.mode,
+                      "normalizationReasonA": ast_a.error, "normalizationReasonB": ast_b.error},
         ))
     if canonical_enabled and canonical_similarity > 0:
         evidence.append(
@@ -231,6 +256,18 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
                 },
             )
         )
+
+    if html_pair:
+        evidence.append(EvidenceResult(
+            evidenceType='REVIEW_NOTE', similarityScore=0.0,
+            description='Experimental HTML source-tree similarity; common page templates need manual review. Embedded JavaScript/CSS are opaque text. No page is rendered or executed.',
+            metadata={'language': 'html', 'thresholdPolicy': 'FIXED_UNCALIBRATED',
+                      'identifierMappingApplicable': False, 'embeddedCodeAnalysis': 'opaque-text'}))
+    elif 'c' in languages:
+        evidence.append(EvidenceResult(
+            evidenceType='REVIEW_NOTE', similarityScore=0.0,
+            description='C uses a Tree-sitter syntax tree and conservative local bindings. No compilation, macro expansion, type checking or execution is performed.',
+            metadata={'language': 'c', 'normalizationModeA': canonical_a.mode, 'normalizationModeB': canonical_b.mode}))
 
     if ir_comparison is not None:
         ir_metadata = {
@@ -344,10 +381,13 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
         calibratedRiskScore=calibrated_score,
         exceedThreshold=weighted_similarity >= dynamic_threshold,
         marginScale=MARGIN_SCALE,
-        formulaVersion=FORMULA_VERSION,
+        formulaVersion='HTML_STRUCTURE_FIXED_V1' if html_pair else FORMULA_VERSION,
         riskLevel=risk_level,
-        problemProfile=problem_profile.as_dict(),
-        thresholdAdjustment=threshold_result.as_dict(),
+        problemProfile=({'featureVersion': 'html-markup-profile-v1', 'domain': 'html', 'confidence': 0.0,
+                         'explanation': {'note': 'No calibrated HTML task complexity model is available.'}}
+                        if html_pair else problem_profile.as_dict()),
+        thresholdAdjustment={**threshold_result.as_dict(),
+                             **({'formulaVersion': 'HTML_STRUCTURE_FIXED_V1', 'policy': 'FIXED_UNCALIBRATED'} if html_pair else {})},
         reasonSummary=_reason_summary(
             risk_level,
             weighted_similarity >= dynamic_threshold,
@@ -358,21 +398,22 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             MetricResult(
                 name="TOKEN_SIMILARITY",
                 value=round(token_similarity, 6),
-                weight=0.20 if canonical_enabled else 1.0,
+                weight=(0.25 if html_pair else 0.20) if canonical_enabled else 1.0,
                 explanation="Raw token n-gram Jaccard similarity.",
             ),
             MetricResult(
                 name="AST_SIMILARITY",
                 value=round(ast_similarity, 6),
-                weight=0.20 if canonical_enabled else 0.0,
-                explanation="Basic AST node-type sequence similarity. Falls back to 0 when parsing fails.",
+                weight=(0.30 if html_pair else 0.20) if canonical_enabled else 0.0,
+                explanation="Source-tree structure similarity (DOM tags for HTML). Falls back to 0 when parsing fails.",
             ),
             MetricResult(
                 name="CANONICAL_TOKEN_SIMILARITY",
                 value=round(canonical_similarity, 6),
                 weight=0.45 if canonical_enabled else 0.0,
                 explanation=(
-                    "Token similarity after scope-aware identifier normalization."
+                    ("HTML tag/attribute canonicalization with text, class/id and resource values preserved."
+                     if html_pair else "Token similarity after scope-aware identifier normalization.")
                     if canonical_enabled
                     else "Unavailable because parsing or scope normalization failed; no canonical evidence was generated."
                 ),
@@ -380,7 +421,7 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             MetricResult(
                 name="IDENTIFIER_MAPPING_SIMILARITY",
                 value=round(identifier_mapping_similarity, 6),
-                weight=0.15 if canonical_enabled else 0.0,
+                weight=0.15 if canonical_enabled and not html_pair else 0.0,
                 explanation=(
                     "Coverage and consistency of aligned canonical identifiers."
                     if canonical_enabled
@@ -404,6 +445,10 @@ def tokenize_code_with_locations(code: str, language: str) -> list[TokenItem]:
         return _tokenize_python(code)
     if normalized_language == "java":
         return _tokenize_java(code)
+    if normalized_language in {'c', 'html', 'htm'}:
+        from app.analyzers.structured_languages import analyze_source
+        source = analyze_source(code, 'html' if normalized_language == 'htm' else normalized_language)
+        return [TokenItem(token.value, token.line, token.column, token.end_line) for token in source.tokens]
     return _tokenize_generic(code)
 
 
@@ -413,7 +458,16 @@ def parse_ast_nodes(code: str, language: str) -> AstAnalysis:
         return _parse_python_ast(code)
     if normalized_language == "java":
         return _parse_java_structure(code)
+    if normalized_language in {'c', 'html', 'htm'}:
+        from app.analyzers.structured_languages import analyze_source
+        source = analyze_source(code, 'html' if normalized_language == 'htm' else normalized_language)
+        return AstAnalysis(source.parsed, [AstNodeItem(value, line) for value, line in source.nodes], source.error)
     return AstAnalysis(False, [], f"AST parser not available for language: {language}")
+
+
+def _parser_name(language: str) -> str:
+    return {'python': 'python-ast', 'py': 'python-ast', 'java': 'minimal-java-structure',
+            'c': 'tree-sitter-c', 'html': 'tree-sitter-html', 'htm': 'tree-sitter-html'}.get(language.lower(), 'generic-token-only')
 
 
 def _read_submission_code(submission: SubmissionPayload) -> str:

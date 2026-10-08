@@ -39,7 +39,9 @@ public class SystemController {
         List<LanguageDescriptor> languages = List.of(
                 new LanguageDescriptor("java", "Java", LanguageSupportLevel.STABLE, true),
                 new LanguageDescriptor("python", "Python", LanguageSupportLevel.STABLE, true),
-                new LanguageDescriptor("c", "C", LanguageSupportLevel.EXPERIMENTAL, false)
+                new LanguageDescriptor("c", "C", LanguageSupportLevel.EXPERIMENTAL, false),
+                new LanguageDescriptor("html", "HTML", LanguageSupportLevel.EXPERIMENTAL, false),
+                new LanguageDescriptor("cpp", "C++（仅词法降级）", LanguageSupportLevel.EXPERIMENTAL, false)
         );
         return responses.ok(languages, request);
     }

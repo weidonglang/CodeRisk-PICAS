@@ -4,7 +4,8 @@ $root = Split-Path -Parent $PSScriptRoot
 if (-not $env:CODERISK_UPLOAD_DIR) { $env:CODERISK_UPLOAD_DIR = Join-Path $root 'data/uploads' }
 if (-not $env:CODERISK_ARTIFACT_DIR) { $env:CODERISK_ARTIFACT_DIR = Join-Path $root 'data/artifacts' }
 $venvPython = Join-Path $root 'analysis-service-python/.venv/Scripts/python.exe'
-$pythonExe = if (Test-Path -LiteralPath $venvPython) { $venvPython } else { 'python' }
+$recoveryPython = Join-Path $root 'analysis-service-python/.venv-coderisk/Scripts/python.exe'
+$pythonExe = if ($env:CODERISK_PYTHON) { $env:CODERISK_PYTHON } elseif (Test-Path -LiteralPath $recoveryPython) { $recoveryPython } elseif (Test-Path -LiteralPath $venvPython) { $venvPython } else { 'python' }
 
 Push-Location (Join-Path $root 'analysis-service-python')
 try {

@@ -45,6 +45,7 @@ export interface CreateTaskBody {
 }
 
 export interface ProblemProfile {
+  domain?: string
   featureVersion?: string
   descriptionLength?: number
   ioFieldCount?: number
@@ -59,6 +60,7 @@ export interface ProblemProfile {
 }
 
 export interface ThresholdAdjustment {
+  policy?: string
   baseThreshold?: number
   difficultyAdjustment?: number
   solutionSpaceAdjustment?: number

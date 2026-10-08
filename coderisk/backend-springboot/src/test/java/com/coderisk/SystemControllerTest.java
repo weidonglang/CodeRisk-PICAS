@@ -68,11 +68,13 @@ class SystemControllerTest {
     void languagesExposeStableAndExperimentalSupportLevels() throws Exception {
         mockMvc.perform(get("/api/system/languages"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.data", hasSize(3)))
+                .andExpect(jsonPath("$.data", hasSize(5)))
                 .andExpect(jsonPath("$.data[0].language").value("java"))
                 .andExpect(jsonPath("$.data[0].supportLevel").value("STABLE"))
                 .andExpect(jsonPath("$.data[2].language").value("c"))
-                .andExpect(jsonPath("$.data[2].supportLevel").value("EXPERIMENTAL"));
+                .andExpect(jsonPath("$.data[2].supportLevel").value("EXPERIMENTAL"))
+                .andExpect(jsonPath("$.data[3].language").value("html"))
+                .andExpect(jsonPath("$.data[4].language").value("cpp"));
     }
 
     @Test
@@ -424,6 +426,61 @@ class SystemControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.total").value(1))
                 .andExpect(jsonPath("$.data.items[0].riskMargin").value(-0.05));
+    }
+
+    @Test
+    void htmlCUploadsExposeCorrectLanguageAndMixedDomainsAreRejected() throws Exception {
+        long questionId = createQuestion("HTML source comparison");
+        long htmlId = uploadSubmission(questionId, "html-student", "index.HTML", "<div>Hello</div>");
+        uploadSubmission(questionId, "second-html", "other.htm", "<p>Hello</p>");
+        long cId = uploadSubmission(questionId, "c-student", "main.c", "int main(){return 0;}");
+        uploadSubmission(questionId, "cpp-student", "main.cpp", "class Main {};");
+        mockMvc.perform(get("/api/questions/%d/submissions".formatted(questionId)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data[0].language").value("cpp"))
+                .andExpect(jsonPath("$.data[1].language").value("c"))
+                .andExpect(jsonPath("$.data[2].language").value("html"))
+                .andExpect(jsonPath("$.data[3].language").value("html"));
+        String body = """
+                {"questionId": %d, "submissionIds": [%d, %d], "taskMode": "PICAS_STANDARD"}
+                """.formatted(questionId, htmlId, cId);
+        mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON).content(body))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("TASK_LANGUAGE_DOMAIN_MISMATCH"));
+    }
+
+    @Test
+    void htmlTaskPreservesDomainMetadataAndExportsFixedThresholdReport() throws Exception {
+        long questionId = createQuestion("HTML report");
+        long first = uploadSubmission(questionId, "first", "first.html", "<div>Safe</div>");
+        long second = uploadSubmission(questionId, "second", "second.htm", "<div>Safe</div>");
+        // Analysis is stubbed to test persistence and report contracts; not an experiment score.
+        when(analysisClient.analyzePair(any())).thenAnswer(invocation -> {
+            com.coderisk.integration.analysis.AnalyzeMockRequest request = invocation.getArgument(0);
+            return new AnalyzeMockResult(request.taskId(), first, second,
+                    1, 1, 1, 0, 1, 0.85, 0.15, 0.875, true, 0.40,
+                    "HTML_STRUCTURE_FIXED_V1", "HIGH", Map.of("domain", "html", "confidence", 0),
+                    Map.of("policy", "FIXED_UNCALIBRATED", "finalThreshold", 0.85),
+                    "HTML source comparison", false, List.of(), List.of());
+        });
+        MvcResult created = mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"questionId\":%d,\"submissionIds\":[%d,%d],\"taskMode\":\"PICAS_STANDARD\"}".formatted(questionId, first, second)))
+                .andExpect(status().isOk()).andReturn();
+        long taskId = objectMapper.readTree(created.getResponse().getContentAsString()).path("data").path("id").asLong();
+        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId)))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.data.status").value("FINISHED"));
+        mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId)))
+                .andExpect(jsonPath("$.data.items[0].problemProfile.domain").value("html"))
+                .andExpect(jsonPath("$.data.items[0].thresholdAdjustment.policy").value("FIXED_UNCALIBRATED"));
+        MvcResult report = mockMvc.perform(post("/api/tasks/%d/reports".formatted(taskId))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"format\":\"HTML\",\"includeLowRiskPairs\":true,\"includeThresholdExplanation\":true}"))
+                .andExpect(status().isOk()).andReturn();
+        long reportId = objectMapper.readTree(report.getResponse().getContentAsString()).path("data").path("reportId").asLong();
+        String exported = mockMvc.perform(get("/api/reports/%d/download".formatted(reportId)))
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
+        org.junit.jupiter.api.Assertions.assertTrue(exported.contains("固定阈值（待验证）"));
+        org.junit.jupiter.api.Assertions.assertFalse(exported.contains("<h3>题目画像</h3>"));
     }
 
     private long createQuestion(String title) throws Exception {
