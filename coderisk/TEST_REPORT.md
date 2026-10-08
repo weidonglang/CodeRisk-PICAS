@@ -1,5 +1,14 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## Public data review and ConPlag pilot — 2026-10-09
+
+- Python: 111 tests passed (14 new regressions). Cached Java scoring agrees with the production API; tests cover validation-only calibration, template-free hash leakage, source path/hash checks, review identity/schema/timestamp checks, transitive split groups and safe source embedding.
+- Blind-review UI: Playwright/Chrome verified missing-input rejection, HTML filter (4 pairs), save and reviewer ID lock, previous/next restoration, and JSON export with the correct manifest/source hashes. HTML source displays as text (two pre elements, zero rendered child elements). UI_TEST_ONLY exports remain ignored and are not annotations. Only browser console error was a missing favicon.
+- Intake inventory: 5,575 files verified; 3,865 logical source versions inspected, no downloaded source executed. CodeNet metadata remains unavailable in the local prefix intake.
+- ConPlag: 911 published pairs, 284 validation / 627 test, two paired views. 42 JPlag processes exited successfully. Native coverage 911/911 original and 909/911 template-free; missing comparisons kept unknown.
+- Archive: all 36 reported confusion tables recomputed from pair scores and equal; PNG/SVG/PDF plotted from saved results, PNG visually checked. The protocol was committed and pushed before dataset scores were calculated.
+- No backend, frontend or production formula changes in this increment; earlier integration checks below remain historical. Formal evaluation gates were not relaxed. See [review workflow](../coderisk_docs/proposal/DATA_REVIEW_WORKBENCH.md) and [honest pilot results](../coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md).
+
 ## C/HTML and public-source coverage verification — 2026-10-08
 
 - Python: 97 tests passed, including C binding boundaries, HTML normalization, source locations, real analysis API responses, empty/comment-only inputs, invalid HTML thresholds and intake integrity fixtures.

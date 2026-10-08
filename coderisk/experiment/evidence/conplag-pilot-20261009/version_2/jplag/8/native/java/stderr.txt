@@ -1,0 +1,16 @@
+
+Loading Submissions   0% [==                       ]  0/92 (0:00:00 / 0:00:00) 
+Loading Submissions 100% [=========================] 92/92 (0:00:00 / 0:00:00) 
+Loading Submissions 100% [=========================] 92/92 (0:00:00 / 0:00:00) 
+
+Parsing Submissions   0% [                               ]  0/92 (0:00:00 / ?) 
+Parsing Submissions 100% [=========================] 92/92 (0:00:01 / 0:00:00) 
+Parsing Submissions 100% [=========================] 92/92 (0:00:01 / 0:00:00) 
+
+Preparing Submissions   0% [=                      ]  0/92 (0:00:00 / 0:00:00) 
+Preparing Submissions 100% [=======================] 92/92 (0:00:00 / 0:00:00) 
+Preparing Submissions 100% [=======================] 92/92 (0:00:00 / 0:00:00) 
+
+Comparing Submission Pairs   0% [                    ]    0/4186 (0:00:00 / ?) 
+Comparing Submission Pairs 100% [==============] 4186/4186 (0:00:00 / 0:00:00) 
+Comparing Submission Pairs 100% [==============] 4186/4186 (0:00:00 / 0:00:00) 

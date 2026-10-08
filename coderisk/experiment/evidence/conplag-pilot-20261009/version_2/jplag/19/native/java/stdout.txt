@@ -1,0 +1,17 @@
+2026-10-09-06:50:46_428 [WARN] JPlagVersionChecker - There is a newer version (6.3.0) available. You can download the newest version here: https://github.com/jplag/JPlag/releases
+2026-10-09-06:50:48_201 [WARN] Token - Creating a token that ends earlier than it start. Start: 48:17; End: 48:1
+2026-10-09-06:50:48_209 [WARN] Token - Creating a token that ends earlier than it start. Start: 39:17; End: 38:19
+2026-10-09-06:50:48_209 [WARN] Token - Creating a token that ends earlier than it start. Start: 45:17; End: 44:52
+2026-10-09-06:50:48_226 [WARN] Token - Creating a token that ends earlier than it start. Start: 51:9; End: 51:4
+2026-10-09-06:50:48_234 [WARN] Token - Creating a token that ends earlier than it start. Start: 56:17; End: 56:1
+2026-10-09-06:50:48_255 [WARN] Submission - Failed to parse submission db7f80a5-2e802bec04cc7da1:
+db7f80a5-2e802bec04cc7da1\Main.java:68: ����: ��Ҫ class��interface��enum �� record
+}
+^
+2026-10-09-06:50:48_656 [INFO] JPlag - Total time for comparing submissions: 0h 00min 00s 369ms
+2026-10-09-06:50:48_657 [WARN] ClusteringFactory - Cluster calculation disabled (as requested)!
+2026-10-09-06:50:48_657 [WARN] JPlag - 1 submissions were skipped (see errors above): [db7f80a5-2e802bec04cc7da1]
+2026-10-09-06:50:48_741 [INFO] ReportObjectFactory - Start writing report...
+2026-10-09-06:50:48_742 [INFO] ReportObjectFactory - Start to export results...
+2026-10-09-06:50:50_273 [INFO] OutputFileGenerator - Successfully written the result: E:\ms\coderisk\data\public-datasets\conplag-pilot-20261009\version_2\jplag\19\native\java\results.jplag
+2026-10-09-06:50:50_273 [INFO] OutputFileGenerator - View the result using --mode

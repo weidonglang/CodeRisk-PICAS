@@ -17,6 +17,7 @@ dist/
 *.log
 logs/
 output/
+.playwright-cli/
 
 # Local configuration and database contents
 .env

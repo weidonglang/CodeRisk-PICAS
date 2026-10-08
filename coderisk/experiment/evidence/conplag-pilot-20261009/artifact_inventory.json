@@ -1,0 +1,712 @@
+{
+  "pair_tables_recomputed_and_equal": true,
+  "raw_sources_included": false,
+  "files": [
+    {
+      "path": "metric_tables.csv",
+      "sha256": "4d92bb0eca19ece9f805ec8119896ceaf3a57feaac0853274f64b72d2e2054ce",
+      "size": 5684
+    },
+    {
+      "path": "protocol_snapshot.json",
+      "sha256": "ed2d7942b400f17dc4c762babd189f1d8b3a559c79bc947ed726b5906ccd760c",
+      "size": 3801
+    },
+    {
+      "path": "run_start.json",
+      "sha256": "7851e4ecc3295174a6951947b89d20651b6086b40d13bcbad14a7fd9ab63255b",
+      "size": 132
+    },
+    {
+      "path": "run_summary.json",
+      "sha256": "4c917abacb71227e9a7339058b12dbaef0104713188bcbbcb3a8550b75a816e4",
+      "size": 8327
+    },
+    {
+      "path": "test_comparison.pdf",
+      "sha256": "651db21288123d107064e5b79bdf7e04469185ace8dbc70cd79f4bdbfab744df",
+      "size": 22350
+    },
+    {
+      "path": "test_comparison.png",
+      "sha256": "0056660143af3f5dd331959a05a892eaba075ba84e06deea493b6f85933fed2c",
+      "size": 199923
+    },
+    {
+      "path": "test_comparison.svg",
+      "sha256": "4bf0f3b4d172446e393a677bf272f17779ec1f5db8908d314e2284afd7368ad5",
+      "size": 110066
+    },
+    {
+      "path": "version_1/evaluation.json",
+      "sha256": "b52c860c6b52a7bf9a336deac6435a2774494d646a304f7a5b226b151190eefa",
+      "size": 76038
+    },
+    {
+      "path": "version_1/jplag/1/native/java/results/results.csv",
+      "sha256": "5eebaaaf545a8d8b0f177e0ba5dddf5cf6bbfca6e57ff439c2fe24af1a8d9e26",
+      "size": 222273
+    },
+    {
+      "path": "version_1/jplag/1/native/java/stderr.txt",
+      "sha256": "9dcfffa4bb784661f57624fa4cf996d824a062fd59bbb1675496153ca7f2dde5",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/1/native/java/stdout.txt",
+      "sha256": "2f6bad04edd07ef1e1197ad5e7be2806f47aa540c89ec7cafa828a7c964a499f",
+      "size": 919
+    },
+    {
+      "path": "version_1/jplag/10/native/java/results/results.csv",
+      "sha256": "356edb54fc9f6c89e213777bfa3facd17151ec9b6b30e5212777606e60f2c007",
+      "size": 17434
+    },
+    {
+      "path": "version_1/jplag/10/native/java/stderr.txt",
+      "sha256": "49522d91f1a588be9ae2b036f5a8e3bb3a32ba932773e64f340a642f2c3ba174",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/10/native/java/stdout.txt",
+      "sha256": "70551145d0b17636602b9f8e19f4c4577e883b60b8c5037eeb55a5d2430a309d",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/11/native/java/results/results.csv",
+      "sha256": "df8fc1624931703744bc68b2a3480e436cb03c4f43f1cdaa54ce2e825d4163ed",
+      "size": 12188
+    },
+    {
+      "path": "version_1/jplag/11/native/java/stderr.txt",
+      "sha256": "e6c1d6d0b881b7234f1495b62f6efd7f182c89726b67cfd513aca70db6073c35",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/11/native/java/stdout.txt",
+      "sha256": "a60a685083a3f24ae95d0afdae3dfd8ea811b218d79ff23896c855d523b7d79f",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/12/native/java/results/results.csv",
+      "sha256": "f16fbdbd36260b7c555acc44f2935d4f1415e769e4269ef4dbe83237754d5c61",
+      "size": 1947
+    },
+    {
+      "path": "version_1/jplag/12/native/java/stderr.txt",
+      "sha256": "52bb755ec49da2e4a884a82cb01c11510984b086e56ae601400ec88349f40c59",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/12/native/java/stdout.txt",
+      "sha256": "cc8f2339e3feb688756779684f7396e0005dc7cb09955ebe0eb4600e06dfead3",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/13/native/java/results/results.csv",
+      "sha256": "eb774b1acfe5ff08009dd40b73adac62ce270077d4b0809dc53817f46989b67d",
+      "size": 34362
+    },
+    {
+      "path": "version_1/jplag/13/native/java/stderr.txt",
+      "sha256": "555d052aa469227d52c59d8eef641c9c02c84cc21383d92bc54f7c3b3796ea65",
+      "size": 816
+    },
+    {
+      "path": "version_1/jplag/13/native/java/stdout.txt",
+      "sha256": "ed9f45897c879b32691c2542be76ad2f6de69b3bb97a5d68051d7387ae976aa8",
+      "size": 1378
+    },
+    {
+      "path": "version_1/jplag/14/native/java/results/results.csv",
+      "sha256": "e1c4c9565ad835de272773ec588ba8d3487a0075eddf6645e258c60a4ff2db5f",
+      "size": 10573
+    },
+    {
+      "path": "version_1/jplag/14/native/java/stderr.txt",
+      "sha256": "4be605f35aa31697bc173184c4f1a486af0151599189e51f583cde2ed0ef9de8",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/14/native/java/stdout.txt",
+      "sha256": "2060e92abd8ab7ed0dd3e08b980e65631594524a59c01685ecbf45728d09b54f",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/15/native/java/results/results.csv",
+      "sha256": "72a47b6942a091a295c6e6398d380e7f379b088bad75de3ebdea67ace64d59df",
+      "size": 587481
+    },
+    {
+      "path": "version_1/jplag/15/native/java/stderr.txt",
+      "sha256": "9f832c3fac0554e81c1683c3605f722795a061cb5b8722d71e581fbd9beafdd2",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/15/native/java/stdout.txt",
+      "sha256": "c6ae2dd5b2c6eac3ddf05f3cbae357bc136500ff1e1a3680fc4663fcaa1d3008",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/16/native/java/results/results.csv",
+      "sha256": "1d5caa28eeb01aa7e08cf378ed8422263bc597f0ae4f2ffb8ae6368d10f3a1c6",
+      "size": 38342
+    },
+    {
+      "path": "version_1/jplag/16/native/java/stderr.txt",
+      "sha256": "8727c082a4eac5deb142cd338fdb55fac6d5edb0e0c0795f6fa878683f9f9dda",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/16/native/java/stdout.txt",
+      "sha256": "eedb9e82ded249db3e7bdc9351e8ec435075dbdc8df0cf057626e8f93c6c31b7",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/17/native/java/results/results.csv",
+      "sha256": "fd2af5a300fc39063e42ced64fb9e1422b82b7e05ba3d46bdc21c752f7f36a3b",
+      "size": 44208
+    },
+    {
+      "path": "version_1/jplag/17/native/java/stderr.txt",
+      "sha256": "7522ca290f0bcbce137f594a7487bc596cb266d362f6735f11077d7fb44a7cda",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/17/native/java/stdout.txt",
+      "sha256": "11bce77cf460491a05cd5d1704f426cd3e5b21f7383fd62077b70b03cc463869",
+      "size": 1037
+    },
+    {
+      "path": "version_1/jplag/18/native/java/results/results.csv",
+      "sha256": "421850fc7d13107ea43efec667b165364391915397bf6b0da6d1a0180c1d1cd1",
+      "size": 251017
+    },
+    {
+      "path": "version_1/jplag/18/native/java/stderr.txt",
+      "sha256": "d124fec5d52cc6f8045207ca9fa05e544988f94b945c62eec4a1109bfdf18190",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/18/native/java/stdout.txt",
+      "sha256": "586aa1fed42f44bfd66ac8bf7e5719133bfa4610a1f2fefb653a0ab7eeee066c",
+      "size": 1151
+    },
+    {
+      "path": "version_1/jplag/19/native/java/results/results.csv",
+      "sha256": "b528f779cf92394bc255908b8ce7e037a4e9805f7bd8e4d8fed11590d57ebead",
+      "size": 413834
+    },
+    {
+      "path": "version_1/jplag/19/native/java/stderr.txt",
+      "sha256": "25542a7ee6c45cc1d215fdceec40aa55239bac01918cfb95e1298ea100004bbb",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/19/native/java/stdout.txt",
+      "sha256": "7bdcaca2eb47e92bc101aab23f80d9a0d9f9fb0081ea18623434d49eddfd8ae8",
+      "size": 1378
+    },
+    {
+      "path": "version_1/jplag/2/native/java/results/results.csv",
+      "sha256": "ed2c7d0a9f3436b99e5bebbe2f03829e3f3f75fef054ae9a703cbda850e614a8",
+      "size": 28993
+    },
+    {
+      "path": "version_1/jplag/2/native/java/stderr.txt",
+      "sha256": "4fe03a595df4069275c95c084c844d5d258a00e6ab5d87c3b3f8cf5e9209faf2",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/2/native/java/stdout.txt",
+      "sha256": "84338c48d66b03d54c6bafdfc0f4cbc90a40ece2d6fd75a3fbfb0ddc348ae7af",
+      "size": 806
+    },
+    {
+      "path": "version_1/jplag/20/native/java/results/results.csv",
+      "sha256": "98bcf1700a23327cdac21a132543929c11ab2cf851d4958567bc8fc0ad375475",
+      "size": 101801
+    },
+    {
+      "path": "version_1/jplag/20/native/java/stderr.txt",
+      "sha256": "bcfbca82c3cf085cd7aad24315a68d0f2fa5a04a11c5c9393bf35457dfa1d3f4",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/20/native/java/stdout.txt",
+      "sha256": "d1ae4feb15a60b734105fbed500a538caf5f85832294df465766dbe99dd0a520",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/21/native/java/results/results.csv",
+      "sha256": "c1dced766b494d7a9e0dee36204d8ace375ad42ee858d775bcc9f461faebec95",
+      "size": 93488
+    },
+    {
+      "path": "version_1/jplag/21/native/java/stderr.txt",
+      "sha256": "dabce861049d715c9cc74c21d7293c3e4e296123af52e8b9ef167a643e0d67e0",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/21/native/java/stdout.txt",
+      "sha256": "8c4df20c11097d2e94ed6b69203b96863048ad732c92249b74f7bb83046ec638",
+      "size": 807
+    },
+    {
+      "path": "version_1/jplag/3/native/java/results/results.csv",
+      "sha256": "0b7b752abfcc7d1a675e1eeacabc89b962bd078c64f69668e9f08fccb7aaa2ac",
+      "size": 181518
+    },
+    {
+      "path": "version_1/jplag/3/native/java/stderr.txt",
+      "sha256": "f7fd27f560a71351d2924743d700433473dfbfd1a596a4953c8276177e540414",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/3/native/java/stdout.txt",
+      "sha256": "ba8d8b43e9b29f2d8e2c3847987b4079a29beb0693b8f3442ae3692c770ec5cc",
+      "size": 806
+    },
+    {
+      "path": "version_1/jplag/4/native/java/results/results.csv",
+      "sha256": "f623e49eea30bf66ec0d3c80bbf60eae295db5fe0fe21dd39618f8975a351bdc",
+      "size": 242744
+    },
+    {
+      "path": "version_1/jplag/4/native/java/stderr.txt",
+      "sha256": "7086a30991b063c99126203c6df8ebba847dafca29e8c75567d07bc4b437c8f9",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/4/native/java/stdout.txt",
+      "sha256": "f693f9fa8a0493ff9711c7320a1a54fe44fac8e00b94a0cb0f45ff54dc5a8143",
+      "size": 920
+    },
+    {
+      "path": "version_1/jplag/5/native/java/results/results.csv",
+      "sha256": "e8aca9c45afa7f36672a72e16a9b108962743698c73e1d5e176c257333b11bbe",
+      "size": 12250
+    },
+    {
+      "path": "version_1/jplag/5/native/java/stderr.txt",
+      "sha256": "12b22e12b8414667a8c3c58dcf3758c58a6f8bdd41a0593926f82f4e61d4b36b",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/5/native/java/stdout.txt",
+      "sha256": "07e4b11329012218f40f4f5141e530930deba8b19bc33c123594db97682066f4",
+      "size": 924
+    },
+    {
+      "path": "version_1/jplag/6/native/java/results/results.csv",
+      "sha256": "50ecd3d22d0fb215864504a35c04be3066cb6e8cc73b3beaea01e71ebfe16191",
+      "size": 19257
+    },
+    {
+      "path": "version_1/jplag/6/native/java/stderr.txt",
+      "sha256": "5d554e05e5bc18daf047b6d4b34793f2e37942482fff143674293615d7f8543b",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/6/native/java/stdout.txt",
+      "sha256": "fd416b461a63294dec382fb10fb7d66c35f68a31615aa235c9f9c5736d9b25bf",
+      "size": 806
+    },
+    {
+      "path": "version_1/jplag/7/native/java/results/results.csv",
+      "sha256": "6fd2b83086679a9064b7dedeeb1acc57f0207e49b273d1983150a34ecd3dc70a",
+      "size": 13601
+    },
+    {
+      "path": "version_1/jplag/7/native/java/stderr.txt",
+      "sha256": "00cfb6e49dcc8399f7b4702da813cc31a2aa87ef503d156ae7cdc9df62da0911",
+      "size": 979
+    },
+    {
+      "path": "version_1/jplag/7/native/java/stdout.txt",
+      "sha256": "60f7fd1899c3d78fdc4866bca1aae9acf51ccbe6a8e99c889b5d5742e0e018e0",
+      "size": 806
+    },
+    {
+      "path": "version_1/jplag/8/native/java/results/results.csv",
+      "sha256": "af30a8a9d17957f4facd013272c07a32501c8fe634aada70b67a64ade459a869",
+      "size": 382085
+    },
+    {
+      "path": "version_1/jplag/8/native/java/stderr.txt",
+      "sha256": "e060fe8dbb0546a85047f432301cc317bbdbcce42ab413895970857ae1f8d213",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/8/native/java/stdout.txt",
+      "sha256": "19aae3643e0e826d031197a3198bd0fc9c845aea137a06725efeadcb2ec2b477",
+      "size": 1041
+    },
+    {
+      "path": "version_1/jplag/9/native/java/results/results.csv",
+      "sha256": "a8e929c44dcfb61b8a14ce5e47f34ff4a483dde54e937fb5afb413ecce561b88",
+      "size": 217866
+    },
+    {
+      "path": "version_1/jplag/9/native/java/stderr.txt",
+      "sha256": "681876872c8c291a2f7f9aafb4e35d7f13929767e7a5c99c0a270c8ab61b56bf",
+      "size": 980
+    },
+    {
+      "path": "version_1/jplag/9/native/java/stdout.txt",
+      "sha256": "bba38157fdde2db2ee94f67aaad7846a6847a65f8580ee58e178210b8a467e13",
+      "size": 806
+    },
+    {
+      "path": "version_1/jplag_runs.json",
+      "sha256": "e7ed686802295d738230c31854adb86ea734c633a3b01b7402dbd209d11a567c",
+      "size": 36027
+    },
+    {
+      "path": "version_1/jplag_scores.jsonl",
+      "sha256": "f0c426984b8f422abeb5360dab63ba3bac0155c3a98465d1e7ab5fa58b98eb80",
+      "size": 267452
+    },
+    {
+      "path": "version_1/picas_scores.jsonl",
+      "sha256": "c048a8606281f440a091419f1b64ae8c024c4baeb8e3e6c341b051f66a83559c",
+      "size": 420796
+    },
+    {
+      "path": "version_2/evaluation.json",
+      "sha256": "0e23b1df9758cce7090427e98a618f3c33d80e64ba733f196fa439cd668cae06",
+      "size": 75562
+    },
+    {
+      "path": "version_2/jplag/1/native/java/results/results.csv",
+      "sha256": "6d9904d99dd0c0329f9b62362c6952ff4c85777f0679596f748a94eec6ab1c07",
+      "size": 226625
+    },
+    {
+      "path": "version_2/jplag/1/native/java/stderr.txt",
+      "sha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/1/native/java/stdout.txt",
+      "sha256": "0b8524ddea45da81442422c81cbcfe3c671a02bfbbc736bde0c547eea61079cf",
+      "size": 919
+    },
+    {
+      "path": "version_2/jplag/10/native/java/results/results.csv",
+      "sha256": "dd65f04e867d593cc1f9ac6dfd495fcdbd5b27d7b17fad9d4a3eb06148895cce",
+      "size": 15657
+    },
+    {
+      "path": "version_2/jplag/10/native/java/stderr.txt",
+      "sha256": "01abb63ea5d3a2a3c982c2173f12ea19bcbfc65c96f5c91f365e245322c93794",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/10/native/java/stdout.txt",
+      "sha256": "0993c38a6eda116e876d12023cf2476ed0728593e60f3e8b81b239c920429e52",
+      "size": 1242
+    },
+    {
+      "path": "version_2/jplag/11/native/java/results/results.csv",
+      "sha256": "2372631af2cb393d92639fa7154c5f99a0d91a7ab1b73f6d0897a9fa93be280c",
+      "size": 12119
+    },
+    {
+      "path": "version_2/jplag/11/native/java/stderr.txt",
+      "sha256": "c87f94a4bbe8a07bef200459a118bf0de1cc3f868e30853be2aa63363d3a9603",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/11/native/java/stdout.txt",
+      "sha256": "c59dddf465c58e523355fd8034f4d215f82340bdb2f0ca86fbec664bcbbbc25f",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/12/native/java/results/results.csv",
+      "sha256": "f3e4082175b043f37151cb39a324e3b1ef4276c55d657cdf6ca1d9ee3fb3031b",
+      "size": 1955
+    },
+    {
+      "path": "version_2/jplag/12/native/java/stderr.txt",
+      "sha256": "4fc3e5a628894afc37f6b6abbfdf6d406e6dbdce6549de5fd55f8a0d9b2fc690",
+      "size": 818
+    },
+    {
+      "path": "version_2/jplag/12/native/java/stdout.txt",
+      "sha256": "71cb9644efd19eb9abd205887a7842fcbe94ff5cd1c47ccf7dd0fa24562dc6e4",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/13/native/java/results/results.csv",
+      "sha256": "6e10c4130edc084d0c7741470eac74770c0874fa69d183a25dd815ecfc45c82f",
+      "size": 33748
+    },
+    {
+      "path": "version_2/jplag/13/native/java/stderr.txt",
+      "sha256": "6f4c8447d6d64454a2a6cb0cf1cf3dfc8e9941990d2115ddfe8489131e68cf4b",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/13/native/java/stdout.txt",
+      "sha256": "b8e74d44411175720fe3b517eed7650f71403d639b7a2dc27028a1ae3bec848a",
+      "size": 1378
+    },
+    {
+      "path": "version_2/jplag/14/native/java/results/results.csv",
+      "sha256": "5839555823bfe77215b4cfdd7533c0b87afdad643d91a3165fb6aae5e9699278",
+      "size": 10407
+    },
+    {
+      "path": "version_2/jplag/14/native/java/stderr.txt",
+      "sha256": "959f394e9a90a2c4ad36dfd1c691a4dd78bef08f6119c5cfcb80d77e0acf5fcc",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/14/native/java/stdout.txt",
+      "sha256": "143118ae6f551ea635a5cc7bfd8b03d8d9f45d1ad813a2341cac6c33ff1f28a8",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/15/native/java/results/results.csv",
+      "sha256": "cc866b0cf634c35c42f83e2e3be36207680c665d55b0e3b7678930efa5cba4e6",
+      "size": 586131
+    },
+    {
+      "path": "version_2/jplag/15/native/java/stderr.txt",
+      "sha256": "cb570de087cb9a68631d4270fc2546948d9fcbdd9da053ab284ff3224927b413",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/15/native/java/stdout.txt",
+      "sha256": "652ed5c8ae59193b1f443eb3cf47d9b81b49a208270d9141d2554f31ff1c0bf2",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/16/native/java/results/results.csv",
+      "sha256": "ae7fa69eb055b5359c41b1751714ac2ede8b885be6422b6fe16e0aeb9908e994",
+      "size": 38504
+    },
+    {
+      "path": "version_2/jplag/16/native/java/stderr.txt",
+      "sha256": "c9de30420a4bf551a9efee1c0f24ba812e2d2460d6e85cd1685b44db8de995f8",
+      "size": 979
+    },
+    {
+      "path": "version_2/jplag/16/native/java/stdout.txt",
+      "sha256": "150fade39dbbbdf370e45c0c791e15e13459255eb45436e7a6b61df437067744",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/17/native/java/results/results.csv",
+      "sha256": "e1696d537973d59147815055e724521261ae6ff9918fa3d403aaf48e1f91871b",
+      "size": 43456
+    },
+    {
+      "path": "version_2/jplag/17/native/java/stderr.txt",
+      "sha256": "7247bcb20fa6b03c781be2c6145d6b3a3aeae8e7c355757922611b597e334c14",
+      "size": 979
+    },
+    {
+      "path": "version_2/jplag/17/native/java/stdout.txt",
+      "sha256": "edfbf7a81a0e43aea0702dffeee350e15d32a26452010ccef588a82e4e6c9bee",
+      "size": 1037
+    },
+    {
+      "path": "version_2/jplag/18/native/java/results/results.csv",
+      "sha256": "46e4b59877c19f19f336c47e97d6749f4fd6b241411d688d4fb596ae286a8c0b",
+      "size": 246700
+    },
+    {
+      "path": "version_2/jplag/18/native/java/stderr.txt",
+      "sha256": "09dd757579e5b816167ce3508bb0a446601b86b2eebffa4c1fe64c4aa68f3d12",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/18/native/java/stdout.txt",
+      "sha256": "ad988c3997fcef68819d77763c7141e157518d3c948377057d45aab8b9aadf68",
+      "size": 1151
+    },
+    {
+      "path": "version_2/jplag/19/native/java/results/results.csv",
+      "sha256": "88eff96a7f55d0cfaad9030b36a7626928caa8bfcf573ece8b806f914c44cfb0",
+      "size": 395753
+    },
+    {
+      "path": "version_2/jplag/19/native/java/stderr.txt",
+      "sha256": "cb6c280eb4176c0bb91017d4b99eae447fa185dc4885d073747d66afa1db3e70",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/19/native/java/stdout.txt",
+      "sha256": "0d54e9d3d6e314955552cefd93ff161ec7369cd27413e636d30615b2e1019ac9",
+      "size": 1707
+    },
+    {
+      "path": "version_2/jplag/2/native/java/results/results.csv",
+      "sha256": "c150a70ed7830e79bc91d175c7ed5fe042fa78cac5faca068eb83e99a85d8112",
+      "size": 30890
+    },
+    {
+      "path": "version_2/jplag/2/native/java/stderr.txt",
+      "sha256": "9a243abcf43096a63183104300c747250181b9ebc01fea25f8aaf39354f5ff63",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/2/native/java/stdout.txt",
+      "sha256": "43afae900551f0534c164cde5a023373a4833e4da46c9d399170e4853b34be74",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag/20/native/java/results/results.csv",
+      "sha256": "6a4c3b3c827aba60c9ca5b5e6ff12b064bc7b4b4ff019d234aee413f0da44860",
+      "size": 100395
+    },
+    {
+      "path": "version_2/jplag/20/native/java/stderr.txt",
+      "sha256": "769fad5759626b9b02bb66878b895295f1f54e60305ded92bdf2cd4883c7a01c",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/20/native/java/stdout.txt",
+      "sha256": "867a42019c9e2e7fa73557e73a4649e7a39b9357eb12d5a652f10728d23169dc",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/21/native/java/results/results.csv",
+      "sha256": "bb60539dfa9247e3174c30de9eaf1cfa6b5eda8a8e1c2d755e3bf597b2a075dd",
+      "size": 91806
+    },
+    {
+      "path": "version_2/jplag/21/native/java/stderr.txt",
+      "sha256": "6d076d384ed92d58a6201ea7f5317df680c4f5aef4d025d2569f4fe954cca709",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/21/native/java/stdout.txt",
+      "sha256": "eacb435680608019e1dbd30c8cd3e516a3340a2c2f352a42558cb6386ddc6541",
+      "size": 807
+    },
+    {
+      "path": "version_2/jplag/3/native/java/results/results.csv",
+      "sha256": "b94439721c673517b940652fb58e11c6bb90445ef0890633eaed9ce6f48b6db9",
+      "size": 181552
+    },
+    {
+      "path": "version_2/jplag/3/native/java/stderr.txt",
+      "sha256": "572856616610c3015c44ce2887e41011157f38719bc0c99ca0d5f38e3ac59bb0",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/3/native/java/stdout.txt",
+      "sha256": "499184842ac996e17b4f5a477648e00fcfb1ef02a53a9e5c3b9e03e9ebe4f0d6",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag/4/native/java/results/results.csv",
+      "sha256": "53e5b6e52fcf736a85281027e57e50f8c5bdb76c5d27311f231599233e178eae",
+      "size": 240255
+    },
+    {
+      "path": "version_2/jplag/4/native/java/stderr.txt",
+      "sha256": "71603d828714b7f8dd6e3d09f6118398aadb359d66f832d32bb009ebd96a3195",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/4/native/java/stdout.txt",
+      "sha256": "2843de654150088b3d4a1421b8a51d508e35e52df554c47bd8a20d2157d7b5d6",
+      "size": 920
+    },
+    {
+      "path": "version_2/jplag/5/native/java/results/results.csv",
+      "sha256": "7b7c1cb38b44fd8dc51f4a14491decdce3df18082255f1e785991ed491e2af7a",
+      "size": 12201
+    },
+    {
+      "path": "version_2/jplag/5/native/java/stderr.txt",
+      "sha256": "fabf64757fc47368ca9a1bcf08c8c6505047c20915a17d88da9ab6aa8cf06d3c",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/5/native/java/stdout.txt",
+      "sha256": "7d448cf4c964e63fdc2cabc03f3d0232b925a8d8f248890a6e3f68104f6405bc",
+      "size": 924
+    },
+    {
+      "path": "version_2/jplag/6/native/java/results/results.csv",
+      "sha256": "e58bfc5c4e7f9a185556b6322733337b16aaed69af9e044844850deb8c3ba17a",
+      "size": 21086
+    },
+    {
+      "path": "version_2/jplag/6/native/java/stderr.txt",
+      "sha256": "03b9839581852fe7131a7a2419b3ffae429957c984dedd83a5eddfc5713827de",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/6/native/java/stdout.txt",
+      "sha256": "d47518e794f1261af473285888cc1afbebc39615bc1ac044a3db9adf4c57bc63",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag/7/native/java/results/results.csv",
+      "sha256": "9cf29844d428c15aaed1719858a05bc88984bb04a9f024ae9e3712de1de773c2",
+      "size": 13672
+    },
+    {
+      "path": "version_2/jplag/7/native/java/stderr.txt",
+      "sha256": "2964263aa5591d23df7b09c446a0a70b10b98b37ce1f02915cb558bc04c53473",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/7/native/java/stdout.txt",
+      "sha256": "4540ba990cb027d111298feaebb339089d6b3c98accf47c535207df51f70b2ee",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag/8/native/java/results/results.csv",
+      "sha256": "08aabb197a35207a89a3bd91bcf95fc89d43299604ae56d58352c38409ef56e1",
+      "size": 371700
+    },
+    {
+      "path": "version_2/jplag/8/native/java/stderr.txt",
+      "sha256": "60ec599d89f561b01eebd0fe80157eefcda4bfa90a37feaa37f177931a4787aa",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/8/native/java/stdout.txt",
+      "sha256": "b60c17aabceed486e4209b59a176e0b6b5500b137ac41a970717915c26fede4a",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag/9/native/java/results/results.csv",
+      "sha256": "92570c3eb0ecbc35eacd67b146732ef66bd4526f7d7c3fffdcf90f087b2e959a",
+      "size": 227473
+    },
+    {
+      "path": "version_2/jplag/9/native/java/stderr.txt",
+      "sha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "size": 980
+    },
+    {
+      "path": "version_2/jplag/9/native/java/stdout.txt",
+      "sha256": "fd0d0c30d0061f82e3d8c884c4fc12ee72618f040efe5b6278429cc2e76b8c5f",
+      "size": 806
+    },
+    {
+      "path": "version_2/jplag_runs.json",
+      "sha256": "e99382b681f40a8c9639b549467f2de4bcf91441e5b9bae6826ee8037c4bbfcb",
+      "size": 36028
+    },
+    {
+      "path": "version_2/jplag_scores.jsonl",
+      "sha256": "27228a88defe8b8d161ce3dc6883808200a185aa3ba8608b8be53909356d479d",
+      "size": 267374
+    },
+    {
+      "path": "version_2/picas_scores.jsonl",
+      "sha256": "ca083fdd1040b8bad764dccad1b839aeb1ce2b02b1b1b7721baa936e972c8db2",
+      "size": 420326
+    }
+  ],
+  "archiver_sha256": "004b9c835a470792aa8594cda8e6a284bfb868fcaf41ba47a442b34f0b5a9bff"
+}

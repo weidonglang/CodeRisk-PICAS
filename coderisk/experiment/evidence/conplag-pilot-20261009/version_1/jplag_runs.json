@@ -1,0 +1,212 @@
+[
+  {
+    "problem_id": "conplag:problem:1",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 71,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/1/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\1\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\1\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==                       ]  1/71 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 71/71 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 71/71 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/71 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 71/71 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 71/71 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                       ]  0/71 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 71/71 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 71/71 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/2485 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 2485/2485 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 2485/2485 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:10",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 20,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/10/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\10\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\10\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==========               ]  0/20 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 20/20 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 20/20 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/20 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 20/20 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 20/20 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [=                      ]  0/20 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 20/20 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 20/20 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/190 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 190/190 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 190/190 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:11",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 17,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/11/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\11\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\11\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [=============            ]  1/17 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/17 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  0/17 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 17/17 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 17/17 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/136 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 136/136 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 136/136 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:12",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 7,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/12/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\12\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\12\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [=======================    ] 0/7 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 7/7 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 7/7 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                                 ] 0/7 (0:00:00 / ?) \nParsing Submissions 100% [===========================] 7/7 (0:00:00 / 0:00:00) \nParsing Submissions 100% [===========================] 7/7 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [==========               ] 0/7 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 7/7 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 7/7 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                        ]  0/21 (0:00:00 / ?) \nComparing Submission Pairs 100% [==================] 21/21 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==================] 21/21 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:13",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 28,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/13/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\13\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\13\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [======                   ]  0/28 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 28/28 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 28/28 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/28 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 28/28 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 28/28 (0:00:00 / 0:00:00) \n\nPreparing Submissions 100% [=======================] 28/28 (0:00:00 / 0:00:00) \nComparing Submission Pairs   0% [                      ]   0/378 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 378/378 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 378/378 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:14",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 16,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/14/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\14\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\14\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [============             ]  0/16 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/16 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 16/16 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [=======                ]  0/16 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 16/16 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 16/16 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/120 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 120/120 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 120/120 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:15",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 115,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/15/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\15\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\15\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [=                      ]   0/115 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=======================] 115/115 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=======================] 115/115 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                             ]   0/115 (0:00:00 / ?) \nParsing Submissions 100% [=======================] 115/115 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=======================] 115/115 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                     ]   0/115 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=====================] 115/115 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=====================] 115/115 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/6555 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 6555/6555 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 6555/6555 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:16",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 30,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/16/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\16\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\16\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [======                   ]  0/30 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 30/30 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 30/30 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/30 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 30/30 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 30/30 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  0/30 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 30/30 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 30/30 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/435 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 435/435 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 435/435 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:17",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 32,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/17/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\17\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\17\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [======                   ]  0/32 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 32/32 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 32/32 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/32 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 32/32 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 32/32 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [=                      ]  0/32 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 32/32 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 32/32 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/496 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 496/496 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 496/496 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:18",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 75,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/18/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\18\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\18\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==                       ]  0/75 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 75/75 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 75/75 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/75 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 75/75 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 75/75 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [===                    ]  1/75 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 75/75 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 75/75 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/2775 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 2775/2775 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 2775/2775 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:19",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 97,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/19/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\19\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\19\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==                       ]  0/97 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 97/97 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 97/97 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/97 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 97/97 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 97/97 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                       ]  0/97 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 97/97 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 97/97 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/4656 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 4656/4656 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 4656/4656 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:2",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 26,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/2/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\2\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\2\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [======                   ]  0/26 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 26/26 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 26/26 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/26 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 26/26 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 26/26 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  1/26 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 26/26 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 26/26 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/325 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 325/325 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 325/325 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:20",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 48,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/20/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\20\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\20\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [====                     ]  0/48 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 48/48 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 48/48 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/48 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 48/48 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 48/48 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  1/48 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 48/48 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 48/48 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/1128 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 1128/1128 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 1128/1128 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:21",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 46,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/21/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\21\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\21\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [====                     ]  0/46 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 46/46 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 46/46 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/46 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 46/46 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 46/46 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  0/46 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 46/46 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 46/46 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/1035 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 1035/1035 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 1035/1035 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:3",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 64,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/3/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\3\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\3\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==                       ]  0/64 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 64/64 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 64/64 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/64 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 64/64 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 64/64 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                       ]  0/64 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 64/64 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 64/64 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/2016 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 2016/2016 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 2016/2016 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:4",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 74,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/4/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\4\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\4\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [===                      ]  1/74 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 74/74 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 74/74 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/74 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 74/74 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 74/74 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [=                      ]  1/74 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 74/74 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 74/74 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/2701 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 2701/2701 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 2701/2701 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:5",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 17,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/5/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\5\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\5\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [===========              ]  0/17 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/17 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 17/17 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [==                     ]  0/17 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 17/17 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 17/17 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/136 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 136/136 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 136/136 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:6",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 21,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/6/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\6\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\6\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [=========                ]  0/21 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 21/21 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 21/21 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/21 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 21/21 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 21/21 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [                             ]  0/21 (0:00:00 / ?) \nPreparing Submissions 100% [=======================] 21/21 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 21/21 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/210 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 210/210 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 210/210 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:7",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 18,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/7/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\7\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\7\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [========                ]  0/18 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 18/18 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 18/18 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/18 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 18/18 (0:00:00 / 0:00:00) \nParsing Submissions 100% [=========================] 18/18 (0:00:00 / 0:00:00) \n\nPreparing Submissions   0% [===                    ]  0/18 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 18/18 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 18/18 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                      ]   0/153 (0:00:00 / ?) \nComparing Submission Pairs 100% [================] 153/153 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [================] 153/153 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:8",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 93,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/8/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\8\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\8\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [                         ]  0/93 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 93/93 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 93/93 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/93 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 93/93 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 93/93 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                       ]  0/93 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 93/93 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 93/93 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/4278 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 4278/4278 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 4278/4278 (0:00:00 / 0:00:00) \n"
+  },
+  {
+    "problem_id": "conplag:problem:9",
+    "language": "java",
+    "languageFlag": "java",
+    "exitCode": 0,
+    "inputSubmissionCount": 70,
+    "nativeCsv": "data/public-datasets/conplag-pilot-20261009/version_1/jplag/9/native/java/results/results.csv",
+    "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\9\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\coderisk\\data\\public-datasets\\conplag-pilot-20261009\\version_1\\jplag\\9\\input\\java",
+    "stderrTail": "\nLoading Submissions   0% [==                       ]  0/70 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 70/70 (0:00:00 / 0:00:00) \nLoading Submissions 100% [=========================] 70/70 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                               ]  0/70 (0:00:00 / ?) \nParsing Submissions 100% [=========================] 70/70 (0:00:01 / 0:00:00) \nParsing Submissions 100% [=========================] 70/70 (0:00:01 / 0:00:00) \n\nPreparing Submissions   0% [                             ]  0/70 (0:00:00 / ?) \nPreparing Submissions 100% [=======================] 70/70 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=======================] 70/70 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                    ]    0/2415 (0:00:00 / ?) \nComparing Submission Pairs 100% [==============] 2415/2415 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==============] 2415/2415 (0:00:00 / 0:00:00) \n"
+  }
+]

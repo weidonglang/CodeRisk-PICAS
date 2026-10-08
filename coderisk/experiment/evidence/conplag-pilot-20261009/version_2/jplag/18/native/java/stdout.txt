@@ -1,0 +1,10 @@
+2026-10-09-06:50:42_197 [WARN] JPlagVersionChecker - There is a newer version (6.3.0) available. You can download the newest version here: https://github.com/jplag/JPlag/releases
+2026-10-09-06:50:43_756 [WARN] Token - Creating a token that ends earlier than it start. Start: 35:17; End: 34:2
+2026-10-09-06:50:43_756 [WARN] Token - Creating a token that ends earlier than it start. Start: 37:21; End: 37:19
+2026-10-09-06:50:43_762 [WARN] Token - Creating a token that ends earlier than it start. Start: 62:13; End: 62:12
+2026-10-09-06:50:44_128 [INFO] JPlag - Total time for comparing submissions: 0h 00min 00s 310ms
+2026-10-09-06:50:44_130 [WARN] ClusteringFactory - Cluster calculation disabled (as requested)!
+2026-10-09-06:50:44_272 [INFO] ReportObjectFactory - Start writing report...
+2026-10-09-06:50:44_273 [INFO] ReportObjectFactory - Start to export results...
+2026-10-09-06:50:45_330 [INFO] OutputFileGenerator - Successfully written the result: E:\ms\coderisk\data\public-datasets\conplag-pilot-20261009\version_2\jplag\18\native\java\results.jplag
+2026-10-09-06:50:45_330 [INFO] OutputFileGenerator - View the result using --mode

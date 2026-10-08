@@ -1,0 +1,15 @@
+2026-10-09-06:50:17_694 [WARN] JPlagVersionChecker - There is a newer version (6.3.0) available. You can download the newest version here: https://github.com/jplag/JPlag/releases
+2026-10-09-06:50:18_699 [WARN] Submission - Failed to parse submission d6af96bd-50751b994c70d72c:
+d6af96bd-50751b994c70d72c\Main.java:193: ����: ���η��ظ�
+    static 
+    ^
+d6af96bd-50751b994c70d72c\Main.java:202: ����: ���η��ظ�
+    static void println(int[] A) {
+    ^
+2026-10-09-06:50:18_997 [INFO] JPlag - Total time for comparing submissions: 0h 00min 00s 287ms
+2026-10-09-06:50:18_998 [WARN] ClusteringFactory - Cluster calculation disabled (as requested)!
+2026-10-09-06:50:18_998 [WARN] JPlag - 1 submissions were skipped (see errors above): [d6af96bd-50751b994c70d72c]
+2026-10-09-06:50:19_062 [INFO] ReportObjectFactory - Start writing report...
+2026-10-09-06:50:19_063 [INFO] ReportObjectFactory - Start to export results...
+2026-10-09-06:50:19_317 [INFO] OutputFileGenerator - Successfully written the result: E:\ms\coderisk\data\public-datasets\conplag-pilot-20261009\version_2\jplag\10\native\java\results.jplag
+2026-10-09-06:50:19_318 [INFO] OutputFileGenerator - View the result using --mode

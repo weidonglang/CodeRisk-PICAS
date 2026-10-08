@@ -76,3 +76,8 @@ If `python` is blocked by a WindowsApps alias, use:
 $PY = ".\analysis-service-python\.venv\Scripts\python.exe"
 & $PY experiment\validate_research_v4_dataset.py --output-dir data\artifacts\experiments\SEED-VALIDATION
 ```
+# 2026-10-09：数据复核与公开标签探索入口
+
+数据质量登记使用 `review_public_data.py`，盲审材料与双人导出合并使用 `prepare_annotation_workbench.py`，保守划分提案使用 `propose_public_splits.py`。本机首批 HTML 位于忽略目录 `data/public-datasets/review-workbench-20261009-v2/review.html`，标签仍待人工复核；说明见 [复核文档](../../coderisk_docs/proposal/DATA_REVIEW_WORKBENCH.md)。
+
+`run_published_conplag.py --prepare` 先冻结外部单人公开标签方案，再用 `--registration` 运行探索评测。`archive_conplag_pilot.py` 从保存的逐对分数复核统计、归档不含原始源码的证据并绘图。实际 911 对 Java 结果见 [探索报告](../../coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md)。这些工具独立于正式 `run_fair_evaluation.py` 的资格门禁，不能用于绕过双人标签、功能/来源核验及研究冻结要求。
