@@ -1,0 +1,76 @@
+{
+  "status": "QUALITY_REVIEW_NOT_GROUND_TRUTH",
+  "client_date": "2026-10-09",
+  "integrity": {
+    "public": {
+      "verified_files": 5193,
+      "status": "INTAKE_COMPLETE_NO_DETECTOR_SCORES"
+    },
+    "multilang": {
+      "verified_files": 382,
+      "status": "INTAKE_COMPLETE_NO_DETECTOR_SCORES"
+    }
+  },
+  "source_records": 3865,
+  "unique_language_byte_contents": 3647,
+  "by_corpus_view_language": {
+    "ad2022:original:java": {
+      "source_records": 839,
+      "syntax_parsed": 838,
+      "syntax_failed": 1,
+      "cpp_hints": 0
+    },
+    "ad2022:original:python": {
+      "source_records": 687,
+      "syntax_parsed": 687,
+      "syntax_failed": 0,
+      "cpp_hints": 0
+    },
+    "conplag-v3:version_1:java": {
+      "source_records": 985,
+      "syntax_parsed": 985,
+      "syntax_failed": 0,
+      "cpp_hints": 0
+    },
+    "conplag-v3:version_2:java": {
+      "source_records": 988,
+      "syntax_parsed": 987,
+      "syntax_failed": 1,
+      "cpp_hints": 0
+    },
+    "codenet:original:java": {
+      "source_records": 107,
+      "syntax_parsed": 106,
+      "syntax_failed": 1,
+      "cpp_hints": 0
+    },
+    "codenet:original:c": {
+      "source_records": 111,
+      "syntax_parsed": 72,
+      "syntax_failed": 39,
+      "cpp_hints": 9
+    },
+    "codenet:original:python": {
+      "source_records": 102,
+      "syntax_parsed": 84,
+      "syntax_failed": 18,
+      "cpp_hints": 0,
+      "LEGACY_GRAMMAR_ACCEPTED_VERSION_REVIEW_REQUIRED": 17,
+      "LEGACY_GRAMMAR_NOT_ACCEPTED": 1
+    },
+    "mdn:original:html": {
+      "source_records": 46,
+      "syntax_parsed": 46,
+      "syntax_failed": 0,
+      "cpp_hints": 0
+    }
+  },
+  "duplicate_groups": 180,
+  "cross_problem_duplicate_groups": 2,
+  "cross_dataset_duplicate_groups": 0,
+  "pair_scores_computed": false,
+  "code_executed": false,
+  "relationship_labels_assigned": false,
+  "compiler_version_verified": false,
+  "implementation_sha256": "b6cfb20e721a45801c41f358b5c3dbf6a900b6aecde30237365fa9fa31669bca"
+}

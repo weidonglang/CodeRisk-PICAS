@@ -1,0 +1,3102 @@
+[
+  {
+    "code_sha256_text": "010bc2bcc0aac461900226adfb123915fc49d8d13e3db1fdae3ac57ead8b6857",
+    "record_count": 2,
+    "records": [
+      "SRC-d453356eed21763a66eb",
+      "SRC-d29a5d0c1ed63c8625fb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "03eada5089f65d4968eccf6ee8363d00cefc700bf557bc773cbdfd6648f72379",
+    "record_count": 2,
+    "records": [
+      "SRC-e01ea38a35692c057a6e",
+      "SRC-417e136ab3541ce3516e"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-1-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "042ee550b040c84b40c119fa20e0ee07146e57592486d16d2c7ea3632e5d8967",
+    "record_count": 2,
+    "records": [
+      "SRC-82ca860dfae7e07427d8",
+      "SRC-b7a82443ffabff20df9a"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "06b0925754166a1d4424a07b4f9364b5697328623fdbdd8d8864033d8e1b0bd3",
+    "record_count": 3,
+    "records": [
+      "SRC-b8f0c5e1bf0137c2f7aa",
+      "SRC-e83a90b65c9ff85ac90e",
+      "SRC-a0c24ced78771679484d"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-2-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "094496bd76edbde1db6b56a56045f7984491c6af69396b479e71ffbb628fb20c",
+    "record_count": 2,
+    "records": [
+      "SRC-75025f1bdefc2aa39b64",
+      "SRC-e260fb4afa73a4410d89"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "0b8bb8afaf26c254b3f166840f781646e6a5359498c2af380d45846842a8bed5",
+    "record_count": 2,
+    "records": [
+      "SRC-4d67d26b84b3b2f8ddeb",
+      "SRC-3d953b516e415cf10d34"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "0d3f47f235f2d20a34406d54089b803d727fbe7aa069b5c36e6dd8a2b0a1e7b4",
+    "record_count": 2,
+    "records": [
+      "SRC-aeab7e17c248dc36fbeb",
+      "SRC-869129107f3ae7f45f4d"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:13"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "0dcec2ac7caf550d7ba678e829dd1ce785f858f1155c301113f44e20fafe2f8a",
+    "record_count": 2,
+    "records": [
+      "SRC-3ad9ebeff6b0ae0c5acd",
+      "SRC-e8909a53ae2c838eca59"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "0de31d7cd80c051907c8468bb7ae9b761f47adb14a38870ca447bf6e76bbe7f9",
+    "record_count": 4,
+    "records": [
+      "SRC-9ff370abb13fcb75143e",
+      "SRC-315add867a6c3890a3f5",
+      "SRC-d39532251cfa8c71b5e4",
+      "SRC-f40e37b9f075a21e05f4"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "10892813791280928d904b0c9649c73efe615cf462cd0765bfbc2f010d295c2b",
+    "record_count": 4,
+    "records": [
+      "SRC-1251812b7114b71b2077",
+      "SRC-dbe1348a48168610710d",
+      "SRC-75322d2015fabaeed112",
+      "SRC-35e798bb5d0826c6bd99"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "13bd02a73b41c435b409290aedd31885c1b1510b92ca8772a7738c300378ee74",
+    "record_count": 2,
+    "records": [
+      "SRC-a7151fd202d56d5c1768",
+      "SRC-7aae69e12a4d41ef0ccd"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1438cc56cd7e38fe0ffbb131ee52af944576145c06223c1fef420df3f0d855af",
+    "record_count": 2,
+    "records": [
+      "SRC-01aafcb2c3d600d99bdc",
+      "SRC-61fffe8342664a556359"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "14603621c555c55849bb7583abb62e6aa1cbc9054a38b17b5e9c3b5355651174",
+    "record_count": 2,
+    "records": [
+      "SRC-d0a76acab2807ea4015c",
+      "SRC-31b1c0dbe8e2f6c05d24"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "16a42daeed85665aacf6e5cc7678f7c6c34e0ab7e6559c55cf9ceafef8970e0b",
+    "record_count": 2,
+    "records": [
+      "SRC-e5014325c7cb5e8c1d9f",
+      "SRC-4ae1deb56668f16dcabd"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "16fd21614ea7c4e50f11d2f843dcb5b377e9efb9ba27a8743bf540e3d8300292",
+    "record_count": 2,
+    "records": [
+      "SRC-083c8281c50530dd06f1",
+      "SRC-4bf60b8cfa6bb05f8155"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1747741fe15848f8d1a404aa0637266a4139591ba9dac1b9d0a607d83f62e42a",
+    "record_count": 2,
+    "records": [
+      "SRC-716b61fc67c122b4de06",
+      "SRC-9f5e133b5ae42a6928bc"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1853a599170dc3be0ce8e95d2bee02e54fe9c3b1aaf4432d53a2fa579fea751f",
+    "record_count": 2,
+    "records": [
+      "SRC-bb0019ca6340a136dd2c",
+      "SRC-818e4c3f97da64848244"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1a61935883ccf2e565d0bb54b0ccbfc62561fef1553ebd639ec4d50eb0a95d63",
+    "record_count": 2,
+    "records": [
+      "SRC-07a90f9583ae0a77ef81",
+      "SRC-eff8c6b33380609ace0d"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1b8da4dd201d6d6edc5227202eb77758ae880432f570856ec2e4b8ca8d2c1fff",
+    "record_count": 2,
+    "records": [
+      "SRC-0d246e1055b30b1e6a85",
+      "SRC-28b4c48a98d0fcb196ec"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:16"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "1c8643820cd73b19443f6d4a848bf33b6e1152d6ff7b8f515742fc0e7a7efa29",
+    "record_count": 2,
+    "records": [
+      "SRC-b594b5320fb3c6be1510",
+      "SRC-1bf54b80884f580d34c6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:10"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "21649405121d97eedd7a606bca22035e3b438bf60afc038c668c7aa2c1a73cfd",
+    "record_count": 3,
+    "records": [
+      "SRC-959aa38ee41b31a95ce8",
+      "SRC-cc805d6701be354f1af8",
+      "SRC-49d25901c26e6075a2f7"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "25b66767c6bfef75d80cf0ef1ee1f57f667557db555e70902eca005c0ed39ba6",
+    "record_count": 3,
+    "records": [
+      "SRC-a0659ccf9f654f59358f",
+      "SRC-229fdd3b19db901e0907",
+      "SRC-cab856d3be8bcefde332"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "26a48846fbd7e7b6ea864c2af6df94fae0518c2894d817beafa8d304e8b38789",
+    "record_count": 4,
+    "records": [
+      "SRC-3f561c52902de1e98c60",
+      "SRC-e72bdabc3d8177041c09",
+      "SRC-5bf2e3f22c23ddc70ffb",
+      "SRC-9e70b00e31d9d2a6b5e6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "26c578b98ea64fcecadf07fd3651536a415f726229b7528fec9d3df5fffcec92",
+    "record_count": 2,
+    "records": [
+      "SRC-50067e002c92296b1303",
+      "SRC-f77aa495e9fc2610554b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "273cd67b97fa65cc794d3f58b09ac06d98a3bdc1e83e0960b8a25847652e14bc",
+    "record_count": 2,
+    "records": [
+      "SRC-f52a9dec196dc318fed2",
+      "SRC-f33f3d68d244459b1d67"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "28735246a67c449d657c2dd56033cc58d1f565add4911d42cc9503ac0603419d",
+    "record_count": 2,
+    "records": [
+      "SRC-558e92b074d50c3bc103",
+      "SRC-5a3c4eb1ea79430a8a3e"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "2ed8ee5dd920df33bbb4776d03a99372081eb5fbe0df1ec2135ada7be686165a",
+    "record_count": 2,
+    "records": [
+      "SRC-822e898cb7a89cbd42a5",
+      "SRC-ee36d055b7b964599f60"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "2f727b9ea7435e831ca85c40ac52bed04d91e2b6f7be696d7d1298a991780be1",
+    "record_count": 2,
+    "records": [
+      "SRC-ba04e4b6805e5029100a",
+      "SRC-a650bfa4a92e3f412b7b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3085a15b0ed2f01d55dd7f2c9bddd109531116b50c5fba3bf4a0e61b3f1c316e",
+    "record_count": 2,
+    "records": [
+      "SRC-e1bfbf3e41e545aebe16",
+      "SRC-3ee76dfbb796e71fd055"
+    ],
+    "datasets": [
+      "codenet"
+    ],
+    "problems": [
+      "codenet:p00755"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "31052c071ea6ac3f7e6b114e87552edd984477a29b6de5957d4f7ce937ee2f13",
+    "record_count": 2,
+    "records": [
+      "SRC-cdcb83d2e9bdc0cad4d2",
+      "SRC-25c3ac0ddfc9ade3b59b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:13"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "31208864adf67f82cc9160a2da6a723e2c1220dde1e85ad649ee32c9fe65c3ec",
+    "record_count": 2,
+    "records": [
+      "SRC-bce3d401d54cdde1de98",
+      "SRC-c44434e83362e9706b9a"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-3-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "312145be6b23b16ba1b3cf2a26081da87ddc894e47c0790dc7a3cf7a437a6041",
+    "record_count": 5,
+    "records": [
+      "SRC-692bce721896d9d49352",
+      "SRC-1ac8700eb489bc5ab4ca",
+      "SRC-ae9781fec0054b2fdc99",
+      "SRC-c8ffec6a08813fdbc6a1",
+      "SRC-a1a1929f444755d3b5d0"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-2-java",
+      "21_22-3-2-java"
+    ],
+    "cross_problem": true,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "33a6392e0323b4f34f2af5602dfe130706cf4383808defed97913f35f66ec2ac",
+    "record_count": 2,
+    "records": [
+      "SRC-cb941cd1b8a62e6c51f2",
+      "SRC-6b130de997ee0eb7dc60"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "35bb2ffe8f0ebe4666f29ecc539af4cc0578b20ee7eb0c60eb7488ff8e72ca72",
+    "record_count": 3,
+    "records": [
+      "SRC-15f3ec085661175888d6",
+      "SRC-db895cc39eac7a42225b",
+      "SRC-054ccc627a3aca97271a"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3603e31830b60a00469b1c14b5da1c03ecd2e213c4d53c4e9ada1e177e1e5487",
+    "record_count": 2,
+    "records": [
+      "SRC-2c42ce439cc490039c72",
+      "SRC-3ce924dde40dd6f354b0"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:5"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "360a25519b9f4dd349055a53e7f63229e296523a671467e7e37ce3150db6be65",
+    "record_count": 2,
+    "records": [
+      "SRC-4fe766ffa3a94317484f",
+      "SRC-404da840458c79fd3e4b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:10"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3612df00de54512a1a1029189906cda2b1b824e7dab5bec3e5c62e25cbae4da4",
+    "record_count": 2,
+    "records": [
+      "SRC-803d107603e6c8eeaa1d",
+      "SRC-3a6f09fd83f0d90fd906"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "37bcae790edf185c572e208800c29eb2291702d54dce89f2710c84b63d1453b3",
+    "record_count": 2,
+    "records": [
+      "SRC-522d9a65012442621441",
+      "SRC-1f313441a5a70bc276a9"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-4-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "38e0f848e91fac4071dc8c865994c010c686cac2a7cc182eb3f1a76681eee3b9",
+    "record_count": 2,
+    "records": [
+      "SRC-cc363544bda23ff36be2",
+      "SRC-043350eabae38526134d"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "39bd4e4ada034b97577b0cd29801d57fea343e73746d12fb23bd4f5d1327f907",
+    "record_count": 2,
+    "records": [
+      "SRC-4a1ad0575cc558b53102",
+      "SRC-80704ab17c9be5b80187"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-3-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3d4a3561a70eceac0f2bd6feb31682ed086c2a94c59deae237b407de296528ec",
+    "record_count": 2,
+    "records": [
+      "SRC-3d99d3f544c717e1b2ff",
+      "SRC-9786ea9b5e1d860a5a2f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:11"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3da6895c7e7aeb9c5e9e615deb566c773265f07550065afdf37cc8d64b3e86aa",
+    "record_count": 2,
+    "records": [
+      "SRC-b56e349376fad049762e",
+      "SRC-4427edec7c36ab634956"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-3-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "3fe21bba22d9a0acdc8aa0e9487c8b9a904cbe69e848af1a9e59fe5e9fca21f0",
+    "record_count": 4,
+    "records": [
+      "SRC-10f26d23d071c2a4cfb8",
+      "SRC-4f8529b7fd3bbacc2728",
+      "SRC-1a254ba879a2d977401c",
+      "SRC-6400842cf97abe2aac78"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:14"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "4066bb6afb1a00fb94efe1e033080a7821a55bf22b9a1953cfb71a2c024d7601",
+    "record_count": 2,
+    "records": [
+      "SRC-647790cf5616826b3133",
+      "SRC-5e5deb024b512bbfa22e"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "418f4d6f1b8275bae729b364e5b6eb270f558d34fdf6b16caefaf5fc3873d428",
+    "record_count": 2,
+    "records": [
+      "SRC-1e329c818cfd05a1fc50",
+      "SRC-b097903e65f167e0d8c3"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "41a1a158437b903232004fff62fc22b1260f6ee624c7e2f6e2723b080ab82bd3",
+    "record_count": 2,
+    "records": [
+      "SRC-7783cfef8ea1ea748ed8",
+      "SRC-d28d26c7a6ed2858ee58"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "42bc89d987891c09dadd09ae5b85d61e7639f1b6763c098b2bf3772024b268f5",
+    "record_count": 2,
+    "records": [
+      "SRC-23f42cad7611bac64ab5",
+      "SRC-eadae24826089c532b27"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "42e2652fda0d4f5e81deb96c5e446bf6b2355d42d6c2f12f349ce49d46f0d18b",
+    "record_count": 2,
+    "records": [
+      "SRC-6c0621a4fddc7098553d",
+      "SRC-bf7de4f826b3f17892f0"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "4307c0837bdda72952f3c364dfbcc894d39a43371081743e86559691a918abdd",
+    "record_count": 2,
+    "records": [
+      "SRC-c178ff9056acabb2a972",
+      "SRC-d9a932b7b19dafddd025"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:11"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "431b05d0e8e1d10b948b551c97c83afa780e62a7ae1c7676a655c04132e25692",
+    "record_count": 2,
+    "records": [
+      "SRC-5f3dc3a8bfd344cabb60",
+      "SRC-24e6984c148709f740eb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:10"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "44abac9a8f2c797a689f4671654441471a0e99d325088f67f0209b578d4217b7",
+    "record_count": 2,
+    "records": [
+      "SRC-02fea43f5d1dd88040a9",
+      "SRC-65f71b2d6a43ae53bde0"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "44af8c80eea9b361612cf13b424bb0d151fbf9a6efa1c703841bc4507ade12e0",
+    "record_count": 2,
+    "records": [
+      "SRC-a5ac77edb96c7e72275f",
+      "SRC-cfb7f3bd2530dca3fb03"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "462bad3c2b90a8b0315662908f03916fff4dae1fd1b42c47f867ed313c781dae",
+    "record_count": 2,
+    "records": [
+      "SRC-1e6d792b129833092102",
+      "SRC-fa5e241c4cce738b1314"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:6"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "48a7cb547a6fc88c5717d56670e026adf96c27a801636818c6f659684c21c373",
+    "record_count": 2,
+    "records": [
+      "SRC-2d547bb93e8a1cf77f51",
+      "SRC-db50541c21175171c161"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "4a0d00c96498d123618cdc518135cea56aac0dea0ee570df7d0bdf948f87bcee",
+    "record_count": 2,
+    "records": [
+      "SRC-f710ad270f90ac1f44d1",
+      "SRC-11f4429ebf2d6ddf4730"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "51f2162ff7b89da68eb22d075764d4b64e585d4b5f1424ce851384063f313ae5",
+    "record_count": 2,
+    "records": [
+      "SRC-8dfed0a6825928a2c3d6",
+      "SRC-d049c555f2cb65e56190"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "524cd7f06bda5cb02891d5b03fd00c4d9ee94ce95e9e65bbbc73030182e4750e",
+    "record_count": 2,
+    "records": [
+      "SRC-2153f55dca8cb8a94e17",
+      "SRC-f71d653ed38ffbcaf092"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "527b4c7bcd90e160c8b4522c83b267ba77971d276c6ebfc477b4015d6bffdbd9",
+    "record_count": 2,
+    "records": [
+      "SRC-9c7817ef95c9a05fe5a3",
+      "SRC-e0235ecacec2a653f059"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "52fef5e25f21ee7f43125424b7ac2143c1ca645269f5b2243a83626afd3372d2",
+    "record_count": 2,
+    "records": [
+      "SRC-a2b13ab85d0952ba1887",
+      "SRC-f2a7e5007c1c31568372"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "59853867929e2f2bc43fbc4557d4ca4f103b280e8a2d0ecbfa03e5f7def2c532",
+    "record_count": 2,
+    "records": [
+      "SRC-a3f8e886c0c11219be98",
+      "SRC-d01f2866d70b6708e200"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "59d1de21c59c4a1b2891d7cda9e14abd006e3519bea1354724ca878ef175fff9",
+    "record_count": 2,
+    "records": [
+      "SRC-44d2c2bd4d38a4f71244",
+      "SRC-c048c17716de41bebfe8"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-3-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5b928e25c8d357e81a003614872b3c047421230b61044db0910bace650edc427",
+    "record_count": 2,
+    "records": [
+      "SRC-8fa590dd8fc2d554a535",
+      "SRC-59b99a799d0b2f2468e5"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5bfe14d4c3b17f7602499404be8f33e6b2c2bee528955bc590c624579f6a3b43",
+    "record_count": 2,
+    "records": [
+      "SRC-53e9e7914731feb39526",
+      "SRC-e6c7322b1fe3abc43977"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5caac182278ce0f5b830a1773d9238f4009de790177221938c1ef0f5be0d2cc7",
+    "record_count": 2,
+    "records": [
+      "SRC-54ac86e236580d8093ff",
+      "SRC-ca2e6dcd76e4b33e15ad"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5d5e42ff77133de13154dfacecf6e0383c7ac07c49e85aad05ac80f574a02fb1",
+    "record_count": 2,
+    "records": [
+      "SRC-cbcfeda9c48d78cfcd3c",
+      "SRC-f518cf09ccbcfcc60c50"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5e6354435afb7d6615a2ccfe0a53f6b3a134ad4aa64d6ce2dd3bc2241898d688",
+    "record_count": 2,
+    "records": [
+      "SRC-2c6b8b7777f08afab96e",
+      "SRC-e19fbc87b38d405ec1ed"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "5f16b41e089382a864eb1b155dedd6bb3f67d5f3cb3a9d93625c1dced0b144ef",
+    "record_count": 3,
+    "records": [
+      "SRC-b2619c8bb4171194be25",
+      "SRC-a535c3282e2b2e312f13",
+      "SRC-e59f5600ffc415909cac"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:7"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "60aabc0461776e13bd1b1ea283af0d0d8d0a01adb334dfe592e598b949b92356",
+    "record_count": 2,
+    "records": [
+      "SRC-ea473c450f9df5a62cf4",
+      "SRC-9a15089e958f72f8e2a6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "60d78516465aafd9b67fc3922eb41af2f5b1aae8ddcecf2d576e9ba14daed5ef",
+    "record_count": 3,
+    "records": [
+      "SRC-626c314dafba7271edc8",
+      "SRC-3cab145b3a9fcc1c88dc",
+      "SRC-e7d32547aaaf1d05edce"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-4-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "61156d656ae9ef29b9b8344d6860a7c3706408eaa38e1a095e37d71e50564a45",
+    "record_count": 2,
+    "records": [
+      "SRC-5ad7272fd63b21d8793a",
+      "SRC-b7096a5a5d99197ee31a"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:6"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "6acc7ec6ec02998a229d59d3ef1ad18e6c9243f5a2dada476bc32ef327882571",
+    "record_count": 2,
+    "records": [
+      "SRC-1f8b28ff7a904948f200",
+      "SRC-9203e45c450db4878aa9"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "6adbc4ad6ca8f41071e5de4437066d4604561745126c3b9a0b8129759d7cf608",
+    "record_count": 2,
+    "records": [
+      "SRC-000916bf19782f6e42ac",
+      "SRC-747df42885febbd61802"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:14"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "716a2f11a3f2d5fdb4cffa1f03bc15f4188b3d0f1b745107d1919fe547549efa",
+    "record_count": 2,
+    "records": [
+      "SRC-5d6ef2ea4411d3a9c166",
+      "SRC-f5afab689e7816d0fd77"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:16"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "7308f0d945d860b591bbb69593c37c31d3ee80fb3abd257470356bf2b50b346b",
+    "record_count": 2,
+    "records": [
+      "SRC-ff88c0e787cec8cea9f5",
+      "SRC-a624bfbf99dc510b5656"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "743869fd736b45aaa045b8efcd6d81959880be2549126c19b50825a2a89362a9",
+    "record_count": 2,
+    "records": [
+      "SRC-ce2f33183602c425626c",
+      "SRC-c1a48b1cc94d44ba8a6d"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "75a1df9c0771b9fa502a929e7f899e8dc42e1cdb096003cdd4ff7a5415920fc5",
+    "record_count": 2,
+    "records": [
+      "SRC-0ba8d81e7f43e5129b95",
+      "SRC-ed5c8606f226b01b2f33"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "76d14e56f62d6a455b40d38a788514892325ca0552167bd4a7595d622911fa16",
+    "record_count": 3,
+    "records": [
+      "SRC-f6ceb9ba7e0d59f2494b",
+      "SRC-b433296895cb9b6a8a98",
+      "SRC-24b48e24d01e167c1c1d"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "77ab48965f700712acd709e7e9ddbc9d43948c395a2929b72e33a68913e0c37c",
+    "record_count": 2,
+    "records": [
+      "SRC-274d571e22f9f1ef9a37",
+      "SRC-8b27bc370d3321ffb730"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "78d3b264aad9749eeb8f13da22b01ba3523826de72347dac3ab2f8bb1da19176",
+    "record_count": 3,
+    "records": [
+      "SRC-daa622f988d08646d134",
+      "SRC-aefcd2f2012d3fdb8081",
+      "SRC-a8fe3fd8c667cf0761e1"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "796cead4caace323971d7ef77b168d378e41b0752524eb9f64a9ca942e2a958c",
+    "record_count": 2,
+    "records": [
+      "SRC-386cf3bcc8ab9a38512d",
+      "SRC-a698e1828989b3ecb2dc"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "7ab8208d671556bc31da0d71c0eb0370822d40673f5809bca80b4fb54fe15c3d",
+    "record_count": 2,
+    "records": [
+      "SRC-e42a554c92f178d1cc73",
+      "SRC-cc6c4d5ff75881b8fac3"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-4-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "7b7f34abbfcad3555bbc64cee570c04e58fbb08d0e87a1689c744282a2008866",
+    "record_count": 2,
+    "records": [
+      "SRC-ae1ff7c1d6bff44e1321",
+      "SRC-e1bb87256c20df9bdd83"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "7cb445c7c8ad9468c7a3dc7b706b2f6ac028d21b164afb88a38408342d44c839",
+    "record_count": 2,
+    "records": [
+      "SRC-16c98002e82c4d8abde3",
+      "SRC-376e766d761e54839216"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "805bd7fedf4006f95067255a19a2a19a310def27cc93877ccb3e13afcd59ad82",
+    "record_count": 2,
+    "records": [
+      "SRC-51f37969c26dadf8163d",
+      "SRC-44580d586fc6c1e59f5f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "808644d24b96e08e18c7128b20350b4ba1f218184d07f4177fa1aecba3e25541",
+    "record_count": 4,
+    "records": [
+      "SRC-d5ac20411e066332e840",
+      "SRC-8a472e76d8b99a699e52",
+      "SRC-9e337949d02973c32ce8",
+      "SRC-a24df448b5ed95cfd397"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "816b2e8c886d15ba0ca858ebde431c26ab882f450816d7fe31179f5af57cbc89",
+    "record_count": 2,
+    "records": [
+      "SRC-c0c60ed595be556504af",
+      "SRC-ba7236dcfeaf13fb5788"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:13"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "825fdef8bbae501fa062c304d18768e39f33e4a45f3f1c9c74afcd03ff331ed4",
+    "record_count": 2,
+    "records": [
+      "SRC-92416004c81e2c5794f3",
+      "SRC-eaa16ea49d2bd1011cb9"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8642a36733054acaf5c0ee6c11c835060878876383d78df3a74bc0d113c48308",
+    "record_count": 2,
+    "records": [
+      "SRC-02cf645b257c4f13eb73",
+      "SRC-2f7a8fed49bdf61dfc1f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "86e5fb06db5850e3c3340f7db2bbbe62e2c64a273242fd4c2ef877bcf17273b8",
+    "record_count": 2,
+    "records": [
+      "SRC-8361681f28c20974be9a",
+      "SRC-9fe5e4e9a002bb81513f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8ab0972072ae983f29f140162d7b4cc4401025e7b6ce1a38b4d410a6a2e56ce7",
+    "record_count": 2,
+    "records": [
+      "SRC-ce75bc773ab5b42389b8",
+      "SRC-fc6b2fabab53b32635e3"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:14"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8b227e17f8764ef4ea78a180718931298a23b668e4ea16762873dfc3ea535ae8",
+    "record_count": 2,
+    "records": [
+      "SRC-58048e0bcb4e70e85d7f",
+      "SRC-641d0b22b6d606d8c17a"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:5"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8b639de6e086de66569acc0b3471acb9f2686cd2d87d2d78709d45065dff5a75",
+    "record_count": 2,
+    "records": [
+      "SRC-e2b98f72e4b0bcfafd37",
+      "SRC-c7091830e731c288d88a"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:16"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8c0e00231be211a2b1399ef2f6d67d24dcca85140d835f99372f3996f0643a2d",
+    "record_count": 2,
+    "records": [
+      "SRC-e6243a75eb76bfde5672",
+      "SRC-95f9ef94c6951d671acb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8d5748e2a98d421dcd9e611cb6bf3334b9b7b7318aa8a74a65975bfe42fafb22",
+    "record_count": 3,
+    "records": [
+      "SRC-91a556d0951263fa11a9",
+      "SRC-6cddf8d11b84acaaa242",
+      "SRC-7f143d0a4f1aa14a9367"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8e2a4607563a1184fda8123faceb24e784ef8ab479d5fac5e00a82d1a558eabd",
+    "record_count": 2,
+    "records": [
+      "SRC-d91258a4df18e1f4d525",
+      "SRC-8956b2623c7b60abcbe8"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8ea91e73d675d66aa9f19fc83fdaf130ace9b8fcc20f1c90c10d339adf9b21e0",
+    "record_count": 2,
+    "records": [
+      "SRC-0e8e4804ed5c2c3aa8e5",
+      "SRC-ee0c3067b0e16e3c02e8"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-6-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8efa749b77f997eec8cfd352bb6f79f0ea66c532945186dd5f2c56719670a4a4",
+    "record_count": 2,
+    "records": [
+      "SRC-11c318f644146251d703",
+      "SRC-fd37e54b3e940876e6ca"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "8f1762564b5c82df5b91fccc4bd6b37cdb74ad9c584799424f5f5037085c8297",
+    "record_count": 2,
+    "records": [
+      "SRC-378d16e0116d2da93316",
+      "SRC-f767da032b9c72881295"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9070cc2b8be83f6575c0af655564a380a62d247c527231b5f784aedca7ca7af7",
+    "record_count": 2,
+    "records": [
+      "SRC-5a70f6b2e0c6d37e5abf",
+      "SRC-59f95fb966ce7e1ad050"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:7"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "907dd6e2f702b4fdcdc612baeafed2e677204d2b744751f5a956da3fa15e43af",
+    "record_count": 2,
+    "records": [
+      "SRC-52a3980505d68a8b6dfd",
+      "SRC-0b4bd4036c089616a591"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "93517e881291c81e402aeadef7354940d63fa1f163286492f45b5cfa4d420b85",
+    "record_count": 2,
+    "records": [
+      "SRC-1d051bb8207a6698fe3b",
+      "SRC-7c6afde87c2e5247b1fe"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "95a57759ca7f449409d913bcc993013f3243a98693c7a6e2c235ed14b980b038",
+    "record_count": 2,
+    "records": [
+      "SRC-728f7476786c63bdbab0",
+      "SRC-d2ae5683b6fd79651d33"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "97aa2decf67ee58c63d3190abf63455c991dc4dc065ec45c817a810386c4efa5",
+    "record_count": 2,
+    "records": [
+      "SRC-29eb58a16d10401b6a3b",
+      "SRC-b3e689c95460dd442213"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9902a467adb93d626736b7d939a74c90691f8d71803002ccae2d8b0793c6f900",
+    "record_count": 2,
+    "records": [
+      "SRC-ed7af702380315382f01",
+      "SRC-fdb6cb144ef64dee64d6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "99875a930dddcf4cfd67d94c7baa43a02264d0d05839b185671c103bb93432f5",
+    "record_count": 2,
+    "records": [
+      "SRC-bad7df33b36eff8202fe",
+      "SRC-316cd925a38ccd423084"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9a375cacd8688c7a4120337683def04fd862ffbbdcc827190730f0936c080754",
+    "record_count": 2,
+    "records": [
+      "SRC-131a5a8b476d8af9d548",
+      "SRC-c7800d994cd3e51aa525"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9d1939780bdd16d69cc9becd89342b15320777e5455a7bbdc8d0258ccae4db9b",
+    "record_count": 2,
+    "records": [
+      "SRC-0313e6ce1a0daee30176",
+      "SRC-280e22e0f3da382f0b01"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:5"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9d6bb57b9a219a61ed1eedd7ec83381d20870870aa1c3078ed03376b51fcb968",
+    "record_count": 2,
+    "records": [
+      "SRC-4cb0d141559c1162c880",
+      "SRC-7ab065342dbc73bbdf21"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "9f6a54c37d2741bee4483ef260432789d8876ca428be6353e24d16b7111006c5",
+    "record_count": 2,
+    "records": [
+      "SRC-37f6a3dfbfe7467c28e3",
+      "SRC-12a81ca3436b441fcccf"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a0db5426844a2d0ac3883358f072651b1d693c0e5431c63b9b2cabae3f14f97b",
+    "record_count": 2,
+    "records": [
+      "SRC-36c577d20f0f6f670de0",
+      "SRC-ab042575539de396f0e8"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a1bc162f4a40bb2e212ce75f74319788c2b87102747f37681a84c759ee881969",
+    "record_count": 2,
+    "records": [
+      "SRC-86c39fbc50934745d98a",
+      "SRC-9d8f1516689731207028"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a1fa3e4b50e1ebf31d050f9ff7a2a8488e662ece3bae24b7abfa5d21c8912830",
+    "record_count": 2,
+    "records": [
+      "SRC-6082aaebc7b135e0f5dc",
+      "SRC-932c734561929c06d137"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-2-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a23297c71634ae34a317ec7947b0d5038598d8feb62965687ba9887b22779250",
+    "record_count": 2,
+    "records": [
+      "SRC-57e3ffabaa34ce1e2dc9",
+      "SRC-d45db60f85231e27717c"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a33dff95453263b5226e6b17a26fe01fa18aed56ba34ce42e9237e78bebdc7f8",
+    "record_count": 2,
+    "records": [
+      "SRC-f802584e447eb82060b5",
+      "SRC-732774ed28e39ec913c2"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a529dbdb5e1371a563dc8305676eb612a072718ea018b883b1aa6d8e9b7f291f",
+    "record_count": 2,
+    "records": [
+      "SRC-792fdd0c842df1b37897",
+      "SRC-adbf434f65fca7cb5928"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a5b1e55952e1ee2b52662c9b43cdfd8f31bae162f4b95dda399db5f5b1c5c030",
+    "record_count": 2,
+    "records": [
+      "SRC-dde003089541816eac24",
+      "SRC-e1c048313a371302530e"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a5ec319eaa4fbeb1a14206e94f9b0dcfdadfca691bcb3a3419f8a46f24fcc0c5",
+    "record_count": 2,
+    "records": [
+      "SRC-2e8866b2a9b799457f16",
+      "SRC-ff1435e26a7b2346271c"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "a65b74774d7f681eb81c67edcffdf284201b12d90c8c987c9692854101e9c3b3",
+    "record_count": 2,
+    "records": [
+      "SRC-18431b7067ffc44dcde3",
+      "SRC-17f4a2703c25c7ac9d66"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-3-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ab0bb5e11a70423a797655e62d692b39209bc8080ff3d04469432687894c86b8",
+    "record_count": 2,
+    "records": [
+      "SRC-f10f15638bb5d9b7a1d9",
+      "SRC-7acca8eedc1248ce2999"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ab0deb99ec31996b7b44bfa47f893ff30abe1d45d68e0564174cc64665a5c2bd",
+    "record_count": 2,
+    "records": [
+      "SRC-2171648b0bc8033fb047",
+      "SRC-d0d2b9c32e34dca83cec"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:16"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "adf46fc113a7897c75e0e2bacc647847b6d27738c252cbe691b30fca72e8bc2a",
+    "record_count": 4,
+    "records": [
+      "SRC-355190a1da909fae03d0",
+      "SRC-783915064dae4ddbdd87",
+      "SRC-b167051c55ee93c20d66",
+      "SRC-35eba71d81ae1fa7f3a2"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ae959e64e582784713ad1c8de7cff88e52d5c265a8f17dc1e7f592e363507bbd",
+    "record_count": 2,
+    "records": [
+      "SRC-e1a9a321e6c68507954c",
+      "SRC-96fed9ab899f5fee2829"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:18"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "af35838eb0b75e7d60a130fa127c02b3ce236116a5d4d2edfa687bd71c3ad616",
+    "record_count": 3,
+    "records": [
+      "SRC-433f59dcf1116b9a589e",
+      "SRC-44eb83288026c6db132e",
+      "SRC-b95badd95fa6440325b8"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "af439130c22c6d903edf7f931f777fd702e36112253ffb12905ff4fb86504c32",
+    "record_count": 2,
+    "records": [
+      "SRC-bd2ef2511d08cc865ddb",
+      "SRC-3bba9785f1b394cef395"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-2-1-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "af5de4dcbd93f0d1da0d7b96db73d971c767fb428f8408dde650608883a70001",
+    "record_count": 2,
+    "records": [
+      "SRC-2b7b6d2d7b1cce37adbc",
+      "SRC-0af874c2502140b974b1"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-3-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "af74ef9023de52c377a8093cb171dc3c2370ed97d1b71ecc1c9070664ce7cec5",
+    "record_count": 2,
+    "records": [
+      "SRC-06e52166020e257e9b85",
+      "SRC-ee401462e7a0a9b05306"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "b129307242ec0aef14e9e421c4fdc8c809978dc21871a6bb857207718160e852",
+    "record_count": 2,
+    "records": [
+      "SRC-d3d4f16bb2b54f303a9d",
+      "SRC-e8a79191558e25183c2e"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "b19a2a89d801bb412a9fabcdc9cda356e77c5a1cd1781081c5aaf566b54386b9",
+    "record_count": 2,
+    "records": [
+      "SRC-4ebd1dc035e318bc87fe",
+      "SRC-98aeb8f983827e5a40f5"
+    ],
+    "datasets": [
+      "codenet"
+    ],
+    "problems": [
+      "codenet:p01556"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "b6ad36c1bc26986d0d692dbf6ebb664fddd3660f05c2dbfd7dc82a52b39118c7",
+    "record_count": 4,
+    "records": [
+      "SRC-07382ba7ec2d2f91bf29",
+      "SRC-becb7cac2518b7ab5c46",
+      "SRC-59ee115c3e3bc2f99308",
+      "SRC-7b398d8fe367393cb001"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-1-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "b7cb70362b21b80f1185b98efde05abc51b1066aed47200a7ea3725862eb65e7",
+    "record_count": 4,
+    "records": [
+      "SRC-8b7f82f23969d895cb30",
+      "SRC-fa0a9ad61a591df0c617",
+      "SRC-e7dd07c9edb217c8e499",
+      "SRC-6960b2e88bf3b27a944d"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:14"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "bab814ae1e80f49ceba421659662a5f9520826f90fcbbfb0280d27d14fdeed37",
+    "record_count": 2,
+    "records": [
+      "SRC-f1f2404279fc4242fbd6",
+      "SRC-29f2c5fba064331e321f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "bdf6b33f5a21b53e50c4e63ddd39fd9e755e820262dd580569bfa21776bbb32a",
+    "record_count": 2,
+    "records": [
+      "SRC-3fc7ddf237192f202867",
+      "SRC-6960ab14fa6a724fe6e6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "bf2a896eb42a632d8d138a3b589dc9848682337cd758dab24b91420ea3f4a305",
+    "record_count": 2,
+    "records": [
+      "SRC-80fdeec841e5fc1a3b3d",
+      "SRC-2f4a22158362ba8e0573"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:16"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c144dfdf3c050ab5f8a75874064564d2ea8bcb1d0b1e922e9aa2eacac02eb025",
+    "record_count": 3,
+    "records": [
+      "SRC-d3d831d7fefeaf44d5d1",
+      "SRC-c61dbd926b3921365fe5",
+      "SRC-94045cd225524eb2c782"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c366b6a0eed06b95f8877cffd0f063fb7aac56286dad896236ba61a7df73fce0",
+    "record_count": 2,
+    "records": [
+      "SRC-5f74837009763e643e2d",
+      "SRC-3e22d15963b66541089b"
+    ],
+    "datasets": [
+      "codenet"
+    ],
+    "problems": [
+      "codenet:p00755"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c5862013efd4427734964eef58c72de1278f5cab458f035d65cd730d29cbd0e4",
+    "record_count": 2,
+    "records": [
+      "SRC-e833ec9dcf362a54c3bb",
+      "SRC-fe350634363777ccdfa2"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c5c5cbbbe71258892ebfe882c030c584fd4cb7624e35c39c41b3de15fdb5461d",
+    "record_count": 2,
+    "records": [
+      "SRC-631c146b48089aa58442",
+      "SRC-bc79b9db85aee9d967fb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c74c99add65aa484d93846392c7eea5e3f4bd184e04a9a1981190a3b949c01b5",
+    "record_count": 2,
+    "records": [
+      "SRC-c6830150a2a3ab3061a2",
+      "SRC-90adb6e517281e5c38c3"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "c8360a5c153c4cfa9ee61d30f91c078f446cb7be53f3042c6ad338ef927a3c2b",
+    "record_count": 2,
+    "records": [
+      "SRC-ba92204e39296c0f0433",
+      "SRC-57e782f54b655696fed2"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:4"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "cc4719dcf220c9bd3500d9c2ce2119429605e3af7ab0e90d078576d5bef6bd17",
+    "record_count": 2,
+    "records": [
+      "SRC-432dfb31fa9177d481ed",
+      "SRC-ecfb81a001edc72b2df6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "cd3027809553b40991201b74b61814cfcb81baa8459dfe86a8191e3b45925379",
+    "record_count": 2,
+    "records": [
+      "SRC-e086fdfcb94be6c2ad05",
+      "SRC-8435491dcf0a2e9c19d9"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "cf49d0a6a26b77cb7c3e85e5cb0b57dfd6003a228e250e2dec10e0e83aaf9bbe",
+    "record_count": 2,
+    "records": [
+      "SRC-4b9f0ad91ffe1933b95b",
+      "SRC-99ad35f4e6ae2c75947a"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:11"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d0ce12ad0c39c580f7b98b1fc3d0466eda68d0c41c23b7a7d43608b2329fbd55",
+    "record_count": 3,
+    "records": [
+      "SRC-73bc5ba926de661de00d",
+      "SRC-e24331e9c2bb9dd30c5b",
+      "SRC-120e0d6f80eb8832412f"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d21edd55a6fbe523d6aa909e59712505f4255952372cfbc5baeff1bd343b9b24",
+    "record_count": 2,
+    "records": [
+      "SRC-b0f6e5f995f19ea760fa",
+      "SRC-33865b06c955a61d0ec1"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d32422ae7aa1d17142499ede1e9d93c7ffcfa1e7e6b548c98689e57dfd2d17ee",
+    "record_count": 2,
+    "records": [
+      "SRC-42521ee1fbe7e68f9798",
+      "SRC-64fea4e228e3a3643796"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d4163ec84d18479e4154247bb0e098e87105a7103a5cba4074d1753bd274db69",
+    "record_count": 2,
+    "records": [
+      "SRC-d0ca8cfeccccad403950",
+      "SRC-f5e9e10d779c43b5de99"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d802164d63afa92e8d0e30301034878481af3974e9c906e18b8c74ccb1d40853",
+    "record_count": 2,
+    "records": [
+      "SRC-edc1966125165f814b0e",
+      "SRC-4788de59c7f0f3dd2853"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "d94ad939d2852a187dd00d4addfa5d4f2a6fa0a3c966a6ef1a07965d4f15a5e0",
+    "record_count": 2,
+    "records": [
+      "SRC-4d40b14a58be1ed60d02",
+      "SRC-744b51ef9a93db99bb7b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "dbdcebf00b8fb09219047e145a64c8b976e2c63d1e2e12cad725b8de69d810e8",
+    "record_count": 2,
+    "records": [
+      "SRC-2d0d92e193c48443b74f",
+      "SRC-14691b7e1407d5447996"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "dc37258423132c56f6e6fceabc3455a2a0c4d5046b78a2b2e01cfeb1bcc34096",
+    "record_count": 2,
+    "records": [
+      "SRC-6ec842550738cc64aa34",
+      "SRC-8996369604bddd830f06"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "dd9f5a6ac1d2a0aa6d41bea43cb66713285bddee0a215609cd029bd658bf61f7",
+    "record_count": 2,
+    "records": [
+      "SRC-2d48299376c2238e46e8",
+      "SRC-6c1ff28596abbdc947b4"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:13"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e099d7081450c5535fc84e871f5ddb4c221a10389887c4280db786884548893d",
+    "record_count": 3,
+    "records": [
+      "SRC-18ca52e67f8962637a5f",
+      "SRC-843d9315ffa72f8ff879",
+      "SRC-74ad208bd9f142839691"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:14"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e12930f0257c0bc537f2de835587d514c0f8995231647d20e5b6b544b95903ed",
+    "record_count": 2,
+    "records": [
+      "SRC-73cca80ea07693cdab3b",
+      "SRC-8ac032ead59dd465b733"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e1a03ddb11200bdb1a4680e7afc7a4149dff80fbeb3835ac4c7c63cc46097d11",
+    "record_count": 2,
+    "records": [
+      "SRC-742fdd92d837ad6e6410",
+      "SRC-ec87dd3275940ab47e89"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e1a7872a390d8e2f6644ff887fcffbd3b0c4dd68ac1f28695bcdf4a95c73eeed",
+    "record_count": 2,
+    "records": [
+      "SRC-5e78a868386f1124a7e8",
+      "SRC-91603e13344e8940fe54"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:6"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e1c2dde6a77830b6ffacccf3765a5a645e704a4676fc709787056df0e43e7f76",
+    "record_count": 2,
+    "records": [
+      "SRC-c0b5193902c1a7deeded",
+      "SRC-446809cf672c7cce5b9a"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e32a0decbbae6fca7f70f5f1f02d9298e206413119d7a667857ab2e4dccad633",
+    "record_count": 4,
+    "records": [
+      "SRC-aea5912c0edaf96683a5",
+      "SRC-07f160e9b611679dea99",
+      "SRC-131771860b62387c9525",
+      "SRC-4ae4b2b42dbf80791afe"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-4-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e48b708aeab64439086adbecae2d1109d4a1c6aa80cdb087c4efdd64b785ca77",
+    "record_count": 3,
+    "records": [
+      "SRC-5da054092bbda006dd83",
+      "SRC-4ac7d03cdcfdaba9b3b0",
+      "SRC-ae9bd7317e81ee25d110"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-3-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e576112381302b06d78babe6af400c12393e6269ec214724f58674e72781ec23",
+    "record_count": 2,
+    "records": [
+      "SRC-3d5dbb089820f60d5a4f",
+      "SRC-42d599230fc11e3c097c"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "19_20-2-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e73d8329c1717cd58603d7123c2d3ce0ce4be73af29b9e7960a6d6d7cc88259f",
+    "record_count": 2,
+    "records": [
+      "SRC-a96f51314aaa440022d8",
+      "SRC-33760ddea083621b2a35"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "e7ab163f0a8022bf534181b07f39937a9e7b9743de16f36ea4dd07bfe0022824",
+    "record_count": 2,
+    "records": [
+      "SRC-74184c4ec83d79ba16f7",
+      "SRC-8b7d5347b36ef707413a"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "eae579e93dfd92f095f575925713b69e203fb718f8efd03720d46779963239f6",
+    "record_count": 2,
+    "records": [
+      "SRC-434c9a365b348b984b64",
+      "SRC-396efaa3a9bc50a70327"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-python"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ed228d33a346cc87de57bab4c953b60cde08f5ecbd7deb63a5ac09e0d205bbb6",
+    "record_count": 4,
+    "records": [
+      "SRC-3502fd85533a91a0793f",
+      "SRC-7179c5186b5d319d6955",
+      "SRC-8100cd5c7ddaa54fc4be",
+      "SRC-47b3c62f04ef86f0b9bb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:17"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ed5ccd502c033680621faedd1303905378d7625b01af5fec3d302058d36054ba",
+    "record_count": 2,
+    "records": [
+      "SRC-855199a9a0cf327ada49",
+      "SRC-c8f1bd06bdfc214b6009"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:13"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ef33101345e3aff6afc328b520687eb4ab45f60316d6284406c860d9582b7fd5",
+    "record_count": 2,
+    "records": [
+      "SRC-bce5cae0cd6ed156e19e",
+      "SRC-d780a4f8e1a8d27d621b"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "ef546a807f8c895f3e4b7bef751cbfc27ed5f234448990309c27d1a86de8a785",
+    "record_count": 2,
+    "records": [
+      "SRC-a8c078ff545ad37e6e5c",
+      "SRC-33a9529ad91058509e63"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:7"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f118e7e5ab62dc5bb5927afd0c376a7278dc2b495c30746be75b39d70a93522c",
+    "record_count": 2,
+    "records": [
+      "SRC-36a41eaf4e70d1dbdf36",
+      "SRC-1cb57e12d6b72949aec0"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-2-1-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f19e968600f1ae4581664b37c9d8a874fdeba7e537572673f76424c0c35b9341",
+    "record_count": 2,
+    "records": [
+      "SRC-74734f1cdea3f1697369",
+      "SRC-2569f42fbcb9aa698993"
+    ],
+    "datasets": [
+      "codenet"
+    ],
+    "problems": [
+      "codenet:p01335"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f2f535fcfb52ba2d48dad107a2b1e4f7b9bc55df744ee03a9fd26f9ab27c4cea",
+    "record_count": 2,
+    "records": [
+      "SRC-30a940c8410bb3a11c9a",
+      "SRC-14b26de1aade75b6712f"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:3"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f30f695825446743fdf438e8e1ab9f9aece5de53bc4f66fad8a260c13dff250e",
+    "record_count": 2,
+    "records": [
+      "SRC-705e931c79d0f642fc8e",
+      "SRC-d1d9697e6cef33e899b0"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f41c7e83bedb24356b1008a150dcc728ea17345d875c39ce716d856fa1800987",
+    "record_count": 2,
+    "records": [
+      "SRC-6074e03186a936728e67",
+      "SRC-bc62d31fd84ce8dfec28"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:21"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f5435586daf6a49bf9bff47751bd439ac331a69dbda60e40dcc3836250aa8858",
+    "record_count": 3,
+    "records": [
+      "SRC-d54422980ccc3e36b5fc",
+      "SRC-a282ce3eb2e6e408be39",
+      "SRC-c9b7bf40e922ab370b81"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:15"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f6e773a7b2e104eecad48f44cfbff8ab4d083b57d12a6808333b6336b1c7fd34",
+    "record_count": 2,
+    "records": [
+      "SRC-350c5057063b8a7cc6ed",
+      "SRC-f6f2ce0731df6e444291"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:20"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f9144464a16f2616412f3598c5eead3726655660a8d8cf2010cde5f3db5a5392",
+    "record_count": 2,
+    "records": [
+      "SRC-5821a572307362caf476",
+      "SRC-1f201c27eb9859d77cfb"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "f980843fc30440fd60bd548a3095a0396ceb58a3f7f17362f02a636e4517b439",
+    "record_count": 2,
+    "records": [
+      "SRC-40644a722604d048a4f4",
+      "SRC-ce63d2702711a2c4aeb9"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "21_22-1-2-java"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "fa10dc124910b76041329c0d640242c162a18027cc1c1874b3e0cf7cf3622adf",
+    "record_count": 2,
+    "records": [
+      "SRC-16272298c926e01a64ae",
+      "SRC-4cfde418984a693712e6"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:19"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "fab714a1fbf680fbb33649122c7f4cd3cc276dd234746879084e05e44dcb0050",
+    "record_count": 2,
+    "records": [
+      "SRC-85d9cf4c8030d4e6c8e9",
+      "SRC-8b703b23058fc76d28d8"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:1"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "fe2f0bf072b0dfe03200fa0cd455f58827f4d92d7028cc60a62f6cee9b9ca6b1",
+    "record_count": 2,
+    "records": [
+      "SRC-a5883a6b5ea351483574",
+      "SRC-9d501d94b476f3386965"
+    ],
+    "datasets": [
+      "ad2022"
+    ],
+    "problems": [
+      "20_21-2-1-python",
+      "21_22-2-1-python"
+    ],
+    "cross_problem": true,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "feb0d359ab443e78d9920ba56bd78f385672b5fa5893f2128d0be4c345628d4e",
+    "record_count": 2,
+    "records": [
+      "SRC-8e5aa75b82a9034b12b4",
+      "SRC-705b2d80fdbde3fef7f3"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:8"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  },
+  {
+    "code_sha256_text": "fef4ae3fa35bdcbfac27738ed03d2e21bd499530e34c5b826279be16493e08bb",
+    "record_count": 2,
+    "records": [
+      "SRC-6fa679951b4dbdfdd003",
+      "SRC-60fcf3c37dccee3875e2"
+    ],
+    "datasets": [
+      "conplag-v3"
+    ],
+    "problems": [
+      "conplag:problem:9"
+    ],
+    "cross_problem": false,
+    "cross_dataset": false,
+    "relationship_inferred": false
+  }
+]

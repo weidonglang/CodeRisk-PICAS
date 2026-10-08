@@ -1,0 +1,93 @@
+{
+  "status": "FROZEN_EXPLORATORY_PUBLISHED_LABEL_PROTOCOL",
+  "client_date": "2026-10-09",
+  "registered_at_utc": "2026-10-08T22:47:32.725445+00:00",
+  "pair_scores_computed_before_freeze": false,
+  "intake_registry_sha256": "acfb8dfa7abe7ea35d6cbcca34b8f0afc92e6de518e83ce20d2cc9522e23ff9b",
+  "pair_snapshot_sha256": "d93a9fd5fce69380822b7a19d1de9cefa1f8b93a9c31177452cbca58100ae3fb",
+  "split_assignments_sha256": "b16ddb8825ea8156fb570667fe380b4520f1daeb2cf8411a100860b79d7a6a89",
+  "pair_count": 911,
+  "published_class_counts": {
+    "0": 660,
+    "1": 251
+  },
+  "split_counts": {
+    "validation": 284,
+    "test": 627
+  },
+  "overlap_check": {
+    "problem_family_raw_and_template_free_text_hash_overlaps": 0,
+    "author_identity_available": false,
+    "author_isolation_claimed": false
+  },
+  "views": [
+    "version_1",
+    "version_2"
+  ],
+  "views_are_paired_not_extra_samples": true,
+  "methods": [
+    "FULL_FIXED",
+    "NO_CANONICAL_FIXED",
+    "RAW_FIXED",
+    "CANONICAL_FIXED"
+  ],
+  "fixed_threshold_candidates": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "threshold_selection": "validation F1, lower FPR, higher threshold; test labels never select parameters",
+  "jplag": {
+    "version": "6.2.0",
+    "min_tokens": 5,
+    "jar_sha256": "f2d2b98ce57018d074be023583ce5d1801240e67dd37344ef7834e63ba7e521f"
+  },
+  "bootstrap": {
+    "groups": "published problem",
+    "repetitions": 1000,
+    "seed": 20261009
+  },
+  "dynamic_threshold_evaluated": false,
+  "natural_similarity_fpr_evaluated": false,
+  "reason": "Problem descriptions/profiles and natural-independent labels unavailable in ConPlag intake.",
+  "label_scope": "Published single-annotator labels; no local double review; not disciplinary ground truth.",
+  "formal_core_eligible_pairs": 0,
+  "downloaded_sources_executed": false,
+  "common_cohort": "Only emitted native JPlag comparisons; missing values remain unknown. Also report PICAS all-pair results.",
+  "implementation_sha256": {
+    "experiment/run_published_conplag.py": "3d8fb22a044ee552c17cd71200ea6e00e8dbc0ca4413ab403dc003faefc30511",
+    "experiment/research_v4_jplag.py": "042b6bb2ff4102a0afc8f7e23dba9459c23d5e87a30f993a34abf98d20aeeb08",
+    "experiment/review_public_data.py": "b6cfb20e721a45801c41f358b5c3dbf6a900b6aecde30237365fa9fa31669bca",
+    "experiment/acquire_public_datasets.py": "fb35e98accc5391885ea2eb9d4fa9c8fc05b43077d857ede91ff6bc84c846e8a",
+    "analysis-service-python/app/analyzers/__init__.py": "79bb183b730e00c055538b2a7800ca4a8f66ac32cf104124d4f2dd916502b6e4",
+    "analysis-service-python/app/analyzers/canonicalization.py": "e9667adaf63e6886b678b166020207ad1c525989b3a1234d39a781b05f3566b9",
+    "analysis-service-python/app/analyzers/java_source.py": "8670770a630b79c0a9c14d7a9990cb419d50757c3f6fbce3b1683405ce6b6868",
+    "analysis-service-python/app/analyzers/lightweight_summaries.py": "0170fcd802f0520cb4a1c83a94980f1590baa53c9294cac7a439291b5757d599",
+    "analysis-service-python/app/analyzers/normalized_ir.py": "168a3e1eed732c3fa00ca02177410bf3f2d98a8bccbe8390b775341b1f8c39a0",
+    "analysis-service-python/app/analyzers/problem_profile.py": "903e72309dbf871d6e6ba8daea853755adecde8c41d062c9b6065dbfd6c0a035",
+    "analysis-service-python/app/analyzers/structured_languages.py": "bbaf2ce03e73a26963cc5fdfbe2fc143c3b9be73aaba14d661ac4a4deb79e153",
+    "analysis-service-python/app/analyzers/token_similarity.py": "72fad03872afcc9e4a3b37d1c40ee82f03dceb4b04612877c4502f89251a509b"
+  },
+  "score_precision": "6 decimals, consistent with production API; ablations rounded after combination",
+  "runtime": {
+    "python": "3.12.14",
+    "tree-sitter": "0.25.2"
+  }
+}
