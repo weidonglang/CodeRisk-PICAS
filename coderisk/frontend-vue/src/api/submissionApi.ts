@@ -8,6 +8,7 @@ export interface Submission {
   questionId: number
   studentId: string
   language: string
+  languageVersion: string
   supportLevel: SupportLevel
   fileName: string
   fileSizeBytes: number
@@ -24,9 +25,11 @@ export async function uploadSubmission(
   questionId: number,
   studentId: string,
   file: File,
+  languageVersion = '',
 ): Promise<ApiResponse<Submission>> {
   const form = new FormData()
   form.append('studentId', studentId)
+  form.append('languageVersion', languageVersion)
   form.append('file', file)
   const response = await httpClient.post<ApiResponse<Submission>>(
     `/questions/${questionId}/submissions/upload`,

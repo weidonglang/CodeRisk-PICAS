@@ -15,6 +15,9 @@ export interface Question {
   inputFormat: string
   outputFormat: string
   constraintsText: string
+  starterLanguage: string
+  starterCode: string
+  starterSource: string
   createdAt: string
   updatedAt: string
 }
@@ -25,6 +28,9 @@ export interface CreateQuestionBody {
   inputFormat: string
   outputFormat: string
   constraintsText: string
+  starterLanguage?: string
+  starterCode?: string
+  starterSource?: string
 }
 
 export interface QuestionFeature {

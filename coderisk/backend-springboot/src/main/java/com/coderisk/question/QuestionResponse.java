@@ -9,6 +9,9 @@ public record QuestionResponse(
         String inputFormat,
         String outputFormat,
         String constraintsText,
+        String starterLanguage,
+        String starterCode,
+        String starterSource,
         OffsetDateTime createdAt,
         OffsetDateTime updatedAt
 ) {

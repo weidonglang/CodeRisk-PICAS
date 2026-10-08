@@ -2,6 +2,7 @@ package com.coderisk.report;
 
 import com.coderisk.common.config.CoderiskProperties;
 import com.coderisk.common.enums.RiskLevel;
+import com.coderisk.common.enums.EvidenceType;
 import com.coderisk.common.exception.ApiException;
 import com.coderisk.integration.analysis.MetricData;
 import com.coderisk.question.QuestionResponse;
@@ -164,6 +165,19 @@ public class ReportService {
                 .append("</td><th>指标配置哈希</th><td>").append(escape(result.metricConfigHash()))
                 .append("</td></tr></table>");
         html.append("<p>").append(escape(result.reasonSummary())).append("</p>");
+        for (EvidenceResponse context : resultService.evidenceForResult(result.id())) {
+            String category = String.valueOf(context.metadata().get("category"));
+            if (category.equals("REVIEW_ASSESSMENT")) {
+                html.append("<div class=experimental><strong>可区分依据与复核限制：</strong>")
+                        .append(escape(String.valueOf(context.metadata().get("message"))))
+                        .append("（不改变原始分数，规则尚未校准）</div>");
+            }
+            if (List.of("LANGUAGE_COMPATIBILITY", "SHARED_TEMPLATE_CONTEXT", "REVIEW_ASSESSMENT").contains(category)) {
+                html.append("<h3>").append(escape(category)).append("</h3><table>");
+                context.metadata().forEach((key, value) -> row(html, key, String.valueOf(value)));
+                html.append("</table>");
+            }
+        }
 
         if (htmlSource) {
             html.append("<div class=experimental>HTML 源码结构检测为实验功能，固定阈值尚未通过标注数据校准；共同模板需人工复核。嵌入脚本和样式仅作为文本，不执行页面或脚本。</div>");
@@ -206,7 +220,7 @@ public class ReportService {
         html.append("<h3>结构化证据</h3><table><tr><th>类型</th><th>分数</th><th>说明</th></tr>");
         for (EvidenceResponse evidence : resultService.evidenceForResult(result.id())) {
             html.append("<tr>").append(cell(evidence.evidenceType().name()))
-                    .append(cell(percent(evidence.similarityScore())))
+                    .append(cell(evidence.evidenceType() == EvidenceType.REVIEW_NOTE || evidence.evidenceType() == EvidenceType.PARSER_WARNING ? "—" : percent(evidence.similarityScore())))
                     .append(cell(evidence.description())).append("</tr>");
         }
         html.append("</table>");

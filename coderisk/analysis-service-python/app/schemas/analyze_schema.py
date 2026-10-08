@@ -1,6 +1,6 @@
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class QuestionPayload(BaseModel):
@@ -12,6 +12,15 @@ class QuestionPayload(BaseModel):
     input_format: str = Field(default="", alias="inputFormat")
     output_format: str = Field(default="", alias="outputFormat")
     constraints_text: str = Field(default="", alias="constraintsText")
+    starter_language: str = Field(default='', alias='starterLanguage', max_length=16)
+    starter_code: str = Field(default='', alias='starterCode', max_length=20000)
+    starter_source: str = Field(default='', alias='starterSource', max_length=2000)
+
+    @model_validator(mode='after')
+    def validate_starter(self):
+        if self.starter_code.strip() and (self.starter_language.lower() not in {'java', 'python', 'py', 'c', 'html', 'htm'} or not self.starter_source.strip()):
+            raise ValueError('Shared starter code requires a supported language and a source reference')
+        return self
 
 
 class SubmissionPayload(BaseModel):
@@ -22,6 +31,7 @@ class SubmissionPayload(BaseModel):
     file_name: str = Field(default="", alias="fileName")
     raw_code_path: str | None = Field(default=None, alias="rawCodePath")
     code: str | None = None
+    language_version: str = Field(default='', alias='languageVersion', max_length=64, pattern=r'^[^\r\n]*$')
 
 
 class AnalyzeMockRequest(BaseModel):

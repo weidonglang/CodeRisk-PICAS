@@ -1,0 +1,365 @@
+{
+  "fixture": {
+    "case_id": "html-shared-form",
+    "source_type": "SYNTHETIC_DEVELOPMENT_FIXTURE",
+    "experiment_label": "UNCERTAIN",
+    "eligible_for_core_metrics": false,
+    "independent_creation_verified": false,
+    "request": {
+      "question": {
+        "id": 1,
+        "title": "四则计算器开发案例",
+        "description": "输入两个数与运算符，按要求输出计算结果。",
+        "starterLanguage": "html",
+        "starterCode": "<html><body><form><input name=\"left\"><input name=\"right\"><button>Calculate</button></form></body></html>",
+        "starterSource": "Synthetic teacher starter fixture; not collected coursework"
+      },
+      "submissionA": {
+        "id": 1,
+        "language": "html",
+        "languageVersion": "HTML5",
+        "code": "<html><body><form><input name=\"left\"><input name=\"right\"><button>Calculate</button></form></body></html>"
+      },
+      "submissionB": {
+        "id": 2,
+        "language": "html",
+        "languageVersion": "HTML5",
+        "code": "<html><body><form><input name=\"left\"><input name=\"right\"><button>Compute</button></form></body></html>"
+      }
+    }
+  },
+  "result": {
+    "taskId": null,
+    "submissionAId": 1,
+    "submissionBId": 2,
+    "tokenSimilarity": 0.828571,
+    "astSimilarity": 1.0,
+    "canonicalTokenSimilarity": 0.571429,
+    "identifierMappingSimilarity": 0.0,
+    "weightedSimilarityScore": 0.764286,
+    "dynamicThreshold": 0.85,
+    "riskMargin": -0.085714,
+    "calibratedRiskScore": 0.285715,
+    "exceedThreshold": false,
+    "marginScale": 0.4,
+    "formulaVersion": "HTML_STRUCTURE_FIXED_V1",
+    "riskLevel": "MEDIUM",
+    "problemProfile": {
+      "featureVersion": "html-markup-profile-v1",
+      "domain": "html",
+      "confidence": 0.0,
+      "explanation": {
+        "note": "No calibrated HTML task complexity model is available."
+      }
+    },
+    "thresholdAdjustment": {
+      "baseThreshold": 0.85,
+      "difficultyAdjustment": 0,
+      "solutionSpaceAdjustment": 0,
+      "templateRiskAdjustment": 0,
+      "naturalSimilarityAdjustment": 0,
+      "historicalDistributionAdjustment": 0,
+      "finalThreshold": 0.85,
+      "formulaVersion": "HTML_STRUCTURE_FIXED_V1",
+      "explanation": "Experimental HTML fixed threshold; algorithm-problem dynamic adjustments do not apply. Not calibrated on labelled HTML data.",
+      "policy": "FIXED_UNCALIBRATED"
+    },
+    "reasonSummary": "存在一定相似信号，但尚未超过题目动态阈值，建议按需复核。",
+    "isMock": false,
+    "metrics": [
+      {
+        "name": "TOKEN_SIMILARITY",
+        "value": 0.828571,
+        "weight": 0.25,
+        "explanation": "Raw token n-gram Jaccard similarity."
+      },
+      {
+        "name": "AST_SIMILARITY",
+        "value": 1.0,
+        "weight": 0.3,
+        "explanation": "Source-tree structure similarity (DOM tags for HTML). Falls back to 0 when parsing fails."
+      },
+      {
+        "name": "CANONICAL_TOKEN_SIMILARITY",
+        "value": 0.571429,
+        "weight": 0.45,
+        "explanation": "HTML tag/attribute canonicalization with text, class/id and resource values preserved."
+      },
+      {
+        "name": "IDENTIFIER_MAPPING_SIMILARITY",
+        "value": 0.0,
+        "weight": 0.0,
+        "explanation": "Coverage and consistency of aligned canonical identifiers."
+      }
+    ],
+    "evidence": [
+      {
+        "evidenceType": "TOKEN_MATCH",
+        "similarityScore": 0.828571,
+        "description": "Token fingerprint overlap from the V1 token analysis pipeline.",
+        "metadata": {
+          "tokenCountA": 37,
+          "tokenCountB": 37,
+          "fingerprintCountA": 32,
+          "fingerprintCountB": 32,
+          "overlapCount": 29,
+          "ngramSize": 3,
+          "fragments": [
+            {
+              "tokens": [
+                "\"left\"",
+                ">",
+                "<"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "tokens": [
+                "\"right\"",
+                ">",
+                "<"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "tokens": [
+                "<",
+                "body",
+                ">"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "tokens": [
+                "<",
+                "button",
+                ">"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "tokens": [
+                "<",
+                "form",
+                ">"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            }
+          ],
+          "astEnabled": true
+        }
+      },
+      {
+        "evidenceType": "AST_STRUCTURE_MATCH",
+        "similarityScore": 1.0,
+        "description": "HTML source tag/attribute tree sequence similarity; not a rendered browser DOM.",
+        "metadata": {
+          "nodeCountA": 13,
+          "nodeCountB": 13,
+          "fragments": [
+            {
+              "nodes": [
+                "attribute:name",
+                "start_tag:button",
+                "text"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "nodes": [
+                "attribute:name",
+                "start_tag:input",
+                "attribute:name"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "nodes": [
+                "end_tag:button",
+                "end_tag:form",
+                "end_tag:body"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "nodes": [
+                "end_tag:form",
+                "end_tag:body",
+                "end_tag:html"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            },
+            {
+              "nodes": [
+                "start_tag:body",
+                "start_tag:form",
+                "start_tag:input"
+              ],
+              "submissionAStartLine": 1,
+              "submissionAEndLine": 1,
+              "submissionBStartLine": 1,
+              "submissionBEndLine": 1
+            }
+          ],
+          "parser": "tree-sitter-html",
+          "parserA": "tree-sitter-html",
+          "parserB": "tree-sitter-html"
+        }
+      },
+      {
+        "evidenceType": "CANONICAL_TOKEN_MATCH",
+        "similarityScore": 0.571429,
+        "description": "Canonical token similarity after identifier normalization.",
+        "metadata": {
+          "rawTokenSimilarity": 0.828571,
+          "canonicalTokenSimilarity": 0.571429,
+          "identifierCountA": 0,
+          "identifierCountB": 0,
+          "normalizationModeA": "html-structure-canonical",
+          "normalizationModeB": "html-structure-canonical"
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "Experimental HTML source-tree similarity; common page templates need manual review. Embedded JavaScript/CSS are opaque text. No page is rendered or executed.",
+        "metadata": {
+          "language": "html",
+          "thresholdPolicy": "FIXED_UNCALIBRATED",
+          "identifierMappingApplicable": false,
+          "embeddedCodeAnalysis": "opaque-text"
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "Language versions are declarations, not compiler-validated facts; syntax differences are not converted automatically.",
+        "metadata": {
+          "category": "LANGUAGE_COMPATIBILITY",
+          "submissionA": {
+            "language": "html",
+            "declaredVersion": "HTML5",
+            "versionProvenance": "SUBMITTER_DECLARATION_UNVERIFIED",
+            "syntaxParsed": true,
+            "normalizationMode": "html-structure-canonical",
+            "syntaxHints": [],
+            "limitations": [],
+            "languageVersionValidated": false,
+            "parserRuntime": "grammar/subset; no compiler validation",
+            "sourceConverted": false
+          },
+          "submissionB": {
+            "language": "html",
+            "declaredVersion": "HTML5",
+            "versionProvenance": "SUBMITTER_DECLARATION_UNVERIFIED",
+            "syntaxParsed": true,
+            "normalizationMode": "html-structure-canonical",
+            "syntaxHints": [],
+            "limitations": [],
+            "languageVersionValidated": false,
+            "parserRuntime": "grammar/subset; no compiler validation",
+            "sourceConverted": false
+          }
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+        "metadata": {
+          "category": "REVIEW_ASSESSMENT",
+          "policyVersion": "context-review-v1",
+          "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+          "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+          "reasons": [
+            "NO_NON_TEMPLATE_CONTENT",
+            "SHARED_TEMPLATE_DOMINATES"
+          ],
+          "shortCodeTokenLimit": 40,
+          "naturalRiskShortCodeTokenLimit": 120,
+          "naturalRiskTrigger": 0.6,
+          "policyCalibrated": false,
+          "includedInProductionScore": false,
+          "templateDominanceTrigger": 0.5,
+          "relationshipDetermined": false,
+          "declaredVersionDifference": false
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "Registered shared template matches are review context only; effective token counts do not prove independent creation.",
+        "metadata": {
+          "category": "SHARED_TEMPLATE_CONTEXT",
+          "registered": true,
+          "language": "html",
+          "sourceReference": "Synthetic teacher starter fixture; not collected coursework",
+          "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+          "minimumSegmentTokens": 8,
+          "templateSha256": "839c8c0b52df6c29a003dc22425a031417482426f7e3cdd9f527ae60f2b3f3ad",
+          "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+          "includedInProductionScore": false,
+          "eligibleSegmentCount": 1,
+          "shortSegmentsIgnored": 0,
+          "submissionA": {
+            "applicable": true,
+            "tokenCount": 37,
+            "matchedTemplateTokens": 37,
+            "effectiveTokenCount": 0,
+            "templateCoverage": 1.0,
+            "fragments": [
+              {
+                "segment": 0,
+                "startLine": 1,
+                "endLine": 1,
+                "startToken": 0,
+                "endTokenExclusive": 37
+              }
+            ],
+            "fragmentDisplayLimit": 20
+          },
+          "submissionB": {
+            "applicable": true,
+            "tokenCount": 37,
+            "matchedTemplateTokens": 0,
+            "effectiveTokenCount": 37,
+            "templateCoverage": 0.0,
+            "fragments": [],
+            "fragmentDisplayLimit": 20
+          },
+          "nonTemplateTokenSetSimilarity": null,
+          "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+        }
+      }
+    ]
+  },
+  "baseline_score": 0.764286,
+  "baseline_threshold": 0.85
+}

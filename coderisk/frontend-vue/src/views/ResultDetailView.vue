@@ -40,6 +40,31 @@ const error = ref('')
 const result = ref<ResultRow | null>(null)
 const isHtmlResult = computed(() => result.value?.formulaVersion === 'HTML_STRUCTURE_FIXED_V1')
 const evidence = ref<EvidenceItem[]>([])
+const reviewAssessment = computed(() => evidence.value.find(item => item.metadata.category === 'REVIEW_ASSESSMENT')?.metadata)
+const compatibilityContext = computed(() => evidence.value.find(item => item.metadata.category === 'LANGUAGE_COMPATIBILITY')?.metadata)
+const templateContext = computed(() => evidence.value.find(item => item.metadata.category === 'SHARED_TEMPLATE_CONTEXT')?.metadata)
+function contextSide(context: Record<string, unknown> | undefined, side: string): Record<string, unknown> {
+  const value = context?.[`submission${side}`]
+  return value && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {}
+}
+function contextPercent(value: unknown) {
+  return typeof value === 'number' ? percent(value) : '无可比较代码'
+}
+function compatibilityLimitations(side: string) {
+  const context = contextSide(compatibilityContext.value, side)
+  const labels: Record<string, string> = {
+    STRUCTURE_UNAVAILABLE: '结构无法解析', NORMALIZATION_UNAVAILABLE: '作用域规范化不可用',
+    DECLARED_PYTHON2_NOT_VALIDATED_BY_PYTHON3_PARSER: 'Python 3 解析器不能验证声明的 Python 2 版本',
+    PYTHON_DIVISION_REQUIRES_VERSION_SEMANTICS_REVIEW: '旧版 Python 除法语义需要复核',
+    DECLARED_VERSION_NEWER_THAN_PARSER_RUNTIME: '声明版本高于当前 Python 解析器版本',
+    CPP_SYNTAX_HINT_IN_C_SUBMISSION: 'C 提交中发现 C++ 语法线索',
+  }
+  return Array.isArray(context.limitations) ? context.limitations.map(value => labels[String(value)] ?? String(value)).join('；') : ''
+}
+function templateRanges(side: string) {
+  const ranges = contextSide(templateContext.value, side).fragments
+  return Array.isArray(ranges) ? ranges.map((item: { startLine?: number; endLine?: number }) => `${item.startLine}-${item.endLine}`).join('、') || '无精确匹配' : '无精确匹配'
+}
 const metrics = ref<SimilarityMetric[]>([])
 const diffView = ref<DiffView | null>(null)
 const experimentalMetrics = computed(() => metrics.value.filter((item) => item.name.startsWith('CROSSLANG_')))
@@ -192,6 +217,13 @@ onMounted(load)
     <el-alert v-if="error" class="section-gap" type="error" :title="error" :closable="false" />
     <el-alert v-if="result?.isMock" class="section-gap" type="warning" title="当前结果包含 mock 数据，仅用于联调展示。" :closable="false" />
     <el-alert
+      v-if="reviewAssessment && reviewAssessment.status !== 'SIMILARITY_SIGNALS_ONLY'"
+      class="section-gap" type="warning"
+      :title="reviewAssessment.status === 'INSUFFICIENT_DISTINGUISHING_EVIDENCE' ? '可区分依据不足' : '需要结合背景复核'"
+      :description="String(reviewAssessment.message ?? '')"
+      :closable="false" show-icon
+    />
+    <el-alert
       v-if="experimentalMetrics.length"
       class="section-gap"
       type="warning"
@@ -248,6 +280,27 @@ onMounted(load)
         <strong>{{ percent(metric.value) }}</strong>
       </div>
     </div>
+    <section v-if="compatibilityContext || templateContext" class="panel section-gap">
+      <h2>版本与自然相似背景</h2>
+      <p>声明版本尚未经过编译器验证；解析失败或低相似分不等于独立创作。下面的复核信息不改变原始相似分数。</p>
+      <dl class="kv">
+        <div v-for="side in ['A', 'B']" :key="side">
+          <dt>提交 {{ side }}：声明版本 / 非模板 Token 数</dt>
+          <dd>
+            {{ contextSide(compatibilityContext, side).declaredVersion ?? '未知' }} / {{ contextSide(templateContext, side).effectiveTokenCount ?? '-' }}
+            <p>{{ contextSide(compatibilityContext, side).syntaxParsed === true ? '结构已解析，版本未验证' : '结构未解析' }}</p>
+            <p v-if="compatibilityLimitations(side)">{{ compatibilityLimitations(side) }}</p>
+          </dd>
+        </div>
+      </dl>
+      <template v-if="templateContext?.registered === true">
+        <p>共同模板来源：{{ templateContext.sourceReference }}（登记信息，未独立核验）</p>
+        <p>精确模板覆盖：A {{ contextPercent(contextSide(templateContext, 'A').templateCoverage) }} · B {{ contextPercent(contextSide(templateContext, 'B').templateCoverage) }}</p>
+        <p>模板匹配原文行号：A {{ templateRanges('A') }} · B {{ templateRanges('B') }}（最多展示 20 处）</p>
+        <p>非模板 Token 集合相似度：{{ contextPercent(templateContext.nonTemplateTokenSetSimilarity) }}。这是诊断指标，与上方生产综合分的计算方式不同。</p>
+      </template>
+      <p>“依据不足”规则尚未通过真实标注数据校准；不确认独立创作，也不自动排除真实派生。</p>
+    </section>
 
     <section class="profile-layout section-gap">
       <div class="panel">
@@ -301,7 +354,7 @@ onMounted(load)
       <el-table v-loading="loading" :data="evidence" empty-text="暂无证据">
         <el-table-column prop="evidenceType" label="类型" width="150" />
         <el-table-column label="分数" width="100">
-          <template #default="{ row }">{{ percent(row.similarityScore) }}</template>
+          <template #default="{ row }">{{ ['REVIEW_NOTE', 'PARSER_WARNING'].includes(row.evidenceType) ? '—' : percent(row.similarityScore) }}</template>
         </el-table-column>
         <el-table-column prop="description" label="说明" min-width="260" />
         <el-table-column label="行号" min-width="260">

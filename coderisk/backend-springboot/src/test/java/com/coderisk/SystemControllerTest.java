@@ -483,6 +483,79 @@ class SystemControllerTest {
         org.junit.jupiter.api.Assertions.assertFalse(exported.contains("<h3>题目画像</h3>"));
     }
 
+    @Test
+    void reviewContextPersistsAndReachesAnalysisAndExport() throws Exception {
+        String starter = "left=float(input())\nright=float(input())\n# CODERISK_STUDENT_CODE\n";
+        String source = "synthetic teacher fixture <script>alert(1)</script>";
+        String body = objectMapper.writeValueAsString(Map.of("title", "Calculator Context", "description", "synthetic fixture",
+                "starterLanguage", "python", "starterCode", starter, "starterSource", source));
+        MvcResult created = mockMvc.perform(post("/api/questions").contentType(MediaType.APPLICATION_JSON).content(body))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.data.starterCode").value(starter)).andReturn();
+        long questionId = objectMapper.readTree(created.getResponse().getContentAsString()).path("data").path("id").asLong();
+        mockMvc.perform(get("/api/questions/" + questionId)).andExpect(jsonPath("$.data.starterSource").value(source));
+        MockMultipartFile file = new MockMultipartFile("file", "calculator.py", "text/plain", "print(5/2)".getBytes());
+        MvcResult uploaded = mockMvc.perform(multipart("/api/questions/%d/submissions/upload".formatted(questionId))
+                        .file(file).param("studentId", "context-a").param("languageVersion", "Python 2.7"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.data.languageVersion").value("Python 2.7")).andReturn();
+        long left = objectMapper.readTree(uploaded.getResponse().getContentAsString()).path("data").path("id").asLong();
+        long right = uploadSubmission(questionId, "context-b", "calculator.py", "print(5/2)");
+        MvcResult listed = mockMvc.perform(get("/api/questions/%d/submissions".formatted(questionId))).andExpect(status().isOk()).andReturn();
+        boolean versionFound = false;
+        for (JsonNode row : objectMapper.readTree(listed.getResponse().getContentAsString()).path("data")) {
+            if (row.path("id").asLong() == left) {
+                org.junit.jupiter.api.Assertions.assertEquals("Python 2.7", row.path("languageVersion").asText());
+                versionFound = true;
+            }
+        }
+        org.junit.jupiter.api.Assertions.assertTrue(versionFound);
+        when(analysisClient.analyzePair(any())).thenAnswer(invocation -> {
+            var request = (com.coderisk.integration.analysis.AnalyzeMockRequest) invocation.getArgument(0);
+            org.junit.jupiter.api.Assertions.assertEquals(starter, request.question().starterCode());
+            org.junit.jupiter.api.Assertions.assertEquals(source, request.question().starterSource());
+            org.junit.jupiter.api.Assertions.assertEquals("Python 2.7", request.submissionA().languageVersion());
+            org.junit.jupiter.api.Assertions.assertEquals("", request.submissionB().languageVersion());
+            return new AnalyzeMockResult(request.taskId(), left, right, 1.0, 1.0, 1.0, 1.0, 1.0, .8, .2, 1.0, true, .4,
+                    "FORMULA_SPEC_V1", "HIGH", Map.of(), Map.of(), "相似风险，需复核", false, List.of(),
+                    List.of(new EvidenceData("REVIEW_NOTE", 0.0, "依据不足", Map.of("category", "REVIEW_ASSESSMENT",
+                            "status", "INSUFFICIENT_DISTINGUISHING_EVIDENCE", "message", "依据不足 <script>alert(1)</script>")),
+                            new EvidenceData("REVIEW_NOTE", 0.0, "版本声明", Map.of("category", "LANGUAGE_COMPATIBILITY",
+                                    "submissionA", Map.of("declaredVersion", "Python 2.7"))),
+                            new EvidenceData("REVIEW_NOTE", 0.0, "共同模板", Map.of("category", "SHARED_TEMPLATE_CONTEXT", "sourceReference", source))));
+        });
+        String taskBody = objectMapper.writeValueAsString(Map.of("questionId", questionId, "submissionIds", List.of(left, right)));
+        MvcResult task = mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON).content(taskBody))
+                .andExpect(status().isOk()).andReturn();
+        long taskId = objectMapper.readTree(task.getResponse().getContentAsString()).path("data").path("id").asLong();
+        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId))).andExpect(jsonPath("$.data.status").value("FINISHED"));
+        MvcResult results = mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId))).andReturn();
+        long resultId = objectMapper.readTree(results.getResponse().getContentAsString()).path("data").path("items").get(0).path("id").asLong();
+        mockMvc.perform(get("/api/results/%d/evidence".formatted(resultId)))
+                .andExpect(jsonPath("$.data[0].metadata.status").value("INSUFFICIENT_DISTINGUISHING_EVIDENCE"));
+        MvcResult report = mockMvc.perform(post("/api/tasks/%d/reports".formatted(taskId)).contentType(MediaType.APPLICATION_JSON)
+                .content("{\"format\":\"HTML\",\"includeCodeSnippets\":false}"))
+                .andExpect(status().isOk()).andReturn();
+        long reportId = objectMapper.readTree(report.getResponse().getContentAsString()).path("data").path("reportId").asLong();
+        String exported = mockMvc.perform(get("/api/reports/%d/download".formatted(reportId))).andReturn()
+                .getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
+        org.junit.jupiter.api.Assertions.assertTrue(exported.contains("可区分依据与复核限制"));
+        org.junit.jupiter.api.Assertions.assertTrue(exported.contains("Python 2.7"));
+        org.junit.jupiter.api.Assertions.assertTrue(exported.contains("&lt;script&gt;"));
+        org.junit.jupiter.api.Assertions.assertFalse(exported.contains("<script>"));
+    }
+
+    @Test
+    void invalidReviewContextIsRejectedBeforeStorage() throws Exception {
+        mockMvc.perform(post("/api/questions").contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"title\":\"bad starter\",\"starterLanguage\":\"python\",\"starterCode\":\"print(1)\"}"))
+                .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value("STARTER_CONTEXT_INVALID"));
+        long questionId = createQuestion("Bad version");
+        MockMultipartFile file = new MockMultipartFile("file", "main.py", "text/plain", "print(1)".getBytes());
+        mockMvc.perform(multipart("/api/questions/%d/submissions/upload".formatted(questionId)).file(file)
+                        .param("languageVersion", "3.12\nnot a version"))
+                .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value("LANGUAGE_VERSION_INVALID"));
+        mockMvc.perform(get("/api/questions/%d/submissions".formatted(questionId))).andExpect(jsonPath("$.data", hasSize(0)));
+    }
+
     private long createQuestion(String title) throws Exception {
         String body = """
                 {

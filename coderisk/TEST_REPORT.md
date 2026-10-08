@@ -1,5 +1,16 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## Version and shared-template review context — 2026-10-09
+
+- Python: 126 tests passed; 15 new cases cover version declarations, Python 2/3 syntax and division cues, short-code notices, exact template matching, literal/embedded-script marker boundaries, overlapping spans, null residual diagnostics and API validation. One third-party deprecation warning remains.
+- Backend: 12 integration tests passed with Flyway V1–V4 and H2. Two new tests cover input rejection, persistence, request propagation, saved review metadata and HTML report escaping. AnalysisClient is stubbed in this suite.
+- Frontend: TypeScript check and Vite production build succeeded. Existing third-party annotation and chunk-size warnings remain.
+- Eight synthetic development cases across Java/Python/C/HTML confirmed that added review context leaves every production score and threshold unchanged. All eight have UNCERTAIN relationship labels and zero formal-metric eligibility.
+- Separate live E2E: real Spring Boot and Python services, isolated transient H2 memory database and synthetic Java calculator submissions. Declared versions 8/17 and multiline starter context reached the actual analyzer and saved/exported result. Score remained 1.0; each side had 7 non-template tokens, and the result displayed INSUFFICIENT_DISTINGUISHING_EVIDENCE. No uploaded source was executed.
+- Playwright/Chrome: created a synthetic question through the UI and visually checked the actual result page, including the 100% score, insufficient-evidence banner, declared versions, 68% template coverage, original-line ranges and diagnostic caveats. This does not claim a complete browser upload-flow test or live MySQL migration verification.
+- Rules 40/120 tokens, natural-risk trigger 0.60 and template-dominance trigger 0.50 remain uncalibrated. There is no automatic semantic conversion, compiler-validated version or demonstrated reduction in real-data false positives. Historical ConPlag results are unchanged.
+
+See [implementation boundaries](../coderisk_docs/proposal/VERSION_AND_NATURAL_SIMILARITY.md) and [archived synthetic checks](experiment/evidence/review-context-20261009/README.md).
 ## Public data review and ConPlag pilot — 2026-10-09
 
 - Python: 111 tests passed (14 new regressions). Cached Java scoring agrees with the production API; tests cover validation-only calibration, template-free hash leakage, source path/hash checks, review identity/schema/timestamp checks, transitive split groups and safe source embedding.

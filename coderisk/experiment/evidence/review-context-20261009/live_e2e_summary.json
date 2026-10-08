@@ -1,0 +1,86 @@
+{
+  "status": "REAL_SERVICES_SYNTHETIC_E2E_PASSED",
+  "synthetic_only": true,
+  "question_id": 3,
+  "task_id": 2,
+  "result_id": 1,
+  "score": 1.0,
+  "assessment": {
+    "category": "REVIEW_ASSESSMENT",
+    "policyVersion": "context-review-v1",
+    "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+    "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+    "reasons": [
+      "DECLARED_LANGUAGE_VERSIONS_DIFFER",
+      "SHORT_EFFECTIVE_CODE",
+      "HEURISTIC_NATURAL_SIMILARITY_RISK",
+      "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+      "SHARED_TEMPLATE_DOMINATES"
+    ],
+    "shortCodeTokenLimit": 40,
+    "naturalRiskShortCodeTokenLimit": 120,
+    "naturalRiskTrigger": 0.6,
+    "policyCalibrated": false,
+    "includedInProductionScore": false,
+    "templateDominanceTrigger": 0.5,
+    "relationshipDetermined": false,
+    "declaredVersionDifference": true
+  },
+  "template": {
+    "category": "SHARED_TEMPLATE_CONTEXT",
+    "registered": true,
+    "language": "java",
+    "sourceReference": "Synthetic teacher starter registered before synthetic submissions; no real coursework",
+    "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+    "minimumSegmentTokens": 8,
+    "templateSha256": "6412f328776bb51efe47d4c627bf8ce2dfba52defd35232e9d63c134c70bae0d",
+    "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+    "includedInProductionScore": false,
+    "eligibleSegmentCount": 1,
+    "shortSegmentsIgnored": 1,
+    "submissionA": {
+      "applicable": true,
+      "tokenCount": 22,
+      "matchedTemplateTokens": 15,
+      "effectiveTokenCount": 7,
+      "templateCoverage": 0.681818,
+      "fragments": [
+        {
+          "segment": 0,
+          "startLine": 1,
+          "endLine": 2,
+          "startToken": 0,
+          "endTokenExclusive": 15
+        }
+      ],
+      "fragmentDisplayLimit": 20
+    },
+    "submissionB": {
+      "applicable": true,
+      "tokenCount": 22,
+      "matchedTemplateTokens": 15,
+      "effectiveTokenCount": 7,
+      "templateCoverage": 0.681818,
+      "fragments": [
+        {
+          "segment": 0,
+          "startLine": 1,
+          "endLine": 2,
+          "startToken": 0,
+          "endTokenExclusive": 15
+        }
+      ],
+      "fragmentDisplayLimit": 20
+    },
+    "nonTemplateTokenSetSimilarity": 1.0,
+    "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+  },
+  "versions": [
+    "8",
+    "17"
+  ],
+  "report_context_present": true,
+  "source_executed": false,
+  "database": "isolated transient H2 memory database",
+  "formal_metric_eligible_pairs": 0
+}

@@ -6,6 +6,9 @@ public record AnalysisQuestion(
         String description,
         String inputFormat,
         String outputFormat,
-        String constraintsText
+        String constraintsText,
+        String starterLanguage,
+        String starterCode,
+        String starterSource
 ) {
 }

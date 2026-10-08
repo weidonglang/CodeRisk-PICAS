@@ -8,6 +8,9 @@ public record QuestionCreateRequest(
         @Size(max = 20000) String description,
         @Size(max = 8000) String inputFormat,
         @Size(max = 8000) String outputFormat,
-        @Size(max = 8000) String constraintsText
+        @Size(max = 8000) String constraintsText,
+        @Size(max = 16) String starterLanguage,
+        @Size(max = 20000) String starterCode,
+        @Size(max = 2000) String starterSource
 ) {
 }

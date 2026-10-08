@@ -1,5 +1,7 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-09：新增 `run_context_checks.py` 的八个合成版本/计算器/模板开发探针，全部正式指标资格为零，核对新增上下文前后分数和阈值不变。正式自然相似评测仍须预先登记独立参考解、来源和模板，再验证分组与校准规则；不能将本轮提示当作误报下降证据。见 [实现与校准边界](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。
+
 > 2026-10-09：新增 [公开数据复核](proposal/DATA_REVIEW_WORKBENCH.md)和 [ConPlag 运行前冻结方案](../coderisk/experiment/evidence/conplag-registration-20261009/README.md)。探索实验仅比较固定阈值、规范化消融、JPlag，沿用 284/627 分组并报告缺失共同集合。不能据此主张动态阈值或四种语言普适效果；正式 runner 门禁保持原要求。
 
 > 2026-10-08 更新：本科主实验以 [公平评测协议](proposal/FAIR_EVALUATION.md) 与 [数据标注规范](proposal/DATA_PROTOCOL.md) 为当前可执行约定，入口为 `experiment/run_fair_evaluation.py`。以下历史研究命题均视为待验证问题；历史E3/E4不能替代新版受控比较。真实公开数据已接收，正式标签复核与分集冻结仍待完成。

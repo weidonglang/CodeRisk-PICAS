@@ -5,6 +5,7 @@ public record AnalysisSubmission(
         String language,
         String fileName,
         String rawCodePath,
-        String code
+        String code,
+        String languageVersion
 ) {
 }

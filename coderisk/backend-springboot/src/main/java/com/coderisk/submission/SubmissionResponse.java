@@ -9,6 +9,7 @@ public record SubmissionResponse(
         long questionId,
         String studentId,
         String language,
+        String languageVersion,
         LanguageSupportLevel supportLevel,
         String fileName,
         long fileSizeBytes,

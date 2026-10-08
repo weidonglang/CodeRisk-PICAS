@@ -3,6 +3,8 @@ package com.coderisk.question;
 import com.coderisk.common.response.PageResult;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import com.coderisk.common.exception.ApiException;
+import org.springframework.http.HttpStatus;
 
 @Service
 public class QuestionService {
@@ -14,6 +16,12 @@ public class QuestionService {
     }
 
     public QuestionResponse create(QuestionCreateRequest request) {
+        if (request.starterCode() != null && !request.starterCode().isBlank()) {
+            String language = request.starterLanguage() == null ? "" : request.starterLanguage().toLowerCase(java.util.Locale.ROOT);
+            if (!List.of("java", "python", "py", "c", "html", "htm").contains(language) || request.starterSource() == null || request.starterSource().isBlank()) {
+                throw new ApiException(HttpStatus.BAD_REQUEST, "STARTER_CONTEXT_INVALID", "Shared starter code requires a supported language and source reference");
+            }
+        }
         return repository.save(request);
     }
 

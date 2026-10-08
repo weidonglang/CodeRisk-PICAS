@@ -2,6 +2,8 @@
 
 面向编程作业的题目感知型代码相似风险检测系统。
 
+新增[语言版本与简单题自然相似复核](coderisk_docs/proposal/VERSION_AND_NATURAL_SIMILARITY.md)：上传可登记版本，题目可登记共同模板，结果和报告显示有效代码量、模板范围及依据不足提示。规则未校准，原始评分与阈值保持不变。
+
 2026-10-09 已完成公开数据质量复核、首批 43 对离线盲审工作台及运行前冻结的 ConPlag Java 探索评测。来源未知项、双人复核方法与防泄漏划分限制见[数据复核工作台说明](coderisk_docs/proposal/DATA_REVIEW_WORKBENCH.md)；真实负结果、JPlag 对比及图表见[探索评测报告](coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md)。正式双人标签与题目画像实验仍待完成。
 
 已取得两份公开真实研究数据：AD2022的1,526份课程解答、ConPlag的911对Java标注样本。来源、许可、导入脚本与数据检查见[获取记录](coderisk_docs/proposal/PUBLIC_DATA_INTAKE.md)；当前处于独立数据接收阶段，尚未据此生成正式评测结论。

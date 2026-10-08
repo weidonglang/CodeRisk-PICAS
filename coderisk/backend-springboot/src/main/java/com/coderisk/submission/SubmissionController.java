@@ -27,9 +27,10 @@ public class SubmissionController {
             @PathVariable long questionId,
             @RequestParam("file") MultipartFile file,
             @RequestParam(defaultValue = "") String studentId,
+            @RequestParam(defaultValue = "") String languageVersion,
             HttpServletRequest request
     ) {
-        return responses.ok(submissionService.store(questionId, file, studentId), request);
+        return responses.ok(submissionService.store(questionId, file, studentId, languageVersion), request);
     }
 
     @GetMapping

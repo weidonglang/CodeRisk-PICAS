@@ -168,10 +168,11 @@ public class TaskService {
                         question.description(),
                         question.inputFormat(),
                         question.outputFormat(),
-                        question.constraintsText()
+                        question.constraintsText(),
+                        question.starterLanguage(), question.starterCode(), question.starterSource()
                 ),
-                new AnalysisSubmission(submissionA.id(), submissionA.language(), submissionA.fileName(), submissionA.rawCodePath(), null),
-                new AnalysisSubmission(submissionB.id(), submissionB.language(), submissionB.fileName(), submissionB.rawCodePath(), null),
+                new AnalysisSubmission(submissionA.id(), submissionA.language(), submissionA.fileName(), submissionA.rawCodePath(), null, submissionA.languageVersion()),
+                new AnalysisSubmission(submissionB.id(), submissionB.language(), submissionB.fileName(), submissionB.rawCodePath(), null, submissionB.languageVersion()),
                 Map.of("mode", taskModeFor(taskId), "baseThreshold", 0.68)
         );
     }

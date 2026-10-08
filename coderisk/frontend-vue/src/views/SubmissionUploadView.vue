@@ -17,6 +17,7 @@ const submissions = ref<Submission[]>([])
 const taskModes = ref<TaskModeDescriptor[]>([])
 const selectedTaskMode = ref<TaskMode>('PICAS_STANDARD')
 const studentId = ref('')
+const languageVersion = ref('')
 const selectedFile = ref<File | null>(null)
 const loading = ref(false)
 const uploading = ref(false)
@@ -68,8 +69,9 @@ async function submitUpload() {
   uploading.value = true
   error.value = ''
   try {
-    await uploadSubmission(questionId.value, studentId.value, selectedFile.value)
+    await uploadSubmission(questionId.value, studentId.value, selectedFile.value, languageVersion.value)
     studentId.value = ''
+    languageVersion.value = ''
     selectedFile.value = null
     await load()
   } catch (err) {
@@ -138,6 +140,10 @@ onMounted(load)
               <span>{{ selectedFile?.name ?? '未选择文件' }}</span>
             </div>
           </el-form-item>
+          <el-form-item label="语言版本（可选）">
+            <el-input v-model="languageVersion" :maxlength="64" placeholder="例如 Python 2.7、Python 3.12、Java 17、C11；未知请留空" />
+          </el-form-item>
+          <p>版本为提交者声明；解析通过不代表编译器验证或跨版本语义一致。</p>
           <el-button :icon="UploadFilled" type="primary" :loading="uploading" @click="submitUpload">上传</el-button>
         </el-form>
       </section>
@@ -188,6 +194,9 @@ onMounted(load)
         <el-table-column prop="studentId" label="学生标识" min-width="130" />
         <el-table-column prop="fileName" label="文件名" min-width="170" />
         <el-table-column prop="language" label="语言" width="100" />
+        <el-table-column label="声明版本" min-width="130">
+          <template #default="{ row }">{{ row.languageVersion || '未知' }}</template>
+        </el-table-column>
         <el-table-column label="支持级别" width="140">
           <template #default="{ row }">
             <SupportLevelTag :level="row.supportLevel" />

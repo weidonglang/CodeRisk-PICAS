@@ -47,9 +47,13 @@ public class SubmissionService {
         this.repository = repository;
     }
 
-    public SubmissionResponse store(long questionId, MultipartFile file, String studentId) {
+    public SubmissionResponse store(long questionId, MultipartFile file, String studentId, String languageVersion) {
         questionService.get(questionId);
         validateFile(file);
+        String declaredVersion = languageVersion == null ? "" : languageVersion.trim();
+        if (declaredVersion.length() > 64 || declaredVersion.contains("\n") || declaredVersion.contains("\r")) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, "LANGUAGE_VERSION_INVALID", "Language version must be a single line of at most 64 characters");
+        }
         String originalFileName = safeFileName(file.getOriginalFilename());
         String extension = extensionOf(originalFileName);
         String language = EXTENSION_LANGUAGE.get(extension);
@@ -64,7 +68,8 @@ public class SubmissionService {
                 originalFileName,
                 file.getSize(),
                 target.toString().replace('\\', '/'),
-                sha256(target)
+                sha256(target),
+                declaredVersion
         );
     }
 

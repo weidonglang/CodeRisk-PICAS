@@ -33,7 +33,8 @@ public class QuestionFeatureService {
                         question.description(),
                         question.inputFormat(),
                         question.outputFormat(),
-                        question.constraintsText()
+                        question.constraintsText(),
+                        question.starterLanguage(), question.starterCode(), question.starterSource()
                 ),
                 config == null ? Map.of() : config
         ));

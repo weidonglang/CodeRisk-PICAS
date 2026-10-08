@@ -1,0 +1,259 @@
+{
+  "fixture": {
+    "case_id": "python-print-version",
+    "source_type": "SYNTHETIC_DEVELOPMENT_FIXTURE",
+    "experiment_label": "UNCERTAIN",
+    "eligible_for_core_metrics": false,
+    "independent_creation_verified": false,
+    "request": {
+      "question": {
+        "id": 1,
+        "title": "四则计算器开发案例",
+        "description": "输入两个数与运算符，按要求输出计算结果。",
+        "starterLanguage": "",
+        "starterCode": "",
+        "starterSource": ""
+      },
+      "submissionA": {
+        "id": 1,
+        "language": "python",
+        "languageVersion": "2.7",
+        "code": "print 1"
+      },
+      "submissionB": {
+        "id": 2,
+        "language": "python",
+        "languageVersion": "3.12",
+        "code": "print(1)"
+      }
+    }
+  },
+  "result": {
+    "taskId": null,
+    "submissionAId": 1,
+    "submissionBId": 2,
+    "tokenSimilarity": 0.0,
+    "astSimilarity": 0.0,
+    "canonicalTokenSimilarity": 0.0,
+    "identifierMappingSimilarity": 0.0,
+    "weightedSimilarityScore": 0.0,
+    "dynamicThreshold": 0.846807,
+    "riskMargin": -0.846807,
+    "calibratedRiskScore": 0.0,
+    "exceedThreshold": false,
+    "marginScale": 0.4,
+    "formulaVersion": "FORMULA_SPEC_V1",
+    "riskLevel": "LOW",
+    "problemProfile": {
+      "featureVersion": "pf-rule-v1.0",
+      "descriptionLength": 20,
+      "ioFieldCount": 0,
+      "constraintCount": 0,
+      "sampleCount": 0,
+      "referenceLineCount": 0,
+      "referenceFunctionCount": 0,
+      "referenceCyclomaticComplexity": 0.0,
+      "apiCallCount": 0,
+      "dataStructureCount": 0,
+      "difficultyScore": 0.004,
+      "solutionSpaceScore": 0.0268,
+      "templateRiskScore": 0.77018,
+      "naturalSimilarityRisk": 0.887541,
+      "recommendedBaseThreshold": 0.846807,
+      "confidence": 0.62,
+      "explanation": {
+        "difficultyReasons": [
+          "题面结构和约束相对直接"
+        ],
+        "solutionSpaceReasons": [
+          "可行解法空间相对集中"
+        ],
+        "templateRiskReasons": [
+          "命中常见模板关键词"
+        ],
+        "naturalSimilarityReasons": [
+          "独立实现也可能自然相似"
+        ],
+        "ruleVersion": "pf-rule-v1.0",
+        "scores": {
+          "difficulty": 0.004,
+          "solutionSpace": 0.0268,
+          "templateRisk": 0.77018,
+          "naturalSimilarity": 0.887541
+        }
+      }
+    },
+    "thresholdAdjustment": {
+      "baseThreshold": 0.68,
+      "difficultyAdjustment": -0.00024,
+      "solutionSpaceAdjustment": -0.001072,
+      "templateRiskAdjustment": 0.061614,
+      "naturalSimilarityAdjustment": 0.106505,
+      "historicalDistributionAdjustment": 0.0,
+      "finalThreshold": 0.846807,
+      "formulaVersion": "FORMULA_SPEC_V1",
+      "explanation": "题目画像规则版：自然相似与模板化风险提高复核阈值，题目难度与解法空间扩大则降低阈值；各因素只通过动态阈值校准，不从综合相似度中重复扣分。"
+    },
+    "reasonSummary": "当前相似证据低于题目动态阈值，仍可结合具体教学场景抽查。",
+    "isMock": false,
+    "metrics": [
+      {
+        "name": "TOKEN_SIMILARITY",
+        "value": 0.0,
+        "weight": 1.0,
+        "explanation": "Raw token n-gram Jaccard similarity."
+      },
+      {
+        "name": "AST_SIMILARITY",
+        "value": 0.0,
+        "weight": 0.0,
+        "explanation": "Source-tree structure similarity (DOM tags for HTML). Falls back to 0 when parsing fails."
+      },
+      {
+        "name": "CANONICAL_TOKEN_SIMILARITY",
+        "value": 0.0,
+        "weight": 0.0,
+        "explanation": "Unavailable because parsing or scope normalization failed; no canonical evidence was generated."
+      },
+      {
+        "name": "IDENTIFIER_MAPPING_SIMILARITY",
+        "value": 0.0,
+        "weight": 0.0,
+        "explanation": "Unavailable because parsing or scope normalization failed; no identifier mapping was generated."
+      }
+    ],
+    "evidence": [
+      {
+        "evidenceType": "TOKEN_MATCH",
+        "similarityScore": 0.0,
+        "description": "Token fingerprint overlap from the V1 token analysis pipeline.",
+        "metadata": {
+          "tokenCountA": 2,
+          "tokenCountB": 4,
+          "fingerprintCountA": 2,
+          "fingerprintCountB": 3,
+          "overlapCount": 0,
+          "ngramSize": 1,
+          "fragments": [],
+          "astEnabled": false
+        }
+      },
+      {
+        "evidenceType": "PARSER_WARNING",
+        "similarityScore": 0.0,
+        "description": "Parsing failed for at least one submission; analysis fell back to token-only signals.",
+        "metadata": {
+          "parserStatusA": "FAILED",
+          "parserStatusB": "PARSED",
+          "parserErrorA": "Python syntax error at line 1: Missing parentheses in call to 'print'. Did you mean print(...)?",
+          "parserErrorB": "",
+          "astEnabled": false
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "Language versions are declarations, not compiler-validated facts; syntax differences are not converted automatically.",
+        "metadata": {
+          "category": "LANGUAGE_COMPATIBILITY",
+          "submissionA": {
+            "language": "python",
+            "declaredVersion": "2.7",
+            "versionProvenance": "SUBMITTER_DECLARATION_UNVERIFIED",
+            "syntaxParsed": false,
+            "normalizationMode": "lexical-fallback",
+            "syntaxHints": [
+              "POSSIBLE_PYTHON2_PRINT_STATEMENT"
+            ],
+            "limitations": [
+              "STRUCTURE_UNAVAILABLE",
+              "NORMALIZATION_UNAVAILABLE",
+              "DECLARED_PYTHON2_NOT_VALIDATED_BY_PYTHON3_PARSER"
+            ],
+            "languageVersionValidated": false,
+            "parserRuntime": "Python 3.12",
+            "sourceConverted": false
+          },
+          "submissionB": {
+            "language": "python",
+            "declaredVersion": "3.12",
+            "versionProvenance": "SUBMITTER_DECLARATION_UNVERIFIED",
+            "syntaxParsed": true,
+            "normalizationMode": "scope-aware-python",
+            "syntaxHints": [],
+            "limitations": [],
+            "languageVersionValidated": false,
+            "parserRuntime": "Python 3.12",
+            "sourceConverted": false
+          }
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+        "metadata": {
+          "category": "REVIEW_ASSESSMENT",
+          "policyVersion": "context-review-v1",
+          "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+          "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+          "reasons": [
+            "DECLARED_LANGUAGE_VERSIONS_DIFFER",
+            "PARSER_OR_VERSION_LIMITATIONS",
+            "SHORT_EFFECTIVE_CODE",
+            "HEURISTIC_NATURAL_SIMILARITY_RISK",
+            "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+          ],
+          "shortCodeTokenLimit": 40,
+          "naturalRiskShortCodeTokenLimit": 120,
+          "naturalRiskTrigger": 0.6,
+          "policyCalibrated": false,
+          "includedInProductionScore": false,
+          "templateDominanceTrigger": 0.5,
+          "relationshipDetermined": false,
+          "declaredVersionDifference": true
+        }
+      },
+      {
+        "evidenceType": "REVIEW_NOTE",
+        "similarityScore": 0.0,
+        "description": "Registered shared template matches are review context only; effective token counts do not prove independent creation.",
+        "metadata": {
+          "category": "SHARED_TEMPLATE_CONTEXT",
+          "registered": false,
+          "language": "UNKNOWN",
+          "sourceReference": "",
+          "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+          "minimumSegmentTokens": 8,
+          "templateSha256": null,
+          "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+          "includedInProductionScore": false,
+          "eligibleSegmentCount": 0,
+          "shortSegmentsIgnored": 0,
+          "submissionA": {
+            "applicable": false,
+            "tokenCount": 2,
+            "matchedTemplateTokens": 0,
+            "effectiveTokenCount": 2,
+            "templateCoverage": 0.0,
+            "fragments": [],
+            "fragmentDisplayLimit": 20
+          },
+          "submissionB": {
+            "applicable": false,
+            "tokenCount": 4,
+            "matchedTemplateTokens": 0,
+            "effectiveTokenCount": 4,
+            "templateCoverage": 0.0,
+            "fragments": [],
+            "fragmentDisplayLimit": 20
+          },
+          "nonTemplateTokenSetSimilarity": 0.5,
+          "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+        }
+      }
+    ]
+  },
+  "baseline_score": 0.0,
+  "baseline_threshold": 0.846807
+}

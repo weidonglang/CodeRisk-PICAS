@@ -26,7 +26,7 @@ public class QuestionRepository {
 
     public QuestionResponse save(QuestionCreateRequest request) {
         OffsetDateTime now = OffsetDateTime.now();
-        Map<String, Object> values = Map.of(
+        Map<String, Object> values = new java.util.LinkedHashMap<>(Map.of(
                 "title", request.title().trim(),
                 "description", normalize(request.description()),
                 "input_format", normalize(request.inputFormat()),
@@ -36,7 +36,10 @@ public class QuestionRepository {
                 "created_at", timestamp(now),
                 "updated_at", timestamp(now),
                 "deleted", 0
-        );
+        ));
+        values.put("starter_language", normalize(request.starterLanguage()).toLowerCase(java.util.Locale.ROOT));
+        values.put("starter_code", request.starterCode() == null ? "" : request.starterCode());
+        values.put("starter_source", normalize(request.starterSource()));
         long id = insert.executeAndReturnKey(values).longValue();
         return find(id);
     }
@@ -44,7 +47,7 @@ public class QuestionRepository {
     public QuestionResponse find(long id) {
         List<QuestionResponse> matches = jdbc.query(
                 """
-                SELECT id, title, description, input_format, output_format, constraints_text, created_at, updated_at
+                SELECT id, title, description, input_format, output_format, constraints_text, starter_language, starter_code, starter_source, created_at, updated_at
                 FROM question WHERE id = ? AND deleted = 0
                 """,
                 (rs, row) -> new QuestionResponse(
@@ -54,6 +57,9 @@ public class QuestionRepository {
                         rs.getString("input_format"),
                         rs.getString("output_format"),
                         rs.getString("constraints_text"),
+                        normalize(rs.getString("starter_language")),
+                        rs.getString("starter_code") == null ? "" : rs.getString("starter_code"),
+                        normalize(rs.getString("starter_source")),
                         offset(rs.getTimestamp("created_at")),
                         offset(rs.getTimestamp("updated_at"))
                 ),
@@ -65,7 +71,7 @@ public class QuestionRepository {
     public List<QuestionResponse> list(int offset, int limit) {
         return jdbc.query(
                 """
-                SELECT id, title, description, input_format, output_format, constraints_text, created_at, updated_at
+                SELECT id, title, description, input_format, output_format, constraints_text, starter_language, starter_code, starter_source, created_at, updated_at
                 FROM question WHERE deleted = 0 ORDER BY created_at DESC LIMIT ? OFFSET ?
                 """,
                 (rs, row) -> new QuestionResponse(
@@ -75,6 +81,9 @@ public class QuestionRepository {
                         rs.getString("input_format"),
                         rs.getString("output_format"),
                         rs.getString("constraints_text"),
+                        normalize(rs.getString("starter_language")),
+                        rs.getString("starter_code") == null ? "" : rs.getString("starter_code"),
+                        normalize(rs.getString("starter_source")),
                         offset(rs.getTimestamp("created_at")),
                         offset(rs.getTimestamp("updated_at"))
                 ),

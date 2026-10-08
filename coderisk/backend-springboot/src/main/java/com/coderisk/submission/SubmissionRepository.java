@@ -33,13 +33,15 @@ public class SubmissionRepository {
             String fileName,
             long fileSizeBytes,
             String rawCodePath,
-            String codeHash
+            String codeHash,
+            String languageVersion
     ) {
         OffsetDateTime now = OffsetDateTime.now();
         Map<String, Object> values = new java.util.LinkedHashMap<>();
         values.put("question_id", questionId);
         values.put("student_id", studentId);
         values.put("language", language);
+        values.put("language_version", languageVersion);
         values.put("support_level", supportLevel.name());
         values.put("file_name", fileName);
         values.put("file_size_bytes", fileSizeBytes);
@@ -56,7 +58,7 @@ public class SubmissionRepository {
     public SubmissionResponse find(long id) {
         List<SubmissionResponse> matches = jdbc.query(
                 """
-                SELECT id, question_id, student_id, language, support_level, file_name,
+                SELECT id, question_id, student_id, language, language_version, support_level, file_name,
                        file_size_bytes, raw_code_path, parser_status, created_at
                 FROM submission WHERE id = ? AND deleted = 0
                 """,
@@ -65,6 +67,7 @@ public class SubmissionRepository {
                         rs.getLong("question_id"),
                         rs.getString("student_id"),
                         rs.getString("language"),
+                        rs.getString("language_version"),
                         LanguageSupportLevel.valueOf(rs.getString("support_level")),
                         rs.getString("file_name"),
                         rs.getLong("file_size_bytes"),
@@ -80,7 +83,7 @@ public class SubmissionRepository {
     public List<SubmissionResponse> findByQuestion(long questionId) {
         return jdbc.query(
                 """
-                SELECT id, question_id, student_id, language, support_level, file_name,
+                SELECT id, question_id, student_id, language, language_version, support_level, file_name,
                        file_size_bytes, raw_code_path, parser_status, created_at
                 FROM submission WHERE question_id = ? AND deleted = 0 ORDER BY created_at DESC
                 """,
@@ -89,6 +92,7 @@ public class SubmissionRepository {
                         rs.getLong("question_id"),
                         rs.getString("student_id"),
                         rs.getString("language"),
+                        rs.getString("language_version"),
                         LanguageSupportLevel.valueOf(rs.getString("support_level")),
                         rs.getString("file_name"),
                         rs.getLong("file_size_bytes"),

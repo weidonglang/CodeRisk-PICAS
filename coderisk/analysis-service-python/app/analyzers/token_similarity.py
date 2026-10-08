@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from app.analyzers.java_source import balanced_tokens, mask_comments
+from app.analyzers.review_context import compatibility, template_context, assessment
 
 from app.analyzers.canonicalization import (
     IdentifierMappingAnalysis,
@@ -367,6 +368,24 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             ),
         ])
 
+    compatibilities = [compatibility(submission, tokens, parsed.parsed, canonical.mode)
+                      for submission, tokens, parsed, canonical in zip(
+                          (request.submission_a, request.submission_b), (token_items_a, token_items_b),
+                          (ast_a, ast_b), (canonical_a, canonical_b))]
+    shared_template, _ = template_context(request.question, (request.submission_a, request.submission_b),
+                                         (token_items_a, token_items_b), tokenize_code_with_locations)
+    review = assessment(compatibilities, shared_template, None if html_pair else problem_profile.natural_similarity_risk,
+                        len(languages) > 1)
+    evidence.extend([
+        EvidenceResult(evidenceType='REVIEW_NOTE', similarityScore=0.0,
+                       description='Language versions are declarations, not compiler-validated facts; syntax differences are not converted automatically.',
+                       metadata={'category': 'LANGUAGE_COMPATIBILITY', 'submissionA': compatibilities[0], 'submissionB': compatibilities[1]}),
+        EvidenceResult(evidenceType='REVIEW_NOTE', similarityScore=0.0, description=review['message'],
+                       metadata={'category': 'REVIEW_ASSESSMENT', **review}),
+        EvidenceResult(evidenceType='REVIEW_NOTE', similarityScore=0.0,
+                       description='Registered shared template matches are review context only; effective token counts do not prove independent creation.',
+                       metadata={'category': 'SHARED_TEMPLATE_CONTEXT', **shared_template}),
+    ])
     result = AnalyzeMockResult(
         taskId=request.task_id,
         submissionAId=request.submission_a.id,

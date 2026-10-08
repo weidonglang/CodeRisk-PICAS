@@ -17,6 +17,7 @@
 11. [C、HTML 功能及多语言新数据](MULTILANGUAGE_PROGRESS.md)：新增检测范围、官方 CodeNet/MDN 数据、语言混杂检查与解析覆盖，明确区分开发数据和正式评测。
 12. [数据复核与盲审工作台](DATA_REVIEW_WORKBENCH.md)：2026-10-09 的质量登记、43 对首批材料、双人 JSON 合并、防泄漏提案和正式实验的剩余条件。
 13. [Java 公开标签探索结果](CONPLAG_PILOT_RESULTS.md)：真实固定阈值、规范化消融和 JPlag 结果，报告负结果、缺失值与统计边界。
+14. [版本与简单题自然相似](VERSION_AND_NATURAL_SIMILARITY.md)：版本声明、共同模板精确匹配、有效代码量及依据不足提示；明确未校准和跨版本语义对齐的限制。
 
 当前无需填写学校、学号或导师姓名即可讨论研究内容。正式 Word 版本在取得真实作者信息、学校模板与提交要求后生成，使用已安装的 Academic Word skill，并执行结构和逐页版式检查。当前 Markdown 中的参考标识为工作标识，不是最终顺序编码。
 

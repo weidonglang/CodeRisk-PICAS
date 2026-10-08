@@ -1,0 +1,4 @@
+ALTER TABLE submission ADD COLUMN language_version VARCHAR(64) NOT NULL DEFAULT '';
+ALTER TABLE question ADD COLUMN starter_language VARCHAR(16) NOT NULL DEFAULT '';
+ALTER TABLE question ADD COLUMN starter_code TEXT NULL;
+ALTER TABLE question ADD COLUMN starter_source VARCHAR(2000) NOT NULL DEFAULT '';

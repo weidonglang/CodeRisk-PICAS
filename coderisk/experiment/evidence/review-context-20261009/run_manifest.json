@@ -1,0 +1,14 @@
+{
+  "status": "SYNTHETIC_CONTEXT_CHECKS_ONLY",
+  "case_count": 8,
+  "client_date": "2026-10-09",
+  "run_at_utc": "2026-10-08T23:10:23.386925+00:00",
+  "python": "3.12.14",
+  "formal_metric_eligible_pairs": 0,
+  "downloaded_sources_executed": false,
+  "implementation_sha256": {
+    "experiment/run_context_checks.py": "6872d1a919df1a62e379c009252398a7917f94c0d0c56a827d71e938fa19c9b0",
+    "analysis-service-python/app/analyzers/review_context.py": "ccbda3ad0dc1a94777c24c61f5ab2e778f2531bf2ac7eafaa9c947cffda9e8b4",
+    "analysis-service-python/app/analyzers/token_similarity.py": "43393325777a31f6329849aaf79a436cf9ce53bc1e2fe1f43f82b8cb3e92b6b3"
+  }
+}
