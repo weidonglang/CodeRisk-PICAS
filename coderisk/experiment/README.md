@@ -34,7 +34,7 @@ They explain where to put manual, verified AI-assisted, external, synthetic, and
 
 ## Run
 
-From the repository root:
+From the `coderisk/` project directory (run `cd coderisk` from the repository root):
 
 ```powershell
 python experiment\run_minimal_v3.py `
@@ -60,6 +60,8 @@ The JPlag adapter contract is documented in `baselines/jplag/`. In addition to t
 
 ## Research V4 aggregate
 
+The commands below run from `coderisk/`, not the repository root.
+
 `datasets/research-v4/dataset.json` aggregates versioned seed shards and an initially empty manual supplement. The current 91-pair aggregate is entirely synthetic; four `AI_REWRITE` rows are explicit placeholders excluded from core metrics. It exists to exercise the workflow, not to support benchmark claims.
 
 ```powershell
@@ -76,7 +78,7 @@ If `python` is blocked by a WindowsApps alias, use:
 $PY = ".\analysis-service-python\.venv\Scripts\python.exe"
 & $PY experiment\validate_research_v4_dataset.py --output-dir data\artifacts\experiments\SEED-VALIDATION
 ```
-# 2026-10-09：数据复核与公开标签探索入口
+## 2026-10-09：数据复核与公开标签探索入口
 
 数据质量登记使用 `review_public_data.py`，盲审材料与双人导出合并使用 `prepare_annotation_workbench.py`，保守划分提案使用 `propose_public_splits.py`。本机首批 HTML 位于忽略目录 `data/public-datasets/review-workbench-20261009-v2/review.html`，标签仍待人工复核；说明见 [复核文档](../../coderisk_docs/proposal/DATA_REVIEW_WORKBENCH.md)。
 

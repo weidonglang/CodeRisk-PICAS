@@ -2,6 +2,8 @@
 
 The backend uses JDBC and Flyway. The production datasource is MySQL 8; the `local` profile uses an H2 file database in MySQL compatibility mode so local development remains runnable without database credentials.
 
+Run the PowerShell commands below from `coderisk/` (use `cd coderisk` from the repository root). Migration paths are also relative to `coderisk/`.
+
 Migrations:
 
 ```text
@@ -45,7 +47,8 @@ H2 fallback:
 
 ```powershell
 $env:SPRING_PROFILES_ACTIVE = "local"
-$env:CODERISK_LOCAL_DB_URL = "jdbc:h2:file:E:/ms/coderisk/data/db/coderisk-local;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;AUTO_SERVER=TRUE"
+# The startup script selects the backend directory; the default relative H2 path follows your clone.
+# Set CODERISK_LOCAL_DB_URL only when an explicit override is needed.
 .\scripts\start-backend-dev.ps1
 ```
 

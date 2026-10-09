@@ -48,6 +48,7 @@
 | --- | --- |
 | [开题材料目录](proposal/README.md) | 选题、初稿、文献与证据核对 |
 | [开题交流准备](proposal/OPENING_DISCUSSION.md) | 与导师讨论的事实、问题与路线 |
+| [项目与毕设核查](GRADUATION_READINESS_REVIEW.md) | 当前证据、优先优化与完成验收条件 |
 | [毕设后续计划](GRADUATION_NEXT_STEPS.md) | 相对周次任务与阶段交付 |
 | [论文写作流程](THESIS_WRITING_WORKFLOW.md) | 模板、引用、证据和写作约定 |
 | [论文提纲](PAPER_OUTLINE.md) | 章节组织参考 |
