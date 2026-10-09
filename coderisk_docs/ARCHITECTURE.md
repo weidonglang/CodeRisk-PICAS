@@ -1,5 +1,7 @@
 # ARCHITECTURE.md
 
+> 2026-10-09 本轮增量：任务执行已使用 Spring ThreadPoolTaskExecutor 和数据库状态认领：默认 2 工作线程、8 等待任务、900 秒单次时间预算。逐对分析/保存，前端轮询；成功结果复用、失败历史、服务启动后的人工重试已贯通。单实例部署，未实现 Redis 队列或分布式租约。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
+
 > 2026-10-09：Python `review_context.py` 新增评分之外的语言版本、登记模板与有效代码量复核层。Spring Boot 的题目/上传 DTO 与 Flyway V4 保存输入，TaskService 传至分析器，ResultRepository 沿用证据 JSON 快照；Vue 和 HTML 报告展示该快照。不得从待测集合挖掘模板或自动生成关系标签，边界见 [说明](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。
 
 > 2026-10-08 新增 `app/analyzers/structured_languages.py`，由 Tree-sitter 解析 C/HTML，再提供词法位置、结构序列及保守规范化。上传后缀映射和任务同语言校验在 Spring Boot，HTML 固定阈值策略在分析服务，Vue/报告展示同一结果。Flyway V3 保存逐结果画像快照，阈值读取原始 JSON，不将 HTML 写入算法题画像表。来源固定配置、导入器和逐源码审计位于 `experiment/`；下载源码不执行。见 [实际边界](proposal/MULTILANGUAGE_PROGRESS.md)。
@@ -670,38 +672,15 @@ ReviewSuggestionBuilder
 
 ## 11. 任务调度架构
 
-### 11.1 第一阶段
+### 11.1 当前实现：单实例异步任务
 
-采用简单同步或半异步模式：
+前端创建 PENDING 任务；后端用数据库条件更新认领，提交给有界工作池后返回 RUNNING。worker 按代码对调用分析服务并保存结果，前端每两秒轮询。RUNNING 包含已受理等待，队列满时恢复此前状态并返回 503。
 
-```text
-前端创建任务
-后端保存任务
-后端调用分析服务
-分析完成后保存结果
-```
+已成功代码对从持久化结果表恢复，重试仅执行未完成部分。逐对失败历史与任务停止原因分别保存；启动时重建遗留任务成功计数并使其可人工重试。900 秒默认预算在开始下一代码对前检查，不强制终止已经开始的远端分析。
 
-适合小规模 demo。
+### 11.2 后续扩展条件
 
-### 11.2 第二阶段
-
-引入异步任务：
-
-```text
-任务创建
-任务入队
-后台 worker 执行
-更新进度
-前端轮询状态
-```
-
-实现方式：
-
-```text
-Spring @Async
-数据库任务状态
-Redis 进度缓存，可选
-```
+当前不依赖 Redis、消息队列或分布式租约。支持多个后端共享数据库前，必须先实现执行所有权与租约，防止启动恢复干扰另一个活跃实例。验收见 [前三项记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 ### 11.3 不建议过早引入
 

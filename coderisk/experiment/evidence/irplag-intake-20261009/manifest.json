@@ -1,0 +1,77 @@
+{
+  "dataset": "irplag",
+  "source_commit": "f07e95120680b25f78659ed63cd6130fd05b2df8",
+  "repository_url": "https://github.com/oscarkarnalim/sourcecodeplagiarismdataset",
+  "input_sha256": {
+    "IR-Plag-Dataset.zip": "1b96b320fd05d164b3a7ee17d8cc36992b728d3be099dc7ec39ddb7fae2ec4a4",
+    "README.md": "fdb9688665eaa57e40c1f9e4c81b7c0f219f7281c8f629afddc2abe2347e4cc2",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "paper_doi": "10.15388/infedu.2019.15",
+  "paper_url": "https://www.dcs.warwick.ac.uk/~msj/publications/fulltext/karnalim_budi_toba_joy_infed_2019.pdf",
+  "published_categories": {
+    "non-plagiarized": 105,
+    "original": 7,
+    "plagiarized": 355
+  },
+  "files": 467,
+  "unique_byte_hashes": 453,
+  "positive_reference_pairs": 355,
+  "negative_reference_pairs_published": 105,
+  "negative_reference_pairs_uncontested_by_known_issue": 95,
+  "disputed_pairs_quarantined": 10,
+  "formal_eligible_pairs": 0,
+  "local_human_reviews": 0,
+  "detector_scored_pairs": 0,
+  "license": "Repository Apache-2.0; paper describes consent for non-profit research and textbook-derived originals. Raw sources are kept local, not redistributed.",
+  "correctness": "Publisher notes minor output errors; compilation claimed by publisher, not rerun locally.",
+  "split_policy": "No validation/test split yet; shared contributors across seven tasks require one conservative global leakage block until independently justified.",
+  "tasks": [
+    {
+      "problem_id": "irplag:case-01",
+      "summary": "重复输出问候语",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-02",
+      "summary": "圆柱面积与体积",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-03",
+      "summary": "BMI分类",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-04",
+      "summary": "英里公里换算表",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-05",
+      "summary": "整数数字逆序",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-06",
+      "summary": "十个整数逆序输出",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    },
+    {
+      "problem_id": "irplag:case-07",
+      "summary": "四阶矩阵主对角线求和",
+      "context_source": "Paper section 3.2; paraphrase only",
+      "starter_code_provided": false
+    }
+  ],
+  "registry_sha256": {
+    "source_registry.jsonl": "84bfe9583882ae71ba8e8fe41531d6f3a5beaae2719c6587f066b05c3181762f",
+    "published_pairs.jsonl": "23235ee16290611d26dc9d4b28d1ee1d7af8bb09def05175bba7b0b1bf704738"
+  }
+}

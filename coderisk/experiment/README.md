@@ -1,5 +1,7 @@
 # PICAS Reproducible Experiments
 
+本轮新增 `acquire_irplag.py` / `prepare_irplag_review.py` / `audit_irplag.py`、`diagnose_fusion.py` 和 `verify_async_runtime.py`。从仓库根目录运行，输出使用新目录；来源、命令和边界见 [前三项记录](../../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md)。IR-Plag 未评分且正式资格为零，融合诊断只读取旧冻结结果，运行检查只用自有合成代码。
+
 ## C/HTML and additional official sources (2026-10-08)
 
 `acquire_multilang_dataset.py` imports a bounded, hash-pinned CodeNet prefix and commit-pinned MDN HTML files. `audit_multilang_sources.py` checks source integrity and parser/normalization coverage only. See [commands and limitations](../../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md) and [frozen evidence](evidence/multilang-20261008/README.md). Upstream C language labels need review; no pair labels are inferred. The formal fair-evaluation runner and JPlag common cohort remain Java/Python; C/HTML protocol/baseline expansion is pending.

@@ -268,7 +268,7 @@ onMounted(load)
         <strong :class="result?.exceedThreshold ? 'risk-positive' : 'risk-negative'">{{ signedPercent(result?.riskMargin) }}</strong>
       </div>
       <div class="metric-tile">
-        <span>校准风险分</span>
+        <span title="由风险边际映射的展示分，未经经验概率校准">风险展示分</span>
         <strong>{{ percent(result?.calibratedRiskScore) }}</strong>
       </div>
       <div class="metric-tile">

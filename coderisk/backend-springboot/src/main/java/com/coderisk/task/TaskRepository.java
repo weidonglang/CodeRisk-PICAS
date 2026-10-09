@@ -70,7 +70,7 @@ public class TaskRepository {
         List<DetectionTaskResponse> matches = jdbc.query(
                 """
                 SELECT id, question_id, task_name, task_mode, status, total_submissions, total_pairs,
-                       finished_pairs, error_message, created_at, finished_at
+                       finished_pairs, failed_pairs, progress, error_message, created_at, finished_at
                 FROM detection_task WHERE id = ? AND deleted = 0
                 """,
                 (rs, row) -> new DetectionTaskResponse(
@@ -82,6 +82,8 @@ public class TaskRepository {
                         rs.getInt("total_submissions"),
                         rs.getInt("total_pairs"),
                         rs.getInt("finished_pairs"),
+                        rs.getInt("failed_pairs"),
+                        rs.getDouble("progress"),
                         submissionIds(rs.getLong("id")),
                         rs.getString("error_message") == null ? "" : rs.getString("error_message"),
                         offset(rs.getTimestamp("created_at")),
@@ -129,13 +131,66 @@ public class TaskRepository {
                 progress,
                 finishedPairs,
                 failedPairs,
-                errorMessage,
+                errorMessage == null ? "" : errorMessage.substring(0, Math.min(errorMessage.length(), 2000)),
                 status.name(),
                 timestamp(OffsetDateTime.now()),
                 timestamp(finishedAt),
                 timestamp(OffsetDateTime.now()),
                 taskId
         );
+    }
+
+    public boolean claim(long taskId) {
+        return jdbc.update("""
+                UPDATE detection_task SET status = 'RUNNING', failed_pairs = 0,
+                    error_message = '', finished_at = NULL, started_at = ?, updated_at = ?
+                WHERE id = ? AND deleted = 0 AND status IN ('PENDING', 'PARTIAL', 'FAILED')
+                """, timestamp(OffsetDateTime.now()), timestamp(OffsetDateTime.now()), taskId) == 1;
+    }
+
+    @Transactional
+    public int recoverInterrupted() {
+        List<Long> ids = jdbc.query("SELECT id FROM detection_task WHERE deleted = 0 AND status = 'RUNNING'",
+                (rs, row) -> rs.getLong("id"));
+        for (long id : ids) {
+            int saved = jdbc.queryForObject("SELECT COUNT(*) FROM analysis_result WHERE task_id = ?", Integer.class, id);
+            int total = find(id).totalPairs();
+            updateState(id, saved == total ? TaskStatus.FINISHED : saved > 0 ? TaskStatus.PARTIAL : TaskStatus.FAILED,
+                    saved, total - saved, saved == total ? "" : "SERVICE_RESTARTED: retry to resume unfinished pairs",
+                    OffsetDateTime.now());
+        }
+        return ids.size();
+    }
+
+    @Transactional
+    public void recordFailure(long taskId, long a, long b, String message) {
+        OffsetDateTime now = OffsetDateTime.now();
+        String safeMessage = message == null ? "Analysis failed" : message.substring(0, Math.min(message.length(), 2000));
+        int updated = jdbc.update("""
+                UPDATE task_pair_failure SET message = ?, attempts = attempts + 1,
+                    resolved = 0, last_attempt_at = ?
+                WHERE task_id = ? AND submission_a_id = ? AND submission_b_id = ?
+                """, safeMessage, timestamp(now), taskId, a, b);
+        if (updated == 0) {
+            jdbc.update("""
+                    INSERT INTO task_pair_failure
+                        (task_id, submission_a_id, submission_b_id, message, attempts, resolved, last_attempt_at)
+                    VALUES (?, ?, ?, ?, 1, 0, ?)
+                    """, taskId, a, b, safeMessage, timestamp(now));
+        }
+    }
+
+    public void resolveFailure(long taskId, long a, long b) {
+        jdbc.update("UPDATE task_pair_failure SET resolved = 1 WHERE task_id = ? AND submission_a_id = ? AND submission_b_id = ?", taskId, a, b);
+    }
+
+    public List<TaskPairFailure> failures(long taskId) {
+        return jdbc.query("""
+                SELECT submission_a_id, submission_b_id, message, attempts, resolved, last_attempt_at
+                FROM task_pair_failure WHERE task_id = ? ORDER BY resolved, submission_a_id, submission_b_id
+                """, (rs, row) -> new TaskPairFailure(rs.getLong("submission_a_id"), rs.getLong("submission_b_id"),
+                    rs.getString("message"), rs.getInt("attempts"), rs.getBoolean("resolved"),
+                    offset(rs.getTimestamp("last_attempt_at"))), taskId);
     }
 
     public long count() {

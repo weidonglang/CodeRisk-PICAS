@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Download, Refresh, View } from '@element-plus/icons-vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-import { createTaskReport, getTask, getTaskResults, getTaskResultSummary, type DetectionTask, type ResultRow, type TaskResultSummary } from '../api/taskApi'
+import { createTaskReport, getTask, getTaskFailures, getTaskResults, getTaskResultSummary, startTask, type DetectionTask, type ResultRow, type TaskResultSummary, type TaskPairFailure } from '../api/taskApi'
 
 const route = useRoute()
 const taskId = computed(() => Number(route.params.taskId))
@@ -14,6 +14,14 @@ const task = ref<DetectionTask | null>(null)
 const results = ref<ResultRow[]>([])
 const reportLoading = ref(false)
 const reportMessage = ref('')
+const failures = ref<TaskPairFailure[]>([])
+const currentPage = ref(1)
+const totalRows = ref(0)
+const starting = ref(false)
+const active = computed(() => ['RUNNING', 'QUEUED'].includes(task.value?.status ?? ''))
+const retryable = computed(() => ['PENDING', 'PARTIAL', 'FAILED'].includes(task.value?.status ?? ''))
+let timer: ReturnType<typeof setTimeout> | undefined
+let disposed = false
 
 function percent(value: number) {
   return `${Math.round(value * 100)}%`
@@ -25,25 +33,49 @@ function margin(value: number) {
 }
 
 async function load() {
+  if (loading.value || disposed) return
+  clearTimeout(timer)
+  const requestedTask = taskId.value
+  const requestedPage = currentPage.value
   loading.value = true
   error.value = ''
   try {
-    const [taskResponse, summaryResponse, resultsResponse] = await Promise.all([
-      getTask(taskId.value),
-      getTaskResultSummary(taskId.value),
-      getTaskResults(taskId.value),
+    const [taskResponse, summaryResponse, resultsResponse, failuresResponse] = await Promise.all([
+      getTask(requestedTask),
+      getTaskResultSummary(requestedTask),
+      getTaskResults(requestedTask, requestedPage),
+      getTaskFailures(requestedTask),
     ])
+    if (disposed || requestedTask !== taskId.value || requestedPage !== currentPage.value) return
     task.value = taskResponse.data
     summary.value = summaryResponse.data
     results.value = resultsResponse.data.items
+    failures.value = failuresResponse.data
+    totalRows.value = resultsResponse.data.total
   } catch (err) {
-    error.value = err instanceof Error ? err.message : '加载结果失败'
+    if (!disposed && requestedTask === taskId.value) error.value = err instanceof Error ? err.message : '加载结果失败'
   } finally {
     loading.value = false
+    if (!disposed && (requestedTask !== taskId.value || requestedPage !== currentPage.value)) timer = setTimeout(load, 0)
+    else if (!disposed && active.value) timer = setTimeout(load, 2000)
   }
 }
 
 onMounted(load)
+onUnmounted(() => { disposed = true; clearTimeout(timer) })
+watch(currentPage, load)
+watch(taskId, () => { currentPage.value = 1; task.value = null; summary.value = null; results.value = []; failures.value = []; totalRows.value = 0; void load() })
+
+async function resume() {
+  starting.value = true
+  try {
+    const response = await startTask(taskId.value)
+    task.value = response.data
+    await load()
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : '启动失败，请稍后重试'
+  } finally { starting.value = false }
+}
 
 async function exportReport() {
   reportLoading.value = true
@@ -73,9 +105,10 @@ async function exportReport() {
     <div class="page-header">
       <div>
         <h1>检测结果</h1>
-        <p>综合展示原始、结构与规范化相似信号，并按题目画像动态校准复核阈值。</p>
+        <p>展示相似信号、复核阈值与证据。运行期间每两秒刷新，重试保留已成功结果。</p>
       </div>
       <div class="header-actions">
+        <el-button v-if="retryable" type="primary" :loading="starting" :disabled="loading" @click="resume">{{ task?.status === 'PENDING' ? '开始检测' : '重试未完成代码对' }}</el-button>
         <el-button :icon="Download" :loading="reportLoading" @click="exportReport">导出报告</el-button>
         <el-button :icon="Refresh" :loading="loading" @click="load">刷新</el-button>
       </div>
@@ -93,6 +126,24 @@ async function exportReport() {
     />
     <el-alert v-if="error" class="section-gap" type="error" :title="error" :closable="false" />
     <el-alert v-if="reportMessage" class="section-gap" type="success" :title="reportMessage" :closable="false" />
+    <section v-if="task" class="panel section-gap">
+      <h2>任务状态：{{ task.status }}</h2>
+      <p>已成功 {{ task.finishedPairs }} / {{ task.totalPairs }} 对；{{ active ? '本轮失败' : '失败或未完成' }} {{ task.failedPairs }} 对。<span v-if="active">尚待处理 {{ Math.max(0, task.totalPairs - task.finishedPairs - task.failedPairs) }} 对。</span>进度表示成功覆盖率。</p>
+      <el-progress :percentage="Math.round(task.progress * 100)" />
+      <el-alert v-if="task.failureReason" :title="task.failureReason" type="warning" :closable="false" />
+      <p v-if="active">任务已受理，可能正在等待空闲工作线程。可以离开页面后再查看结果。</p>
+      <p v-if="task.status !== 'FINISHED'">当前报告仅包含已成功的代码对，不代表全部检测完成。</p>
+    </section>
+    <section v-if="failures.length" class="panel section-gap">
+      <h2>失败与恢复记录</h2>
+      <el-table :data="failures">
+        <el-table-column prop="submissionAId" label="提交 A" width="100" />
+        <el-table-column prop="submissionBId" label="提交 B" width="100" />
+        <el-table-column prop="message" label="原因" min-width="240" show-overflow-tooltip />
+        <el-table-column prop="attempts" label="失败次数" width="100" />
+        <el-table-column label="恢复状态" width="120"><template #default="{ row }">{{ row.resolved ? '已恢复' : '待重试' }}</template></el-table-column>
+      </el-table>
+    </section>
 
     <div class="metric-grid section-gap">
       <div class="metric-tile">
@@ -152,6 +203,7 @@ async function exportReport() {
           </template>
         </el-table-column>
       </el-table>
+      <el-pagination v-model:current-page="currentPage" :page-size="20" :total="totalRows" layout="prev, pager, next, total" class="section-gap" />
     </section>
   </section>
 </template>

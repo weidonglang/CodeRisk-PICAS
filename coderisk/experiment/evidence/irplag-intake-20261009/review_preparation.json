@@ -1,0 +1,12 @@
+{
+  "review_pairs": 52,
+  "regular_per_task_per_published_class": 3,
+  "known_disputes": 10,
+  "local_human_reviews": 0,
+  "review_labels": "UNCERTAIN until actual reviewers submit evidence",
+  "selection_uses_detector_scores": false,
+  "blind_batch_sha256": "08196ac95be5c4b0034e59db393641eb272f694320b56451adb0e1fcdcb4ccc4",
+  "local_manifest_sha256": "1af4702a7bb29f87e3c20c1fe2afc0e5755372759c026e463df19ae8db501c56",
+  "local_workbench_path": "E:\\ms\\coderisk\\data\\public-datasets\\irplag-20261009\\review\\workbench.html",
+  "note": "Adjudicator label file must not be shown before blind reviews; source category/path hidden in HTML."
+}

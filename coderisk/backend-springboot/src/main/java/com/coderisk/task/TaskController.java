@@ -43,6 +43,11 @@ public class TaskController {
         return responses.ok(taskService.get(taskId), request);
     }
 
+    @GetMapping("/{taskId}/failures")
+    public Object failures(@PathVariable long taskId, HttpServletRequest request) {
+        return responses.ok(taskService.failures(taskId), request);
+    }
+
     @GetMapping("/recent")
     public Object recent(HttpServletRequest request) {
         return responses.ok(taskService.recent(), request);

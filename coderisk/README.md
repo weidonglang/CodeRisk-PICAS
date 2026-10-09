@@ -1,5 +1,7 @@
 # CodeRisk 运行与演示手册
 
+> 2026-10-09 增量：[前三项推进记录](../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md)说明新数据、融合诊断与单实例异步任务恢复；后端 Flyway 已至 V5，H2 已验证，MySQL 实库仍待验证。
+
 [项目首页](../README.md) · [文档导航](../coderisk_docs/README.md) · [数据库配置](database/README.md) · [测试记录](TEST_REPORT.md)
 
 本手册集中说明工程运行。项目定位、语言边界和研究状态以首页及对应规格为准，历史实验记录不代表新版算法已经取得相同效果。

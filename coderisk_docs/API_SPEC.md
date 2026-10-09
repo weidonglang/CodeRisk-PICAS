@@ -1,5 +1,7 @@
 # API_SPEC.md
 
+> 2026-10-09 本轮增量：POST /api/tasks/{id}/start 现在异步返回完整任务对象，受理状态 RUNNING（含等待工作线程）；重复 RUNNING/FINISHED 不重复调度，PARTIAL/FAILED 跳过持久化成功结果后恢复。满额返回 503/TASK_CAPACITY_EXCEEDED。GET /api/tasks/{id}/failures 返回 submissionAId/submissionBId/message/attempts/resolved/lastAttemptAt。任务对象增加 failedPairs/progress，最近任务摘要增加 failedPairs；progress 为成功覆盖率，停止状态下 failedPairs 含未尝试部分。创建上限 100 且提交 ID 不可重复。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
+
 > 2026-10-09 API 增量：题目创建/查询新增可选 `starterLanguage`、`starterCode`（上限 20,000 字符）和 `starterSource`（上限 2,000）；有源码时须提供受支持语言和来源。上传 multipart 新增可选单行 `languageVersion`（64 字符），提交响应与内部分析请求保留该声明。新增复核内容通过已有 `REVIEW_NOTE.metadata.category` 的 `LANGUAGE_COMPATIBILITY`、`SHARED_TEMPLATE_CONTEXT`、`REVIEW_ASSESSMENT` 传递与持久化，无新增关系判定接口。规则详见 [说明](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。
 
 > 2026-10-08 语言扩展：上传允许 `.java/.py/.c/.cpp/.html/.htm`，HTML/HTM 均登记为 `html`，C/HTML/C++ 标记实验性；C++ 仅词法降级。`POST /api/tasks` 对包含 C/HTML 的混合语言任务返回 HTTP 400 / `TASK_LANGUAGE_DOMAIN_MISMATCH`。`POST /internal/analyze/pair` 对应混合输入或非法 `htmlThreshold` 返回 HTTP 400。HTML 结果 `formulaVersion=HTML_STRUCTURE_FIXED_V1`、`problemProfile.domain=html`、`thresholdAdjustment.policy=FIXED_UNCALIBRATED`；保留 `dynamicThreshold` 字段承载固定阈值以兼容接口，但展示必须标注“固定阈值（待验证）”。无可用算法题画像数值时不得补假值。见 [多语言说明](proposal/MULTILANGUAGE_PROGRESS.md)。
@@ -543,8 +545,11 @@ POST /api/tasks/{taskId}/start
 
 ```json
 {
-  "taskId": 4001,
-  "status": "QUEUED"
+  "id": 4001,
+  "status": "RUNNING",
+  "finishedPairs": 0,
+  "failedPairs": 0,
+  "progress": 0.0
 }
 ```
 
@@ -567,7 +572,6 @@ GET /api/tasks/{taskId}
   "totalPairs": 6,
   "finishedPairs": 3,
   "failedPairs": 0,
-  "startedAt": "2026-06-17T10:40:00",
   "finishedAt": null
 }
 ```
@@ -1219,8 +1223,8 @@ POST /internal/experiment/run
 
 ```text
 POST /api/tasks -> PENDING
-POST /api/tasks/{id}/start -> QUEUED
-分析开始 -> RUNNING
+POST /api/tasks/{id}/start -> RUNNING（含已受理等待）
+工作池调度 -> 逐对持久化结果与进度
 分析成功 -> FINISHED
 部分失败 -> PARTIAL
 整体失败 -> FAILED

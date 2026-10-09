@@ -1,5 +1,7 @@
 # ALGORITHM_SPEC.md
 
+> 2026-10-09 本轮增量：新增现行融合的代数贡献诊断：读取冻结分数和阈值，不拟合、不重评分。raw/AST/canonical 使用 n-gram 集合 Jaccard；不能将名为 sequence_similarity 的函数解释为 LCS 或语义检测。生产权重、阈值与分数兼容字段不变。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
+
 > 2026-10-09 新增独立的 [版本/自然相似复核上下文](proposal/VERSION_AND_NATURAL_SIMILARITY.md)，不进入评分权重：登记模板的精确原始 Token 匹配，8 Token 以下片段忽略，按下标去重；剩余 Token 值集合诊断无顺序信息、空侧保持 null。短有效代码及版本/解析限制触发依据不足/背景复核提示；门槛未校准，不决定独立/派生关系。生产分数、题目画像和阈值公式保持原逻辑。
 
 > 2026-10-08 C/HTML 增量：C 使用 Tree-sitter 语法树和局部作用域规范化；宏/typedef/extern/复杂原型等明确降级。HTML 使用标签/属性结构序列与保留文本、属性值的规范化，默认融合权重 0.25/0.30/0.45，映射权重 0；固定阈值 0.85 可配置但未经标注数据校准。公式 `HTML_STRUCTURE_FIXED_V1` 不应用算法题画像，降级时仅词法评分。空或仅注释源码相似度为 0。详见 [多语言记录](proposal/MULTILANGUAGE_PROGRESS.md)；Java/Python 正常输入的融合与题目阈值配置沿用原版本。

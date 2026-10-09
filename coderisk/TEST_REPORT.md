@@ -1,5 +1,16 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## IR-Plag intake, fusion diagnosis and asynchronous tasks — 2026-10-09
+
+- Python: 134 tests passed. Eight additional cases check pinned hashes, unsafe ZIP headers including Windows backslashes, publisher labels versus disputed/local labels, and exact fusion decomposition. One existing third-party warning remains.
+- Backend: 16 integration tests passed with H2 and Flyway V1–V5. Four new tests cover asynchronous idempotent start, capacity rejection, partial retries and preserved results, failure history, restart recovery from stale counters, partial-report disclosure, invalid task sizes/duplicate IDs, and per-attempt time budgets. AnalysisClient is stubbed in these integration tests.
+- Frontend: type check and production build passed; existing chunk-size warning remains. Result view adds polling cleanup, progress, retry, failure history and pagination. Report and detail view describe the risk display score as non-probabilistic.
+- Real services: isolated persistent H2 + actual FastAPI, self-authored synthetic Python only. Recorded 10/20/50-submission runs and a missing-file partial/retry check with the original successful result ID retained. No student/downloaded code was executed. These are execution checks, not accuracy tests or MySQL verification.
+- Data: all 467 IR-Plag source hashes verified; 453 byte-unique files, 355 published derivation pairs and 105 independent-creation reference pairs. Ten known disputed negatives quarantined, 52 score-blind review items prepared, actual local human reviews and formal eligibility remain zero. Archive pins and metadata retained, raw sources ignored.
+- Diagnosis: 911 frozen pilot rows per view decomposed into canonical/mapping contributions, original validation-selected thresholds reused, cases/CSV/PNG saved. No new fitting or public-data scoring; no evidence of improved production accuracy claimed.
+
+See [deliverables and limits](../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md). Historical validation below remains tied to its earlier implementation.
+
 ## Version and shared-template review context — 2026-10-09
 
 - Python: 126 tests passed; 15 new cases cover version declarations, Python 2/3 syntax and division cues, short-code notices, exact template matching, literal/embedded-script marker boundaries, overlapping spans, null residual diagnostics and API validation. One third-party deprecation warning remains.

@@ -18,7 +18,17 @@ import com.coderisk.result.TaskResultSummary;
 import com.coderisk.submission.SubmissionResponse;
 import com.coderisk.submission.SubmissionService;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
@@ -26,6 +36,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TaskService {
+
+    private static final Logger log = LoggerFactory.getLogger(TaskService.class);
+    private static final int MAX_SUBMISSIONS = 100;
+    private final Executor executor;
+    private final long timeBudgetNanos;
 
     private final QuestionService questionService;
     private final SubmissionService submissionService;
@@ -38,13 +53,20 @@ public class TaskService {
             SubmissionService submissionService,
             AnalysisClient analysisClient,
             ResultService resultService,
-            TaskRepository repository
+            TaskRepository repository,
+            @Qualifier("coderiskTaskExecutor") Executor executor,
+            @Value("${coderisk.tasks.time-budget-seconds:900}") int timeBudgetSeconds
     ) {
         this.questionService = questionService;
         this.submissionService = submissionService;
         this.analysisClient = analysisClient;
         this.resultService = resultService;
         this.repository = repository;
+        this.executor = executor;
+        if (timeBudgetSeconds < 1 || timeBudgetSeconds > 7200) {
+            throw new IllegalArgumentException("Task time budget must be 1–7200 seconds");
+        }
+        this.timeBudgetNanos = java.util.concurrent.TimeUnit.SECONDS.toNanos(timeBudgetSeconds);
     }
 
     public DetectionTaskResponse create(TaskCreateRequest request) {
@@ -67,33 +89,79 @@ public class TaskService {
         );
     }
 
+    @EventListener(ApplicationReadyEvent.class)
+    public void recoverInterruptedTasks() {
+        int count = repository.recoverInterrupted();
+        if (count > 0) log.warn("Marked {} interrupted tasks resumable after service restart", count);
+    }
+
     public DetectionTaskResponse start(long taskId) {
-        DetectionTaskResponse task = get(taskId);
-        if (task.status() == TaskStatus.FINISHED) {
-            return task;
+        DetectionTaskResponse previous = get(taskId);
+        if (!repository.claim(taskId)) return get(taskId);
+        DetectionTaskResponse accepted = get(taskId);
+        try {
+            executor.execute(() -> execute(taskId));
+        } catch (RejectedExecutionException exception) {
+            repository.updateState(taskId, previous.status(), previous.finishedPairs(), previous.failedPairs(),
+                    "TASK_CAPACITY_EXCEEDED: retry later", previous.finishedAt());
+            throw new ApiException(HttpStatus.SERVICE_UNAVAILABLE, "TASK_CAPACITY_EXCEEDED", "Task workers and queue are full; retry later");
         }
-        repository.updateState(task.id(), TaskStatus.RUNNING, 0, 0, "", null);
+        return accepted;
+    }
 
-        QuestionResponse question = questionService.get(task.questionId());
-        List<SubmissionResponse> submissions = submissionService.getAll(task.submissionIds());
-        int finished = 0;
-        int failed = 0;
-        String lastFailure = "";
-        List<List<SubmissionResponse>> pairs = pairs(submissions);
-        for (List<SubmissionResponse> pair : pairs) {
-            try {
-                AnalyzeMockResult analysisResult = analysisClient.analyzePair(toAnalysisRequest(task.id(), question, pair.get(0), pair.get(1)));
-                resultService.saveMockResult(task.id(), pair.get(0), pair.get(1), analysisResult);
-                finished++;
-                repository.updateState(task.id(), TaskStatus.RUNNING, finished, failed, "", null);
-            } catch (RuntimeException exception) {
-                failed++;
-                lastFailure = exception.getMessage();
+    private record PairKey(long a, long b) { }
+
+    private void execute(long taskId) {
+        long begin = System.nanoTime();
+        try {
+            DetectionTaskResponse task = get(taskId);
+            QuestionResponse question = questionService.get(task.questionId());
+            List<SubmissionResponse> submissions = submissionService.getAll(task.submissionIds());
+            Set<PairKey> completed = new HashSet<>();
+            for (ResultResponse result : resultService.findByTask(taskId)) {
+                completed.add(new PairKey(result.submissionAId(), result.submissionBId()));
             }
+            int finished = completed.size();
+            int failed = 0;
+            String lastFailure = "";
+            repository.updateState(taskId, TaskStatus.RUNNING, finished, failed, "", null);
+            for (int i = 0; i < submissions.size(); i++) {
+                for (int j = i + 1; j < submissions.size(); j++) {
+                    if (Thread.currentThread().isInterrupted()) throw new IllegalStateException("TASK_INTERRUPTED: retry unfinished pairs");
+                    SubmissionResponse left = submissions.get(i), right = submissions.get(j);
+                    if (completed.contains(new PairKey(left.id(), right.id()))) {
+                        repository.resolveFailure(taskId, left.id(), right.id());
+                        continue;
+                    }
+                    if (System.nanoTime() - begin >= timeBudgetNanos) {
+                        throw new IllegalStateException("TASK_TIME_BUDGET_EXCEEDED: retry unfinished pairs");
+                    }
+                    try {
+                        AnalyzeMockResult result = analysisClient.analyzePair(toAnalysisRequest(taskId, question, left, right));
+                        resultService.saveMockResult(taskId, left, right, result);
+                        finished++;
+                        repository.resolveFailure(taskId, left.id(), right.id());
+                    } catch (RuntimeException exception) {
+                        failed++;
+                        lastFailure = exception.getMessage() == null ? exception.getClass().getSimpleName() : exception.getMessage();
+                        repository.recordFailure(taskId, left.id(), right.id(), lastFailure);
+                        log.warn("Task {} analysis failed for pair {}/{}", taskId, left.id(), right.id());
+                    }
+                    repository.updateState(taskId, TaskStatus.RUNNING, finished, failed, lastFailure, null);
+                }
+            }
+            finish(taskId, failed == 0 ? TaskStatus.FINISHED : finished == 0 ? TaskStatus.FAILED : TaskStatus.PARTIAL,
+                    finished, lastFailure);
+        } catch (RuntimeException exception) {
+            log.error("Task {} stopped before completing all pairs", taskId, exception);
+            int saved = resultService.findByTask(taskId).size();
+            finish(taskId, saved > 0 ? TaskStatus.PARTIAL : TaskStatus.FAILED, saved, exception.getMessage());
         }
+    }
 
-        TaskStatus finalStatus = failed == 0 ? TaskStatus.FINISHED : finished == 0 ? TaskStatus.FAILED : TaskStatus.PARTIAL;
-        return finish(taskId, finalStatus, finished, lastFailure);
+    public List<TaskPairFailure> failures(long taskId) {
+        get(taskId);
+        return repository.failures(taskId);
     }
 
     public DetectionTaskResponse get(long taskId) {
@@ -147,11 +215,17 @@ public class TaskService {
         } else {
             submissions = submissionService.getAll(submissionIds);
         }
+        if (submissions.size() > MAX_SUBMISSIONS) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_TOO_MANY_SUBMISSIONS", "At most 100 submissions per task");
+        }
+        if (submissions.stream().map(SubmissionResponse::id).distinct().count() != submissions.size()) {
+            throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_DUPLICATE_SUBMISSION", "Submission IDs must be distinct");
+        }
         boolean wrongQuestion = submissions.stream().anyMatch(submission -> submission.questionId() != questionId);
         if (wrongQuestion) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_SUBMISSION_QUESTION_MISMATCH", "All submissions must belong to the task question");
         }
-        return submissions;
+        return submissions.stream().sorted(Comparator.comparingLong(SubmissionResponse::id)).toList();
     }
 
     private AnalyzeMockRequest toAnalysisRequest(
@@ -175,16 +249,6 @@ public class TaskService {
                 new AnalysisSubmission(submissionB.id(), submissionB.language(), submissionB.fileName(), submissionB.rawCodePath(), null, submissionB.languageVersion()),
                 Map.of("mode", taskModeFor(taskId), "baseThreshold", 0.68)
         );
-    }
-
-    private List<List<SubmissionResponse>> pairs(List<SubmissionResponse> submissions) {
-        List<List<SubmissionResponse>> pairs = new ArrayList<>();
-        for (int i = 0; i < submissions.size(); i++) {
-            for (int j = i + 1; j < submissions.size(); j++) {
-                pairs.add(List.of(submissions.get(i), submissions.get(j)));
-            }
-        }
-        return pairs;
     }
 
     private String normalizeTaskName(String taskName, String questionTitle) {

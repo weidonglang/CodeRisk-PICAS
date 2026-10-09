@@ -1,5 +1,7 @@
 # Known Issues
 
+2026-10-09: bounded asynchronous task execution and retry/restart recovery now support one backend instance. Multiple backends sharing a database, distributed leases, cancellation and hard interruption of analysis remain unsupported. V5 is tested in H2 only. IR-Plag has publisher-controlled relationships and known disputed negatives; it is not local double-reviewed formal evidence. See [current boundaries](../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md).
+
 2026-10-08 C/HTML extension: both are experimental and require same-language tasks. C macro/typedef/extern/complex prototype normalization falls back to lexical analysis. HTML does not render pages or understand JavaScript/CSS behavior; its fixed threshold is uncalibrated. New CodeNet/MDN intake is unlabelled, upstream C has mixed-language files, and formal C/HTML baselines remain pending. See [coverage audit](../coderisk_docs/proposal/MULTILANGUAGE_PROGRESS.md). Tree-sitter is pinned to 0.25.2 after a local native crash with 0.26.0; the full audit succeeds with the pin. Flyway V3 is verified in H2 only; historical results without profile snapshots retain the legacy latest-profile fallback.
 
 1. MySQL 8.0.42 is available locally, but passwordless `root` and the documented example `coderisk/coderisk` credential are rejected with error 1045. Live MySQL E2E still requires a valid local credential; persistent H2 verification is not presented as MySQL verification.

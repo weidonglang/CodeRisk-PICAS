@@ -36,3 +36,7 @@ coderisk:
   analysis:
     base-url: ${CODERISK_ANALYSIS_BASE_URL:http://localhost:8001}
     timeout-seconds: ${CODERISK_ANALYSIS_TIMEOUT_SECONDS:60}
+  tasks:
+    workers: ${CODERISK_TASK_WORKERS:2}
+    queue-capacity: ${CODERISK_TASK_QUEUE_CAPACITY:8}
+    time-budget-seconds: ${CODERISK_TASK_TIME_BUDGET_SECONDS:900}

@@ -36,7 +36,8 @@ import org.springframework.test.web.servlet.MvcResult;
 
 @SpringBootTest(properties = {
         "coderisk.upload.root-path=target/test-uploads",
-        "coderisk.artifacts.root-path=target/test-artifacts"
+        "coderisk.artifacts.root-path=target/test-artifacts",
+        "coderisk.tasks.workers=1", "coderisk.tasks.queue-capacity=1", "coderisk.tasks.time-budget-seconds=1"
 })
 @AutoConfigureMockMvc
 class SystemControllerTest {
@@ -52,6 +53,9 @@ class SystemControllerTest {
 
     @MockBean
     private AnalysisClient analysisClient;
+
+    @Autowired
+    private com.coderisk.task.TaskService taskService;
 
     @Test
     void healthReturnsUnifiedResponse() throws Exception {
@@ -170,10 +174,7 @@ class SystemControllerTest {
                 .andReturn();
         long taskId = objectMapper.readTree(taskResult.getResponse().getContentAsString()).path("data").path("id").asLong();
 
-        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.data.status").value("FINISHED"))
-                .andExpect(jsonPath("$.data.finishedPairs").value(1));
+        startAndAwait(taskId);
 
         MvcResult resultsResponse = mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId)))
                 .andExpect(status().isOk())
@@ -345,7 +346,7 @@ class SystemControllerTest {
         MvcResult taskResult = mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON).content(taskBody))
                 .andExpect(status().isOk()).andReturn();
         long taskId = objectMapper.readTree(taskResult.getResponse().getContentAsString()).path("data").path("id").asLong();
-        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId))).andExpect(status().isOk());
+        startAndAwait(taskId);
         MvcResult resultResponse = mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.items[0].algorithmVersion").value("picas-v4-xl-ir0.1-sum0.2-exp"))
@@ -412,7 +413,7 @@ class SystemControllerTest {
                         .contentType(MediaType.APPLICATION_JSON).content(taskBody))
                 .andExpect(status().isOk()).andReturn();
         long taskId = objectMapper.readTree(taskResult.getResponse().getContentAsString()).path("data").path("id").asLong();
-        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId))).andExpect(status().isOk());
+        startAndAwait(taskId);
 
         mockMvc.perform(get("/api/tasks/%d/results?page=1&pageSize=1".formatted(taskId)))
                 .andExpect(status().isOk())
@@ -467,8 +468,7 @@ class SystemControllerTest {
                         .content("{\"questionId\":%d,\"submissionIds\":[%d,%d],\"taskMode\":\"PICAS_STANDARD\"}".formatted(questionId, first, second)))
                 .andExpect(status().isOk()).andReturn();
         long taskId = objectMapper.readTree(created.getResponse().getContentAsString()).path("data").path("id").asLong();
-        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId)))
-                .andExpect(status().isOk()).andExpect(jsonPath("$.data.status").value("FINISHED"));
+        startAndAwait(taskId);
         mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId)))
                 .andExpect(jsonPath("$.data.items[0].problemProfile.domain").value("html"))
                 .andExpect(jsonPath("$.data.items[0].thresholdAdjustment.policy").value("FIXED_UNCALIBRATED"));
@@ -526,7 +526,7 @@ class SystemControllerTest {
         MvcResult task = mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON).content(taskBody))
                 .andExpect(status().isOk()).andReturn();
         long taskId = objectMapper.readTree(task.getResponse().getContentAsString()).path("data").path("id").asLong();
-        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId))).andExpect(jsonPath("$.data.status").value("FINISHED"));
+        startAndAwait(taskId);
         MvcResult results = mockMvc.perform(get("/api/tasks/%d/results".formatted(taskId))).andReturn();
         long resultId = objectMapper.readTree(results.getResponse().getContentAsString()).path("data").path("items").get(0).path("id").asLong();
         mockMvc.perform(get("/api/results/%d/evidence".formatted(resultId)))
@@ -554,6 +554,140 @@ class SystemControllerTest {
                         .param("languageVersion", "3.12\nnot a version"))
                 .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value("LANGUAGE_VERSION_INVALID"));
         mockMvc.perform(get("/api/questions/%d/submissions".formatted(questionId))).andExpect(jsonPath("$.data", hasSize(0)));
+    }
+
+
+    private JsonNode startAndAwait(long taskId) throws Exception {
+        mockMvc.perform(post("/api/tasks/%d/start".formatted(taskId))).andExpect(status().isOk());
+        return awaitTerminal(taskId);
+    }
+
+    private JsonNode awaitTerminal(long taskId) throws Exception {
+        long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(10);
+        while (System.nanoTime() < deadline) {
+            JsonNode task = objectMapper.readTree(mockMvc.perform(get("/api/tasks/" + taskId))
+                    .andExpect(status().isOk()).andReturn().getResponse().getContentAsString()).path("data");
+            if (List.of("FINISHED", "FAILED", "PARTIAL").contains(task.path("status").asText())) return task;
+            Thread.sleep(20);
+        }
+        throw new AssertionError("Task did not finish: " + taskId);
+    }
+
+    private long taskFor(long questionId, List<Long> ids) throws Exception {
+        String body = objectMapper.writeValueAsString(Map.of("questionId", questionId, "submissionIds", ids));
+        return objectMapper.readTree(mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON).content(body))
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString()).path("data").path("id").asLong();
+    }
+
+    private AnalyzeMockResult executionFixture(com.coderisk.integration.analysis.AnalyzeMockRequest req) {
+        return new AnalyzeMockResult(req.taskId(), req.submissionA().id(), req.submissionB().id(),
+                .2, .2, .2, .2, .2, .68, -.48, 0, false, .2, "test", "LOW", Map.of(), Map.of(),
+                "Synthetic task execution fixture", true, List.of(), List.of());
+    }
+
+    @Test
+    void asyncStartIsIdempotentAndCapacityIsBounded() throws Exception {
+        long q = createQuestion("Async synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        long b = uploadSubmission(q, "b", "b.py", "print(2)");
+        long first = taskFor(q, List.of(a,b)), queued = taskFor(q, List.of(a,b)), excess = taskFor(q, List.of(a,b));
+        var entered = new java.util.concurrent.CountDownLatch(1);
+        var release = new java.util.concurrent.CountDownLatch(1);
+        AtomicInteger calls = new AtomicInteger();
+        when(analysisClient.analyzePair(any())).thenAnswer(inv -> {
+            calls.incrementAndGet(); entered.countDown();
+            if (!release.await(5, java.util.concurrent.TimeUnit.SECONDS)) throw new IllegalStateException("Fixture release timeout");
+            return executionFixture(inv.getArgument(0));
+        });
+        try {
+            mockMvc.perform(post("/api/tasks/" + first + "/start")).andExpect(status().isOk()).andExpect(jsonPath("$.data.status").value("RUNNING"));
+            org.junit.jupiter.api.Assertions.assertTrue(entered.await(2, java.util.concurrent.TimeUnit.SECONDS));
+            mockMvc.perform(post("/api/tasks/" + first + "/start")).andExpect(status().isOk());
+            mockMvc.perform(post("/api/tasks/" + queued + "/start")).andExpect(status().isOk());
+            mockMvc.perform(post("/api/tasks/" + excess + "/start")).andExpect(status().isServiceUnavailable()).andExpect(jsonPath("$.code").value("TASK_CAPACITY_EXCEEDED"));
+            mockMvc.perform(get("/api/tasks/" + excess)).andExpect(jsonPath("$.data.status").value("PENDING"));
+        } finally { release.countDown(); awaitTerminal(first); awaitTerminal(queued); }
+        mockMvc.perform(post("/api/tasks/" + first + "/start")).andExpect(jsonPath("$.data.status").value("FINISHED"));
+        org.junit.jupiter.api.Assertions.assertEquals(2, calls.get());
+    }
+
+    @Test
+    void partialRetryPreservesResultsAndResolvesFailureHistory() throws Exception {
+        long q = createQuestion("Retry synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        long b = uploadSubmission(q, "b", "b.py", "print(2)");
+        long c = uploadSubmission(q, "c", "c.py", "print(3)");
+        long t = taskFor(q, List.of(c,a,b));
+        var fail = new java.util.concurrent.atomic.AtomicBoolean(true);
+        var calls = new java.util.concurrent.ConcurrentHashMap<String, AtomicInteger>();
+        when(analysisClient.analyzePair(any())).thenAnswer(inv -> {
+            com.coderisk.integration.analysis.AnalyzeMockRequest req = inv.getArgument(0);
+            String key = req.submissionA().id() + ":" + req.submissionB().id();
+            calls.computeIfAbsent(key, k -> new AtomicInteger()).incrementAndGet();
+            if (req.submissionA().id() == a && req.submissionB().id() == b && fail.get()) throw new IllegalStateException("Synthetic timeout");
+            return executionFixture(req);
+        });
+        JsonNode partial = startAndAwait(t);
+        org.junit.jupiter.api.Assertions.assertEquals("PARTIAL", partial.path("status").asText());
+        org.junit.jupiter.api.Assertions.assertEquals(2, partial.path("finishedPairs").asInt());
+        org.junit.jupiter.api.Assertions.assertEquals(1, partial.path("failedPairs").asInt());
+        mockMvc.perform(get("/api/tasks/" + t + "/failures")).andExpect(jsonPath("$.data", hasSize(1))).andExpect(jsonPath("$.data[0].resolved").value(false));
+        MvcResult report = mockMvc.perform(post("/api/tasks/" + t + "/reports").contentType(MediaType.APPLICATION_JSON)
+                .content("{\"format\":\"HTML\",\"includeLowRiskPairs\":true}" )).andExpect(status().isOk()).andReturn();
+        long reportId = objectMapper.readTree(report.getResponse().getContentAsString()).path("data").path("reportId").asLong();
+        String partialHtml = mockMvc.perform(get("/api/reports/" + reportId + "/download")).andReturn()
+                .getResponse().getContentAsString(java.nio.charset.StandardCharsets.UTF_8);
+        org.junit.jupiter.api.Assertions.assertTrue(partialHtml.contains("本报告只包含生成时已成功的代码对"));
+        org.junit.jupiter.api.Assertions.assertTrue(partialHtml.contains("PARTIAL"));
+        startAndAwait(t);
+        mockMvc.perform(get("/api/tasks/" + t + "/failures")).andExpect(jsonPath("$.data[0].attempts").value(2));
+        // Simulate persisted RUNNING state after a process crash; no live worker remains.
+        jdbcTemplate.update("UPDATE detection_task SET status='RUNNING', finished_pairs=0, progress=0 WHERE id=?", t);
+        taskService.recoverInterruptedTasks();
+        mockMvc.perform(get("/api/tasks/" + t)).andExpect(jsonPath("$.data.status").value("PARTIAL"));
+        mockMvc.perform(get("/api/tasks/" + t)).andExpect(jsonPath("$.data.finishedPairs").value(2));
+        fail.set(false);
+        JsonNode done = startAndAwait(t);
+        org.junit.jupiter.api.Assertions.assertEquals("FINISHED", done.path("status").asText());
+        org.junit.jupiter.api.Assertions.assertEquals(3, done.path("finishedPairs").asInt());
+        org.junit.jupiter.api.Assertions.assertEquals(0, done.path("failedPairs").asInt());
+        org.junit.jupiter.api.Assertions.assertEquals(1.0, done.path("progress").asDouble());
+        mockMvc.perform(get("/api/tasks/" + t + "/failures")).andExpect(jsonPath("$.data[0].resolved").value(true));
+        org.junit.jupiter.api.Assertions.assertEquals(3, calls.get(a + ":" + b).get());
+        org.junit.jupiter.api.Assertions.assertEquals(1, calls.get(a + ":" + c).get());
+        org.junit.jupiter.api.Assertions.assertEquals(1, calls.get(b + ":" + c).get());
+    }
+
+    @Test
+    void taskBudgetStopsNewPairsAndRetryResumesDurableResults() throws Exception {
+        long q = createQuestion("Time budget synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        long b = uploadSubmission(q, "b", "b.py", "print(2)");
+        long c = uploadSubmission(q, "c", "c.py", "print(3)");
+        long task = taskFor(q, List.of(a,b,c));
+        AtomicInteger calls = new AtomicInteger();
+        when(analysisClient.analyzePair(any())).thenAnswer(inv -> {
+            if (calls.incrementAndGet() == 1) Thread.sleep(1100);
+            return executionFixture(inv.getArgument(0));
+        });
+        JsonNode stopped = startAndAwait(task);
+        org.junit.jupiter.api.Assertions.assertEquals("PARTIAL", stopped.path("status").asText());
+        org.junit.jupiter.api.Assertions.assertEquals(1, stopped.path("finishedPairs").asInt());
+        org.junit.jupiter.api.Assertions.assertTrue(stopped.path("failureReason").asText().contains("TASK_TIME_BUDGET_EXCEEDED"));
+        org.junit.jupiter.api.Assertions.assertEquals("FINISHED", startAndAwait(task).path("status").asText());
+        org.junit.jupiter.api.Assertions.assertEquals(3, calls.get());
+    }
+
+    @Test
+    void duplicateIdsAndOversizedTasksAreRejected() throws Exception {
+        long q = createQuestion("Limits synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        for (var entry : Map.of("TASK_DUPLICATE_SUBMISSION", List.of(a,a),
+                "TASK_TOO_MANY_SUBMISSIONS", java.util.Collections.nCopies(101,a)).entrySet()) {
+            mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(Map.of("questionId", q, "submissionIds", entry.getValue()))))
+                    .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value(entry.getKey()));
+        }
     }
 
     private long createQuestion(String title) throws Exception {

@@ -25,6 +25,7 @@
 | [PROBLEM_AWARE_SCORING](PROBLEM_AWARE_SCORING.md) | 题目画像与阈值解释 |
 | [API_SPEC](API_SPEC.md) · [DATABASE_SCHEMA](DATABASE_SCHEMA.md) | 接口与数据模型 |
 | [FRONTEND_SPEC](FRONTEND_SPEC.md) · [UI_FLOW](UI_FLOW.md) | 界面能力与业务流程 |
+| [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md) | IR-Plag 新数据、融合负结果分解、异步任务与失败恢复 |
 | [版本、模板与自然相似](proposal/VERSION_AND_NATURAL_SIMILARITY.md) | 已实现复核上下文与校准边界 |
 | [IR_SPEC](IR_SPEC.md) | 跨语言实验表征，生产权重为零 |
 | [贡献指南](../CONTRIBUTING.md) · [AGENTS](AGENTS.md) | 修改、验证与数据真实性约定 |

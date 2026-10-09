@@ -10,6 +10,7 @@ public record TaskSummary(
         TaskMode taskMode,
         TaskStatus status,
         int finishedPairs,
+        int failedPairs,
         int totalPairs,
         OffsetDateTime createdAt
 ) {
@@ -21,6 +22,7 @@ public record TaskSummary(
                 task.taskMode(),
                 task.status(),
                 task.finishedPairs(),
+                task.failedPairs(),
                 task.totalPairs(),
                 task.createdAt()
         );

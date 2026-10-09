@@ -1,5 +1,7 @@
 # Database
 
+> 2026-10-09 增量：[前三项推进记录](../../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md)说明新数据、融合诊断与单实例异步任务恢复；后端 Flyway 已至 V5，H2 已验证，MySQL 实库仍待验证。
+
 The backend uses JDBC and Flyway. The production datasource is MySQL 8; the `local` profile uses an H2 file database in MySQL compatibility mode so local development remains runnable without database credentials.
 
 Run the PowerShell commands below from `coderisk/` (use `cd coderisk` from the repository root). Migration paths are also relative to `coderisk/`.
@@ -11,6 +13,7 @@ backend-springboot/src/main/resources/db/migration/V1__coderisk_core.sql
 backend-springboot/src/main/resources/db/migration/V2__v4_ready_consistency.sql
 backend-springboot/src/main/resources/db/migration/V3__result_profile_snapshot.sql
 backend-springboot/src/main/resources/db/migration/V4__review_context.sql
+backend-springboot/src/main/resources/db/migration/V5__task_pair_failure.sql
 ```
 
 Initialize a local MySQL development database with an administrative account:

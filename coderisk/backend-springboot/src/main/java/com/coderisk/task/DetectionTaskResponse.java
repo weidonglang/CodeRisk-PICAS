@@ -14,6 +14,8 @@ public record DetectionTaskResponse(
         int totalSubmissions,
         int totalPairs,
         int finishedPairs,
+        int failedPairs,
+        double progress,
         List<Long> submissionIds,
         String failureReason,
         OffsetDateTime createdAt,

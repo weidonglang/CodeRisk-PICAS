@@ -21,6 +21,8 @@ export interface DetectionTask {
   totalSubmissions: number
   totalPairs: number
   finishedPairs: number
+  failedPairs: number
+  progress: number
   submissionIds: number[]
   failureReason: string
   createdAt: string
@@ -33,8 +35,22 @@ export interface TaskSummary {
   taskMode: TaskMode
   status: TaskStatus
   finishedPairs: number
+  failedPairs: number
   totalPairs: number
   createdAt: string
+}
+
+export interface TaskPairFailure {
+  submissionAId: number
+  submissionBId: number
+  message: string
+  attempts: number
+  resolved: boolean
+  lastAttemptAt: string
+}
+
+export async function getTaskFailures(taskId: number): Promise<ApiResponse<TaskPairFailure[]>> {
+  return getApi<TaskPairFailure[]>(`/tasks/${taskId}/failures`)
 }
 
 export interface CreateTaskBody {
@@ -208,8 +224,8 @@ export async function listRecentTasks(): Promise<ApiResponse<TaskSummary[]>> {
   return getApi<TaskSummary[]>('/tasks/recent')
 }
 
-export async function getTaskResults(taskId: number): Promise<ApiResponse<PageResult<ResultRow>>> {
-  return getApi<PageResult<ResultRow>>(`/tasks/${taskId}/results`)
+export async function getTaskResults(taskId: number, page = 1): Promise<ApiResponse<PageResult<ResultRow>>> {
+  return getApi<PageResult<ResultRow>>(`/tasks/${taskId}/results?page=${page}&pageSize=20`)
 }
 
 export async function getTaskResultSummary(taskId: number): Promise<ApiResponse<TaskResultSummary>> {

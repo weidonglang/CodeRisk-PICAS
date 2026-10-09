@@ -1,5 +1,7 @@
 # PROJECT_SPEC.md
 
+> 2026-10-09 本轮增量：新增作者发布的 IR-Plag 接收、已观察 ConPlag 融合分解和本地单后端异步执行/失败恢复。Java/Python 主研究范围不变，新数据正式资格仍为零，生产评分公式不变。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
+
 > 2026-10-09 新增 [版本与自然相似复核](proposal/VERSION_AND_NATURAL_SIMILARITY.md)：提交版本声明、共同模板登记/精确 Token 范围、短有效代码依据不足提示已贯通上传、结果与报告。属于未校准的复核背景，不修改生产相似分数或公式，不声称已实现跨版本语义转换或证明误报下降。
 
 > 2026-10-09 数据研究工具增量：[质量复核与离线盲审工作台](proposal/DATA_REVIEW_WORKBENCH.md)已完成。公开标签探索评测单独运行，不修改正式样本资格、生产分数、阈值公式或 API。

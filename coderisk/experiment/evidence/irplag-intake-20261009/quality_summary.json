@@ -1,0 +1,184 @@
+{
+  "input_sha256": {
+    "experiment\\evidence\\data-quality-20261009\\source_quality_registry.jsonl": "c643afeafcc7de4234cb679111f0a8b67df2dd988a65251c8f3b963980f5f165",
+    "source_registry.jsonl": "84bfe9583882ae71ba8e8fe41531d6f3a5beaae2719c6587f066b05c3181762f"
+  },
+  "logical_sources": 467,
+  "unique_byte_hashes": 453,
+  "duplicate_byte_groups": [
+    {
+      "sha256": "9e4f2c4f6875349a115a9d6003490f96a19b0883e3eaf42192c95506bcb63bce",
+      "source_ids": [
+        "IRP-4a20cfc6ad79aa448572",
+        "IRP-33b1780cba333c4d54f7"
+      ],
+      "problems": [
+        "irplag:case-01"
+      ],
+      "categories": {
+        "original": 1,
+        "plagiarized": 1
+      }
+    },
+    {
+      "sha256": "5361cffba022187ead2c539e637659bc8b6ae5dcf0de689d66d14c8328a88c8d",
+      "source_ids": [
+        "IRP-1c01ecb4bb2db7f296a6",
+        "IRP-3fd7509daa1aeaa0160f",
+        "IRP-477d12ae85698b951b1c"
+      ],
+      "problems": [
+        "irplag:case-01"
+      ],
+      "categories": {
+        "plagiarized": 3
+      }
+    },
+    {
+      "sha256": "da1421523af02a1c99c92bc3cf7fd1d81af5f68afbe4dda9082935b009da28c1",
+      "source_ids": [
+        "IRP-a568229531555d2eb41e",
+        "IRP-0d8d7c5974f3380ecf34"
+      ],
+      "problems": [
+        "irplag:case-01"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "78877adbfcc8ed4458f223b65e51e2bdfee83a4f4246df928b59afd6e035d40c",
+      "source_ids": [
+        "IRP-80a7072854ecdc818315",
+        "IRP-277035dd31594a3b24a2"
+      ],
+      "problems": [
+        "irplag:case-01"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "7b2159db2ae30428d2195d3449fe5e8dca0db6acb3a328429696d133932f9a94",
+      "source_ids": [
+        "IRP-e7a913f1081a56849420",
+        "IRP-197cef95bcbc8affa544",
+        "IRP-2677ba061422ea7709b4"
+      ],
+      "problems": [
+        "irplag:case-02"
+      ],
+      "categories": {
+        "plagiarized": 3
+      }
+    },
+    {
+      "sha256": "0b1b04fc99db6fc4880b816fba1dac103d22245967d182192c0d70492a64a4fb",
+      "source_ids": [
+        "IRP-1ca932a8256c257a7147",
+        "IRP-22a5539169e860253718"
+      ],
+      "problems": [
+        "irplag:case-02"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "7d1abaff26acc8969b72779c069d5bef0ec1e3dbcd3dc0bf5f9d906a17daefd4",
+      "source_ids": [
+        "IRP-2fefcb34b29637d36155",
+        "IRP-32499f17dbf97de8e729"
+      ],
+      "problems": [
+        "irplag:case-02"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "4d2a037ebe9ed1bc8fdac867fafaa51f6ebc8a2d60b69cb55e2b5aa73c82b36a",
+      "source_ids": [
+        "IRP-12f47c4f559333ee4f54",
+        "IRP-4f96187c271a78b56939"
+      ],
+      "problems": [
+        "irplag:case-03"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "f4ed7d2b90956a14539a87dc578be0b65b47b961eb32667e116264bc5c17f081",
+      "source_ids": [
+        "IRP-54e3b139691fc50b9c31",
+        "IRP-76db006cd6ea80f77cc2"
+      ],
+      "problems": [
+        "irplag:case-03"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "bdabe3053a247a3f6b1e9828b27be9ab3b8db6a0949add49181f208aacf10cd0",
+      "source_ids": [
+        "IRP-179a129c3a5539002b01",
+        "IRP-e542291b13360680bfce"
+      ],
+      "problems": [
+        "irplag:case-03"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "7b7b7c6ace2766b4c8f9be6ade70f47e833eb198204ddbadb29776c239841229",
+      "source_ids": [
+        "IRP-1866968bbdfe83862474",
+        "IRP-7aea676f54bf1e3f405c"
+      ],
+      "problems": [
+        "irplag:case-06"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    },
+    {
+      "sha256": "639cab7712a92a3d5e70d8ddbe73c0b0fce78b9124eac4a92d34270c5843bcf1",
+      "source_ids": [
+        "IRP-397a6fc1a4e8694de79e",
+        "IRP-ee8f5c72ba1adaa4ef86"
+      ],
+      "problems": [
+        "irplag:case-06"
+      ],
+      "categories": {
+        "plagiarized": 2
+      }
+    }
+  ],
+  "identical_reference_pairs": [
+    {
+      "pair_id": "IRPAIR-cb96bcf79af0fca27e9e",
+      "published_verdict": 1,
+      "disputed": false
+    }
+  ],
+  "cross_previous_intake_source_hash_matches": 0,
+  "uncontested_unique_reference_pairs_by_published_label": {
+    "0": 95,
+    "1": 342
+  },
+  "selection_uses_detector_scores": false,
+  "code_executed": false,
+  "statement": "Hash equality does not override publisher relationship labels. Deduplicate statistical units, retain provenance, and never count repeated variants as independent evidence."
+}

@@ -1,0 +1,151 @@
+{
+  "data_kind": "SELF_AUTHORED_SYNTHETIC_UI_CHECK",
+  "task_id": 9,
+  "resource_requests": [
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 98.10000000009313
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 98.29999999981374
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 98.70000000018626
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 98.89999999990687
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 2142.399999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 2142.600000000093
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 2142.7999999998137
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 2142.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 4181.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 4182.299999999814
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 4182.5
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 4182.700000000186
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 6221.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 6222.200000000186
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 6222.5
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 6222.700000000186
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 8263.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 8264.100000000093
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 8264.399999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 8264.600000000093
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 10309.799999999814
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 10310
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 10310.200000000186
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 10310.299999999814
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 12348.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 12349.100000000093
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 12349.299999999814
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 12349.5
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9",
+      "startMs": 14397.899999999907
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results/summary",
+      "startMs": 14398.100000000093
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/results?page=1&pageSize=20",
+      "startMs": 14398.299999999814
+    },
+    {
+      "url": "http://127.0.0.1:15173/api/tasks/9/failures",
+      "startMs": 14398.5
+    }
+  ],
+  "status_request_count": 8,
+  "interval_ms": [
+    2044.2999999998137,
+    2039.5,
+    2040.0,
+    2042.0,
+    2045.8999999999069,
+    2039.1000000000931,
+    2049.0
+  ],
+  "observation": "Navigated once; subsequent requests were page polling. Final page snapshot and API showed FINISHED 1225/1225.",
+  "final_status": "FINISHED",
+  "finished_pairs": 1225,
+  "pagination": "Previously clicked page 2 of synthetic task 3; snapshot showed synthetic_21.py and page 2 active.",
+  "recovery_ui": "Synthetic task 8 showed 3/3 successful pairs and two resolved failure-history rows; screenshot inspected.",
+  "console_caveat": "A development Vite WebSocket was suspended; no zero-console-error claim.",
+  "screenshot_sha256": "2d46734961e487c9ff1434850f357b723b9b6316997fd1be228b45add03310a3"
+}

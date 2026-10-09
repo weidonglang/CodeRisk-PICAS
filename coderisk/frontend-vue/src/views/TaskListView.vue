@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 import { listRecentTasks, type TaskSummary } from '../api/taskApi'
 
 const loading = ref(false)
 const error = ref('')
 const tasks = ref<TaskSummary[]>([])
+let timer: ReturnType<typeof setTimeout> | undefined
+let disposed = false
 
 async function loadTasks() {
+  if (loading.value || disposed) return
   loading.value = true
   error.value = ''
   try {
@@ -17,10 +20,12 @@ async function loadTasks() {
     error.value = err instanceof Error ? err.message : '无法加载任务'
   } finally {
     loading.value = false
+    if (!disposed && tasks.value.some(task => ['RUNNING', 'QUEUED'].includes(task.status))) timer = setTimeout(loadTasks, 2000)
   }
 }
 
 onMounted(loadTasks)
+onUnmounted(() => { disposed = true; clearTimeout(timer) })
 </script>
 
 <template>
@@ -48,6 +53,7 @@ onMounted(loadTasks)
           <template #default="{ row }">{{ row.finishedPairs }} / {{ row.totalPairs }}</template>
         </el-table-column>
         <el-table-column prop="createdAt" label="创建时间" min-width="190" />
+        <el-table-column prop="failedPairs" label="失败/未完成" width="130" />
         <el-table-column label="操作" width="120">
           <template #default="{ row }">
             <router-link :to="`/tasks/${row.id}/results`">

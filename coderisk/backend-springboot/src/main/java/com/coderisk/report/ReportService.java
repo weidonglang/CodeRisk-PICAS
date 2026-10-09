@@ -125,6 +125,9 @@ public class ReportService {
                 """);
         html.append("<h1>CodeRisk / PICAS 相似风险报告</h1>");
         html.append("<div class=notice>本报告仅提供相似风险指标、结构化证据与人工复核建议，不直接作出纪律结论。</div>");
+        if (!"FINISHED".equals(task.status().name())) {
+            html.append("<div class=notice>任务尚未全部完成；本报告只包含生成时已成功的代码对。</div>");
+        }
         if ("PICAS_CROSSLANG".equals(task.taskMode().name())) {
             html.append("<div class=experimental><strong>实验性能力：</strong>跨语言 normalized IR 与轻量控制/数据流摘要仅支持有限 Java/Python 结构，权重均为 0，不构建完整 CFG/DFG，不进入 PICAS_STANDARD，也不表示语义等价。</div>");
         }
@@ -136,6 +139,9 @@ public class ReportService {
         row(html, "约束", question.constraintsText());
         row(html, "任务", task.taskName());
         row(html, "模式", task.taskMode().name());
+        row(html, "任务状态（生成时）", task.status().name());
+        row(html, "成功覆盖", task.finishedPairs() + " / " + task.totalPairs());
+        row(html, "失败或未完成", String.valueOf(task.failedPairs()));
         row(html, "生成时间", OffsetDateTime.now().toString());
         html.append("</table></section>");
         for (ResultResponse result : results) {
@@ -153,7 +159,7 @@ public class ReportService {
                 .append(escape(result.submissionBFileName())).append("</h2>");
         html.append("<table><tr><th>综合分</th><th>")
                 .append(htmlSource ? "固定阈值（待验证）" : "动态阈值")
-                .append("</th><th>风险边际</th><th>校准分</th><th>超过阈值</th><th>风险等级</th></tr><tr>")
+                .append("</th><th>风险边际</th><th>风险展示分（非概率）</th><th>超过阈值</th><th>风险等级</th></tr><tr>")
                 .append(cell(percent(result.weightedSimilarityScore())))
                 .append(cell(percent(result.dynamicThreshold())))
                 .append(cell(String.format("%+.4f", result.riskMargin())))
