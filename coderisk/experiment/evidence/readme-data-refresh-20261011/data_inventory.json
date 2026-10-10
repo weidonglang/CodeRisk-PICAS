@@ -1,0 +1,143 @@
+{
+  "checkedOn": "2026-10-11",
+  "method": "PARSE_ACTUAL_CURRENT_JSONL_RECORDS_NO_DETECTOR_RUN",
+  "scope": "ONE_CURRENT_REGISTRY_PER_SOURCE_NO_REBUILDS_OR_TEMPLATE_FREE_DUPLICATION",
+  "records": [
+    {
+      "dataset": "CodeXGLUE / BigCloneBench",
+      "scope": "PUBLISHED_LABEL_DEVELOPMENT",
+      "file": "coderisk/data/public-datasets/codexglue-bcb-20261010/selected_pairs.jsonl",
+      "rows": 30000,
+      "uniquePairIdsWithinSource": 30000,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {
+        "java": 30000
+      },
+      "sha256": "927da0df3565c7517088169bbbe8e2018cc5c71a0f8eac3b000fdb34b5d80dd7"
+    },
+    {
+      "dataset": "PoolC",
+      "scope": "PUBLISHED_LABEL_LICENSE_PENDING",
+      "file": "coderisk/data/public-datasets/poolc-20261010/selected_pairs.jsonl",
+      "rows": 30000,
+      "uniquePairIdsWithinSource": 30000,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {
+        "python": 30000
+      },
+      "sha256": "4967d54655bce6cdf4c395addc059b16f36e101fed93e6896fac3cc58c8adcbd"
+    },
+    {
+      "dataset": "XLCoST",
+      "scope": "UNLABELLED_TITLE_ALIGNED_CANDIDATE",
+      "file": "coderisk/data/public-datasets/xlcost-20261010/selected_pairs.jsonl",
+      "rows": 30893,
+      "uniquePairIdsWithinSource": 30893,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {
+        "java/php": 2000,
+        "cpp/csharp": 2000,
+        "csharp/javascript": 2000,
+        "csharp/java": 2000,
+        "cpp/python": 2000,
+        "csharp/python": 2000,
+        "cpp/java": 2000,
+        "javascript/python": 2000,
+        "java/python": 2000,
+        "csharp/php": 2000,
+        "java/javascript": 2000,
+        "cpp/php": 2000,
+        "php/python": 2000,
+        "javascript/php": 2000,
+        "cpp/javascript": 2000,
+        "c/javascript": 137,
+        "c/csharp": 176,
+        "c/java": 180,
+        "c/cpp": 173,
+        "c/python": 164,
+        "c/php": 63
+      },
+      "sha256": "bf03b62a7f8617297595d31acf0baaee280a061bbccd44a3dc85e9d31ee47c2d"
+    },
+    {
+      "dataset": "IR-Plag",
+      "scope": "PUBLISHED_RELATION_PENDING_REVIEW",
+      "file": "coderisk/data/public-datasets/irplag-20261009/published_pairs.jsonl",
+      "rows": 460,
+      "uniquePairIdsWithinSource": 460,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {},
+      "sha256": "23235ee16290611d26dc9d4b28d1ee1d7af8bb09def05175bba7b0b1bf704738"
+    },
+    {
+      "dataset": "ConPlag v3",
+      "scope": "PUBLISHED_LABEL_EXPLORATORY",
+      "file": "coderisk/data/public-datasets/intake-20261008-v3/conplag-v3/published_pairs.jsonl",
+      "rows": 911,
+      "uniquePairIdsWithinSource": 911,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {
+        "java": 911
+      },
+      "sha256": "d93a9fd5fce69380822b7a19d1de9cefa1f8b93a9c31177452cbca58100ae3fb"
+    },
+    {
+      "dataset": "AD2022",
+      "scope": "UNLABELLED_COURSEWORK_CANDIDATE",
+      "file": "coderisk/data/public-datasets/intake-20261008-v3/ad2022/candidate_pairs.jsonl",
+      "rows": 249,
+      "uniquePairIdsWithinSource": 249,
+      "duplicatePairIdsWithinSource": 0,
+      "explicitlyEligibleForCoreMetrics": 0,
+      "explicitlySynthetic": 0,
+      "languages": {},
+      "sha256": "75f2f64b0369f63602cc7e4344bf067d698ae83806f401e5f4cd17779608f651"
+    }
+  ],
+  "totals": {
+    "currentRegisteredPairRows": 92513,
+    "largeSelectedJavaPythonPairs": 60000,
+    "crossLanguageCandidates": 30893,
+    "olderPublishedRelationRows": 1371,
+    "courseworkCandidateRows": 249,
+    "explicitlyEligibleForCoreMetrics": 0,
+    "oldDisplayedRegisteredPairRows": 92527,
+    "oldDisplayOvercount": 14
+  },
+  "xlcost": {
+    "tokenizedNotRawSource": true,
+    "programRecords": 57661,
+    "languages": {
+      "c": 574,
+      "cpp": 11198,
+      "csharp": 10735,
+      "java": 11028,
+      "javascript": 9951,
+      "php": 3553,
+      "python": 10622
+    }
+  },
+  "exclusionsFromPublicTotal": [
+    "91 synthetic seed pairs",
+    "16 synthetic development probes",
+    "1225 service smoke-test enumerated pairs",
+    "duplicate/rebuilt intake snapshots",
+    "upstream full pair references not selected for current pool"
+  ],
+  "limitations": [
+    "Registered rows are not global content-deduplicated pairs.",
+    "Published labels are not verified plagiarism/independence facts.",
+    "This count check does not verify code semantics, authorization or problem-disjoint evaluation.",
+    "No source code executed, detector run, label modified or model call made."
+  ]
+}

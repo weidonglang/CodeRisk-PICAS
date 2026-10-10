@@ -1,0 +1,40 @@
+{
+  "kind": "LOCAL_MARKED_PREVIEW_NOT_LIVE_GITHUB",
+  "readmeSha256": "22edb383a1d5bd3965b829e3592db32c4324af26c8f20a0c22fd7010097795fa",
+  "localLinks": 79,
+  "broken": [],
+  "localTargetsPendingInGit": [
+    "coderisk/experiment/evidence/readme-data-refresh-20261011/README.md",
+    "coderisk_docs/proposal/AI_REVIEW_HARDENING.md",
+    "coderisk_docs/proposal/LARGE_PUBLIC_PAIR_INTAKE.md",
+    "coderisk_docs/proposal/NONJAVA_PUBLIC_INTAKE.md",
+    "coderisk_docs/proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md"
+  ],
+  "images": [
+    {
+      "src": "coderisk_docs/assets/coderisk-cover.svg",
+      "loaded": true
+    },
+    {
+      "src": "coderisk_docs/assets/review-context-result.png",
+      "loaded": true
+    },
+    {
+      "src": "coderisk_docs/assets/coderisk-workflow.svg",
+      "loaded": true
+    },
+    {
+      "src": "coderisk/experiment/evidence/conplag-pilot-20261009/test_comparison.png",
+      "loaded": true
+    }
+  ],
+  "desktop": {
+    "viewport": 1440,
+    "document": 1440
+  },
+  "mobile": {
+    "viewport": 390,
+    "document": 390,
+    "tableContainers": 13
+  }
+}

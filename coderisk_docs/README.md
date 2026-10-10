@@ -2,6 +2,8 @@
 
 [项目首页](../README.md) · [运行手册](../coderisk/README.md) · [开题材料](proposal/README.md)
 
+最近增量（2026-10-11）：[离线 LLM 对照](research/LLM_BASELINE.md)与[混合候选门禁](research/HYBRID_DETECTION.md)已实现；最近开发轮 Python 431 / H2 后端 19 项及前端构建通过，真实模型/混合效果未验证。当前公开/候选数据登记 **92,513 行**，统计与已运行实验分开说明于[项目首页](../README.md#数据规模概览)和[数据核对](../coderisk/experiment/evidence/readme-data-refresh-20261011/README.md)。此前[AI 分工检查](proposal/AI_REVIEW_HARDENING.md)的 188 项是历史记录。
+
 按阅读目的选择入口。规范文件说明设计与边界，测试记录说明已验证内容，实验快照保存特定版本的实际结果；三者不能相互替代。
 
 ## 了解和运行

@@ -1,5 +1,7 @@
 # CodeRisk 运行与演示手册
 
+> 2026-10-11 数据规模：当前公开/候选登记 **92,513 行**，其中 Java/Python 大规模已选 **60,000 对**、跨语言待复核候选 **30,893 对**；正式核心指标资格仍为 0。1,225 对是历史 synthetic 联调，不是全数据池。来源、统计与实际运行量分开列于[首页](../README.md#数据规模概览)及[逐行核对](experiment/evidence/readme-data-refresh-20261011/README.md)。
+
 > 2026-10-09 增量：[前三项推进记录](../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md)说明新数据、融合诊断与单实例异步任务恢复；后端 Flyway 已至 V5，H2 已验证，MySQL 实库仍待验证。
 
 [项目首页](../README.md) · [文档导航](../coderisk_docs/README.md) · [数据库配置](database/README.md) · [测试记录](TEST_REPORT.md)
