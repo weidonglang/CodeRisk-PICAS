@@ -1,0 +1,26 @@
+{
+  "scope": "UNRELATED_GIT_INDEX_ENTRIES_NOT_WHOLE_SHARED_FILE_HUNKS",
+  "comparedEntries": 759,
+  "differences": [],
+  "production": [
+    {
+      "file": "coderisk_docs/FORMULA_SPEC.md",
+      "expected": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20",
+      "actual": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20",
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/canonicalization.py",
+      "expected": "1fd1cdc8d0253b65f03a3dd27db6969053e3ea3561dbb5943701beff54877008",
+      "actual": "1fd1cdc8d0253b65f03a3dd27db6969053e3ea3561dbb5943701beff54877008",
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/token_similarity.py",
+      "expected": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+      "actual": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+      "unchanged": true
+    }
+  ],
+  "actualHead": "a7c8ddfd8d1408615227c5dc6d4bb6b8baecab6e"
+}
