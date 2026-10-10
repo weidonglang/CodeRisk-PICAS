@@ -1,0 +1,27 @@
+{
+  "active": false,
+  "reference_id": "",
+  "problem_id": "",
+  "language": "",
+  "code_a_path": "",
+  "code_b_path": "",
+  "code_a_sha256": "",
+  "code_b_sha256": "",
+  "authors": ["", ""],
+  "sources": ["", ""],
+  "families": ["", ""],
+  "source_type": "placeholder",
+  "synthetic": true,
+  "provenance": {"license_or_authorization": "", "source_reference": ""},
+  "review": {
+    "status": "PENDING", "label": "INDEPENDENT",
+    "reviewer_a": "", "reviewer_b": "",
+    "reviewer_a_type": "", "reviewer_b_type": "",
+    "independence_confirmed": false, "relation_verified": false,
+    "label_basis": "", "reviewed_at": "", "functional_evidence": ""
+  },
+  "template_status": "UNDECLARED",
+  "template_code": "", "template_language": "", "template_source": "",
+  "question": {"title": "", "description": "", "input_format": "", "output_format": "", "constraints_text": ""},
+  "notes": "Inactive placeholder only. Fill real authorized records; never assert human review or independence without evidence. Paths are relative to the reference manifest."
+}

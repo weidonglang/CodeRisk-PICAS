@@ -1,0 +1,22 @@
+{
+  "fixed": {
+    "validation_count": 35,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.3,
+    "validation_fpr": 0.5,
+    "validation_recall": 0.8947368421052632,
+    "status": "VALIDATION_SELECTED"
+  },
+  "alpha": {
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "alpha": null,
+    "validation_count": 35,
+    "calibratable_validation_count": 0,
+    "sweep": [],
+    "status": "INSUFFICIENT_CALIBRATABLE_VALIDATION_CLASSES"
+  },
+  "test_used_for_selection": false
+}

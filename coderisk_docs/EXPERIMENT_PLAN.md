@@ -1,5 +1,7 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-10 研究阶段 3：独立解答上尾校准隔离 runner 已实现，生产 S/T 不变。默认 validation-problem-only 参考要求 test 新题冷启动；可选 preregistered 同题背景面板不能称参考/test 题目隔离。双人关系/授权/冻结/作者与源码隔离门禁不可由 allow-development 豁免。40 项新测试通过；seed 75 分析/0 可信参考/0 q/0 正式资格，统计策略全回退，不是误报改善证据。参考元数据与冷启动/模板限制见 [统计研究协议](research/NATURAL_SIMILARITY_CALIBRATION.md)。以下旧条目保留其运行当时状态。
+
 > 2026-10-10 研究阶段 2：新增隔离 14 方法多维消融 runner，固定配置/源码/数据哈希，validation-only 参数选择、同样本 COMMON 表、AP/低 FPR 工作点/Recall@K 准入与改名变化。现有 seed 仅 development，formal=0；完整融合不是最好，规则动态有召回损失，不能作真实效果结论。JPlag 未重评、不拼接历史分数；统计独立分布与 LLM 尚待后续。详见 [协议、指标与真实产物](research/SIMILARITY_ABLATION.md)。
 
 > 2026-10-09 本轮增量：IR-Plag 已固定来源和已知争议，467 个逻辑源文件、460 对发布关系；10 对争议负例隔离、14 个重复逻辑文件须统计去重。共享参与者暂阻断全部七题，未评分、未正式分集。ConPlag 负结果诊断只复用已观察分数；异步运行证据是自有合成工程检查。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。

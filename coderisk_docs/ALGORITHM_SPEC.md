@@ -1,5 +1,7 @@
 # ALGORITHM_SPEC.md
 
+> 2026-10-10 后续研究阶段 3：q_p(s) 的隔离实验入口已实现，采用现有 production S 的可信独立参考上尾、质量门禁与规则冷启动回退；没有改本文生产融合/阈值。参考池当前空、效果未验证，不等于下文广义结构方法已完成。两种参考协议及已实现/未验证边界见 [统计研究说明](research/NATURAL_SIMILARITY_CALIBRATION.md)；LLM 对照仍计划中，历史负结果不变。
+
 > 2026-10-10 开题研究校正：本文的广义结构变换、群/轨道及高级指标描述应按设计目标理解；已验证的群模型仅是固定名称域、保护外部名称、捕获规避的统一标识符置换，作用对象仅完整 canonical token 序列，不是 PICAS 加权分。直接函数 keyword 绑定、动态访问回退和 Java 声明点本次修复，生产公式未调整；统计校准/LLM 仍计划中。源码/测试对照见 [精准审计](research/IMPLEMENTATION_AUDIT.md) 与 [条件定义](research/GROUP_ACTION_INVARIANCE.md)。历史 ConPlag Full 并非最高 F1，不改写负结果。
 
 > 2026-10-09 本轮增量：新增现行融合的代数贡献诊断：读取冻结分数和阈值，不拟合、不重评分。raw/AST/canonical 使用 n-gram 集合 Jaccard；不能将名为 sequence_similarity 的函数解释为 LCS 或语义检测。生产权重、阈值与分数兼容字段不变。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。

@@ -1,0 +1,15 @@
+{
+  "protocolVersion": "natural-calibration-1.0",
+  "datasetManifest": "experiment/datasets/research-v4/dataset.json",
+  "referenceManifest": "experiment/datasets/research-v4/independent_references.json",
+  "referencePolicy": "VALIDATION_PROBLEMS_ONLY",
+  "randomSeed": 20261010,
+  "selectionSplit": "validation",
+  "evaluationSplit": "test",
+  "fixedThresholds": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.68, 0.7, 0.8, 0.9, 1.0, 1.000001],
+  "alphaCandidates": [0.01, 0.025, 0.05, 0.1],
+  "minIndependentPairs": 20,
+  "minEffectiveTokens": 41,
+  "maxTemplateCoverage": 0.5,
+  "borderlineMargin": 0.03
+}

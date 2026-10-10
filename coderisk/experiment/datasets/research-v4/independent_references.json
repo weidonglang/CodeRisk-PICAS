@@ -1,0 +1,13 @@
+{
+  "schema_version": "independent-reference-1.0",
+  "dataset_version": "independent-reference-empty-scaffold-20261010",
+  "notes": "EMPTY / PENDING. No verified independent submissions are supplied. Synthetic seed pairs are not trusted references.",
+  "registration": {
+    "status": "PENDING",
+    "registered_at": "",
+    "records_sha256": "",
+    "frozen_before_test_access": false,
+    "evidence_reference": ""
+  },
+  "records": []
+}

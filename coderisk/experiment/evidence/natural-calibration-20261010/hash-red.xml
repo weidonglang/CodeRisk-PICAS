@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="1.137" timestamp="2026-10-10T21:17:41.433154+08:00" hostname="小魏"><testcase classname="tests.test_natural_similarity_calibration" name="test_reference_loader_uses_actual_local_source_and_duplicate_matching" time="0.015"><failure message="AssertionError: assert ['eac3c29958f...825934a10a6c'] == ['sha256:eac3...825934a10a6c']&#10;  &#10;  At index 0 diff: 'eac3c29958f9ca432d81ca158a2b799139bbd7fffbea73e945e1825934a10a6c' != 'sha256:eac3c29958f9ca432d81ca158a2b799139bbd7fffbea73e945e1825934a10a6c'&#10;  Use -v to get more diff">coderisk\analysis-service-python\tests\test_natural_similarity_calibration.py:190: in test_reference_loader_uses_actual_local_source_and_duplicate_matching
+    assert refs[0]['hashes'] == ['sha256:' + digest(CODE.encode())] * 2
+E   AssertionError: assert ['eac3c29958f...825934a10a6c'] == ['sha256:eac3...825934a10a6c']
+E     
+E     At index 0 diff: 'eac3c29958f9ca432d81ca158a2b799139bbd7fffbea73e945e1825934a10a6c' != 'sha256:eac3c29958f9ca432d81ca158a2b799139bbd7fffbea73e945e1825934a10a6c'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.test_natural_similarity_calibration" name="test_reference_query_hash_namespace_and_windows_newlines_match" time="0.015"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">coderisk\analysis-service-python\tests\test_natural_similarity_calibration.py:209: in test_reference_query_hash_namespace_and_windows_newlines_match
+    with pytest.raises(ValueError, match='leakage'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE &lt;class 'ValueError'&gt;</failure></testcase></testsuite></testsuites>

@@ -1,5 +1,7 @@
 # CodeRisk 开题准备材料
 
+> 2026-10-10 后续阶段 2–3：已提供 [冻结多维消融](../research/SIMILARITY_ABLATION.md) 与 [独立解答上尾统计研究工具](../research/NATURAL_SIMILARITY_CALIBRATION.md)。仅 synthetic 流程结果；完整融合非最高 F1，统计可信参考 0、全部规则回退，不能表述为真实误报改善。下列初稿提交时应加入新题冷启动/预登记同题面板的协议区别、关系标签与授权门禁及实际负结果，不能将 q 称为抄袭概率。LLM/混合未实施。
+
 > 2026-10-10 开题研究定位增补：[精准实现审计](../research/IMPLEMENTATION_AUDIT.md)、[群作用范围/条件证明与有限测试](../research/GROUP_ACTION_INVARIANCE.md)、[第一批真实验证与后续阻塞](../research/FIRST_BATCH_REPORT.md)。首批只完成有限规范化，不主张首次群论应用、总分不变或方法优越性。完整语义等价/AI 来源检测不支持，统计校准/LLM 对照仍待实施，可信独立数据不足；下列初稿的方法表述须按这些边界与证据同步理解后再提交导师。
 
 > 2026-10-09 增量：[前三项推进记录](NEXT_THREE_PROGRESS.md)说明新数据、融合诊断与单实例异步任务恢复；后端 Flyway 已至 V5，H2 已验证，MySQL 实库仍待验证。

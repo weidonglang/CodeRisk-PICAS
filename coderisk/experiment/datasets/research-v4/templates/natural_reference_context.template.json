@@ -1,0 +1,10 @@
+{
+  "natural_reference_context": {
+    "authors": ["", ""],
+    "sources": ["", ""],
+    "families": ["", ""],
+    "template_status": "UNDECLARED",
+    "template_code": "", "template_language": "", "template_source": ""
+  },
+  "notes": "Copy natural_reference_context into a query case. Use pseudonymous stable identities across all manifests. NONE means explicitly no shared template; missing is not NONE."
+}

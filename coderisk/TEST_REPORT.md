@@ -1,5 +1,14 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## 研究阶段 3 独立解答统计校准 - 2026-10-10
+
+- 新测试 40 项通过；包含上下尾并列/平滑契约、验证集独占选参、门禁不可豁免、真实文件/原始与文本 hash、CRLF、模板只影响资格、解析降级及跨 split/panel 身份隔离。MOCK_TEST_ONLY 人工声明只属于测试，未制造真人标签。
+- 当前完整工作树 Python 377 项通过，1 条既有 Starlette/httpx warning；包含其他未提交任务，不能称为 clean HEAD 的测试数量。JUnit 原始输出已归档。
+- 以 HEAD+本阶段补丁导出的最终隔离源码 tree `7b8c27a8d68e55dfdea3cb62b3a6f1c4ddb33928` 独立验证 40 项通过；其 seed metrics.csv 与工作树实跑逐字节相同（SHA-256 `9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4`）。没有把其他未提交实现当作本阶段依赖。
+- 门禁红测先发现 registration 非对象及额外身份泄漏漏检；hash 红测 2 项失败复现了前缀/Windows 换行隔离缺口，随后修复。生产算法没有改动，初次新模块缺失的 collection error 不算生产算法失败。
+- actual seed run：91 输入、75 分析（validation 35/test 40）、16 排除，trustedReferencePairs/calibratableQueries/formalEligiblePairs 均 0；alpha 未选，统计策略逐条规则回退。默认 formal 已由集成测试实际拒绝，输出目录未创建。CSV/JSON/Markdown 完整生成，但不支持真实统计改善结论。
+- 本阶段 API/数据库/后端/前端不改，不重跑 mvn/npm/浏览器；上一批 H2 19 项/build 成功仅为历史验证，MySQL 实库仍待凭据。源码/命令/限制见 [研究说明](../coderisk_docs/research/NATURAL_SIMILARITY_CALIBRATION.md) 与[证据归档](experiment/evidence/natural-calibration-20261010/README.md)。
+
 ## 研究阶段 2 隔离消融 - 2026-10-10
 
 - 新实验契约/真实 seed 集成测试 19 项通过；当前完整工作树 Python 337 项通过，1 条既有 Starlette/httpx warning。完整结果含其他未提交任务测试，不是 clean HEAD 的数量。

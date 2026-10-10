@@ -1,0 +1,15 @@
+{
+  "source_type": "MATHEMATICAL_CONTRACT_NOT_CODE_METRICS",
+  "scores": [
+    0.1,
+    0.4,
+    0.4,
+    0.8
+  ],
+  "target": 0.4,
+  "reference_n": 4,
+  "tail_count": 3,
+  "q_empirical": 0.75,
+  "q_smoothed": 0.8,
+  "resolution": 0.2
+}

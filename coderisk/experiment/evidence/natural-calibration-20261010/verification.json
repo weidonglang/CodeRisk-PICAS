@@ -1,0 +1,44 @@
+{
+  "stage": "RESEARCH_PLAN_STAGE_3_ISOLATED_STATISTICAL_CALIBRATION",
+  "verified_on": "2026-10-10",
+  "claim_level": "SYNTHETIC_WORKFLOW_AND_UNIT_CONTRACTS_NOT_STATISTICAL_BENEFIT",
+  "python": "3.12.14",
+  "run_id": "research-natural-seed-20261010-final",
+  "pre_commit_head": "656855af3466cfb21005b0f96e67ad11d523d73d",
+  "production_changes": {"formula": false, "canonicalizer": false, "api": false, "database": false, "frontend": false, "v4_weights": false},
+  "source_hashes": {
+    "runner": "296015f1f49ea920a10b34ab824434bbd0b6962af87b7efe53f34f10e516f02d",
+    "input_config": "70ab836c91b973554f09e69c18071a073be9e5f7ec79a64862a7ec2d53bf62cf",
+    "normalized_dataset": "2d2a6bfe3e2d524cb5833d72fbcf7ecdab5fc65852b1060d6d7ae7604bde0051",
+    "reference_manifest": "e86920c4958c1f21b231828059d893afe0742e6878d13b344fd3c82fc4952a9b",
+    "production_formula": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20",
+    "production_canonicalizer": "1fd1cdc8d0253b65f03a3dd27db6969053e3ea3561dbb5943701beff54877008",
+    "production_token_analyzer": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e"
+  },
+  "tests": {
+    "focused": {"passed": 40, "failed": 0, "file": "focused-green.xml"},
+    "working_tree_full": {"passed": 377, "failed": 0, "warnings": 1, "file": "full-green.xml", "includes_unrelated_uncommitted_tests": true},
+    "isolated_stage_tree": {"tree": "7b8c27a8d68e55dfdea3cb62b3a6f1c4ddb33928", "passed": 40, "failed": 0, "file": "isolated-green.xml"},
+    "formal_seed_rejected_before_output_creation": true,
+    "red_then_green": ["gates-red.xml", "hash-red.xml", "identity-red.xml", "reviewer-red.xml"]
+  },
+  "seed": {
+    "input_pairs": 91, "all_synthetic": true,
+    "analyzed_pairs": 75, "validation_pairs": 35, "test_pairs": 40, "excluded_pairs": 16,
+    "trusted_reference_pairs": 0, "calibratable_queries": 0, "formal_eligible_pairs": 0,
+    "alpha": null, "statistical_policy_all_rule_fallback": true,
+    "parser_fallback_rows": 7, "failure_method_rows": 40, "borderline_rows": 9,
+    "isolated_metrics_byte_identical": true,
+    "metrics_sha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4"
+  },
+  "not_rerun": ["maven", "npm", "browser_e2e", "mysql", "jplag"],
+  "mysql_status": "PENDING_CREDENTIALS_H2_ONLY_HISTORICAL_VALIDATION",
+  "external_code_execution": false, "external_upload": false, "paid_llm_calls": false,
+  "remaining_blockers": [
+    "Actual licensed independent relation evidence and two HUMAN reviewers",
+    "Stable author/source/family identities with no query/reference or split overlap",
+    "Frozen reference panel and query/config registration before test access",
+    "Enough disjoint per-problem/language/template references and validation classes",
+    "Real natural-similar evaluation; short/template-dominated queries currently declined"
+  ]
+}
