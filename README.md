@@ -33,9 +33,9 @@ PICAS 是本项目的方法名称：**Problem-aware Invariant Code Similarity An
 
 ### 群作用与代码不变性
 
-研究目标是有限 Java/Python 子集上 `C(g·P) = C(P)`：g 仅表示固定名称域中合法、捕获规避且保留外部名称的标识符置换，C 是规范化 token 表示。当前已有简单改名测试；精准审计发现关键字实参绑定、动态名称访问与 Java 声明点仍有缺口，首批正在按“失败测试 → 最小修复 → 自动合法变体”推进，**不是所有程序上的形式化证明**。
+研究目标是有限 Java/Python 子集上 `C(g·P) = C(P)`：g 仅表示固定名称域中合法、捕获规避且保留外部名称的标识符置换，C 是完整规范化 token 序列。首批已修复直接函数关键字实参绑定、动态名称访问回退及 Java 局部声明点，并提供条件证明草图和自动合法变体测试；**不是所有程序上的形式化证明**，不能把算法接受输入的 mode 当作保证证书。
 
-该性质不覆盖删除/插入语句、函数拆分、表达式交换或语句重排，也不属于整个 PICAS 加权分数：raw 分量会随名称改变。规范化表示相同不等于抄袭，也不证明语义等价。具体源码、失败用例与验收见 [精准实现审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md)。
+该性质不覆盖删除/插入语句、函数拆分、表达式交换或语句重排，也不属于整个 PICAS 加权分数：raw 分量会随名称改变。规范化表示相同不等于抄袭，也不证明语义等价。固定域的统一拼写置换不等于所有逐绑定 alpha-renaming；完整定义、例外与有限证据见 [群作用与实现边界](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) 和 [精准实现审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md)。
 
 ### 为什么不直接使用 AI
 
@@ -45,7 +45,7 @@ LLM 可能擅长理解复杂结构与改写，甚至在某些数据上优于规�
 
 | 项目 | 当前状态 |
 | --- | --- |
-| 作用域标识符规范化 | 有限 Java/Python 实现及部分用例验证；完整范围/首批修复见审计，不保证任意合法改名 |
+| 作用域标识符规范化 | 有限 Java/Python 实现、55 项新增测试与 288 个自有置换探针；条件证明草图，不保证任意合法改名 |
 | raw/结构/canonical/映射融合 | 已实现固定权重与分量输出；探索中完整融合并非 F1 最优 |
 | 规则题目画像与动态阈值 | 已实现有界规则；降低真实自然相似误报的效果待验证 |
 | 表达式交换、语句重排、函数拆分 | 规格设计/后续方向，普通 canonical 未实现，不归入改名群 |
@@ -53,6 +53,20 @@ LLM 可能擅长理解复杂结构与改写，甚至在某些数据上优于规�
 | 独立分布统计校准 q_p(s) | 研究计划；q 是独立解答的相似度上尾概率，不是抄袭概率 |
 | Direct LLM baseline | 计划中；dry-run、许可、预算与冻结评测是前置条件 |
 | PICAS→LLM→人工混合 | 可选展望；先验证候选 Recall@K，不接入默认业务 |
+
+### 首批研究复现与局限
+
+2026-10-10 [第一批交付](coderisk_docs/research/FIRST_BATCH_REPORT.md)及[原始证据](coderisk/experiment/evidence/identifier-invariance-20261010/README.md)：修复前 18 项中 14 失败；修复后当前完整工作树 Python 318 项通过（含此前其他未提交任务测试），新增三文件 55 项通过。288/288 自有变体的 C 一致，576 次逆/复合检查通过，抽取 12 个 Java 变体编译通过；后端 19 项 H2 测试、前端类型检查/构建通过。没有新增 MySQL 实库或浏览器端到端验证，生产公式及 experimental 权重未改。
+
+```powershell
+# 根目录；先按下方安装依赖。输出目录必须未存在。
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe coderisk/experiment/identifier_renaming.py --help
+& ./coderisk/analysis-service-python/.venv/Scripts/python.exe coderisk/experiment/identifier_renaming.py --output output/identifier-invariance-new-run --seed 20261010
+# 可选加 --java-compiler "$env:JAVA_HOME/bin/javac.exe"；未提供不会声称已编译。
+```
+
+上述 synthetic 是正确性探针，不是检测 benchmark。动态阈值减少真实自然相似误报的效果仍待可信独立数据验证；公开同题不同提交不能自动作为独立负例。Java 绑定仍有启发式限制，Python 动态访问不能穷尽。相似分和风险等级不能作为直接处分学生的依据；统计上尾概率不是抄袭概率，规范化不证明完整语义等价，系统不识别 AI 来源。
 
 ## 核心能力
 
@@ -187,6 +201,7 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 | 第一次了解项目 | [项目规格](coderisk_docs/PROJECT_SPEC.md) · [架构说明](coderisk_docs/ARCHITECTURE.md) |
 | 本地运行与演示 | [运行手册](coderisk/README.md) · [数据库说明](coderisk/database/README.md) |
 | 理解评分与算法 | [生产公式](coderisk_docs/FORMULA_SPEC.md) · [算法规格](coderisk_docs/ALGORITHM_SPEC.md) · [规范化说明](coderisk_docs/CANONICALIZATION_SPEC.md) |
+| 开题研究第一批 | [精准审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md) · [有限群作用](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) · [测试与阻塞](coderisk_docs/research/FIRST_BATCH_REPORT.md) |
 | 接口与开发 | [API](coderisk_docs/API_SPEC.md) · [表结构](coderisk_docs/DATABASE_SCHEMA.md) · [贡献指南](CONTRIBUTING.md) |
 | 开题与后续安排 | [开题材料](coderisk_docs/proposal/README.md) · [毕设计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) |
 | 评测与失败案例 | [公平评测](coderisk_docs/proposal/FAIR_EVALUATION.md) · [探索结果](coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md) |

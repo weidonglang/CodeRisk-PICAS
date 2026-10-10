@@ -1,5 +1,7 @@
 # CANONICALIZATION_SPEC.md
 
+> 2026-10-10 实现状态核对：普通 canonical 只实现有限作用域 token 绑定替换，不实现本文后续 Level 2–5 中的交换/重排/CanonicalAST/拆分合并。新增直接函数 keyword 参数绑定、动态名称访问 raw 回退及 Java 局部声明点修复；作用域模式不是任意改名的保证。固定 ASCII 名称域上的条件命题、例外和 288 个 synthetic 正确性探针见 [群作用与有限不变性](research/GROUP_ACTION_INVARIANCE.md)，测试/版本见 [第一批交付](research/FIRST_BATCH_REPORT.md)。不得将 canonical 序列不变扩大到整个加权分或语义等价。
+
 > 2026-10-08 C 新增 `scope-aware-c-subset`，HTML 新增 `html-structure-canonical`；解析失败或绑定超出子集返回 `lexical-fallback`，不产生伪造映射。HTML 保留 class/id/URL，不把属性值作为变量名重写。二者均保留原始行列证据。详细支持语法、降级原因和实际覆盖见 [多语言进展](proposal/MULTILANGUAGE_PROGRESS.md)。
 
 > 本文件定义 CodeRisk / PICAS 的置换不变代码规范化方案。它是项目的第二核心创新文件，直接服务于算法实现、实验消融、论文方法章节和专利交底。任何标识符归一化、AST 规范化、局部重排、跨语言结构抽象都必须遵守本文件。

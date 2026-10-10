@@ -223,7 +223,8 @@ def analyze_token_pair(request: AnalyzeMockRequest) -> AnalyzeMockResult:
             similarityScore=0.0,
             description="Scope normalization is unavailable; weighted analysis fell back to raw tokens.",
             metadata={"normalizationModeA": canonical_a.mode, "normalizationModeB": canonical_b.mode,
-                      "normalizationReasonA": ast_a.error, "normalizationReasonB": ast_b.error},
+                      "normalizationReasonA": getattr(canonical_a, 'reason', '') or ast_a.error,
+                      "normalizationReasonB": getattr(canonical_b, 'reason', '') or ast_b.error},
         ))
     if canonical_enabled and canonical_similarity > 0:
         evidence.append(

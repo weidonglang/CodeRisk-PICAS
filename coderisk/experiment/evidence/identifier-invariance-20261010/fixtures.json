@@ -1,0 +1,80 @@
+[
+  {
+    "id": "python-keyword",
+    "language": "python",
+    "domain": [
+      "fold",
+      "value",
+      "result",
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "code": "def fold(value):\n    result = value + 1\n    return result\nfold(value=2)\n"
+  },
+  {
+    "id": "python-shadow",
+    "language": "python",
+    "domain": [
+      "outer",
+      "inner",
+      "value",
+      "total",
+      "alpha",
+      "beta"
+    ],
+    "code": "def outer(value):\n    total = value\n    def inner(value):\n        total = value + 1\n        return total\n    return inner(value=total)\nouter(value=2)\n"
+  },
+  {
+    "id": "python-lambda-default",
+    "language": "python",
+    "domain": [
+      "seed",
+      "func",
+      "value",
+      "result",
+      "alpha",
+      "beta"
+    ],
+    "code": "seed = 1\nfunc = lambda value=seed: value + seed\nresult = func(2)\n"
+  },
+  {
+    "id": "python-library",
+    "language": "python",
+    "domain": [
+      "solve",
+      "values",
+      "total",
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "code": "def solve(values):\n    total = len(values)\n    print(total)\n    return total\nsolve((1, 2))\n"
+  },
+  {
+    "id": "java-method",
+    "language": "java",
+    "domain": [
+      "fold",
+      "value",
+      "result",
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "code": "class Main { int fold(int value) { int result = value + 1; System.out.println(result); return result; } }"
+  },
+  {
+    "id": "java-blocks",
+    "language": "java",
+    "domain": [
+      "fold",
+      "value",
+      "left",
+      "right",
+      "alpha",
+      "beta"
+    ],
+    "code": "class Main { int fold(int value) { if (value > 0) { int left = value + 1; return left; } else { int right = value - 1; return right; } } }"
+  }
+]

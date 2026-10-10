@@ -1,5 +1,7 @@
 # ALGORITHM_SPEC.md
 
+> 2026-10-10 开题研究校正：本文的广义结构变换、群/轨道及高级指标描述应按设计目标理解；已验证的群模型仅是固定名称域、保护外部名称、捕获规避的统一标识符置换，作用对象仅完整 canonical token 序列，不是 PICAS 加权分。直接函数 keyword 绑定、动态访问回退和 Java 声明点本次修复，生产公式未调整；统计校准/LLM 仍计划中。源码/测试对照见 [精准审计](research/IMPLEMENTATION_AUDIT.md) 与 [条件定义](research/GROUP_ACTION_INVARIANCE.md)。历史 ConPlag Full 并非最高 F1，不改写负结果。
+
 > 2026-10-09 本轮增量：新增现行融合的代数贡献诊断：读取冻结分数和阈值，不拟合、不重评分。raw/AST/canonical 使用 n-gram 集合 Jaccard；不能将名为 sequence_similarity 的函数解释为 LCS 或语义检测。生产权重、阈值与分数兼容字段不变。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 > 2026-10-09 新增独立的 [版本/自然相似复核上下文](proposal/VERSION_AND_NATURAL_SIMILARITY.md)，不进入评分权重：登记模板的精确原始 Token 匹配，8 Token 以下片段忽略，按下标去重；剩余 Token 值集合诊断无顺序信息、空侧保持 null。短有效代码及版本/解析限制触发依据不足/背景复核提示；门槛未校准，不决定独立/派生关系。生产分数、题目画像和阈值公式保持原逻辑。

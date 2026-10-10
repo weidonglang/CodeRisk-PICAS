@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="14" skipped="0" tests="18" time="1.023" timestamp="2026-10-10T07:28:08.032141+08:00" hostname="小魏"><testcase classname="tests.test_identifier_invariance" name="test_direct_function_keyword_labels_follow_parameter_bindings" time="0.001"><failure message="AssertionError: assert ['def', 'MODU...',', '*', ...] == ['def', 'MODU...',', '*', ...]&#10;  &#10;  At index 18 diff: 'first' != 'left'&#10;  Use -v to get more diff">coderisk\analysis-service-python\tests\test_identifier_invariance.py:18: in test_direct_function_keyword_labels_follow_parameter_bindings
+    assert a.tokens == b.tokens
+E   AssertionError: assert ['def', 'MODU...',', '*', ...] == ['def', 'MODU...',', '*', ...]
+E     
+E     At index 18 diff: 'first' != 'left'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_forward_and_nested_keyword_calls_have_structural_callee_bindings" time="0.001"><failure message="AssertionError: assert ['def', 'MODU...')', ':', ...] == ['def', 'MODU...')', ':', ...]&#10;  &#10;  At index 9 diff: 'item' != 'element'&#10;  Use -v to get more diff">coderisk\analysis-service-python\tests\test_identifier_invariance.py:28: in test_forward_and_nested_keyword_calls_have_structural_callee_bindings
+    assert canonical(a).tokens == canonical(b).tokens
+E   AssertionError: assert ['def', 'MODU...')', ':', ...] == ['def', 'MODU...')', ':', ...]
+E     
+E     At index 9 diff: 'item' != 'element'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[globals()['value']]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[locals()['value']]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[eval('value')]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[vars()]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[getattr(obj, 'value')]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable[ns = globals]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:35: in test_dynamic_namespace_access_in_any_scope_is_explicitly_unavailable
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping[def f(value):\n    return value\nalias=f\nalias(value=1)-PYTHON_INDIRECT_KEYWORD_CALL_UNSUPPORTED]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:49: in test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping[obj.method(value=1)-PYTHON_ATTRIBUTE_KEYWORD_CALL_UNSUPPORTED]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:49: in test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping[def f(value, **options):\n    return value\nf(value=1)-PYTHON_VARIADIC_KEYWORD_CALL_UNSUPPORTED]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:49: in test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping[@decorate\ndef f(value):\n    return value\nf(value=1)-PYTHON_DECORATED_KEYWORD_CALL_UNSUPPORTED]" time="0.001"><failure message="AssertionError: assert 'scope-aware-python' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-python">coderisk\analysis-service-python\tests\test_identifier_invariance.py:49: in test_unresolved_keyword_dispatch_does_not_guess_parameter_mapping
+    assert result.mode == "lexical-fallback"
+E   AssertionError: assert 'scope-aware-python' == 'lexical-fallback'
+E     
+E     - lexical-fallback
+E     + scope-aware-python</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_external_library_keywords_and_members_stay_raw" time="0.000" /><testcase classname="tests.test_identifier_invariance" name="test_java_field_reference_before_local_declaration_does_not_capture_future_local" time="0.001"><failure message="AssertionError: assert ['class', 'RO..._1', '=', ...] == ['class', 'RO..._1', '=', ...]&#10;  &#10;  At index 16 diff: 'ROOT/SCOPE_1/SCOPE_1::VAR_2' != 'ROOT/SCOPE_1::VAR_1'&#10;  Use -v to get more diff">coderisk\analysis-service-python\tests\test_identifier_invariance.py:66: in test_java_field_reference_before_local_declaration_does_not_capture_future_local
+    assert result.tokens == canonical(b, "java").tokens
+E   AssertionError: assert ['class', 'RO..._1', '=', ...] == ['class', 'RO..._1', '=', ...]
+E     
+E     At index 16 diff: 'ROOT/SCOPE_1/SCOPE_1::VAR_2' != 'ROOT/SCOPE_1::VAR_1'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_java_parse_failure_never_manufactures_identifier_evidence" time="0.001"><failure message="AssertionError: assert [{'canonicalN...ine': 1, ...}] == []&#10;  &#10;  Left contains 4 more items, first extra item: {'canonicalName': 'CLASS_1', 'column': 6, 'kind': 'CLASS', 'line': 1, ...}&#10;  Use -v to get more diff">coderisk\analysis-service-python\tests\test_identifier_invariance.py:77: in test_java_parse_failure_never_manufactures_identifier_evidence
+    assert result.identifiers == []
+E   AssertionError: assert [{'canonicalN...ine': 1, ...}] == []
+E     
+E     Left contains 4 more items, first extra item: {'canonicalName': 'CLASS_1', 'column': 6, 'kind': 'CLASS', 'line': 1, ...}
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.test_identifier_invariance" name="test_unqualified_java_renames_preserve_standard_library_symbols" time="0.001" /><testcase classname="tests.test_identifier_invariance" name="test_insertion_is_not_a_rename_action_or_invariance_contract" time="0.000" /><testcase classname="tests.test_identifier_invariance" name="test_production_score_is_not_claimed_invariant_when_raw_tokens_change" time="0.001" /></testsuite></testsuites>

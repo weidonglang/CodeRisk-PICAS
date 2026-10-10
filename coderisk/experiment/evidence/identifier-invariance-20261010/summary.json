@@ -1,0 +1,35 @@
+{
+  "probeVersion": "canonical-research-alpha-v1",
+  "algorithmVersion": "source-hashes-recorded-not-a-benchmark",
+  "formulaVersion": "FORMULA_SPEC_V1",
+  "datasetVersion": "self-authored-alpha-fixtures-v1",
+  "randomSeed": 20261010,
+  "runId": "identifier-invariance-20261010-r2",
+  "gitCommit": "3c8ac81cd1f9ef0f80a52505c621f6ce8b70abe5",
+  "startedAtUtc": "2026-10-09T23:35:29.737979+00:00",
+  "normalizationElapsedSeconds": 0.390135,
+  "pythonVersion": "3.12.14",
+  "sourceHashes": {
+    "coderisk/experiment/identifier_renaming.py": "49c9ae4d94cdb3e9ca85d0f7e42b1fd9e6f5be18f295eb44bd09e82f10dfdb3c",
+    "coderisk/analysis-service-python/app/analyzers/canonicalization.py": "1fd1cdc8d0253b65f03a3dd27db6969053e3ea3561dbb5943701beff54877008",
+    "coderisk/analysis-service-python/app/analyzers/token_similarity.py": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+    "coderisk_docs/FORMULA_SPEC.md": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20"
+  },
+  "fixtureCount": 6,
+  "generatedVariants": 288,
+  "passed": 288,
+  "failed": 0,
+  "groupLawChecks": 576,
+  "formalEligiblePairs": 0,
+  "productionFormulaChanged": false,
+  "proofStatus": "conditional-proof-sketch-plus-finite-tests-not-machine-proof",
+  "javaCompilation": {
+    "status": "RUN",
+    "scope": "first_six_variants_per_java_fixture",
+    "passed": 12,
+    "failed": 0,
+    "compiler": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\javac.exe",
+    "compilerVersion": "javac 21.0.11"
+  },
+  "elapsedSeconds": 4.952237
+}

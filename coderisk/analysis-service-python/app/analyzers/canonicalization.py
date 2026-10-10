@@ -21,6 +21,7 @@ class CanonicalAnalysis:
     tokens: list[str]
     identifiers: list[dict[str, object]]
     mode: str
+    reason: str | None = None
 
 
 @dataclass(frozen=True)
@@ -50,10 +51,21 @@ class _Scope:
     bindings: dict[str, _Symbol] = field(default_factory=dict)
     counters: dict[str, int] = field(default_factory=lambda: defaultdict(int))
     child_count: int = 0
+    is_class: bool = False
 
     def child(self, label: str) -> _Scope:
         self.child_count += 1
         return _Scope(f"{self.path}/{label}_{self.child_count}", self)
+
+    def function_child(self, label: str) -> _Scope:
+        child = self.child(label)
+        # Class attributes are not enclosing lexical bindings for method/lambda
+        # bodies. Keep the structural path, but skip class namespaces on lookup.
+        parent: _Scope | None = self
+        while parent is not None and parent.is_class:
+            parent = parent.parent
+        child.parent = parent
+        return child
 
     def declare(self, raw_name: str, kind: str) -> _Symbol:
         existing = self.bindings.get(raw_name)
@@ -146,6 +158,9 @@ class _PythonIndexer:
         self.tokens = tokens
         self.lines = code.splitlines()
         self.overrides: dict[tuple[int, int], _Symbol] = {}
+        self.functions: dict[str, list[tuple[_Scope, ast.FunctionDef | ast.AsyncFunctionDef]]] = defaultdict(list)
+        self.keyword_calls: list[tuple[ast.Call, _Scope]] = []
+        self.rebound_functions: set[str] = set()
 
     def _location(self, line: int, byte_column: int) -> tuple[int, int]:
         # AST offsets are UTF-8 bytes; tokenize offsets are Unicode characters.
@@ -157,6 +172,9 @@ class _PythonIndexer:
         self._predeclare_scope(module, list(getattr(tree, "body", [])), [])
         for node in getattr(tree, "body", []):
             self._walk(node, module)
+        # Calls may lexically precede definitions. Resolve labels after all function scopes exist.
+        for call, scope in self.keyword_calls:
+            self._bind_keywords(call, scope)
         return self.overrides
 
     def _predeclare_scope(self, scope: _Scope, body: list[ast.stmt], parameters: list[ast.arg]) -> None:
@@ -169,6 +187,12 @@ class _PythonIndexer:
         declarations.extend(collector.declarations)
         for _, _, name, kind in sorted(declarations):
             scope.declare(name, kind)
+        kinds: dict[str, set[str]] = defaultdict(set)
+        for _, _, name, kind in declarations:
+            kinds[name].add(kind)
+        for name, categories in kinds.items():
+            if "FUNC" in categories and len(categories) > 1:
+                self.rebound_functions.add(scope.bindings[name].scoped_name)
 
     def _walk(self, node: ast.AST, scope: _Scope) -> None:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
@@ -179,7 +203,7 @@ class _PythonIndexer:
             for default in [*node.args.defaults, *node.args.kw_defaults]:
                 if default is not None:
                     self._walk(default, scope)
-            child = scope.child(symbol.canonical_name)
+            child = scope.function_child(symbol.canonical_name)
             parameters = [
                 *node.args.posonlyargs,
                 *node.args.args,
@@ -190,6 +214,7 @@ class _PythonIndexer:
             if node.args.kwarg:
                 parameters.append(node.args.kwarg)
             self._predeclare_scope(child, node.body, parameters)
+            self.functions[symbol.scoped_name].append((child, node))
             for argument in parameters:
                 argument_symbol = child.declare(argument.arg, "PARAM")
                 self.overrides[self._location(argument.lineno, argument.col_offset)] = argument_symbol
@@ -201,14 +226,28 @@ class _PythonIndexer:
             self._bind_named_token(node.lineno, node.col_offset, node.name, symbol)
             for base in node.bases:
                 self._walk(base, scope)
-            child = scope.child(symbol.canonical_name)
+            for decorator in node.decorator_list:
+                self._walk(decorator, scope)
+            for keyword_argument in node.keywords:
+                self._walk(keyword_argument.value, scope)
+            child = scope.function_child(symbol.canonical_name)
+            child.is_class = True
             self._predeclare_scope(child, node.body, [])
             for statement in node.body:
                 self._walk(statement, child)
             return
         if isinstance(node, ast.Lambda):
-            child = scope.child("LAMBDA")
+            # Defaults are evaluated where the lambda is defined, before its
+            # parameters become visible (including class namespaces).
+            for default in [*node.args.defaults, *node.args.kw_defaults]:
+                if default is not None:
+                    self._walk(default, scope)
+            child = scope.function_child("LAMBDA")
             parameters = [*node.args.posonlyargs, *node.args.args, *node.args.kwonlyargs]
+            if node.args.vararg:
+                parameters.append(node.args.vararg)
+            if node.args.kwarg:
+                parameters.append(node.args.kwarg)
             self._predeclare_scope(child, [], parameters)
             for argument in parameters:
                 self.overrides[self._location(argument.lineno, argument.col_offset)] = child.declare(argument.arg, "PARAM")
@@ -219,8 +258,39 @@ class _PythonIndexer:
             if symbol is not None:
                 self.overrides[self._location(node.lineno, node.col_offset)] = symbol
             return
+        if isinstance(node, ast.Call) and node.keywords:
+            self.keyword_calls.append((node, scope))
         for child in ast.iter_child_nodes(node):
             self._walk(child, scope)
+
+    def _bind_keywords(self, call: ast.Call, scope: _Scope) -> None:
+        def unsupported(category: str) -> None:
+            raise _PythonBindingUnavailable(f"{category}: Call at line {call.lineno}")
+
+        if any(item.arg is None for item in call.keywords):
+            unsupported("PYTHON_KEYWORD_EXPANSION_UNSUPPORTED")
+        if not isinstance(call.func, ast.Name):
+            unsupported("PYTHON_ATTRIBUTE_KEYWORD_CALL_UNSUPPORTED")
+        symbol = scope.resolve(call.func.id)
+        if symbol is None:
+            # External callable signatures are not inferred; their keyword labels remain literal.
+            return
+        if symbol.kind != "FUNC" or symbol.scoped_name not in self.functions:
+            unsupported("PYTHON_INDIRECT_KEYWORD_CALL_UNSUPPORTED")
+        definitions = self.functions[symbol.scoped_name]
+        if len(definitions) != 1 or symbol.scoped_name in self.rebound_functions:
+            unsupported("PYTHON_AMBIGUOUS_FUNCTION_BINDING_UNSUPPORTED")
+        function_scope, definition = definitions[0]
+        if definition.decorator_list:
+            unsupported("PYTHON_DECORATED_KEYWORD_CALL_UNSUPPORTED")
+        if definition.args.kwarg:
+            unsupported("PYTHON_VARIADIC_KEYWORD_CALL_UNSUPPORTED")
+        parameters = {item.arg for item in [*definition.args.args, *definition.args.kwonlyargs]}
+        for item in call.keywords:
+            if item.arg not in parameters:
+                unsupported("PYTHON_KEYWORD_PARAMETER_UNRESOLVED")
+            parameter = function_scope.bindings[item.arg]
+            self._bind_named_token(item.lineno, item.col_offset, item.arg, parameter)
 
     def _bind_named_token(self, line: int, column: int, raw_name: str, symbol: _Symbol) -> None:
         _, column = self._location(line, column)
@@ -231,6 +301,10 @@ class _PythonIndexer:
         if candidates:
             token = min(candidates, key=lambda item: item.column)
             self.overrides[(token.line, token.column)] = symbol
+
+
+class _PythonBindingUnavailable(ValueError):
+    pass
 
 
 class _PythonDeclarationCollector(ast.NodeVisitor):
@@ -264,15 +338,130 @@ class _PythonDeclarationCollector(ast.NodeVisitor):
 def _canonicalize_python(code: str, tokens: list[SourceToken]) -> CanonicalAnalysis:
     try:
         tree = ast.parse(code)
-    except SyntaxError:
-        return _lexical_fallback(tokens, "python")
-    overrides = _PythonIndexer(tokens, code).index(tree)
+    except SyntaxError as error:
+        return CanonicalAnalysis([token.value for token in tokens], [], "lexical-fallback",
+                                 f"PYTHON_SYNTAX_ERROR: line {error.lineno}: {error.msg}")
+    reason = _python_scope_limitation(tree)
+    if reason is not None:
+        # Raw tokens only: do not manufacture canonical identifiers when the
+        # scope model cannot establish correct bindings for the entire file.
+        return CanonicalAnalysis([token.value for token in tokens], [], "lexical-fallback", reason)
+    try:
+        overrides = _PythonIndexer(tokens, code).index(tree)
+    except _PythonBindingUnavailable as error:
+        return CanonicalAnalysis([token.value for token in tokens], [], "lexical-fallback", str(error))
     return _apply_overrides(tokens, overrides, "scope-aware-python")
+
+
+def _python_scope_limitation(tree: ast.AST) -> str | None:
+    """Return a stable, located reason for unsupported Python binding forms."""
+    for node in ast.walk(tree):
+        category: str | None = None
+        if isinstance(node, (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)):
+            category = "PYTHON_COMPREHENSION_SCOPE_UNSUPPORTED"
+        elif isinstance(node, (ast.Global, ast.Nonlocal)):
+            category = "PYTHON_GLOBAL_SCOPE_UNSUPPORTED" if isinstance(node, ast.Global) else "PYTHON_NONLOCAL_SCOPE_UNSUPPORTED"
+        elif isinstance(node, ast.NamedExpr):
+            category = "PYTHON_NAMED_EXPRESSION_SCOPE_UNSUPPORTED"
+        elif isinstance(node, ast.ExceptHandler) and node.name:
+            category = "PYTHON_EXCEPTION_BINDING_UNSUPPORTED"
+        elif (isinstance(node, (ast.MatchAs, ast.MatchStar)) and node.name
+              or isinstance(node, ast.MatchMapping) and node.rest):
+            category = "PYTHON_MATCH_CAPTURE_UNSUPPORTED"
+        elif isinstance(node, (ast.Import, ast.ImportFrom)) and any(
+                alias.asname or alias.name == "*" for alias in node.names):
+            category = "PYTHON_IMPORT_BINDING_UNSUPPORTED"
+        elif (isinstance(node, ast.arg) and node.annotation is not None
+              or isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.returns is not None):
+            category = "PYTHON_FUNCTION_ANNOTATION_SCOPE_UNSUPPORTED"
+        elif getattr(node, "type_params", None) or type(node).__name__ == "TypeAlias":
+            category = "PYTHON_TYPE_PARAMETER_SCOPE_UNSUPPORTED"
+        elif isinstance(node, ast.AnnAssign):
+            # A declaration without a value need not bind a runtime name, and
+            # annotation evaluation varies by scope/version/future imports.
+            category = "PYTHON_VARIABLE_ANNOTATION_SCOPE_UNSUPPORTED"
+        elif isinstance(node, ast.ClassDef):
+            class_reason = _python_class_scope_limitation(node)
+            if class_reason is not None:
+                return class_reason
+        elif (isinstance(node, ast.Name) and node.id in PYTHON_DYNAMIC_NAMES
+              or isinstance(node, ast.Attribute) and node.attr in PYTHON_DYNAMIC_NAMES | PYTHON_REFLECTIVE_ATTRIBUTES):
+            category = "PYTHON_DYNAMIC_NAME_ACCESS_UNSUPPORTED"
+        if category is not None:
+            return f"{category}: {type(node).__name__} at line {getattr(node, 'lineno', 1)}"
+    return None
+
+
+class _PythonDefinitionTimeCollector(ast.NodeVisitor):
+    """Visit expressions evaluated in the current class namespace only."""
+
+    def __init__(self) -> None:
+        self.nodes: list[ast.AST] = []
+
+    def generic_visit(self, node: ast.AST) -> None:
+        self.nodes.append(node)
+        super().generic_visit(node)
+
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
+        self._defaults(node.args)
+        for decorator in node.decorator_list:
+            self.visit(decorator)
+
+    visit_AsyncFunctionDef = visit_FunctionDef
+
+    def visit_Lambda(self, node: ast.Lambda) -> None:
+        self._defaults(node.args)
+
+    def visit_ClassDef(self, node: ast.ClassDef) -> None:
+        for expression in [*node.bases, *node.decorator_list]:
+            self.visit(expression)
+        for keyword_argument in node.keywords:
+            self.visit(keyword_argument.value)
+
+    def _defaults(self, arguments: ast.arguments) -> None:
+        for default in [*arguments.defaults, *arguments.kw_defaults]:
+            if default is not None:
+                self.visit(default)
+
+
+def _python_class_scope_limitation(node: ast.ClassDef) -> str | None:
+    """Class bodies use ordered dynamic lookups, unlike function locals."""
+    if any(argument.arg == "metaclass" or argument.arg is None for argument in node.keywords):
+        return f"PYTHON_CLASS_NAMESPACE_UNSUPPORTED: ClassDef at line {node.lineno}"
+    declarations = _PythonDeclarationCollector()
+    for statement in node.body:
+        declarations.visit(statement)
+    declared_names = {name for _, _, name, _ in declarations.declarations}
+    bound_names: set[str] = set()
+    for statement in node.body:
+        expressions = _PythonDefinitionTimeCollector()
+        expressions.visit(statement)
+        for expression in expressions.nodes:
+            # Branches, loops, deletion and augmented assignment need path-
+            # sensitive name binding; predeclaring their targets is unsafe.
+            if isinstance(expression, (ast.If, ast.For, ast.AsyncFor, ast.While,
+                                       ast.Try, ast.TryStar, ast.With, ast.AsyncWith,
+                                       ast.Match, ast.Delete, ast.AugAssign)):
+                return (f"PYTHON_CLASS_DYNAMIC_BINDING_UNSUPPORTED: "
+                        f"{type(expression).__name__} at line {expression.lineno}")
+            if (isinstance(expression, ast.Call) and isinstance(expression.func, ast.Name)
+                    and expression.func.id in {"exec", "eval", "locals", "globals", "vars"}):
+                return (f"PYTHON_CLASS_NAMESPACE_UNSUPPORTED: {expression.func.id} "
+                        f"at line {expression.lineno}")
+            if (isinstance(expression, ast.Name) and isinstance(expression.ctx, ast.Load)
+                    and expression.id in declared_names and expression.id not in bound_names):
+                return (f"PYTHON_CLASS_FORWARD_BINDING_UNSUPPORTED: {expression.id} "
+                        f"at line {expression.lineno}")
+        completed = _PythonDeclarationCollector()
+        completed.visit(statement)
+        bound_names.update(name for _, _, name, _ in completed.declarations)
+    return None
 
 
 def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysis:
     if mask_comments(code)[1] or not balanced_tokens(token.value for token in tokens) or not tokens:
-        return _lexical_fallback(tokens, "java")
+        return CanonicalAnalysis([token.value for token in tokens], [], "lexical-fallback",
+                                 "JAVA_PARSE_UNAVAILABLE: unbalanced, empty or unterminated source at line 1")
     values = [token.value for token in tokens]
     paths, parents, brace_children = _java_scope_paths(values)
     scopes: dict[str, _Scope] = {"ROOT": _Scope("ROOT", None)}
@@ -308,11 +497,13 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
             declarations[parameter_index] = scopes[body_path].declare(values[parameter_index], "PARAM")
 
     excluded = set(declarations) | parameter_indices
+    variable_declaration_indices: dict[str, int] = {}
     for index, value in enumerate(values):
         if index in excluded or not _is_java_identifier(value):
             continue
         if _looks_like_java_variable_declaration(values, index):
             declarations[index] = scopes[paths[index]].declare(value, "VAR")
+            variable_declaration_indices[declarations[index].scoped_name] = index
 
     overrides: dict[tuple[int, int], _Symbol] = {}
     for index, token in enumerate(tokens):
@@ -326,7 +517,15 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
                         scope = scope.parent
                     symbol = scope.bindings.get(token.value) if scope else None
             else:
-                symbol = scopes[paths[index]].resolve(token.value)
+                scope = scopes[paths[index]]
+                while scope is not None:
+                    candidate = scope.bindings.get(token.value)
+                    # Java locals are visible from their declaration, unlike class fields.
+                    if candidate is not None and (scope.path in class_body_paths
+                            or variable_declaration_indices.get(candidate.scoped_name, -1) <= index):
+                        symbol = candidate
+                        break
+                    scope = scope.parent
         if symbol is not None:
             overrides[(token.line, token.column)] = symbol
     return _apply_overrides(tokens, overrides, "scope-aware-java")
@@ -350,26 +549,8 @@ def _apply_overrides(
 
 
 def _lexical_fallback(tokens: list[SourceToken], language: str) -> CanonicalAnalysis:
-    counters: dict[str, int] = defaultdict(int)
-    symbols: dict[tuple[str, str], _Symbol] = {}
-    canonical_tokens: list[str] = []
-    identifiers: list[dict[str, object]] = []
-    values = [token.value for token in tokens]
-    for position, token in enumerate(tokens):
-        if not _is_identifier(token.value, language):
-            canonical_tokens.append(token.value)
-            continue
-        previous = values[position - 1] if position > 0 else ""
-        next_value = values[position + 1] if position + 1 < len(values) else ""
-        kind = "CLASS" if previous == "class" else "FUNC" if previous == "def" or next_value == "(" else "VAR"
-        key = (kind, token.value)
-        if key not in symbols:
-            counters[kind] += 1
-            symbols[key] = _Symbol(token.value, kind, f"{kind}_{counters[kind]}", "FALLBACK")
-        symbol = symbols[key]
-        canonical_tokens.append(symbol.scoped_name)
-        identifiers.append(_identifier_item(token, position, symbol))
-    return CanonicalAnalysis(canonical_tokens, identifiers, "lexical-fallback")
+    return CanonicalAnalysis([token.value for token in tokens], [], "lexical-fallback",
+                             f"LANGUAGE_SCOPE_UNSUPPORTED: {language} at line 1")
 
 
 def _identifier_item(token: SourceToken, position: int, symbol: _Symbol) -> dict[str, object]:
@@ -498,6 +679,8 @@ def _is_identifier(value: str, language: str) -> bool:
 
 
 JAVA_PRIMITIVE_TYPES = {"boolean", "byte", "char", "double", "float", "int", "long", "short", "String", "var"}
+PYTHON_DYNAMIC_NAMES = {"eval", "exec", "globals", "locals", "vars", "getattr", "setattr", "delattr", "hasattr", "__import__", "compile"}
+PYTHON_REFLECTIVE_ATTRIBUTES = {"__dict__", "__name__", "__qualname__", "__code__", "__globals__", "f_locals", "f_globals", "_getframe"}
 JAVA_MODIFIERS = {"final", "volatile", "transient", "public", "private", "protected", "static"}
 JAVA_CONTROL_WORDS = {"if", "for", "while", "switch", "catch", "return", "throw", "synchronized"}
 JAVA_KEYWORDS = {
