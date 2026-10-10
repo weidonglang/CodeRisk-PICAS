@@ -1,5 +1,7 @@
 # ALGORITHM_SPEC.md
 
+> 2026-10-11 阶段 5：新增隔离 [候选→模型→人工实验门禁](research/HYBRID_DETECTION.md)，只用既有 PICAS 分数，validation-only 选 K；没有完整候选池和真实基线时阻断。无新算法、生产权重/API 改动，真实混合效果未验证。
+
 > 2026-10-10 阶段 4：隔离离线 Direct LLM baseline 已实现（mock/dry-run/授权导入），不调用网络，不改变生产公式；真实模型未运行，下方历史“计划中”按当时状态理解。提示词、Schema、预算、缓存、validation-only 对照及局限见 [LLM 实验协议](research/LLM_BASELINE.md)。
 
 > 2026-10-10 后续研究阶段 3：q_p(s) 的隔离实验入口已实现，采用现有 production S 的可信独立参考上尾、质量门禁与规则冷启动回退；没有改本文生产融合/阈值。参考池当前空、效果未验证，不等于下文广义结构方法已完成。两种参考协议及已实现/未验证边界见 [统计研究说明](research/NATURAL_SIMILARITY_CALIBRATION.md)；LLM 对照仍计划中，历史负结果不变。

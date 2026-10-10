@@ -1,0 +1,52 @@
+{
+  "protocolVersion": "hybrid-review-1.0",
+  "datasetManifest": "experiment/datasets/research-v4/dataset.json",
+  "selectionSplit": "validation",
+  "evaluationSplit": "test",
+  "candidateKs": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "targetCandidateRecall": 0.95,
+  "minimumValidationPositiveQueries": 10,
+  "minimumBaselineTestPairs": 30,
+  "randomSeed": 20261011,
+  "llm": {
+    "protocolVersion": "llm-baseline-1.0",
+    "promptFile": "experiment/prompts/hybrid_review_v1.txt",
+    "promptVersion": "hybrid-review-1.0",
+    "modelId": "MOCK_ONLY_NOT_A_REAL_MODEL",
+    "modelParameters": {
+      "temperature": 0,
+      "max_output_tokens": 1500
+    },
+    "repeats": 3,
+    "minValidRepeats": 2,
+    "randomSeed": 20261011,
+    "selectionSplit": "validation",
+    "evaluationSplit": "test",
+    "fixedThresholds": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.68,
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.000001
+    ],
+    "budget": {
+      "maxRequests": 300,
+      "maxInputTokens": 500000,
+      "maxOutputTokens": 500000,
+      "maxCostUsd": 0.0
+    }
+  }
+}

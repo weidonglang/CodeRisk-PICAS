@@ -1,5 +1,7 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-11 研究阶段 5：新增 [混合复核协议](research/HYBRID_DETECTION.md)，完整标注 query pool + validation Recall@K 门禁 + 真实基线真人批准。现 seed 不具备候选池，实跑阻断/N/A；不为了实验填造独立标签，不把候选漏检从端到端分母删除。
+
 > 2026-10-10 研究阶段 4：新增 [离线 LLM 对照协议](research/LLM_BASELINE.md)，只接收获许可的离线响应。当前 mock/dry-run 实跑，真实 LLM 指标 N/A；JPlag 本轮 Java/Python 实跑并按原文 hash 对齐。三方/两方共同集合分开，缺失不当负例，生产权重不变。
 
 > 2026-10-10 研究阶段 3：独立解答上尾校准隔离 runner 已实现，生产 S/T 不变。默认 validation-problem-only 参考要求 test 新题冷启动；可选 preregistered 同题背景面板不能称参考/test 题目隔离。双人关系/授权/冻结/作者与源码隔离门禁不可由 allow-development 豁免。40 项新测试通过；seed 75 分析/0 可信参考/0 q/0 正式资格，统计策略全回退，不是误报改善证据。参考元数据与冷启动/模板限制见 [统计研究协议](research/NATURAL_SIMILARITY_CALIBRATION.md)。以下旧条目保留其运行当时状态。

@@ -1,0 +1,307 @@
+{
+  "valid": false,
+  "queries": 0,
+  "pairs": 75,
+  "reasons": [
+    {
+      "pair_id": "VALIDATION-SIMPLE-IO-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-SIMPLE-IO-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-SIMPLE-IO-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SIMPLE-IO-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SIMPLE-IO-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SIMPLE-IO-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SIMPLE-IO-01-SUSPICIOUS-FORMAT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-ARRAY-LOOP-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-ARRAY-LOOP-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-ARRAY-LOOP-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-ARRAY-LOOP-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-ARRAY-LOOP-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-ARRAY-LOOP-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-ARRAY-LOOP-01-SUSPICIOUS-FORMAT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-SORT-TEMPLATE-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-SORT-TEMPLATE-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-SORT-TEMPLATE-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SORT-TEMPLATE-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SORT-TEMPLATE-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SORT-TEMPLATE-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-SORT-TEMPLATE-01-SUSPICIOUS-FORMAT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DFS-GRAPH-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DFS-GRAPH-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DFS-GRAPH-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DFS-GRAPH-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DFS-GRAPH-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DFS-GRAPH-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DFS-GRAPH-01-SUSPICIOUS-FORMAT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DP-VARIANT-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DP-VARIANT-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "VALIDATION-DP-VARIANT-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DP-VARIANT-01-RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DP-VARIANT-01-NATURAL",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DP-VARIANT-01-INDEPENDENT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "TEST-DP-VARIANT-01-SUSPICIOUS-FORMAT",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-01-SIMPLE-IO-01-NATURAL_TEMPLATE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-01-SIMPLE-IO-02-PARAMETER_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-01-SIMPLE-IO-03-FORMAT_COMMENT_CHANGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-02-ARRAY-LOOP-01-VARIABLE_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-02-ARRAY-LOOP-02-LOCAL_REORDER",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-02-ARRAY-LOOP-03-INDEPENDENT_SOLUTION",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-03-SORT-TEMPLATE-01-FUNCTION_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-03-SORT-TEMPLATE-02-HUMAN_REWRITE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-03-SORT-TEMPLATE-03-COMMON_STRUCTURE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-04-STRING-PROCESSING-01-SPLIT_MERGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-04-STRING-PROCESSING-02-UNSUPPORTED_SYNTAX",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-05-DFS-GRAPH-02-VARIABLE_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-05-DFS-GRAPH-03-NATURAL_TEMPLATE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-06-BFS-GRAPH-01-HUMAN_REWRITE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-06-BFS-GRAPH-02-FUNCTION_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-06-BFS-GRAPH-03-INDEPENDENT_SOLUTION",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-07-DP-VARIANT-01-SPLIT_MERGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-07-DP-VARIANT-02-PARAMETER_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-07-DP-VARIANT-03-COMMON_STRUCTURE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-VALIDATION-08-SIMULATION-01-LOCAL_REORDER",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-01-SIMPLE-IO-01-HUMAN_REWRITE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-01-SIMPLE-IO-02-INDEPENDENT_SOLUTION",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-02-ARRAY-LOOP-01-NATURAL_TEMPLATE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-02-ARRAY-LOOP-02-VARIABLE_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-02-ARRAY-LOOP-03-UNSUPPORTED_SYNTAX",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-03-SORT-TEMPLATE-01-FORMAT_COMMENT_CHANGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-03-SORT-TEMPLATE-02-LOCAL_REORDER",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-04-STRING-PROCESSING-01-FUNCTION_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-04-STRING-PROCESSING-02-PARAMETER_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-04-STRING-PROCESSING-03-COMMON_STRUCTURE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-05-DFS-GRAPH-01-SPLIT_MERGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-05-DFS-GRAPH-02-HUMAN_REWRITE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-05-DFS-GRAPH-03-NATURAL_TEMPLATE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-06-BFS-GRAPH-02-COMMON_STRUCTURE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-06-BFS-GRAPH-03-UNSUPPORTED_SYNTAX",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-07-DP-VARIANT-01-VARIABLE_RENAME",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-07-DP-VARIANT-02-FORMAT_COMMENT_CHANGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-07-DP-VARIANT-03-INDEPENDENT_SOLUTION",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-08-SIMULATION-01-LOCAL_REORDER",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    },
+    {
+      "pair_id": "SEED-TEST-08-SIMULATION-02-SPLIT_MERGE",
+      "reason": "COMPLETE_ANCHORED_QUERY_POOL_REQUIRED"
+    }
+  ]
+}

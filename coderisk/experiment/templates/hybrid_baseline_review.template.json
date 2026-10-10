@@ -1,0 +1,9 @@
+{
+  "status": "PENDING_HUMAN_REVIEW",
+  "reviewer_type": null,
+  "reviewer_id": null,
+  "reference": null,
+  "recommended_for_hybrid": false,
+  "reviewed_run_manifest_sha256": null,
+  "notes": "Template only. Do not approve without genuine authorized model records, matched-source comparison, failure review and frozen validation protocol. This file is not evidence of HUMAN review."
+}

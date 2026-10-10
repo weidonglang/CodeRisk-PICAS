@@ -1,0 +1,14 @@
+{
+  "verificationDate": "2026-10-11",
+  "scope": "CURRENT_WORKING_TREE_INCLUDES_OTHER_PENDING_TASKS",
+  "python": {"passed": 431, "warnings": 1, "report": "hybrid-stage5-full.xml"},
+  "maven": {"command": "mvn test", "exitCode": 0, "tests": 19, "failures": 0, "errors": 0, "database": "H2_IN_MEMORY", "report": "TEST-com.coderisk.SystemControllerTest.xml"},
+  "frontend": {"command": "npm run build", "exitCode": 0, "typecheck": "PASSED", "modulesTransformed": 1699, "warnings": ["Existing dependency PURE annotations", "Chunk larger than 500 kB"]},
+  "permissionRetries": ["Vite realpath EPERM in sandbox; retried outside sandbox successfully", "Mockito JDK attach pipe access denied in sandbox; stopped only owned test JVM and retried outside sandbox successfully"],
+  "mysql": "NOT_VERIFIED_CREDENTIALS_PENDING",
+  "browserE2E": "NOT_RERUN_THIS_TASK",
+  "genuineLLMInference": false,
+  "newNetworkCalls": 0,
+  "newCostUsd": 0,
+  "productionFormulaChanged": false
+}

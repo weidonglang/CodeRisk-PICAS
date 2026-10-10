@@ -1,0 +1,8 @@
+{
+  "pair_id": "FILL_EXISTING_PAIR_ID",
+  "retrieval_query_id": "FILL_FROZEN_QUERY_ID",
+  "retrieval_pool_complete": false,
+  "retrieval_pool_size": null,
+  "query_source_sha256": "FILL_EXACT_LOADED_CODE_A_OR_B_HASH",
+  "notes": "Add these metadata fields to every existing case in the declared finite query pool. Record all candidates and verified relation labels before setting complete=true. Do not create or infer new labels. Missing or unsupported members must not be removed. This is a placeholder template, not a dataset."
+}

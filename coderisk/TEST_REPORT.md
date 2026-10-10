@@ -1,5 +1,13 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## 研究阶段 5 混合实验门禁 - 2026-10-11
+
+- 新测试 27 项通过。未知 selected pair 会悄悄改变分母的红测先失败后修复；fallback 不删、同分排序、validation-only 选 K、真实基线不得被 development 绕过均验证。
+- 全工作树 Python 431 项通过、1 条既有 warning；数量包含其他未提交任务。隔离阶段源码验证与前后端最新回归见本阶段证据及下方最终记录，不冒充 MySQL 实库验证。
+- 本轮实际回归 `mvn test`：H2 19 项通过；`npm run build`：vue-tsc 和 Vite 成功。首次 sandbox 分别阻碍 JDK attach 管道与 Vite realpath，解除限制重跑成功；保留既有依赖/大包 warning。不重跑浏览器，不声称 MySQL 已验证。
+- 现 seed 实跑 mock/import 门禁：91 输入、75 分析、完整池 0，K=null、Recall@K=N/A，选中/真实响应/网络调用/费用 0。测试专用完整池的 6 对/18 请求仅是 mock 契约，不是有效关系数据。
+- 正式混合评测尚被数据/授权/真实基线门禁阻断；没有模型收益结论，不改变生产评分/API/数据库。协议与实跑产物见 [混合说明](../coderisk_docs/research/HYBRID_DETECTION.md) 与 [证据](experiment/evidence/hybrid-review-20261011/README.md)。
+
 ## 研究阶段 4 离线 LLM 对照 - 2026-10-10
 
 - 新测试 27 项；全工作树 404 项通过、1 条既有 warning。费用漏计及重复缓存写入红测先复现后修复；mock/伪响应不算模型准确率。
