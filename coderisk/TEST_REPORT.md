@@ -1,5 +1,12 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## 研究阶段 2 隔离消融 - 2026-10-10
+
+- 新实验契约/真实 seed 集成测试 19 项通过；当前完整工作树 Python 337 项通过，1 条既有 Starlette/httpx warning。完整结果含其他未提交任务测试，不是 clean HEAD 的数量。
+- 默认 formal run 实际被拒绝，未创建结果目录；显式 allow-development 实跑 91 输入/75 分析/68 共同可用，14 方法与完整 CSV/JSON/Markdown 生成成功，formalEligiblePairs=0。
+- Recall@K 的候选遗漏测试先失败再修复；现在要求完整 query pool、实际数量匹配且保留不支持的候选。seed 的 Recall@K 全为 N/A。生产 FORMULA_SPEC/canonicalization/token_similarity 文件 hash 与上一批一致。
+- 本轮未改后端/前端，不重跑 mvn/npm；上一批 H2 19 项与 build 通过仅作历史记录，MySQL 实库仍待验证。协议、命令、失败及证据见 [研究消融说明](../coderisk_docs/research/SIMILARITY_ABLATION.md)。
+
 ## IR-Plag intake, fusion diagnosis and asynchronous tasks — 2026-10-09
 
 - Python: 134 tests passed. Eight additional cases check pinned hashes, unsafe ZIP headers including Windows backslashes, publisher labels versus disputed/local labels, and exact fusion decomposition. One existing third-party warning remains.

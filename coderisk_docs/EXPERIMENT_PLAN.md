@@ -1,5 +1,7 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-10 研究阶段 2：新增隔离 14 方法多维消融 runner，固定配置/源码/数据哈希，validation-only 参数选择、同样本 COMMON 表、AP/低 FPR 工作点/Recall@K 准入与改名变化。现有 seed 仅 development，formal=0；完整融合不是最好，规则动态有召回损失，不能作真实效果结论。JPlag 未重评、不拼接历史分数；统计独立分布与 LLM 尚待后续。详见 [协议、指标与真实产物](research/SIMILARITY_ABLATION.md)。
+
 > 2026-10-09 本轮增量：IR-Plag 已固定来源和已知争议，467 个逻辑源文件、460 对发布关系；10 对争议负例隔离、14 个重复逻辑文件须统计去重。共享参与者暂阻断全部七题，未评分、未正式分集。ConPlag 负结果诊断只复用已观察分数；异步运行证据是自有合成工程检查。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 > 2026-10-09：新增 `run_context_checks.py` 的八个合成版本/计算器/模板开发探针，全部正式指标资格为零，核对新增上下文前后分数和阈值不变。正式自然相似评测仍须预先登记独立参考解、来源和模板，再验证分组与校准规则；不能将本轮提示当作误报下降证据。见 [实现与校准边界](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。
