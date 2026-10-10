@@ -39,6 +39,8 @@ PICAS 是本项目的方法名称：**Problem-aware Invariant Code Similarity An
 
 ### 为什么不直接使用 AI
 
+**2026-10-10 最新状态：** [阶段 4 离线工具](coderisk_docs/research/LLM_BASELINE.md)已实现且测试通过；下文“尚未实现”是先前真实模型对照状态，现应理解为真实 LLM 推理未运行、效果未验证。mock 不输出模型准确率，不上传代码、不花费调用费用。
+
 LLM 可能擅长理解复杂结构与改写，甚至在某些数据上优于规则工具；PICAS 提供可复现分量、原文位置与规则题目解释，但并未证明其优势。直接 LLM 在批量费用、运行稳定性、版本变动、学生代码隐私及证据定位上有不同权衡。公平比较应提供相同题目/模板/语言背景、冻结提示词及测试集，并记录成本、失败与重复运行稳定性；目前该对照尚未实现，默认不能上传学生代码或自动付费。
 
 ### 当前实现、实验性与计划中
@@ -51,7 +53,7 @@ LLM 可能擅长理解复杂结构与改写，甚至在某些数据上优于规�
 | 表达式交换、语句重排、函数拆分 | 规格设计/后续方向，普通 canonical 未实现，不归入改名群 |
 | 跨语言 IR、轻量控制/数据摘要 | limited experimental，生产权重 0，不是完整 CFG/DFG |
 | 独立分布统计校准 q_p(s) | 隔离 experimental runner、质量门禁/冷启动已实现；可信参考 0，真实效果未验证，q 不是抄袭概率 |
-| Direct LLM baseline | 计划中；dry-run、许可、预算与冻结评测是前置条件 |
+| Direct LLM baseline | 隔离离线工具已实现：mock/dry-run/授权导入、Schema、缓存、预算、原文证据；真实 LLM 未运行，不能宣称效果 |
 | PICAS→LLM→人工混合 | 可选展望；先验证候选 Recall@K，不接入默认业务 |
 
 ### 首批研究复现与局限
@@ -226,7 +228,7 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 | 本地运行与演示 | [运行手册](coderisk/README.md) · [数据库说明](coderisk/database/README.md) |
 | 理解评分与算法 | [生产公式](coderisk_docs/FORMULA_SPEC.md) · [算法规格](coderisk_docs/ALGORITHM_SPEC.md) · [规范化说明](coderisk_docs/CANONICALIZATION_SPEC.md) |
 | 开题研究第一批 | [精准审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md) · [有限群作用](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) · [测试与阻塞](coderisk_docs/research/FIRST_BATCH_REPORT.md) |
-| 研究实验增量 | [多维消融](coderisk_docs/research/SIMILARITY_ABLATION.md) · [独立解答统计校准](coderisk_docs/research/NATURAL_SIMILARITY_CALIBRATION.md) |
+| 研究实验增量 | [多维消融](coderisk_docs/research/SIMILARITY_ABLATION.md) · [独立解答统计校准](coderisk_docs/research/NATURAL_SIMILARITY_CALIBRATION.md) · [离线 LLM 对照](coderisk_docs/research/LLM_BASELINE.md) |
 | 接口与开发 | [API](coderisk_docs/API_SPEC.md) · [表结构](coderisk_docs/DATABASE_SCHEMA.md) · [贡献指南](CONTRIBUTING.md) |
 | 开题与后续安排 | [开题材料](coderisk_docs/proposal/README.md) · [毕设计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) |
 | 评测与失败案例 | [公平评测](coderisk_docs/proposal/FAIR_EVALUATION.md) · [探索结果](coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md) |

@@ -1,5 +1,11 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## 研究阶段 4 离线 LLM 对照 - 2026-10-10
+
+- 新测试 27 项；全工作树 404 项通过、1 条既有 warning。费用漏计及重复缓存写入红测先复现后修复；mock/伪响应不算模型准确率。
+- 91 synthetic 输入/75 分析/16 排除，mock 与 dry-run 真正执行；LLM 分数 N/A，真实响应、正式资格、新网络调用与费用均 0。JPlag Java/Python exit 0、72 对 matched，同源码共同 test 38 对。详细结果见 [协议](../coderisk_docs/research/LLM_BASELINE.md) 及 [归档](experiment/evidence/llm-baseline-20261010/README.md)。
+- API/DB/生产权重不改；本阶段未重跑未改动的后端/前端/浏览器，H2 历史验证不冒充 MySQL 实库验证。
+
 ## 研究阶段 3 独立解答统计校准 - 2026-10-10
 
 - 新测试 40 项通过；包含上下尾并列/平滑契约、验证集独占选参、门禁不可豁免、真实文件/原始与文本 hash、CRLF、模板只影响资格、解析降级及跨 split/panel 身份隔离。MOCK_TEST_ONLY 人工声明只属于测试，未制造真人标签。

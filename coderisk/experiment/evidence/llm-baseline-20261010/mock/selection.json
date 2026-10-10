@@ -1,0 +1,112 @@
+{
+  "COMMON_THREE:PICAS_FIXED": {
+    "validation_count": 0,
+    "validation_negatives": 0,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": null,
+    "validation_fpr": null,
+    "validation_recall": null,
+    "status": "INSUFFICIENT_VALIDATION_CLASSES"
+  },
+  "COMMON_THREE:PICAS_RULE_DYNAMIC": {
+    "validation_count": 0,
+    "validation_negatives": 0,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.0,
+    "validation_fpr": null,
+    "validation_recall": null,
+    "status": "FROZEN_RULE"
+  },
+  "COMMON_THREE:JPLAG": {
+    "validation_count": 0,
+    "validation_negatives": 0,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": null,
+    "validation_fpr": null,
+    "validation_recall": null,
+    "status": "INSUFFICIENT_VALIDATION_CLASSES"
+  },
+  "COMMON_THREE:DIRECT_LLM": {
+    "validation_count": 0,
+    "validation_negatives": 0,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": null,
+    "validation_fpr": null,
+    "validation_recall": null,
+    "status": "INSUFFICIENT_VALIDATION_CLASSES"
+  },
+  "COMMON_PICAS_JPLAG:PICAS_FIXED": {
+    "validation_count": 34,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.3,
+    "validation_fpr": 0.5,
+    "validation_recall": 0.8888888888888888,
+    "status": "VALIDATION_SELECTED"
+  },
+  "COMMON_PICAS_JPLAG:PICAS_RULE_DYNAMIC": {
+    "validation_count": 34,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.0,
+    "validation_fpr": 0.25,
+    "validation_recall": 0.5555555555555556,
+    "status": "FROZEN_RULE"
+  },
+  "COMMON_PICAS_JPLAG:JPLAG": {
+    "validation_count": 34,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.7,
+    "validation_fpr": 0.3125,
+    "validation_recall": 0.7777777777777778,
+    "status": "VALIDATION_SELECTED"
+  },
+  "AVAILABLE_DIAGNOSTIC:PICAS_FIXED": {
+    "validation_count": 35,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.3,
+    "validation_fpr": 0.5,
+    "validation_recall": 0.8947368421052632,
+    "status": "VALIDATION_SELECTED"
+  },
+  "AVAILABLE_DIAGNOSTIC:PICAS_RULE_DYNAMIC": {
+    "validation_count": 35,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.0,
+    "validation_fpr": 0.25,
+    "validation_recall": 0.5263157894736842,
+    "status": "FROZEN_RULE"
+  },
+  "AVAILABLE_DIAGNOSTIC:JPLAG": {
+    "validation_count": 34,
+    "validation_negatives": 16,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": 0.7,
+    "validation_fpr": 0.3125,
+    "validation_recall": 0.7777777777777778,
+    "status": "VALIDATION_SELECTED"
+  },
+  "AVAILABLE_DIAGNOSTIC:DIRECT_LLM": {
+    "validation_count": 0,
+    "validation_negatives": 0,
+    "selection_split": "validation",
+    "test_used_for_selection": false,
+    "parameter": null,
+    "validation_fpr": null,
+    "validation_recall": null,
+    "status": "INSUFFICIENT_VALIDATION_CLASSES"
+  }
+}

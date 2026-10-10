@@ -1,0 +1,119 @@
+{
+  "$defs": {
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "codeA": {
+          "$ref": "#/$defs/Span"
+        },
+        "codeB": {
+          "$ref": "#/$defs/Span"
+        },
+        "reason": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "codeA",
+        "codeB",
+        "reason"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "Span": {
+      "additionalProperties": false,
+      "properties": {
+        "startLine": {
+          "minimum": 1,
+          "title": "Startline",
+          "type": "integer"
+        },
+        "endLine": {
+          "minimum": 1,
+          "title": "Endline",
+          "type": "integer"
+        },
+        "quote": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "startLine",
+        "endLine",
+        "quote"
+      ],
+      "title": "Span",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "llm-risk-review-1.0",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "REVIEW_SIGNAL",
+        "NO_REVIEW_SIGNAL",
+        "ABSTAIN"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "riskScore": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Riskscore"
+    },
+    "summary": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "maxItems": 20,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "minItems": 1,
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "outcome",
+    "riskScore",
+    "summary",
+    "evidence",
+    "limitations"
+  ],
+  "title": "Review",
+  "type": "object"
+}

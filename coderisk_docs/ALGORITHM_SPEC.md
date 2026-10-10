@@ -1,5 +1,7 @@
 # ALGORITHM_SPEC.md
 
+> 2026-10-10 阶段 4：隔离离线 Direct LLM baseline 已实现（mock/dry-run/授权导入），不调用网络，不改变生产公式；真实模型未运行，下方历史“计划中”按当时状态理解。提示词、Schema、预算、缓存、validation-only 对照及局限见 [LLM 实验协议](research/LLM_BASELINE.md)。
+
 > 2026-10-10 后续研究阶段 3：q_p(s) 的隔离实验入口已实现，采用现有 production S 的可信独立参考上尾、质量门禁与规则冷启动回退；没有改本文生产融合/阈值。参考池当前空、效果未验证，不等于下文广义结构方法已完成。两种参考协议及已实现/未验证边界见 [统计研究说明](research/NATURAL_SIMILARITY_CALIBRATION.md)；LLM 对照仍计划中，历史负结果不变。
 
 > 2026-10-10 开题研究校正：本文的广义结构变换、群/轨道及高级指标描述应按设计目标理解；已验证的群模型仅是固定名称域、保护外部名称、捕获规避的统一标识符置换，作用对象仅完整 canonical token 序列，不是 PICAS 加权分。直接函数 keyword 绑定、动态访问回退和 Java 声明点本次修复，生产公式未调整；统计校准/LLM 仍计划中。源码/测试对照见 [精准审计](research/IMPLEMENTATION_AUDIT.md) 与 [条件定义](research/GROUP_ACTION_INVARIANCE.md)。历史 ConPlag Full 并非最高 F1，不改写负结果。
