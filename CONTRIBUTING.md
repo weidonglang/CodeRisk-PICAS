@@ -38,4 +38,4 @@ CodeRisk 当前是本科毕设研究原型。修改应围绕题目背景、代�
 
 ## 首页素材
 
-封面和流程图是仓库内 SVG；界面截图只能来自实际运行，并标明演示数据性质。素材来源与更新方式见 [assets/README](coderisk_docs/assets/README.md)。仓库没有指定开源许可证，第三方数据与工具继续遵循各自许可。
+封面和流程图是仓库内 SVG；界面截图只能来自实际运行，并标明演示数据性质。素材来源与更新方式见 [assets/README](coderisk_docs/assets/README.md)。项目原创代码与文档采用 [MIT License](LICENSE)，第三方数据、源码样例与工具继续遵循各自许可，不被项目 MIT 协议重新许可。

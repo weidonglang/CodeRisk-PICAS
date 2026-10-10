@@ -16,6 +16,7 @@ Problem-aware code similarity risk analysis for programming assignments.</p>
   <a href="#实验与数据">实验记录</a> ·
   <a href="#研究复现">研究复现</a> ·
   <a href="coderisk_docs/README.md">文档导航</a> ·
+  <a href="LICENSE">MIT License</a> ·
   <a href="https://github.com/weidonglang/CodeRisk-PICAS/actions/workflows/ci.yml">构建检查</a>
 </p>
 
@@ -382,4 +383,10 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 
 ---
 
-由 [weidonglang](https://github.com/weidonglang) 维护。第三方数据与工具的许可和署名以各来源登记为准。仓库尚未指定开源许可证。
+## 许可证
+
+本项目原创代码与文档采用 [MIT License](LICENSE)，版权声明为 `Copyright (c) 2026 weidonglang`。
+
+第三方数据、源码样例、依赖与工具仍遵循各自的许可和署名要求，不因本项目采用 MIT 而获得重新许可。未明确授权的数据不自动开放再分发；原始公开数据与下载缓存仍不随仓库提交。
+
+由 [weidonglang](https://github.com/weidonglang) 维护。
