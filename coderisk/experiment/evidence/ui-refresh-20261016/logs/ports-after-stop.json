@@ -1,0 +1,26 @@
+[
+  {
+    "port": 8001,
+    "free": true
+  },
+  {
+    "port": 8080,
+    "free": true
+  },
+  {
+    "port": 5173,
+    "free": true
+  },
+  {
+    "port": 8002,
+    "free": true
+  },
+  {
+    "port": 8081,
+    "free": true
+  },
+  {
+    "port": 5174,
+    "free": true
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "questionCount": 3,
+    "submissionCount": 6,
+    "taskCount": 3,
+    "highRiskResultCount": 0,
+    "versionStage": "V2 delivery + V3 minimal experiment",
+    "dataNotice": "JDBC persistence, token/AST/canonical analysis, dynamic thresholds, evidence, and HTML reports enabled"
+  },
+  "result": {
+    "id": 3,
+    "taskId": 3,
+    "submissionAId": 5,
+    "submissionBId": 6,
+    "submissionAFileName": "UI_SELF_A.py",
+    "submissionBFileName": "UI_SELF_B.py",
+    "tokenSimilarity": 0.2593,
+    "astSimilarity": 1.0,
+    "canonicalTokenSimilarity": 1.0,
+    "identifierMappingSimilarity": 1.0,
+    "weightedSimilarityScore": 0.8519,
+    "dynamicThreshold": 0.8272,
+    "riskMargin": 0.0247,
+    "calibratedRiskScore": 0.5618,
+    "exceedThreshold": true,
+    "marginScale": 0.4,
+    "formulaVersion": "FORMULA_SPEC_V1",
+    "algorithmVersion": "picas-v2-rule-1.0",
+    "metricConfigHash": "sha256:43453f3467ef763c1c25c83f9524d8e37140b7a39297510455bf875df9ab63ef",
+    "riskLevel": "ELEVATED",
+    "problemProfile": {
+      "confidence": 0.62,
+      "dataStructureCount": 1,
+      "difficultyScore": 0.1028,
+      "apiCallCount": 0,
+      "ioFieldCount": 2,
+      "referenceFunctionCount": 0,
+      "naturalSimilarityRisk": 0.82291,
+      "templateRiskScore": 0.737751,
+      "solutionSpaceScore": 0.11126,
+      "featureVersion": "pf-rule-v1.0",
+      "descriptionLength": 39,
+      "explanation": {
+        "difficultyReasons": [
+          "题面结构和约束相对直接"
+        ],
+        "solutionSpaceReasons": [
+          "可行解法空间相对集中"
+        ],
+        "templateRiskReasons": [
+          "命中常见模板关键词"
+        ],
+        "naturalSimilarityReasons": [
+          "独立实现也可能自然相似"
+        ],
+        "ruleVersion": "pf-rule-v1.0",
+        "scores": {
+          "difficulty": 0.1028,
+          "solutionSpace": 0.11126,
+          "templateRisk": 0.737751,
+          "naturalSimilarity": 0.82291
+        }
+      },
+      "recommendedBaseThreshold": 0.827151,
+      "referenceLineCount": 0,
+      "referenceCyclomaticComplexity": 0.0,
+      "constraintCount": 1,
+      "sampleCount": 0
+    },
+    "thresholdAdjustment": {
+      "baseThreshold": 0.68,
+      "difficultyAdjustment": -0.006168,
+      "solutionSpaceAdjustment": -0.00445,
+      "templateRiskAdjustment": 0.05902,
+      "naturalSimilarityAdjustment": 0.098749,
+      "historicalDistributionAdjustment": 0.0,
+      "finalThreshold": 0.827151,
+      "formulaVersion": "FORMULA_SPEC_V1",
+      "explanation": "题目画像规则版：自然相似与模板化风险提高复核阈值，题目难度与解法空间扩大则降低阈值；各因素只通过动态阈值校准，不从综合相似度中重复扣分。"
+    },
+    "reasonSummary": "相似度已超过题目动态阈值，建议查看规范化与结构证据。",
+    "isMock": false,
+    "createdAt": "2026-10-16T07:31:58.451335+08:00"
+  }
+}
