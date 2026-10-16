@@ -1,0 +1,28 @@
+### Error
+TimeoutError: locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('figure[data-chart="dimension-heatmap"][data-ready="true"] .chart-surface').locator('svg path[stroke="#ffffff"][stroke-width="3"]').first()[22m
+[2m    - locator resolved to <path stroke="#ffffff" stroke-width="3" fill="rgb(212,227,240)" d="M65.75 9.75l115.5 0l0 29.8333l-115.5 0Z"></path>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <text fill="#34495e" text-anchor="middle" dominant-baseline="central" transform="translate(123.5 24.6667)">3</text> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <text fill="#34495e" text-anchor="middle" dominant-baseline="central" transform="translate(123.5 24.6667)">3</text> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    58 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <text fill="#34495e" text-anchor="middle" dominant-baseline="central" transform="translate(123.5 24.6667)">3</text> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+

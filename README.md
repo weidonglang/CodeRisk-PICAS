@@ -9,6 +9,8 @@ Problem-aware code similarity risk analysis for programming assignments.</p>
 
 <p align="center"><sub>题目背景 · 稳定表示 · 原文证据 · 人工复核<br>Vue 3 / Spring Boot / FastAPI</sub></p>
 
+<p align="center"><sub>原创项目版权署名：<strong>魏语石</strong>（weidonglang） · MIT</sub></p>
+
 <p align="center">
   <a href="#快速启动">快速启动</a> ·
   <a href="#界面预览">界面预览</a> ·
@@ -57,11 +59,33 @@ Java 与 Python 各已选 **30,000 对**；跨语言候选通过标题对齐，�
 
 ## 界面预览
 
-**2026-10-16 结果展示增强**：全任务风险分布、列表/图表切换、综合分与阈值同刻度对比、规范化差值、阈值分解和手机结果列表。无需额外图表依赖，保留数值与可访问标签。下图来自真实三服务和隔离 H2 联调；自有 `UI_SELF_AUTHORED` 数据仅验证界面与流程，**不是正式 benchmark 或真实学生案例**。
+**2026-10-16 统计分析视图**：在原有风险分布与证据页基础上，新增直方图（计数/占比）、Raw/Canonical散点、变化比例、多维热力图和箱线图；实验页可对比同run方法指标。采用按需加载的Apache ECharts6.1.0，支持SVG/CSV导出与数值明细。署名魏语石已同步LICENSE、README及桌面/手机页脚。
+
+下图是隔离H2中六份自编静态样例生成的**15对真实服务结果**，仅验证UI。不同聚合代码不被声明为功能等价或已标注关系，**不是正式benchmark或真实学生案例，不计入92,513条公开登记**。分页/筛选范围、各分量有效n、缺失与小样本门槛均明确保留。
+
+<p align="center"><img src="coderisk_docs/assets/ui-statistics-dimensions-20261016.png" alt="自有静态UI样例：多维指标热力图、分量箱线图、有效样本数及魏语石版权页脚" width="960"></p>
+
+[统计口径、选型与限制](coderisk_docs/STATISTICAL_VISUALIZATION.md) · [本轮验证与失败记录](coderisk/experiment/evidence/statistical-views-20261016/README.md) · [第三方许可](coderisk/frontend-vue/THIRD_PARTY_NOTICES.md)。散点参考线不是回归模型，比例不是作弊率，图表不改变生产评分。
+
+<details>
+<summary>规范化散点、分数分布与手机展示</summary>
+
+<p align="center"><img src="coderisk_docs/assets/ui-statistics-normalization-20261016.png" alt="Raw与Canonical散点、y=x参考线及变化比例，不作为关系判定" width="960"></p>
+<p align="center"><img src="coderisk_docs/assets/ui-statistics-histogram-20261016.png" alt="分数直方图、有效分母、Q1/中位数/Q3和描述性统计" width="960"></p>
+<p align="center"><img src="coderisk_docs/assets/ui-statistics-mobile-20261016.png" alt="手机统计视图及魏语石版权署名" width="320"></p>
+
+</details>
+
+<details>
+<summary>上一轮：风险分布与综合分/阈值对比（2026-10-16）</summary>
+
+原有全任务风险分布、当前页对比和证据仍保留。以下截图来自第二轮自有联调，普通结果列表不预先加载ECharts运行时。
 
 <p align="center"><img src="coderisk_docs/assets/ui-results-charts-20261016.png" alt="真实服务自有联调：全任务风险分布、当前页综合分与阈值对比、报告导出" width="960"></p>
 
 快速定位：[图表与结果阅读说明](coderisk_docs/RESULT_PRESENTATION_GUIDE.md) · [一键启动与运行手册](coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md) · [本轮检查记录](coderisk/experiment/evidence/result-review-20261016/README.md)。
+
+</details>
 
 <details>
 <summary>证据详情与手机展示</summary>
@@ -316,7 +340,7 @@ npm --prefix coderisk/frontend-vue ci
 
 | 当前状态 | 最近已验证内容 · 2026-10-16 | 尚未验证 |
 | --- | --- | --- |
-| **业务与工程** | Python 591、H2后端19、前端单测18、脚本26及build通过；真实流程41+详情5、图表交互30、模拟状态7项浏览器检查通过 | MySQL实库待凭据；自有UI样例不证明研究效果 |
+| **业务与工程** | 最新Python591、H2后端19、前端28单测与build通过；本轮125浏览器检查含统计、原流程、模块失败恢复；此前脚本26通过 | MySQL实库待凭据；自有UI样例不证明研究效果 |
 | **研究阶段 1–3** | 有限改名契约、独立消融、统计校准质量门禁 | 可信独立参考为空，真实误报改善未验证 |
 | **研究阶段 4–5** | 离线 LLM 协议、JPlag 实跑对齐、混合候选召回门禁 | 真实 LLM 未运行；缺完整候选池，混合效果 N/A |
 | **AI 时代 V0—V5** | 会话导入/来源协议、六方法分布、当前 JPlag 共同14对、只读双工作流 | 仅mock；真实生成/关系/教师效益未验证，正式结论不可估计 |
@@ -422,6 +446,7 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 | 第一次了解项目 | [项目规格](coderisk_docs/PROJECT_SPEC.md) · [架构说明](coderisk_docs/ARCHITECTURE.md) |
 | 本地运行与演示 | [运行手册](coderisk/README.md) · [数据库说明](coderisk/database/README.md) |
 | 阅读结果与界面 | [图表/阈值/证据说明](coderisk_docs/RESULT_PRESENTATION_GUIDE.md) · [前端与一键启动](coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md) |
+| 数学建模式分析视图 | [分布/散点/热力/箱线口径](coderisk_docs/STATISTICAL_VISUALIZATION.md) · [本轮验证](coderisk/experiment/evidence/statistical-views-20261016/README.md) |
 | 理解评分与算法 | [生产公式](coderisk_docs/FORMULA_SPEC.md) · [算法规格](coderisk_docs/ALGORITHM_SPEC.md) · [规范化说明](coderisk_docs/CANONICALIZATION_SPEC.md) |
 | 开题研究第一批 | [精准审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md) · [有限群作用](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) · [测试与阻塞](coderisk_docs/research/FIRST_BATCH_REPORT.md) |
 | 研究实验增量 | [多维消融](coderisk_docs/research/SIMILARITY_ABLATION.md) · [独立解答统计校准](coderisk_docs/research/NATURAL_SIMILARITY_CALIBRATION.md) · [离线 LLM 对照](coderisk_docs/research/LLM_BASELINE.md) · [混合门禁](coderisk_docs/research/HYBRID_DETECTION.md) |
@@ -460,8 +485,8 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 
 ## 许可证
 
-本项目原创代码与文档采用 [MIT License](LICENSE)，版权声明为 `Copyright (c) 2026 weidonglang`。
+本项目原创代码与文档署名 **魏语石**（GitHub：[weidonglang](https://github.com/weidonglang)），采用 [MIT License](LICENSE)，版权声明为 `Copyright (c) 2026 魏语石 (weidonglang)`。
 
 第三方数据、源码样例、依赖与工具仍遵循各自的许可和署名要求，不因本项目采用 MIT 而获得重新许可。未明确授权的数据不自动开放再分发；原始公开数据与下载缓存仍不随仓库提交。
 
-由 [weidonglang](https://github.com/weidonglang) 维护。
+由 **魏语石**（[weidonglang](https://github.com/weidonglang)）维护。此处是项目版权署名，不填写或暗示已取得的软件著作权登记编号。

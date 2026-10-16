@@ -1,0 +1,8 @@
+### Error
+Error: locator.textContent: Error: strict mode violation: locator('figure[data-chart="score-histogram"][data-ready="true"]').locator('svg') resolved to 2 elements:
+    1) <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">…</svg> aka getByRole('button', { name: '下载综合分直方图 SVG' })
+    2) <svg width="774" height="320" version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">…</svg> aka locator('svg').filter({ hasText: '占比 %0204060801000–2020–4040–' })
+
+Call log:
+[2m  - waiting for locator('figure[data-chart="score-histogram"][data-ready="true"]').locator('svg')[22m
+

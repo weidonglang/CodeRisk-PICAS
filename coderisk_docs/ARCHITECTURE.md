@@ -1,5 +1,7 @@
 # ARCHITECTURE.md
 
+> 2026-10-16统计展示增量：浏览器新增纯描述性`analysisStatistics.ts`与按需ECharts6.1.0/SVG渲染，结果分析和实验方法图复用原API。分位数/直方计数不返回生产链路，无新数据库或评分服务；组件卸载释放实例/ResizeObserver，导出仅在浏览器进行。项目原创内容署名魏语石，依赖许可独立。[设计与口径](STATISTICAL_VISUALIZATION.md)。
+
 > 2026-10-16开发体验增量：Vue继续使用原API，新增共享后端连接状态、中文状态/缺失值展示和证据标签页；`scripts/start-dev.ps1`按分析→后端→前端启动并等待真实就绪，`stop-dev.ps1`按进程身份停止托管树，日志/状态仅存本地`.tmp`。未新增业务服务、生产评分或数据库迁移，分析地址配置不冒充实时健康。见 [运行流程与验证](FRONTEND_AND_DEV_WORKFLOW.md)。
 
 > 2026-10-09 后续修复：结果页先读取任务状态再取结果；启动恢复同步已有结果对应 failure.resolved。同题画像更新先锁 question 行并加入保存结果事务，保证首次写入串行化及每对快照保存。已做 H2 两事务验证，仍为单后端架构，未验证 MySQL 实库。见 [修复记录](proposal/AI_REVIEW_HARDENING.md)。

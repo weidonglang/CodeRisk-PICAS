@@ -1,0 +1,40 @@
+
+> coderisk-frontend-vue@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ R7 descriptive quartiles use linear interpolation without mutating inputs (1.0774ms)
+✔ zero is valid; missing, strings and invalid scores are not zero observations (0.1125ms)
+✔ empty and singleton statistics are explicit, with no invented spread (0.1183ms)
+✔ histogram bins are left-closed/right-open, except the last includes 1 (0.2023ms)
+✔ proportion denominators are valid observations, not all rows (0.2508ms)
+✔ paired scatter requires both metrics and does not infer relationship labels (0.1881ms)
+✔ heatmap omits unknown cells but preserves real zero (0.1809ms)
+✔ each dimension keeps its own denominator for boxplots (0.1746ms)
+✔ HTML structure values are not mislabeled as programming-language AST (0.1777ms)
+✔ CSV escapes spreadsheet formulas, separators and missing values without changing numeric signs (2.9452ms)
+✔ network errors name the unavailable backend (0.5051ms)
+✔ timeouts have their own actionable status (0.0838ms)
+✔ server errors do not expose internal response messages (0.0671ms)
+✔ validation errors preserve the API message (0.0583ms)
+✔ non-string messages are not coerced into user-facing content (0.142ms)
+✔ blank validation messages have a fallback (0.0872ms)
+✔ missing or invalid scores are not displayed as zero (0.5105ms)
+✔ margins retain sign and units (0.1656ms)
+✔ progress is finite, bounded, and honest for an empty task (0.2442ms)
+✔ search is literal, trimmed and case insensitive (0.3312ms)
+✔ risk and task labels preserve server-defined states (0.183ms)
+✔ timestamps use explicit Shanghai timezone and reject bad input (12.0013ms)
+✔ chart scores reject unavailable and out-of-range values rather than clamp to a fake score (0.5031ms)
+✔ canonical difference is a signed display delta, not a risk recalculation (0.103ms)
+✔ full-task risk distribution includes medium and is not inferred from one page (0.5367ms)
+✔ missing, inconsistent, or unsafe counts never silently become a valid distribution (0.173ms)
+✔ empty distribution stays empty without divide-by-zero (0.1104ms)
+✔ signed threshold adjustment bars use a shared zero-centered scale (0.1324ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 319.8337

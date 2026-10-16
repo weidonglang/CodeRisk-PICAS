@@ -1,5 +1,7 @@
 # CodeRisk 文档导航
 
+同日最新统计视图：[直方图/散点/热力图/箱线图口径](STATISTICAL_VISUALIZATION.md)，含分母、分位数、缺失、小样本、导出和版权署名魏语石；不改变生产评分或正式数据资格。
+
 最新界面增量（2026-10-16）：[结果图表与证据阅读](RESULT_PRESENTATION_GUIDE.md)、[一键启动与本地流程](FRONTEND_AND_DEV_WORKFLOW.md)、[本轮工程验证](../coderisk/experiment/evidence/result-review-20261016/README.md)。图表保持原API及生产公式，experimental权重0；研究结论、公开数据规模和真实授权资格不因UI更新而变化。
 
 最新增量（2026-10-12）：[AI 时代价值审计](research/AI_ERA_VALUE_AUDIT.md)、[会话/来源协议](research/AI_CONVERGENCE_PROTOCOL.md)、[真实采集操作](research/LIVE_GENERATION_PLAYBOOK.md)、[PowerShell 复现](research/REPRODUCE_AI_CONVERGENCE.md)、[测试与失败记录](research/TEST_AND_EVIDENCE_SUMMARY.md)、[Go / Pivot / Stop 决策](research/PICAS_GO_NO_GO_DECISION.md)、[开题补充](research/PROPOSAL_AI_ERA_APPENDIX.md)。最新Python **591** / H2 后端 **19** / build 通过；mock 22 对、JPlag 共同 14 对，仅 development。当前正式结论 **INSUFFICIENT_EVIDENCE**，没有真实生成/人审/教师效益。本轮[证据包](../coderisk/experiment/evidence/ai-era-value-20261012/README.md)与下列历史记录分开。

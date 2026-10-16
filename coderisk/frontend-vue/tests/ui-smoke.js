@@ -8,7 +8,7 @@ async (page) => {
   page.on('pageerror', error => errors.push(error.message));
   const check = (ok, name) => { if (!ok) throw new Error(name); checks.push(name); };
   const title = 'UI_SELF_AUTHORED · 数组求和 · ' + Date.now();
-  const output = 'output/playwright/result-review-20261016/flow';
+  const output = 'output/playwright/statistical-views-20261016/flow';
   await page.goto(origin + '/questions/create');
   await page.getByRole('button', { name: '保存题目', exact: true }).click();
   await page.getByText('题目标题不能为空', { exact: true }).waitFor();

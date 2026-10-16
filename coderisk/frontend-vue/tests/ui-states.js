@@ -28,7 +28,7 @@ async (page) => {
     await page.getByText('概览、最近任务、题目、语言加载失败', { exact: true }).waitFor();
     check((await page.locator('.metric-tile > strong').allTextContents()).every(text => text === '-'), 'UNAVAILABLE_COUNTS_ARE_NOT_FAKE_ZERO');
     check(!(await page.locator('body').innerText()).includes('PRIVATE_SERVER_DIAGNOSTIC'), 'SERVER_INTERNAL_MESSAGE_NOT_EXPOSED');
-    await page.screenshot({ path: 'output/playwright/result-review-20261016/offline-fixture.png', animations: 'disabled' });
+    await page.screenshot({ path: 'output/playwright/statistical-views-20261016/offline-fixture.png', animations: 'disabled' });
   } finally { await page.unroute(origin + '/api/**'); }
   const result = { id: 9991, taskId: 999, submissionAFileName: 'UI_FIXTURE_A.py', submissionBFileName: 'UI_FIXTURE_B.py', tokenSimilarity: .2, astSimilarity: null, canonicalTokenSimilarity: null, identifierMappingSimilarity: null, weightedSimilarityScore: .2, dynamicThreshold: .7, riskMargin: -.5, calibratedRiskScore: .1, exceedThreshold: false, riskLevel: 'LOW', isMock: true, problemProfile: {}, thresholdAdjustment: {}, formulaVersion: 'UI_FIXTURE_ONLY', reasonSummary: 'UI fixture: parser fallback, not an algorithm result.' };
   let experimental = false;

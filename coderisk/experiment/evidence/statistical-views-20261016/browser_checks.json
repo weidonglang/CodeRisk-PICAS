@@ -1,0 +1,212 @@
+{
+  "total": 125,
+  "groups": [
+    {
+      "group": "statistics",
+      "file": "browser-statistics-publish-final.log",
+      "count": 51,
+      "record": {
+        "kind": "BROWSER_INTERCEPTED_FIXED_UI_FIXTURES_ONLY",
+        "checks": [
+          "ECHARTS_NOT_REQUESTED_BEFORE_ANALYSIS",
+          "NONBLANK_score-histogram",
+          "CURRENT_PAGE_SCOPE_NOT_GLOBAL",
+          "HISTOGRAM_VALID_DENOMINATOR_EXCLUDES_MISSING",
+          "HISTOGRAM_BINS_AND_PERCENT_MODE_UPDATE",
+          "SVG_DOWNLOAD",
+          "CSV_DOWNLOAD",
+          "NUMERIC_ALTERNATIVE_HAS_FOUR_SUMMARIES_AND_TWELVE_PAIRS",
+          "NONBLANK_normalization-scatter",
+          "SCATTER_PAIRED_DENOMINATOR",
+          "NORMALIZATION_PROPORTIONS_KEEP_SIGN",
+          "SCATTER_REFERENCE_LINE_NOT_A_FITTED_MODEL",
+          "NONBLANK_dimension-heatmap",
+          "NONBLANK_dimension-boxplot",
+          "HEATMAP_MISSING_IS_NOT_ZERO",
+          "HEATMAP_HAS_DRAWN_CELLS",
+          "HTML_NUMERIC_TABLE_PRESERVES_STRUCTURE_SEMANTICS",
+          "NO_PAGE_OVERFLOW_1440_score-histogram",
+          "RESIZED_NONZERO_1440_score-histogram",
+          "NO_PAGE_OVERFLOW_1440_normalization-scatter",
+          "RESIZED_NONZERO_1440_normalization-scatter",
+          "NO_PAGE_OVERFLOW_1440_dimension-heatmap",
+          "RESIZED_NONZERO_1440_dimension-heatmap",
+          "COPYRIGHT_VISIBLE_1440",
+          "NO_PAGE_OVERFLOW_768_score-histogram",
+          "RESIZED_NONZERO_768_score-histogram",
+          "NO_PAGE_OVERFLOW_768_normalization-scatter",
+          "RESIZED_NONZERO_768_normalization-scatter",
+          "NO_PAGE_OVERFLOW_768_dimension-heatmap",
+          "RESIZED_NONZERO_768_dimension-heatmap",
+          "COPYRIGHT_VISIBLE_768",
+          "NO_PAGE_OVERFLOW_390_score-histogram",
+          "RESIZED_NONZERO_390_score-histogram",
+          "NO_PAGE_OVERFLOW_390_normalization-scatter",
+          "RESIZED_NONZERO_390_normalization-scatter",
+          "NO_PAGE_OVERFLOW_390_dimension-heatmap",
+          "RESIZED_NONZERO_390_dimension-heatmap",
+          "COPYRIGHT_VISIBLE_390",
+          "NO_PAGE_OVERFLOW_320_score-histogram",
+          "RESIZED_NONZERO_320_score-histogram",
+          "NO_PAGE_OVERFLOW_320_normalization-scatter",
+          "RESIZED_NONZERO_320_normalization-scatter",
+          "NO_PAGE_OVERFLOW_320_dimension-heatmap",
+          "RESIZED_NONZERO_320_dimension-heatmap",
+          "COPYRIGHT_VISIBLE_320",
+          "ALL_MISSING_HAS_NO_INVENTED_HISTOGRAM",
+          "ALL_MISSING_HAS_NO_INVENTED_SCATTER",
+          "ALL_MISSING_HAS_NO_INVENTED_HEATMAP_OR_BOX",
+          "NO_BROWSER_RUNTIME_ERRORS",
+          "NO_EXTERNAL_APP_REQUESTS_EXCLUDING_ENVIRONMENT_ANTIVIRUS",
+          "COPYRIGHT_HOLDER_TEXT"
+        ],
+        "errors": [],
+        "databaseWrites": 0,
+        "mockRoutesRemoved": true,
+        "environmentAntivirusRequests": 41
+      }
+    },
+    {
+      "group": "liveStaticAnalysis",
+      "file": "browser-live.log",
+      "count": 9,
+      "record": {
+        "kind": "SELF_AUTHORED_SYNTHETIC_UI_ONLY_NOT_BENCHMARK",
+        "questionId": 7,
+        "taskId": 7,
+        "taskUrl": "http://127.0.0.1:5173/tasks/7/results",
+        "pairs": 15,
+        "checks": [
+          "SIX_SELF_AUTHORED_SYNTHETIC_UPLOADS",
+          "FIFTEEN_REAL_STATIC_ANALYSIS_RESULTS",
+          "REAL_HISTOGRAM_NONBLANK",
+          "REAL_SCATTER_NONBLANK",
+          "REAL_HEATMAP_NONBLANK",
+          "REAL_BOXPLOT_NONBLANK",
+          "LIVE_MOBILE_NO_PAGE_OVERFLOW",
+          "LIVE_OWNER_CREDIT",
+          "NO_BROWSER_RUNTIME_ERRORS"
+        ],
+        "errors": [],
+        "sourceExecution": false
+      }
+    },
+    {
+      "group": "evidenceAndExperiment",
+      "file": "browser-extra-final.log",
+      "count": 13,
+      "record": {
+        "kind": "REAL_SELF_AUTHORED_DRILL_AND_INTERCEPTED_EXPERIMENT_UI",
+        "checks": [
+          "DIRECT_ANALYSIS_URL",
+          "ANALYSIS_VIEW_SURVIVES_RELOAD",
+          "HEATMAP_CELL_DRILLS_INTO_REAL_EVIDENCE",
+          "SINGLETON_BOX_NOT_FABRICATED",
+          "EXPERIMENT_NULL_METRIC_NOT_ZERO",
+          "METHOD_CHART_DENOMINATORS_VISIBLE",
+          "ABLATION_AND_METRIC_CONTROLS",
+          "EXPERIMENT_NO_PAGE_OVERFLOW_1440",
+          "EXPERIMENT_NO_PAGE_OVERFLOW_768",
+          "EXPERIMENT_NO_PAGE_OVERFLOW_390",
+          "EXPERIMENT_NO_PAGE_OVERFLOW_320",
+          "NO_EXPERIMENT_NO_FAKE_METHOD_CHART",
+          "NO_BROWSER_RUNTIME_ERRORS"
+        ],
+        "errors": [],
+        "existingSelfAuthoredTaskId": 7,
+        "databaseWrites": 0
+      }
+    },
+    {
+      "group": "chartFallback",
+      "file": "browser-fallback.log",
+      "count": 4,
+      "record": {
+        "kind": "LOCAL_CHART_MODULE_FAILURE_TEST",
+        "checks": [
+          "MODULE_FAILURE_HAS_EXPLICIT_FALLBACK",
+          "NUMERIC_DATA_REMAINS_AVAILABLE",
+          "EXPLICIT_RELOAD_RECOVERS_CHART",
+          "RECOVERY_RETAINS_ANALYSIS_VIEW"
+        ],
+        "databaseWrites": 0
+      }
+    },
+    {
+      "group": "originalFlow",
+      "file": "browser-regression-flow.log",
+      "count": 41,
+      "record": {
+        "dataKind": "SELF_AUTHORED_UI_SMOKE_ONLY_NOT_BENCHMARK",
+        "questionId": 8,
+        "taskUrl": "http://127.0.0.1:5173/tasks/8/results",
+        "resultUrl": "http://127.0.0.1:5173/results/22",
+        "checks": [
+          "EMPTY_TITLE_VALIDATION",
+          "TEMPLATE_SOURCE_VALIDATION",
+          "QUESTION_CREATE_REAL_API",
+          "FILE_INPUT_CLEARED_UI_SELF_A",
+          "FILE_INPUT_CLEARED_UI_SELF_B",
+          "TASK_FINISHED_AND_RESULT_VISIBLE_REAL_ANALYSIS",
+          "HTML_REPORT_DOWNLOAD",
+          "EVIDENCE_ROW_SELECTION",
+          "SOURCE_LINE_HIGHLIGHTS",
+          "PROFILE_AND_THRESHOLD_TAB",
+          "IDENTIFIER_MAPPING_TAB",
+          "RESULT_BELONGS_TO_TASK_NAVIGATION",
+          "NO_PAGE_OVERFLOW_1440_/dashboard",
+          "NO_PAGE_OVERFLOW_1440_/questions",
+          "NO_PAGE_OVERFLOW_1440_/questions/create",
+          "NO_PAGE_OVERFLOW_1440_/questions/8/submissions",
+          "NO_PAGE_OVERFLOW_1440_/tasks",
+          "NO_PAGE_OVERFLOW_1440_/results/22",
+          "NO_PAGE_OVERFLOW_1440_/settings",
+          "NO_PAGE_OVERFLOW_768_/dashboard",
+          "NO_PAGE_OVERFLOW_768_/questions",
+          "NO_PAGE_OVERFLOW_768_/questions/create",
+          "NO_PAGE_OVERFLOW_768_/questions/8/submissions",
+          "NO_PAGE_OVERFLOW_768_/tasks",
+          "NO_PAGE_OVERFLOW_768_/results/22",
+          "NO_PAGE_OVERFLOW_768_/settings",
+          "NO_PAGE_OVERFLOW_390_/dashboard",
+          "NO_PAGE_OVERFLOW_390_/questions",
+          "NO_PAGE_OVERFLOW_390_/questions/create",
+          "NO_PAGE_OVERFLOW_390_/questions/8/submissions",
+          "NO_PAGE_OVERFLOW_390_/tasks",
+          "NO_PAGE_OVERFLOW_390_/results/22",
+          "NO_PAGE_OVERFLOW_390_/settings",
+          "NO_PAGE_OVERFLOW_320_/dashboard",
+          "NO_PAGE_OVERFLOW_320_/questions",
+          "NO_PAGE_OVERFLOW_320_/questions/create",
+          "NO_PAGE_OVERFLOW_320_/questions/8/submissions",
+          "NO_PAGE_OVERFLOW_320_/tasks",
+          "NO_PAGE_OVERFLOW_320_/results/22",
+          "NO_PAGE_OVERFLOW_320_/settings",
+          "NO_BROWSER_RUNTIME_ERRORS"
+        ],
+        "errors": [],
+        "sourceExecution": false
+      }
+    },
+    {
+      "group": "originalStates",
+      "file": "browser-regression-states.log",
+      "count": 7,
+      "record": {
+        "kind": "INTERCEPTED_UI_FIXTURES_ONLY_NOT_BENCHMARK",
+        "checks": [
+          "QUESTION_SERVER_PAGINATION",
+          "UNAVAILABLE_COUNTS_ARE_NOT_FAKE_ZERO",
+          "SERVER_INTERNAL_MESSAGE_NOT_EXPOSED",
+          "UNAVAILABLE_AST_CANONICAL_MAPPING_DISPLAY_AS_MISSING",
+          "PARSER_FALLBACK_DOES_NOT_INVENT_IR",
+          "EXPERIMENTAL_METRICS_CLEAR_ZERO_WEIGHT_BOUNDARY",
+          "TERMINAL_STATUS_READ_BEFORE_RESULT_REQUESTS"
+        ],
+        "mockRoutesRemoved": true,
+        "databaseWrites": 0
+      }
+    }
+  ],
+  "checksAreNotIndependentResearchSamples": true
+}

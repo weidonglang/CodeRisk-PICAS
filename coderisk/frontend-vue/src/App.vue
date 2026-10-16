@@ -59,7 +59,7 @@ onUnmounted(() => clearInterval(healthTimer))
           </div>
         </header>
         <main id="main-content" class="main-surface" tabindex="-1"><router-view /></main>
-        <footer class="page-footer"><span>CodeRisk / PICAS</span><span>相似信号不等于来源关系，风险结果仅供人工复核。</span><Connection /></footer>
+        <footer class="page-footer"><span class="project-credit">© 2026 魏语石 · CodeRisk / PICAS</span><span>相似信号不等于来源关系，风险结果仅供人工复核。</span><Connection /></footer>
       </div>
     </div>
   </el-config-provider>
@@ -123,7 +123,8 @@ nav { display: grid; gap: 6px; }
   .topbar-actions { gap: 0; }
   .connection-status { font-size: 10px; }
   .main-surface { padding: 22px 16px; }
-  .page-footer { padding: 12px 16px; align-items: flex-start; }
-  .page-footer > span:first-child, .page-footer svg { display: none; }
+  .page-footer { padding: 12px 16px; align-items: flex-start; flex-wrap: wrap; gap: 9px; }
+  .page-footer .project-credit { flex-basis: 100%; }
+  .page-footer svg { display: none; }
 }
 </style>

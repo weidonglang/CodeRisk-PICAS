@@ -1,0 +1,11 @@
+{
+  "kind": "STANDARD_CSV_PARSER_UI_ONLY",
+  "checks": {
+    "row_count": true,
+    "formula_escaped": true,
+    "real_zero": true,
+    "missing_empty": true,
+    "page_scope": true,
+    "formula_version": true
+  }
+}

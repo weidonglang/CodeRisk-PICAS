@@ -1,0 +1,59 @@
+[
+  {
+    "files": [
+      "browser-statistics.log"
+    ],
+    "kind": "Initial chart readiness timeout; specific cause not asserted",
+    "disposition": "Later rendering, fallback and retries passed"
+  },
+  {
+    "files": [
+      "browser-statistics-r2.log"
+    ],
+    "kind": "SVG locator also selected the download icon",
+    "disposition": "Scoped to chart-surface"
+  },
+  {
+    "files": [
+      "browser-extra.log",
+      "browser-extra-r2.log"
+    ],
+    "kind": "RGB serialization and center-label interception",
+    "disposition": "Clicked a real heatmap cell corner and reached real evidence"
+  },
+  {
+    "files": [
+      "browser-extra-r3.log",
+      "browser-extra-r4.log",
+      "browser-extra-diagnostic.log",
+      "browser-extra-diagnostic-r2.log"
+    ],
+    "kind": "Transient dropdown leaving while testing viewport resize",
+    "disposition": "Waited for option hidden and ResizeObserver convergence; four widths passed"
+  },
+  {
+    "files": [
+      "browser-statistics-final.log"
+    ],
+    "kind": "Fixture assumed refresh discarded selected analysis plot",
+    "disposition": "Explicitly selected distribution; query persistence retained"
+  },
+  {
+    "files": [
+      "frontend-html-red.log",
+      "browser-html-table-red.log"
+    ],
+    "kind": "HTML structure mislabeled AST in dimension helper and numeric table",
+    "disposition": "Independent unit and browser red tests before shared-label fixes; final 28/51 passed"
+  },
+  {
+    "files": [],
+    "localOnly": [
+      "npm-audit.json",
+      "npm-audit-all.json",
+      "npm-audit-all-r2.json"
+    ],
+    "kind": "TLS blocked registry advisory requests",
+    "disposition": "Runtime retry succeeded: six prior advisories then zero after compatible updates; full audit unavailable, not claimed clean"
+  }
+]

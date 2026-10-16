@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Refresh } from '@element-plus/icons-vue'
-import { onMounted, ref } from 'vue'
+import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import { percent } from '../utils/presentation'
 
 import { getLatestExperiment, type ExperimentMetricRow, type LatestExperiment } from '../api/experimentApi'
@@ -8,16 +8,20 @@ import { getLatestExperiment, type ExperimentMetricRow, type LatestExperiment } 
 const loading = ref(false)
 const error = ref('')
 const experiment = ref<LatestExperiment | null>(null)
+const ExperimentComparisonChart = defineAsyncComponent(() => import('../components/ExperimentComparisonChart.vue'))
+let requestVersion = 0
 
 async function load() {
+  const version = ++requestVersion
   loading.value = true
   error.value = ''
   try {
-    experiment.value = (await getLatestExperiment()).data
+    const response = await getLatestExperiment()
+    if (version === requestVersion) experiment.value = response.data
   } catch (err) {
-    error.value = err instanceof Error ? err.message : '实验结果加载失败'
+    if (version === requestVersion) error.value = err instanceof Error ? err.message : '实验结果加载失败'
   } finally {
-    loading.value = false
+    if (version === requestVersion) loading.value = false
   }
 }
 
@@ -26,6 +30,7 @@ function rows(key: 'E1_fixedVsDynamic' | 'E3_fusion' | 'E4_ablation'): Experimen
 }
 
 onMounted(load)
+onUnmounted(() => { requestVersion++ })
 </script>
 
 <template>
@@ -39,6 +44,7 @@ onMounted(load)
     </div>
 
     <el-alert v-if="error" type="error" :title="error" :closable="false" />
+    <el-empty v-if="!loading && !experiment" description="暂无可用的离线实验产物" :image-size="70" />
 
     <div v-if="experiment" class="metric-grid section-gap">
       <div class="metric-tile">
@@ -65,8 +71,10 @@ onMounted(load)
       type="info"
       :closable="false"
       :title="`Problem-level 隔离：validation ${experiment.summary.run.validationCaseCount} 条 / test ${experiment.summary.run.testCaseCount} 条`"
-      :description="`Validation 选择固定阈值 ${experiment.summary.validationCalibration.selectedFixedThreshold.toFixed(2)}；生产动态阈值公式未在 test 上调整。`"
+      :description="`Validation 选择固定阈值 ${percent(experiment.summary.validationCalibration.selectedFixedThreshold, 1)}；生产动态阈值公式未在 test 上调整。`"
     />
+
+    <ExperimentComparisonChart v-if="experiment" :summary="experiment.summary" />
 
     <section v-if="experiment" class="panel section-gap">
       <h2>E1 固定阈值 vs 动态阈值</h2>

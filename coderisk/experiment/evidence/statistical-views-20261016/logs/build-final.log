@@ -1,0 +1,61 @@
+
+> coderisk-frontend-vue@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+vite v6.4.3 building for production...
+transforming...
+node_modules/@vueuse/core/dist/index.js (3362:0): A comment
+
+"/* #__PURE__ */"
+
+in "node_modules/@vueuse/core/dist/index.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+node_modules/@vueuse/core/dist/index.js (5780:22): A comment
+
+"/* #__PURE__ */"
+
+in "node_modules/@vueuse/core/dist/index.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+✓ 2313 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                                  0.70 kB │ gzip:   0.45 kB
+dist/assets/QuestionListView-B-nsdvD3.css                                        0.12 kB │ gzip:   0.12 kB
+dist/assets/ExperimentComparisonChart-CHByTgK4.css                               0.29 kB │ gzip:   0.20 kB
+dist/assets/SupportLevelTag-oCNoDRxx.css                                         0.33 kB │ gzip:   0.22 kB
+dist/assets/ExperimentView-vI9tWN9d.css                                          0.35 kB │ gzip:   0.23 kB
+dist/assets/analysisStatistics-DOalDfxF.css                                      0.57 kB │ gzip:   0.30 kB
+dist/assets/TaskListView-BqbqTKJR.css                                            0.57 kB │ gzip:   0.31 kB
+dist/assets/QuestionCreateView-Cg_Z_8F_.css                                      0.65 kB │ gzip:   0.32 kB
+dist/assets/SettingsView-DrV1zsFB.css                                            0.86 kB │ gzip:   0.41 kB
+dist/assets/ScoreTrack-CpBMNdVx.css                                              1.67 kB │ gzip:   0.60 kB
+dist/assets/SubmissionUploadView-kIUU3Km4.css                                    1.69 kB │ gzip:   0.64 kB
+dist/assets/TaskStatisticalAnalysis-DhI2W3zh.css                                 2.77 kB │ gzip:   0.85 kB
+dist/assets/DashboardView-DlyxZkhv.css                                           3.65 kB │ gzip:   1.09 kB
+dist/assets/TaskResultView-D9pstfdv.css                                          5.12 kB │ gzip:   1.29 kB
+dist/assets/ResultDetailView-D-6MpTIH.css                                        8.75 kB │ gzip:   2.12 kB
+dist/assets/index-DjcACBst.css                                                 367.38 kB │ gzip:  50.26 kB
+dist/assets/questionApi-3Pr3NYD2.js                                              0.24 kB │ gzip:   0.17 kB
+dist/assets/SupportLevelTag-BBz53mrb.js                                          0.36 kB │ gzip:   0.32 kB
+dist/assets/TaskStatusBadge.vue_vue_type_script_setup_true_lang-Bixwvb87.js      0.43 kB │ gzip:   0.32 kB
+dist/assets/taskApi-CwIBnnYx.js                                                  0.78 kB │ gzip:   0.30 kB
+dist/assets/presentation-C7L3EqnF.js                                             1.31 kB │ gzip:   0.71 kB
+dist/assets/ExperimentComparisonChart-DLCpRxml.js                                2.81 kB │ gzip:   1.67 kB
+dist/assets/ScoreTrack-BGCeuXBW.js                                               3.03 kB │ gzip:   1.44 kB
+dist/assets/QuestionListView-DRJgSvo1.js                                         3.53 kB │ gzip:   1.78 kB
+dist/assets/SettingsView-vRuP3QPP.js                                             4.07 kB │ gzip:   1.91 kB
+dist/assets/TaskListView-DUOIauis.js                                             4.50 kB │ gzip:   2.16 kB
+dist/assets/QuestionCreateView-B0gP4gqo.js                                       4.65 kB │ gzip:   2.08 kB
+dist/assets/ExperimentView-hS3BVaJd.js                                           4.67 kB │ gzip:   2.00 kB
+dist/assets/analysisStatistics-CCCEDHIb.js                                       5.41 kB │ gzip:   2.68 kB
+dist/assets/SubmissionUploadView-C-_E6iiq.js                                     7.48 kB │ gzip:   3.50 kB
+dist/assets/DashboardView-CFVRhMVI.js                                            7.70 kB │ gzip:   3.24 kB
+dist/assets/TaskStatisticalAnalysis-CLc8bLmL.js                                 13.00 kB │ gzip:   5.28 kB
+dist/assets/TaskResultView-YgEo_JHq.js                                          16.30 kB │ gzip:   6.13 kB
+dist/assets/ResultDetailView-CdrNQQlU.js                                        24.04 kB │ gzip:   8.87 kB
+dist/assets/echartsRuntime-C2VU2Iw2.js                                         584.20 kB │ gzip: 199.16 kB
+dist/assets/index-sVSjrhgu.js                                                1,107.83 kB │ gzip: 368.55 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.12s

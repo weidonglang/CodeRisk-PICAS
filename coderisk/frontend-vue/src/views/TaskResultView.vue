@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { Download, Refresh, View, Search, DataAnalysis, List } from '@element-plus/icons-vue'
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed, defineAsyncComponent, onMounted, onUnmounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import RiskBadge from '../components/RiskBadge.vue'
 import TaskStatusBadge from '../components/TaskStatusBadge.vue'
 import RiskDistribution from '../components/RiskDistribution.vue'
 import ScoreTrack from '../components/ScoreTrack.vue'
 import { percent, margin, includesQuery, dateTime } from '../utils/presentation'
 
+const TaskStatisticalAnalysis = defineAsyncComponent(() => import('../components/TaskStatisticalAnalysis.vue'))
+
 import { createTaskReport, getTask, getTaskFailures, getTaskResults, getTaskResultSummary, startTask, type DetectionTask, type ResultRow, type TaskResultSummary, type TaskPairFailure } from '../api/taskApi'
 
 const route = useRoute()
+const router = useRouter()
 const taskId = computed(() => Number(route.params.taskId))
 const loading = ref(false)
 const error = ref('')
@@ -25,7 +28,13 @@ const totalRows = ref(0)
 const starting = ref(false)
 const search = ref('')
 const riskFilter = ref('全部')
-const resultView = ref('table')
+function viewFromQuery() { return ['chart', 'analysis'].includes(String(route.query.view)) ? String(route.query.view) : 'table' }
+const resultView = ref(viewFromQuery())
+watch(() => route.query.view, () => { resultView.value = viewFromQuery() })
+watch(resultView, value => {
+  if (route.path !== `/tasks/${taskId.value}/results` || value === viewFromQuery()) return
+  void router.replace({ query: { ...route.query, view: value === 'table' ? undefined : value, plot: value === 'analysis' ? route.query.plot : undefined } })
+})
 const visibleResults = computed(() => results.value.filter(row =>
   includesQuery(search.value, row.submissionAFileName, row.submissionBFileName) &&
   (riskFilter.value === '全部' || row.riskLevel === riskFilter.value),
@@ -186,7 +195,7 @@ async function exportReport() {
       <div class="table-toolbar">
         <el-input v-model="search" :prefix-icon="Search" placeholder="本页搜索文件名" aria-label="本页搜索文件名" clearable />
         <el-select v-model="riskFilter" aria-label="本页风险筛选" class="risk-filter"><el-option v-for="option in [{ value: '全部', label: '本页全部风险' }, { value: 'HIGH', label: '高风险' }, { value: 'ELEVATED', label: '较高风险' }, { value: 'MEDIUM', label: '中风险' }, { value: 'LOW', label: '低风险' }]" :key="option.value" :value="option.value" :label="option.label" /></el-select>
-        <el-segmented v-model="resultView" :options="[{ value: 'table', label: '列表', icon: List }, { value: 'chart', label: '图表', icon: DataAnalysis }]" aria-label="结果展示方式"><template #default="{ item }"><span class="view-option"><el-icon><component :is="item.icon" /></el-icon>{{ item.label }}</span></template></el-segmented>
+        <el-segmented v-model="resultView" :options="[{ value: 'table', label: '列表', icon: List }, { value: 'chart', label: '图表', icon: DataAnalysis }, { value: 'analysis', label: '分析', icon: DataAnalysis }]" aria-label="结果展示方式"><template #default="{ item }"><span class="view-option"><el-icon><component :is="item.icon" /></el-icon>{{ item.label }}</span></template></el-segmented>
       </div>
       <div v-if="resultView === 'chart'" class="pair-chart" aria-label="当前页代码对分数与阈值对比">
         <div class="chart-caption"><span>当前页筛选结果 · {{ visibleResults.length }} 对</span><span><i class="score-key" />综合分 <i class="threshold-key" />阈值</span></div>
@@ -199,6 +208,7 @@ async function exportReport() {
         <el-empty v-if="!visibleResults.length" :description="search || riskFilter !== '全部' ? '本页没有符合条件的代码对' : '暂无结果'" />
         <div v-if="visibleResults.length" class="pair-chart-axis" aria-hidden="true"><div><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div></div>
       </div>
+      <TaskStatisticalAnalysis v-else-if="resultView === 'analysis'" :rows="visibleResults" :page="currentPage" :loaded="results.length" :total="totalRows" />
       <el-table v-else v-loading="loading && !results.length" :data="visibleResults" :empty-text="search || riskFilter !== '全部' ? '本页没有符合条件的代码对' : '暂无结果'" row-key="id" class="results-desktop">
         <el-table-column label="代码 A" min-width="160">
           <template #default="{ row }">{{ row.submissionAFileName }}</template>

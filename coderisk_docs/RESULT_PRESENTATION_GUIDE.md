@@ -1,6 +1,6 @@
 # 结果展示与图表阅读
 
-更新：2026-10-16。本轮是前端展示增强，不更换生产评分公式、风险分类、API 或数据库结构。图表只读取原 API 数字；没有引入图表依赖或模型调用。
+更新：2026-10-16。本轮是前端展示增强，不更换生产评分公式、风险分类、API 或数据库结构。第二轮使用轻量HTML刻度；同日第三轮新增按需ECharts6.1.0描述性统计，未调用模型。直方图、散点、热力图、箱线图、范围/分母、导出及署名见[统计可视化说明](STATISTICAL_VISUALIZATION.md)。
 
 ## 从任务到证据
 
@@ -41,7 +41,7 @@ npm --prefix coderisk/frontend-vue run build
 .\coderisk\scripts\run-all-tests.ps1 -Python '<可用Python路径>' -JavaHome '<JDK21目录>'
 ```
 
-浏览器脚本在 `coderisk/frontend-vue/tests/ui-smoke.js`、`ui-states.js`、`ui-result-charts.js`、`ui-result-live.js`，采用Playwright CLI `run-code --filename`。先运行CLI `--help`，准备根目录的 `output/playwright/result-review-20261016/flow`，仅对隔离测试库运行真实写入脚本；live脚本要求先有UI_SELF自有已完成任务。逐个执行并等待完成，不能同时控制同一临时浏览器会话。复用工具不等于项目生产依赖；当前没有将本机Chrome路径写死到应用。
+浏览器脚本在 `coderisk/frontend-vue/tests/`，采用Playwright CLI `run-code --filename`。先运行CLI `--help`，查看脚本当前输出目录并预先创建；第三轮原流程的目录为 `output/playwright/statistical-views-20261016/flow`。仅对隔离测试库运行真实写入脚本，live脚本要求先有对应UI_SELF自有任务。逐个执行并等待完成，不能同时控制同一临时浏览器会话。当前没有将本机Chrome路径写死到应用。
 
 第一轮启动/重启回归与第二轮图表回归分开归档，不能混作一次实验。完整记录见[本轮证据](../coderisk/experiment/evidence/result-review-20261016/README.md)、[测试报告](../coderisk/TEST_REPORT.md)、[已知限制](../coderisk/KNOWN_ISSUES.md)。启动及本地数据隔离见[开发手册](FRONTEND_AND_DEV_WORKFLOW.md)。
 

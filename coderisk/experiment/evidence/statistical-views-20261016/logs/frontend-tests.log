@@ -1,0 +1,39 @@
+
+> coderisk-frontend-vue@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ R7 descriptive quartiles use linear interpolation without mutating inputs (1.1355ms)
+✔ zero is valid; missing, strings and invalid scores are not zero observations (2.862ms)
+✔ empty and singleton statistics are explicit, with no invented spread (0.1696ms)
+✔ histogram bins are left-closed/right-open, except the last includes 1 (0.2121ms)
+✔ proportion denominators are valid observations, not all rows (0.2413ms)
+✔ paired scatter requires both metrics and does not infer relationship labels (0.2393ms)
+✔ heatmap omits unknown cells but preserves real zero (0.1537ms)
+✔ each dimension keeps its own denominator for boxplots (0.1415ms)
+✔ CSV escapes spreadsheet formulas, separators and missing values without changing numeric signs (0.2881ms)
+✔ network errors name the unavailable backend (0.4846ms)
+✔ timeouts have their own actionable status (0.0763ms)
+✔ server errors do not expose internal response messages (0.0627ms)
+✔ validation errors preserve the API message (0.0563ms)
+✔ non-string messages are not coerced into user-facing content (0.0934ms)
+✔ blank validation messages have a fallback (0.0556ms)
+✔ missing or invalid scores are not displayed as zero (0.5223ms)
+✔ margins retain sign and units (0.0961ms)
+✔ progress is finite, bounded, and honest for an empty task (0.0878ms)
+✔ search is literal, trimmed and case insensitive (0.1408ms)
+✔ risk and task labels preserve server-defined states (0.116ms)
+✔ timestamps use explicit Shanghai timezone and reject bad input (11.3154ms)
+✔ chart scores reject unavailable and out-of-range values rather than clamp to a fake score (0.5028ms)
+✔ canonical difference is a signed display delta, not a risk recalculation (0.0946ms)
+✔ full-task risk distribution includes medium and is not inferred from one page (0.5378ms)
+✔ missing, inconsistent, or unsafe counts never silently become a valid distribution (0.18ms)
+✔ empty distribution stays empty without divide-by-zero (0.0966ms)
+✔ signed threshold adjustment bars use a shared zero-centered scale (0.1236ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 325.8685

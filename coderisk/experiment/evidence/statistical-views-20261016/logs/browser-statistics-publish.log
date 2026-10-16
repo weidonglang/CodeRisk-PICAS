@@ -1,0 +1,111 @@
+### Result
+{"kind":"BROWSER_INTERCEPTED_FIXED_UI_FIXTURES_ONLY","checks":["ECHARTS_NOT_REQUESTED_BEFORE_ANALYSIS","NONBLANK_score-histogram","CURRENT_PAGE_SCOPE_NOT_GLOBAL","HISTOGRAM_VALID_DENOMINATOR_EXCLUDES_MISSING","HISTOGRAM_BINS_AND_PERCENT_MODE_UPDATE","SVG_DOWNLOAD","CSV_DOWNLOAD","NUMERIC_ALTERNATIVE_HAS_FOUR_SUMMARIES_AND_TWELVE_PAIRS","NONBLANK_normalization-scatter","SCATTER_PAIRED_DENOMINATOR","NORMALIZATION_PROPORTIONS_KEEP_SIGN","SCATTER_REFERENCE_LINE_NOT_A_FITTED_MODEL","NONBLANK_dimension-heatmap","NONBLANK_dimension-boxplot","HEATMAP_MISSING_IS_NOT_ZERO","HEATMAP_HAS_DRAWN_CELLS","NO_PAGE_OVERFLOW_1440_score-histogram","RESIZED_NONZERO_1440_score-histogram","NO_PAGE_OVERFLOW_1440_normalization-scatter","RESIZED_NONZERO_1440_normalization-scatter","NO_PAGE_OVERFLOW_1440_dimension-heatmap","RESIZED_NONZERO_1440_dimension-heatmap","COPYRIGHT_VISIBLE_1440","NO_PAGE_OVERFLOW_768_score-histogram","RESIZED_NONZERO_768_score-histogram","NO_PAGE_OVERFLOW_768_normalization-scatter","RESIZED_NONZERO_768_normalization-scatter","NO_PAGE_OVERFLOW_768_dimension-heatmap","RESIZED_NONZERO_768_dimension-heatmap","COPYRIGHT_VISIBLE_768","NO_PAGE_OVERFLOW_390_score-histogram","RESIZED_NONZERO_390_score-histogram","NO_PAGE_OVERFLOW_390_normalization-scatter","RESIZED_NONZERO_390_normalization-scatter","NO_PAGE_OVERFLOW_390_dimension-heatmap","RESIZED_NONZERO_390_dimension-heatmap","COPYRIGHT_VISIBLE_390","NO_PAGE_OVERFLOW_320_score-histogram","RESIZED_NONZERO_320_score-histogram","NO_PAGE_OVERFLOW_320_normalization-scatter","RESIZED_NONZERO_320_normalization-scatter","NO_PAGE_OVERFLOW_320_dimension-heatmap","RESIZED_NONZERO_320_dimension-heatmap","COPYRIGHT_VISIBLE_320","ALL_MISSING_HAS_NO_INVENTED_HISTOGRAM","ALL_MISSING_HAS_NO_INVENTED_SCATTER","ALL_MISSING_HAS_NO_INVENTED_HEATMAP_OR_BOX","NO_BROWSER_RUNTIME_ERRORS","NO_EXTERNAL_APP_REQUESTS_EXCLUDING_ENVIRONMENT_ANTIVIRUS","COPYRIGHT_HOLDER_TEXT"],"errors":[],"databaseWrites":0,"mockRoutesRemoved":true,"environmentAntivirusRequests":34}
+### Ran Playwright code
+```js
+await (// Fixed, browser-intercepted UI fixtures, not measured algorithm outcomes.
+async (page) => {
+  const origin=await page.evaluate(()=>location.origin);
+  if(!/^http:\/\/127\.0\.0\.1:\d+$/.test(origin))throw new Error('Local test application required');
+  const out='output/playwright/statistical-views-20261016';
+  const checks=[],errors=[],requests=[];
+  const onError=e=>errors.push(e.message);
+  const onRequest=r=>requests.push(r.url());
+  page.on('pageerror',onError);page.on('request',onRequest);
+  const check=(ok,label)=>{if(!ok)throw new Error(label);checks.push(label)};
+  const fulfill=(route,data)=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({success:true,code:'OK',data})});
+  const weighted=[0,.1,.2,.35,.49,.5,.6,.7,.8,.9,1,null];
+  const raws=[0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1,null];
+  const canons=[.1,.4,.8,.2,.4,.9,.4,null,.8,1,1,.7];
+  let allMissing=false;
+  const rows=()=>weighted.map((value,i)=>({id:99200+i,taskId:9920,submissionAFileName:i===0?'@UI_ONLY_A.py':'UI_ONLY_A_'+i+'.py',submissionBFileName:'UI_ONLY_B_'+i+'.py',tokenSimilarity:allMissing?null:raws[i],astSimilarity:allMissing||i<2?null:.7,canonicalTokenSimilarity:allMissing?null:canons[i],identifierMappingSimilarity:allMissing||i===0?null:.8,weightedSimilarityScore:allMissing?null:value,dynamicThreshold:allMissing?null:.75,riskMargin:allMissing||value===null?null:value-.75,riskLevel:['LOW','MEDIUM','ELEVATED','HIGH'][i%4],isMock:true}));
+  await page.route(origin+'/api/tasks/9920**',async route=>{
+    const url=route.request().url().split('?')[0];
+    if(url.endsWith('/summary'))await fulfill(route,{totalResults:120,lowCount:30,mediumCount:30,elevatedCount:30,highCount:30,containsMockData:true});
+    else if(url.endsWith('/failures'))await fulfill(route,[]);
+    else if(url.endsWith('/results'))await fulfill(route,{items:rows(),total:120,page:1,pageSize:20,totalPages:6});
+    else await fulfill(route,{id:9920,taskName:'UI_ONLY_INTERCEPTED_STATISTICS',taskMode:'PICAS_STANDARD',status:'FINISHED',totalPairs:120,finishedPairs:120,failedPairs:0,progress:1});
+  });
+  await page.route(origin+'/api/results/992**',async route=>{
+    const url=route.request().url().split('?')[0];
+    if(url.endsWith('/evidence')||url.endsWith('/metrics'))await fulfill(route,[]);
+    else if(url.endsWith('/diff-view'))await fulfill(route,{codeA:{fileName:'UI_ONLY_A.py',code:'#UI_ONLY'},codeB:{fileName:'UI_ONLY_B.py',code:'#UI_ONLY'},highlights:[]});
+    else await fulfill(route,{...rows()[0],formulaVersion:'UI_ONLY_FIXTURE',problemProfile:{},thresholdAdjustment:{}});
+  });
+  const chart=key=>page.locator(`figure[data-chart="${key}"][data-ready="true"]`);
+  const ready=async key=>{await chart(key).locator('.chart-surface svg').waitFor();check(await chart(key).locator('svg text').count()>3,'NONBLANK_'+key)};
+  try {
+    await page.setViewportSize({width:1440,height:1000});
+    await page.goto(origin+'/tasks/9920/results');
+    await page.getByRole('heading',{name:'任务状态：FINISHED',exact:true}).waitFor();
+    await page.waitForLoadState('networkidle');
+    check(!requests.some(url=>url.includes('echartsRuntime')),'ECHARTS_NOT_REQUESTED_BEFORE_ANALYSIS');
+    await page.getByText('分析',{exact:true}).click();
+    await ready('score-histogram');
+    check((await page.locator('.analysis-scope').innerText()).includes('12对')&&(await page.locator('.analysis-scope').innerText()).includes('120对'),'CURRENT_PAGE_SCOPE_NOT_GLOBAL');
+    check((await page.locator('.analysis-facts').innerText()).includes('11 / 12'),'HISTOGRAM_VALID_DENOMINATOR_EXCLUDES_MISSING');
+    await page.getByText('占比',{exact:true}).click();
+    await page.getByText('5组',{exact:true}).click();
+    check((await chart('score-histogram').locator('.chart-surface svg').textContent()).includes('0–20'),'HISTOGRAM_BINS_AND_PERCENT_MODE_UPDATE');
+    const [svg]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'下载综合分直方图 SVG',exact:true}).click()]);
+    check(svg.suggestedFilename()==='score-histogram.svg','SVG_DOWNLOAD');
+    await svg.saveAs(out+'/intercepted-histogram.svg');
+    const [csv]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'导出本页 CSV',exact:true}).click()]);
+    check(csv.suggestedFilename()==='picas-page-1-analysis.csv','CSV_DOWNLOAD');
+    await csv.saveAs(out+'/intercepted-analysis.csv');
+    await page.getByText('数值明细 · 分量统计与原始代码对',{exact:true}).click();
+    check(await page.locator('.analysis-numbers tbody tr').count()===16,'NUMERIC_ALTERNATIVE_HAS_FOUR_SUMMARIES_AND_TWELVE_PAIRS');
+    await page.getByText('规范化对照',{exact:true}).click();
+    await ready('normalization-scatter');
+    check((await page.locator('.analysis-facts').innerText()).includes('10 / 12'),'SCATTER_PAIRED_DENOMINATOR');
+    check(await page.locator('.change-ratio').getAttribute('aria-label')==='更高5，相同3，更低2','NORMALIZATION_PROPORTIONS_KEEP_SIGN');
+    check((await chart('normalization-scatter').locator('.chart-surface').getAttribute('aria-label')).includes('不是拟合线'),'SCATTER_REFERENCE_LINE_NOT_A_FITTED_MODEL');
+    await page.getByText('多维结构',{exact:true}).click();
+    await ready('dimension-heatmap');await ready('dimension-boxplot');
+    check((await chart('dimension-heatmap').locator('.chart-surface').getAttribute('aria-label')).includes('空白是缺失，不是0分'),'HEATMAP_MISSING_IS_NOT_ZERO');
+    const svgNode=chart('dimension-heatmap').locator('.chart-surface svg');
+    const firstCell=svgNode.locator('path').filter({hasNot:page.locator('text')});
+    check(await firstCell.count()>0,'HEATMAP_HAS_DRAWN_CELLS');
+    await page.screenshot({path:out+'/intercepted-dimensions.png',fullPage:true,animations:'disabled'});
+    for(const width of [1440,768,390,320]){
+      await page.setViewportSize({width,height:900});
+      for(const [label,key] of [['分数分布','score-histogram'],['规范化对照','normalization-scatter'],['多维结构','dimension-heatmap']]){
+        await page.getByText(label,{exact:true}).click();
+        await chart(key).locator('.chart-surface svg').waitFor();
+        await page.waitForFunction(()=>[...document.querySelectorAll('.chart-surface')].filter(el=>el.clientWidth>0).every(el=>{const svg=el.querySelector('svg');return !svg||Math.abs(Number(svg.getAttribute('width'))-el.clientWidth)<2}));
+        check(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'NO_PAGE_OVERFLOW_'+width+'_'+key);
+        check(await chart(key).locator('.chart-surface').evaluate(el=>el.clientWidth>0&&el.clientHeight>0),'RESIZED_NONZERO_'+width+'_'+key);
+      }
+      check(await page.locator('.project-credit').isVisible(),'COPYRIGHT_VISIBLE_'+width);
+    }
+    await page.setViewportSize({width:1440,height:1000});
+    allMissing=true;
+    await page.reload();await page.getByText('分析',{exact:true}).click();
+    await page.getByText('分数分布',{exact:true}).click();
+    await page.getByText('没有有效综合分，未绘制分布',{exact:true}).waitFor();
+    check(await page.locator('.stat-chart').count()===0,'ALL_MISSING_HAS_NO_INVENTED_HISTOGRAM');
+    await page.getByText('规范化对照',{exact:true}).click();
+    await page.getByText('没有共同有效的 Raw / Canonical，未绘制散点',{exact:true}).waitFor();
+    check(await page.locator('.stat-chart').count()===0,'ALL_MISSING_HAS_NO_INVENTED_SCATTER');
+    await page.getByText('多维结构',{exact:true}).click();
+    await page.getByText('各分量有效值不足4个，暂不绘制箱线图',{exact:true}).waitFor();
+    check(await page.locator('.stat-chart').count()===0,'ALL_MISSING_HAS_NO_INVENTED_HEATMAP_OR_BOX');
+    check(errors.length===0,'NO_BROWSER_RUNTIME_ERRORS');
+    check(!requests.some(url=>/^https?:/.test(url)&&!url.startsWith(origin+'/')&&!/^https?:\/\/[^/]*\.kaspersky-labs\.com\//.test(url)),'NO_EXTERNAL_APP_REQUESTS_EXCLUDING_ENVIRONMENT_ANTIVIRUS');
+    check((await page.locator('.project-credit').innerText()).includes('魏语石'),'COPYRIGHT_HOLDER_TEXT');
+  } finally {
+    await page.unroute(origin+'/api/tasks/9920**');await page.unroute(origin+'/api/results/992**');
+    page.off('pageerror',onError);page.off('request',onRequest);
+    await page.setViewportSize({width:1440,height:1000});await page.goto(origin+'/dashboard');
+  }
+  return {kind:'BROWSER_INTERCEPTED_FIXED_UI_FIXTURES_ONLY',checks,errors,databaseWrites:0,mockRoutesRemoved:true,environmentAntivirusRequests:requests.filter(url=>/^https?:\/\/[^/]*\.kaspersky-labs\.com\//.test(url)).length};
+}
+)(page);
+```
+### Page
+- Page URL: http://127.0.0.1:5173/dashboard
+- Page Title: 工作台 · CodeRisk / PICAS
+### Events
+- Downloading file score-histogram.svg ...
+- Downloaded file score-histogram.svg to ".playwright-cli\score-histogram.svg"
+- Downloading file picas-page-1-analysis.csv ...
+- Downloaded file picas-page-1-analysis.csv to ".playwright-cli\picas-page-1-analysis.csv"
