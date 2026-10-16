@@ -1,0 +1,47 @@
+.................FF                                                      [100%]
+================================== FAILURES ===================================
+______________ test_located_explicit_fallback[for-shadow-field] _______________
+
+case = ('for-shadow-field', 'java', 'class Main { int value=7; int f() { for (int value=0; value<1; value++) {} return value; } }', 'REJECTED_UNSUPPORTED', 'JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED')
+
+    @pytest.mark.parametrize('case', [c for c in BOUNDARIES if c[3] != 'ORACLE_UNCERTAIN'], ids=lambda c: c[0])
+    def test_located_explicit_fallback(case):
+        _, language, code, _, reason = case
+        tokens = tokenize_code_with_locations(code, language)
+        result = canonicalize_code(code, language, tokens)
+>       assert result.mode == 'lexical-fallback'
+E       AssertionError: assert 'scope-aware-java' == 'lexical-fallback'
+E         
+E         - lexical-fallback
+E         + scope-aware-java
+
+tests\test_group_action_fallback_contracts.py:14: AssertionError
+______________ test_java_header_shadow_warning_uses_existing_api ______________
+
+tmp_path = WindowsPath('E:/ms/.tmp/opening-red-tests-20261011/test_java_header_shadow_warnin0')
+
+    def test_java_header_shadow_warning_uses_existing_api(tmp_path):
+        code = next(c[2] for c in BOUNDARIES if c[0] == 'for-shadow-field')
+        client = build_client(tmp_path)
+        a, b = tmp_path / 'uploads/a.java', tmp_path / 'uploads/b.java'
+        a.parent.mkdir(parents=True, exist_ok=True)
+        a.write_text(code, encoding='utf-8')
+        b.write_text('class Main { int fold(int number) { return number; } }', encoding='utf-8')
+        response = client.post('/internal/analyze/pair', json=_pair_payload(a, b, 'java'))
+        assert response.status_code == 200
+        result = response.json()['result']
+>       assert result['weightedSimilarityScore'] == result['tokenSimilarity']
+E       assert 0.133537 == 0.073171
+
+tests\test_group_action_fallback_contracts.py:30: AssertionError
+============================== warnings summary ===============================
+..\..\.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1
+  E:\ms\.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: E:\ms\output\opening-research-20261011\s0\normalization-red.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_group_action_fallback_contracts.py::test_located_explicit_fallback[for-shadow-field]
+FAILED tests/test_group_action_fallback_contracts.py::test_java_header_shadow_warning_uses_existing_api
+2 failed, 17 passed, 1 warning in 1.81s

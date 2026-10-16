@@ -1,5 +1,7 @@
 # 群作用下的有限标识符规范化
 
+> 2026-10-11 S1/S2 增量：以下保留 2026-10-10 记录。当前补齐 [轨道、商集与 α-等价](ORBIT_ALPHA_EQUIVALENCE.md)、[逐项证明义务](GROUP_ACTION_PROOF_OBLIGATIONS.md) 与独立手标 gold/stdlib oracle；旧生成器的同源准入风险不隐藏。新 Java header 遮蔽用 located raw 降级，不是完整 for/catch 支持。实际运行与分母见 [双维报告](INVARIANCE_DISCRIMINABILITY_REPORT.md)。生产公式未改；不变性仅完整 C 序列，C 是轨道常值特征而非完整轨道代表元/判定器。
+
 日期：2026-10-10。对应 `canonicalization.py`、`experiment/identifier_renaming.py` 和三个新增测试文件。状态是**条件命题/证明草图 + 有限实现测试**，不是完整语言的机器证明。生产公式未修改。
 
 ## 1. 对象、群与作用

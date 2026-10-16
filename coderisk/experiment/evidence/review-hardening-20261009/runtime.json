@@ -1,0 +1,1337 @@
+{
+  "timestamp_utc": "2026-10-09T13:23:14.730294+00:00",
+  "data_kind": "SELF_AUTHORED_SYNTHETIC_RUNTIME_FIXTURES",
+  "database": "isolated persistent H2, Flyway V1–V5",
+  "analysis_service": "real local FastAPI, not mocked",
+  "python_version": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "implementation_sha256": {
+    "backend-springboot\\src\\main\\java\\com\\coderisk\\task\\TaskService.java": "0dda67b03005a1f9796a4abc293f73b8c03a38e8455c98a02bc831aa91e59186",
+    "backend-springboot\\src\\main\\java\\com\\coderisk\\task\\TaskRepository.java": "9ad1a7a8b9bbdba8775968fada693273f2ce57933c34bf42992f054daa95ae66",
+    "analysis-service-python\\app\\analyzers\\token_similarity.py": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e"
+  },
+  "implementation_sha256_lf": {
+    "backend-springboot\\src\\main\\java\\com\\coderisk\\task\\TaskService.java": "0dda67b03005a1f9796a4abc293f73b8c03a38e8455c98a02bc831aa91e59186",
+    "backend-springboot\\src\\main\\java\\com\\coderisk\\task\\TaskRepository.java": "9ad1a7a8b9bbdba8775968fada693273f2ce57933c34bf42992f054daa95ae66",
+    "analysis-service-python\\app\\analyzers\\token_similarity.py": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e"
+  },
+  "hash_convention": "implementation_sha256 hashes local bytes; implementation_sha256_lf normalizes CRLF/CR to LF for Git/checkouts.",
+  "scale_runs": [
+    {
+      "submissions": 10,
+      "pairs": 45,
+      "task_id": 2,
+      "start_response_seconds": 0.02246240000022226,
+      "completion_observed_seconds": 0.9996600000013132,
+      "accepted_status": "RUNNING",
+      "duplicate_start_status": "RUNNING",
+      "final": {
+        "status": "FINISHED",
+        "finishedPairs": 45,
+        "failedPairs": 0,
+        "progress": 1.0
+      },
+      "progress_samples": [
+        {
+          "status": "RUNNING",
+          "finishedPairs": 0,
+          "failedPairs": 0,
+          "progress": 0.0
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 0,
+          "failedPairs": 0,
+          "progress": 0.0
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 3,
+          "failedPairs": 0,
+          "progress": 0.0667
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 7,
+          "failedPairs": 0,
+          "progress": 0.1556
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 14,
+          "failedPairs": 0,
+          "progress": 0.3111
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 22,
+          "failedPairs": 0,
+          "progress": 0.4889
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 30,
+          "failedPairs": 0,
+          "progress": 0.6667
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 38,
+          "failedPairs": 0,
+          "progress": 0.8444
+        },
+        {
+          "status": "FINISHED",
+          "finishedPairs": 45,
+          "failedPairs": 0,
+          "progress": 1.0
+        }
+      ],
+      "score_accuracy_claimed": false
+    },
+    {
+      "submissions": 20,
+      "pairs": 190,
+      "task_id": 3,
+      "start_response_seconds": 0.030380100000911625,
+      "completion_observed_seconds": 3.10838529999819,
+      "accepted_status": "RUNNING",
+      "duplicate_start_status": "RUNNING",
+      "final": {
+        "status": "FINISHED",
+        "finishedPairs": 190,
+        "failedPairs": 0,
+        "progress": 1.0
+      },
+      "progress_samples": [
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1,
+          "failedPairs": 0,
+          "progress": 0.0053
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 9,
+          "failedPairs": 0,
+          "progress": 0.0474
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 17,
+          "failedPairs": 0,
+          "progress": 0.0895
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 24,
+          "failedPairs": 0,
+          "progress": 0.1263
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 30,
+          "failedPairs": 0,
+          "progress": 0.1579
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 38,
+          "failedPairs": 0,
+          "progress": 0.2
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 46,
+          "failedPairs": 0,
+          "progress": 0.2421
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 53,
+          "failedPairs": 0,
+          "progress": 0.2789
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 60,
+          "failedPairs": 0,
+          "progress": 0.3158
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 68,
+          "failedPairs": 0,
+          "progress": 0.3579
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 75,
+          "failedPairs": 0,
+          "progress": 0.3947
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 81,
+          "failedPairs": 0,
+          "progress": 0.4263
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 89,
+          "failedPairs": 0,
+          "progress": 0.4684
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 96,
+          "failedPairs": 0,
+          "progress": 0.5053
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 103,
+          "failedPairs": 0,
+          "progress": 0.5421
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 111,
+          "failedPairs": 0,
+          "progress": 0.5842
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 118,
+          "failedPairs": 0,
+          "progress": 0.6211
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 125,
+          "failedPairs": 0,
+          "progress": 0.6579
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 132,
+          "failedPairs": 0,
+          "progress": 0.6947
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 138,
+          "failedPairs": 0,
+          "progress": 0.7263
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 145,
+          "failedPairs": 0,
+          "progress": 0.7632
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 153,
+          "failedPairs": 0,
+          "progress": 0.8053
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 161,
+          "failedPairs": 0,
+          "progress": 0.8474
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 169,
+          "failedPairs": 0,
+          "progress": 0.8895
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 176,
+          "failedPairs": 0,
+          "progress": 0.9263
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 182,
+          "failedPairs": 0,
+          "progress": 0.9579
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 189,
+          "failedPairs": 0,
+          "progress": 0.9947
+        },
+        {
+          "status": "FINISHED",
+          "finishedPairs": 190,
+          "failedPairs": 0,
+          "progress": 1.0
+        }
+      ],
+      "score_accuracy_claimed": false
+    },
+    {
+      "submissions": 50,
+      "pairs": 1225,
+      "task_id": 4,
+      "start_response_seconds": 0.0032680999975127634,
+      "completion_observed_seconds": 19.047910899997078,
+      "accepted_status": "RUNNING",
+      "duplicate_start_status": "RUNNING",
+      "final": {
+        "status": "FINISHED",
+        "finishedPairs": 1225,
+        "failedPairs": 0,
+        "progress": 1.0
+      },
+      "progress_samples": [
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1,
+          "failedPairs": 0,
+          "progress": 0.0008
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 9,
+          "failedPairs": 0,
+          "progress": 0.0073
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 17,
+          "failedPairs": 0,
+          "progress": 0.0139
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 24,
+          "failedPairs": 0,
+          "progress": 0.0196
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 31,
+          "failedPairs": 0,
+          "progress": 0.0253
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 38,
+          "failedPairs": 0,
+          "progress": 0.031
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 45,
+          "failedPairs": 0,
+          "progress": 0.0367
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 52,
+          "failedPairs": 0,
+          "progress": 0.0424
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 60,
+          "failedPairs": 0,
+          "progress": 0.049
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 68,
+          "failedPairs": 0,
+          "progress": 0.0555
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 75,
+          "failedPairs": 0,
+          "progress": 0.0612
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 81,
+          "failedPairs": 0,
+          "progress": 0.0661
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 89,
+          "failedPairs": 0,
+          "progress": 0.0727
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 96,
+          "failedPairs": 0,
+          "progress": 0.0784
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 103,
+          "failedPairs": 0,
+          "progress": 0.0841
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 111,
+          "failedPairs": 0,
+          "progress": 0.0906
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 119,
+          "failedPairs": 0,
+          "progress": 0.0971
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 127,
+          "failedPairs": 0,
+          "progress": 0.1037
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 134,
+          "failedPairs": 0,
+          "progress": 0.1094
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 141,
+          "failedPairs": 0,
+          "progress": 0.1151
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 148,
+          "failedPairs": 0,
+          "progress": 0.1208
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 155,
+          "failedPairs": 0,
+          "progress": 0.1265
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 163,
+          "failedPairs": 0,
+          "progress": 0.1331
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 170,
+          "failedPairs": 0,
+          "progress": 0.1388
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 176,
+          "failedPairs": 0,
+          "progress": 0.1437
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 184,
+          "failedPairs": 0,
+          "progress": 0.1502
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 192,
+          "failedPairs": 0,
+          "progress": 0.1567
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 200,
+          "failedPairs": 0,
+          "progress": 0.1633
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 208,
+          "failedPairs": 0,
+          "progress": 0.1698
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 216,
+          "failedPairs": 0,
+          "progress": 0.1763
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 224,
+          "failedPairs": 0,
+          "progress": 0.1829
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 231,
+          "failedPairs": 0,
+          "progress": 0.1886
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 237,
+          "failedPairs": 0,
+          "progress": 0.1935
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 245,
+          "failedPairs": 0,
+          "progress": 0.2
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 253,
+          "failedPairs": 0,
+          "progress": 0.2065
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 261,
+          "failedPairs": 0,
+          "progress": 0.2131
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 269,
+          "failedPairs": 0,
+          "progress": 0.2196
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 277,
+          "failedPairs": 0,
+          "progress": 0.2261
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 285,
+          "failedPairs": 0,
+          "progress": 0.2327
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 293,
+          "failedPairs": 0,
+          "progress": 0.2392
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 300,
+          "failedPairs": 0,
+          "progress": 0.2449
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 307,
+          "failedPairs": 0,
+          "progress": 0.2506
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 315,
+          "failedPairs": 0,
+          "progress": 0.2571
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 322,
+          "failedPairs": 0,
+          "progress": 0.2629
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 329,
+          "failedPairs": 0,
+          "progress": 0.2686
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 337,
+          "failedPairs": 0,
+          "progress": 0.2751
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 345,
+          "failedPairs": 0,
+          "progress": 0.2816
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 353,
+          "failedPairs": 0,
+          "progress": 0.2882
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 361,
+          "failedPairs": 0,
+          "progress": 0.2947
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 368,
+          "failedPairs": 0,
+          "progress": 0.3004
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 375,
+          "failedPairs": 0,
+          "progress": 0.3061
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 383,
+          "failedPairs": 0,
+          "progress": 0.3127
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 390,
+          "failedPairs": 0,
+          "progress": 0.3184
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 397,
+          "failedPairs": 0,
+          "progress": 0.3241
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 404,
+          "failedPairs": 0,
+          "progress": 0.3298
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 411,
+          "failedPairs": 0,
+          "progress": 0.3355
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 417,
+          "failedPairs": 0,
+          "progress": 0.3404
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 425,
+          "failedPairs": 0,
+          "progress": 0.3469
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 433,
+          "failedPairs": 0,
+          "progress": 0.3535
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 441,
+          "failedPairs": 0,
+          "progress": 0.36
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 449,
+          "failedPairs": 0,
+          "progress": 0.3665
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 457,
+          "failedPairs": 0,
+          "progress": 0.3731
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 464,
+          "failedPairs": 0,
+          "progress": 0.3788
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 472,
+          "failedPairs": 0,
+          "progress": 0.3853
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 480,
+          "failedPairs": 0,
+          "progress": 0.3918
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 488,
+          "failedPairs": 0,
+          "progress": 0.3984
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 496,
+          "failedPairs": 0,
+          "progress": 0.4049
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 504,
+          "failedPairs": 0,
+          "progress": 0.4114
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 511,
+          "failedPairs": 0,
+          "progress": 0.4171
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 519,
+          "failedPairs": 0,
+          "progress": 0.4237
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 527,
+          "failedPairs": 0,
+          "progress": 0.4302
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 535,
+          "failedPairs": 0,
+          "progress": 0.4367
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 543,
+          "failedPairs": 0,
+          "progress": 0.4433
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 551,
+          "failedPairs": 0,
+          "progress": 0.4498
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 559,
+          "failedPairs": 0,
+          "progress": 0.4563
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 567,
+          "failedPairs": 0,
+          "progress": 0.4629
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 575,
+          "failedPairs": 0,
+          "progress": 0.4694
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 583,
+          "failedPairs": 0,
+          "progress": 0.4759
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 590,
+          "failedPairs": 0,
+          "progress": 0.4816
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 596,
+          "failedPairs": 0,
+          "progress": 0.4865
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 604,
+          "failedPairs": 0,
+          "progress": 0.4931
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 612,
+          "failedPairs": 0,
+          "progress": 0.4996
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 619,
+          "failedPairs": 0,
+          "progress": 0.5053
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 626,
+          "failedPairs": 0,
+          "progress": 0.511
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 634,
+          "failedPairs": 0,
+          "progress": 0.5176
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 642,
+          "failedPairs": 0,
+          "progress": 0.5241
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 650,
+          "failedPairs": 0,
+          "progress": 0.5306
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 658,
+          "failedPairs": 0,
+          "progress": 0.5371
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 666,
+          "failedPairs": 0,
+          "progress": 0.5437
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 673,
+          "failedPairs": 0,
+          "progress": 0.5494
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 680,
+          "failedPairs": 0,
+          "progress": 0.5551
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 688,
+          "failedPairs": 0,
+          "progress": 0.5616
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 696,
+          "failedPairs": 0,
+          "progress": 0.5682
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 703,
+          "failedPairs": 0,
+          "progress": 0.5739
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 710,
+          "failedPairs": 0,
+          "progress": 0.5796
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 718,
+          "failedPairs": 0,
+          "progress": 0.5861
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 725,
+          "failedPairs": 0,
+          "progress": 0.5918
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 732,
+          "failedPairs": 0,
+          "progress": 0.5976
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 740,
+          "failedPairs": 0,
+          "progress": 0.6041
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 748,
+          "failedPairs": 0,
+          "progress": 0.6106
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 756,
+          "failedPairs": 0,
+          "progress": 0.6171
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 764,
+          "failedPairs": 0,
+          "progress": 0.6237
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 772,
+          "failedPairs": 0,
+          "progress": 0.6302
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 780,
+          "failedPairs": 0,
+          "progress": 0.6367
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 788,
+          "failedPairs": 0,
+          "progress": 0.6433
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 796,
+          "failedPairs": 0,
+          "progress": 0.6498
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 804,
+          "failedPairs": 0,
+          "progress": 0.6563
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 812,
+          "failedPairs": 0,
+          "progress": 0.6629
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 819,
+          "failedPairs": 0,
+          "progress": 0.6686
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 826,
+          "failedPairs": 0,
+          "progress": 0.6743
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 834,
+          "failedPairs": 0,
+          "progress": 0.6808
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 841,
+          "failedPairs": 0,
+          "progress": 0.6865
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 848,
+          "failedPairs": 0,
+          "progress": 0.6922
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 855,
+          "failedPairs": 0,
+          "progress": 0.698
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 862,
+          "failedPairs": 0,
+          "progress": 0.7037
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 870,
+          "failedPairs": 0,
+          "progress": 0.7102
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 877,
+          "failedPairs": 0,
+          "progress": 0.7159
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 883,
+          "failedPairs": 0,
+          "progress": 0.7208
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 890,
+          "failedPairs": 0,
+          "progress": 0.7265
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 897,
+          "failedPairs": 0,
+          "progress": 0.7322
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 905,
+          "failedPairs": 0,
+          "progress": 0.7388
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 913,
+          "failedPairs": 0,
+          "progress": 0.7453
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 921,
+          "failedPairs": 0,
+          "progress": 0.7518
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 929,
+          "failedPairs": 0,
+          "progress": 0.7584
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 937,
+          "failedPairs": 0,
+          "progress": 0.7649
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 945,
+          "failedPairs": 0,
+          "progress": 0.7714
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 952,
+          "failedPairs": 0,
+          "progress": 0.7771
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 958,
+          "failedPairs": 0,
+          "progress": 0.782
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 966,
+          "failedPairs": 0,
+          "progress": 0.7886
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 974,
+          "failedPairs": 0,
+          "progress": 0.7951
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 982,
+          "failedPairs": 0,
+          "progress": 0.8016
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 990,
+          "failedPairs": 0,
+          "progress": 0.8082
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 998,
+          "failedPairs": 0,
+          "progress": 0.8147
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1006,
+          "failedPairs": 0,
+          "progress": 0.8212
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1014,
+          "failedPairs": 0,
+          "progress": 0.8278
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1022,
+          "failedPairs": 0,
+          "progress": 0.8343
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1030,
+          "failedPairs": 0,
+          "progress": 0.8408
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1038,
+          "failedPairs": 0,
+          "progress": 0.8473
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1046,
+          "failedPairs": 0,
+          "progress": 0.8539
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1054,
+          "failedPairs": 0,
+          "progress": 0.8604
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1062,
+          "failedPairs": 0,
+          "progress": 0.8669
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1070,
+          "failedPairs": 0,
+          "progress": 0.8735
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1078,
+          "failedPairs": 0,
+          "progress": 0.88
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1086,
+          "failedPairs": 0,
+          "progress": 0.8865
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1094,
+          "failedPairs": 0,
+          "progress": 0.8931
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1102,
+          "failedPairs": 0,
+          "progress": 0.8996
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1110,
+          "failedPairs": 0,
+          "progress": 0.9061
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1118,
+          "failedPairs": 0,
+          "progress": 0.9127
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1126,
+          "failedPairs": 0,
+          "progress": 0.9192
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1134,
+          "failedPairs": 0,
+          "progress": 0.9257
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1142,
+          "failedPairs": 0,
+          "progress": 0.9322
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1150,
+          "failedPairs": 0,
+          "progress": 0.9388
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1158,
+          "failedPairs": 0,
+          "progress": 0.9453
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1165,
+          "failedPairs": 0,
+          "progress": 0.951
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1172,
+          "failedPairs": 0,
+          "progress": 0.9567
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1180,
+          "failedPairs": 0,
+          "progress": 0.9633
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1188,
+          "failedPairs": 0,
+          "progress": 0.9698
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1196,
+          "failedPairs": 0,
+          "progress": 0.9763
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1204,
+          "failedPairs": 0,
+          "progress": 0.9829
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1212,
+          "failedPairs": 0,
+          "progress": 0.9894
+        },
+        {
+          "status": "RUNNING",
+          "finishedPairs": 1219,
+          "failedPairs": 0,
+          "progress": 0.9951
+        },
+        {
+          "status": "FINISHED",
+          "finishedPairs": 1225,
+          "failedPairs": 0,
+          "progress": 1.0
+        }
+      ],
+      "score_accuracy_claimed": false
+    }
+  ],
+  "partial_recovery": {
+    "task_id": 5,
+    "before": {
+      "id": 5,
+      "questionId": 2,
+      "taskName": "Synthetic missing-file recovery",
+      "taskMode": "PICAS_STANDARD",
+      "status": "PARTIAL",
+      "totalSubmissions": 3,
+      "totalPairs": 3,
+      "finishedPairs": 1,
+      "failedPairs": 2,
+      "progress": 0.3333,
+      "submissionIds": [
+        51,
+        52,
+        53
+      ],
+      "failureReason": "500 Internal Server Error: \"{\"success\":false,\"errorCode\":\"ANALYSIS_SERVICE_ERROR\",\"message\":\"[Errno 2] No such file or directory: 'E:\\\\\\\\ms\\\\\\\\.tmp\\\\\\\\review-hardening\\\\\\\\uploads\\\\\\\\submissions\\\\\\\\2\\\\\\\\47a1075a-2a2b-4945-aa28-17476aa42a44\\\\\\\\raw.py'\",\"analysisVersion\":\"0.1.0\",\"configVersion\":\"dev\",\"result\":null}\"",
+      "createdAt": "2026-10-09T21:23:14.363499+08:00",
+      "finishedAt": "2026-10-09T21:23:14.470632+08:00"
+    },
+    "after": {
+      "id": 5,
+      "questionId": 2,
+      "taskName": "Synthetic missing-file recovery",
+      "taskMode": "PICAS_STANDARD",
+      "status": "FINISHED",
+      "totalSubmissions": 3,
+      "totalPairs": 3,
+      "finishedPairs": 3,
+      "failedPairs": 0,
+      "progress": 1.0,
+      "submissionIds": [
+        51,
+        52,
+        53
+      ],
+      "failureReason": "",
+      "createdAt": "2026-10-09T21:23:14.363499+08:00",
+      "finishedAt": "2026-10-09T21:23:14.585423+08:00"
+    },
+    "successful_result_id_preserved": 1461,
+    "failure_history": [
+      {
+        "submissionAId": 51,
+        "submissionBId": 53,
+        "message": "500 Internal Server Error: \"{\"success\":false,\"errorCode\":\"ANALYSIS_SERVICE_ERROR\",\"message\":\"[Errno 2] No such file or directory: 'E:\\\\\\\\ms\\\\\\\\.tmp\\\\\\\\review-hardening\\\\\\\\uploads\\\\\\\\submissions\\\\\\\\2\\\\\\\\47a1075a-2a2b-4945-aa28-17476aa42a44\\\\\\\\raw.py'\",\"analysisVersion\":\"0.1.0\",\"configVersion\":\"dev\",\"result\":null}\"",
+        "attempts": 1,
+        "resolved": true,
+        "lastAttemptAt": "2026-10-09T21:23:14.460162+08:00"
+      },
+      {
+        "submissionAId": 52,
+        "submissionBId": 53,
+        "message": "500 Internal Server Error: \"{\"success\":false,\"errorCode\":\"ANALYSIS_SERVICE_ERROR\",\"message\":\"[Errno 2] No such file or directory: 'E:\\\\\\\\ms\\\\\\\\.tmp\\\\\\\\review-hardening\\\\\\\\uploads\\\\\\\\submissions\\\\\\\\2\\\\\\\\47a1075a-2a2b-4945-aa28-17476aa42a44\\\\\\\\raw.py'\",\"analysisVersion\":\"0.1.0\",\"configVersion\":\"dev\",\"result\":null}\"",
+        "attempts": 1,
+        "resolved": true,
+        "lastAttemptAt": "2026-10-09T21:23:14.469634+08:00"
+      }
+    ],
+    "report_generated": "GENERATED"
+  },
+  "limitations": [
+    "One local machine; no throughput/SLA claim.",
+    "50 synthetic Python submissions is an execution check, not a language accuracy or student-data benchmark.",
+    "Service restart recovery verified separately by backend integration tests; no distributed deployment support."
+  ]
+}

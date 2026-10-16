@@ -1,0 +1,24 @@
+{
+  "new_source_records": 86941,
+  "source_records_by_language": {
+    "c": 574,
+    "cpp": 11198,
+    "csharp": 10735,
+    "java": 11028,
+    "javascript": 9951,
+    "php": 3553,
+    "python": 39902
+  },
+  "unique_language_text_hashes": 86496,
+  "raw_python_sources": 29280,
+  "tokenized_program_records": 57661,
+  "raw_python_published_pairs": 30000,
+  "unlabelled_title_aligned_cross_language_candidates": 30893,
+  "xlcost_candidates_without_java": 20713,
+  "registered_pair_rows": 60893,
+  "eligible_for_core_metrics": 0,
+  "synthetic_pairs": 0,
+  "placeholder_pairs": 0,
+  "all_relation_labels_require_independent_review": true,
+  "tokenized_programs_are_not_raw_source": true
+}

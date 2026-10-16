@@ -1,0 +1,9 @@
+{
+  "generation_session_id": "MOCK-sum-1-SESSION",
+  "problem_id": "MOCK-sum",
+  "model_id": "MOCK-MODEL-A",
+  "prompt_sha256": "d055aeab012d4e29814dfddc12c79e95cc315b07b4c35e3f576b9ba7e3a1d30c",
+  "raw_output_sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb",
+  "synthetic": true,
+  "note": "Hand-written fixture, not a model response"
+}

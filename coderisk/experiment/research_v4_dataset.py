@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 from collections import Counter, defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -115,6 +116,9 @@ def validate_cases(
         if missing:
             errors.append(f"Case {case_id} is missing normalized fields: {missing}")
             continue
+        for field in ("pair_id", "problem_id", "source_id", "problem_type", "dataset_version"):
+            if not _nonblank(case[field]):
+                errors.append(f"Case {case_id} has empty {field}")
         if case_id in seen_pair_ids:
             errors.append(f"Duplicate pair_id: {case_id}")
         seen_pair_ids.add(case_id)
@@ -405,18 +409,52 @@ def _validate_provenance(
     if not isinstance(provenance, dict) or not provenance:
         errors.append(f"Case {case_id} is missing provenance")
         return
-    if case["case_type"] == "AI_REWRITE":
-        required = {"model_name", "prompt_template", "generation_time", "manual_check_status", "functional_check_status"}
-        missing = sorted(required - set(provenance))
-        if missing and case["eligible_for_core_metrics"]:
-            errors.append(f"Eligible AI_REWRITE case {case_id} lacks provenance fields: {missing}")
-        if provenance.get("manual_check_status") != "VERIFIED" or provenance.get("functional_check_status") != "PASSED":
-            if case["eligible_for_core_metrics"]:
-                errors.append(f"Eligible AI_REWRITE case {case_id} is not manually and functionally verified")
-            else:
-                warnings.append(f"AI_REWRITE case {case_id} is retained for analysis only")
-    if case["data_origin"] != "SYNTHETIC" and not provenance.get("license_or_authorization"):
+    if not _nonblank(provenance.get("source")):
+        errors.append(f"Case {case_id} lacks provenance source")
+    issues = core_eligibility_issues(case)
+    if issues:
+        prefix = "Eligible AI_REWRITE" if is_ai_assisted(case) else "Eligible"
+        if case["eligible_for_core_metrics"]:
+            errors.append(f"{prefix} case {case_id} blocked: {', '.join(issues)}")
+        else:
+            warnings.append(f"Case {case_id} retained for analysis only: {', '.join(issues)}")
+    if (case["data_origin"] != "SYNTHETIC" or case["source_type"] in {"manual", "external", "ai_assisted"}) and not _nonblank(provenance.get("license_or_authorization")):
         errors.append(f"Non-synthetic case {case_id} lacks license_or_authorization")
+
+
+def _nonblank(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def is_ai_assisted(case: dict[str, Any]) -> bool:
+    return case.get("source_type") == "ai_assisted" or case.get("case_type") == "AI_REWRITE"
+
+
+def core_eligibility_issues(case: dict[str, Any]) -> list[str]:
+    """Workflow eligibility only; formal human-review gates remain separate."""
+    issues = []
+    if case.get("source_type") == "placeholder":
+        issues.append("placeholder cannot enter core metrics")
+    if case.get("experiment_label") == "UNCERTAIN":
+        issues.append("UNCERTAIN cannot enter core metrics")
+    provenance = case.get("provenance")
+    provenance = provenance if isinstance(provenance, dict) else {}
+    if is_ai_assisted(case):
+        for field in ("model_name", "prompt_template", "generation_time"):
+            if not _nonblank(provenance.get(field)):
+                issues.append(field)
+        if _nonblank(provenance.get("generation_time")):
+            try:
+                timestamp = datetime.fromisoformat(provenance["generation_time"])
+                if timestamp.utcoffset() is None:
+                    raise ValueError("Missing time zone")
+            except ValueError:
+                issues.append("generation_time must be ISO-8601 with a time zone")
+        if provenance.get("manual_check_status") != "VERIFIED":
+            issues.append("manual_check_status=VERIFIED")
+        if provenance.get("functional_check_status") != "PASSED":
+            issues.append("functional_check_status=PASSED")
+    return issues
 
 
 def _normalized_required_fields() -> set[str]:
@@ -429,7 +467,7 @@ def _normalized_required_fields() -> set[str]:
 
 
 def _valid_question(question: Any) -> bool:
-    return isinstance(question, dict) and bool(question.get("title")) and bool(question.get("description"))
+    return isinstance(question, dict) and _nonblank(question.get("title")) and _nonblank(question.get("description"))
 
 
 def _counter(cases: list[dict[str, Any]], key: str) -> dict[str, int]:

@@ -1,0 +1,6 @@
+﻿pair_id,split,label,problem_id,language,case_type,problem_type,group_id,method,score,threshold,predicted,correct,in_common_support,analysis_elapsed_ms,aggregation_us,warnings
+AI-2993259d33c611ab99fd,test,UNCERTAIN,MOCK-count,java,INDEPENDENT_SOLUTION,MOCK-FAMILY-count,G-94699f62f704,PICAS_RULE_DYNAMIC,0.853333,0.82736,True,,False,2.3474,0.3,
+AI-25a51d4d16b9e628b98e,validation,UNCERTAIN,MOCK-sum,python,INDEPENDENT_SOLUTION,MOCK-FAMILY-sum,G-fc592df18ebf,PICAS_RULE_DYNAMIC,0.806061,0.820155,False,,False,0.6903,0.4,
+AI-83f362c954465fb3138f,validation,UNCERTAIN,MOCK-sum,python,HUMAN_REWRITE,MOCK-FAMILY-sum,G-fc592df18ebf,PICAS_RULE_DYNAMIC,0.806061,0.820155,False,,False,0.6838,0.3,
+AI-dd786853b74f3d86d294,validation,UNCERTAIN,MOCK-sum,python,INDEPENDENT_SOLUTION,MOCK-FAMILY-sum,G-fc592df18ebf,PICAS_RULE_DYNAMIC,0.806061,0.820155,False,,False,0.6512,0.3,
+AI-b41114380e742aa3bc97,validation,UNCERTAIN,MOCK-sum,python,INDEPENDENT_SOLUTION,MOCK-FAMILY-sum,G-fc592df18ebf,PICAS_RULE_DYNAMIC,0.806061,0.820155,False,,False,0.6614,0.3,

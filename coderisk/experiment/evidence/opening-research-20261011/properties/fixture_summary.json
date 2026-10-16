@@ -1,0 +1,110 @@
+[
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 121,
+    "used_domain_spellings": 4,
+    "uniform_orbit_size_under_fixed_domain": 360
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 121,
+    "used_domain_spellings": 4,
+    "uniform_orbit_size_under_fixed_domain": 360
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 30,
+    "used_domain_spellings": 2,
+    "uniform_orbit_size_under_fixed_domain": 30
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 30,
+    "used_domain_spellings": 2,
+    "uniform_orbit_size_under_fixed_domain": 30
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  },
+  {
+    "fixture": "py-unicode-offset",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 30,
+    "used_domain_spellings": 2,
+    "uniform_orbit_size_under_fixed_domain": 30
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 137,
+    "used_domain_spellings": 5,
+    "uniform_orbit_size_under_fixed_domain": 720
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "attempted_permutations": 144,
+    "unique_permutations": 137,
+    "unique_variant_sources": 88,
+    "used_domain_spellings": 3,
+    "uniform_orbit_size_under_fixed_domain": 120
+  }
+]

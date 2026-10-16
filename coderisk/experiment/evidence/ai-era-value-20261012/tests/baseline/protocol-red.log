@@ -1,0 +1,876 @@
+.........FF..............FFFF.FF..FF                                     [100%]
+================================== FAILURES ===================================
+_______________ test_mock_import_is_explicitly_development_only _______________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_mock_import_is_explicitly0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_mock_import_is_explicitly0')
+
+    def test_mock_import_is_explicitly_development_only(source, tmp_path):
+>       _, _, report = validate(source)
+                       ^^^^^^^^^^^^^^^^
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_mock_import_is_explicitly0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+______________________ test_dry_run_never_creates_output ______________________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_dry_run_never_creates_out0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_dry_run_never_creates_out0')
+
+    def test_dry_run_never_creates_output(source, tmp_path):
+        target = tmp_path / "not-written"
+>       ingest(source, target, dry_run=True)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coderisk\experiment\ai_convergence\ingest.py:15: in ingest
+    corpus, _, report = validate(source)
+                        ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_dry_run_never_creates_out0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+_________ test_connected_split_leakage_is_rejected[source_family_id] __________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i0/source/corpus.json')
+dimension = 'source_family_id'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+        with pytest.raises(ValueError, match="leakage"):
+>           validate(source)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i0/source/corpus.json')
+dimension = 'source_family_id'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+>       with pytest.raises(ValueError, match="leakage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'leakage'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:93: AssertionError
+_______________ test_connected_split_leakage_is_rejected[code] ________________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i1/source/corpus.json')
+dimension = 'code'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+        with pytest.raises(ValueError, match="leakage"):
+>           validate(source)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i1/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i1/source/corpus.json')
+dimension = 'code'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+>       with pytest.raises(ValueError, match="leakage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'leakage'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:93: AssertionError
+__________ test_connected_split_leakage_is_rejected[problem_family] ___________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i2/source/corpus.json')
+dimension = 'problem_family'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+        with pytest.raises(ValueError, match="leakage"):
+>           validate(source)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i2/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_connected_split_leakage_i2/source/corpus.json')
+dimension = 'problem_family'
+
+    @pytest.mark.parametrize("dimension", ["source_family_id", "code", "problem_family"])
+    def test_connected_split_leakage_is_rejected(source, dimension):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        a, b = data["artifacts"][0], data["artifacts"][4]
+        if dimension == "source_family_id":
+            b[dimension] = a[dimension]
+            data["sessions"][4][dimension] = a[dimension]
+        elif dimension == "problem_family":
+            data["questions"][1][dimension] = data["questions"][0][dimension]
+        else:
+            code = (source.parent / a["code_path"]).read_bytes()
+            (source.parent / b["code_path"]).write_bytes(code)
+            b["code_sha256"] = digest(code)
+        source.write_text(json.dumps(data), encoding="utf-8")
+>       with pytest.raises(ValueError, match="leakage"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'leakage'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:93: AssertionError
+___ test_repeated_prompt_family_is_disclosed_not_silently_claimed_disjoint ____
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_repeated_prompt_family_is0/source/corpus.json')
+
+    def test_repeated_prompt_family_is_disclosed_not_silently_claimed_disjoint(source):
+>       report = validate(source)[2]
+                 ^^^^^^^^^^^^^^^^
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_repeated_prompt_family_is0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+_____ test_same_code_in_distinct_mock_models_is_kept_without_false_label ______
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_same_code_in_distinct_moc0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_same_code_in_distinct_moc0')
+
+    def test_same_code_in_distinct_mock_models_is_kept_without_false_label(source, tmp_path):
+>       manifest, index = build(source, tmp_path / "pairs")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coderisk\experiment\ai_convergence\build_pairs.py:55: in build
+    corpus, texts, validation = validate(source)
+                                ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_same_code_in_distinct_moc0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+______________ test_pair_cap_does_not_silently_select_easy_cases ______________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_pair_cap_does_not_silentl0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_pair_cap_does_not_silentl0')
+
+    def test_pair_cap_does_not_silently_select_easy_cases(source, tmp_path):
+        with pytest.raises(ValueError, match="cap"):
+>           build(source, tmp_path / "pairs", max_pairs=1)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coderisk\experiment\ai_convergence\build_pairs.py:55: in build
+    corpus, texts, validation = validate(source)
+                                ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_pair_cap_does_not_silentl0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_pair_cap_does_not_silentl0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_pair_cap_does_not_silentl0')
+
+    def test_pair_cap_does_not_silently_select_easy_cases(source, tmp_path):
+>       with pytest.raises(ValueError, match="cap"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'cap'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:120: AssertionError
+_________________________ test_parent_cycle_rejected __________________________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_parent_cycle_rejected0/source/corpus.json')
+
+    def test_parent_cycle_rejected(source):
+        edit(source, lambda d: (d["artifacts"][0].update(parent_sample_id=d["artifacts"][1]["sample_id"]),
+                               d["artifacts"][1].update(parent_sample_id=d["artifacts"][0]["sample_id"])))
+        with pytest.raises(ValueError, match="cycle"):
+>           validate(source)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_parent_cycle_rejected0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_parent_cycle_rejected0/source/corpus.json')
+
+    def test_parent_cycle_rejected(source):
+        edit(source, lambda d: (d["artifacts"][0].update(parent_sample_id=d["artifacts"][1]["sample_id"]),
+                               d["artifacts"][1].update(parent_sample_id=d["artifacts"][0]["sample_id"])))
+>       with pytest.raises(ValueError, match="cycle"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'cycle'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:140: AssertionError
+_____________ test_reserved_import_file_cannot_overwrite_snapshot _____________
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_reserved_import_file_cann0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_reserved_import_file_cann0')
+
+    def test_reserved_import_file_cannot_overwrite_snapshot(source, tmp_path):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        data["questions"][0]["question_path"] = "ingest_report.json"
+        content = b"Untrusted imported bytes"
+        (source.parent / "ingest_report.json").write_bytes(content)
+        data["questions"][0]["question_text_sha256"] = digest(content)
+        source.write_text(json.dumps(data), encoding="utf-8")
+        with pytest.raises(ValueError, match="reserved"):
+>           ingest(source, tmp_path / "safe")
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+coderisk\experiment\ai_convergence\ingest.py:15: in ingest
+    corpus, _, report = validate(source)
+                        ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_reserved_import_file_cann0/source/corpus.json')
+
+    def validate(file):
+        corpus = read_corpus(file)
+        root = file.parent
+        questions = unique(corpus.questions, "problem_id")
+        sessions = unique(corpus.sessions, "generation_session_id")
+        samples = unique(corpus.artifacts, "sample_id")
+        files, texts = {}, {}
+    
+        def record(ref):
+            target = safe_file(root, ref)
+            files[ref] = digest(target.read_bytes())
+            return target
+    
+        for question in questions.values():
+            if digest(record(question.question_path).read_bytes()) != question.question_text_sha256:
+                raise ValueError("Question content hash mismatch")
+            record(question.license_or_authorization_ref)
+            if (question.template_id is None) != (question.template_path is None):
+                raise ValueError("Template ID and path must be registered together")
+            if question.template_path:
+                record(question.template_path)
+        record_hashes = set()
+        for session in sessions.values():
+            if session.problem_id not in questions:
+                raise ValueError("Session question missing")
+            if digest(record(session.full_prompt_storage_ref).read_bytes()) != session.prompt_sha256:
+                raise ValueError("Prompt hash mismatch")
+            session_file = record(session.session_record_ref)
+            if files[session.session_record_ref] in record_hashes:
+                raise ValueError("Duplicated generation session record; separate IDs are not evidence")
+            record_hashes.add(files[session.session_record_ref])
+            import json
+            captured = json.loads(session_file.read_text(encoding="utf-8"))
+            for key in ("generation_session_id", "problem_id", "model_id", "prompt_sha256"):
+                if captured.get(key) != getattr(session, key):
+                    raise ValueError("Session capture contradicts declared metadata")
+            if session.synthetic != (session.access_mode == "SYNTHETIC_FIXTURE"):
+                raise ValueError("Synthetic access mode mismatch")
+            if not session.synthetic and (session.provider.startswith("MOCK") or session.model_id.startswith("MOCK")):
+                raise ValueError("Mock session cannot be promoted to real data")
+            for ref in session.shared_upstream_refs:
+                record(ref)
+        grouping = []
+        for sample in samples.values():
+            question = questions.get(sample.problem_id)
+            if question is None or sample.language != question.language or sample.split != question.split:
+                raise ValueError("Sample question/language/split mismatch")
+            code = record(sample.code_path).read_bytes()
+            if digest(code) != sample.code_sha256:
+>               raise ValueError("Code byte hash mismatch")
+E               ValueError: Code byte hash mismatch
+
+coderisk\experiment\ai_convergence\validate.py:63: ValueError
+
+During handling of the above exception, another exception occurred:
+
+source = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_reserved_import_file_cann0/source/corpus.json')
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-protocol-red-tests-20261012/test_reserved_import_file_cann0')
+
+    def test_reserved_import_file_cannot_overwrite_snapshot(source, tmp_path):
+        data = json.loads(source.read_text(encoding="utf-8"))
+        data["questions"][0]["question_path"] = "ingest_report.json"
+        content = b"Untrusted imported bytes"
+        (source.parent / "ingest_report.json").write_bytes(content)
+        data["questions"][0]["question_text_sha256"] = digest(content)
+        source.write_text(json.dumps(data), encoding="utf-8")
+>       with pytest.raises(ValueError, match="reserved"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'reserved'
+E        Input: 'Code byte hash mismatch'
+
+coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py:151: AssertionError
+- generated xml file: E:\ms\output\ai-era-value-20261012\baseline\protocol-red.xml -
+=========================== short test summary info ===========================
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_mock_import_is_explicitly_development_only
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_dry_run_never_creates_output
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_connected_split_leakage_is_rejected[source_family_id]
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_connected_split_leakage_is_rejected[code]
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_connected_split_leakage_is_rejected[problem_family]
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_repeated_prompt_family_is_disclosed_not_silently_claimed_disjoint
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_same_code_in_distinct_mock_models_is_kept_without_false_label
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_pair_cap_does_not_silently_select_easy_cases
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_parent_cycle_rejected
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_protocol.py::test_reserved_import_file_cannot_overwrite_snapshot
+10 failed, 26 passed in 3.70s

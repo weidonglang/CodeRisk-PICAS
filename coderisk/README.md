@@ -1,6 +1,14 @@
 # CodeRisk 运行与演示手册
 
+> 2026-10-16：新版工作区、证据标签页、窄屏证据列表及真实运行状态已实现；增加一键启动/停止、运行环境探测、端口避让和就绪检查。首选下方“一键启动”，旧三终端方式仍保留。当前界面/启动验证与已知限制见 [前端与启动流程](../coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md)，不改变研究算法或数据资格。
+
+> 2026-10-11 S0—S5研究增量：新增独立绑定gold/群轨道及α边界、明确Java header遮蔽降级、双维预实验/正式数据前检和真人采集/答辩材料。当前工作树Python523/H2后端19/build通过；生产公式/架构不改，MySQL与本轮浏览器未验。详细PowerShell流程、真实数据操作及结果导航见 [开题研究包](../coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md)。
+
 > 2026-10-11 数据规模：当前公开/候选登记 **92,513 行**，其中 Java/Python 大规模已选 **60,000 对**、跨语言待复核候选 **30,893 对**；正式核心指标资格仍为 0。1,225 对是历史 synthetic 联调，不是全数据池。来源、统计与实际运行量分开列于[首页](../README.md#数据规模概览)及[逐行核对](experiment/evidence/readme-data-refresh-20261011/README.md)。
+
+> 2026-10-10：[Python 与多语言公开接收](../coderisk_docs/proposal/NONJAVA_PUBLIC_INTAKE.md)提供固定下载、离线校验与数据表示说明。新增数据是外部开发/隔离池，不直接加入 Research V4 校准或正式指标；C++/JavaScript/C#/PHP 采集不等于服务支持。
+
+> 2026-10-10：[数据入口与融合开发诊断](../coderisk_docs/proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md)说明资格校验、JPlag 哈希对齐和 16 对自有开发探针；Python 224 项回归通过。正式评测入口与 seed runner 的区别见该文档。
 
 > 2026-10-09 增量：[前三项推进记录](../coderisk_docs/proposal/NEXT_THREE_PROGRESS.md)说明新数据、融合诊断与单实例异步任务恢复；后端 Flyway 已至 V5，H2 已验证，MySQL 实库仍待验证。
 
@@ -28,6 +36,19 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 把示例路径替换成已安装的 JDK 21 目录，确保 `mvn` 能在 PATH 中找到。分析脚本优先使用 `CODERISK_PYTHON`，其次为已有 `.venv-coderisk`、`.venv`，最后为系统 `python`。
 
 ## 启动服务
+
+### 一键启动（推荐）
+
+```powershell
+# 根目录；首次先按上方安装依赖。
+.\coderisk\scripts\start-dev.ps1 -CheckOnly
+.\coderisk\scripts\start-dev.ps1
+.\coderisk\scripts\stop-dev.ps1
+```
+
+默认H2 local，逐个等待分析/后端/前端就绪；端口占用自动避让，访问实际输出URL。日志和PID/启动时间/命令指纹留在 `.tmp/coderisk-dev/sessions/`；停止保留数据库及日志，不杀未知进程。`-Python` / `-JavaHome`可固定运行环境，`-DataRoot`可显式隔离数据，`-Profile mysql`需要有效凭据且不是自动验证。`-CheckOnly`不启动服务。受执行策略限制时，仅使用进程级 `powershell -NoProfile -ExecutionPolicy Bypass -File .\coderisk\scripts\start-dev.ps1`，不修改系统策略。
+
+### 手工三终端
 
 分别打开三个 PowerShell 终端，每个终端均进入仓库根目录：
 
@@ -69,7 +90,7 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 | `SPRING_PROFILES_ACTIVE` | `local` 或 `mysql` |
 | `CODERISK_LOCAL_DB_URL` | 本地 H2 数据库 URL |
 
-默认 `local` 使用持久化 H2、MySQL 兼容模式，Flyway 自动应用 V1–V4 迁移。MySQL 8 使用 `CODERISK_DB_URL`、`CODERISK_DB_USERNAME`、`CODERISK_DB_PASSWORD`，初始化与配置见 [数据库说明](database/README.md)。H2 验证不能代替 MySQL 实库验证。
+默认 `local` 使用持久化 H2、MySQL 兼容模式，Flyway 自动应用现有 V1–V5 迁移。MySQL 8 使用 `CODERISK_DB_URL`、`CODERISK_DB_USERNAME`、`CODERISK_DB_PASSWORD`，初始化与配置见 [数据库说明](database/README.md)。H2 验证不能代替 MySQL 实库验证。
 
 ## 演示流程
 

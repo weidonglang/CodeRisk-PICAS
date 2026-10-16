@@ -1,0 +1,186 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "generation_session_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Generation Session Id",
+      "type": "string"
+    },
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "source_family_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Source Family Id",
+      "type": "string"
+    },
+    "session_independence_basis": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Session Independence Basis",
+      "type": "string"
+    },
+    "provider": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Provider",
+      "type": "string"
+    },
+    "model_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Model Id",
+      "type": "string"
+    },
+    "model_version_or_snapshot": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Model Version Or Snapshot",
+      "type": "string"
+    },
+    "access_mode": {
+      "enum": [
+        "MANUAL_EXPORT",
+        "AUTHORIZED_API_EXPORT",
+        "SYNTHETIC_FIXTURE"
+      ],
+      "title": "Access Mode",
+      "type": "string"
+    },
+    "generation_time_utc": {
+      "title": "Generation Time Utc",
+      "type": "string"
+    },
+    "prompt_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Prompt Id",
+      "type": "string"
+    },
+    "prompt_family": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Prompt Family",
+      "type": "string"
+    },
+    "prompt_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Prompt Sha256",
+      "type": "string"
+    },
+    "full_prompt_storage_ref": {
+      "title": "Full Prompt Storage Ref",
+      "type": "string"
+    },
+    "session_record_ref": {
+      "title": "Session Record Ref",
+      "type": "string"
+    },
+    "temperature": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Temperature"
+    },
+    "top_p": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Top P"
+    },
+    "seed_if_supported": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Seed If Supported"
+    },
+    "settings_semantics": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Settings Semantics",
+      "type": "string"
+    },
+    "revision_count": {
+      "minimum": 0,
+      "title": "Revision Count",
+      "type": "integer"
+    },
+    "human_edits": {
+      "title": "Human Edits",
+      "type": "boolean"
+    },
+    "shared_upstream_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Shared Upstream Refs",
+      "type": "array"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "attempt_status": {
+      "default": "UNKNOWN",
+      "enum": [
+        "COMPLETED",
+        "FAILED",
+        "TRUNCATED",
+        "UNKNOWN"
+      ],
+      "title": "Attempt Status",
+      "type": "string"
+    },
+    "error_or_truncation_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Or Truncation Ref"
+    }
+  },
+  "required": [
+    "generation_session_id",
+    "problem_id",
+    "source_family_id",
+    "session_independence_basis",
+    "provider",
+    "model_id",
+    "model_version_or_snapshot",
+    "access_mode",
+    "generation_time_utc",
+    "prompt_id",
+    "prompt_family",
+    "prompt_sha256",
+    "full_prompt_storage_ref",
+    "session_record_ref",
+    "temperature",
+    "top_p",
+    "seed_if_supported",
+    "settings_semantics",
+    "revision_count",
+    "human_edits",
+    "shared_upstream_refs",
+    "synthetic"
+  ],
+  "title": "GenerationSession",
+  "type": "object"
+}

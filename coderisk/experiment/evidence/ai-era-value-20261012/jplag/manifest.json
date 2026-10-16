@@ -1,0 +1,49 @@
+{
+  "status": "FINISHED",
+  "dataset_manifest_sha256": "0d6c7c82f5aef57edc86758f0c325b76babca499298e0df6583e2b521e19b290",
+  "baseline_results_sha256": "639c410ec0f6ab588a0ee090d1200471f22f7edc5082395bf97270e078568a69",
+  "jar_sha256": "f2d2b98ce57018d074be023583ce5d1801240e67dd37344ef7834e63ba7e521f",
+  "tool_version": "6.2.0",
+  "min_tokens": 5,
+  "requested_pairs": 22,
+  "prepared_pairs": 19,
+  "excluded_pairs": [
+    {
+      "pair_id": "AI-cbbea6dd702430b861bd",
+      "reason": "PARSE_FAILED_RETAINED_IN_PICAS_DESCRIPTIVE_COHORT"
+    },
+    {
+      "pair_id": "AI-ec74c2e0ded1b923f868",
+      "reason": "PARSE_FAILED_RETAINED_IN_PICAS_DESCRIPTIVE_COHORT"
+    },
+    {
+      "pair_id": "AI-d4513fd76d2b5b6fd375",
+      "reason": "PARSE_FAILED_RETAINED_IN_PICAS_DESCRIPTIVE_COHORT"
+    }
+  ],
+  "run_records": [
+    {
+      "language": "java",
+      "languageFlag": "java",
+      "exitCode": 0,
+      "inputSubmissionCount": 4,
+      "nativeCsv": "E:/ms/output/ai-era-value-20261012/jplag/native/java/results/results.csv",
+      "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\output\\ai-era-value-20261012\\jplag\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\output\\ai-era-value-20261012\\jplag\\input\\java",
+      "stderrTail": "\nLoading Submissions   0% [===========================] 0/4 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                                 ] 0/4 (0:00:00 / ?) \nParsing Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \nParsing Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \n\nPreparing Submissions  25% [=========================] 4/4 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 4/4 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                          ] 0/6 (0:00:00 / ?) \nComparing Submission Pairs 100% [====================] 6/6 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [====================] 6/6 (0:00:00 / 0:00:00) \n"
+    },
+    {
+      "language": "python",
+      "languageFlag": "python3",
+      "exitCode": 0,
+      "inputSubmissionCount": 8,
+      "nativeCsv": "E:/ms/output/ai-era-value-20261012/jplag/native/python/results/results.csv",
+      "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l python3 -M RUN --csv-export -r E:\\ms\\output\\ai-era-value-20261012\\jplag\\native\\python\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\output\\ai-era-value-20261012\\jplag\\input\\python",
+      "stderrTail": "\nLoading Submissions   0% [===========================] 0/8 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                                 ] 0/8 (0:00:00 / ?) \nParsing Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \nParsing Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \n\nPreparing Submissions  12% [=========================] 8/8 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 8/8 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                        ]  0/28 (0:00:00 / ?) \nComparing Submission Pairs 100% [==================] 28/28 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==================] 28/28 (0:00:00 / 0:00:00) \n"
+    }
+  ],
+  "label_mode": "DESCRIPTIVE_NOT_FORMAL",
+  "synthetic": true,
+  "template_policy": "NO_BASE_CODE_REMOVAL: production PICAS also retains registered template tokens in score",
+  "source_execution": false,
+  "live_model_calls": 0
+}

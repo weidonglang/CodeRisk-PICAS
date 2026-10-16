@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <span class="support-tag" :class="level.toLowerCase()">
-    {{ level }}
+    {{ level === 'STABLE' ? '稳定范围' : level === 'EXPERIMENTAL' ? '实验性' : '未启用' }}
   </span>
 </template>
 
@@ -18,19 +18,19 @@ defineProps<{
   align-items: center;
   min-height: 24px;
   border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 550;
   padding: 0 8px;
 }
 
 .stable {
-  background: #dff2e5;
-  color: #156f3a;
+  background: #edf7f1;
+  color: #43836b;
 }
 
 .experimental {
-  background: #fff1d7;
-  color: #9a5a00;
+  background: #faf4e8;
+  color: #a18148;
 }
 
 .disabled {

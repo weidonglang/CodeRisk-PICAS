@@ -1,0 +1,2 @@
+provider,model_snapshot,access_mode,price_checked_at,price_source_ref,currency,input_price_per_unit,output_price_per_unit,unit_definition,max_initial_attempts,max_revision_calls,input_token_cap,output_token_cap,approved_budget,approved_by,actual_cost,notes
+,,,,,,,,,108,216,,,,,,PLANNING_ONLY_UNKNOWN_PRICES_NO_AUTOMATIC_PAYMENT

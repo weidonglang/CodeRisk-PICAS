@@ -1,0 +1,64 @@
+{
+  "scope": "Actual current-turn failures and expected blocks; not detector performance",
+  "records": [
+    {
+      "run": "python-baseline",
+      "status": "ENVIRONMENT_FAILURE",
+      "failed": 8,
+      "passed": 423,
+      "reason": "Sandbox standard TEMP directory permission errors",
+      "log": "tests/python-baseline.log",
+      "junit": "tests/python-baseline.xml",
+      "resolution": "Workspace TEMP/TMP; baseline-r2 431 passed; final 523 passed"
+    },
+    {
+      "run": "normalization-red",
+      "status": "BUG_REPRODUCED_BEFORE_FIX",
+      "failed": 2,
+      "passed": 17,
+      "reason": "Java for header field shadow bound through later return; expected lexical fallback absent",
+      "log": "tests/normalization-red.log",
+      "junit": "tests/normalization-red.xml",
+      "resolution": "22-line conservative header shadow fallback; regression and final full suite pass"
+    },
+    {
+      "run": "conplag-readonly",
+      "status": "INCOMPLETE_OUTPUT_NOT_VALID_RESULT",
+      "reason": "ModuleNotFoundError: matplotlib",
+      "transcript": "Reconstructed from actual tool exception, no separately captured shell log; partial original output preserved locally",
+      "resolution": "Existing experiment requirements installed; conplag-readonly-r2 complete, no rescoring/fitting"
+    },
+    {
+      "run": "diagnostic-dependencies",
+      "status": "ENVIRONMENT_FAILURE",
+      "log": "tests/diagnostic-dependencies.log",
+      "reason": "Temporary installation directory not writable",
+      "resolution": "Set workspace TEMP/TMP"
+    },
+    {
+      "run": "diagnostic-dependencies-r2",
+      "status": "DEPENDENCY_FETCH_FAILURE",
+      "log": "tests/diagnostic-dependencies-r2.log",
+      "reason": "Package-index metadata JSON truncated",
+      "resolution": "Existing constraints, legacy resolver, third attempt succeeds"
+    },
+    {
+      "run": "formal-preflight-final",
+      "status": "EXPECTED_BLOCK_EXIT_2",
+      "log": "tests/formal-preflight-final.log",
+      "reason": "No authorized independently human-reviewed preregistered formal pool; trusted independent references zero",
+      "resolution": "Human data authorization, review, functional evidence and frozen registration required; not automatically bypassed"
+    }
+  ],
+  "notRun": [
+    "MYSQL_REAL_DATABASE",
+    "CURRENT_BROWSER_E2E",
+    "REAL_LLM_NETWORK_CALL",
+    "FORMAL_BENCHMARK",
+    "NEW_JPLAG_RUN"
+  ],
+  "limitations": [
+    "Compiler success is not semantic equivalence",
+    "Metadata gates cannot authenticate human evidence"
+  ]
+}

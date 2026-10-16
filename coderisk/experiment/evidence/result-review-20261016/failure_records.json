@@ -1,0 +1,39 @@
+{
+  "records": [
+    {
+      "kind": "ENVIRONMENT",
+      "issue": "Browser connection refused before stopped development services were restarted",
+      "resolution": "Managed startup reused isolated H2 DataRoot"
+    },
+    {
+      "kind": "TEST_SELECTOR",
+      "log": "browser-flow.log",
+      "issue": "Duplicate desktop/mobile empty-state selector",
+      "resolution": "Scoped desktop locator; final 41 checks passed"
+    },
+    {
+      "kind": "TEST_SELECTOR",
+      "log": "browser-charts.log",
+      "issue": "Element Plus hidden checkbox input cannot receive visible click",
+      "resolution": "Click visible label and verify checked state; final 30 checks passed"
+    },
+    {
+      "kind": "TEST_SELECTOR_AND_SESSION",
+      "log": "browser-detail-live.log",
+      "issue": "Select input covered by placeholder; another navigation detached the locator",
+      "resolution": "Visible wrapper and serial retry; final five real checks passed"
+    }
+  ],
+  "warnings": [
+    "Existing Starlette/httpx deprecation",
+    "Existing Maven Mockito/H2 warnings and intentional recovery fault logs",
+    "Existing Vite PURE and large main chunk warnings"
+  ],
+  "notRun": [
+    "MySQL real DB",
+    "Real LLM",
+    "Human relationship labels",
+    "Teacher efficacy",
+    "New external baseline evaluation"
+  ]
+}

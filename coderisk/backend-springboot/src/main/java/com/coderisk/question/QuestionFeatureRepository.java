@@ -24,6 +24,9 @@ public class QuestionFeatureRepository {
 
     @Transactional
     public Map<String, Object> save(long questionId, Map<String, Object> profile, Map<String, Object> threshold) {
+        // Lock a row that exists even on the first feature write. This lock also
+        // joins a caller's result transaction, preserving each result snapshot.
+        jdbc.queryForObject("SELECT id FROM question WHERE id = ? FOR UPDATE", Long.class, questionId);
         String version = text(profile, "featureVersion", "pf-rule-v1.0");
         jdbc.update("DELETE FROM problem_feature WHERE question_id = ? AND feature_version = ?", questionId, version);
         OffsetDateTime now = OffsetDateTime.now();

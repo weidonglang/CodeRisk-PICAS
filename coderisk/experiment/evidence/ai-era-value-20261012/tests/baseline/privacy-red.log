@@ -1,0 +1,23 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_ test_real_review_snapshot_cannot_be_written_to_public_or_arbitrary_directory _
+
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-privacy-red-tests-20261012/test_real_review_snapshot_cann0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001EC51B3D1F0>
+
+    def test_real_review_snapshot_cannot_be_written_to_public_or_arbitrary_directory(tmp_path, monkeypatch):
+        source = make_seed(tmp_path / "source")
+        build(source, tmp_path / "dataset")
+        corpus, texts, report = validate(source)
+        # UNIT_TEST_ONLY: simulate the privacy flag, not authentic real author records.
+        private = corpus.model_copy(update={"artifacts": [s.model_copy(update={"synthetic": False}) for s in corpus.artifacts]})
+        monkeypatch.setattr(review_module, "validate", lambda _: (private, texts, report))
+>       with pytest.raises(ValueError, match="ignored"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+coderisk\analysis-service-python\tests\test_ai_convergence_privacy.py:20: Failed
+- generated xml file: E:\ms\output\ai-era-value-20261012\baseline\privacy-red.xml -
+=========================== short test summary info ===========================
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_privacy.py::test_real_review_snapshot_cannot_be_written_to_public_or_arbitrary_directory
+1 failed in 2.15s

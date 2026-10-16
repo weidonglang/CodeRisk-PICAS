@@ -71,6 +71,10 @@ def formal_blockers(cases: list[dict]) -> list[str]:
             reasons.append('incomplete annotation evidence')
         if annotation.get('reviewer_a') == annotation.get('reviewer_b'):
             reasons.append('independent second review missing')
+        if annotation.get('reviewer_a_type') != 'HUMAN' or annotation.get('reviewer_b_type') != 'HUMAN':
+            reasons.append('two declared human reviewers required; AI/unspecified reviewers do not satisfy this gate')
+        if annotation.get('independence_confirmed') is not True:
+            reasons.append('actual reviewer independence not confirmed')
         if annotation.get('status') != 'AGREED' or annotation.get('label') != case['experiment_label']:
             reasons.append('unresolved annotation or label mismatch')
         if len(case.get('source_family_ids', [])) < 1:

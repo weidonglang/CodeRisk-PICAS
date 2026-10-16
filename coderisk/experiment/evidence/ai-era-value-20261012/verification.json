@@ -1,0 +1,96 @@
+{
+  "verified_at_utc": "2026-10-12T12:46:23.935Z",
+  "head": "892e7ef4a0d2f016cc8b0713fc7b347bd9e1717f",
+  "branch": "main",
+  "head_unchanged": true,
+  "index_sha256_unchanged": true,
+  "staged_entries_unchanged": true,
+  "protected_production": {
+    "checked": 129,
+    "changed": 0
+  },
+  "protected_history": {
+    "checked": 1492,
+    "changed": 0
+  },
+  "preexisting": {
+    "checked": 197,
+    "intentional_document_changes": 12,
+    "unexpected_changes": 0,
+    "allowlist": [
+      "README.md",
+      "coderisk/TEST_REPORT.md",
+      "coderisk/KNOWN_ISSUES.md",
+      "coderisk_docs/README.md",
+      "coderisk_docs/ROADMAP.md",
+      "coderisk_docs/VERSION_MATRIX.md",
+      "coderisk_docs/EXPERIMENT_PLAN.md",
+      "coderisk_docs/TEST_PLAN.md",
+      "coderisk_docs/PAPER_OUTLINE.md",
+      "coderisk_docs/proposal/README.md",
+      "coderisk_docs/proposal/PROPOSAL_DRAFT.md",
+      "coderisk_docs/proposal/LITERATURE_MATRIX.md"
+    ]
+  },
+  "release_sources": {
+    "checked": 43,
+    "mismatches": 0
+  },
+  "release_input_bytes": {
+    "checked": 45,
+    "mismatches": 0
+  },
+  "frozen_config_semantically_matches": true,
+  "native_baseline_hash_matches": true,
+  "curated_copies": {
+    "checked": 193,
+    "byte_mismatches": 0
+  },
+  "local_markdown_links": {
+    "checked": 345,
+    "missing": [],
+    "scope": [
+      "README.md",
+      "coderisk/TEST_REPORT.md",
+      "coderisk/KNOWN_ISSUES.md",
+      "coderisk_docs/README.md",
+      "coderisk_docs/ROADMAP.md",
+      "coderisk_docs/VERSION_MATRIX.md",
+      "coderisk_docs/EXPERIMENT_PLAN.md",
+      "coderisk_docs/TEST_PLAN.md",
+      "coderisk_docs/PAPER_OUTLINE.md",
+      "coderisk_docs/proposal/README.md",
+      "coderisk_docs/proposal/PROPOSAL_DRAFT.md",
+      "coderisk_docs/proposal/LITERATURE_MATRIX.md",
+      "coderisk_docs/research/AI_ERA_VALUE_AUDIT.md",
+      "coderisk_docs/research/AI_CONVERGENCE_PROTOCOL.md",
+      "coderisk_docs/research/AI_CONTEXT_EXPLANATION_SPEC.md",
+      "coderisk_docs/research/LIVE_GENERATION_PLAYBOOK.md",
+      "coderisk_docs/research/PICAS_GO_NO_GO_DECISION.md",
+      "coderisk_docs/research/PROPOSAL_AI_ERA_APPENDIX.md",
+      "coderisk_docs/research/REPRODUCE_AI_CONVERGENCE.md",
+      "coderisk_docs/research/TEST_AND_EVIDENCE_SUMMARY.md",
+      "coderisk_docs/research/AI_ERA_CONTINUATION_20261012.md",
+      "coderisk_docs/research/AI_ERA_FINAL_REPORT_20261012.md",
+      "coderisk/experiment/ai_convergence/README.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/analysis/assignment_preflight.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/analysis/REPORT.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/analysis/submission_review.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/formal/FORMAL_BLOCKED.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/properties/REPORT.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/README.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/review/FORMAL_BLOCKED.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V0/STATUS.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V1/STATUS.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V2/STATUS.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V3/STATUS.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V4/STATUS.md",
+      "coderisk/experiment/evidence/ai-era-value-20261012/V5/STATUS.md"
+    ],
+    "remote_urls_and_fragments_not_verified": true
+  },
+  "diff_check_exit_code": 0,
+  "not_a_clean_head_reproduction": true,
+  "commit_push_or_release": false,
+  "privacy_scope": "Only self-authored mock raw data; no live API, new real student data, participant or authorization records"
+}

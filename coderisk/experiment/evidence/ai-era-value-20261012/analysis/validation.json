@@ -1,0 +1,91 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "sample_count": 13,
+  "session_count": 12,
+  "problem_count": 3,
+  "connected_group_count": 3,
+  "synthetic_count": 13,
+  "split_counts": {
+    "validation": 5,
+    "test": 8
+  },
+  "file_sha256": {
+    "questions/sum.txt": "f3e8958110a067c0f52fcdea931c4e5164b982fdc069540634ae6d58f942a2fd",
+    "SYNTHETIC_NOTICE.txt": "c534f0063ac9549d73bb88106b0876a14d3facda9aa02733bdc04eee4a53358d",
+    "templates/sum.py": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0",
+    "questions/maximum.txt": "aec46c0977b59b60bc97f4921aa6e472a4d2b93235ffe7812ad429376c101c51",
+    "questions/count.txt": "2e7ffcef61f806dedcd807a8833acf916498d5f7ab7d321528d53e670ddeb1a7",
+    "prompts/sum.txt": "d055aeab012d4e29814dfddc12c79e95cc315b07b4c35e3f576b9ba7e3a1d30c",
+    "sessions/MOCK-sum-0-SESSION.json": "aec6df6f5c455975eb03593e3d40c680495293d6167187aa63cd823d088ff50e",
+    "sessions/MOCK-sum-1-SESSION.json": "fe1f8d71eb485781df8b2c8c94fd07cecb3fcc30eb9195ba9afc718915646093",
+    "sessions/MOCK-sum-2-SESSION.json": "97130be544613e4b3dfbe7be05eb8e19d71305bd0ab20a32ef41cb307594b757",
+    "sessions/MOCK-sum-3-SESSION.json": "94aea4c4b75ded7e31c9be0b54b4acd7344bb0bfbabc0b1f58e28e5bd4377248",
+    "prompts/maximum.txt": "fe4189d0d7c8d813ba30372f945d295402d79d6fae00430db71352289923e315",
+    "sessions/MOCK-maximum-0-SESSION.json": "8bc327f819eee653123b8f64fdfaf917c1ddb78bae974b5dbb287dff6c137fa3",
+    "sessions/MOCK-maximum-1-SESSION.json": "ec99af3322782271fbff301e3912058b18468af001465ad9d8433c4fae54eec0",
+    "sessions/MOCK-maximum-2-SESSION.json": "f92161600b5e0ec69a0863d4b1695d13d700e59ca1d47dea8203022007c041de",
+    "sessions/MOCK-maximum-3-SESSION.json": "b91a4f4b99a349329a7de700c7a6822108133805eb177221b69c48d1d0155a3c",
+    "prompts/count.txt": "6ca2c12da931b99d5cfe8953bd98c561f8567d3046bfe0da768479b49f792052",
+    "sessions/MOCK-count-0-SESSION.json": "7b60d0253e6c8d51f4400e7fbb598fbfb5ea286e0308b8f4e07de9d297ab1742",
+    "sessions/MOCK-count-1-SESSION.json": "1e202e38f688c02651fe84baa290ed92aca049b03681778f75bbe0b71e281a22",
+    "sessions/MOCK-count-2-SESSION.json": "f5ace05c1a3757fb6a0def86235d9b9994433d62322c2e4da2ef6a0f8fb1010b",
+    "sessions/MOCK-count-3-SESSION.json": "48d8e01f5da54b417529f271655bf65fae763bd475a69d5d6721ce270c3546dc",
+    "code/MOCK-sum-0.py": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0",
+    "raw/MOCK-sum-0.txt": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0",
+    "code/MOCK-sum-1.py": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb",
+    "raw/MOCK-sum-1.txt": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb",
+    "code/MOCK-sum-2.py": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0",
+    "raw/MOCK-sum-2.txt": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0",
+    "code/MOCK-sum-3.py": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d",
+    "raw/MOCK-sum-3.txt": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d",
+    "code/MOCK-maximum-0.py": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3",
+    "raw/MOCK-maximum-0.txt": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3",
+    "code/MOCK-maximum-1.py": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367",
+    "raw/MOCK-maximum-1.txt": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367",
+    "code/MOCK-maximum-2.py": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721",
+    "raw/MOCK-maximum-2.txt": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721",
+    "code/MOCK-maximum-3.py": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1",
+    "raw/MOCK-maximum-3.txt": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1",
+    "code/MOCK-count-0.java": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d",
+    "raw/MOCK-count-0.txt": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d",
+    "code/MOCK-count-1.java": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110",
+    "raw/MOCK-count-1.txt": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110",
+    "code/MOCK-count-2.java": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813",
+    "raw/MOCK-count-2.txt": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813",
+    "code/MOCK-count-3.java": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709",
+    "raw/MOCK-count-3.txt": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709",
+    "code/MOCK-sum-controlled-rename.py": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+  },
+  "attempt_status_counts": {
+    "UNKNOWN": 12
+  },
+  "sessions_without_artifact": 0,
+  "groups": {
+    "MOCK-sum-0": "G-fc592df18ebf",
+    "MOCK-sum-1": "G-fc592df18ebf",
+    "MOCK-sum-2": "G-fc592df18ebf",
+    "MOCK-sum-3": "G-fc592df18ebf",
+    "MOCK-maximum-0": "G-3b64d72b09aa",
+    "MOCK-maximum-1": "G-3b64d72b09aa",
+    "MOCK-maximum-2": "G-3b64d72b09aa",
+    "MOCK-maximum-3": "G-3b64d72b09aa",
+    "MOCK-count-0": "G-94699f62f704",
+    "MOCK-count-1": "G-94699f62f704",
+    "MOCK-count-2": "G-94699f62f704",
+    "MOCK-count-3": "G-94699f62f704",
+    "MOCK-sum-controlled-rename": "G-fc592df18ebf"
+  },
+  "sensitivity": {
+    "prompt_family": {
+      "cross_split_values": 1,
+      "status": "SENSITIVITY_ONLY_NOT_MODEL_DISJOINT_CLAIM"
+    },
+    "model_version_or_snapshot": {
+      "cross_split_values": 1,
+      "status": "SENSITIVITY_ONLY_NOT_MODEL_DISJOINT_CLAIM"
+    }
+  },
+  "network_calls": 0,
+  "code_executions": 0,
+  "disclaimer": "Checks declared records, not genuine consent, independent authorship or human identity"
+}

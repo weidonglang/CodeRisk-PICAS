@@ -1,0 +1,23 @@
+PASS: PowerShell syntax: Dev-Common.ps1
+PASS: PowerShell syntax: run-all-tests.ps1
+PASS: PowerShell syntax: start-analysis-dev.ps1
+PASS: PowerShell syntax: start-backend-dev.ps1
+PASS: PowerShell syntax: start-dev.ps1
+PASS: PowerShell syntax: start-frontend-dev.ps1
+PASS: PowerShell syntax: stop-dev.ps1
+PASS: PowerShell syntax: test-dev-scripts.ps1
+PASS: PowerShell syntax: verify-mysql.ps1
+PASS: Explicit invalid Python does not silently select another runtime
+PASS: Missing tool fails before service startup
+PASS: Explicit invalid JDK does not silently select another version
+PASS: Occupied port remains occupied
+PASS: Strict port refuses collisions without stopping an owner
+PASS: Automatic port selection uses a different free port
+PASS: Original listener is still alive after port checks
+PASS: Process identity mismatch is never treated as owned
+PASS: Ownership command fingerprint differs
+PASS: Matching process identity accepts an ISO string timestamp
+PASS: Ownership survives PowerShell JSON date conversion
+PASS: Matching PID and date with wrong command is not owned
+PASS: Runtime probe preserves failure exit status
+22 dev-script checks passed

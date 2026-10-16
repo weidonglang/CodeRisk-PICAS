@@ -1,0 +1,7 @@
+claim_id,input_scenario,comparison,measure,evidence_status,failure_criterion,scope
+VQ1,authorized same-question independent solutions,RAW/NoCanon/JPlag/PICAS,COMMON_TEST_FPR_AND_RECALL,FORMAL_BLOCKED,no reasonable error/cost tradeoff on held-out problems,NO_MISCONDUCT_INFERENCE
+VQ2a,hand-marked legal name permutations,complete raw vs complete canonical sequence,INVARIANCE_AND_BINDING_POSITIONS,TESTED_FINITE,independent reproducible counterexample within declared subset,SYNTHETIC_CORRECTNESS
+VQ2b,reviewed independent and known-derived histories,RAW/NoCanon/JPlag/PICAS,COMMON_AP_FPR_RECALL_F1,FORMAL_BLOCKED,canonical worsens confusion without useful benefit,PUBLIC_PILOT_NEGATIVE_RESULT_PRESERVED
+VQ3a,authorized reference pool before release,no tool/JPlag/PICAS/preflight card,task-level diversity/coverage/limitations,DEVELOPMENT_ONLY,no new verified context or confidentiality risk,ASSIGNMENT_PREFLIGHT
+VQ3b,blinded post-submission human review,JPlag+source/original report/enhanced card,template/location/insufficient-evidence/overconfidence,NOT_RUN,no measurable gain or increased overconfidence,NO_EFFICIENCY_CLAIM
+STOP1,identical observed code with different histories,any source-only method,SOURCE_IDENTIFIABILITY,THEORETICAL_COUNTEREXAMPLE,identical observations cannot identify hidden history,STOP_AI_ATTRIBUTION_FEATURE

@@ -1,0 +1,2646 @@
+{
+  "status": "PASS",
+  "checkedAtUtc": "2026-10-11T13:47:54.168Z",
+  "clientWorkDate": "2026-10-11",
+  "headBefore": "892e7ef4a0d2f016cc8b0713fc7b347bd9e1717f",
+  "headAfter": "892e7ef4a0d2f016cc8b0713fc7b347bd9e1717f",
+  "branch": "main",
+  "noCommitOrPushThisTurn": true,
+  "stagedEntriesUnchanged": true,
+  "stagedEntriesBeforeSha256": "112b6ce34b6fa98f41fef498b1e90fc88585a019323b97ba2ddd13f5abeeadc0",
+  "stagedEntriesAfterSha256": "112b6ce34b6fa98f41fef498b1e90fc88585a019323b97ba2ddd13f5abeeadc0",
+  "indexBytesBeforeSha256": "f264f003e842718451d59176429e73c7890f5de6bcac4a7af7807e36cdecdec3",
+  "indexBytesAfterSha256": "f264f003e842718451d59176429e73c7890f5de6bcac4a7af7807e36cdecdec3",
+  "historyFilesChecked": 252,
+  "historyFilesUnchanged": 252,
+  "preexistingFilesChecked": 88,
+  "preexistingFilesUnchanged": 80,
+  "preexistingIntentionalDocUpdates": [
+    {
+      "file": "coderisk/KNOWN_ISSUES.md",
+      "beforeSha256": "8c663088aacecc1a83a7cf1d1bece00bbfecfcc9e369569793d74083dd7e1d80",
+      "afterSha256": "0b6b1b073fd71d99a7a08cd9e940553199e2e419a2ea79b1f52aa5d06d141567",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk/README.md",
+      "beforeSha256": "2697a1332ccb88986fb5609e310f891fcf241da63c9db3e9767e082d43c966ca",
+      "afterSha256": "1fdf39ab7b7df4f55bdfd46ba2ee332a74337ff1457fca25b898a48cef8bb482",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk/TEST_REPORT.md",
+      "beforeSha256": "3769287dea5837473cb1f7c62a6c4099efa8b7850ba79e2db858d5168556b8b8",
+      "afterSha256": "affe9b06895624e2e82106d704378cf229472a8940e1af2d758551b2a1fc49cc",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/ALGORITHM_SPEC.md",
+      "beforeSha256": "2ba897c60546bf4d26c4c9b67526fc41df42e26fe1e2c7109219588f316063bb",
+      "afterSha256": "e25d821951ffb15305848284c46fd8b76faebd5ee7e32da9bb4161399b455e98",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/CANONICALIZATION_SPEC.md",
+      "beforeSha256": "2bd7b2e16dabe228e9817ce1cfae76a691b8473197bdb22f766cb2ee24b87fdb",
+      "afterSha256": "e97e54dc719c3261e17f4355b31b12076b2fd73a6f0993c6a230421c4a224f44",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/EXPERIMENT_PLAN.md",
+      "beforeSha256": "57d8a8e53be2a7601adfebf8197d150dc2caae965bdb6c5673f1f341d0e18a2f",
+      "afterSha256": "65fbc6553a4aef170815aff25f9fa48638455749f93fa95d2ce6a18bc569094a",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/ROADMAP.md",
+      "beforeSha256": "cb1ed072c8c2496d14895865eec2ea5696fbc8b1736f2ddc612ebb03c2601fa6",
+      "afterSha256": "3d6abec3eae614f00266c2e885ee788a9dd41daabb64ec696fc5d50544f79a30",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/TEST_PLAN.md",
+      "beforeSha256": "f7d26215a042d641f2681a3c61df8dc25fc1ebcbc45f90d2bc8729447bbceccb",
+      "afterSha256": "0e1c10c5ec0b47fe6cb62bc4ec2e670be2afcb6985f02f9fe775c37010b123c6",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    }
+  ],
+  "unplannedPreexistingChanges": [],
+  "protectedSources": [
+    {
+      "file": "CODEX_PICAS_.md",
+      "beforeSha256": "3b64f56d028e13405220852094bd64ddf26617efb931fb437b5239109a1ca116",
+      "afterSha256": "3b64f56d028e13405220852094bd64ddf26617efb931fb437b5239109a1ca116",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "README.md",
+      "beforeSha256": "7afa7adbd6800ace87d326031b3453a1fb8a57f343920af49f8403417f1de6d8",
+      "afterSha256": "081dca4d76d5d54c61a733a03edaa9e477b0a32c07eeeafbfd2ccac3d31ae750",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk_docs/FORMULA_SPEC.md",
+      "beforeSha256": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20",
+      "afterSha256": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/canonicalization.py",
+      "beforeSha256": "1fd1cdc8d0253b65f03a3dd27db6969053e3ea3561dbb5943701beff54877008",
+      "afterSha256": "534021358f6198ecdbd4bfb745493249359807c5982e8d7f5eb9c7447c738612",
+      "intentionallyUpdated": true,
+      "unchanged": false
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/token_similarity.py",
+      "beforeSha256": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+      "afterSha256": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/problem_profile.py",
+      "beforeSha256": "903e72309dbf871d6e6ba8daea853755adecde8c41d062c9b6065dbfd6c0a035",
+      "afterSha256": "903e72309dbf871d6e6ba8daea853755adecde8c41d062c9b6065dbfd6c0a035",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/java_source.py",
+      "beforeSha256": "8670770a630b79c0a9c14d7a9990cb419d50757c3f6fbce3b1683405ce6b6868",
+      "afterSha256": "8670770a630b79c0a9c14d7a9990cb419d50757c3f6fbce3b1683405ce6b6868",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/schemas/analyze_schema.py",
+      "beforeSha256": "a0d4be34c5dc020b4b12a7379bd8eadd485ed765ac1aa55335902330e7408005",
+      "afterSha256": "a0d4be34c5dc020b4b12a7379bd8eadd485ed765ac1aa55335902330e7408005",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/identifier_renaming.py",
+      "beforeSha256": "49c9ae4d94cdb3e9ca85d0f7e42b1fd9e6f5be18f295eb44bd09e82f10dfdb3c",
+      "afterSha256": "49c9ae4d94cdb3e9ca85d0f7e42b1fd9e6f5be18f295eb44bd09e82f10dfdb3c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/similarity_ablation.py",
+      "beforeSha256": "fc6f8a68c41a48e2269cb619ff917c0600512919d0099b798fdb92672dcf3951",
+      "afterSha256": "fc6f8a68c41a48e2269cb619ff917c0600512919d0099b798fdb92672dcf3951",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/research_protocol.py",
+      "beforeSha256": "0f2cce269b15baf845ca876183530341d92556043c2f120addf8d25627827d85",
+      "afterSha256": "0f2cce269b15baf845ca876183530341d92556043c2f120addf8d25627827d85",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/run_fair_evaluation.py",
+      "beforeSha256": "fa6b3fd80e461d213fc6d3566124196b5043c2757a3a99f9d6902a4d764016f7",
+      "afterSha256": "fa6b3fd80e461d213fc6d3566124196b5043c2757a3a99f9d6902a4d764016f7",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk_docs/API_SPEC.md",
+      "beforeSha256": "75d61108970bc0733aecddea5cfc8c82d73a5e5ec990a5b69fb0dd968e51063a",
+      "afterSha256": "75d61108970bc0733aecddea5cfc8c82d73a5e5ec990a5b69fb0dd968e51063a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk_docs/DATABASE_SCHEMA.md",
+      "beforeSha256": "63cfe8f89aa5313e5e0631ca76e49c3bd07d08fa46866496394c47363a143293",
+      "afterSha256": "63cfe8f89aa5313e5e0631ca76e49c3bd07d08fa46866496394c47363a143293",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    }
+  ],
+  "historicalArtifactVerification": [
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/fixtures.json",
+      "beforeSha256": "f9e05846c47777f2248bd863d141888adbae2e548b5bdb804e997ce8562783fb",
+      "afterSha256": "f9e05846c47777f2248bd863d141888adbae2e548b5bdb804e997ce8562783fb",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/README.md",
+      "beforeSha256": "9d611645b9559e2b9cc46d0efedd6c9d25cfe843be9231d15c4cd6081f5d4960",
+      "afterSha256": "9d611645b9559e2b9cc46d0efedd6c9d25cfe843be9231d15c4cd6081f5d4960",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/REPORT.md",
+      "beforeSha256": "45303989e55e8ae935e225bf6ccf7f470418260d18db15e31c4458a177ed65dc",
+      "afterSha256": "45303989e55e8ae935e225bf6ccf7f470418260d18db15e31c4458a177ed65dc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/research-invariance-red-r2.xml",
+      "beforeSha256": "d5733673f690b452f3f630d7193ca14bc475f25204ede58028dcb6deb801d4c3",
+      "afterSha256": "d5733673f690b452f3f630d7193ca14bc475f25204ede58028dcb6deb801d4c3",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/research-phase1-full-r1.xml",
+      "beforeSha256": "abd5a1f2f1ec769a8b6e66fcf1fdbed63e8c2fb7660e805ccab32febef175515",
+      "afterSha256": "abd5a1f2f1ec769a8b6e66fcf1fdbed63e8c2fb7660e805ccab32febef175515",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/research-phase1-new-only-r1.xml",
+      "beforeSha256": "1ed7101f51321d4f69bdab5ce444d64700fbe2be5d1eacb0a8a8605698686b57",
+      "afterSha256": "1ed7101f51321d4f69bdab5ce444d64700fbe2be5d1eacb0a8a8605698686b57",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/summary.json",
+      "beforeSha256": "70187a7eacec47e88d4af42027c8356eb6dc761dd448611c3e3da30f012b8881",
+      "afterSha256": "70187a7eacec47e88d4af42027c8356eb6dc761dd448611c3e3da30f012b8881",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/identifier-invariance-20261010/variants.jsonl",
+      "beforeSha256": "6ff5e69c2efded17ea3d3628897cd409e6dc70034cfceba7fa28f79dcb66bab7",
+      "afterSha256": "6ff5e69c2efded17ea3d3628897cd409e6dc70034cfceba7fa28f79dcb66bab7",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-registration-20261009/protocol.json",
+      "beforeSha256": "ed2d7942b400f17dc4c762babd189f1d8b3a559c79bc947ed726b5906ccd760c",
+      "afterSha256": "ed2d7942b400f17dc4c762babd189f1d8b3a559c79bc947ed726b5906ccd760c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-registration-20261009/published_pairs_snapshot.jsonl",
+      "beforeSha256": "d93a9fd5fce69380822b7a19d1de9cefa1f8b93a9c31177452cbca58100ae3fb",
+      "afterSha256": "d93a9fd5fce69380822b7a19d1de9cefa1f8b93a9c31177452cbca58100ae3fb",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-registration-20261009/README.md",
+      "beforeSha256": "21ff3d848720cdf025d5605b20dbe6d2b98227b763a730f392b1d04116e24002",
+      "afterSha256": "21ff3d848720cdf025d5605b20dbe6d2b98227b763a730f392b1d04116e24002",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-registration-20261009/split_assignments.json",
+      "beforeSha256": "b16ddb8825ea8156fb570667fe380b4520f1daeb2cf8411a100860b79d7a6a89",
+      "afterSha256": "b16ddb8825ea8156fb570667fe380b4520f1daeb2cf8411a100860b79d7a6a89",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/artifact_inventory.json",
+      "beforeSha256": "a157e145bf33b3a3fa7a54021ecb8b368ccb7538f66f443f4b6bbc1be2ee99d8",
+      "afterSha256": "a157e145bf33b3a3fa7a54021ecb8b368ccb7538f66f443f4b6bbc1be2ee99d8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/metric_tables.csv",
+      "beforeSha256": "4d92bb0eca19ece9f805ec8119896ceaf3a57feaac0853274f64b72d2e2054ce",
+      "afterSha256": "4d92bb0eca19ece9f805ec8119896ceaf3a57feaac0853274f64b72d2e2054ce",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/protocol_snapshot.json",
+      "beforeSha256": "ed2d7942b400f17dc4c762babd189f1d8b3a559c79bc947ed726b5906ccd760c",
+      "afterSha256": "ed2d7942b400f17dc4c762babd189f1d8b3a559c79bc947ed726b5906ccd760c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/README.md",
+      "beforeSha256": "48a0f5c99ea47fec6b6f0e9b9aa342fb8bf26e2d8136c2909d2909e21a35dafe",
+      "afterSha256": "48a0f5c99ea47fec6b6f0e9b9aa342fb8bf26e2d8136c2909d2909e21a35dafe",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/run_start.json",
+      "beforeSha256": "7851e4ecc3295174a6951947b89d20651b6086b40d13bcbad14a7fd9ab63255b",
+      "afterSha256": "7851e4ecc3295174a6951947b89d20651b6086b40d13bcbad14a7fd9ab63255b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/run_summary.json",
+      "beforeSha256": "4c917abacb71227e9a7339058b12dbaef0104713188bcbbcb3a8550b75a816e4",
+      "afterSha256": "4c917abacb71227e9a7339058b12dbaef0104713188bcbbcb3a8550b75a816e4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/test_comparison.pdf",
+      "beforeSha256": "651db21288123d107064e5b79bdf7e04469185ace8dbc70cd79f4bdbfab744df",
+      "afterSha256": "651db21288123d107064e5b79bdf7e04469185ace8dbc70cd79f4bdbfab744df",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/test_comparison.png",
+      "beforeSha256": "0056660143af3f5dd331959a05a892eaba075ba84e06deea493b6f85933fed2c",
+      "afterSha256": "0056660143af3f5dd331959a05a892eaba075ba84e06deea493b6f85933fed2c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/test_comparison.svg",
+      "beforeSha256": "4bf0f3b4d172446e393a677bf272f17779ec1f5db8908d314e2284afd7368ad5",
+      "afterSha256": "4bf0f3b4d172446e393a677bf272f17779ec1f5db8908d314e2284afd7368ad5",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/evaluation.json",
+      "beforeSha256": "b52c860c6b52a7bf9a336deac6435a2774494d646a304f7a5b226b151190eefa",
+      "afterSha256": "b52c860c6b52a7bf9a336deac6435a2774494d646a304f7a5b226b151190eefa",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/1/native/java/results/results.csv",
+      "beforeSha256": "5eebaaaf545a8d8b0f177e0ba5dddf5cf6bbfca6e57ff439c2fe24af1a8d9e26",
+      "afterSha256": "5eebaaaf545a8d8b0f177e0ba5dddf5cf6bbfca6e57ff439c2fe24af1a8d9e26",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/1/native/java/stderr.txt",
+      "beforeSha256": "9dcfffa4bb784661f57624fa4cf996d824a062fd59bbb1675496153ca7f2dde5",
+      "afterSha256": "9dcfffa4bb784661f57624fa4cf996d824a062fd59bbb1675496153ca7f2dde5",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/1/native/java/stdout.txt",
+      "beforeSha256": "2f6bad04edd07ef1e1197ad5e7be2806f47aa540c89ec7cafa828a7c964a499f",
+      "afterSha256": "2f6bad04edd07ef1e1197ad5e7be2806f47aa540c89ec7cafa828a7c964a499f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/10/native/java/results/results.csv",
+      "beforeSha256": "356edb54fc9f6c89e213777bfa3facd17151ec9b6b30e5212777606e60f2c007",
+      "afterSha256": "356edb54fc9f6c89e213777bfa3facd17151ec9b6b30e5212777606e60f2c007",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/10/native/java/stderr.txt",
+      "beforeSha256": "49522d91f1a588be9ae2b036f5a8e3bb3a32ba932773e64f340a642f2c3ba174",
+      "afterSha256": "49522d91f1a588be9ae2b036f5a8e3bb3a32ba932773e64f340a642f2c3ba174",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/10/native/java/stdout.txt",
+      "beforeSha256": "70551145d0b17636602b9f8e19f4c4577e883b60b8c5037eeb55a5d2430a309d",
+      "afterSha256": "70551145d0b17636602b9f8e19f4c4577e883b60b8c5037eeb55a5d2430a309d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/11/native/java/results/results.csv",
+      "beforeSha256": "df8fc1624931703744bc68b2a3480e436cb03c4f43f1cdaa54ce2e825d4163ed",
+      "afterSha256": "df8fc1624931703744bc68b2a3480e436cb03c4f43f1cdaa54ce2e825d4163ed",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/11/native/java/stderr.txt",
+      "beforeSha256": "e6c1d6d0b881b7234f1495b62f6efd7f182c89726b67cfd513aca70db6073c35",
+      "afterSha256": "e6c1d6d0b881b7234f1495b62f6efd7f182c89726b67cfd513aca70db6073c35",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/11/native/java/stdout.txt",
+      "beforeSha256": "a60a685083a3f24ae95d0afdae3dfd8ea811b218d79ff23896c855d523b7d79f",
+      "afterSha256": "a60a685083a3f24ae95d0afdae3dfd8ea811b218d79ff23896c855d523b7d79f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/12/native/java/results/results.csv",
+      "beforeSha256": "f16fbdbd36260b7c555acc44f2935d4f1415e769e4269ef4dbe83237754d5c61",
+      "afterSha256": "f16fbdbd36260b7c555acc44f2935d4f1415e769e4269ef4dbe83237754d5c61",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/12/native/java/stderr.txt",
+      "beforeSha256": "52bb755ec49da2e4a884a82cb01c11510984b086e56ae601400ec88349f40c59",
+      "afterSha256": "52bb755ec49da2e4a884a82cb01c11510984b086e56ae601400ec88349f40c59",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/12/native/java/stdout.txt",
+      "beforeSha256": "cc8f2339e3feb688756779684f7396e0005dc7cb09955ebe0eb4600e06dfead3",
+      "afterSha256": "cc8f2339e3feb688756779684f7396e0005dc7cb09955ebe0eb4600e06dfead3",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/13/native/java/results/results.csv",
+      "beforeSha256": "eb774b1acfe5ff08009dd40b73adac62ce270077d4b0809dc53817f46989b67d",
+      "afterSha256": "eb774b1acfe5ff08009dd40b73adac62ce270077d4b0809dc53817f46989b67d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/13/native/java/stderr.txt",
+      "beforeSha256": "555d052aa469227d52c59d8eef641c9c02c84cc21383d92bc54f7c3b3796ea65",
+      "afterSha256": "555d052aa469227d52c59d8eef641c9c02c84cc21383d92bc54f7c3b3796ea65",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/13/native/java/stdout.txt",
+      "beforeSha256": "ed9f45897c879b32691c2542be76ad2f6de69b3bb97a5d68051d7387ae976aa8",
+      "afterSha256": "ed9f45897c879b32691c2542be76ad2f6de69b3bb97a5d68051d7387ae976aa8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/14/native/java/results/results.csv",
+      "beforeSha256": "e1c4c9565ad835de272773ec588ba8d3487a0075eddf6645e258c60a4ff2db5f",
+      "afterSha256": "e1c4c9565ad835de272773ec588ba8d3487a0075eddf6645e258c60a4ff2db5f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/14/native/java/stderr.txt",
+      "beforeSha256": "4be605f35aa31697bc173184c4f1a486af0151599189e51f583cde2ed0ef9de8",
+      "afterSha256": "4be605f35aa31697bc173184c4f1a486af0151599189e51f583cde2ed0ef9de8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/14/native/java/stdout.txt",
+      "beforeSha256": "2060e92abd8ab7ed0dd3e08b980e65631594524a59c01685ecbf45728d09b54f",
+      "afterSha256": "2060e92abd8ab7ed0dd3e08b980e65631594524a59c01685ecbf45728d09b54f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/15/native/java/results/results.csv",
+      "beforeSha256": "72a47b6942a091a295c6e6398d380e7f379b088bad75de3ebdea67ace64d59df",
+      "afterSha256": "72a47b6942a091a295c6e6398d380e7f379b088bad75de3ebdea67ace64d59df",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/15/native/java/stderr.txt",
+      "beforeSha256": "9f832c3fac0554e81c1683c3605f722795a061cb5b8722d71e581fbd9beafdd2",
+      "afterSha256": "9f832c3fac0554e81c1683c3605f722795a061cb5b8722d71e581fbd9beafdd2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/15/native/java/stdout.txt",
+      "beforeSha256": "c6ae2dd5b2c6eac3ddf05f3cbae357bc136500ff1e1a3680fc4663fcaa1d3008",
+      "afterSha256": "c6ae2dd5b2c6eac3ddf05f3cbae357bc136500ff1e1a3680fc4663fcaa1d3008",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/16/native/java/results/results.csv",
+      "beforeSha256": "1d5caa28eeb01aa7e08cf378ed8422263bc597f0ae4f2ffb8ae6368d10f3a1c6",
+      "afterSha256": "1d5caa28eeb01aa7e08cf378ed8422263bc597f0ae4f2ffb8ae6368d10f3a1c6",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/16/native/java/stderr.txt",
+      "beforeSha256": "8727c082a4eac5deb142cd338fdb55fac6d5edb0e0c0795f6fa878683f9f9dda",
+      "afterSha256": "8727c082a4eac5deb142cd338fdb55fac6d5edb0e0c0795f6fa878683f9f9dda",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/16/native/java/stdout.txt",
+      "beforeSha256": "eedb9e82ded249db3e7bdc9351e8ec435075dbdc8df0cf057626e8f93c6c31b7",
+      "afterSha256": "eedb9e82ded249db3e7bdc9351e8ec435075dbdc8df0cf057626e8f93c6c31b7",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/17/native/java/results/results.csv",
+      "beforeSha256": "fd2af5a300fc39063e42ced64fb9e1422b82b7e05ba3d46bdc21c752f7f36a3b",
+      "afterSha256": "fd2af5a300fc39063e42ced64fb9e1422b82b7e05ba3d46bdc21c752f7f36a3b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/17/native/java/stderr.txt",
+      "beforeSha256": "7522ca290f0bcbce137f594a7487bc596cb266d362f6735f11077d7fb44a7cda",
+      "afterSha256": "7522ca290f0bcbce137f594a7487bc596cb266d362f6735f11077d7fb44a7cda",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/17/native/java/stdout.txt",
+      "beforeSha256": "11bce77cf460491a05cd5d1704f426cd3e5b21f7383fd62077b70b03cc463869",
+      "afterSha256": "11bce77cf460491a05cd5d1704f426cd3e5b21f7383fd62077b70b03cc463869",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/18/native/java/results/results.csv",
+      "beforeSha256": "421850fc7d13107ea43efec667b165364391915397bf6b0da6d1a0180c1d1cd1",
+      "afterSha256": "421850fc7d13107ea43efec667b165364391915397bf6b0da6d1a0180c1d1cd1",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/18/native/java/stderr.txt",
+      "beforeSha256": "d124fec5d52cc6f8045207ca9fa05e544988f94b945c62eec4a1109bfdf18190",
+      "afterSha256": "d124fec5d52cc6f8045207ca9fa05e544988f94b945c62eec4a1109bfdf18190",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/18/native/java/stdout.txt",
+      "beforeSha256": "586aa1fed42f44bfd66ac8bf7e5719133bfa4610a1f2fefb653a0ab7eeee066c",
+      "afterSha256": "586aa1fed42f44bfd66ac8bf7e5719133bfa4610a1f2fefb653a0ab7eeee066c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/19/native/java/results/results.csv",
+      "beforeSha256": "b528f779cf92394bc255908b8ce7e037a4e9805f7bd8e4d8fed11590d57ebead",
+      "afterSha256": "b528f779cf92394bc255908b8ce7e037a4e9805f7bd8e4d8fed11590d57ebead",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/19/native/java/stderr.txt",
+      "beforeSha256": "25542a7ee6c45cc1d215fdceec40aa55239bac01918cfb95e1298ea100004bbb",
+      "afterSha256": "25542a7ee6c45cc1d215fdceec40aa55239bac01918cfb95e1298ea100004bbb",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/19/native/java/stdout.txt",
+      "beforeSha256": "7bdcaca2eb47e92bc101aab23f80d9a0d9f9fb0081ea18623434d49eddfd8ae8",
+      "afterSha256": "7bdcaca2eb47e92bc101aab23f80d9a0d9f9fb0081ea18623434d49eddfd8ae8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/2/native/java/results/results.csv",
+      "beforeSha256": "ed2c7d0a9f3436b99e5bebbe2f03829e3f3f75fef054ae9a703cbda850e614a8",
+      "afterSha256": "ed2c7d0a9f3436b99e5bebbe2f03829e3f3f75fef054ae9a703cbda850e614a8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/2/native/java/stderr.txt",
+      "beforeSha256": "4fe03a595df4069275c95c084c844d5d258a00e6ab5d87c3b3f8cf5e9209faf2",
+      "afterSha256": "4fe03a595df4069275c95c084c844d5d258a00e6ab5d87c3b3f8cf5e9209faf2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/2/native/java/stdout.txt",
+      "beforeSha256": "84338c48d66b03d54c6bafdfc0f4cbc90a40ece2d6fd75a3fbfb0ddc348ae7af",
+      "afterSha256": "84338c48d66b03d54c6bafdfc0f4cbc90a40ece2d6fd75a3fbfb0ddc348ae7af",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/20/native/java/results/results.csv",
+      "beforeSha256": "98bcf1700a23327cdac21a132543929c11ab2cf851d4958567bc8fc0ad375475",
+      "afterSha256": "98bcf1700a23327cdac21a132543929c11ab2cf851d4958567bc8fc0ad375475",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/20/native/java/stderr.txt",
+      "beforeSha256": "bcfbca82c3cf085cd7aad24315a68d0f2fa5a04a11c5c9393bf35457dfa1d3f4",
+      "afterSha256": "bcfbca82c3cf085cd7aad24315a68d0f2fa5a04a11c5c9393bf35457dfa1d3f4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/20/native/java/stdout.txt",
+      "beforeSha256": "d1ae4feb15a60b734105fbed500a538caf5f85832294df465766dbe99dd0a520",
+      "afterSha256": "d1ae4feb15a60b734105fbed500a538caf5f85832294df465766dbe99dd0a520",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/21/native/java/results/results.csv",
+      "beforeSha256": "c1dced766b494d7a9e0dee36204d8ace375ad42ee858d775bcc9f461faebec95",
+      "afterSha256": "c1dced766b494d7a9e0dee36204d8ace375ad42ee858d775bcc9f461faebec95",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/21/native/java/stderr.txt",
+      "beforeSha256": "dabce861049d715c9cc74c21d7293c3e4e296123af52e8b9ef167a643e0d67e0",
+      "afterSha256": "dabce861049d715c9cc74c21d7293c3e4e296123af52e8b9ef167a643e0d67e0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/21/native/java/stdout.txt",
+      "beforeSha256": "8c4df20c11097d2e94ed6b69203b96863048ad732c92249b74f7bb83046ec638",
+      "afterSha256": "8c4df20c11097d2e94ed6b69203b96863048ad732c92249b74f7bb83046ec638",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/3/native/java/results/results.csv",
+      "beforeSha256": "0b7b752abfcc7d1a675e1eeacabc89b962bd078c64f69668e9f08fccb7aaa2ac",
+      "afterSha256": "0b7b752abfcc7d1a675e1eeacabc89b962bd078c64f69668e9f08fccb7aaa2ac",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/3/native/java/stderr.txt",
+      "beforeSha256": "f7fd27f560a71351d2924743d700433473dfbfd1a596a4953c8276177e540414",
+      "afterSha256": "f7fd27f560a71351d2924743d700433473dfbfd1a596a4953c8276177e540414",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/3/native/java/stdout.txt",
+      "beforeSha256": "ba8d8b43e9b29f2d8e2c3847987b4079a29beb0693b8f3442ae3692c770ec5cc",
+      "afterSha256": "ba8d8b43e9b29f2d8e2c3847987b4079a29beb0693b8f3442ae3692c770ec5cc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/4/native/java/results/results.csv",
+      "beforeSha256": "f623e49eea30bf66ec0d3c80bbf60eae295db5fe0fe21dd39618f8975a351bdc",
+      "afterSha256": "f623e49eea30bf66ec0d3c80bbf60eae295db5fe0fe21dd39618f8975a351bdc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/4/native/java/stderr.txt",
+      "beforeSha256": "7086a30991b063c99126203c6df8ebba847dafca29e8c75567d07bc4b437c8f9",
+      "afterSha256": "7086a30991b063c99126203c6df8ebba847dafca29e8c75567d07bc4b437c8f9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/4/native/java/stdout.txt",
+      "beforeSha256": "f693f9fa8a0493ff9711c7320a1a54fe44fac8e00b94a0cb0f45ff54dc5a8143",
+      "afterSha256": "f693f9fa8a0493ff9711c7320a1a54fe44fac8e00b94a0cb0f45ff54dc5a8143",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/5/native/java/results/results.csv",
+      "beforeSha256": "e8aca9c45afa7f36672a72e16a9b108962743698c73e1d5e176c257333b11bbe",
+      "afterSha256": "e8aca9c45afa7f36672a72e16a9b108962743698c73e1d5e176c257333b11bbe",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/5/native/java/stderr.txt",
+      "beforeSha256": "12b22e12b8414667a8c3c58dcf3758c58a6f8bdd41a0593926f82f4e61d4b36b",
+      "afterSha256": "12b22e12b8414667a8c3c58dcf3758c58a6f8bdd41a0593926f82f4e61d4b36b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/5/native/java/stdout.txt",
+      "beforeSha256": "07e4b11329012218f40f4f5141e530930deba8b19bc33c123594db97682066f4",
+      "afterSha256": "07e4b11329012218f40f4f5141e530930deba8b19bc33c123594db97682066f4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/6/native/java/results/results.csv",
+      "beforeSha256": "50ecd3d22d0fb215864504a35c04be3066cb6e8cc73b3beaea01e71ebfe16191",
+      "afterSha256": "50ecd3d22d0fb215864504a35c04be3066cb6e8cc73b3beaea01e71ebfe16191",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/6/native/java/stderr.txt",
+      "beforeSha256": "5d554e05e5bc18daf047b6d4b34793f2e37942482fff143674293615d7f8543b",
+      "afterSha256": "5d554e05e5bc18daf047b6d4b34793f2e37942482fff143674293615d7f8543b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/6/native/java/stdout.txt",
+      "beforeSha256": "fd416b461a63294dec382fb10fb7d66c35f68a31615aa235c9f9c5736d9b25bf",
+      "afterSha256": "fd416b461a63294dec382fb10fb7d66c35f68a31615aa235c9f9c5736d9b25bf",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/7/native/java/results/results.csv",
+      "beforeSha256": "6fd2b83086679a9064b7dedeeb1acc57f0207e49b273d1983150a34ecd3dc70a",
+      "afterSha256": "6fd2b83086679a9064b7dedeeb1acc57f0207e49b273d1983150a34ecd3dc70a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/7/native/java/stderr.txt",
+      "beforeSha256": "00cfb6e49dcc8399f7b4702da813cc31a2aa87ef503d156ae7cdc9df62da0911",
+      "afterSha256": "00cfb6e49dcc8399f7b4702da813cc31a2aa87ef503d156ae7cdc9df62da0911",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/7/native/java/stdout.txt",
+      "beforeSha256": "60f7fd1899c3d78fdc4866bca1aae9acf51ccbe6a8e99c889b5d5742e0e018e0",
+      "afterSha256": "60f7fd1899c3d78fdc4866bca1aae9acf51ccbe6a8e99c889b5d5742e0e018e0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/8/native/java/results/results.csv",
+      "beforeSha256": "af30a8a9d17957f4facd013272c07a32501c8fe634aada70b67a64ade459a869",
+      "afterSha256": "af30a8a9d17957f4facd013272c07a32501c8fe634aada70b67a64ade459a869",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/8/native/java/stderr.txt",
+      "beforeSha256": "e060fe8dbb0546a85047f432301cc317bbdbcce42ab413895970857ae1f8d213",
+      "afterSha256": "e060fe8dbb0546a85047f432301cc317bbdbcce42ab413895970857ae1f8d213",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/8/native/java/stdout.txt",
+      "beforeSha256": "19aae3643e0e826d031197a3198bd0fc9c845aea137a06725efeadcb2ec2b477",
+      "afterSha256": "19aae3643e0e826d031197a3198bd0fc9c845aea137a06725efeadcb2ec2b477",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/9/native/java/results/results.csv",
+      "beforeSha256": "a8e929c44dcfb61b8a14ce5e47f34ff4a483dde54e937fb5afb413ecce561b88",
+      "afterSha256": "a8e929c44dcfb61b8a14ce5e47f34ff4a483dde54e937fb5afb413ecce561b88",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/9/native/java/stderr.txt",
+      "beforeSha256": "681876872c8c291a2f7f9aafb4e35d7f13929767e7a5c99c0a270c8ab61b56bf",
+      "afterSha256": "681876872c8c291a2f7f9aafb4e35d7f13929767e7a5c99c0a270c8ab61b56bf",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag/9/native/java/stdout.txt",
+      "beforeSha256": "bba38157fdde2db2ee94f67aaad7846a6847a65f8580ee58e178210b8a467e13",
+      "afterSha256": "bba38157fdde2db2ee94f67aaad7846a6847a65f8580ee58e178210b8a467e13",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag_runs.json",
+      "beforeSha256": "e7ed686802295d738230c31854adb86ea734c633a3b01b7402dbd209d11a567c",
+      "afterSha256": "e7ed686802295d738230c31854adb86ea734c633a3b01b7402dbd209d11a567c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/jplag_scores.jsonl",
+      "beforeSha256": "f0c426984b8f422abeb5360dab63ba3bac0155c3a98465d1e7ab5fa58b98eb80",
+      "afterSha256": "f0c426984b8f422abeb5360dab63ba3bac0155c3a98465d1e7ab5fa58b98eb80",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_1/picas_scores.jsonl",
+      "beforeSha256": "c048a8606281f440a091419f1b64ae8c024c4baeb8e3e6c341b051f66a83559c",
+      "afterSha256": "c048a8606281f440a091419f1b64ae8c024c4baeb8e3e6c341b051f66a83559c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/evaluation.json",
+      "beforeSha256": "0e23b1df9758cce7090427e98a618f3c33d80e64ba733f196fa439cd668cae06",
+      "afterSha256": "0e23b1df9758cce7090427e98a618f3c33d80e64ba733f196fa439cd668cae06",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/1/native/java/results/results.csv",
+      "beforeSha256": "6d9904d99dd0c0329f9b62362c6952ff4c85777f0679596f748a94eec6ab1c07",
+      "afterSha256": "6d9904d99dd0c0329f9b62362c6952ff4c85777f0679596f748a94eec6ab1c07",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/1/native/java/stderr.txt",
+      "beforeSha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "afterSha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/1/native/java/stdout.txt",
+      "beforeSha256": "0b8524ddea45da81442422c81cbcfe3c671a02bfbbc736bde0c547eea61079cf",
+      "afterSha256": "0b8524ddea45da81442422c81cbcfe3c671a02bfbbc736bde0c547eea61079cf",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/10/native/java/results/results.csv",
+      "beforeSha256": "dd65f04e867d593cc1f9ac6dfd495fcdbd5b27d7b17fad9d4a3eb06148895cce",
+      "afterSha256": "dd65f04e867d593cc1f9ac6dfd495fcdbd5b27d7b17fad9d4a3eb06148895cce",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/10/native/java/stderr.txt",
+      "beforeSha256": "01abb63ea5d3a2a3c982c2173f12ea19bcbfc65c96f5c91f365e245322c93794",
+      "afterSha256": "01abb63ea5d3a2a3c982c2173f12ea19bcbfc65c96f5c91f365e245322c93794",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/10/native/java/stdout.txt",
+      "beforeSha256": "0993c38a6eda116e876d12023cf2476ed0728593e60f3e8b81b239c920429e52",
+      "afterSha256": "0993c38a6eda116e876d12023cf2476ed0728593e60f3e8b81b239c920429e52",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/11/native/java/results/results.csv",
+      "beforeSha256": "2372631af2cb393d92639fa7154c5f99a0d91a7ab1b73f6d0897a9fa93be280c",
+      "afterSha256": "2372631af2cb393d92639fa7154c5f99a0d91a7ab1b73f6d0897a9fa93be280c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/11/native/java/stderr.txt",
+      "beforeSha256": "c87f94a4bbe8a07bef200459a118bf0de1cc3f868e30853be2aa63363d3a9603",
+      "afterSha256": "c87f94a4bbe8a07bef200459a118bf0de1cc3f868e30853be2aa63363d3a9603",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/11/native/java/stdout.txt",
+      "beforeSha256": "c59dddf465c58e523355fd8034f4d215f82340bdb2f0ca86fbec664bcbbbc25f",
+      "afterSha256": "c59dddf465c58e523355fd8034f4d215f82340bdb2f0ca86fbec664bcbbbc25f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/12/native/java/results/results.csv",
+      "beforeSha256": "f3e4082175b043f37151cb39a324e3b1ef4276c55d657cdf6ca1d9ee3fb3031b",
+      "afterSha256": "f3e4082175b043f37151cb39a324e3b1ef4276c55d657cdf6ca1d9ee3fb3031b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/12/native/java/stderr.txt",
+      "beforeSha256": "4fc3e5a628894afc37f6b6abbfdf6d406e6dbdce6549de5fd55f8a0d9b2fc690",
+      "afterSha256": "4fc3e5a628894afc37f6b6abbfdf6d406e6dbdce6549de5fd55f8a0d9b2fc690",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/12/native/java/stdout.txt",
+      "beforeSha256": "71cb9644efd19eb9abd205887a7842fcbe94ff5cd1c47ccf7dd0fa24562dc6e4",
+      "afterSha256": "71cb9644efd19eb9abd205887a7842fcbe94ff5cd1c47ccf7dd0fa24562dc6e4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/13/native/java/results/results.csv",
+      "beforeSha256": "6e10c4130edc084d0c7741470eac74770c0874fa69d183a25dd815ecfc45c82f",
+      "afterSha256": "6e10c4130edc084d0c7741470eac74770c0874fa69d183a25dd815ecfc45c82f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/13/native/java/stderr.txt",
+      "beforeSha256": "6f4c8447d6d64454a2a6cb0cf1cf3dfc8e9941990d2115ddfe8489131e68cf4b",
+      "afterSha256": "6f4c8447d6d64454a2a6cb0cf1cf3dfc8e9941990d2115ddfe8489131e68cf4b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/13/native/java/stdout.txt",
+      "beforeSha256": "b8e74d44411175720fe3b517eed7650f71403d639b7a2dc27028a1ae3bec848a",
+      "afterSha256": "b8e74d44411175720fe3b517eed7650f71403d639b7a2dc27028a1ae3bec848a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/14/native/java/results/results.csv",
+      "beforeSha256": "5839555823bfe77215b4cfdd7533c0b87afdad643d91a3165fb6aae5e9699278",
+      "afterSha256": "5839555823bfe77215b4cfdd7533c0b87afdad643d91a3165fb6aae5e9699278",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/14/native/java/stderr.txt",
+      "beforeSha256": "959f394e9a90a2c4ad36dfd1c691a4dd78bef08f6119c5cfcb80d77e0acf5fcc",
+      "afterSha256": "959f394e9a90a2c4ad36dfd1c691a4dd78bef08f6119c5cfcb80d77e0acf5fcc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/14/native/java/stdout.txt",
+      "beforeSha256": "143118ae6f551ea635a5cc7bfd8b03d8d9f45d1ad813a2341cac6c33ff1f28a8",
+      "afterSha256": "143118ae6f551ea635a5cc7bfd8b03d8d9f45d1ad813a2341cac6c33ff1f28a8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/15/native/java/results/results.csv",
+      "beforeSha256": "cc866b0cf634c35c42f83e2e3be36207680c665d55b0e3b7678930efa5cba4e6",
+      "afterSha256": "cc866b0cf634c35c42f83e2e3be36207680c665d55b0e3b7678930efa5cba4e6",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/15/native/java/stderr.txt",
+      "beforeSha256": "cb570de087cb9a68631d4270fc2546948d9fcbdd9da053ab284ff3224927b413",
+      "afterSha256": "cb570de087cb9a68631d4270fc2546948d9fcbdd9da053ab284ff3224927b413",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/15/native/java/stdout.txt",
+      "beforeSha256": "652ed5c8ae59193b1f443eb3cf47d9b81b49a208270d9141d2554f31ff1c0bf2",
+      "afterSha256": "652ed5c8ae59193b1f443eb3cf47d9b81b49a208270d9141d2554f31ff1c0bf2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/16/native/java/results/results.csv",
+      "beforeSha256": "ae7fa69eb055b5359c41b1751714ac2ede8b885be6422b6fe16e0aeb9908e994",
+      "afterSha256": "ae7fa69eb055b5359c41b1751714ac2ede8b885be6422b6fe16e0aeb9908e994",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/16/native/java/stderr.txt",
+      "beforeSha256": "c9de30420a4bf551a9efee1c0f24ba812e2d2460d6e85cd1685b44db8de995f8",
+      "afterSha256": "c9de30420a4bf551a9efee1c0f24ba812e2d2460d6e85cd1685b44db8de995f8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/16/native/java/stdout.txt",
+      "beforeSha256": "150fade39dbbbdf370e45c0c791e15e13459255eb45436e7a6b61df437067744",
+      "afterSha256": "150fade39dbbbdf370e45c0c791e15e13459255eb45436e7a6b61df437067744",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/17/native/java/results/results.csv",
+      "beforeSha256": "e1696d537973d59147815055e724521261ae6ff9918fa3d403aaf48e1f91871b",
+      "afterSha256": "e1696d537973d59147815055e724521261ae6ff9918fa3d403aaf48e1f91871b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/17/native/java/stderr.txt",
+      "beforeSha256": "7247bcb20fa6b03c781be2c6145d6b3a3aeae8e7c355757922611b597e334c14",
+      "afterSha256": "7247bcb20fa6b03c781be2c6145d6b3a3aeae8e7c355757922611b597e334c14",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/17/native/java/stdout.txt",
+      "beforeSha256": "edfbf7a81a0e43aea0702dffeee350e15d32a26452010ccef588a82e4e6c9bee",
+      "afterSha256": "edfbf7a81a0e43aea0702dffeee350e15d32a26452010ccef588a82e4e6c9bee",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/18/native/java/results/results.csv",
+      "beforeSha256": "46e4b59877c19f19f336c47e97d6749f4fd6b241411d688d4fb596ae286a8c0b",
+      "afterSha256": "46e4b59877c19f19f336c47e97d6749f4fd6b241411d688d4fb596ae286a8c0b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/18/native/java/stderr.txt",
+      "beforeSha256": "09dd757579e5b816167ce3508bb0a446601b86b2eebffa4c1fe64c4aa68f3d12",
+      "afterSha256": "09dd757579e5b816167ce3508bb0a446601b86b2eebffa4c1fe64c4aa68f3d12",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/18/native/java/stdout.txt",
+      "beforeSha256": "ad988c3997fcef68819d77763c7141e157518d3c948377057d45aab8b9aadf68",
+      "afterSha256": "ad988c3997fcef68819d77763c7141e157518d3c948377057d45aab8b9aadf68",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/19/native/java/results/results.csv",
+      "beforeSha256": "88eff96a7f55d0cfaad9030b36a7626928caa8bfcf573ece8b806f914c44cfb0",
+      "afterSha256": "88eff96a7f55d0cfaad9030b36a7626928caa8bfcf573ece8b806f914c44cfb0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/19/native/java/stderr.txt",
+      "beforeSha256": "cb6c280eb4176c0bb91017d4b99eae447fa185dc4885d073747d66afa1db3e70",
+      "afterSha256": "cb6c280eb4176c0bb91017d4b99eae447fa185dc4885d073747d66afa1db3e70",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/19/native/java/stdout.txt",
+      "beforeSha256": "0d54e9d3d6e314955552cefd93ff161ec7369cd27413e636d30615b2e1019ac9",
+      "afterSha256": "0d54e9d3d6e314955552cefd93ff161ec7369cd27413e636d30615b2e1019ac9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/2/native/java/results/results.csv",
+      "beforeSha256": "c150a70ed7830e79bc91d175c7ed5fe042fa78cac5faca068eb83e99a85d8112",
+      "afterSha256": "c150a70ed7830e79bc91d175c7ed5fe042fa78cac5faca068eb83e99a85d8112",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/2/native/java/stderr.txt",
+      "beforeSha256": "9a243abcf43096a63183104300c747250181b9ebc01fea25f8aaf39354f5ff63",
+      "afterSha256": "9a243abcf43096a63183104300c747250181b9ebc01fea25f8aaf39354f5ff63",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/2/native/java/stdout.txt",
+      "beforeSha256": "43afae900551f0534c164cde5a023373a4833e4da46c9d399170e4853b34be74",
+      "afterSha256": "43afae900551f0534c164cde5a023373a4833e4da46c9d399170e4853b34be74",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/20/native/java/results/results.csv",
+      "beforeSha256": "6a4c3b3c827aba60c9ca5b5e6ff12b064bc7b4b4ff019d234aee413f0da44860",
+      "afterSha256": "6a4c3b3c827aba60c9ca5b5e6ff12b064bc7b4b4ff019d234aee413f0da44860",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/20/native/java/stderr.txt",
+      "beforeSha256": "769fad5759626b9b02bb66878b895295f1f54e60305ded92bdf2cd4883c7a01c",
+      "afterSha256": "769fad5759626b9b02bb66878b895295f1f54e60305ded92bdf2cd4883c7a01c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/20/native/java/stdout.txt",
+      "beforeSha256": "867a42019c9e2e7fa73557e73a4649e7a39b9357eb12d5a652f10728d23169dc",
+      "afterSha256": "867a42019c9e2e7fa73557e73a4649e7a39b9357eb12d5a652f10728d23169dc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/21/native/java/results/results.csv",
+      "beforeSha256": "bb60539dfa9247e3174c30de9eaf1cfa6b5eda8a8e1c2d755e3bf597b2a075dd",
+      "afterSha256": "bb60539dfa9247e3174c30de9eaf1cfa6b5eda8a8e1c2d755e3bf597b2a075dd",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/21/native/java/stderr.txt",
+      "beforeSha256": "6d076d384ed92d58a6201ea7f5317df680c4f5aef4d025d2569f4fe954cca709",
+      "afterSha256": "6d076d384ed92d58a6201ea7f5317df680c4f5aef4d025d2569f4fe954cca709",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/21/native/java/stdout.txt",
+      "beforeSha256": "eacb435680608019e1dbd30c8cd3e516a3340a2c2f352a42558cb6386ddc6541",
+      "afterSha256": "eacb435680608019e1dbd30c8cd3e516a3340a2c2f352a42558cb6386ddc6541",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/3/native/java/results/results.csv",
+      "beforeSha256": "b94439721c673517b940652fb58e11c6bb90445ef0890633eaed9ce6f48b6db9",
+      "afterSha256": "b94439721c673517b940652fb58e11c6bb90445ef0890633eaed9ce6f48b6db9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/3/native/java/stderr.txt",
+      "beforeSha256": "572856616610c3015c44ce2887e41011157f38719bc0c99ca0d5f38e3ac59bb0",
+      "afterSha256": "572856616610c3015c44ce2887e41011157f38719bc0c99ca0d5f38e3ac59bb0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/3/native/java/stdout.txt",
+      "beforeSha256": "499184842ac996e17b4f5a477648e00fcfb1ef02a53a9e5c3b9e03e9ebe4f0d6",
+      "afterSha256": "499184842ac996e17b4f5a477648e00fcfb1ef02a53a9e5c3b9e03e9ebe4f0d6",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/4/native/java/results/results.csv",
+      "beforeSha256": "53e5b6e52fcf736a85281027e57e50f8c5bdb76c5d27311f231599233e178eae",
+      "afterSha256": "53e5b6e52fcf736a85281027e57e50f8c5bdb76c5d27311f231599233e178eae",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/4/native/java/stderr.txt",
+      "beforeSha256": "71603d828714b7f8dd6e3d09f6118398aadb359d66f832d32bb009ebd96a3195",
+      "afterSha256": "71603d828714b7f8dd6e3d09f6118398aadb359d66f832d32bb009ebd96a3195",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/4/native/java/stdout.txt",
+      "beforeSha256": "2843de654150088b3d4a1421b8a51d508e35e52df554c47bd8a20d2157d7b5d6",
+      "afterSha256": "2843de654150088b3d4a1421b8a51d508e35e52df554c47bd8a20d2157d7b5d6",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/5/native/java/results/results.csv",
+      "beforeSha256": "7b7c1cb38b44fd8dc51f4a14491decdce3df18082255f1e785991ed491e2af7a",
+      "afterSha256": "7b7c1cb38b44fd8dc51f4a14491decdce3df18082255f1e785991ed491e2af7a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/5/native/java/stderr.txt",
+      "beforeSha256": "fabf64757fc47368ca9a1bcf08c8c6505047c20915a17d88da9ab6aa8cf06d3c",
+      "afterSha256": "fabf64757fc47368ca9a1bcf08c8c6505047c20915a17d88da9ab6aa8cf06d3c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/5/native/java/stdout.txt",
+      "beforeSha256": "7d448cf4c964e63fdc2cabc03f3d0232b925a8d8f248890a6e3f68104f6405bc",
+      "afterSha256": "7d448cf4c964e63fdc2cabc03f3d0232b925a8d8f248890a6e3f68104f6405bc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/6/native/java/results/results.csv",
+      "beforeSha256": "e58bfc5c4e7f9a185556b6322733337b16aaed69af9e044844850deb8c3ba17a",
+      "afterSha256": "e58bfc5c4e7f9a185556b6322733337b16aaed69af9e044844850deb8c3ba17a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/6/native/java/stderr.txt",
+      "beforeSha256": "03b9839581852fe7131a7a2419b3ffae429957c984dedd83a5eddfc5713827de",
+      "afterSha256": "03b9839581852fe7131a7a2419b3ffae429957c984dedd83a5eddfc5713827de",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/6/native/java/stdout.txt",
+      "beforeSha256": "d47518e794f1261af473285888cc1afbebc39615bc1ac044a3db9adf4c57bc63",
+      "afterSha256": "d47518e794f1261af473285888cc1afbebc39615bc1ac044a3db9adf4c57bc63",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/7/native/java/results/results.csv",
+      "beforeSha256": "9cf29844d428c15aaed1719858a05bc88984bb04a9f024ae9e3712de1de773c2",
+      "afterSha256": "9cf29844d428c15aaed1719858a05bc88984bb04a9f024ae9e3712de1de773c2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/7/native/java/stderr.txt",
+      "beforeSha256": "2964263aa5591d23df7b09c446a0a70b10b98b37ce1f02915cb558bc04c53473",
+      "afterSha256": "2964263aa5591d23df7b09c446a0a70b10b98b37ce1f02915cb558bc04c53473",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/7/native/java/stdout.txt",
+      "beforeSha256": "4540ba990cb027d111298feaebb339089d6b3c98accf47c535207df51f70b2ee",
+      "afterSha256": "4540ba990cb027d111298feaebb339089d6b3c98accf47c535207df51f70b2ee",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/8/native/java/results/results.csv",
+      "beforeSha256": "08aabb197a35207a89a3bd91bcf95fc89d43299604ae56d58352c38409ef56e1",
+      "afterSha256": "08aabb197a35207a89a3bd91bcf95fc89d43299604ae56d58352c38409ef56e1",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/8/native/java/stderr.txt",
+      "beforeSha256": "60ec599d89f561b01eebd0fe80157eefcda4bfa90a37feaa37f177931a4787aa",
+      "afterSha256": "60ec599d89f561b01eebd0fe80157eefcda4bfa90a37feaa37f177931a4787aa",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/8/native/java/stdout.txt",
+      "beforeSha256": "b60c17aabceed486e4209b59a176e0b6b5500b137ac41a970717915c26fede4a",
+      "afterSha256": "b60c17aabceed486e4209b59a176e0b6b5500b137ac41a970717915c26fede4a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/9/native/java/results/results.csv",
+      "beforeSha256": "92570c3eb0ecbc35eacd67b146732ef66bd4526f7d7c3fffdcf90f087b2e959a",
+      "afterSha256": "92570c3eb0ecbc35eacd67b146732ef66bd4526f7d7c3fffdcf90f087b2e959a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/9/native/java/stderr.txt",
+      "beforeSha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "afterSha256": "c92b4b56f669664a4b981b55691b62eded941ef886420c85c69a2ab32c80f2e9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag/9/native/java/stdout.txt",
+      "beforeSha256": "fd0d0c30d0061f82e3d8c884c4fc12ee72618f040efe5b6278429cc2e76b8c5f",
+      "afterSha256": "fd0d0c30d0061f82e3d8c884c4fc12ee72618f040efe5b6278429cc2e76b8c5f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag_runs.json",
+      "beforeSha256": "e99382b681f40a8c9639b549467f2de4bcf91441e5b9bae6826ee8037c4bbfcb",
+      "afterSha256": "e99382b681f40a8c9639b549467f2de4bcf91441e5b9bae6826ee8037c4bbfcb",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/jplag_scores.jsonl",
+      "beforeSha256": "27228a88defe8b8d161ce3dc6883808200a185aa3ba8608b8be53909356d479d",
+      "afterSha256": "27228a88defe8b8d161ce3dc6883808200a185aa3ba8608b8be53909356d479d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/conplag-pilot-20261009/version_2/picas_scores.jsonl",
+      "beforeSha256": "ca083fdd1040b8bad764dccad1b839aeb1ce2b02b1b1b7721baa936e972c8db2",
+      "afterSha256": "ca083fdd1040b8bad764dccad1b839aeb1ce2b02b1b1b7721baa936e972c8db2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/borderline.csv",
+      "beforeSha256": "c2f7f241e60509763ded221f1c8517d17ba5822079d0928b03158da877facc87",
+      "afterSha256": "c2f7f241e60509763ded221f1c8517d17ba5822079d0928b03158da877facc87",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/config.json",
+      "beforeSha256": "00f1a58b34881b1afd46c4dcea440231d962e43437237c297996f5c5f8ffc58a",
+      "afterSha256": "00f1a58b34881b1afd46c4dcea440231d962e43437237c297996f5c5f8ffc58a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/coverage.csv",
+      "beforeSha256": "ccc3f4cf4c192958afb952ad7072bd84095851907203901469fe99218a88b940",
+      "afterSha256": "ccc3f4cf4c192958afb952ad7072bd84095851907203901469fe99218a88b940",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/dataset_validation.json",
+      "beforeSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "afterSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/excluded.csv",
+      "beforeSha256": "f032233052d2a5bc3cdb24802ee4dda23ee03bbd074288c8cc68a763672e3e88",
+      "afterSha256": "f032233052d2a5bc3cdb24802ee4dda23ee03bbd074288c8cc68a763672e3e88",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/failures.csv",
+      "beforeSha256": "fb8dacf52ba1509192d1e160cd1f8b57c5daf7868ea05c0c633dce8287c121a5",
+      "afterSha256": "fb8dacf52ba1509192d1e160cd1f8b57c5daf7868ea05c0c633dce8287c121a5",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/metrics.csv",
+      "beforeSha256": "1f0dc289b5a05b687026c8f02ccbcfa82d30eea9e687dce4b8d66d2f9f6fbf0c",
+      "afterSha256": "1f0dc289b5a05b687026c8f02ccbcfa82d30eea9e687dce4b8d66d2f9f6fbf0c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/parser_fallbacks.csv",
+      "beforeSha256": "7fcbe1da8e0d20010d480a767576a7e7f1670efbafd58ec75f7c10fc23f16c47",
+      "afterSha256": "7fcbe1da8e0d20010d480a767576a7e7f1670efbafd58ec75f7c10fc23f16c47",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/predictions.csv",
+      "beforeSha256": "85728b5847aeaf8fea4a96b5429299ce92ff5a9cc73ab9cf8be209e5605288e3",
+      "afterSha256": "85728b5847aeaf8fea4a96b5429299ce92ff5a9cc73ab9cf8be209e5605288e3",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/README.md",
+      "beforeSha256": "11764843f4168a4a61300548ad0ca381986fc6bd4230c627b85af21fe29b3209",
+      "afterSha256": "11764843f4168a4a61300548ad0ca381986fc6bd4230c627b85af21fe29b3209",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/rename_stability.csv",
+      "beforeSha256": "8291fd85f4817b609849e74e0d479e30e05078521cda4592de7f2707526c9b2f",
+      "afterSha256": "8291fd85f4817b609849e74e0d479e30e05078521cda4592de7f2707526c9b2f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/REPORT.md",
+      "beforeSha256": "b22df177bae2093b0daec5a385847f857133d3bc9353ab235c75e49910448b88",
+      "afterSha256": "b22df177bae2093b0daec5a385847f857133d3bc9353ab235c75e49910448b88",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/research-ablation-focused-r2.xml",
+      "beforeSha256": "21ad507f4110ba696d80d37d40c83ef4234d8a8a3664b631da0a91fb624d0df0",
+      "afterSha256": "21ad507f4110ba696d80d37d40c83ef4234d8a8a3664b631da0a91fb624d0df0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/research-ablation-full-r1.xml",
+      "beforeSha256": "b1194f5e73cd7ac6a7f06ea425e43a33ab64936cb2cd4d6b51c65d850cd5cab1",
+      "afterSha256": "b1194f5e73cd7ac6a7f06ea425e43a33ab64936cb2cd4d6b51c65d850cd5cab1",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/results.json",
+      "beforeSha256": "522c8bd92a297ec48ec9c722ec1684dbc5cad23b83813d198ff1dbe4883c0fe0",
+      "afterSha256": "522c8bd92a297ec48ec9c722ec1684dbc5cad23b83813d198ff1dbe4883c0fe0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/retrieval.csv",
+      "beforeSha256": "2cb1953a7d27511e1103531fa4ca4faeb0f486584e1765c017fd293901ba164e",
+      "afterSha256": "2cb1953a7d27511e1103531fa4ca4faeb0f486584e1765c017fd293901ba164e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/run_manifest.json",
+      "beforeSha256": "95c886e917ab7b6b14fa589faed7802a924d94a698b4b64d62cf85d7131cb0aa",
+      "afterSha256": "95c886e917ab7b6b14fa589faed7802a924d94a698b4b64d62cf85d7131cb0aa",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/scores.csv",
+      "beforeSha256": "cadfee00c3338fb920d9c4539ecf6740e946820b58ebea72c4f06bf651d22d8e",
+      "afterSha256": "cadfee00c3338fb920d9c4539ecf6740e946820b58ebea72c4f06bf651d22d8e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/similarity-ablation-20261010/selection.json",
+      "beforeSha256": "b7524d15052227b737167378390d29345e35495662f844e38910bb3817309d19",
+      "afterSha256": "b7524d15052227b737167378390d29345e35495662f844e38910bb3817309d19",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/borderline.csv",
+      "beforeSha256": "f80482e92e05a40fa11fb86eabccd38a48152d83c6998f0d0b83b1cb90f48e01",
+      "afterSha256": "f80482e92e05a40fa11fb86eabccd38a48152d83c6998f0d0b83b1cb90f48e01",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/config.json",
+      "beforeSha256": "1959b41fa961e7dc0e6ab97438bf8a7d7d877c93890fa501f29dcbb4c14b54e7",
+      "afterSha256": "1959b41fa961e7dc0e6ab97438bf8a7d7d877c93890fa501f29dcbb4c14b54e7",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/dataset_validation.json",
+      "beforeSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "afterSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/excluded.csv",
+      "beforeSha256": "f0ef4f1f9a63895faa08075fbd324d1128b6ceadd30461daf1a91d4f849c9bed",
+      "afterSha256": "f0ef4f1f9a63895faa08075fbd324d1128b6ceadd30461daf1a91d4f849c9bed",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/failures.csv",
+      "beforeSha256": "a5fef4cd60f554d100949b521370d1b661b0cf489a2126e9c111a89a896bdddc",
+      "afterSha256": "a5fef4cd60f554d100949b521370d1b661b0cf489a2126e9c111a89a896bdddc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/focused-green.xml",
+      "beforeSha256": "e26a6bbd94a67d252b4b7e5c1e80ba4201033bf9f2cfac9faa1f9036a128a76c",
+      "afterSha256": "e26a6bbd94a67d252b4b7e5c1e80ba4201033bf9f2cfac9faa1f9036a128a76c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/full-green.xml",
+      "beforeSha256": "01b8c1865d5f45adc94344fa6f2c0208fb217de9b6b12d5b414d92aebb553de2",
+      "afterSha256": "01b8c1865d5f45adc94344fa6f2c0208fb217de9b6b12d5b414d92aebb553de2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/gates-red.xml",
+      "beforeSha256": "f94b1ae8e51a07d328dbc639cfae5fb5d1b40b20543bd415d7ca3e3a2591631a",
+      "afterSha256": "f94b1ae8e51a07d328dbc639cfae5fb5d1b40b20543bd415d7ca3e3a2591631a",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/hash-red.xml",
+      "beforeSha256": "551dc8c6fddf74811278b95138183991bb39c570123d90e2b08b95c6eb95b4d5",
+      "afterSha256": "551dc8c6fddf74811278b95138183991bb39c570123d90e2b08b95c6eb95b4d5",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/identity-red.xml",
+      "beforeSha256": "16c35414bae84a4b156ce184b47b285938d59df046994ace1366bc226d7725ee",
+      "afterSha256": "16c35414bae84a4b156ce184b47b285938d59df046994ace1366bc226d7725ee",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/isolated-green.xml",
+      "beforeSha256": "7890d371301b1cbaa6b330c3e2fcee4c8bca8c0a5dcb98b1130ccd499e022e8b",
+      "afterSha256": "7890d371301b1cbaa6b330c3e2fcee4c8bca8c0a5dcb98b1130ccd499e022e8b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/isolated-metrics.csv",
+      "beforeSha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4",
+      "afterSha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/isolated-run_manifest.json",
+      "beforeSha256": "ae185aa5a7e20698a64ea9a9e3f9ee9adbb740789a7813be85d16bb43cb64cb4",
+      "afterSha256": "ae185aa5a7e20698a64ea9a9e3f9ee9adbb740789a7813be85d16bb43cb64cb4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/mathematical_contracts.json",
+      "beforeSha256": "3a294352c3213b35db7dc1bdfd130ad63d7ca462514c7dec8d076e80e674e402",
+      "afterSha256": "3a294352c3213b35db7dc1bdfd130ad63d7ca462514c7dec8d076e80e674e402",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/metrics.csv",
+      "beforeSha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4",
+      "afterSha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/parser_fallbacks.csv",
+      "beforeSha256": "8085d6c6222d8b70f1784ebb3476396e23f012e53efdd8397c32c2cc55522b7e",
+      "afterSha256": "8085d6c6222d8b70f1784ebb3476396e23f012e53efdd8397c32c2cc55522b7e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/predictions.csv",
+      "beforeSha256": "6117b164314ee65053b717040c563725fc7ea1529be5ed54d09996bb681e4b40",
+      "afterSha256": "6117b164314ee65053b717040c563725fc7ea1529be5ed54d09996bb681e4b40",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/queries.csv",
+      "beforeSha256": "796c57d1553ca4a61ae2e3104127720974e2259a99ac38b62831c730912aa6f9",
+      "afterSha256": "796c57d1553ca4a61ae2e3104127720974e2259a99ac38b62831c730912aa6f9",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/README.md",
+      "beforeSha256": "0f5f3c0feaccc39c90b2139b206351a962b8b1460804cf0cbe926e50b3ed39f2",
+      "afterSha256": "0f5f3c0feaccc39c90b2139b206351a962b8b1460804cf0cbe926e50b3ed39f2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/reference_audit.csv",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/REPORT.md",
+      "beforeSha256": "a4ae7fe96aba2f940a684d5db0d3402daaba636d52921e503c73ad654ea9a02c",
+      "afterSha256": "a4ae7fe96aba2f940a684d5db0d3402daaba636d52921e503c73ad654ea9a02c",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/results.json",
+      "beforeSha256": "fa75cb6e4854145f302c658cfefdfd86415640979084dbd0ff945d03de77f4d2",
+      "afterSha256": "fa75cb6e4854145f302c658cfefdfd86415640979084dbd0ff945d03de77f4d2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/reviewer-red.xml",
+      "beforeSha256": "e4ac6e8fb5263342fadb1d521ba9bc0316596c958c25a95629145b3819ced154",
+      "afterSha256": "e4ac6e8fb5263342fadb1d521ba9bc0316596c958c25a95629145b3819ced154",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/run_manifest.json",
+      "beforeSha256": "e686ae28c5cf479ddd50cfd5cf32843e7814e00dc572afe69e33e30af9d61859",
+      "afterSha256": "e686ae28c5cf479ddd50cfd5cf32843e7814e00dc572afe69e33e30af9d61859",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/selection.json",
+      "beforeSha256": "6e9336abe3f33e3bfd31993aaea568e81a8ff39afc3432a3b51ab9104992928b",
+      "afterSha256": "6e9336abe3f33e3bfd31993aaea568e81a8ff39afc3432a3b51ab9104992928b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/natural-calibration-20261010/verification.json",
+      "beforeSha256": "84ccd6d9a75f68e5d539e349de97b97089cc383cc995e2d19f0fb46710b2321e",
+      "afterSha256": "84ccd6d9a75f68e5d539e349de97b97089cc383cc995e2d19f0fb46710b2321e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/dry-run/REPORT.md",
+      "beforeSha256": "2b9b62260e1fc71eda5cf063459bb25177ab7865e697a035e1eb9690d5987809",
+      "afterSha256": "2b9b62260e1fc71eda5cf063459bb25177ab7865e697a035e1eb9690d5987809",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/dry-run/run_manifest.json",
+      "beforeSha256": "cad27b05a56558de0b43ded1cbf5d4edfc7952a2b96a4656b345e7a7e6cb5018",
+      "afterSha256": "cad27b05a56558de0b43ded1cbf5d4edfc7952a2b96a4656b345e7a7e6cb5018",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/jplag/baseline_results.csv",
+      "beforeSha256": "ce26fb3191507f177c4ee8940396b38dff40232d6b8202a268bdf282fd567bdc",
+      "afterSha256": "ce26fb3191507f177c4ee8940396b38dff40232d6b8202a268bdf282fd567bdc",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/jplag/excluded_pairs.csv",
+      "beforeSha256": "af1861f4c2e9cab74208fb69295b8aa03c8a17225677529bf2fb9b23933b5350",
+      "afterSha256": "af1861f4c2e9cab74208fb69295b8aa03c8a17225677529bf2fb9b23933b5350",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/jplag/run_manifest.json",
+      "beforeSha256": "beacd817519ae83847bf7e5faabb697f616dc11f2828397af5a9e33919d99a5d",
+      "afterSha256": "beacd817519ae83847bf7e5faabb697f616dc11f2828397af5a9e33919d99a5d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/llm-stage4-final-contract.xml",
+      "beforeSha256": "28bedfa05168bb7a5ccec760e554d29b957f1ea291e0e22c41d5ce2f905f03d3",
+      "afterSha256": "28bedfa05168bb7a5ccec760e554d29b957f1ea291e0e22c41d5ce2f905f03d3",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/llm-stage4-full.xml",
+      "beforeSha256": "d0cbf8587357189da352943b7f4617be80d3ba8e923276d7a7d79f2127274eee",
+      "afterSha256": "d0cbf8587357189da352943b7f4617be80d3ba8e923276d7a7d79f2127274eee",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/llm-stage4-gates-red.xml",
+      "beforeSha256": "c02382b0d09ee43af6f0369d72725e57ecf08479f7bb87eaea415f7159c04126",
+      "afterSha256": "c02382b0d09ee43af6f0369d72725e57ecf08479f7bb87eaea415f7159c04126",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/llm-stage4-isolated.xml",
+      "beforeSha256": "b2a646d70f24c3ab5ba3b66895c027a0161083bf9159eaf0010d7afc104f291f",
+      "afterSha256": "b2a646d70f24c3ab5ba3b66895c027a0161083bf9159eaf0010d7afc104f291f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/borderline.csv",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/config.json",
+      "beforeSha256": "5c21b15a3d0ab9efaa84dd9eb357d2bd33f9318f806db51179c22b5da8593f25",
+      "afterSha256": "5c21b15a3d0ab9efaa84dd9eb357d2bd33f9318f806db51179c22b5da8593f25",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/coverage.csv",
+      "beforeSha256": "634c0cec5dedf70d3f4a9f5d5640817271a7368f75bd464cb3122265a5e6da4b",
+      "afterSha256": "634c0cec5dedf70d3f4a9f5d5640817271a7368f75bd464cb3122265a5e6da4b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/dataset_validation.json",
+      "beforeSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "afterSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/excluded.csv",
+      "beforeSha256": "8e1474b0297bf21119ef884ea66e572920994194d1317b09580cd8c45f09034d",
+      "afterSha256": "8e1474b0297bf21119ef884ea66e572920994194d1317b09580cd8c45f09034d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/failures.csv",
+      "beforeSha256": "1965e0a5dfebe65620ddc0edf013da85ca44a1bd61bcf02b407e0322d14fb6ea",
+      "afterSha256": "1965e0a5dfebe65620ddc0edf013da85ca44a1bd61bcf02b407e0322d14fb6ea",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/metrics.csv",
+      "beforeSha256": "7e44052e9086b9bc6de3db430372ffa6705d717ac905f0cf399f3ba2cc874575",
+      "afterSha256": "7e44052e9086b9bc6de3db430372ffa6705d717ac905f0cf399f3ba2cc874575",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/model_outputs.jsonl",
+      "beforeSha256": "a83ac7ee3571b6e366d591a0900c73673047a43610c3af0355f4e12887560ebf",
+      "afterSha256": "a83ac7ee3571b6e366d591a0900c73673047a43610c3af0355f4e12887560ebf",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/repetitions.csv",
+      "beforeSha256": "9afa8e3a8734d252b328652476eaa187ae59d4c51df29941c1e43782a84971b1",
+      "afterSha256": "9afa8e3a8734d252b328652476eaa187ae59d4c51df29941c1e43782a84971b1",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/REPORT.md",
+      "beforeSha256": "826c08dec9161f4da5b39cc2bed658ea4a9dd56ee270ea44985c17516cb47aa0",
+      "afterSha256": "826c08dec9161f4da5b39cc2bed658ea4a9dd56ee270ea44985c17516cb47aa0",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/requests.jsonl",
+      "beforeSha256": "1fa451b007cb13f3087c8d85b73637498e6c10c3042d7a117615f604359a9218",
+      "afterSha256": "1fa451b007cb13f3087c8d85b73637498e6c10c3042d7a117615f604359a9218",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/responses_template.jsonl",
+      "beforeSha256": "efc45ab06a2799f9f9eca59945895d0c775a9b7e941521e89ed51ff597650cbb",
+      "afterSha256": "efc45ab06a2799f9f9eca59945895d0c775a9b7e941521e89ed51ff597650cbb",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/review.schema.json",
+      "beforeSha256": "ab7b643966a790b03e9945f87d06d876f06fc22f2d8b3f252a3d69c04418f9de",
+      "afterSha256": "ab7b643966a790b03e9945f87d06d876f06fc22f2d8b3f252a3d69c04418f9de",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/run_manifest.json",
+      "beforeSha256": "bcf3055e0e6d3c9b3679f488243685d1fa4a3c497e7430f0032f7c9180e2ac62",
+      "afterSha256": "bcf3055e0e6d3c9b3679f488243685d1fa4a3c497e7430f0032f7c9180e2ac62",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/scores.jsonl",
+      "beforeSha256": "9de95c62aaebb044ba29176bb99747c948f25517df8e29e97d89389bba70033e",
+      "afterSha256": "9de95c62aaebb044ba29176bb99747c948f25517df8e29e97d89389bba70033e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/selection.json",
+      "beforeSha256": "a2d1028658a1030b5257a21525f8a7991c515ae8043cfae78bf2e0189ea29c38",
+      "afterSha256": "a2d1028658a1030b5257a21525f8a7991c515ae8043cfae78bf2e0189ea29c38",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/mock/stability.csv",
+      "beforeSha256": "f9e8dd0ddbb9db70131028ddc726595cecc89f24a6dffb06f7d663ac6a5488de",
+      "afterSha256": "f9e8dd0ddbb9db70131028ddc726595cecc89f24a6dffb06f7d663ac6a5488de",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/llm-baseline-20261010/README.md",
+      "beforeSha256": "8057bbea4ff18c652d8e94bb995537bd475cc71138b9f9ee55ecc0d122faefb4",
+      "afterSha256": "8057bbea4ff18c652d8e94bb995537bd475cc71138b9f9ee55ecc0d122faefb4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/hybrid-stage5-focused-final.xml",
+      "beforeSha256": "cbbe74d22411bccff6f45c83247b6b4b21da549954401a4afd73d3b3d073f624",
+      "afterSha256": "cbbe74d22411bccff6f45c83247b6b4b21da549954401a4afd73d3b3d073f624",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/hybrid-stage5-full.xml",
+      "beforeSha256": "d2e6f8ab55c0bf03c0a84de0cf76c7151b48309289ccdaa70752b70991e7ff6e",
+      "afterSha256": "d2e6f8ab55c0bf03c0a84de0cf76c7151b48309289ccdaa70752b70991e7ff6e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/hybrid-stage5-gates-red.xml",
+      "beforeSha256": "0a1e3a3e1722eda7a85b0a0a9af84fb8159cda9d13831c9cb617809d55598a41",
+      "afterSha256": "0a1e3a3e1722eda7a85b0a0a9af84fb8159cda9d13831c9cb617809d55598a41",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/hybrid-stage5-isolated.xml",
+      "beforeSha256": "8e4b5026ce14442566a99be61ae343df5573098de6e234d1b3001be6d5a1071f",
+      "afterSha256": "8e4b5026ce14442566a99be61ae343df5573098de6e234d1b3001be6d5a1071f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/import-gate/REPORT.md",
+      "beforeSha256": "db3900983f368b7b2d51c8c69b30a2c4aaa4414a2f0624b60361a68b8c5af5d2",
+      "afterSha256": "db3900983f368b7b2d51c8c69b30a2c4aaa4414a2f0624b60361a68b8c5af5d2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/import-gate/run_manifest.json",
+      "beforeSha256": "9954948ea4bfa7b682546b0e3822dfa0ff2c5c953bf15eadcee7f17f299600e2",
+      "afterSha256": "9954948ea4bfa7b682546b0e3822dfa0ff2c5c953bf15eadcee7f17f299600e2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/candidate_recall.csv",
+      "beforeSha256": "abb848d136749ad2fbfabf3f649483014df297ce268bac861e462e8be9b6f2e4",
+      "afterSha256": "abb848d136749ad2fbfabf3f649483014df297ce268bac861e462e8be9b6f2e4",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/config.json",
+      "beforeSha256": "db4f4a31be2da952d90352100551515c71e7823786ef771751f88202ad78e156",
+      "afterSha256": "db4f4a31be2da952d90352100551515c71e7823786ef771751f88202ad78e156",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/dataset_validation.json",
+      "beforeSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "afterSha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/excluded.csv",
+      "beforeSha256": "878b5ecfd42858b9a6ad86b1b4fe3b7065efe360a6ddb5533c9d5b2e6fb98d29",
+      "afterSha256": "878b5ecfd42858b9a6ad86b1b4fe3b7065efe360a6ddb5533c9d5b2e6fb98d29",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/human_review_queue.csv",
+      "beforeSha256": "9c9f59caf400d7dbef159944852f8912120b342c6883986b4d5f9322b7f7d58e",
+      "afterSha256": "9c9f59caf400d7dbef159944852f8912120b342c6883986b4d5f9322b7f7d58e",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/model_outputs.jsonl",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/pipeline_evaluation.json",
+      "beforeSha256": "ceb02d689f44f71b0f7fce15b2a7e63e1e81edec7d78903b3c7b05d5c0b4bf6d",
+      "afterSha256": "ceb02d689f44f71b0f7fce15b2a7e63e1e81edec7d78903b3c7b05d5c0b4bf6d",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/pipeline_metrics.csv",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/pool_audit.json",
+      "beforeSha256": "a2213bb4f1c8af4fad23ee5f8c56620deda27bade0399a285241394b38b59cdf",
+      "afterSha256": "a2213bb4f1c8af4fad23ee5f8c56620deda27bade0399a285241394b38b59cdf",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/pool_failures.csv",
+      "beforeSha256": "1c0a0e1136443395929d3273586ebd0de76dd50ca13ee6b2534014682e955b34",
+      "afterSha256": "1c0a0e1136443395929d3273586ebd0de76dd50ca13ee6b2534014682e955b34",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/REPORT.md",
+      "beforeSha256": "db3900983f368b7b2d51c8c69b30a2c4aaa4414a2f0624b60361a68b8c5af5d2",
+      "afterSha256": "db3900983f368b7b2d51c8c69b30a2c4aaa4414a2f0624b60361a68b8c5af5d2",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/requests.jsonl",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/responses_template.jsonl",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/run_manifest.json",
+      "beforeSha256": "bd877dba56042915a396eebbbe6363a52e50e31cd2702b828478ac3386a253ca",
+      "afterSha256": "bd877dba56042915a396eebbbe6363a52e50e31cd2702b828478ac3386a253ca",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/scores.jsonl",
+      "beforeSha256": "b6b79b3701a8f17ad6102e66ca9479df7ff7a034acb2bf7af8a074d9d026c76b",
+      "afterSha256": "b6b79b3701a8f17ad6102e66ca9479df7ff7a034acb2bf7af8a074d9d026c76b",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/mock/selection.json",
+      "beforeSha256": "e9383d7b2d9f20f3615ba889cc46c879f9e576fd52d715fca67903aab83d928f",
+      "afterSha256": "e9383d7b2d9f20f3615ba889cc46c879f9e576fd52d715fca67903aab83d928f",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/README.md",
+      "beforeSha256": "a4561610e8c380dae3c8bcffccff1297f9bd2ce09fb1eba21fd0af2a05fa3884",
+      "afterSha256": "a4561610e8c380dae3c8bcffccff1297f9bd2ce09fb1eba21fd0af2a05fa3884",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/TEST-com.coderisk.SystemControllerTest.xml",
+      "beforeSha256": "ae9ca852e40ee490865b08d20f328116ae63dfd03478e331c9f890dcf4d680b8",
+      "afterSha256": "ae9ca852e40ee490865b08d20f328116ae63dfd03478e331c9f890dcf4d680b8",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    },
+    {
+      "file": "coderisk/experiment/evidence/hybrid-review-20261011/verification.json",
+      "beforeSha256": "412180988e52bdfa98d954bef620786bfdac849ad891d5394d188a1bb11a3439",
+      "afterSha256": "412180988e52bdfa98d954bef620786bfdac849ad891d5394d188a1bb11a3439",
+      "intentionallyUpdated": false,
+      "unchanged": true
+    }
+  ],
+  "linkCheck": {
+    "scope": "Root/readme/proposal updated docs and all research markdown; local target existence, not remote or anchor validation",
+    "files": 33,
+    "localLinksChecked": 338,
+    "missing": []
+  },
+  "newTests": 7,
+  "modifiedSourceAndDocCount": 37,
+  "changedFiles": [
+    {
+      "file": "README.md",
+      "sha256": "081dca4d76d5d54c61a733a03edaa9e477b0a32c07eeeafbfd2ccac3d31ae750",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk/KNOWN_ISSUES.md",
+      "sha256": "0b6b1b073fd71d99a7a08cd9e940553199e2e419a2ea79b1f52aa5d06d141567",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk/README.md",
+      "sha256": "1fdf39ab7b7df4f55bdfd46ba2ee332a74337ff1457fca25b898a48cef8bb482",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk/TEST_REPORT.md",
+      "sha256": "affe9b06895624e2e82106d704378cf229472a8940e1af2d758551b2a1fc49cc",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk/analysis-service-python/app/analyzers/canonicalization.py",
+      "sha256": "534021358f6198ecdbd4bfb745493249359807c5982e8d7f5eb9c7447c738612",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_group_action_fallback_contracts.py",
+      "sha256": "6234b515b18c7abdf89ef9a3863aae6b8ae3fddb654ca544f2c960f4fd278166",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_group_action_golden_bindings.py",
+      "sha256": "50e6eae2b49a9e4127ed9e3322d06293a5d56b05eade3d3474ba1e31ca59957f",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_group_action_noninvariance.py",
+      "sha256": "1813c01962232de8d263b62521feb2ccff1c3267a3be0c63e09f6dd7810b4587",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_group_action_orbits.py",
+      "sha256": "07c976f38850b09f6a29494b7d3a150203a100601c32fcaaa5aa66ce7b8b8947",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_group_action_runner.py",
+      "sha256": "0ade0d31b4697dfaaab59e80aeca62331a6be6b4a005f8c57885d284a6a708a8",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_opening_formal_readiness.py",
+      "sha256": "6543f0ae423239106db62fc7cd8e9d3daa04b3dcf7820cd6b3bb6f314ec4a177",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/analysis-service-python/tests/test_opening_readiness_runner.py",
+      "sha256": "401a7411ac60e0dd4765464041917195e63cef53c09a827deeff836b97e4964d",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/experiment/check_formal_readiness.py",
+      "sha256": "5bcb9e3e83f9f2983482c6d92e8c69a233221e5c606c08f1194c29947aa7476e",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/experiment/datasets/research-v4/templates/opening_review_extension.template.json",
+      "sha256": "5e2276ab97adc73b37a7bee5a8570f441f7a5791dcddc462af96406103737b2f",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/experiment/group_action_oracle.py",
+      "sha256": "82a0465330f285b6c1608db8e11078597738a9848b2474ded5e10ecffa30ab09",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk/experiment/group_action_properties.py",
+      "sha256": "38ff556825034d69a3866edffa4d20ef4c472bcc60cc6124bc69d088fc9b135c",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/ALGORITHM_SPEC.md",
+      "sha256": "e25d821951ffb15305848284c46fd8b76faebd5ee7e32da9bb4161399b455e98",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/CANONICALIZATION_SPEC.md",
+      "sha256": "e97e54dc719c3261e17f4355b31b12076b2fd73a6f0993c6a230421c4a224f44",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/EXPERIMENT_PLAN.md",
+      "sha256": "65fbc6553a4aef170815aff25f9fa48638455749f93fa95d2ce6a18bc569094a",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/PAPER_OUTLINE.md",
+      "sha256": "c527b75a2409031bf1854aae82c589d0ee861e0da85d365ea67d28099db68147",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/README.md",
+      "sha256": "97b0d384e2ae4dddaa20cafee2af6abc021a1568fc4890e7ecbb6dc9c00eab28",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/ROADMAP.md",
+      "sha256": "3d6abec3eae614f00266c2e885ee788a9dd41daabb64ec696fc5d50544f79a30",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/TEST_PLAN.md",
+      "sha256": "0e1c10c5ec0b47fe6cb62bc4ec2e670be2afcb6985f02f9fe775c37010b123c6",
+      "classification": "PREEXISTING_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/VERSION_MATRIX.md",
+      "sha256": "b3f8b46e720cb1cfdee78a6cd4ff4ebd8c2b2040f4998a4ecbb2caac18062c6a",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/proposal/LITERATURE_MATRIX.md",
+      "sha256": "b2c95c8206046b2999fb664521f7dc319b25d977ea0c9f427f58cc9ccc8deac8",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/proposal/PROPOSAL_DRAFT.md",
+      "sha256": "0f6c4340160afde964f4544ed6e970dab224fcdc65b08d56e428de557702c63c",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/proposal/README.md",
+      "sha256": "00f93c1a8fbeb738f64aefd02423a08039306c84645c491108277236dddd128e",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/research/FAIR_EVALUATION_PROTOCOL_V2.md",
+      "sha256": "6493975c7e4f63d6142d50c576e0f9dc04a8a98fa9942541a63e78e7742300d8",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/GROUP_ACTION_INVARIANCE.md",
+      "sha256": "8bfeb8cbd9c6f772526615e4e731d3f26c2d2204bdd6894f699566177f38abc7",
+      "classification": "TRACKED_INCREMENTAL_UPDATE"
+    },
+    {
+      "file": "coderisk_docs/research/GROUP_ACTION_PROOF_OBLIGATIONS.md",
+      "sha256": "931c3937b79a70b6b46b11f86d0137f0cbd11dd5668fe6358618b7e8cb556662",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/HUMAN_REQUIRED_CHECKLIST.md",
+      "sha256": "9db27791f729db0b5f3165bfe6a9c1802522246c7bf9d20f7b6e039bad990460",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/INVARIANCE_DISCRIMINABILITY_REPORT.md",
+      "sha256": "df553178ab24ae1b55529f77a22a5cbfb15028053ecbd2f37943caeec0861b8a",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/OPENING_BASELINE_AUDIT.md",
+      "sha256": "d76314994af4c41b76adcb213d13659109b256b0441c45e53563dc9d28d23625",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/OPENING_DEFENSE_QA.md",
+      "sha256": "442116076960f4c710fb64e9ec648f5588581bb63644ddd8cc35e528649a4955",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md",
+      "sha256": "371d11b9b854d25be86a81e7d0e7b51599311bdbfbcda2510443401da69e7800",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/ORBIT_ALPHA_EQUIVALENCE.md",
+      "sha256": "06079bd20a813575abeb887cb3397ac45829f14e39f213d1779b1508ad4faf6d",
+      "classification": "NEW_THIS_TURN"
+    },
+    {
+      "file": "coderisk_docs/research/REAL_DATA_ACTION_GUIDE.md",
+      "sha256": "b6aac8068c38523c5b1bc94011537ce3e07ba05036cb800b7424d668161b49d8",
+      "classification": "NEW_THIS_TURN"
+    }
+  ],
+  "outputArchive": [
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-block-locals/0/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-block-locals/0/Main.java",
+      "sha256": "29efb35edd5119527fc0b0d0fc32c3bc5ab264db21ed639a97ab806c5591dc61"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-block-locals/1/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-block-locals/1/Main.java",
+      "sha256": "1bc447e928522b071533abfd886a0d77fd8063fa9aef780b2a410dfa58220d14"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-declaration-point/0/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-declaration-point/0/Main.java",
+      "sha256": "766749b53f8218c2f5b8f8d80991051a3bf83d26685366afc969038a5f64f03c"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-declaration-point/1/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-declaration-point/1/Main.java",
+      "sha256": "f63cf9155b2a7489c82ca79b59d8a62000e5cab61321a46310176b7d8fb74cdb"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-internal-external-call/0/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-internal-external-call/0/Main.java",
+      "sha256": "72e6c31d9ece261e5c16c0b79d4c40f2c5ba9f317a36d373f596bd675d551d47"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/compile/java-internal-external-call/1/Main.java",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-internal-external-call/1/Main.java",
+      "sha256": "f5ed693bebe6c6f8677df636b0102bd19e11ebf65dac580b5b7343aa62037146"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/config.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/config.json",
+      "sha256": "99453d538c9f1b2310cafee7776498629d982c7025d2baaed7cfe159405caa3d"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/discrimination.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/discrimination.csv",
+      "sha256": "67a1cc90e03e622097584f22f759bbf8f3f8a232a4f9affcb6ee7812290f94da"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/discrimination.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/discrimination.json",
+      "sha256": "44935cd4979668a2f2aaa42fab4421f572d4ab64e3daa247c661bdb53b5e4708"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/fixture_summary.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/fixture_summary.csv",
+      "sha256": "59892c6322f21ba14b1095a38ebbd1caa8ba8d063acd78b7e4292e806201881d"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/fixture_summary.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/fixture_summary.json",
+      "sha256": "8535ea7486fb74c0f9815b75e0dd6f5a32b047521bb20a8898449ad1952ba046"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/gold_bindings.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/gold_bindings.csv",
+      "sha256": "7253ce24bc140f5c123adbbfbf98c28ce18d0d25333a098b938c56869027fd40"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/gold_bindings.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/gold_bindings.json",
+      "sha256": "bb25da35d82dbea26beea138f370828f30a3e00e205b0cf0217102df05f0b78a"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/properties.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/properties.csv",
+      "sha256": "e4f8d4a70c38a8d1c911e22e00b0d4dae308f2a9d17f33669cdc124f68d15719"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/properties.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/properties.json",
+      "sha256": "43f3ed5bb5005f3f5a478b77d489b64242b7dc6e70cabced9a72a8cae0cd0980"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/rename_sensitivity.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/rename_sensitivity.csv",
+      "sha256": "95154aaa43bdfdbd3c5bf40712123fb9128cc148601289d5a31bc4f9922061ac"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/rename_sensitivity.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/rename_sensitivity.json",
+      "sha256": "3d490c4f96c0204fd3bd40625d09713cf4582f2959a6cffe6f1dcbd7951ad032"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/REPORT.md",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/REPORT.md",
+      "sha256": "fbfa0b9a9b934cd14d9bf32aae75da8c50931b921d6e19a9b50395a89e251f70"
+    },
+    {
+      "source": "output/opening-research-20261011/properties-final/run_manifest.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/properties/run_manifest.json",
+      "sha256": "4a6d86367559d2019e9a84405a4e2852397f4676db4e6aab7d75a2b0ac526c0d"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/borderline.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/borderline.csv",
+      "sha256": "7484ba92c7ca1ee0ed94265d53fd407cc34013f1afcfa007f5ee21b415e3ab6a"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/config.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/config.json",
+      "sha256": "00f1a58b34881b1afd46c4dcea440231d962e43437237c297996f5c5f8ffc58a"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/coverage.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/coverage.csv",
+      "sha256": "ccc3f4cf4c192958afb952ad7072bd84095851907203901469fe99218a88b940"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/dataset_validation.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/dataset_validation.json",
+      "sha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/excluded.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/excluded.csv",
+      "sha256": "f032233052d2a5bc3cdb24802ee4dda23ee03bbd074288c8cc68a763672e3e88"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/failures.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/failures.csv",
+      "sha256": "9e56d625211f72652b87f6eaecefdbbfe1a2ba4a52b3bc8d6fcb22d59d2d240b"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/metrics.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/metrics.csv",
+      "sha256": "1f0dc289b5a05b687026c8f02ccbcfa82d30eea9e687dce4b8d66d2f9f6fbf0c"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/parser_fallbacks.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/parser_fallbacks.csv",
+      "sha256": "3dfd14a58dc424b36c5be85f00427a61e17e2e90760b5cf6ef614bbdcbe9044f"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/predictions.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/predictions.csv",
+      "sha256": "72e57adceefe8f3224db4857fb4cf75cfe288479c3ec1ee3fbacc5537c908aed"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/rename_stability.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/rename_stability.csv",
+      "sha256": "b9b658d09061918d5663ec008f1809a32dde755c53252890cc094ccf081af76e"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/REPORT.md",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/REPORT.md",
+      "sha256": "b22df177bae2093b0daec5a385847f857133d3bc9353ab235c75e49910448b88"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/results.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/results.json",
+      "sha256": "5efd21b88d6d6ec1571ec732b9b6546e0ca8ae07c1eeafc4275d4256d3dda516"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/retrieval.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/retrieval.csv",
+      "sha256": "2cb1953a7d27511e1103531fa4ca4faeb0f486584e1765c017fd293901ba164e"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/run_manifest.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/run_manifest.json",
+      "sha256": "71fd1bf116b48ef953d34472768c4c3d961c3b003f4dc295a0b1d58185355b75"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/scores.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/scores.csv",
+      "sha256": "2c56aa51daaef731122749e57d6cc55d3a1e90ce8ad68f3c43e0b01d123a40bb"
+    },
+    {
+      "source": "output/opening-research-20261011/ablation/selection.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/ablation/selection.json",
+      "sha256": "b7524d15052227b737167378390d29345e35495662f844e38910bb3817309d19"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/borderline.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/borderline.csv",
+      "sha256": "f80482e92e05a40fa11fb86eabccd38a48152d83c6998f0d0b83b1cb90f48e01"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/config.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/config.json",
+      "sha256": "1959b41fa961e7dc0e6ab97438bf8a7d7d877c93890fa501f29dcbb4c14b54e7"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/dataset_validation.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/dataset_validation.json",
+      "sha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/excluded.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/excluded.csv",
+      "sha256": "f0ef4f1f9a63895faa08075fbd324d1128b6ceadd30461daf1a91d4f849c9bed"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/failures.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/failures.csv",
+      "sha256": "a5fef4cd60f554d100949b521370d1b661b0cf489a2126e9c111a89a896bdddc"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/mathematical_contracts.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/mathematical_contracts.json",
+      "sha256": "3a294352c3213b35db7dc1bdfd130ad63d7ca462514c7dec8d076e80e674e402"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/metrics.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/metrics.csv",
+      "sha256": "9da7399cf99f87d973ff191cbce23b2e1691dd7c49476cfe150195d4af049ce4"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/parser_fallbacks.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/parser_fallbacks.csv",
+      "sha256": "0788de05c0b924a6371beb80f53151733c4bd1e72294777887e74119f611f05e"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/predictions.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/predictions.csv",
+      "sha256": "6117b164314ee65053b717040c563725fc7ea1529be5ed54d09996bb681e4b40"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/queries.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/queries.csv",
+      "sha256": "516c45f013d0bcdbed2352aaaa54364d0fa1172453626c98539d5ff568332720"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/reference_audit.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/reference_audit.csv",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/REPORT.md",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/REPORT.md",
+      "sha256": "a4ae7fe96aba2f940a684d5db0d3402daaba636d52921e503c73ad654ea9a02c"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/results.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/results.json",
+      "sha256": "fa75cb6e4854145f302c658cfefdfd86415640979084dbd0ff945d03de77f4d2"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/run_manifest.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/run_manifest.json",
+      "sha256": "b4051c69c3f836fa77774b26e5eb544cddee290faf735ae32b8563e123c6be54"
+    },
+    {
+      "source": "output/opening-research-20261011/natural/selection.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/natural/selection.json",
+      "sha256": "6e9336abe3f33e3bfd31993aaea568e81a8ff39afc3432a3b51ab9104992928b"
+    },
+    {
+      "source": "output/opening-research-20261011/readiness-final/case_readiness.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/readiness/case_readiness.csv",
+      "sha256": "59f1e278087b672e42e605a7cc5951fa5a835ca6f4335ce76f715a1eda27383f"
+    },
+    {
+      "source": "output/opening-research-20261011/readiness-final/dataset_validation.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/readiness/dataset_validation.json",
+      "sha256": "e6b5ddb77b2289172f414c0dc05ca0833cf3cd26f52a1be33f64156585dbb7ea"
+    },
+    {
+      "source": "output/opening-research-20261011/readiness-final/report.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/readiness/report.json",
+      "sha256": "f3ec8f115276dda2a1b22f7b6eba038f63d751bcf4edde195dddb84d372079d9"
+    },
+    {
+      "source": "output/opening-research-20261011/readiness-final/REPORT.md",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/readiness/REPORT.md",
+      "sha256": "e21b5f5c4239717e38668f1a32279befb3422157ec70c0e16477584540af043a"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/changed_decision_cases.jsonl",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/changed_decision_cases.jsonl",
+      "sha256": "945884977aab7a29d07f8c7590c64dadb0a68e4b453607e3853f075b9c57c583"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/component_contributions.png",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/component_contributions.png",
+      "sha256": "f483277d9b8139ef55743e803cd45da6281dd3c48e8e7d034a26e25679d5819b"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/component_summary.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/component_summary.csv",
+      "sha256": "f7bd4729f4c35fa3cb1baa8d5f860078e4e62ea7ec4be7af5a6c2819866d9023"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/frozen_decision_summary.csv",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/frozen_decision_summary.csv",
+      "sha256": "c4663355cb51f4fe8e2c042e030a3fcfd77b477e0689ee0b8ced5f8bb05aeabf"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/manifest.json",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/manifest.json",
+      "sha256": "54cbc9fccc9aaa697060fdff1da468e7e12187aa5d917be82530411d9c1f49c8"
+    },
+    {
+      "source": "output/opening-research-20261011/conplag-readonly-r2/pair_decomposition.jsonl",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/pair_decomposition.jsonl",
+      "sha256": "23ee8c2f31a1cd89726a1819e972ce97d96489990f30d886d4ee2d8cc8045b50"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/conplag-diagnosis-r2.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/conplag-diagnosis-r2.log",
+      "sha256": "9108bac63eb76cb33bf24fc5a4342d9f11a9365fd0b6792969f07ebc0015e99b"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/diagnostic-dependencies-r2.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/diagnostic-dependencies-r2.log",
+      "sha256": "f52dd166f23934f8edad9d8714506d9fa20b914450a1e5b3b11dbb83b447c4f1"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/diagnostic-dependencies-r3.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/diagnostic-dependencies-r3.log",
+      "sha256": "fbd5494e794cfe52865b0380ce61cf3687cd074f58556fe7acface92a3054f37"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/diagnostic-dependencies.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/diagnostic-dependencies.log",
+      "sha256": "10c29d3813b618746cf500941c5d5fffe7181bafc3fda7c763eebefe0e3748f5"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/expanded-gold-tests.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/expanded-gold-tests.log",
+      "sha256": "60fcabac9efe9794a05c12428ec86416ac52ee45da9b990b982c1e0cb27f0206"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/formal-preflight-final.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/formal-preflight-final.log",
+      "sha256": "413ec05b528d75952a41b2a6e4b1a1106f17decbe150f7281982666b2872ca56"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/formal-preflight.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/formal-preflight.log",
+      "sha256": "413ec05b528d75952a41b2a6e4b1a1106f17decbe150f7281982666b2872ca56"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/frontend-baseline.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/frontend-baseline.log",
+      "sha256": "ed8abdb1a6f3a4660e007e565b885f42b9e8d76815a84a8ec8562613e483fbaf"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/frontend-final.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/frontend-final.log",
+      "sha256": "dae348ec2ef65e112ec0689630933ef30bccba2372938c91a13d10395848ad89"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/maven-baseline.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/maven-baseline.log",
+      "sha256": "4759bb0d6624c98afbb54945ec6375c077bfeeffa3484000db85802408bdb8b0"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/maven-final.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/maven-final.log",
+      "sha256": "c186d73ecf66a0eec326464bc455cd00d6b4fe24cc8f7482641d2797c6dc4f5e"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/normalization-green.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-green.log",
+      "sha256": "6677cc161aee8355e2b52b1aaf74ec5f470175c85343e2038a65079596b0ef8c"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/normalization-green.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-green.xml",
+      "sha256": "53dc0a61cda9808da362c64e2003830e36cae226ba76932326f8b8db6fd85511"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/normalization-red.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-red.log",
+      "sha256": "db55e162806a1a737fc24662dae97700ab6194c9d4a76db8b6b00f190ec011df"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/normalization-red.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-red.xml",
+      "sha256": "299dd22ff9900c39eea2f6dfef24ae6a8a37b5007dd43f5be9bb15d0220e610e"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/pinned-parser-install.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/pinned-parser-install.log",
+      "sha256": "a0f121ae935f292ec325a27eaf0b649ee302b9ea6f8a1aac4cb8eaeb0fb636d8"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/pinned-parser-runtime.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/pinned-parser-runtime.log",
+      "sha256": "e74529a788d5598d313909a2a26bb2de5ea20ae5f40c18cec08bf14290ef876a"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/pip-freeze.txt",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/pip-freeze.txt",
+      "sha256": "7cdb5bb7ce41749b4186b0165492cde86bd9c1a93d8ffbbdbf33ba804dd6ebda"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-baseline-r2.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline-r2.log",
+      "sha256": "9b4e475d2806ff582a78af28e70bfd9ceed8cbcb5958ae07d49e197ff8f81531"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-baseline-r2.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline-r2.xml",
+      "sha256": "7e9ec20414f58dcdeba235b7cbf142702ee82b65fa23cd66f28b44818fa58c1e"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-baseline.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline.log",
+      "sha256": "4e73edb174ffa356baf5e5ef9652e93ba20e5d4a300b0e632537d2bc2d4419b1"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-baseline.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline.xml",
+      "sha256": "9bb2bf32e427426cf2f469023926ac42ed44d9a0c65cee9a28c74bc09e9239dd"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-final-r2.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-final-r2.log",
+      "sha256": "76e2110906bd2bc61a288802e1ce1d128a8f24363168cd140f5098938d8aaf1b"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-final-r2.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-final-r2.xml",
+      "sha256": "fbf02b88252d474392ae262ecaf5d6f8347846287849f50e591e02ec60e43097"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-final.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-final.log",
+      "sha256": "7c342030dcd8d252ae72af6200c7107d9bb4680d88a4d875b733d1f018d004ff"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-final.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-final.xml",
+      "sha256": "8eeb95afc4ca0ec1dc32f4a11af053d705699eff30181d8e001ed6b9f90cc0a6"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-pinned-parser.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-pinned-parser.log",
+      "sha256": "854a681f4ecefef358f960de9fc3757b3d5579b0f258dee2441a2cb6dc4a4da6"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/python-pinned-parser.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/python-pinned-parser.xml",
+      "sha256": "2afff401f60e091279d9ae4e3e603e324772f258c4f6babeb0394d5529a4d855"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/tools-tests.log",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/tools-tests.log",
+      "sha256": "a3997a41ca3e42ca6fd48e4a7f77655a5cfda65aae441700e89228df88be19fe"
+    },
+    {
+      "source": "output/opening-research-20261011/s0/tools-tests.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/tools-tests.xml",
+      "sha256": "d996d299b2dfae835b9397eb4313dd81a2205f7047e2cc06706b7b631cc73b75"
+    },
+    {
+      "source": "coderisk/backend-springboot/target/surefire-reports/TEST-com.coderisk.SystemControllerTest.xml",
+      "target": "coderisk/experiment/evidence/opening-research-20261011/tests/maven-SystemControllerTest.xml",
+      "sha256": "7ed8bb278a7baf52f811a5c2deb33c974f47eecbd4fea93b15b30616a42ac30f"
+    }
+  ],
+  "testEvidence": {
+    "baseline": {
+      "passed": 431,
+      "failed": 0
+    },
+    "final": {
+      "passed": 523,
+      "failed": 0,
+      "warnings": 1,
+      "seconds": 43.77
+    },
+    "pinnedTreeSitter": {
+      "version": "0.25.2",
+      "isolatedOverlay": true,
+      "passed": 523,
+      "failed": 0,
+      "warnings": 1,
+      "seconds": 32.47
+    },
+    "maven": {
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "database": "H2",
+      "seconds": 11.437
+    },
+    "frontend": {
+      "vueTsc": "PASSED",
+      "vite": "PASSED",
+      "modules": 1699,
+      "bundleSeconds": 5.06
+    },
+    "javac": {
+      "compilations": 6,
+      "success": 6,
+      "execution": "NOT_RUN"
+    }
+  },
+  "environment": {
+    "python": "Python 3.12.14",
+    "java": "openjdk 21.0.11 2026-04-21 LTS\r\nOpenJDK Runtime Environment Temurin-21.0.11+10 (build 21.0.11+10-LTS)\r\nOpenJDK 64-Bit Server VM Temurin-21.0.11+10 (build 21.0.11+10-LTS, mixed mode, sharing)",
+    "nodeForFrontend": "v24.15.0",
+    "captureBaselineNode": "v24.19.0",
+    "legacyVenvParserVersion": "0.26.0",
+    "declaredAndTestedParserVersion": "0.25.2",
+    "pipFreeze": "tests/pip-freeze.txt",
+    "warning": "Editable VCS HEAD does not capture dirty source; per-file hashes are authoritative"
+  },
+  "noProductionWeightsApiDatabaseChanges": true,
+  "importantBoundary": "S1 conditional mathematical argument and S2 finite tested subset only; S3/S4 formal research blocked by actual data facts"
+}

@@ -1,0 +1,32 @@
+.....................................FF.............                     [100%]
+================================== FAILURES ===================================
+______________ test_missing_and_fallback_samples_are_not_deleted ______________
+
+experiment = (WindowsPath('E:/ms/.tmp/ai-era-analysis-tests-20261012/offline-convergence0'), WindowsPath('E:/ms/.tmp/ai-era-analysi...': 0, 'config_sha256': 'ff78df193b2cf7ea657a8d638d768f3fc8006de653000585f101eaffe9773867', 'connected_groups': 3, ...})
+
+    def test_missing_and_fallback_samples_are_not_deleted(experiment):
+        root, _, _ = experiment
+        rows = json.loads((root / "run/results.json").read_text(encoding="utf-8"))["rows"]
+        assert len(rows) == 22 and any(row["canonical"] is None for row in rows)
+>       assert any("JAVA_HEADER_SHADOW" in row["warnings"] for row in rows)
+E       assert False
+E        +  where False = any(<generator object test_missing_and_fallback_samples_are_not_deleted.<locals>.<genexpr> at 0x00000217EB9492F0>)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py:42: AssertionError
+_______ test_full_sequence_and_fingerprint_equality_report_denominators _______
+
+experiment = (WindowsPath('E:/ms/.tmp/ai-era-analysis-tests-20261012/offline-convergence0'), WindowsPath('E:/ms/.tmp/ai-era-analysi...': 0, 'config_sha256': 'ff78df193b2cf7ea657a8d638d768f3fc8006de653000585f101eaffe9773867', 'connected_groups': 3, ...})
+
+    def test_full_sequence_and_fingerprint_equality_report_denominators(experiment):
+        root, _, _ = experiment
+        rows = json.loads((root / "run/results.json").read_text(encoding="utf-8"))["rows"]
+        rename = next(row for row in rows if {row["sample_a"], row["sample_b"]} == {"MOCK-sum-0", "MOCK-sum-controlled-rename"})
+>       assert rename["complete_c_equal"] and rename["ngram_set_equal"]
+E       assert (None)
+
+coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py:50: AssertionError
+- generated xml file: E:\ms\output\ai-era-value-20261012\baseline\analysis-tests.xml -
+=========================== short test summary info ===========================
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py::test_missing_and_fallback_samples_are_not_deleted
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py::test_full_sequence_and_fingerprint_equality_report_denominators
+2 failed, 50 passed in 16.55s

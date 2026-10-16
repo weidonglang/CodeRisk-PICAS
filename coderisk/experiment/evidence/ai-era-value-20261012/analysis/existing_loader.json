@@ -1,0 +1,102 @@
+{
+  "valid": true,
+  "datasetId": "ai-era-offline",
+  "datasetVersion": "ai-era-mock-seed-1",
+  "datasetStatus": "DEVELOPMENT_ONLY",
+  "caseCount": 22,
+  "eligibleCaseCount": 0,
+  "validationCaseCount": 10,
+  "testCaseCount": 12,
+  "validationProblemCount": 1,
+  "testProblemCount": 2,
+  "targetMinimum": 0,
+  "targetMaximum": 0,
+  "targetGap": 0,
+  "problemOverlap": [],
+  "sourceOverlap": [],
+  "sourceFamilyOverlap": [],
+  "exactCodeOverlapCases": [],
+  "nonPreregisteredSplitCaseCount": 22,
+  "nonPreregisteredSplitCases": [
+    "AI-0d864aab4d21d043cae0",
+    "AI-25a51d4d16b9e628b98e",
+    "AI-2993259d33c611ab99fd",
+    "AI-37c35f17d780180e293a",
+    "AI-389eebadea54cfd45c2a",
+    "AI-45e5c12e3a90f12a428e",
+    "AI-5a8c055546266c5545c2",
+    "AI-68e719f086fa9eca8b08",
+    "AI-73084fd7d7c688b2914f",
+    "AI-83f362c954465fb3138f",
+    "AI-8cec7aa48d6f1be232ae",
+    "AI-9ff132f1e7cb59896aa9",
+    "AI-aa40576094fe1072a488",
+    "AI-ac4cefb57aae24348aeb",
+    "AI-b190467e18f7a1a4ad49",
+    "AI-b41114380e742aa3bc97",
+    "AI-cbbea6dd702430b861bd",
+    "AI-d2883e170e741271ff68",
+    "AI-d329ad8a03f25265ec82",
+    "AI-d4513fd76d2b5b6fd375",
+    "AI-dd786853b74f3d86d294",
+    "AI-ec74c2e0ded1b923f868"
+  ],
+  "missingProblemTypes": [],
+  "missingCaseTypes": [],
+  "coverageGaps": [],
+  "countsBySplit": {
+    "test": 12,
+    "validation": 10
+  },
+  "countsByProblemType": {
+    "MOCK-FAMILY-count": 6,
+    "MOCK-FAMILY-maximum": 6,
+    "MOCK-FAMILY-sum": 10
+  },
+  "countsByCaseType": {
+    "HUMAN_REWRITE": 1,
+    "INDEPENDENT_SOLUTION": 21
+  },
+  "countsByLabel": {
+    "UNCERTAIN": 22
+  },
+  "countsByLanguage": {
+    "java": 6,
+    "python": 16
+  },
+  "countsByOrigin": {
+    "SYNTHETIC": 22
+  },
+  "countsBySourceType": {
+    "synthetic": 22
+  },
+  "sourceCounts": {
+    "ai-era-adapter": 22
+  },
+  "errors": [],
+  "warnings": [
+    "Case AI-2993259d33c611ab99fd retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-37c35f17d780180e293a retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-45e5c12e3a90f12a428e retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-ac4cefb57aae24348aeb retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-aa40576094fe1072a488 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-d329ad8a03f25265ec82 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-8cec7aa48d6f1be232ae retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-cbbea6dd702430b861bd retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-389eebadea54cfd45c2a retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-ec74c2e0ded1b923f868 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-9ff132f1e7cb59896aa9 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-d4513fd76d2b5b6fd375 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-25a51d4d16b9e628b98e retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-b190467e18f7a1a4ad49 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-5a8c055546266c5545c2 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-83f362c954465fb3138f retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-dd786853b74f3d86d294 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-68e719f086fa9eca8b08 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-73084fd7d7c688b2914f retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-0d864aab4d21d043cae0 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-b41114380e742aa3bc97 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case AI-d2883e170e741271ff68 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "22 cases use a non-preregistered bootstrap split and cannot support confirmatory claims"
+  ]
+}

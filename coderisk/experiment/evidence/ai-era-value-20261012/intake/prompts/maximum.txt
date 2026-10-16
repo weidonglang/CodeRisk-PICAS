@@ -1,0 +1,1 @@
+MOCK ONLY. Return the maximum integer in a nonempty list.

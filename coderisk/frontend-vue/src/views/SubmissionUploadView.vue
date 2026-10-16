@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { UploadFilled, VideoPlay } from '@element-plus/icons-vue'
+import { UploadFilled, VideoPlay, Document, Check } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -19,6 +20,7 @@ const selectedTaskMode = ref<TaskMode>('PICAS_STANDARD')
 const studentId = ref('')
 const languageVersion = ref('')
 const selectedFile = ref<File | null>(null)
+const fileInput = ref<HTMLInputElement | null>(null)
 const loading = ref(false)
 const uploading = ref(false)
 const starting = ref(false)
@@ -73,6 +75,8 @@ async function submitUpload() {
     studentId.value = ''
     languageVersion.value = ''
     selectedFile.value = null
+    if (fileInput.value) fileInput.value.value = ''
+    ElMessage.success('代码提交已保存')
     await load()
   } catch (err) {
     error.value = err instanceof Error ? err.message : '上传失败'
@@ -116,35 +120,37 @@ onMounted(load)
     <div class="page-header">
       <div>
         <h1>{{ question?.title ?? '代码上传' }}</h1>
-        <p>支持 Java、Python、C 和 HTML。C、HTML 请分别建立同语言题目与任务。</p>
+        <p>题目 #{{ questionId }} · 已接收 {{ submissions.length }} 份代码 · {{ submissions.length >= 2 ? (submissions.length * (submissions.length - 1) / 2) + ' 对候选' : '尚不足两份提交' }}</p>
       </div>
-      <el-button :icon="VideoPlay" :loading="starting" :disabled="submissions.length < 2 || mixedNewLanguages || (selectedTaskMode === 'PICAS_CROSSLANG' && !crossLanguageReady)" type="primary" @click="createAndStartTask">
-        创建并启动
+      <el-button :icon="VideoPlay" :loading="starting" :disabled="loading || uploading || !question || submissions.length < 2 || mixedNewLanguages || (selectedTaskMode === 'PICAS_CROSSLANG' && !crossLanguageReady)" type="primary" @click="createAndStartTask">
+        开始检测
       </el-button>
     </div>
 
     <el-alert v-if="error" class="section-gap" type="error" :title="error" :closable="false" />
     <el-alert v-if="mixedNewLanguages" class="section-gap" type="warning" title="请将 C、HTML 与其他语言分开建立检测任务" :closable="false" />
-    <el-alert class="section-gap" type="info" title="C 与 HTML 为实验性支持" description="C 支持语法结构和有限作用域规范化；HTML 比较标签、属性和文本，使用待验证的固定阈值，脚本与样式按原文比较。相似页面模板需要人工复核。" :closable="false" />
+    <el-alert v-if="submissions.some(item => ['c', 'cpp', 'html'].includes(item.language.toLowerCase()))" class="section-gap" type="info" title="C / C++ / HTML 为实验性支持" description="HTML 固定阈值待验证；C++ 仅词法降级。相似模板仍需人工复核。" :closable="false" />
 
     <div class="upload-grid">
       <section class="panel">
-        <h2>上传提交</h2>
+        <div class="section-heading"><h2>代码提交</h2><span>Java / Python · C / HTML 实验性</span></div>
         <el-form label-position="top" @submit.prevent>
           <el-form-item label="学生标识">
             <el-input v-model="studentId" placeholder="例如：20260001" />
           </el-form-item>
           <el-form-item label="代码文件">
-            <div class="file-row">
-              <input type="file" accept=".java,.py,.c,.cpp,.html,.htm" @change="onFileChange" />
-              <span>{{ selectedFile?.name ?? '未选择文件' }}</span>
-            </div>
+            <label class="file-picker" :class="{ selected: selectedFile }">
+              <input ref="fileInput" type="file" accept=".java,.py,.c,.cpp,.html,.htm" aria-label="代码文件" @change="onFileChange" />
+              <component :is="selectedFile ? Document : UploadFilled" />
+              <strong>{{ selectedFile?.name ?? '选择代码文件' }}</strong>
+              <small>{{ selectedFile ? (selectedFile.size / 1024).toFixed(1) + ' KB' : '.java · .py · .c · .cpp · .html · .htm' }}</small>
+            </label>
           </el-form-item>
           <el-form-item label="语言版本（可选）">
             <el-input v-model="languageVersion" :maxlength="64" placeholder="例如 Python 2.7、Python 3.12、Java 17、C11；未知请留空" />
           </el-form-item>
           <p>版本为提交者声明；解析通过不代表编译器验证或跨版本语义一致。</p>
-          <el-button :icon="UploadFilled" type="primary" :loading="uploading" @click="submitUpload">上传</el-button>
+          <el-button :icon="Check" type="primary" :loading="uploading" :disabled="!selectedFile || loading || starting" @click="submitUpload">保存提交</el-button>
         </el-form>
       </section>
 
@@ -227,6 +233,14 @@ onMounted(load)
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
   gap: 16px;
 }
+.upload-grid { margin-top: 20px; }
+.file-picker { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 146px; background: #fafbfd; border: 1px dashed #cbd4df; border-radius: 4px; padding: 22px; text-align: center; }
+.file-picker:hover, .file-picker:focus-within { border-color: var(--el-color-primary); background: #f5fbf8; }
+.file-picker.selected { border-style: solid; border-color: #b9d9cd; }
+.file-picker input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
+.file-picker > svg { width: 25px; height: 25px; color: #88a2b1; }
+.file-picker strong { font-size: 12px; font-weight: 550; overflow-wrap: anywhere; max-width: 100%; }
+.file-picker small { font-size: 10px; color: var(--muted); overflow-wrap: anywhere; }
 
 .file-row {
   display: grid;

@@ -1,0 +1,28 @@
+{
+  "dataset_version": "self-authored-fusion-development-0.1",
+  "source_type": "synthetic",
+  "purpose": "Static development diagnostics, authored after observing ConPlag; not held-out evaluation or human annotation.",
+  "eligible_for_core_metrics": false,
+  "bases": {
+    "python_sum": "def total(values):\n    result = 0\n    for item in values:\n        result += item\n    return result\n",
+    "java_sum": "class Main { static int total(int[] values) { int result = 0; for (int item : values) { result += item; } return result; } }"
+  },
+  "probes": [
+    {"pair_id": "DEV-PY-IDENTICAL", "language": "python", "base": "python_sum", "kind": "identical", "contract": "canonical_equal", "code_b": "def total(values):\n    result = 0\n    for item in values:\n        result += item\n    return result\n"},
+    {"pair_id": "DEV-PY-RENAME", "language": "python", "base": "python_sum", "kind": "identifier_rename", "contract": "canonical_equal", "code_b": "def aggregate(elements):\n    answer = 0\n    for number in elements:\n        answer += number\n    return answer\n"},
+    {"pair_id": "DEV-PY-FORMAT", "language": "python", "base": "python_sum", "kind": "format_comment", "contract": "canonical_equal", "code_b": "# self-authored fixture\ndef total( values ):\n    result=0\n    for item in values:  # accumulate\n        result+=item\n    return result\n"},
+    {"pair_id": "DEV-PY-UNUSED-LOCAL", "language": "python", "base": "python_sum", "kind": "unused_local_before", "contract": "observe", "code_b": "def total(values):\n    unused = 17\n    result = 0\n    for item in values:\n        result += item\n    return result\n"},
+    {"pair_id": "DEV-PY-UNUSED-FUNCTION", "language": "python", "base": "python_sum", "kind": "unused_function_before", "contract": "observe", "code_b": "def unused():\n    return 17\n\ndef total(values):\n    result = 0\n    for item in values:\n        result += item\n    return result\n"},
+    {"pair_id": "DEV-PY-REORDER", "language": "python", "kind": "local_reorder", "contract": "observe", "code_a": "def combine(value):\n    first = value + 1\n    second = value * 2\n    return first + second\n", "code_b": "def combine(value):\n    second = value * 2\n    first = value + 1\n    return first + second\n"},
+    {"pair_id": "DEV-PY-COMMON", "language": "python", "base": "python_sum", "kind": "common_structure_different_operation", "contract": "observe", "code_b": "def total(values):\n    result = 0\n    for item in values:\n        result += 1\n    return result\n"},
+    {"pair_id": "DEV-PY-EXTERNAL-NAMES", "language": "python", "kind": "external_function_names", "contract": "observe", "code_a": "def transform(value):\n    return abs(value)\n", "code_b": "def transform(value):\n    return round(value)\n"},
+    {"pair_id": "DEV-PY-SCOPE-FALLBACK", "language": "python", "base": "python_sum", "kind": "unsupported_comprehension", "contract": "raw_fallback", "code_b": "def total(values):\n    return sum([item for item in values])\n"},
+    {"pair_id": "DEV-PY-PARSE-FALLBACK", "language": "python", "base": "python_sum", "kind": "parser_failure", "contract": "raw_fallback", "code_b": "def total(values)\n    return values\n"},
+    {"pair_id": "DEV-JAVA-RENAME", "language": "java", "base": "java_sum", "kind": "identifier_rename", "contract": "canonical_equal", "code_b": "class Program { static int aggregate(int[] elements) { int answer = 0; for (int number : elements) { answer += number; } return answer; } }"},
+    {"pair_id": "DEV-JAVA-UNUSED-LOCAL", "language": "java", "base": "java_sum", "kind": "unused_local_before", "contract": "observe", "code_b": "class Main { static int total(int[] values) { int unused = 17; int result = 0; for (int item : values) { result += item; } return result; } }"},
+    {"pair_id": "DEV-JAVA-UNUSED-FUNCTION", "language": "java", "base": "java_sum", "kind": "unused_function_before", "contract": "observe", "code_b": "class Main { static int unused() { return 17; } static int total(int[] values) { int result = 0; for (int item : values) { result += item; } return result; } }"},
+    {"pair_id": "DEV-JAVA-REORDER", "language": "java", "kind": "local_reorder", "contract": "observe", "code_a": "class Main { static int combine(int value) { int first = value + 1; int second = value * 2; return first + second; } }", "code_b": "class Main { static int combine(int value) { int second = value * 2; int first = value + 1; return first + second; } }"},
+    {"pair_id": "DEV-JAVA-COMMON", "language": "java", "base": "java_sum", "kind": "common_structure_different_operation", "contract": "observe", "code_b": "class Main { static int total(int[] values) { int result = 0; for (int item : values) { result += 1; } return result; } }"},
+    {"pair_id": "DEV-JAVA-PARSE-FALLBACK", "language": "java", "base": "java_sum", "kind": "parser_failure", "contract": "raw_fallback", "code_b": "class Main { static int total(int[] values) { return 0;"}
+  ]
+}

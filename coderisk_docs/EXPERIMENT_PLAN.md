@@ -1,5 +1,9 @@
 # EXPERIMENT_PLAN.md
 
+> 2026-10-12 Stage V 新协议：[AI_CONVERGENCE_PROTOCOL](research/AI_CONVERGENCE_PROTOCOL.md)分离来源关系、生成辅助和课程政策，按题目/source/session/hash连通隔离，未知关系仅描述。比较 Raw / AST / Canon / NoCanon / Full-fixed / Full-rule 与真实同源码 JPlag；各方法 validation-only 工作点，共同支持分母单列，不补零。当前 synthetic22对、native19匹配、共同14、正式资格0，FPR/F1/AP不可估计；test仅2组件，cluster区间N/A。只读上下文不改分/阈值，教师效益待真人验证。最新本地 `output/ai-era-value-20261012/analysis-release`，归档与失败见 [证据](../coderisk/experiment/evidence/ai-era-value-20261012/README.md)。不将下面的预期结果当作已经成立的结论，不用旧test调参。
+
+> 2026-10-11 S3实际新运行：`output/opening-research-20261011/`独立12gold/1,728置换（不是独立样本）、14方法seed消融（共同test36）、可信reference0的rule fallback和ConPlag历史只读分解（new detector runs=0）。所有新输出不覆盖历史，不merge新旧scores，不调test/生产。阶段性质与检测收益分开；[双维报告](research/INVARIANCE_DISCRIMINABILITY_REPORT.md)、[公平V2](research/FAIR_EVALUATION_PROTOCOL_V2.md)、[正式前检/人工流程](research/REAL_DATA_ACTION_GUIDE.md)说明hash/分母/冻结/反例及实际BLOCKED原因。
+
 > 2026-10-11 研究阶段 5：新增 [混合复核协议](research/HYBRID_DETECTION.md)，完整标注 query pool + validation Recall@K 门禁 + 真实基线真人批准。现 seed 不具备候选池，实跑阻断/N/A；不为了实验填造独立标签，不把候选漏检从端到端分母删除。
 
 > 2026-10-10 研究阶段 4：新增 [离线 LLM 对照协议](research/LLM_BASELINE.md)，只接收获许可的离线响应。当前 mock/dry-run 实跑，真实 LLM 指标 N/A；JPlag 本轮 Java/Python 实跑并按原文 hash 对齐。三方/两方共同集合分开，缺失不当负例，生产权重不变。
@@ -7,6 +11,14 @@
 > 2026-10-10 研究阶段 3：独立解答上尾校准隔离 runner 已实现，生产 S/T 不变。默认 validation-problem-only 参考要求 test 新题冷启动；可选 preregistered 同题背景面板不能称参考/test 题目隔离。双人关系/授权/冻结/作者与源码隔离门禁不可由 allow-development 豁免。40 项新测试通过；seed 75 分析/0 可信参考/0 q/0 正式资格，统计策略全回退，不是误报改善证据。参考元数据与冷启动/模板限制见 [统计研究协议](research/NATURAL_SIMILARITY_CALIBRATION.md)。以下旧条目保留其运行当时状态。
 
 > 2026-10-10 研究阶段 2：新增隔离 14 方法多维消融 runner，固定配置/源码/数据哈希，validation-only 参数选择、同样本 COMMON 表、AP/低 FPR 工作点/Recall@K 准入与改名变化。现有 seed 仅 development，formal=0；完整融合不是最好，规则动态有召回损失，不能作真实效果结论。JPlag 未重评、不拼接历史分数；统计独立分布与 LLM 尚待后续。详见 [协议、指标与真实产物](research/SIMILARITY_ABLATION.md)。
+
+2026-10-10 non-Java intake: 30,000 public-label Python pairs and 30,893 unlabelled title-aligned multilingual candidates are registered separately from the seed and formal research splits. PoolC's unspecified license requires quarantine; XLCoST mirror programs are tokenized and lack official problem maps. Neither batch enters validation calibration, default PICAS_STANDARD, JPlag baselines or formal paper metrics automatically. Do not infer derived rewrites, author independence or natural-similar labels. See [actual counts, provenance, exclusions and offline commands](proposal/NONJAVA_PUBLIC_INTAKE.md).
+
+2026-10-10 data expansion: a pinned, unscored CodeXGLUE BCB intake registers 30,000 distinct nonidentical Java function pairs from published train, excluding contradictory content-pair labels. This external development pool is separate from the 91-case seed and the 16 fusion probes, does not supply problem-aware evidence, and has zero formal-metric eligibility. See [counts, overlap audit and reproduction](proposal/LARGE_PUBLIC_PAIR_INTAKE.md).
+
+2026-10-10: Research V4 intake gates and JPlag source identity checks are hardened. Sixteen self-authored development probes diagnose declaration-order and scope-number sensitivity; they are synthetic, excluded from core metrics, and separate from public test data. No weights or thresholds were fitted. See [protocol and observed results](proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md). Formal effect claims continue to require independent real annotation and frozen evaluation.
+
+> 2026-10-09 后续协议：IR 来源由固定缓存离线重建核验；复核包全局稳定排序并交换 A/B，使用新输出目录保护旧证据。导出记录 HUMAN/AI/背景；正式输入要求两个 HUMAN 执行声明及实际独立性确认，AI 一致不计真人。新作用域实现仍未用公开数据评测，旧快照不可覆盖。见 [新版材料和边界](proposal/AI_REVIEW_HARDENING.md)。
 
 > 2026-10-09 本轮增量：IR-Plag 已固定来源和已知争议，467 个逻辑源文件、460 对发布关系；10 对争议负例隔离、14 个重复逻辑文件须统计去重。共享参与者暂阻断全部七题，未评分、未正式分集。ConPlag 负结果诊断只复用已观察分数；异步运行证据是自有合成工程检查。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 

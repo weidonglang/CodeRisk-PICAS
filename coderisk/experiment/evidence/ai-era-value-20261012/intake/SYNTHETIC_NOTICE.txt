@@ -1,0 +1,1 @@
+Self-authored mock process metadata. No real provider, human review, functional execution or authorization.

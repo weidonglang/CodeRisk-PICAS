@@ -49,8 +49,8 @@ export interface QuestionFeature {
   thresholdAdjustment: Record<string, unknown>
 }
 
-export async function listQuestions(): Promise<ApiResponse<PageResult<Question>>> {
-  return getApi<PageResult<Question>>('/questions')
+export async function listQuestions(page = 1, size = 20): Promise<ApiResponse<PageResult<Question>>> {
+  return getApi<PageResult<Question>>(`/questions?page=${page}&size=${size}`)
 }
 
 export async function getQuestion(questionId: number): Promise<ApiResponse<Question>> {

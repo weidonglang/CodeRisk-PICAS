@@ -1,0 +1,19 @@
+{
+  "dataset_id": "ai-era-offline",
+  "dataset_version": "ai-era-mock-seed-1",
+  "status": "DEVELOPMENT_ONLY",
+  "evaluation_registration": {
+    "status": "UNREGISTERED",
+    "registered_at": null,
+    "reference": null,
+    "config_sha256": null
+  },
+  "sources": [
+    {
+      "id": "ai-era-adapter",
+      "path": "pairs.json",
+      "format": "RESEARCH_V4_PAIRS_JSON",
+      "include": true
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-10-09T13:30:50.317632+00:00",
+  "hash_convention": "UTF-8 file content normalized to LF, matches Git blob after checkout normalization",
+  "implementation_sha256_lf": {
+    "analysis-service-python/app/analyzers/canonicalization.py": "2397f61fdcd29aee4e6fcd5a72e1bc734babbf8c8ea43aa3db25058df0bd2aff",
+    "analysis-service-python/app/analyzers/token_similarity.py": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+    "backend-springboot/src/main/java/com/coderisk/task/TaskService.java": "0dda67b03005a1f9796a4abc293f73b8c03a38e8455c98a02bc831aa91e59186",
+    "backend-springboot/src/main/java/com/coderisk/task/TaskRepository.java": "9ad1a7a8b9bbdba8775968fada693273f2ce57933c34bf42992f054daa95ae66",
+    "backend-springboot/src/main/java/com/coderisk/question/QuestionFeatureRepository.java": "5db62c7e2d088332f318dfc8a481e1f2e6576ad903677b57d2c714f5b2af40ba",
+    "frontend-vue/src/views/TaskResultView.vue": "90f799b2bef766085604ddd8b0dc5536f60082422f2667a9be357a4c417dde5d",
+    "experiment/annotation_workbench.html": "ea680d9ecc59e7ed37c7fddaeafab7d143bf58528bcbb57a9fee1edb29fd2a7f",
+    "experiment/acquire_irplag.py": "691f506906cbfc613178faac69ac73e16e23b8a72603d32e09704686a2b66004",
+    "experiment/prepare_irplag_review.py": "defcfa1fee55b1db04361a4f5b33b7668e634349f4b9d140746849c1f6333b4f",
+    "experiment/prepare_annotation_workbench.py": "b73ff190aa435b02a3e310fef05ebd00ba8d77d6ce6a91e64a2bd214ce4d72fc",
+    "experiment/research_protocol.py": "0f2cce269b15baf845ca876183530341d92556043c2f120addf8d25627827d85",
+    "experiment/verify_task_result_browser.js": "f3dcf7d81a3f3f3cbcd95b1b5405a7844fdcb55010b0102e3d5d3b93edba7bc3"
+  },
+  "python_tests": {
+    "passed": 188,
+    "failures": 0,
+    "warnings": 1,
+    "warning": "existing Starlette/httpx deprecation"
+  },
+  "backend_tests": {
+    "passed": 19,
+    "failures": 0,
+    "database": "H2 MySQL mode; not actual MySQL",
+    "analysis_client": "stubbed"
+  },
+  "frontend": {
+    "type_check": "PASSED",
+    "production_build": "PASSED",
+    "existing_bundle_warnings": true
+  },
+  "runtime_evidence": "runtime.json",
+  "browser_evidence": "browser_check.json",
+  "scored_public_data": 0,
+  "substantive_local_human_reviews": 0,
+  "setup_correction": "Initial local runtime attempt used the wrong analysis URL environment variable and failed with connection refused. Corrected to CODERISK_ANALYSIS_BASE_URL, restarted the isolated backend, reran successfully; initial failed synthetic task remains in the ignored H2 database."
+}

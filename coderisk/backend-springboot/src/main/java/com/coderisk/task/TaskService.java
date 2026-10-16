@@ -189,7 +189,7 @@ public class TaskService {
         List<ResultResponse> filtered = results(taskId).stream()
                 .filter(result -> riskLevel == null || result.riskLevel() == riskLevel)
                 .toList();
-        int fromIndex = Math.min((safePage - 1) * safePageSize, filtered.size());
+        int fromIndex = (int) Math.min((long) (safePage - 1) * safePageSize, filtered.size());
         int toIndex = Math.min(fromIndex + safePageSize, filtered.size());
         return new PageResult<>(filtered.subList(fromIndex, toIndex), filtered.size(), safePage, safePageSize);
     }
@@ -209,6 +209,14 @@ public class TaskService {
     }
 
     private List<SubmissionResponse> resolveSubmissions(long questionId, List<Long> submissionIds) {
+        if (submissionIds != null && !submissionIds.isEmpty()) {
+            if (submissionIds.size() > MAX_SUBMISSIONS) {
+                throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_TOO_MANY_SUBMISSIONS", "At most 100 submissions per task");
+            }
+            if (new HashSet<>(submissionIds).size() != submissionIds.size()) {
+                throw new ApiException(HttpStatus.BAD_REQUEST, "TASK_DUPLICATE_SUBMISSION", "Submission IDs must be distinct");
+            }
+        }
         List<SubmissionResponse> submissions;
         if (submissionIds == null || submissionIds.isEmpty()) {
             submissions = submissionService.listByQuestion(questionId);

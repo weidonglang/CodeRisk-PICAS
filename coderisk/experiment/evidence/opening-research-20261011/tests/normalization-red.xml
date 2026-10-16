@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="19" time="1.565" timestamp="2026-10-11T21:16:22.857819+08:00" hostname="小魏"><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-keywords]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-shadow-closure]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-default-scope]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-lambda-default]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-class-default]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-forward-keyword]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[py-shared-spelling]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[java-declaration-point]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[java-block-locals]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_exact_handwritten_binding_locations[java-internal-external-call]" time="0.001" /><testcase classname="tests.test_group_action_golden_bindings" name="test_oracle_does_not_import_production_binder" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[dynamic-reflection]" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[indirect-keyword]" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[comprehension]" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[nonlocal]" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[syntax-error]" time="0.001" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[unbalanced-java]" time="0.000" /><testcase classname="tests.test_group_action_fallback_contracts" name="test_located_explicit_fallback[for-shadow-field]" time="0.001"><failure message="AssertionError: assert 'scope-aware-java' == 'lexical-fallback'&#10;  &#10;  - lexical-fallback&#10;  + scope-aware-java">case = ('for-shadow-field', 'java', 'class Main { int value=7; int f() { for (int value=0; value&lt;1; value++) {} return value; } }', 'REJECTED_UNSUPPORTED', 'JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED')
+
+    @pytest.mark.parametrize('case', [c for c in BOUNDARIES if c[3] != 'ORACLE_UNCERTAIN'], ids=lambda c: c[0])
+    def test_located_explicit_fallback(case):
+        _, language, code, _, reason = case
+        tokens = tokenize_code_with_locations(code, language)
+        result = canonicalize_code(code, language, tokens)
+&gt;       assert result.mode == 'lexical-fallback'
+E       AssertionError: assert 'scope-aware-java' == 'lexical-fallback'
+E         
+E         - lexical-fallback
+E         + scope-aware-java
+
+tests\test_group_action_fallback_contracts.py:14: AssertionError</failure></testcase><testcase classname="tests.test_group_action_fallback_contracts" name="test_java_header_shadow_warning_uses_existing_api" time="0.020"><failure message="assert 0.133537 == 0.073171">tmp_path = WindowsPath('E:/ms/.tmp/opening-red-tests-20261011/test_java_header_shadow_warnin0')
+
+    def test_java_header_shadow_warning_uses_existing_api(tmp_path):
+        code = next(c[2] for c in BOUNDARIES if c[0] == 'for-shadow-field')
+        client = build_client(tmp_path)
+        a, b = tmp_path / 'uploads/a.java', tmp_path / 'uploads/b.java'
+        a.parent.mkdir(parents=True, exist_ok=True)
+        a.write_text(code, encoding='utf-8')
+        b.write_text('class Main { int fold(int number) { return number; } }', encoding='utf-8')
+        response = client.post('/internal/analyze/pair', json=_pair_payload(a, b, 'java'))
+        assert response.status_code == 200
+        result = response.json()['result']
+&gt;       assert result['weightedSimilarityScore'] == result['tokenSimilarity']
+E       assert 0.133537 == 0.073171
+
+tests\test_group_action_fallback_contracts.py:30: AssertionError</failure></testcase></testsuite></testsuites>

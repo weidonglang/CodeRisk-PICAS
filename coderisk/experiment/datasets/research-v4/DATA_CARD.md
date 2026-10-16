@@ -2,6 +2,8 @@
 
 ## Status
 
+2026-10-10 intake update: placeholders are rejected if core eligibility is requested; AI provenance gates apply to both `source_type=ai_assisted` and `case_type=AI_REWRITE`, including nonblank values and a timezone-aware generation timestamp. Verified same-language AI rows can be aligned to JPlag. Templates default to pending/noneligible. Formal evaluation additionally requires the human-review protocol; workflow eligibility alone is insufficient. See [intake and development diagnosis](../../../../coderisk_docs/proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md).
+
 `coderisk-research-v4-seed-1.0` is a synthetic seed dataset for validating the Research V4 data and experiment workflow. It contains 91 pairs: 80 same-language and 11 Java/Python pairs. All 91 rows declare `data_origin=SYNTHETIC`; 87 use `source_type=synthetic` and 4 AI rewrite placeholders use `source_type=placeholder`. The placeholders are excluded from core metrics. This dataset is not a real benchmark.
 
 ## Directory contract

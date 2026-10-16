@@ -1,0 +1,1 @@
+{"status": "COMPLETED", "attempted": 1738, "acceptedPassed": 1728, "failedAssertions": 0, "statusCounts": {"ACCEPTED_VALID": 1728, "REJECTED_UNSUPPORTED": 5, "PARSER_FAILURE": 2, "ORACLE_UNCERTAIN": 2, "INVALID_CAPTURE": 1}}

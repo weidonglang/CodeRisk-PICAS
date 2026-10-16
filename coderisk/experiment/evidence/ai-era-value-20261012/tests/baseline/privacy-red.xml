@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.891" timestamp="2026-10-12T07:24:10.242287+08:00" hostname="小魏"><testcase classname="tests.test_ai_convergence_privacy" name="test_real_review_snapshot_cannot_be_written_to_public_or_arbitrary_directory" time="0.846"><failure message="Failed: DID NOT RAISE &lt;class 'ValueError'&gt;">tmp_path = WindowsPath('E:/ms/.tmp/ai-era-privacy-red-tests-20261012/test_real_review_snapshot_cann0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x000001EC51B3D1F0&gt;
+
+    def test_real_review_snapshot_cannot_be_written_to_public_or_arbitrary_directory(tmp_path, monkeypatch):
+        source = make_seed(tmp_path / "source")
+        build(source, tmp_path / "dataset")
+        corpus, texts, report = validate(source)
+        # UNIT_TEST_ONLY: simulate the privacy flag, not authentic real author records.
+        private = corpus.model_copy(update={"artifacts": [s.model_copy(update={"synthetic": False}) for s in corpus.artifacts]})
+        monkeypatch.setattr(review_module, "validate", lambda _: (private, texts, report))
+&gt;       with pytest.raises(ValueError, match="ignored"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE &lt;class 'ValueError'&gt;
+
+coderisk\analysis-service-python\tests\test_ai_convergence_privacy.py:20: Failed</failure></testcase></testsuite></testsuites>

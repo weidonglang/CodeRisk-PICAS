@@ -15,7 +15,7 @@
   "data_origin": "MANUAL",
   "source_type": "manual",
   "synthetic": false,
-  "eligible_for_core_metrics": true,
+  "eligible_for_core_metrics": false,
   "question": {
     "title": "Example only; this template is not loaded",
     "description": "Replace with a traceable problem statement.",
@@ -28,8 +28,8 @@
   "provenance": {
     "source": "manual",
     "license_or_authorization": "required",
-    "manual_check_status": "VERIFIED",
-    "functional_check_status": "PASSED"
+    "manual_check_status": "PENDING",
+    "functional_check_status": "NOT_RUN"
   },
   "notes": "Template only. Do not report it as an experiment case."
 }

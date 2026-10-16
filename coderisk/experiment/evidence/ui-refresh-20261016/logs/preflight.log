@@ -1,0 +1,9 @@
+
+Python         : E:\ms\.tmp\language-venv\Scripts\python.exe
+JavaHome       : D:\DevEnvManager\envs\jdks\temurin-21
+Profile        : local
+AnalysisPort   : 8001
+BackendPort    : 8080
+FrontendPort   : 5173
+StartsServices : False
+

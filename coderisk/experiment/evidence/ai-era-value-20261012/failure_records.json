@@ -1,0 +1,70 @@
+{
+  "failures": [
+    {
+      "id": "F01",
+      "record": "tests/baseline/python.xml",
+      "category": "ENVIRONMENT_GBK",
+      "exit": 1,
+      "summary": "523 tests: 522 passed, 1 failed; UTF8 rerun passed"
+    },
+    {
+      "id": "F02",
+      "record": "tests/baseline/protocol-red.xml",
+      "category": "DEVELOPMENT_FIXTURE_AND_CONTRACT",
+      "exit": 1,
+      "summary": "36 tests: 26 passed, 10 failed, mainly Windows byte/CRLF hashes; not ten production defects"
+    },
+    {
+      "id": "F03",
+      "record": "tests/baseline/analysis-tests.xml",
+      "category": "OFFLINE_ADAPTER_MODE_WARNING",
+      "exit": 1,
+      "summary": "52 tests: 50 passed, 2 failed; corrected mode and fallback explanation"
+    },
+    {
+      "id": "F04",
+      "record": "tests/baseline/cli-red.xml",
+      "category": "DIRECT_CLI_STDLIB_SHADOW",
+      "exit": 1,
+      "summary": "statistics module renamed to descriptive_stats; independent CLI regression added"
+    },
+    {
+      "id": "F05",
+      "record": "tests/baseline/privacy-red.xml",
+      "category": "OFFLINE_RAW_OUTPUT_GUARD",
+      "exit": 1,
+      "summary": "Shared private-output gate added; UNIT_TEST_ONLY metadata, no real private data"
+    },
+    {
+      "id": "F06",
+      "record": null,
+      "category": "INSPECTION_ENCODING",
+      "exit": null,
+      "summary": "Jar manifest UTF8 read failed; ASCII key/Latin1 confirmed 6.2.0; no separate shell log was captured"
+    },
+    {
+      "id": "F07",
+      "record": "formal/FORMAL_BLOCKED.json",
+      "category": "EXPECTED_FORMAL_BLOCK",
+      "exit": 2,
+      "summary": "No frozen trusted real dataset/relationship labels; does not generate formal metrics"
+    },
+    {
+      "id": "F08",
+      "record": "tests/resume/python.xml",
+      "category": "TEST_FIXTURE_BASETEMP_DEPENDENCY",
+      "exit": 1,
+      "summary": "590 tests: 589 passed, 1 failed because basetemp was inside allowed output; isolated test policy root, production guard unchanged"
+    },
+    {
+      "id": "F09",
+      "record": "jplag/excluded.csv",
+      "category": "EXPECTED_PARSE_COVERAGE_LIMIT",
+      "exit": 0,
+      "summary": "3/22 pairs excluded from native preparation, retained in PICAS descriptive results, no zero imputation"
+    }
+  ],
+  "latest_test_record": "tests/resume/python-final.xml",
+  "latest_test_status": "591_PASSED",
+  "no_historical_output_overwritten": true
+}

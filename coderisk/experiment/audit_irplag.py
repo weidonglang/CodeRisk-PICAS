@@ -7,8 +7,8 @@ from acquire_irplag import ROOT, verify
 from acquire_public_datasets import digest, write_json
 
 
-def audit(intake:Path,previous:Path,output:Path):
-    verify(intake)
+def audit(intake:Path,previous:Path,output:Path,cache:Path | None = None):
+    verify(intake,cache)
     sources=[json.loads(l) for l in (intake/'source_registry.jsonl').read_text(encoding='utf-8').splitlines()]
     pairs=[json.loads(l) for l in (intake/'published_pairs.jsonl').read_text(encoding='utf-8').splitlines()]
     old=[json.loads(l) for l in previous.read_text(encoding='utf-8').splitlines()]
@@ -41,5 +41,6 @@ if __name__=='__main__':
     parser.add_argument('--intake',type=Path,default=ROOT/'data/public-datasets/irplag-20261009')
     parser.add_argument('--previous',type=Path,default=ROOT/'experiment/evidence/data-quality-20261009/source_quality_registry.jsonl')
     parser.add_argument('--output',type=Path,default=ROOT/'experiment/evidence/irplag-intake-20261009/quality_summary.json')
+    parser.add_argument('--cache',type=Path,default=ROOT.parent/'.tmp/irplag-source',help='Pinned local cache; verification is offline')
     args=parser.parse_args()
-    print(json.dumps(audit(args.intake,args.previous,args.output),ensure_ascii=False,indent=2))
+    print(json.dumps(audit(args.intake,args.previous,args.output,args.cache),ensure_ascii=False,indent=2))

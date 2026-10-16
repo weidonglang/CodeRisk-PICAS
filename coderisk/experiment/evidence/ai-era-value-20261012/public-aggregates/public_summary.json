@@ -1,0 +1,13 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "pair_count": 22,
+  "formal_eligible_pairs": 0,
+  "suppressed_cells": 0,
+  "raw_code_included": false,
+  "prompts_included": false,
+  "student_or_session_ids_included": false,
+  "publication_authorized_by_tool": false,
+  "human_publication_review_required": true,
+  "source_fingerprint": "a1a91a620e2eb13e640b147ad6fc19e58624bf3634009bd541f3fa97a4a5f892"
+}

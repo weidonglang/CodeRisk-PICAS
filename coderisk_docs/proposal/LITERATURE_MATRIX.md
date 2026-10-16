@@ -53,7 +53,33 @@ R 编号固定用于追溯材料，最终参考文献编号按正文首次出现
 
 本课题的可执行切入点是：在受限同题作业场景中，评估题目画像阈值与作用域规范化的组合，并保持证据可追溯。这是项目研究问题的选择，不是“文献中尚无人研究”的证明。题目画像系数是否合理、是否超越更简单的固定阈值方案，需用本项目数据检验。
 
-## 下一轮精读任务
+## 2026-10-11 S1 绑定理论核查增量
+
+下表是实际核查范围，不把元数据核准或PDF可访问写成全文已读。项目条件命题是限定程序域中的自行推导，文献背景不证明生产绑定索引器正确。
+
+| ID | 已核实题录/原始链接 | 阅读状态 | 可支持的背景与不能移植的保证 |
+| --- | --- | --- | --- |
+| R12 | N. G. de Bruijn，Lambda calculus notation with nameless dummies, a tool for automatic formula manipulation, with application to the Church-Rosser theorem，1972；[机构原始稿](https://automath.win.tue.nl/archive/pdf/aut029.pdf) | 引言及无名绑定表示相关方法节选；未通读；DOI/完整卷页未独立核准，不填写猜测值 | 绑定名替代表示的经典背景；本项目scope/role不是deBruijn index，不承接其全部理论 |
+| R13 | Murdoch J. Gabbay、Andrew M. Pitts，A new approach to abstract syntax with variable binding，Formal Aspects of Computing，2002，13(3–5)：341–363，DOI 10.1007/s001650200016；[机构题录](https://researchportal.hw.ac.uk/en/publications/a-new-approach-to-abstract-syntax-with-variable-binding/)、[作者PDF](https://www.gabbay.org.uk/papers/newaas-jv.pdf) | 题录/机构摘要/作者论文列表已核查；PDF文本乱码，截图获取失败，不标方法全文已读 | nominal/变量绑定背景；精读和定理适用前提待核，不把本轮有限G叫完整nominal实现 |
+| R14 | Andrew M. Pitts，Nominal Sets: Names and Symmetry in Computer Science，Cambridge University Press，2013，Tracts in Theoretical Computer Science 57；[作者课程及书籍引用](https://www.cl.cam.ac.uk/teaching/1314/L23/materials.html) | 书籍题录核实；出版方frontmatter本轮打开失败；书籍全文未读，DOI不在正式本轮题录填入未验证值 | 待精读参考，不据书名声称已完成相关机器证明 |
+| D03 | Andrew Pitts，Nominal Sets and Their Applications，2013/14 Lecture 1；[作者/机构讲义](https://www.cl.cam.ac.uk/teaching/1314/L23/lectures/lecture-1.pdf) | 查阅swapping、α-equivalence、AST modulo alpha与capture avoidance部分；不是整本书精读 | 对比统一名字置换与绑定α关系及商对象；讲义的λ项不直接等于现实Java/Python程序 |
+| D04 | Python3.12 [symtable文档](https://docs.python.org/3.12/library/symtable.html)；Java21 [JLS6.3](https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html#jls-6.3) | 本轮实际核对符号属性与for/catch声明作用域段落 | 支持独立交叉检查和header作用域缺口；标准正确不意味着本项目实现正确 |
+
+访问失败记录：最初Cambridge作者newaas.pdf路径及猜测的书籍页面未成功；最终查到作者newaas-jv.pdf，提取乱码仍不升级阅读状态。下一步从学校图书馆或有效原文精读，保留作者/版本/实际页段，不补造未读结果。经典理论不是“本项目首创群论”的依据。
+
+## 2026-10-12 AI 时代价值审计增量
+
+以下记录本轮实际阅读范围，不将第三方数据、受试者或性能移植为PICAS成果。原D01历史链接保留；当前JPlag功能入口使用 [jplag/JPlag](https://github.com/jplag/JPlag)，本机实跑以6.2.0 manifest为准。
+
+| ID | 核查来源/版本 | 实际阅读 | 本课题可引用的边界 |
+| --- | --- | --- | --- |
+| R15 | Ye等，Correctness, Convergence, and AI-Generated Code Detection: A Longitudinal Study of Student and Large Language Model Code in Introductory Programming；[arXiv 2610.00863v1](https://arxiv.org/html/2610.00863v1)，2026-10-01；related DOI 10.1145/3856208.3856226 | 摘要、§3方法/统计、§5讨论、§6局限；未逐表复核；CC BY-NC-ND 4.0 | 可讨论题目级结构趋同和预检；不能把缺逐提交来源真值的结果当个体AI归因或PICAS增益证明 |
+| R16 | Racovan等，Argus: Academic Integrity in the Era of Generative AI；[arXiv 2609.36073v1](https://arxiv.org/html/2609.36073v1)，2026-09-28 | 摘要、§3/3.1/3.2过程及限制；CC BY 4.0；会议栏有占位，按预印本引用 | 过程记录与真人复核的背景；良性异常不能变成来源真值，不杜撰正式会议发表 |
+| R17 | Demirok、Kutlu、Mergen，MultiAIGCD；[出版方正文](https://link.springer.com/article/10.1007/s00521-026-12336-0)，NCA 38，687，2026-08-22 | 出版题录/摘要、附录统计及许可段节选，未通读；文章CC BY 4.0 | 多模型/语言/提示元数据背景；生成方式不等于代码对独立关系，文章许可不自动等于数据许可 |
+
+最初MultiAIGCD DOI resolver访问失败，改同DOI出版方核查；未下载学生数据。更完整核查/限制在 [价值审计](../research/AI_ERA_VALUE_AUDIT.md)。这些是相关工作，不是本项目原创结论。论文提交前由作者核对正式题录与导师要求。
+
+## 原先精读任务（保留）
 
 1. 先读 R03、R09 的方法与实验设置，整理改名、结构改写及共同模板的处理差异。
 2. 读 R01 与 R11 的分类、数据和局限部分，补齐相关工作段落的具体出处。

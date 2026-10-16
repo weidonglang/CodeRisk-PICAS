@@ -1,0 +1,17 @@
+pair_id,language,kind,contract,contract_passed,source_type,eligible_for_core_metrics,raw,ast,canonical,mapping,full,no_canonical_same_pair,fusion_enabled,canonical_contribution,mapping_contribution,fusion_change
+DEV-PY-IDENTICAL,python,identical,canonical_equal,True,synthetic,False,1.0,1.0,1.0,1.0,1.0,1.0,True,0.0,0.0,0.0
+DEV-PY-RENAME,python,identifier_rename,canonical_equal,True,synthetic,False,0.030303,1.0,1.0,1.0,0.806061,0.5151515,True,0.21818182500000002,0.072727275,0.29090950000000004
+DEV-PY-FORMAT,python,format_comment,canonical_equal,True,synthetic,False,1.0,1.0,1.0,1.0,1.0,1.0,True,0.0,0.0,0.0
+DEV-PY-UNUSED-LOCAL,python,unused_local_before,observe,,synthetic,False,0.681818,0.909091,0.275862,0.8,0.56232,0.7954545,True,-0.23381662499999997,0.0006818250000000136,-0.2331344999999999
+DEV-PY-UNUSED-FUNCTION,python,unused_function_before,observe,,synthetic,False,0.708333,0.833333,0.051282,0.2,0.36141,0.770833,True,-0.32379795,-0.08562494999999999,-0.409423
+DEV-PY-REORDER,python,local_reorder,observe,,synthetic,False,0.5,0.809524,0.5,1.0,0.636905,0.6547620000000001,True,-0.06964290000000004,0.05178569999999999,-0.017857000000000012
+DEV-PY-COMMON,python,common_structure_different_operation,observe,,synthetic,False,0.7,0.695652,0.7,1.0,0.74413,0.6978260000000001,True,0.0009782999999999543,0.04532609999999999,0.0463039999999999
+DEV-PY-EXTERNAL-NAMES,python,external_function_names,observe,,synthetic,False,0.454545,1.0,0.454545,1.0,0.645455,0.7272725,True,-0.12272737500000001,0.040909125,-0.08181749999999999
+DEV-PY-SCOPE-FALLBACK,python,unsupported_comprehension,raw_fallback,True,synthetic,False,0.230769,0.133333,0.0,0.0,0.230769,0.230769,False,0.0,0.0,0.0
+DEV-PY-PARSE-FALLBACK,python,parser_failure,raw_fallback,True,synthetic,False,0.0,0.0,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0
+DEV-JAVA-RENAME,java,identifier_rename,canonical_equal,True,synthetic,False,0.172414,1.0,1.0,1.0,0.834483,0.586207,True,0.18620684999999998,0.06206894999999999,0.24827599999999994
+DEV-JAVA-UNUSED-LOCAL,java,unused_local_before,observe,,synthetic,False,0.825,0.727273,0.431373,0.833333,0.629572,0.7761365,True,-0.155143575,0.008579474999999998,-0.1465645
+DEV-JAVA-UNUSED-FUNCTION,java,unused_function_before,observe,,synthetic,False,0.772727,0.75,0.21875,0.333333,0.452983,0.7613635000000001,True,-0.24417607500000005,-0.06420457500000001,-0.30838050000000006
+DEV-JAVA-REORDER,java,local_reorder,observe,,synthetic,False,0.764706,1.0,0.621622,1.0,0.782671,0.8823529999999999,True,-0.11732894999999997,0.017647050000000008,-0.09968199999999994
+DEV-JAVA-COMMON,java,common_structure_different_operation,observe,,synthetic,False,0.837838,1.0,0.837838,1.0,0.894595,0.918919,True,-0.03648645000000003,0.012162149999999993,-0.024324000000000012
+DEV-JAVA-PARSE-FALLBACK,java,parser_failure,raw_fallback,True,synthetic,False,0.297297,0.0,0.0,0.0,0.297297,0.297297,False,0.0,0.0,0.0

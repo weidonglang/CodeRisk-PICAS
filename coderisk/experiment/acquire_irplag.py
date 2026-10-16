@@ -46,7 +46,7 @@ def pinned(cache: Path, name: str, offline: bool) -> bytes:
     return data
 
 
-def select_sources(data: bytes, output: Path) -> list[dict]:
+def select_sources(data: bytes, output: Path | None) -> list[dict]:
     selected = []
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
         infos = archive.infolist()
@@ -75,7 +75,8 @@ def select_sources(data: bytes, output: Path) -> list[dict]:
             raw.decode('utf-8')  # Fail closed: never silently replace undecodable text.
             identity = 'IRP-' + digest(info.filename.encode())[:20]
             relative = f'sources/{case}/{identity}.java'
-            store(output / relative, raw)
+            if output is not None:
+                store(output / relative, raw)
             disputed = category == 'non-plagiarized' and case in DISPUTED_CASES and suffix_parts[0] in {'13','15'}
             selected.append({'source_id': identity, 'dataset': 'irplag', 'problem_id': 'irplag:' + case,
                 'language': 'java', 'category': category, 'published_relative_path': info.filename,
@@ -113,14 +114,40 @@ def build_pairs(sources: list[dict]) -> list[dict]:
     return pairs
 
 
-def verify(output: Path) -> dict:
+def verify(output: Path, cache: Path | None = None) -> dict:
+    """Verify against the pinned archive offline, not just self-reported hashes."""
     manifest_path = output / 'manifest.json'
-    if manifest_path.exists():
-        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-        for name, expected in manifest['registry_sha256'].items():
-            if name not in {'source_registry.jsonl','published_pairs.jsonl'} or digest((output/name).read_bytes()) != expected:
-                raise ValueError('Registry hash mismatch')
+    if not manifest_path.is_file():
+        raise ValueError('Intake manifest is required')
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    if manifest.get('source_commit') != COMMIT or manifest.get('input_sha256') != PINS:
+        raise ValueError('Manifest pinned provenance mismatch')
+    names = {'source_registry.jsonl', 'published_pairs.jsonl'}
+    if set(manifest.get('registry_sha256', {})) != names:
+        raise ValueError('Both registry hashes are required')
+    for name, expected in manifest['registry_sha256'].items():
+        if digest((output/name).read_bytes()) != expected:
+            raise ValueError('Registry hash mismatch')
+    cache = cache if cache is not None else ROOT.parent / '.tmp/irplag-source'
+    # No network access or extraction: independently derive identities and dispute
+    # flags from the authenticated archive, including normalized text hashes.
+    expected_sources = select_sources(pinned(cache, 'IR-Plag-Dataset.zip', True), None)
+    for name in ('README.md', 'LICENSE'):
+        pinned(cache, name, True)
     records = [json.loads(line) for line in (output / 'source_registry.jsonl').read_text(encoding='utf-8').splitlines()]
+    if records != expected_sources:
+        raise ValueError('Source provenance/inventory differs from pinned archive')
+    counts = Counter(r['category'] for r in records)
+    if counts != Counter({'original': 7, 'non-plagiarized': 105, 'plagiarized': 355}) or len({r['source_id'] for r in records}) != 467:
+        raise ValueError('Pinned dataset inventory differs from publisher')
+    manifest_counts = {'files': 467, 'published_categories': dict(counts),
+                       'unique_byte_hashes': len({r['code_sha256_bytes'] for r in records}),
+                       'positive_reference_pairs': 355, 'negative_reference_pairs_published': 105,
+                       'negative_reference_pairs_uncontested_by_known_issue': 95,
+                       'disputed_pairs_quarantined': 10, 'formal_eligible_pairs': 0,
+                       'local_human_reviews': 0, 'detector_scored_pairs': 0}
+    if any(manifest.get(key) != value for key, value in manifest_counts.items()):
+        raise ValueError('Manifest inventory/review claims mismatch')
     for row in records:
         path = (output / row['code_path']).resolve()
         if not path.is_relative_to(output.resolve()) or digest(path.read_bytes()) != row['code_sha256_bytes']:
@@ -156,7 +183,7 @@ def acquire(cache: Path, output: Path) -> dict:
         'tasks': [{'problem_id': f'irplag:case-0{i}', 'summary': title, 'context_source': 'Paper section 3.2; paraphrase only', 'starter_code_provided': False} for i,title in enumerate(TASKS,1)],
         'registry_sha256': {name:digest((output/name).read_bytes()) for name in ('source_registry.jsonl','published_pairs.jsonl')}}
     write_json(output / 'manifest.json', manifest)
-    return {**manifest, 'verification': verify(output)}
+    return {**manifest, 'verification': verify(output, cache)}
 
 
 def main():
@@ -167,7 +194,7 @@ def main():
     args = parser.parse_args()
     if not args.verify_only and args.output.exists():
         parser.error('Output already exists; use --verify-only or a fresh directory')
-    print(json.dumps(verify(args.output) if args.verify_only else acquire(args.cache,args.output), ensure_ascii=False, indent=2))
+    print(json.dumps(verify(args.output, args.cache) if args.verify_only else acquire(args.cache,args.output), ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':

@@ -1,0 +1,8 @@
+### Error
+Error: locator.waitFor: Error: strict mode violation: getByText('本页没有符合条件的代码对', { exact: true }) resolved to 2 elements:
+    1) <span class="el-table__empty-text">本页没有符合条件的代码对</span> aka locator('span').filter({ hasText: '本页没有符合条件的代码对' })
+    2) <p>本页没有符合条件的代码对</p> aka locator('p').filter({ hasText: '本页没有符合条件的代码对' })
+
+Call log:
+[2m  - waiting for getByText('本页没有符合条件的代码对', { exact: true }) to be visible[22m
+

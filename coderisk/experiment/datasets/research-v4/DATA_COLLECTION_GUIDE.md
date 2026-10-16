@@ -69,6 +69,14 @@ samples/manual/P-MANUAL-001/
   README.md
 ```
 
+## 录入资格更新（2026-10-10）
+
+`placeholder` 不得申请核心资格；助手和直接 JSON 校验均会阻止。`source_type=ai_assisted` 或 `case_type=AI_REWRITE` 任一成立，就必须提供非空模型/提示词、带时区 ISO-8601 生成时间及真实的 VERIFIED/PASSED 状态才可进入开发核心指标。AI-assisted 来源即使标为 VARIABLE_RENAME，也需要相同检查。
+
+`--append` 写入前对当前整个清单检查版本、身份、题目/来源家族/哈希隔离，失败不改文件。模板默认非核心、PENDING/NOT_RUN；请根据实际核验填写。SHA-256 为读取后 LF 换行的 UTF-8 文本哈希，原始文件字节哈希须另保存在采集记录。
+
+Java/Python 同语言且资格通过的 AI 样例不再统一被 JPlag 排除。实验流程资格不代表正式 benchmark 资格；正式评测还须遵循 `coderisk_docs/proposal/DATA_PROTOCOL.md` 和 `FAIR_EVALUATION.md`，包括实际独立真人复核与预先冻结。
+
 ## 3. 每个样例需要准备的信息
 
 每个 pair 至少需要：

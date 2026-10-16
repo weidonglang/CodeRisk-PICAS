@@ -1,0 +1,28 @@
+{
+  "template_only": true,
+  "notes": "Merge these extensions into a real existing-format pair ONLY after actual evidence. No fabricated consent, HUMAN review or PASSED status. This file is not a dataset source.",
+  "eligible_for_core_metrics": false,
+  "split_preregistered": false,
+  "source_family_ids": [],
+  "provenance": {
+    "license_or_authorization": "",
+    "manual_check_status": "PENDING",
+    "functional_check_status": "NOT_RUN",
+    "template_status": "UNDECLARED",
+    "parent_source_ref": ""
+  },
+  "annotation": {
+    "status": "PENDING",
+    "label": "UNCERTAIN",
+    "reviewer_a": "",
+    "reviewer_b": "",
+    "reviewer_a_type": "UNSPECIFIED",
+    "reviewer_b_type": "UNSPECIFIED",
+    "independence_confirmed": false,
+    "label_basis": "",
+    "reviewed_at": "",
+    "functional_evidence": "",
+    "shared_template_ref": "",
+    "independence_evidence": ""
+  }
+}

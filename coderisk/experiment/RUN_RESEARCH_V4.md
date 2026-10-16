@@ -4,6 +4,12 @@
 
 ## 0. 准备环境
 
+2026-10-10：旧 `.venv` 在本机引用了失效的 Windows Store Python。先运行 `& $PY --version`；若不能启动，本机可从项目目录使用 `$PY = '..\.tmp\language-venv\Scripts\python.exe'`（Python 3.12.14，已安装依赖）。该路径是本机环境，不是跨机器安装契约。新机器请用有效 Python 创建 venv、安装 `analysis-service-python/requirements.txt` 和根目录 `requirements-dev.txt`。
+
+本手册的 Research V4 runner 用于 seed/开发流程；正式评测请使用 `run_fair_evaluation.py`，按 `coderisk_docs/proposal/FAIR_EVALUATION.md` 冻结配置和真人复核，不以 seed 核心资格替代正式门槛。
+
+录入 `--append` 会在写入前检查完整数据集；placeholder 核心资格、AI 来源字段不完整、无时区时间、版本或隔离冲突均须先修正。JPlag 新对齐文件记录源码哈希；对齐结果中的 `sourceHashesVerified=false` 表示历史输入缺少完整源码身份核验，需重新准备基线。相同 pair ID 的冲突源码/划分会报错。
+
 从项目根目录执行：
 
 ```powershell

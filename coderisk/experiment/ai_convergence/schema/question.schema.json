@@ -1,0 +1,135 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "problem_family": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Problem Family",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "python",
+        "java"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "title": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "question_path": {
+      "title": "Question Path",
+      "type": "string"
+    },
+    "question_text_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Question Text Sha256",
+      "type": "string"
+    },
+    "difficulty_proxy": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ],
+      "title": "Difficulty Proxy",
+      "type": "string"
+    },
+    "solution_space_proxy": {
+      "enum": [
+        "NARROW",
+        "BROAD",
+        "UNKNOWN"
+      ],
+      "title": "Solution Space Proxy",
+      "type": "string"
+    },
+    "template_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Template Id"
+    },
+    "template_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Template Path"
+    },
+    "hidden_test_policy": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Hidden Test Policy",
+      "type": "string"
+    },
+    "course_ai_policy": {
+      "enum": [
+        "ALLOWED",
+        "PROHIBITED",
+        "UNKNOWN"
+      ],
+      "title": "Course Ai Policy",
+      "type": "string"
+    },
+    "confidentiality": {
+      "enum": [
+        "PUBLIC",
+        "LOCAL_RESTRICTED",
+        "SYNTHETIC"
+      ],
+      "title": "Confidentiality",
+      "type": "string"
+    },
+    "license_or_authorization_ref": {
+      "title": "License Or Authorization Ref",
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "validation",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    }
+  },
+  "required": [
+    "problem_id",
+    "problem_family",
+    "language",
+    "title",
+    "question_path",
+    "question_text_sha256",
+    "difficulty_proxy",
+    "solution_space_proxy",
+    "template_id",
+    "template_path",
+    "hidden_test_policy",
+    "course_ai_policy",
+    "confidentiality",
+    "license_or_authorization_ref",
+    "split"
+  ],
+  "title": "Question",
+  "type": "object"
+}

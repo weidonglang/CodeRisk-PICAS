@@ -1,0 +1,13 @@
+{
+  "review_pairs": 52,
+  "regular_per_task_per_published_class": 3,
+  "known_disputes": 10,
+  "local_human_reviews": 0,
+  "review_labels": "UNCERTAIN until actual reviewers submit evidence",
+  "selection_uses_detector_scores": false,
+  "blind_batch_sha256": "dab012b4f299942333a88a2f8f8cadb9fefc6dd86a827d18651131588eb2f5a6",
+  "local_manifest_sha256": "d3fe2ecc5e69476d81caf69abfc20a066e783954da77ff4ddafacfad6e669550",
+  "local_workbench_path": "E:\\ms\\coderisk\\data\\public-datasets\\irplag-20261009\\review-v2\\workbench.html",
+  "ordering": "Global SHA-256 order; deterministic A/B swap independent of published label.",
+  "note": "Adjudicator label file must not be shown before reviews. Scores/categories/paths are hidden; original source names/comments can reveal upstream categories, so this is score-blind, not guaranteed label-blind."
+}

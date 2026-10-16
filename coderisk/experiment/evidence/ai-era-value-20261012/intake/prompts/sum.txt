@@ -1,0 +1,1 @@
+MOCK ONLY. Sum a list with a loop; return the integer total.

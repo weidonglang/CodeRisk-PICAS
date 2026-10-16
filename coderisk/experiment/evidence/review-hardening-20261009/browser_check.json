@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-10-09T13:25:09.378466+00:00",
+  "task_result_race": {
+    "check": "TERMINAL_STATUS_RESULT_ORDER",
+    "data_kind": "UI_TEST_ONLY",
+    "passed": true,
+    "final_result_visible": true,
+    "trace": [
+      {
+        "path": "/api/tasks/999",
+        "resultsCommitted": false
+      },
+      {
+        "path": "/api/tasks/999/results/summary",
+        "resultsCommitted": true
+      },
+      {
+        "path": "/api/tasks/999/results",
+        "resultsCommitted": true
+      },
+      {
+        "path": "/api/tasks/999/failures",
+        "resultsCommitted": true
+      }
+    ]
+  },
+  "workbench_export": {
+    "data_kind": "UI_TEST_ONLY",
+    "schema_version": "coderisk-blind-review-2",
+    "reviewer_type": "AI",
+    "ai_context_present": true,
+    "identity_and_type_locked": true,
+    "missing_ai_context_rejected": true,
+    "download_received_and_parsed": true,
+    "exported_fixture_records": 1,
+    "substantive_dataset_reviews": 0,
+    "local_human_reviews": 0
+  },
+  "console_limitations": [
+    "Initial task 999 navigation returned expected 404 before route fixture installation.",
+    "Static workbench server has a missing favicon 404. No zero-console-error claim."
+  ]
+}

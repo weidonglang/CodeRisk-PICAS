@@ -1,6 +1,14 @@
 # CodeRisk 文档导航
 
+最新界面增量（2026-10-16）：[结果图表与证据阅读](RESULT_PRESENTATION_GUIDE.md)、[一键启动与本地流程](FRONTEND_AND_DEV_WORKFLOW.md)、[本轮工程验证](../coderisk/experiment/evidence/result-review-20261016/README.md)。图表保持原API及生产公式，experimental权重0；研究结论、公开数据规模和真实授权资格不因UI更新而变化。
+
+最新增量（2026-10-12）：[AI 时代价值审计](research/AI_ERA_VALUE_AUDIT.md)、[会话/来源协议](research/AI_CONVERGENCE_PROTOCOL.md)、[真实采集操作](research/LIVE_GENERATION_PLAYBOOK.md)、[PowerShell 复现](research/REPRODUCE_AI_CONVERGENCE.md)、[测试与失败记录](research/TEST_AND_EVIDENCE_SUMMARY.md)、[Go / Pivot / Stop 决策](research/PICAS_GO_NO_GO_DECISION.md)、[开题补充](research/PROPOSAL_AI_ERA_APPENDIX.md)。最新Python **591** / H2 后端 **19** / build 通过；mock 22 对、JPlag 共同 14 对，仅 development。当前正式结论 **INSUFFICIENT_EVIDENCE**，没有真实生成/人审/教师效益。本轮[证据包](../coderisk/experiment/evidence/ai-era-value-20261012/README.md)与下列历史记录分开。
+
+本轮最新入口（2026-10-11）：[S0—S5开题研究包](research/OPENING_RESEARCH_PACKAGE.md)、[群轨道/α与商集](research/ORBIT_ALPHA_EQUIVALENCE.md)、[独立性质及判别力报告](research/INVARIANCE_DISCRIMINABILITY_REPORT.md)、[真实数据采集教程](research/REAL_DATA_ACTION_GUIDE.md)。本轮工作树Python523/H2后端19/build通过，正式数据/统计效果仍BLOCKED；以下早期轮次数字保留为历史，不累计成独立样本。
+
 [项目首页](../README.md) · [运行手册](../coderisk/README.md) · [开题材料](proposal/README.md)
+
+2026-10-12 [完整交付报告与导师说明](research/AI_ERA_FINAL_REPORT_20261012.md)按V0—V5列明DONE/PARTIAL/BLOCKED、真实测试及负结果，附精确改动与工作区保护证据。需要继续真实试点时先完成手册中的本人授权和双审步骤。
 
 最近增量（2026-10-11）：[离线 LLM 对照](research/LLM_BASELINE.md)与[混合候选门禁](research/HYBRID_DETECTION.md)已实现；最近开发轮 Python 431 / H2 后端 19 项及前端构建通过，真实模型/混合效果未验证。当前公开/候选数据登记 **92,513 行**，统计与已运行实验分开说明于[项目首页](../README.md#数据规模概览)和[数据核对](../coderisk/experiment/evidence/readme-data-refresh-20261011/README.md)。此前[AI 分工检查](proposal/AI_REVIEW_HARDENING.md)的 188 项是历史记录。
 

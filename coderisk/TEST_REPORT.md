@@ -1,5 +1,47 @@
 # CodeRisk Research V4 Seed Toolchain Test Report
 
+## 结果图表与研究增量发布检查 - 2026-10-16（第二轮）
+
+- 仅新增前端展示逻辑：全任务风险分布、当前页列表/图表、详情综合分与阈值同刻度图、Canonical−Raw展示差值、正负阈值调整条（含历史分布项）、移动端结果、证据筛选/长源码定位、源码布局和映射搜索。不更换生产公式、API、数据库结构或experimental权重。
+- 本轮真实运行Python **591 passed / 1既有warning，14.98s**；Maven **19 tests / 0failure/error/skip，测试7.561s/总9.665s，BUILD SUCCESS，H2**。旧任务超时/恢复ERROR与WARN是测试覆盖，不是失败；MySQL未实库验证。
+- 前端 **18项单测通过**，Windows开发脚本 **26项检查通过**；最终类型检查/Vite **1713模块，3.99s，成功**。没有新增npm依赖或改package-lock；旧PURE/大chunk警告保留。
+- 真实浏览器自有题目/源码端到端 **41项通过**（创建→上传→分析→结果→证据→HTML），详情真实报告/筛选另 **5项通过**；新增图表/交互 **30项通过**，既有模拟状态 **7项通过**，共83项。图表/状态模拟只在临时浏览器，不写数据库或冒充算法结果。1440/768/390/320宽度包含任务图表、移动列表及详情检查。
+- 额外按CI入口运行fair evaluation：**75行 synthetic development 结果**，JPlag显式SKIPPED；只验证离线流程，不覆盖历史实验、不改正式资格或声称真实检测增益。
+- 保留失败：初次浏览器连接时服务未运行；首次完整流程测试对桌面/手机同文案的选择不唯一，已限定桌面范围；图表测试直接操作Element Plus隐藏原生checkbox超时，改操作可见label并验证isChecked后通过。详情复验误点被占位文字覆盖的select内部input并在另一轮导航时detach，改为可见wrapper并串行重跑5项通过。CLI错误可能仍exit0，按最终JSON检查checks/errors，不能只看退出码。
+- 发布范围依用户本次授权包含此前研究代码、测试、文档和自有/汇总证据。原始数据池/数据库/凭据/本机任务书不发布，历史归档不修改；MIT只涵盖项目原创内容，第三方许可证限制不变。
+- 暂存检查发现旧日志/JUnit的工具原生尾随空格与末尾空行；仅对冻结证据下log/xml声明`-whitespace`，保留原始字节及校验值。源码和普通文档不豁免空白检查。
+- 本轮记录、命令、截图和限制见 [结果展示证据](experiment/evidence/result-review-20261016/README.md) 和 [阅读指南](../coderisk_docs/RESULT_PRESENTATION_GUIDE.md)。以下第一轮及更早记录保持原日期，不改成第二轮结果。
+
+## 前端展示与开发启动流程 - 2026-10-16
+
+- 本轮只改Vue/启动脚本/说明及CI的前端测试步骤，生产算法、后端API和数据库迁移源码不改。起始保留dirty工作区和暂存；保护清单见 `output/ui-refresh-20261016/baseline.json`，最终核验见 [前端证据包](experiment/evidence/ui-refresh-20261016/README.md)。未提交或推送。
+- `python -m pytest -q -p no:cacheprovider`：**591 passed / 1既有warning，67.33s，exit0**。`mvn test`：**19 tests，0failure/error/skip，测试8.979s/总13.672s，BUILD SUCCESS**，仅H2。`npm test`：**12 passed**；脚本语法/端口/进程身份/路径等 **26 checks passed**。最终 `npm run build`：**1706模块，4.02s，成功**，原有PURE/chunk警告未隐瞒。
+- Playwright/Chrome真实服务流程最终 **41检查通过**：题目、上传、静态分析任务、结果、证据选择/源码高亮、映射/阈值/背景标签页、HTML下载；七类页面×1440/768/390/320宽度无整页溢出。另 **7项拦截响应UI检查通过**：分页、后端不可用、内部错误不泄露、缺失值不假装0、parser fallback不伪造IR、实验指标零权重、终态读取先于结果请求。模拟响应不写入数据库，不能当算法证据。
+- 使用隔离DataRoot，首次快照重启验证 **3题/6提交/3任务及结果不变**；最终再跑UI流程新增1题/2提交/1任务。均带UI_SELF_AUTHORED标记，不是人工独立或真实模型数据；没有执行上传源码。后端/前端/分析就绪、停止后6个相关端口释放、重复启动复用同一会话已验证。
+- 初始失败保留：sandbox realpath/Chrome启动限制；工具VM缺URL全局、过严链接选择器、起始视口影响、API模拟误拦截前端模块；修正后对应最终JSON检查通过。首次幂等验证发现JSON日期转型导致误建第二组，补字符串/日期/指纹契约并按身份停止第二组；该组曾打开默认local库，未建题/提交/任务，不声明默认DB文件字节不变。真实业务测试与后续重启一直使用独立DataRoot。
+- 默认JAVA_HOME实际为Temurin17，脚本自动选择本机已装21；不修改持久化机器配置。`-CheckOnly`不等于实库验证；MySQL、真实模型或教师效益NOT_RUN。证据、截图、命令及局限见 [前端与启动手册](../coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md)。以下日期化研究历史不覆盖。
+
+## AI 时代价值验证 V0—V5 - 2026-10-12
+
+- 本轮重跑，不借用旧结果：关机前Python **590 passed，1既有Starlette/httpx warning，46.24s，exit0**；恢复后初跑589pass/1fail，63.25s，因隐私测试把allowed output内的basetemp当成非法路径。仅隔离测试根并新增允许/逃逸契约，2项定向通过，最终全量 **591 passed / 1 warning，61.37s，exit0**，相对523基线新增68测试。原门禁/生产代码未改；新日志/JUnit在 `output/ai-era-value-20261012/resume-validation/`。H2 Maven **19 tests / 0 failure/error/skip，BUILD SUCCESS，总16.356s**；vue-tsc/Vite **1699 modules，5.11s**，旧PURE/chunk警告保留。
+- 新离线协议/来源关系/泄漏/正式门禁/只读上下文/隐私/直接CLI等覆盖见 [本轮测试摘要](../coderisk_docs/research/TEST_AND_EVIDENCE_SUMMARY.md)。初始GBK、CRLF字节hash、模式/告警、stdlib同名及raw输出门禁失败均保留，不抹红测。
+- mock13 artifacts/12会话/22对；JPlag6.2.0本地Java/Python实际运行、19对匹配，六方法共同14；正式指标N/A。1728合法性质探针再次通过，另10尝试状态保留，6个自有Java编译但不执行。ConPlag两view各911只读重核，不重评分/拟合，Full低于NoCanon保留。
+- 真实模型/学生新增/真人审核/教师效益/功能执行/MySQL实库/当前浏览器E2E/Dolos均NOT_RUN；formal预期exit2。API、数据库和生产源码无本轮改动；起始197 dirty、129生产文件、1492历史文件及暂存/HEAD核对见 [证据与保护检查](experiment/evidence/ai-era-value-20261012/README.md)。最新完整本地输出是 `output/ai-era-value-20261012/analysis-release/`，不是early analysis-final。历史日期化记录如下保留。
+
+## S0—S5 开题研究收口 - 2026-10-11
+
+- 实际基线main/HEAD `892e7ef4a0d2f016cc8b0713fc7b347bd9e1717f`，预存88修改/未跟踪文件；新测试不冒充clean HEAD的能力。本轮未commit/push/发布/改历史。
+- Python初跑8 failed/423 passed：sandbox标准TEMP权限问题；工作区TEMP/TMP后431 passed。Java header遮蔽红测2 failed/17 passed保留；最小raw降级后54通过，后续扩充最终**523 passed，1既有Starlette/httpx warning，43.77秒**。相比基线新增**92项**。完整JUnit/日志在`output/opening-research-20261011/s0/python-final-r2.*`；第一次最终521项是在最后两项契约增加前的中间运行。
+- 环境差异复核：旧复用环境Tree-sitter 0.26.0，项目声明0.25.2；隔离安装0.25.2并记录真实导入路径后，全量仍**523 passed，1 warning，32.47秒**。日志`python-pinned-parser.*`，没有改旧环境或生产依赖声明。
+- 最终实际`mvn test`：**19 passed，0 failure/error/skip，BUILD SUCCESS，11.437秒**，H2/Flyway5迁移；超时/失败重试ERROR/WARN是既有测试覆盖，不是test失败。Mockito/H2警告保留。没有MySQL实库验证。
+- 最终实际`npm --prefix coderisk/frontend-vue run build`：vue-tsc/Vite成功，1699modules，bundle build5.06秒；既有PURE/大chunk warning保留。本轮不重跑浏览器、不将build当E2E。
+- 独立性质12自有gold（三seed×48置换）**1,728/1,728接受检查通过**，总尝试1,738：拒绝5、parser失败2、非法捕获1、oracle不确定2不计成功。6次自有Java编译通过且未执行。唯一源码/稳定子统计单列，次数不是独立数据规模。
+- 14方法新seed消融：91输入/75分析/共同68（validation32/test36）；canonical降级7保留。公开ConPlag只读分解重新运行，读取两view各911、0重评分/拟合；历史负结果未更改。统计参考0、q可用0，全规则回退；正式preflight输出FORMAL_BLOCKED并按require-ready退出2。
+- 图表首次缺matplotlib；pip首次临时目录权限、第二次索引JSON截断，均记录；设置可写TEMP并使用既有实验requirements/legacy resolver重试安装成功，最终只读图表/manifest成功，图已查看，无新算法/依赖规格修改。
+- 生产公式/API/DB不改；规范化已知Java header遮蔽改为explicit fallback，可影响这类pair的既有融合分但不是新权重或提高效果。最终历史/暂存/源码保护及链接见新verification.json。详见 [S0审计](../coderisk_docs/research/OPENING_BASELINE_AUDIT.md)、[双维报告](../coderisk_docs/research/INVARIANCE_DISCRIMINABILITY_REPORT.md)、[研究包](../coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md) 与 [精选证据](experiment/evidence/opening-research-20261011/README.md)。
+
+下面保留之前阶段的真实状态与数字，不覆盖历史。
+
 ## 研究阶段 5 混合实验门禁 - 2026-10-11
 
 - 新测试 27 项通过。未知 selected pair 会悄悄改变分母的红测先失败后修复；fallback 不删、同分排序、validation-only 选 K、真实基线不得被 development 绕过均验证。
@@ -29,6 +71,50 @@
 - 默认 formal run 实际被拒绝，未创建结果目录；显式 allow-development 实跑 91 输入/75 分析/68 共同可用，14 方法与完整 CSV/JSON/Markdown 生成成功，formalEligiblePairs=0。
 - Recall@K 的候选遗漏测试先失败再修复；现在要求完整 query pool、实际数量匹配且保留不支持的候选。seed 的 Recall@K 全为 N/A。生产 FORMULA_SPEC/canonicalization/token_similarity 文件 hash 与上一批一致。
 - 本轮未改后端/前端，不重跑 mvn/npm；上一批 H2 19 项与 build 通过仅作历史记录，MySQL 实库仍待验证。协议、命令、失败及证据见 [研究消融说明](../coderisk_docs/research/SIMILARITY_ABLATION.md)。
+
+## Python and seven-language intake - 2026-10-10
+
+- Actual pinned PoolC first train shard: 598,736 published rows audited; 30,000 distinct balanced pairs selected, referencing 29,280 different Python source texts. 27,961 parse under Python 3.12.14; 1,319 fail and remain explicitly unsupported/possibly Python 2. No code execution or syntax conversion.
+- Actual pinned XLCoST mirror: 57,661 tokenized program records across Python/C/C++/JavaScript/C#/PHP/Java. 30,893 unlabelled title-aligned cross-language candidates, including 20,713 without Java. These are not verified official parallel pairs or raw source files.
+- All fixed sizes and LFS SHA-256/Git blob pins verified. Both intakes pass full offline reconstruction. Title ambiguity and split/hash reuse exclusions are recorded; unknown author/problem identity is not invented. PoolC license is unspecified and quarantined; all new pairs are noneligible, external, non-synthetic and locally UNCERTAIN.
+- Python full regression: **263 passed**, one existing third-party warning, no failures/skips. Includes 24 new fixture tests for pins, quotas, conflict/content deduplication, title ambiguity, split leakage, immutable output, syntax-failure disclosure, tamper rejection and honest summary counting. JUnit: `../output/nonjava-all-tests-20261010-r2.xml`.
+- Production algorithms/weights, backend/frontend and supported languages were not changed by this increment. Maven/build/JPlag/MySQL/E2E were not rerun.
+
+Evidence and commands: [data card](../coderisk_docs/proposal/NONJAVA_PUBLIC_INTAKE.md) and [verification](experiment/evidence/nonjava-intake-20261010/verification.json).
+
+## Large pinned public code-pair intake - 2026-10-10
+
+- Actual CodeXGLUE BCB intake downloads eight pinned upstream files, verifies Git blob identities/byte lengths and records SHA-256. All 1,731,860 published pair rows resolve to 9,126 Java function records.
+- Selected development pool: 30,000 distinct nonidentical text pairs from upstream train, 15,000 per published label. All are external, non-synthetic and locally UNCERTAIN/noneligible. No new synthetic pairs, code execution or detector scoring.
+- Audit: 117 contradictory text-pair labels excluded from selection; 1,723 text pairs repeat across upstream splits. Function IDs do not overlap splits, but text hashes do (94/76/26); problem/author isolation remains unknown.
+- Offline verification independently reconstructs selected identities, labels and source metadata from fixed inputs and checks every saved function. It passes for 30,000 pairs. Byte hashes have zero intersection with the previous 3,865-record public and 467-record IR-Plag registries.
+- Python full regression: **239 passed**, no failures/skips, one existing third-party warning. Fifteen new self-authored intake tests cover pin verification, missing references, deterministic balance, reverse/content deduplication, conflicts, overlap disclosure, unavailable quotas, immutable output and offline tamper rejection.
+- Existing production scoring, backend and frontend were unchanged; no new Maven/build/MySQL/browser E2E verification in this data-only increment. No new formal effect claim is supported.
+
+Evidence: [verification record](experiment/evidence/codexglue-bcb-intake-20261010/verification.json) and [data card](../coderisk_docs/proposal/LARGE_PUBLIC_PAIR_INTAKE.md).
+
+## Research intake and development fusion diagnostics - 2026-10-10
+
+- Python full regression: **224 passed**, one existing Starlette/httpx deprecation warning. Uses Python 3.12.14 from `.tmp/language-venv`; JUnit record is `../output/intake-fusion-tests-20261010-r2.xml`.
+- Added 36 tests: 33 intake/alignment checks and 3 development-diagnostic checks. Placeholder core exclusion, AI source/case-type gates, blank and timezone fields, pre-append nonmutation on split/hash/version failures, and prediction source-identity validation are covered.
+- Existing Research V4 seed remains 91 pairs / 85 workflow-eligible, 41 validation / 50 test, zero problem/source/source-family/hash overlap. New 16 development probes are separate, synthetic and excluded from core metrics. Seven rename/format/fallback contracts pass; nine probes are descriptive only.
+- JPlag preparation smoke: 72 requested pairs, 19 documented exclusions, status PREPARED. No new native JPlag execution or real verified AI sample is claimed; AI admission is tested with explicitly self-authored unit fixtures.
+- Diagnostic outputs preserve source/fingerprint/Git metadata and immutable directories. Public ConPlag test scores were not rerun or tuned; algorithm service and production weights/thresholds were unchanged.
+- Environment failures were resolved before the successful run: old project venv could not launch its Store Python; sandbox default temporary paths caused fixture permission failures. Tests use the valid local Python 3.12 environment and workspace TEMP/TMP plus a fresh pytest basetemp. No tests were skipped.
+- Backend, frontend, browser E2E and live MySQL checks were not rerun in this experiment-tool-only increment. Previous verification remains historical.
+
+Scope, commands and observed limitations: [intake and fusion development notes](../coderisk_docs/proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md).
+
+## AI technical review and correctness hardening — 2026-10-09
+
+- Python: **188 passed**, one existing Starlette/httpx warning. The new Python scope file has 39 self-authored cases; API checks cover explicit fallback reasons and zero mapping/canonical weights. Review identity has six checks, and IR intake has thirteen, including immutable output protection.
+- Backend: **19 passed**, no failures/errors/skips. H2 MySQL mode only, AnalysisClient stubbed. Tests cover huge page numbers, early size/duplicate validation, the stored-result/unresolved-failure crash window, and two independent transactions serializing first feature writes for one question.
+- Frontend: type check/production build succeeded. Browser controlled terminal-transition race confirms final results are fetched after terminal state and shown; AI context rejection, locked identity and downloaded v2 JSON verified. UI_TEST_ONLY fixtures are not dataset annotations.
+- Real isolated Spring Boot/FastAPI/H2: 10/20/50 self-authored Python submissions complete 45/190/1225 pairs. Missing-file partial/retry preserves successful result ID and resolves failure history. Initial incorrect local URL environment variable was corrected and the run repeated; this setup failure remains disclosed.
+- Offline provenance: actual 467 IR-Plag sources and 460 relationships verified against pinned archive reconstruction; new 52-pair packet uses global ordering and A/B swaps. No new source acquisition, public-data scoring or substantive local human annotation in this increment.
+- No production weights/thresholds retuned. Unsupported Python scope constructs now explicitly fall back, changing coverage rather than proving accuracy improvement. Three subagents are AI technical reviewers, not human annotators.
+
+See [frozen engineering records](experiment/evidence/review-hardening-20261009/README.md) and [support boundaries](../coderisk_docs/proposal/AI_REVIEW_HARDENING.md). Earlier sections retain their original version-specific counts.
 
 ## IR-Plag intake, fusion diagnosis and asynchronous tasks — 2026-10-09
 

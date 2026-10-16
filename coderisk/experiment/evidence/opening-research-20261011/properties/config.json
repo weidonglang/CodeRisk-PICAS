@@ -1,0 +1,11 @@
+{
+  "protocolVersion": "independent-gold-properties-v1",
+  "seeds": [
+    20261011,
+    73,
+    901
+  ],
+  "variantsPerFixturePerSeed": 48,
+  "sourceType": "synthetic",
+  "formalEligible": false
+}

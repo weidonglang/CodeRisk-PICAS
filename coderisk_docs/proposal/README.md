@@ -1,5 +1,9 @@
 # CodeRisk 开题准备材料
 
+> 2026-10-12最新补充：[AI时代开题附录](../research/PROPOSAL_AI_ERA_APPENDIX.md)、[价值审计](../research/AI_ERA_VALUE_AUDIT.md)、[Go/Pivot/Stop](../research/PICAS_GO_NO_GO_DECISION.md)和[真人采集步骤](../research/LIVE_GENERATION_PLAYBOOK.md)。离线工具/本地JPlag完成，真实跨模型/双审/教师试验未开展，正式结论INSUFFICIENT_EVIDENCE；保留RQ1/RQ2与原题名，RQ3可缩减为探索设计。最新Python591/H2后端19/build通过只是工程证据；不能将mock22对或公开候选当正式benchmark。以下旧轮次状态按日期理解。
+
+> 2026-10-11当前总入口：[开题研究包](../research/OPENING_RESEARCH_PACKAGE.md)。已更新本目录内容初稿/文献矩阵，新增轨道/商集/α条件证明、独立gold及具体反例、真实数据采集/冻结教程和答辩QA。统计/LLM/Hybrid工具实际已实现但真实效果受阻；下面2026-10-10“未实施”是当时记录，不能作为最新状态。正式数据/可信reference为0，不把合成/公开候选包装benchmark，导师/学校确认待本人完成。
+
 > 2026-10-10 后续阶段 2–3：已提供 [冻结多维消融](../research/SIMILARITY_ABLATION.md) 与 [独立解答上尾统计研究工具](../research/NATURAL_SIMILARITY_CALIBRATION.md)。仅 synthetic 流程结果；完整融合非最高 F1，统计可信参考 0、全部规则回退，不能表述为真实误报改善。下列初稿提交时应加入新题冷启动/预登记同题面板的协议区别、关系标签与授权门禁及实际负结果，不能将 q 称为抄袭概率。LLM/混合未实施。
 
 > 2026-10-10 开题研究定位增补：[精准实现审计](../research/IMPLEMENTATION_AUDIT.md)、[群作用范围/条件证明与有限测试](../research/GROUP_ACTION_INVARIANCE.md)、[第一批真实验证与后续阻塞](../research/FIRST_BATCH_REPORT.md)。首批只完成有限规范化，不主张首次群论应用、总分不变或方法优越性。完整语义等价/AI 来源检测不支持，统计校准/LLM 对照仍待实施，可信独立数据不足；下列初稿的方法表述须按这些边界与证据同步理解后再提交导师。

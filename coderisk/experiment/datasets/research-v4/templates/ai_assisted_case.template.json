@@ -15,7 +15,7 @@
   "data_origin": "MANUAL",
   "source_type": "ai_assisted",
   "synthetic": false,
-  "eligible_for_core_metrics": true,
+  "eligible_for_core_metrics": false,
   "question": {
     "title": "AI-assisted rewrite sample",
     "description": "Original and AI-assisted rewrite for structural similarity evaluation.",
@@ -31,9 +31,9 @@
     "model_name": "provider/model/version",
     "prompt_template": "exact prompt or prompt file path",
     "temperature": 0.2,
-    "generation_time": "2026-07-05T12:00:00+08:00",
-    "manual_check_status": "VERIFIED",
-    "functional_check_status": "PASSED"
+    "generation_time": "",
+    "manual_check_status": "PENDING",
+    "functional_check_status": "NOT_RUN"
   },
   "notes": "AI_REWRITE evaluates retained structural similarity after assisted rewriting; it is not AI-code detection."
 }

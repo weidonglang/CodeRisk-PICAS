@@ -1,0 +1,57 @@
+{
+  "source_records": 57661,
+  "source_records_by_language": {
+    "c": 574,
+    "cpp": 11198,
+    "csharp": 10735,
+    "java": 11028,
+    "javascript": 9951,
+    "php": 3553,
+    "python": 10622
+  },
+  "sources_by_upstream_split": {
+    "test": 4851,
+    "train": 50168,
+    "valid": 2642
+  },
+  "unique_language_text_hashes": 57216,
+  "unique_problem_titles": 9473,
+  "source_records_without_alignment_title": 0,
+  "cross_split_language_text_hashes": 23,
+  "selected_pairs": 30893,
+  "candidate_pairs_by_language": {
+    "c/cpp": 173,
+    "c/csharp": 176,
+    "c/java": 180,
+    "c/javascript": 137,
+    "c/php": 63,
+    "c/python": 164,
+    "cpp/csharp": 2000,
+    "cpp/java": 2000,
+    "cpp/javascript": 2000,
+    "cpp/php": 2000,
+    "cpp/python": 2000,
+    "csharp/java": 2000,
+    "csharp/javascript": 2000,
+    "csharp/php": 2000,
+    "csharp/python": 2000,
+    "java/javascript": 2000,
+    "java/php": 2000,
+    "java/python": 2000,
+    "javascript/php": 2000,
+    "javascript/python": 2000,
+    "php/python": 2000
+  },
+  "exclusions": {
+    "ambiguous_same_language_titles_excluded": 1207,
+    "titles_across_upstream_splits_excluded": 25,
+    "identical_cross_language_token_text_excluded": 9,
+    "titles_with_split_shared_code_hashes_excluded": 3,
+    "duplicate_content_candidates_excluded": 2
+  },
+  "formal_eligible_pairs": 0,
+  "selection_uses_detector_scores": false,
+  "problem_disjoint_verified": false,
+  "source_disjoint_verified": false,
+  "official_parallel_alignment_verified": false
+}

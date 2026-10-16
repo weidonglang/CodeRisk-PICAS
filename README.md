@@ -20,6 +20,11 @@ Problem-aware code similarity risk analysis for programming assignments.</p>
   <a href="https://github.com/weidonglang/CodeRisk-PICAS/actions/workflows/ci.yml">构建检查</a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/weidonglang/CodeRisk-PICAS/actions/workflows/ci.yml"><img src="https://github.com/weidonglang/CodeRisk-PICAS/actions/workflows/ci.yml/badge.svg" alt="GitHub 构建与测试状态"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-087f74" alt="MIT License"></a>
+</p>
+
 ---
 
 ## 项目介绍
@@ -31,6 +36,12 @@ Problem-aware code similarity risk analysis for programming assignments.</p>
 PICAS 是本项目的方法名称：**Problem-aware Invariant Code Similarity Analysis**。项目是本科毕设研究原型，保留 Vue + Spring Boot + Python 的业务链路，在隔离实验中检验规范化与题目感知方法。
 
 > 系统输出相似风险与复核线索，不直接认定抄袭。高分不等于关系成立，低分或解析失败也不证明独立创作。
+
+| 工作流程 | 页面提供的信息 | 研究边界 |
+| --- | --- | --- |
+| **先看任务** | 成功覆盖率、全任务风险分布、逐对分数与阈值对比 | 失败与待处理代码对不计入已生成结果 |
+| **再核证据** | Raw / AST / Canonical / Mapping、原文行号、作用域映射、题目背景 | 规范化差值不是额外加分，风险分不是来源概率 |
+| **留存报告** | HTML 报告、完整分量、阈值解释与人工复核建议 | Experimental 指标保持生产权重 0 |
 
 ## 数据规模概览
 
@@ -46,6 +57,34 @@ Java 与 Python 各已选 **30,000 对**；跨语言候选通过标题对齐，�
 
 ## 界面预览
 
+**2026-10-16 结果展示增强**：全任务风险分布、列表/图表切换、综合分与阈值同刻度对比、规范化差值、阈值分解和手机结果列表。无需额外图表依赖，保留数值与可访问标签。下图来自真实三服务和隔离 H2 联调；自有 `UI_SELF_AUTHORED` 数据仅验证界面与流程，**不是正式 benchmark 或真实学生案例**。
+
+<p align="center"><img src="coderisk_docs/assets/ui-results-charts-20261016.png" alt="真实服务自有联调：全任务风险分布、当前页综合分与阈值对比、报告导出" width="960"></p>
+
+快速定位：[图表与结果阅读说明](coderisk_docs/RESULT_PRESENTATION_GUIDE.md) · [一键启动与运行手册](coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md) · [本轮检查记录](coderisk/experiment/evidence/result-review-20261016/README.md)。
+
+<details>
+<summary>证据详情与手机展示</summary>
+
+综合分和阈值共享刻度，Raw/Canonical 差值单独解释；证据可筛选并定位长源码，标识符映射支持搜索，源码支持并排/上下与自动换行。
+
+<p align="center"><img src="coderisk_docs/assets/ui-evidence-charts-20261016.png" alt="证据详情：阈值刻度、四维分量、证据定位、作用域映射与源码对照" width="960"></p>
+<p align="center"><img src="coderisk_docs/assets/ui-results-mobile-20261016.png" alt="手机结果列表：风险统计、分布和可访问的代码对摘要" width="320"></p>
+
+</details>
+
+<details>
+<summary>工作台与上一轮界面记录（2026-10-16）</summary>
+
+<p align="center"><img src="coderisk_docs/assets/ui-workbench-20261016.png" alt="CodeRisk工作台：真实任务、题目、后端连接和语言范围，自有联调数据" width="900"></p>
+
+[上一轮证据详情](coderisk_docs/assets/ui-evidence-20261016.png)与[上一轮验证记录](coderisk/experiment/evidence/ui-refresh-20261016/README.md)保留，不覆盖历史截图和实验输出。
+
+</details>
+
+<details>
+<summary>历史界面与模板联调记录（2026-10-09）</summary>
+
 **真实前端与分析服务的 synthetic 开发示例。** 两份短计算器代码相似分为 100%，页面同时提示“可区分依据不足”，展示语言版本声明、模板覆盖、原文范围与剩余代码量。HIGH 是相似风险等级，不是关系判定。
 
 <p align="center">
@@ -54,7 +93,13 @@ Java 与 Python 各已选 **30,000 对**；跨语言候选通过标题对齐，�
 
 截图背景与限制见 [合成联调记录](coderisk/experiment/evidence/review-context-20261009/README.md)。本地可按[快速启动](#快速启动)走完题目、上传、结果、证据和报告流程。
 
+</details>
+
 ## 研究问题与方法概览
+
+**2026-10-12 AI 时代价值验证 V0—V5 增量**：新增无网络会话导入、来源/辅助方式/课程政策分离、泄漏门禁、六方法对照及出题前/交卷后只读报告。13 份自编代码、12 个 mock 会话、22 对仅验证管线；本地 JPlag 实跑 19 对匹配，严格共同支持 14 对，正式 FPR/F1 为 N/A。真实跨模型生成、真人标签和教师效益尚未运行，当前结论是 **INSUFFICIENT_EVIDENCE**，建议有条件缩小为方法边界与辅助复核研究，不能称已证明检测增益。见 [价值审计](coderisk_docs/research/AI_ERA_VALUE_AUDIT.md)、[复现手册](coderisk_docs/research/REPRODUCE_AI_CONVERGENCE.md)、[原始证据](coderisk/experiment/evidence/ai-era-value-20261012/README.md) 和 [Go / Pivot / Stop 决策](coderisk_docs/research/PICAS_GO_NO_GO_DECISION.md)。
+
+**2026-10-11 开题 S0—S5 增量**：已补轨道/商集/α-等价边界、独立手标绑定 oracle、Java header 遮蔽降级、双维诊断及真实数据前检。[开题研究包](coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md)提供从零复现、真人采集/复核教程、数学义务与答辩 QA。可自动部分已落地；正式效果仍被授权、双人关系标签和可信参考不足阻断。该日期归档中的“未提交/未推送”是当时状态，不代表当前发布状态。
 
 开题阶段聚焦两个问题：合法标识符重命名下表示能否稳定，以及题目背景与可信独立解答的自然相似分布能否减少不合理误报。已有方法保留 raw Token、基础结构、作用域 canonical Token、标识符映射、规则题目画像与原文证据；具体效果由独立数据验证，不预设 PICAS 全面优于其他工具。
 
@@ -62,7 +107,9 @@ Java 与 Python 各已选 **30,000 对**；跨语言候选通过标题对齐，�
 
 研究目标是有限 Java/Python 子集上 `C(g·P) = C(P)`：g 仅表示固定名称域中合法、捕获规避且保留外部名称的标识符置换，C 是完整规范化 token 序列。首批已修复直接函数关键字实参绑定、动态名称访问回退及 Java 局部声明点，并提供条件证明草图和自动合法变体测试；**不是所有程序上的形式化证明**，不能把算法接受输入的 mode 当作保证证书。
 
-该性质不覆盖删除/插入语句、函数拆分、表达式交换或语句重排，也不属于整个 PICAS 加权分数：raw 分量会随名称改变。规范化表示相同不等于抄袭，也不证明语义等价。固定域的统一拼写置换不等于所有逐绑定 alpha-renaming；完整定义、例外与有限证据见 [群作用与实现边界](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) 和 [精准实现审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md)。
+该性质不覆盖删除/插入语句、函数拆分、表达式交换或语句重排，也不属于整个 PICAS 加权分数：raw 分量会随名称改变。规范化表示相同不等于抄袭，也不证明语义等价。固定域的统一拼写置换不等于所有逐绑定 alpha-renaming；完整定义、例外与有限证据见 [群作用与实现边界](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md)、[轨道与 α-等价](coderisk_docs/research/ORBIT_ALPHA_EQUIVALENCE.md) 和 [当前基线审计](coderisk_docs/research/OPENING_BASELINE_AUDIT.md)。
+
+在绑定正确、作用域/声明编号与拼写无关、覆盖正确的条件下，同轨道程序具有相同 C，C 可下降为商集上的特征；**没有证明该特征单射，也不是完整 α-等价判定器**。本轮 12 个自有手标金样例、三个固定 seed 的 1,728 次置换通过，拒绝/解析失败/不确定另列；数量包含重复和未使用名的稳定子，不是 1,728 独立程序。还实测了“完整 C 不同而 n-gram/融合分相同”的重复语句反例。[证明义务](coderisk_docs/research/GROUP_ACTION_PROOF_OBLIGATIONS.md) 与 [双维诊断](coderisk_docs/research/INVARIANCE_DISCRIMINABILITY_REPORT.md) 保留限制及负结果。
 
 ### 为什么不直接使用 AI
 
@@ -74,7 +121,7 @@ LLM 可能擅长理解复杂结构与改写，在某些数据上也可能优于�
 
 | 项目 | 当前状态 |
 | --- | --- |
-| 作用域标识符规范化 | 有限 Java/Python 实现、55 项新增测试与 288 个自有置换探针；条件证明草图，不保证任意合法改名 |
+| 作用域标识符规范化 | 有限 Java/Python 实现；历史 288 探针保留，新增独立手标 oracle/1,728 有限置换及明确降级；条件证明，不保证任意合法改名 |
 | raw/结构/canonical/映射融合 | 已实现固定权重与分量输出；探索中完整融合并非 F1 最优 |
 | 规则题目画像与动态阈值 | 已实现有界规则；降低真实自然相似误报的效果待验证 |
 | 表达式交换、语句重排、函数拆分 | 规格设计/后续方向，普通 canonical 未实现，不归入改名群 |
@@ -82,8 +129,16 @@ LLM 可能擅长理解复杂结构与改写，在某些数据上也可能优于�
 | 独立分布统计校准 q_p(s) | 隔离 experimental runner、质量门禁/冷启动已实现；可信参考 0，真实效果未验证，q 不是抄袭概率 |
 | Direct LLM baseline | 隔离离线工具已实现：mock/dry-run/授权导入、Schema、缓存、预算、原文证据；真实 LLM 未运行，不能宣称效果 |
 | PICAS→LLM→人工混合 | 隔离离线原型/Recall@K 门禁已实现；当前无完整候选池与真实基线，真实混合评测阻断，不接入默认业务 |
+| 跨模型趋同与稳定—区分权衡 | 离线导入、connected split、逐对分布/缺失及聚类统计已实现；当前 mock 仅 DEVELOPMENT_ONLY，真实收益不可估计 |
+| 出题前预检 / 交卷后上下文 | 只读 JSON/Markdown 原型；不改变生产风险分，无真人效益结果，尚未接入 Vue 默认流程 |
 
 ## 研究复现
+
+最新 V0—V5 的 [PowerShell 完整流程](coderisk_docs/research/REPRODUCE_AI_CONVERGENCE.md) 和 [真实采集操作教程](coderisk_docs/research/LIVE_GENERATION_PLAYBOOK.md)复用原 loader、评分与 JPlag 工具。完整最新输出在本地 `output/ai-era-value-20261012/analysis-release/`，精选结果、失败和版本哈希在 [AI 时代证据目录](coderisk/experiment/evidence/ai-era-value-20261012/README.md)。`--formal` 对当前合成集合预期拒绝并退出 2，不把正式资格 0 改成漂亮成绩。
+
+本轮完整状态、文件清单、测试、负结果及导师陈述见 [V0—V5 交付报告](coderisk_docs/research/AI_ERA_FINAL_REPORT_20261012.md)。下一步是许可/可靠数据/真人复核，而不是默认继续添加检测功能。
+
+本轮 S0—S5 的新入口是 `group_action_properties.py` 与 `check_formal_readiness.py`，复用现有消融/校准/只读诊断。全量新输出在 `output/opening-research-20261011/`，精选证据见 [本轮归档](coderisk/experiment/evidence/opening-research-20261011/README.md)；可复制 PowerShell 命令、真实数据的文件/metadata要求见 [总导航](coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md) 和 [采集教程](coderisk_docs/research/REAL_DATA_ACTION_GUIDE.md)。当前前检为 `FORMAL_BLOCKED`，可信独立参考为 0，不把 seed 或 placeholder 提升为正式数据。
 
 所有新增方法都在独立实验入口运行，不悄悄修改生产评分。输出不可覆盖，记录配置、数据/源码 hash、随机种子、版本、Git 状态与时间。**Synthetic、公开单人标签和未标注候选不能冒充正式 benchmark。**
 
@@ -211,6 +266,17 @@ C/HTML 当前仅支持同语言任务。Java/Python 跨语言 IR、控制与数�
 
 ## 快速启动
 
+**2026-10-16：**已增加一键启动与安全停止，旧的手动步骤保留。安装好下方依赖后，在根目录执行：
+
+```powershell
+.\coderisk\scripts\start-dev.ps1 -CheckOnly
+.\coderisk\scripts\start-dev.ps1
+# 停止本次托管服务，保留数据与日志
+.\coderisk\scripts\stop-dev.ps1
+```
+
+默认H2 local；先等待分析和后端，再启动前端。自动选择可用端口，实际地址与日志位置会打印在终端；可用 `-Python`、`-JavaHome`、`-DataRoot`明确选择环境及隔离数据。详见 [界面与启动流程](coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md)。MySQL仍需有效凭据，不因一键启动而视为已验证。
+
 准备 **Python 3.11+、JDK 21、Maven 3.9+、Node.js 22 与 npm**。以下命令使用 PowerShell，从仓库根目录运行。
 
 ### 1. 获取代码并安装依赖
@@ -248,20 +314,23 @@ npm --prefix coderisk/frontend-vue ci
 
 ## 验证与当前进度
 
-| 当前状态 | 最近已验证内容 · 2026-10-11 | 尚未验证 |
+| 当前状态 | 最近已验证内容 · 2026-10-16 | 尚未验证 |
 | --- | --- | --- |
-| **业务与工程** | Python 431 项、H2 后端 19 项、前端类型检查及 build 通过 | 最近开发轮浏览器 E2E 未重跑；MySQL 实库待凭据 |
+| **业务与工程** | Python 591、H2后端19、前端单测18、脚本26及build通过；真实流程41+详情5、图表交互30、模拟状态7项浏览器检查通过 | MySQL实库待凭据；自有UI样例不证明研究效果 |
 | **研究阶段 1–3** | 有限改名契约、独立消融、统计校准质量门禁 | 可信独立参考为空，真实误报改善未验证 |
 | **研究阶段 4–5** | 离线 LLM 协议、JPlag 实跑对齐、混合候选召回门禁 | 真实 LLM 未运行；缺完整候选池，混合效果 N/A |
+| **AI 时代 V0—V5** | 会话导入/来源协议、六方法分布、当前 JPlag 共同14对、只读双工作流 | 仅mock；真实生成/关系/教师效益未验证，正式结论不可估计 |
 
 ```powershell
 # 仓库根目录
 ./coderisk/scripts/run-all-tests.ps1
 ```
 
-截至 **2026-10-11**，最近开发轮全工作树 Python **431 项**通过（含其他 pending 任务，既有 warning 1）；阶段 4–5 独立源码树 **54 项新增测试**通过；`mvn test` **19 项 H2** 测试通过；`npm run build` 类型检查与构建成功。前后端在 sandbox 权限限制后重试成功，保留依赖与大包 warning。此处是工程验证，不是检测准确率；本次仅更新文档与数据统计，未重跑业务测试或检测实验。
+截至 **2026-10-12**，新 V0—V5 恢复后全量 **591 passed / 1 warning，61.37s**，相对523基线新增68项离线契约；关机前590通过保留为前一轮。恢复时发现隐私测试依赖pytest临时目录位置，隔离测试根并补一项允许/逃逸契约后通过，生产门禁未修改。本轮 H2 **19 tests**、前端类型检查及构建通过。环境/红测/CLI与隐私失败记录保留；[本轮测试摘要](coderisk_docs/research/TEST_AND_EVIDENCE_SUMMARY.md)区分已运行与NOT_RUN，不将测试数当研究样本数。
 
-本轮未重跑浏览器端到端。2026-10-09 的隔离 H2/真实分析服务合成联调、任务刷新时序与身份导出是[历史记录](coderisk_docs/proposal/AI_REVIEW_HARDENING.md)，不冒充最新 E2E。MySQL 实库仍待有效凭据，H2 测试不能替代它。
+历史记录（**2026-10-11**）：S0—S5 全工作树 Python **523 项**通过（含预存 pending 任务，既有 warning 1），较当轮基线 431 新增 **92 项**；`mvn test` **19 项 H2** 测试通过；`npm run build` 类型检查与构建成功。Java 头部遮蔽先复现 2 个失败再最小降级，环境失败与依赖 warning 均保留。该轮重跑了独立性质、14 方法 seed 消融、q 冷启动流程及 ConPlag 只读诊断，没有调生产权重或改历史成绩。具体命令/JUnit/差异见[开题研究包](coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md)。历史阶段 4–5 的54项隔离测试仍是历史记录，不能与新增92重复累计。
+
+2026-10-16两轮UI验证均使用隔离H2和真实分析服务：题目→上传→任务→证据→报告、四种视口和解析降级已覆盖。第二轮增加30项图表/映射/长源码定位检查，见 [最新验证](coderisk/experiment/evidence/result-review-20261016/README.md)；重启持久化和重复启动属于[第一轮记录](coderisk/experiment/evidence/ui-refresh-20261016/README.md)。历史研究结果、失败日志和不利比较继续保留；MySQL实库仍待有效凭据，H2测试不能替代它。
 
 详细记录见 [测试报告](coderisk/TEST_REPORT.md)；持续检查见 [GitHub Actions](https://github.com/weidonglang/CodeRisk-PICAS/actions/workflows/ci.yml)。CI 还验证合成开发数据的评测及图表流程，跳过外部 JPlag。MySQL 实库联调仍待验证。
 
@@ -352,16 +421,20 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 | --- | --- |
 | 第一次了解项目 | [项目规格](coderisk_docs/PROJECT_SPEC.md) · [架构说明](coderisk_docs/ARCHITECTURE.md) |
 | 本地运行与演示 | [运行手册](coderisk/README.md) · [数据库说明](coderisk/database/README.md) |
+| 阅读结果与界面 | [图表/阈值/证据说明](coderisk_docs/RESULT_PRESENTATION_GUIDE.md) · [前端与一键启动](coderisk_docs/FRONTEND_AND_DEV_WORKFLOW.md) |
 | 理解评分与算法 | [生产公式](coderisk_docs/FORMULA_SPEC.md) · [算法规格](coderisk_docs/ALGORITHM_SPEC.md) · [规范化说明](coderisk_docs/CANONICALIZATION_SPEC.md) |
 | 开题研究第一批 | [精准审计](coderisk_docs/research/IMPLEMENTATION_AUDIT.md) · [有限群作用](coderisk_docs/research/GROUP_ACTION_INVARIANCE.md) · [测试与阻塞](coderisk_docs/research/FIRST_BATCH_REPORT.md) |
 | 研究实验增量 | [多维消融](coderisk_docs/research/SIMILARITY_ABLATION.md) · [独立解答统计校准](coderisk_docs/research/NATURAL_SIMILARITY_CALIBRATION.md) · [离线 LLM 对照](coderisk_docs/research/LLM_BASELINE.md) · [混合门禁](coderisk_docs/research/HYBRID_DETECTION.md) |
 | 接口与开发 | [API](coderisk_docs/API_SPEC.md) · [表结构](coderisk_docs/DATABASE_SCHEMA.md) · [贡献指南](CONTRIBUTING.md) |
 | 开题与后续安排 | [开题材料](coderisk_docs/proposal/README.md) · [毕设计划](coderisk_docs/GRADUATION_NEXT_STEPS.md) |
 | 评测与失败案例 | [公平评测](coderisk_docs/proposal/FAIR_EVALUATION.md) · [探索结果](coderisk_docs/proposal/CONPLAG_PILOT_RESULTS.md) |
+| AI 时代价值验证 | [来源与会话协议](coderisk_docs/research/AI_CONVERGENCE_PROTOCOL.md) · [上下文边界](coderisk_docs/research/AI_CONTEXT_EXPLANATION_SPEC.md) · [开题补充](coderisk_docs/research/PROPOSAL_AI_ERA_APPENDIX.md) · [本轮测试](coderisk_docs/research/TEST_AND_EVIDENCE_SUMMARY.md) |
 
 当前完成情况与下一步优先级见 [项目与毕设核查](coderisk_docs/GRADUATION_READINESS_REVIEW.md)。全部文档见 [文档导航](coderisk_docs/README.md)。开题材料按当前事实撰写，正式提交仍需学校模板和导师意见。
 
 ## 下一步
+
+当前优先只保留三项：①获得授权并冻结 4—8 题的可信来源小试点；②同 cohort 比较 Raw / NoCanon / PICAS / JPlag，公开失败与召回代价；③有同意的教师盲走查，决定上下文卡是否值得保留。下面是历史扩展候选，不表示继续自动扩张算法或调用真实 LLM。
 
 - [ ] 获取可核验的独立解答与自然相似负例，完成双人标注。
 - [ ] 在验证集校准版本、模板与短代码复核规则，再冻结独立测试方案。
@@ -376,6 +449,8 @@ ConPlag 探索运行保存了运行前方案、分集、逐对分数、消融、
 ## 局限与伦理
 
 相似表示、LLM 线索和统计上尾概率都不是“抄袭概率”或关系证明。不能凭风险分处分学生，低分也不能排除派生关系。有限改名不变性不证明完整语义等价；本系统不检测 AI 生成来源。
+
+相同题面与最终代码可以来自不同历史；只接收这些相同观测的分析器无法恢复缺失的来源关系。不同供应商、同题不同提交或功能正确，都不自动证明独立创作。新增 AI 参考上下文仅报告参考集合中的观察及局限，没有可靠数据和真人试验就不能声称降低误报或提高复核效率。
 
 解析/绑定仍有支持范围，受限语法会回退并保留 warning；跨语言 IR/轻量 summary 生产权重始终 0。规则动态阈值的真实自然相似误报收益、统计校准及真实 LLM/混合效果仍待可信独立数据验证。Synthetic seed 只支持流程验证与预实验。
 

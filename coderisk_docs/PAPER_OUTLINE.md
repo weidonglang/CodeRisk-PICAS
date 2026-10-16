@@ -1,5 +1,9 @@
 # PAPER_OUTLINE.md
 
+> 2026-10-12 AI时代补充：[开题附录](research/PROPOSAL_AI_ERA_APPENDIX.md)保留RQ1有限不变性—区分权衡/RQ2题目规则取舍，RQ3跨模型趋同仅探索。方法章可写关系/辅助方式/政策分离和同观测不可识别性；实验章严格分自有性质、mock22对、公开ConPlag历史负结果与尚未开展的真实试点。当前没有正式检测增益或教师效益，不能由相似升幅推导效果；依据 [决策](research/PICAS_GO_NO_GO_DECISION.md)建议有条件PIVOT。不改题名为AI检测，也不以源码关系处分学生。表与失败来源见 [证据](../coderisk/experiment/evidence/ai-era-value-20261012/README.md)。
+
+> 2026-10-11 开题方法稿增量：RQ1分成完整C的受限G轨道稳定性与表示信息损失/判别力；RQ2比较原固定/规则/q但正式数据受阻。方法章加入 [轨道/商集/α与条件证明](research/ORBIT_ALPHA_EQUIVALENCE.md)、[义务状态](research/GROUP_ACTION_PROOF_OBLIGATIONS.md)，不把C当轨道单射代表或融合总分不变量。实验章可写 [自有性质/机制、seed预实验、公开pilot负结果](research/INVARIANCE_DISCRIMINABILITY_REPORT.md)，标题与表注明类型/版本/分母/共同支持；参考0不能写q改善，92,513候选不能叫正式benchmark。完整章节/材料流程见 [研究包](research/OPENING_RESEARCH_PACKAGE.md)，真人授权/双审/导师/学校模板见 [人工清单](research/HUMAN_REQUIRED_CHECKLIST.md)。
+
 > 本文件定义 CodeRisk / PICAS 项目的期刊论文大纲、章节内容、图表安排、创新点表达和写作边界。论文写作必须围绕“题目感知 + 置换不变 + 多维证据 + 动态阈值”展开，避免写成普通系统开发报告。
 
 ---

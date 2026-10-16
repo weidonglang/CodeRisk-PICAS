@@ -1,0 +1,374 @@
+[
+  {
+    "pair_id": "AI-2993259d33c611ab99fd",
+    "sample_a": "MOCK-count-0",
+    "sample_b": "MOCK-count-1",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-37c35f17d780180e293a",
+    "sample_a": "MOCK-count-0",
+    "sample_b": "MOCK-count-2",
+    "claimed_relation": "AI_INDEPENDENT_CROSS_MODEL",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-45e5c12e3a90f12a428e",
+    "sample_a": "MOCK-count-0",
+    "sample_b": "MOCK-count-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-ac4cefb57aae24348aeb",
+    "sample_a": "MOCK-count-1",
+    "sample_b": "MOCK-count-2",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-aa40576094fe1072a488",
+    "sample_a": "MOCK-count-1",
+    "sample_b": "MOCK-count-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-d329ad8a03f25265ec82",
+    "sample_a": "MOCK-count-2",
+    "sample_b": "MOCK-count-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-94699f62f704",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-8cec7aa48d6f1be232ae",
+    "sample_a": "MOCK-maximum-0",
+    "sample_b": "MOCK-maximum-1",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-cbbea6dd702430b861bd",
+    "sample_a": "MOCK-maximum-0",
+    "sample_b": "MOCK-maximum-2",
+    "claimed_relation": "AI_INDEPENDENT_CROSS_MODEL",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-389eebadea54cfd45c2a",
+    "sample_a": "MOCK-maximum-0",
+    "sample_b": "MOCK-maximum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-ec74c2e0ded1b923f868",
+    "sample_a": "MOCK-maximum-1",
+    "sample_b": "MOCK-maximum-2",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-9ff132f1e7cb59896aa9",
+    "sample_a": "MOCK-maximum-1",
+    "sample_b": "MOCK-maximum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-d4513fd76d2b5b6fd375",
+    "sample_a": "MOCK-maximum-2",
+    "sample_b": "MOCK-maximum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-3b64d72b09aa",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-25a51d4d16b9e628b98e",
+    "sample_a": "MOCK-sum-0",
+    "sample_b": "MOCK-sum-1",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-b190467e18f7a1a4ad49",
+    "sample_a": "MOCK-sum-0",
+    "sample_b": "MOCK-sum-2",
+    "claimed_relation": "AI_INDEPENDENT_CROSS_MODEL",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Independent relationship evidence absent",
+      "Simulation is not independent generation evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-5a8c055546266c5545c2",
+    "sample_a": "MOCK-sum-0",
+    "sample_b": "MOCK-sum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-83f362c954465fb3138f",
+    "sample_a": "MOCK-sum-0",
+    "sample_b": "MOCK-sum-controlled-rename",
+    "claimed_relation": "KNOWN_DERIVED_HUMAN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete"
+    ],
+    "formal_eligibility_reasons": [
+      "Synthetic fixtures do not qualify as real relationship labels",
+      "Two independent human reviews incomplete",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-dd786853b74f3d86d294",
+    "sample_a": "MOCK-sum-1",
+    "sample_b": "MOCK-sum-2",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-68e719f086fa9eca8b08",
+    "sample_a": "MOCK-sum-1",
+    "sample_b": "MOCK-sum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-73084fd7d7c688b2914f",
+    "sample_a": "MOCK-sum-1",
+    "sample_b": "MOCK-sum-controlled-rename",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-0d864aab4d21d043cae0",
+    "sample_a": "MOCK-sum-2",
+    "sample_b": "MOCK-sum-3",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-b41114380e742aa3bc97",
+    "sample_a": "MOCK-sum-2",
+    "sample_b": "MOCK-sum-controlled-rename",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  },
+  {
+    "pair_id": "AI-d2883e170e741271ff68",
+    "sample_a": "MOCK-sum-3",
+    "sample_b": "MOCK-sum-controlled-rename",
+    "claimed_relation": "UNCERTAIN",
+    "resolved_relation": "UNCERTAIN",
+    "reasons": [
+      "No verified relationship evidence"
+    ],
+    "formal_eligibility_reasons": [
+      "No verified relationship evidence",
+      "Primary formal functional gate incomplete/failed; process relation is separate"
+    ],
+    "group_id": "G-fc592df18ebf",
+    "synthetic": true
+  }
+]

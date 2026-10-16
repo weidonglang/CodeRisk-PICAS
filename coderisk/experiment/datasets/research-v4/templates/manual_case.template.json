@@ -15,7 +15,7 @@
   "data_origin": "MANUAL",
   "source_type": "manual",
   "synthetic": false,
-  "eligible_for_core_metrics": true,
+  "eligible_for_core_metrics": false,
   "question": {
     "title": "Array loop manual sample",
     "description": "Traceable manual pair for variable rename testing.",
@@ -28,8 +28,8 @@
   "provenance": {
     "source": "manual collection by project author",
     "license_or_authorization": "author-created sample for CodeRisk Research V4",
-    "manual_check_status": "VERIFIED",
-    "functional_check_status": "PASSED"
+    "manual_check_status": "PENDING",
+    "functional_check_status": "NOT_RUN"
   },
   "notes": "Template only. Prefer add_research_v4_case.py so SHA-256 is computed automatically."
 }

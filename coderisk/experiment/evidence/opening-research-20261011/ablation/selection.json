@@ -1,0 +1,288 @@
+{
+  "common_support_only": true,
+  "test_used_for_selection": false,
+  "selected": {
+    "RAW_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.0,
+      "validation_fpr": 1.0,
+      "validation_recall": 1.0,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.7,
+      "validation_fpr": 0.3333333333333333,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "CANONICAL_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "MAPPING_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.2,
+      "validation_fpr": 1.0,
+      "validation_recall": 1.0,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_AST_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.5,
+      "validation_fpr": 0.4,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_CANONICAL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.3,
+      "validation_fpr": 0.5333333333333333,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.4,
+      "validation_fpr": 0.5333333333333333,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_CANONICAL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.5,
+      "validation_fpr": 0.5333333333333333,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "CANONICAL_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "ALL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.4,
+      "validation_fpr": 0.4666666666666667,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "PICAS_FIXED": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.3,
+      "validation_fpr": 0.5333333333333333,
+      "validation_recall": 0.9411764705882353,
+      "status": "VALIDATION_SELECTED"
+    },
+    "PICAS_RULE_DYNAMIC": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 0.0,
+      "validation_fpr": 0.26666666666666666,
+      "validation_recall": 0.5882352941176471,
+      "status": "FROZEN_RULE"
+    },
+    "PICAS_DYNAMIC_OFFSET": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": -0.1,
+      "validation_fpr": 0.26666666666666666,
+      "validation_recall": 0.8235294117647058,
+      "status": "VALIDATION_SELECTED"
+    }
+  },
+  "low_fpr_selected": {
+    "RAW_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.000001,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.0,
+      "status": "VALIDATION_SELECTED"
+    },
+    "CANONICAL_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "MAPPING_ONLY": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.000001,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.0,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_AST_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_CANONICAL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "RAW_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_CANONICAL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "AST_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.000001,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.0,
+      "status": "VALIDATION_SELECTED"
+    },
+    "CANONICAL_MAPPING_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.7058823529411765,
+      "status": "VALIDATION_SELECTED"
+    },
+    "ALL_EQUAL": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "PICAS_FIXED": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": 1.0,
+      "validation_fpr": 0.0,
+      "validation_recall": 0.058823529411764705,
+      "status": "VALIDATION_SELECTED"
+    },
+    "PICAS_RULE_DYNAMIC": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": null,
+      "validation_fpr": null,
+      "validation_recall": null,
+      "status": "NO_VALIDATION_FPR_POINT"
+    },
+    "PICAS_DYNAMIC_OFFSET": {
+      "validation_count": 32,
+      "validation_negatives": 15,
+      "selection_split": "validation",
+      "test_used_for_selection": false,
+      "parameter": null,
+      "validation_fpr": null,
+      "validation_recall": null,
+      "status": "NO_VALIDATION_FPR_POINT"
+    }
+  }
+}

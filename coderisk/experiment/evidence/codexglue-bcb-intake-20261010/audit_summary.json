@@ -1,0 +1,70 @@
+{
+  "upstream_split_counts": {
+    "train": {
+      "rows": 901028,
+      "published_label_0": 450166,
+      "unique_nonidentical_text_pairs": 628261,
+      "published_label_1": 450862,
+      "identical_text_rows_excluded": 1152,
+      "duplicate_or_reversed_text_pair_rows": 271615
+    },
+    "valid": {
+      "rows": 415416,
+      "published_label_0": 361577,
+      "unique_nonidentical_text_pairs": 361675,
+      "published_label_1": 53839,
+      "duplicate_or_reversed_text_pair_rows": 53495,
+      "identical_text_rows_excluded": 246
+    },
+    "test": {
+      "rows": 415416,
+      "published_label_0": 358596,
+      "unique_nonidentical_text_pairs": 369370,
+      "published_label_1": 56820,
+      "identical_text_rows_excluded": 168,
+      "duplicate_or_reversed_text_pair_rows": 45878
+    }
+  },
+  "upstream_total_pair_rows": 1731860,
+  "unique_nonidentical_text_pairs_across_splits": 1357419,
+  "conflicting_text_pair_labels_quarantined": 117,
+  "text_pairs_in_multiple_upstream_splits": 1723,
+  "upstream_source_overlap": [
+    {
+      "split_a": "train",
+      "split_b": "valid",
+      "shared_function_ids": 0,
+      "shared_text_hashes": 94
+    },
+    {
+      "split_a": "train",
+      "split_b": "test",
+      "shared_function_ids": 0,
+      "shared_text_hashes": 76
+    },
+    {
+      "split_a": "valid",
+      "split_b": "test",
+      "shared_function_ids": 0,
+      "shared_text_hashes": 26
+    }
+  ],
+  "problem_disjoint_verified": false,
+  "available_train_unique_pairs_by_published_label": {
+    "0": 433858,
+    "1": 194378
+  },
+  "selected_pair_count": 30000,
+  "selected_labels": {
+    "0": 15000,
+    "1": 15000
+  },
+  "selected_distinct_text_pairs": 30000,
+  "selected_referenced_function_ids": 7276,
+  "selection_policy": "Balanced labels; lowest SHA256(seed:ordered_text_hashes) from published train only; identical-text and contradictory-label pairs excluded.",
+  "selection_uses_detector_scores": false,
+  "formal_eligible_pairs": 0,
+  "function_source_records": 9126,
+  "unique_function_text_hashes": 8063,
+  "unique_function_byte_hashes": 8063
+}

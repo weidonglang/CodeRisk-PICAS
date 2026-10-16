@@ -1,0 +1,58 @@
+{
+  "timestamp_utc": "2026-10-09T13:30:50.318629+00:00",
+  "type": "AI_TECHNICAL_REVIEW",
+  "human_annotation_count": 0,
+  "substantive_ai_pair_annotation_count": 0,
+  "independence_limit": "Subagents inherit the same session model/context. Separate tasks are not separate humans or proven statistically independent model reviews.",
+  "reviews": [
+    {
+      "reviewer_id": "/root/canonical_review",
+      "reviewer_type": "AI",
+      "scope": "Python canonicalization",
+      "findings": [
+        "lambda default and variadic binding",
+        "method/nested class lookup",
+        "unsupported binding forms and class definition-time scopes"
+      ],
+      "disposition": "Fixed or explicit lexical fallback; 39 self-authored scope boundary checks"
+    },
+    {
+      "reviewer_id": "/root/core_review",
+      "reviewer_type": "AI",
+      "scope": "Backend tasks and persistence",
+      "findings": [
+        "page offset overflow",
+        "stored result/unresolved failure crash window",
+        "concurrent first feature write",
+        "early submission ID validation"
+      ],
+      "disposition": "Implemented and verified in 19-test H2 suite; no actual MySQL claim"
+    },
+    {
+      "reviewer_id": "/root/data_review",
+      "reviewer_type": "AI",
+      "scope": "IR intake and review preparation",
+      "findings": [
+        "self-reported provenance bypass",
+        "label-revealing ordering/orientation",
+        "existing output overwrite"
+      ],
+      "disposition": "Pinned archive reconstruction, global shuffle/A-B swaps, immutable output guard; 13 data tests"
+    },
+    {
+      "reviewer_id": "/root",
+      "reviewer_type": "AI",
+      "scope": "Integration, frontend and identity protocol",
+      "findings": [
+        "terminal status/results request race",
+        "AI IDs mistaken for human identity"
+      ],
+      "disposition": "Browser/API regressions, explicit identity exports and formal gates, docs and actual runtime verification"
+    }
+  ],
+  "uncompleted": [
+    "Real human pair annotations and independence confirmation",
+    "Confirmatory detection accuracy on untouched held-out data",
+    "Actual MySQL concurrency and new-machine reproduction"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "work_date": "2026-10-12",
+  "source_run": "output/ai-era-value-20261012/analysis-release",
+  "python_results_native_xml": [
+    {
+      "file": "output/ai-era-value-20261012/baseline/analysis-tests-r2.xml",
+      "tests": 52,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 9.079
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/analysis-tests.xml",
+      "tests": 52,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 16.292
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/cli-red.xml",
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.316
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/privacy-red.xml",
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.891
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/protocol-green.xml",
+      "tests": 36,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 4.821
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/protocol-red.xml",
+      "tests": 36,
+      "failures": 10,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.419
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/python-final-r2.xml",
+      "tests": 589,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 48.77
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/python-final.xml",
+      "tests": 588,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 47.699
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/python-r2.xml",
+      "tests": 523,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 30.726
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/python-release.xml",
+      "tests": 590,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 46.22
+    },
+    {
+      "file": "output/ai-era-value-20261012/baseline/python.xml",
+      "tests": 523,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 32.063
+    },
+    {
+      "file": "output/ai-era-value-20261012/resume-validation/privacy-green.xml",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.058
+    },
+    {
+      "file": "output/ai-era-value-20261012/resume-validation/python-final.xml",
+      "tests": 591,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 61.353
+    },
+    {
+      "file": "output/ai-era-value-20261012/resume-validation/python.xml",
+      "tests": 590,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 63.226
+    },
+    {
+      "file": "coderisk/backend-springboot/target/surefire-reports/TEST-com.coderisk.SystemControllerTest.xml",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 8.883
+    }
+  ],
+  "stdout_latest": "591 passed, 1 warning in 61.37s",
+  "stdout_release": "590 passed, 1 warning in 46.24s",
+  "xml_seconds_are_suite_times_not_stdout_wall_times": true,
+  "native_jplag_commands_and_exit_codes": [
+    {
+      "language": "java",
+      "languageFlag": "java",
+      "exitCode": 0,
+      "inputSubmissionCount": 4,
+      "nativeCsv": "E:/ms/output/ai-era-value-20261012/jplag/native/java/results/results.csv",
+      "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l java -M RUN --csv-export -r E:\\ms\\output\\ai-era-value-20261012\\jplag\\native\\java\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\output\\ai-era-value-20261012\\jplag\\input\\java",
+      "stderrTail": "\nLoading Submissions   0% [===========================] 0/4 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                                 ] 0/4 (0:00:00 / ?) \nParsing Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \nParsing Submissions 100% [===========================] 4/4 (0:00:00 / 0:00:00) \n\nPreparing Submissions  25% [=========================] 4/4 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 4/4 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                          ] 0/6 (0:00:00 / ?) \nComparing Submission Pairs 100% [====================] 6/6 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [====================] 6/6 (0:00:00 / 0:00:00) \n"
+    },
+    {
+      "language": "python",
+      "languageFlag": "python3",
+      "exitCode": 0,
+      "inputSubmissionCount": 8,
+      "nativeCsv": "E:/ms/output/ai-era-value-20261012/jplag/native/python/results/results.csv",
+      "command": "D:\\DevEnvManager\\envs\\jdks\\temurin-21\\bin\\java.exe -jar E:\\ms\\coderisk\\data\\tools\\jplag\\jplag-6.2.0-jar-with-dependencies.jar -l python3 -M RUN --csv-export -r E:\\ms\\output\\ai-era-value-20261012\\jplag\\native\\python\\results --overwrite -n -1 --encoding UTF-8 -m 0.0 --cluster-skip -t 5 E:\\ms\\output\\ai-era-value-20261012\\jplag\\input\\python",
+      "stderrTail": "\nLoading Submissions   0% [===========================] 0/8 (0:00:00 / 0:00:00) \nLoading Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \n\nParsing Submissions   0% [                                 ] 0/8 (0:00:00 / ?) \nParsing Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \nParsing Submissions 100% [===========================] 8/8 (0:00:00 / 0:00:00) \n\nPreparing Submissions  12% [=========================] 8/8 (0:00:00 / 0:00:00) \nPreparing Submissions 100% [=========================] 8/8 (0:00:00 / 0:00:00) \n\nComparing Submission Pairs   0% [                        ]  0/28 (0:00:00 / ?) \nComparing Submission Pairs 100% [==================] 28/28 (0:00:00 / 0:00:00) \nComparing Submission Pairs 100% [==================] 28/28 (0:00:00 / 0:00:00) \n"
+    }
+  ],
+  "modes": {
+    "seed": "DEVELOPMENT_ONLY",
+    "history": "PUBLIC_PILOT_READONLY",
+    "formal": "FORMAL_BLOCKED",
+    "live_models": "NOT_RUN",
+    "human_reviews": 0,
+    "participants": 0,
+    "mysql": "NOT_RUN_H2_TESTED",
+    "browser_e2e": "NOT_RUN",
+    "source_execution": "NOT_RUN",
+    "dolos": "NOT_RUN"
+  },
+  "test_command": "python -m pytest -q -p no:cacheprovider --basetemp output/ai-era-value-20261012/resume-validation/pytest-final-tmp --junitxml output/ai-era-value-20261012/resume-validation/python-final.xml",
+  "environment": {
+    "python": "E:/ms/.tmp/language-venv/Scripts/python.exe",
+    "python_utf8": "1",
+    "pythonpath": "E:/ms/.tmp/opening-tree-sitter-0252-20261011",
+    "temp": "E:/ms/.tmp/ai-era-temp-20261012",
+    "java": "D:/DevEnvManager/envs/jdks/temurin-21",
+    "maven": "D:/maven/apache-maven-3.9.10/bin/mvn.cmd"
+  }
+}

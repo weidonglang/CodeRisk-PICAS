@@ -1,0 +1,34 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_direct_command_entry_point_without_pytest_import_cache _________
+
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-cli-red-tests-20261012/test_direct_command_entry_poin0')
+
+    def test_direct_command_entry_point_without_pytest_import_cache(tmp_path):
+        source = make_seed(tmp_path / "source")
+        script = Path(__file__).resolve().parents[2] / "experiment/ai_convergence/analyze.py"
+        completed = subprocess.run([sys.executable, str(script), "--input", str(source), "--output", str(tmp_path / "cli"), "--no-network"],
+                                   capture_output=True, text=True, encoding="utf-8", timeout=45)
+>       assert completed.returncode == 0, completed.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 214, in <module>
+E             main()
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 207, in main
+E             result = run(args.input.resolve(), args.output.resolve(), args.config.resolve(), formal=args.formal,
+E                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 162, in run
+E             **distribution([method_score(row, method) for row in group], len(group))})
+E               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "E:\ms\coderisk\experiment\ai_convergence\statistics.py", line 24, in distribution
+E             "mean": stdstats.mean(present) if present else None, "median": percentile(present, .5),
+E                     ^^^^^^^^^^^^^
+E         AttributeError: module 'statistics' has no attribute 'mean'
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['E:\\ms\\.tmp\\language-venv\\Scripts\\python.exe', 'E:\\ms\\coderisk\\experiment\\ai_convergen...ercentile(present, .5),\n            ^^^^^^^^^^^^^\nAttributeError: module \'statistics\' has no attribute \'mean\'\n').returncode
+
+coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py:182: AssertionError
+- generated xml file: E:\ms\output\ai-era-value-20261012\baseline\cli-red.xml -
+=========================== short test summary info ===========================
+FAILED coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py::test_direct_command_entry_point_without_pytest_import_cache
+1 failed in 2.57s

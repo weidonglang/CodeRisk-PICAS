@@ -2,6 +2,8 @@
 
 更新：2026-10-09。本文件按实际产物区分完成项与待验证项，不将 AI 工作登记为独立真人复核。
 
+后续定向检查已补 Python 作用域边界、IR 来源重建核验、打乱/交换方向的新版材料，以及任务恢复、并发画像和最终结果刷新修复。最近验证为 Python 188 项、后端 19 项；详见 [AI 分工检查记录](AI_REVIEW_HARDENING.md)。下述旧运行证据保留原版本，新工作台使用 `review-v2/workbench.html`，旧导出不能混合。
+
 ## 1. 新数据与复核材料
 
 已从[作者仓库](https://github.com/oscarkarnalim/sourcecodeplagiarismdataset)取得 IR-Plag，固定提交 `f07e95120680b25f78659ed63cd6130fd05b2df8`，验证 ZIP、README、LICENSE 的 SHA-256，并逐文件校验。原始源码仅保存在本地忽略目录，没有执行或重新发布。
@@ -41,7 +43,7 @@ python coderisk/experiment/prepare_irplag_review.py --output output/irplag-revie
 python coderisk/experiment/audit_irplag.py --output output/irplag-quality.json
 ```
 
-相同本地复核清单和工作台可校验复用；内容不同则保留旧文件，使用新的 `--intake` 目录。登记和复核包可复现，不意味着已完成实际复核。
+复核元数据输出必须使用不存在的新目录；既有输出会拒绝写入。使用新的 `--workbench-output` 创建工作台版本，同一本地清单/HTML仅在内容完全相同时可复用。登记和复核包可复现，不意味着已完成实际复核。
 
 ## 2. 融合与规范化负结果
 

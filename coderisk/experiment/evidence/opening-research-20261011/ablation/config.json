@@ -1,0 +1,151 @@
+{
+  "protocolVersion": "similarity-ablation-1.0",
+  "datasetManifest": "experiment/datasets/research-v4/dataset.json",
+  "randomSeed": 20261010,
+  "selectionSplit": "validation",
+  "evaluationSplit": "test",
+  "fixedThresholds": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.68,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.000001
+  ],
+  "dynamicOffsets": [
+    -0.1,
+    -0.05,
+    0.0,
+    0.05,
+    0.1
+  ],
+  "targetFpr": 0.05,
+  "retrievalKs": [
+    1,
+    5,
+    10
+  ],
+  "renameVariantsPerCase": 8,
+  "borderlineMargin": 0.03,
+  "methods": [
+    {
+      "name": "RAW_ONLY",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "raw": 1.0
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "AST_ONLY",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "ast": 1.0
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "CANONICAL_ONLY",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "canonical": 1.0
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "MAPPING_ONLY",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "mapping": 1.0
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "RAW_AST_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "raw": 0.5,
+        "ast": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "RAW_CANONICAL_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "raw": 0.5,
+        "canonical": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "RAW_MAPPING_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "raw": 0.5,
+        "mapping": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "AST_CANONICAL_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "ast": 0.5,
+        "canonical": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "AST_MAPPING_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "ast": 0.5,
+        "mapping": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "CANONICAL_MAPPING_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "canonical": 0.5,
+        "mapping": 0.5
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "ALL_EQUAL",
+      "scoreMode": "WEIGHTED",
+      "weights": {
+        "raw": 0.25,
+        "ast": 0.25,
+        "canonical": 0.25,
+        "mapping": 0.25
+      },
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "PICAS_FIXED",
+      "scoreMode": "PRODUCTION",
+      "thresholdMode": "FIXED"
+    },
+    {
+      "name": "PICAS_RULE_DYNAMIC",
+      "scoreMode": "PRODUCTION",
+      "thresholdMode": "RULE"
+    },
+    {
+      "name": "PICAS_DYNAMIC_OFFSET",
+      "scoreMode": "PRODUCTION",
+      "thresholdMode": "OFFSET"
+    }
+  ]
+}

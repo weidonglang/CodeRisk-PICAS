@@ -1,0 +1,3195 @@
+[
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-2993259d33c611ab99fd",
+    "picas_score": 0.853333,
+    "threshold": 0.82736,
+    "risk_level": "ELEVATED",
+    "risk_margin": 0.025973,
+    "components": {
+      "raw": 0.266667,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.692308,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 42,
+      "B": 42
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:c462016f737b6948ace531b9e5819d133e46edb1d4f72663f6d66da49def8f04",
+      "b": "sha256:3319fe6b8869186c3ac5538ffa94c97da274daeb2c6f2ca550aa733d3fb37ba6"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-37c35f17d780180e293a",
+    "picas_score": 0.095238,
+    "threshold": 0.82736,
+    "risk_level": "LOW",
+    "risk_margin": -0.732122,
+    "components": {
+      "raw": 0.095238,
+      "ast": 0.117647,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Scope normalization is unavailable; weighted analysis fell back to raw tokens. | JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED: for at line 1",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 34,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 34,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.538462,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 42,
+      "B": 34
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:c462016f737b6948ace531b9e5819d133e46edb1d4f72663f6d66da49def8f04",
+      "b": "sha256:dde6288147f78472dc8664f9ced4b968a2220a90259fc0e0808764df7ceee6b0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-45e5c12e3a90f12a428e",
+    "picas_score": 0.2525,
+    "threshold": 0.82736,
+    "risk_level": "LOW",
+    "risk_margin": -0.57486,
+    "components": {
+      "raw": 0.25,
+      "ast": 0.0,
+      "canonical": 0.25,
+      "mapping": 0.6
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.541667,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 42,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:c462016f737b6948ace531b9e5819d133e46edb1d4f72663f6d66da49def8f04",
+      "b": "sha256:4c9d9e8d2254897b63315b31fa3294b371ba55182911e7cf04d1d63c312f59cc"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-ac4cefb57aae24348aeb",
+    "picas_score": 0.078125,
+    "threshold": 0.82736,
+    "risk_level": "LOW",
+    "risk_margin": -0.749235,
+    "components": {
+      "raw": 0.078125,
+      "ast": 0.117647,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Scope normalization is unavailable; weighted analysis fell back to raw tokens. | JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED: for at line 1",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 34,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 34,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.481481,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 42,
+      "B": 34
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:3319fe6b8869186c3ac5538ffa94c97da274daeb2c6f2ca550aa733d3fb37ba6",
+      "b": "sha256:dde6288147f78472dc8664f9ced4b968a2220a90259fc0e0808764df7ceee6b0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-aa40576094fe1072a488",
+    "picas_score": 0.2225,
+    "threshold": 0.82736,
+    "risk_level": "LOW",
+    "risk_margin": -0.60486,
+    "components": {
+      "raw": 0.1,
+      "ast": 0.0,
+      "canonical": 0.25,
+      "mapping": 0.6
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 42,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 42,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.423077,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 42,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:3319fe6b8869186c3ac5538ffa94c97da274daeb2c6f2ca550aa733d3fb37ba6",
+      "b": "sha256:4c9d9e8d2254897b63315b31fa3294b371ba55182911e7cf04d1d63c312f59cc"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-count",
+    "comparison_id": "AI-d329ad8a03f25265ec82",
+    "picas_score": 0.090909,
+    "threshold": 0.82736,
+    "risk_level": "LOW",
+    "risk_margin": -0.736451,
+    "components": {
+      "raw": 0.090909,
+      "ast": 0.0,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Scope normalization is unavailable; weighted analysis fell back to raw tokens. | JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED: for at line 1",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 34,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 34,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.434783,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 34,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:dde6288147f78472dc8664f9ced4b968a2220a90259fc0e0808764df7ceee6b0",
+      "b": "sha256:4c9d9e8d2254897b63315b31fa3294b371ba55182911e7cf04d1d63c312f59cc"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-8cec7aa48d6f1be232ae",
+    "picas_score": 0.179978,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.640273,
+    "components": {
+      "raw": 0.142857,
+      "ast": 0.060606,
+      "canonical": 0.142857,
+      "mapping": 0.5
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 27,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 27,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.388889,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 27,
+      "B": 11
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:18d1fd7a6b1084ad0dcfa5685aed331e6d5ac7d292400135e47c581f16f18a8e",
+      "b": "sha256:46592d8f9eb42c62b88954e9b88db463d6d8c388bfd95f2c2f4975267d2de7bb"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-cbbea6dd702430b861bd",
+    "picas_score": 0.0,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.820251,
+    "components": {
+      "raw": 0.0,
+      "ast": null,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Parsing failed for at least one submission; analysis fell back to token-only signals. | PYTHON_SYNTAX_ERROR: line 1: invalid syntax",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 27,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 27,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 6,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 6,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.352941,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 27,
+      "B": 6
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:18d1fd7a6b1084ad0dcfa5685aed331e6d5ac7d292400135e47c581f16f18a8e",
+      "b": "sha256:bb562ad1043a5cbf4e0ae981f5fda44e0f459ebc477f553d7ab0896efb4e0014"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-389eebadea54cfd45c2a",
+    "picas_score": 0.121212,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.699039,
+    "components": {
+      "raw": 0.121212,
+      "ast": 0.114286,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Scope normalization is unavailable; weighted analysis fell back to raw tokens. | PYTHON_DYNAMIC_NAME_ACCESS_UNSUPPORTED: Name at line 2",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 27,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 27,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 16,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 16,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.473684,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 27,
+      "B": 16
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:18d1fd7a6b1084ad0dcfa5685aed331e6d5ac7d292400135e47c581f16f18a8e",
+      "b": "sha256:42c1ad9a829f63eafe8d7839076214fe3d0c1b57ca131e54be3a87266e058d99"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-ec74c2e0ded1b923f868",
+    "picas_score": 0.0,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.820251,
+    "components": {
+      "raw": 0.0,
+      "ast": null,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Parsing failed for at least one submission; analysis fell back to token-only signals. | PYTHON_SYNTAX_ERROR: line 1: invalid syntax",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 6,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 6,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.555556,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 11,
+      "B": 6
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:46592d8f9eb42c62b88954e9b88db463d6d8c388bfd95f2c2f4975267d2de7bb",
+      "b": "sha256:bb562ad1043a5cbf4e0ae981f5fda44e0f459ebc477f553d7ab0896efb4e0014"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-9ff132f1e7cb59896aa9",
+    "picas_score": 0.3125,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.507751,
+    "components": {
+      "raw": 0.3125,
+      "ast": 0.428571,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Scope normalization is unavailable; weighted analysis fell back to raw tokens. | PYTHON_DYNAMIC_NAME_ACCESS_UNSUPPORTED: Name at line 2",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 16,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 16,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.583333,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 11,
+      "B": 16
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 2,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 2
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:46592d8f9eb42c62b88954e9b88db463d6d8c388bfd95f2c2f4975267d2de7bb",
+      "b": "sha256:42c1ad9a829f63eafe8d7839076214fe3d0c1b57ca131e54be3a87266e058d99"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-maximum",
+    "comparison_id": "AI-d4513fd76d2b5b6fd375",
+    "picas_score": 0.0,
+    "threshold": 0.820251,
+    "risk_level": "LOW",
+    "risk_margin": -0.820251,
+    "components": {
+      "raw": 0.0,
+      "ast": null,
+      "canonical": null,
+      "mapping": null
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 1.0,
+      "AST_SIMILARITY": 0.0,
+      "CANONICAL_TOKEN_SIMILARITY": 0.0,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.0
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "Parsing failed for at least one submission; analysis fell back to token-only signals. | PYTHON_SYNTAX_ERROR: line 1: invalid syntax | PYTHON_DYNAMIC_NAME_ACCESS_UNSUPPORTED: Name at line 2",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": false,
+      "language": "UNKNOWN",
+      "sourceReference": "",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": null,
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 0,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": false,
+        "tokenCount": 6,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 6,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": false,
+        "tokenCount": 16,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 16,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.416667,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 6,
+      "B": 16
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "PARSER_OR_VERSION_LIMITATIONS",
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。",
+      "解析/规范化不可用部分不得作为结构证据。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:bb562ad1043a5cbf4e0ae981f5fda44e0f459ebc477f553d7ab0896efb4e0014",
+      "b": "sha256:42c1ad9a829f63eafe8d7839076214fe3d0c1b57ca131e54be3a87266e058d99"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-25a51d4d16b9e628b98e",
+    "picas_score": 0.806061,
+    "threshold": 0.820155,
+    "risk_level": "MEDIUM",
+    "risk_margin": -0.014094,
+    "components": {
+      "raw": 0.030303,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 2,
+        "submissionAEndLine": 3,
+        "submissionBStartLine": 2,
+        "submissionBEndLine": 3
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-b190467e18f7a1a4ad49",
+    "picas_score": 1.0,
+    "threshold": 0.820155,
+    "risk_level": "HIGH",
+    "risk_margin": 0.179845,
+    "components": {
+      "raw": 1.0,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 0
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 2,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 2
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 2,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 2
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-5a8c055546266c5545c2",
+    "picas_score": 0.214194,
+    "threshold": 0.820155,
+    "risk_level": "LOW",
+    "risk_margin": -0.605961,
+    "components": {
+      "raw": 0.190476,
+      "ast": 0.076923,
+      "canonical": 0.190476,
+      "mapping": 0.5
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 11
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:4784de77086b3ce67277daabf7d11f04fe6efb7c2f8bdd460fecae8817e3010a"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-83f362c954465fb3138f",
+    "picas_score": 0.806061,
+    "threshold": 0.820155,
+    "risk_level": "MEDIUM",
+    "risk_margin": -0.014094,
+    "components": {
+      "raw": 0.030303,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 2,
+        "submissionAEndLine": 3,
+        "submissionBStartLine": 2,
+        "submissionBEndLine": 3
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-dd786853b74f3d86d294",
+    "picas_score": 0.806061,
+    "threshold": 0.820155,
+    "risk_level": "MEDIUM",
+    "risk_margin": -0.014094,
+    "components": {
+      "raw": 0.030303,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 19,
+      "B": 0
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 2,
+        "submissionAEndLine": 3,
+        "submissionBStartLine": 2,
+        "submissionBEndLine": 3
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0",
+      "b": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-68e719f086fa9eca8b08",
+    "picas_score": 0.176099,
+    "threshold": 0.820155,
+    "risk_level": "LOW",
+    "risk_margin": -0.644056,
+    "components": {
+      "raw": 0.0,
+      "ast": 0.076923,
+      "canonical": 0.190476,
+      "mapping": 0.5
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.294118,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 19,
+      "B": 11
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0",
+      "b": "sha256:4784de77086b3ce67277daabf7d11f04fe6efb7c2f8bdd460fecae8817e3010a"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-73084fd7d7c688b2914f",
+    "picas_score": 1.0,
+    "threshold": 0.820155,
+    "risk_level": "HIGH",
+    "risk_margin": 0.179845,
+    "components": {
+      "raw": 1.0,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 1.0,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 19,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 2,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 2
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 2,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 2
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0",
+      "b": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-0d864aab4d21d043cae0",
+    "picas_score": 0.214194,
+    "threshold": 0.820155,
+    "risk_level": "LOW",
+    "risk_margin": -0.605961,
+    "components": {
+      "raw": 0.190476,
+      "ast": 0.076923,
+      "canonical": 0.190476,
+      "mapping": 0.5
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 11
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      },
+      {
+        "submissionAStartLine": 1,
+        "submissionAEndLine": 1,
+        "submissionBStartLine": 1,
+        "submissionBEndLine": 1
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:4784de77086b3ce67277daabf7d11f04fe6efb7c2f8bdd460fecae8817e3010a"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-b41114380e742aa3bc97",
+    "picas_score": 0.806061,
+    "threshold": 0.820155,
+    "risk_level": "MEDIUM",
+    "risk_margin": -0.014094,
+    "components": {
+      "raw": 0.030303,
+      "ast": 1.0,
+      "canonical": 1.0,
+      "mapping": 1.0
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 19,
+        "effectiveTokenCount": 0,
+        "templateCoverage": 1.0,
+        "fragments": [
+          {
+            "segment": 0,
+            "startLine": 1,
+            "endLine": 5,
+            "startToken": 0,
+            "endTokenExclusive": 19
+          }
+        ],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": null,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 0,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [
+      {
+        "submissionAStartLine": 2,
+        "submissionAEndLine": 3,
+        "submissionBStartLine": 2,
+        "submissionBEndLine": 3
+      }
+    ],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "NO_NON_TEMPLATE_CONTENT",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE",
+        "SHARED_TEMPLATE_DOMINATES"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "b": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  },
+  {
+    "question_id": "MOCK-sum",
+    "comparison_id": "AI-d2883e170e741271ff68",
+    "picas_score": 0.176099,
+    "threshold": 0.820155,
+    "risk_level": "LOW",
+    "risk_margin": -0.644056,
+    "components": {
+      "raw": 0.0,
+      "ast": 0.076923,
+      "canonical": 0.190476,
+      "mapping": 0.5
+    },
+    "production_metric_weights": {
+      "TOKEN_SIMILARITY": 0.2,
+      "AST_SIMILARITY": 0.2,
+      "CANONICAL_TOKEN_SIMILARITY": 0.45,
+      "IDENTIFIER_MAPPING_SIMILARITY": 0.15
+    },
+    "component_note": "Standalone parsed diagnostics may remain visible when production fusion falls back; weights above are authoritative.",
+    "parse_warnings": "",
+    "template_coverage": {
+      "category": "SHARED_TEMPLATE_CONTEXT",
+      "registered": true,
+      "language": "python",
+      "sourceReference": "REGISTERED_LOCAL_TEMPLATE",
+      "sourceProvenance": "USER_REGISTERED_NOT_INDEPENDENTLY_VERIFIED",
+      "minimumSegmentTokens": 8,
+      "templateSha256": "29807be16799f3c537bbe8a345478a69bc83e899c098c67bf3cd7b586e8114ce",
+      "matchingPolicy": "EXACT_RAW_TOKEN_SEGMENTS_ONLY",
+      "includedInProductionScore": false,
+      "eligibleSegmentCount": 1,
+      "shortSegmentsIgnored": 0,
+      "submissionA": {
+        "applicable": true,
+        "tokenCount": 11,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 11,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "submissionB": {
+        "applicable": true,
+        "tokenCount": 19,
+        "matchedTemplateTokens": 0,
+        "effectiveTokenCount": 19,
+        "templateCoverage": 0.0,
+        "fragments": [],
+        "fragmentDisplayLimit": 20
+      },
+      "nonTemplateTokenSetSimilarity": 0.294118,
+      "diagnosticRepresentation": "RAW_TOKEN_VALUE_SET_NO_ADJACENCY_NOT_PRODUCTION_NGRAM_SCORE"
+    },
+    "effective_code_length": {
+      "A": 11,
+      "B": 19
+    },
+    "match_length_distribution": {
+      "status": "UNAVAILABLE",
+      "reason": "Existing evidence is a truncated n-gram location list, not exhaustive maximal matches"
+    },
+    "match_locations": [],
+    "match_locations_exhaustive": false,
+    "independent_reference_pool_size": 0,
+    "ai_reference_mode": "DEVELOPMENT_ONLY",
+    "common_pattern_summary": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "provenance_evidence_status": "NONE",
+    "provenance_authenticity_certified": false,
+    "assessment": {
+      "category": "REVIEW_ASSESSMENT",
+      "policyVersion": "context-review-v1",
+      "status": "INSUFFICIENT_DISTINGUISHING_EVIDENCE",
+      "message": "可区分代码依据不足；短代码、共同模板或题目约束可能造成自然相似，不能据分数认定关系。",
+      "reasons": [
+        "SHORT_EFFECTIVE_CODE",
+        "HEURISTIC_NATURAL_SIMILARITY_RISK",
+        "LIMITED_CODE_UNDER_CONCENTRATED_SOLUTION_SPACE"
+      ],
+      "shortCodeTokenLimit": 40,
+      "naturalRiskShortCodeTokenLimit": 120,
+      "naturalRiskTrigger": 0.6,
+      "policyCalibrated": false,
+      "includedInProductionScore": false,
+      "templateDominanceTrigger": 0.5,
+      "relationshipDetermined": false,
+      "declaredVersionDifference": false
+    },
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。",
+      "仅用于界面/管线验证；没有发生真实模型调用。"
+    ],
+    "review_questions": [
+      "题目是否限制了实现方式，或存在共同模板？",
+      "非模板片段还有多少，原文位置能否核对？",
+      "解析或规范化是否降级？",
+      "是否有经同意保存的提示、版本、修订或独立创作证据？",
+      "课程AI政策是什么，是否由有权限的教师人工解释？"
+    ],
+    "source_hashes": {
+      "a": "sha256:4784de77086b3ce67277daabf7d11f04fe6efb7c2f8bdd460fecae8817e3010a",
+      "b": "sha256:9b07bf306b73a7031853b853be2af9df3ebab13b06b75af9284472a9590e51f0"
+    },
+    "production_score_changed": false,
+    "relationship_determined": false
+  }
+]

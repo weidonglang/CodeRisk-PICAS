@@ -1,0 +1,13 @@
+﻿fixture,language,attempted_permutations,unique_permutations,unique_variant_sources,used_domain_spellings,uniform_orbit_size_under_fixed_domain
+py-keywords,python,144,137,121,4,360
+py-shadow-closure,python,144,137,121,4,360
+py-default-scope,python,144,137,30,2,30
+py-lambda-default,python,144,137,88,3,120
+py-class-default,python,144,137,88,3,120
+py-forward-keyword,python,144,137,30,2,30
+py-shared-spelling,python,144,137,88,3,120
+py-unicode-offset,python,144,137,30,2,30
+py-variadic-declarations,python,144,137,137,5,720
+java-declaration-point,java,144,137,88,3,120
+java-block-locals,java,144,137,88,3,120
+java-internal-external-call,java,144,137,88,3,120

@@ -1,0 +1,36 @@
+{
+  "client_work_date": "2026-10-10",
+  "status": "ACTUAL_PINNED_INTAKE_AND_OFFLINE_RECONSTRUCTION_VERIFIED",
+  "verifier_sha256": "8eb16d094771375a6ad7b968cdd53675a69944007554eee94bd56b8d7d355bd4",
+  "verification_command": ".tmp/language-venv/Scripts/python.exe coderisk/experiment/acquire_codexglue_bcb.py --verify-only",
+  "verification_result": {
+    "verified": true,
+    "function_sources": 9126,
+    "selected_pairs": 30000,
+    "upstream_pair_rows": 1731860,
+    "formal_eligible_pairs": 0
+  },
+  "existing_source_hash_overlap_audit": {
+    "previous_public_registry_records": 3865,
+    "previous_irplag_registry_records": 467,
+    "shared_byte_hashes_with_previous_public_registry": 0,
+    "shared_byte_hashes_with_irplag_registry": 0,
+    "combined_unique_byte_hashes": 12163,
+    "downloaded_code_executed": false
+  },
+  "python_regression": {
+    "passed": 239,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "new_intake_tests": 15,
+    "python_version": "3.12.14",
+    "junit_path": "E:/ms/output/bcb-intake-tests-20261010-r2.xml",
+    "junit_sha256": "e178bd148fa3912d3065fdb2209ec4030bd4ede38a966e35ad24de06f911232c",
+    "command": ".tmp/language-venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp .tmp/bcb-full-regression-20261010-c --tb=short --junitxml output/bcb-intake-tests-20261010-r2.xml",
+    "temp_directory": "E:/ms/.tmp/intake-fusion-temp-20261010"
+  },
+  "detector_scored_pairs": 0,
+  "production_formula_changed": false,
+  "backend_frontend_mysql_rerun": false
+}

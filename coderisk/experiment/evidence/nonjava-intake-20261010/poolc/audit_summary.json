@@ -1,0 +1,24 @@
+{
+  "upstream_rows": 598736,
+  "available_unique_label_0": 298773,
+  "available_unique_label_1": 299963,
+  "conflicting_text_pair_labels_quarantined": 0,
+  "code_text_hashes_in_multiple_opaque_groups": 1,
+  "selected_pairs": 30000,
+  "selected_unique_source_texts": 29280,
+  "selected_labels": {
+    "1": 15000,
+    "0": 15000
+  },
+  "selected_source_syntax": {
+    "PYTHON3_PARSE_OK_NOT_EXECUTED": 27961,
+    "PYTHON3_PARSE_FAILED_POSSIBLE_PYTHON2_OR_UNSUPPORTED": 1319
+  },
+  "selected_code_group_count": 240,
+  "scope": "first_of_nine_upstream_train_shards_only_no_validation_download",
+  "selection_uses_detector_scores": false,
+  "formal_eligible_pairs": 0,
+  "problem_disjoint_verified": false,
+  "source_disjoint_verified": false,
+  "validation_test_hash_isolation_verified": false
+}

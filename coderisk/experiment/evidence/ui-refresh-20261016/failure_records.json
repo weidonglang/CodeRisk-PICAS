@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "kind": "SANDBOX_ENVIRONMENT",
+      "issue": "Vite realpath EPERM / Chrome crashpad startup",
+      "resolution": "Approved local unsandboxed verification; no global permission change"
+    },
+    {
+      "kind": "TEST_TOOL",
+      "log": "browser-smoke.log",
+      "issue": "CLI VM does not expose URL global",
+      "resolution": "Browser origin API and existing fixture file uploads"
+    },
+    {
+      "kind": "TEST_SELECTOR",
+      "log": "browser-smoke-r2.log",
+      "issue": "Composite accessible link name failed exact title match",
+      "resolution": "Scoped question-row selector"
+    },
+    {
+      "kind": "TEST_VIEWPORT",
+      "log": "browser-smoke-r3.log",
+      "issue": "Previous mobile viewport made first desktop selector hidden",
+      "resolution": "Explicit initial viewport and stable screenshot animation handling"
+    },
+    {
+      "kind": "TEST_ROUTE_SCOPE",
+      "log": "browser-states.log",
+      "issue": "API simulation also matched Vite src/api modules",
+      "resolution": "Match exact origin/api prefix; final seven checks pass"
+    },
+    {
+      "kind": "STARTUP_DEFECT",
+      "log": "start-idempotent.log",
+      "issue": "PowerShell JSON date conversion caused false-negative ownership and extra managed stack",
+      "resolution": "UTC tick comparison and command hash, regressions; duplicate and first stack safely stopped, isolated stack restarted; no DB byte-identity claim"
+    },
+    {
+      "kind": "RUNTIME_CONFIGURATION",
+      "log": "preflight-auto.log",
+      "issue": "Inherited JAVA_HOME is JDK17",
+      "resolution": "Per-process JDK21 discovery, machine environment unchanged"
+    }
+  ]
+}

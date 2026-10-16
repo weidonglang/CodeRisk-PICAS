@@ -1,0 +1,25 @@
+{
+  "protocolVersion": "similarity-ablation-1.0",
+  "convergenceProtocolVersion": "ai-convergence-1.0",
+  "datasetManifest": "OFFLINE_ADAPTER_DATASET",
+  "randomSeed": 20261012,
+  "selectionSplit": "validation",
+  "evaluationSplit": "test",
+  "fixedThresholds": [0.0, 0.2, 0.4, 0.6, 0.68, 0.8, 0.9, 1.0, 1.000001],
+  "dynamicOffsets": [0.0],
+  "targetFpr": 0.05,
+  "retrievalKs": [1, 5, 10],
+  "renameVariantsPerCase": 1,
+  "borderlineMargin": 0.03,
+  "bootstrapReplicates": 500,
+  "minimumClusters": 6,
+  "jplag": {"toolVersion": "6.2.0", "minTokens": 5, "templatePolicy": "NO_BASE_CODE_REMOVAL"},
+  "methods": [
+    {"name": "RAW_ONLY", "scoreMode": "WEIGHTED", "weights": {"raw": 1.0}, "thresholdMode": "FIXED"},
+    {"name": "AST_ONLY", "scoreMode": "WEIGHTED", "weights": {"ast": 1.0}, "thresholdMode": "FIXED"},
+    {"name": "CANONICAL_ONLY", "scoreMode": "WEIGHTED", "weights": {"canonical": 1.0}, "thresholdMode": "FIXED"},
+    {"name": "NO_CANONICAL_FIXED", "scoreMode": "WEIGHTED", "weights": {"raw": 0.5, "ast": 0.5}, "thresholdMode": "FIXED"},
+    {"name": "PICAS_FIXED", "scoreMode": "PRODUCTION", "thresholdMode": "FIXED"},
+    {"name": "PICAS_RULE_DYNAMIC", "scoreMode": "PRODUCTION", "thresholdMode": "RULE"}
+  ]
+}

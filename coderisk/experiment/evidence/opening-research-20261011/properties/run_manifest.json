@@ -1,0 +1,104 @@
+{
+  "status": "COMPLETED",
+  "runId": "properties-final",
+  "formulaVersion": "FORMULA_SPEC_V1",
+  "algorithmVersion": "RECORDED_SOURCE_HASHES",
+  "datasetVersion": "SELF_AUTHORED_HAND_MARKED_GOLD_V1",
+  "randomSeeds": [
+    20261011,
+    73,
+    901
+  ],
+  "configSha256": "f07e1c8b6005a5c9e75e819e95552796853507d1b5b1eec3462635f0cf04c842",
+  "gitCommit": "892e7ef4a0d2f016cc8b0713fc7b347bd9e1717f",
+  "sourceHashes": {
+    "coderisk/experiment/group_action_properties.py": "38ff556825034d69a3866edffa4d20ef4c472bcc60cc6124bc69d088fc9b135c",
+    "coderisk/experiment/group_action_oracle.py": "82a0465330f285b6c1608db8e11078597738a9848b2474ded5e10ecffa30ab09",
+    "coderisk/experiment/identifier_renaming.py": "49c9ae4d94cdb3e9ca85d0f7e42b1fd9e6f5be18f295eb44bd09e82f10dfdb3c",
+    "coderisk/analysis-service-python/app/analyzers/canonicalization.py": "534021358f6198ecdbd4bfb745493249359807c5982e8d7f5eb9c7447c738612",
+    "coderisk/analysis-service-python/app/analyzers/token_similarity.py": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+    "coderisk_docs/FORMULA_SPEC.md": "562fdb7d68757b811147f9e8d6587e52f8aad01647d002b858329e9ddedf7c20"
+  },
+  "python": "3.12.14",
+  "startedAtUtc": "2026-10-11T13:24:38.801558+00:00",
+  "completedAtUtc": "2026-10-11T13:24:41.798861+00:00",
+  "elapsedSeconds": 2.9971590999998625,
+  "claimLevel": "FINITE_CORRECTNESS_AND_LOSSY_MECHANISM_NOT_BENCHMARK",
+  "formalEligiblePairs": 0,
+  "attempted": 1738,
+  "statusCounts": {
+    "ACCEPTED_VALID": 1728,
+    "REJECTED_UNSUPPORTED": 5,
+    "PARSER_FAILURE": 2,
+    "ORACLE_UNCERTAIN": 2,
+    "INVALID_CAPTURE": 1
+  },
+  "acceptedPassed": 1728,
+  "uniqueVariantSourcesByFixture": {
+    "py-keywords": 121,
+    "py-shadow-closure": 121,
+    "py-default-scope": 30,
+    "py-lambda-default": 88,
+    "py-class-default": 88,
+    "py-forward-keyword": 30,
+    "py-shared-spelling": 88,
+    "py-unicode-offset": 30,
+    "py-variadic-declarations": 137,
+    "java-declaration-point": 88,
+    "java-block-locals": 88,
+    "java-internal-external-call": 88
+  },
+  "countsMeaning": "Attempted permutations include identity/repeated seed outputs; unused names create nontrivial stabilizers, not distinct independent samples",
+  "failedAssertions": 0,
+  "javaCompile": [
+    {
+      "fixture": "java-declaration-point",
+      "variant": 0,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "java-declaration-point",
+      "variant": 1,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "java-block-locals",
+      "variant": 0,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "java-block-locals",
+      "variant": 1,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "java-internal-external-call",
+      "variant": 0,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "fixture": "java-internal-external-call",
+      "variant": 1,
+      "status": "PASSED",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "javaCompileMeaning": "Syntax/type acceptance of self-authored code, not binding or semantic equivalence proof"
+}

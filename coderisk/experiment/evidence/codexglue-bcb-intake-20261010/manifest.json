@@ -1,0 +1,144 @@
+{
+  "status": "EXTERNAL_PUBLIC_CLONE_DATA_INTAKE_NOT_FORMAL_EVALUATION",
+  "dataset": "codexglue-bcb",
+  "source_commit": "ac74a62802a0dd159b3258c78a2df8ad36cdf2b9",
+  "client_work_date": "2026-10-10",
+  "downloaded_at_utc": "2026-10-09T22:58:23.934363+00:00",
+  "random_seed": 20261010,
+  "requested_pair_count": 30000,
+  "source_repository": "https://github.com/microsoft/CodeXGLUE",
+  "upstream_files": {
+    "data.jsonl": {
+      "sha256": "d8bc51e62deddcc45bd26c5b57f5add2a2cf377f13b9f6c2fb656fbc8fca4dd2",
+      "size_bytes": 15174797,
+      "git_blob_sha1": "21f3cf5b0fb1d57db28b6bf8cacd2933e91f4bbc",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Code-Code/Clone-detection-BigCloneBench/dataset/data.jsonl"
+    },
+    "train.txt": {
+      "sha256": "29119bfa94673374249c3424809fbe6baaa1f0e87a13e3c727bbd6cdf1224b77",
+      "size_bytes": 17043552,
+      "git_blob_sha1": "33a19e93151999b7e4ad46ad27a952d7b6584884",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Code-Code/Clone-detection-BigCloneBench/dataset/train.txt"
+    },
+    "valid.txt": {
+      "sha256": "e59e8c1321df59b6ab0143165cb603030c55800c00e2d782e06810517b8de1e4",
+      "size_bytes": 7861019,
+      "git_blob_sha1": "9175d2fe7f6d5aefa3579ed5027b1b7050bbd7bd",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Code-Code/Clone-detection-BigCloneBench/dataset/valid.txt"
+    },
+    "test.txt": {
+      "sha256": "a6c0cf79be34e582fdc64007aa894ed094e4f9ff2e5395a8d2b5c39eeef2737a",
+      "size_bytes": 7876506,
+      "git_blob_sha1": "42f7d44cc954276b12f156a74659b9e0b5ea9feb",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Code-Code/Clone-detection-BigCloneBench/dataset/test.txt"
+    },
+    "dataset_README.md": {
+      "sha256": "a9d85e97b49a38576dd94a35dbd043f4f837706ed73a96dce255112541922ba0",
+      "size_bytes": 5125,
+      "git_blob_sha1": "31239199af516a6a745b9e390147de31f11687e2",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Code-Code/Clone-detection-BigCloneBench/README.md"
+    },
+    "repository_README.md": {
+      "sha256": "51eedb5b85d8dc9850d6ad17bdd352af3995b3f658c4b2f576e71a3fb54ed2d5",
+      "size_bytes": 11372,
+      "git_blob_sha1": "0a50f46fb881105ce20177502cc28a8223a26d89",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/README.md"
+    },
+    "Data_LICENCE": {
+      "sha256": "1db48e485330d69d41d9c59e13030bace4f6b305acfab57bf0766ae4e3eb6170",
+      "size_bytes": 7060,
+      "git_blob_sha1": "2a9479b291d0f565a518cf1935f790c4354864c5",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/Data_LICENCE"
+    },
+    "LICENSE": {
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "size_bytes": 1141,
+      "git_blob_sha1": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+      "url": "https://raw.githubusercontent.com/microsoft/CodeXGLUE/ac74a62802a0dd159b3258c78a2df8ad36cdf2b9/LICENSE"
+    }
+  },
+  "summary": {
+    "upstream_split_counts": {
+      "train": {
+        "rows": 901028,
+        "published_label_0": 450166,
+        "unique_nonidentical_text_pairs": 628261,
+        "published_label_1": 450862,
+        "identical_text_rows_excluded": 1152,
+        "duplicate_or_reversed_text_pair_rows": 271615
+      },
+      "valid": {
+        "rows": 415416,
+        "published_label_0": 361577,
+        "unique_nonidentical_text_pairs": 361675,
+        "published_label_1": 53839,
+        "duplicate_or_reversed_text_pair_rows": 53495,
+        "identical_text_rows_excluded": 246
+      },
+      "test": {
+        "rows": 415416,
+        "published_label_0": 358596,
+        "unique_nonidentical_text_pairs": 369370,
+        "published_label_1": 56820,
+        "identical_text_rows_excluded": 168,
+        "duplicate_or_reversed_text_pair_rows": 45878
+      }
+    },
+    "upstream_total_pair_rows": 1731860,
+    "unique_nonidentical_text_pairs_across_splits": 1357419,
+    "conflicting_text_pair_labels_quarantined": 117,
+    "text_pairs_in_multiple_upstream_splits": 1723,
+    "upstream_source_overlap": [
+      {
+        "split_a": "train",
+        "split_b": "valid",
+        "shared_function_ids": 0,
+        "shared_text_hashes": 94
+      },
+      {
+        "split_a": "train",
+        "split_b": "test",
+        "shared_function_ids": 0,
+        "shared_text_hashes": 76
+      },
+      {
+        "split_a": "valid",
+        "split_b": "test",
+        "shared_function_ids": 0,
+        "shared_text_hashes": 26
+      }
+    ],
+    "problem_disjoint_verified": false,
+    "available_train_unique_pairs_by_published_label": {
+      "0": 433858,
+      "1": 194378
+    },
+    "selected_pair_count": 30000,
+    "selected_labels": {
+      "0": 15000,
+      "1": 15000
+    },
+    "selected_distinct_text_pairs": 30000,
+    "selected_referenced_function_ids": 7276,
+    "selection_policy": "Balanced labels; lowest SHA256(seed:ordered_text_hashes) from published train only; identical-text and contradictory-label pairs excluded.",
+    "selection_uses_detector_scores": false,
+    "formal_eligible_pairs": 0,
+    "function_source_records": 9126,
+    "unique_function_text_hashes": 8063,
+    "unique_function_byte_hashes": 8063
+  },
+  "license_record": {
+    "publisher_dataset_declaration": "C-UDA (repository README)",
+    "code_license": "MIT (LICENSE); not automatically a license for all upstream functions",
+    "supplied_Data_LICENCE_observation": "Pinned Data_LICENCE contains CC0 text for microsoft/Computational-Use-of-Data-Agreement; this does not independently clear every original source license.",
+    "redistribution_policy": "Raw sources remain local and Git-ignored. Preserve publisher and original-source limitations."
+  },
+  "registry_sha256": {
+    "source_registry.jsonl": "df537625357351a3cc3d719041e4e6c568803646de101781c12701e39cac64d4",
+    "selected_pairs.jsonl": "927da0df3565c7517088169bbbe8e2018cc5c71a0f8eac3b000fdb34b5d80dd7",
+    "audit_summary.json": "7b85fbc513bb3b9f0d4b1fd46f413c0658c19636b00340c9670ddf7b3be76659"
+  },
+  "algorithm_changed": false,
+  "detector_scored_pairs": 0,
+  "formal_eligible_pairs": 0
+}

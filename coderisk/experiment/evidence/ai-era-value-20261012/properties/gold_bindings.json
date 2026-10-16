@@ -1,0 +1,830 @@
+[
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 1,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 1,
+    "column": 9,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "s",
+    "name": "step",
+    "line": 1,
+    "column": 19,
+    "canonical": "MODULE/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "r",
+    "name": "result",
+    "line": 2,
+    "column": 4,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 13,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "s",
+    "name": "step",
+    "line": 2,
+    "column": 21,
+    "canonical": "MODULE/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "r",
+    "name": "result",
+    "line": 3,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 4,
+    "column": 0,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 4,
+    "column": 5,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-keywords",
+    "language": "python",
+    "binding": "s",
+    "name": "step",
+    "line": 4,
+    "column": 14,
+    "canonical": "MODULE/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "f",
+    "name": "outer",
+    "line": 1,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 1,
+    "column": 10,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "r",
+    "name": "total",
+    "line": 2,
+    "column": 4,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 12,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "g",
+    "name": "inner",
+    "line": 3,
+    "column": 8,
+    "canonical": "MODULE/FUNC_1_1::FUNC_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "q",
+    "name": "value",
+    "line": 3,
+    "column": 14,
+    "canonical": "MODULE/FUNC_1_1/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "q",
+    "name": "value",
+    "line": 4,
+    "column": 15,
+    "canonical": "MODULE/FUNC_1_1/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "r",
+    "name": "total",
+    "line": 4,
+    "column": 23,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "g",
+    "name": "inner",
+    "line": 5,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::FUNC_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "q",
+    "name": "value",
+    "line": 5,
+    "column": 17,
+    "canonical": "MODULE/FUNC_1_1/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shadow-closure",
+    "language": "python",
+    "binding": "r",
+    "name": "total",
+    "line": 5,
+    "column": 23,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "binding": "a",
+    "name": "seed",
+    "line": 1,
+    "column": 0,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 2,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "binding": "p",
+    "name": "seed",
+    "line": 2,
+    "column": 9,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "binding": "a",
+    "name": "seed",
+    "line": 2,
+    "column": 14,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-default-scope",
+    "language": "python",
+    "binding": "p",
+    "name": "seed",
+    "line": 3,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "a",
+    "name": "base",
+    "line": 1,
+    "column": 0,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "h",
+    "name": "handler",
+    "line": 2,
+    "column": 0,
+    "canonical": "MODULE::VAR_2"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 17,
+    "canonical": "MODULE/LAMBDA_1::PARAM_1"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "a",
+    "name": "base",
+    "line": 2,
+    "column": 23,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 29,
+    "canonical": "MODULE/LAMBDA_1::PARAM_1"
+  },
+  {
+    "fixture": "py-lambda-default",
+    "language": "python",
+    "binding": "a",
+    "name": "base",
+    "line": 2,
+    "column": 37,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "a",
+    "name": "seed",
+    "line": 1,
+    "column": 0,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "c",
+    "name": "Box",
+    "line": 2,
+    "column": 6,
+    "canonical": "MODULE::CLASS_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "b",
+    "name": "seed",
+    "line": 3,
+    "column": 4,
+    "canonical": "MODULE/CLASS_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 4,
+    "column": 8,
+    "canonical": "MODULE/CLASS_1_1::FUNC_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "s",
+    "name": "self",
+    "line": 4,
+    "column": 13,
+    "canonical": "MODULE/CLASS_1_1/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 4,
+    "column": 19,
+    "canonical": "MODULE/CLASS_1_1/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "b",
+    "name": "seed",
+    "line": 4,
+    "column": 25,
+    "canonical": "MODULE/CLASS_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 5,
+    "column": 15,
+    "canonical": "MODULE/CLASS_1_1/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-class-default",
+    "language": "python",
+    "binding": "a",
+    "name": "seed",
+    "line": 5,
+    "column": 23,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 1,
+    "column": 0,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 1,
+    "column": 5,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 2,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 9,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-forward-keyword",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 3,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 1,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 1,
+    "column": 9,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "g",
+    "name": "process",
+    "line": 3,
+    "column": 4,
+    "canonical": "MODULE::FUNC_2"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "q",
+    "name": "value",
+    "line": 3,
+    "column": 12,
+    "canonical": "MODULE/FUNC_2_2::PARAM_1"
+  },
+  {
+    "fixture": "py-shared-spelling",
+    "language": "python",
+    "binding": "q",
+    "name": "value",
+    "line": 4,
+    "column": 11,
+    "canonical": "MODULE/FUNC_2_2::PARAM_1"
+  },
+  {
+    "fixture": "py-unicode-offset",
+    "language": "python",
+    "binding": "a",
+    "name": "message",
+    "line": 1,
+    "column": 0,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-unicode-offset",
+    "language": "python",
+    "binding": "b",
+    "name": "value",
+    "line": 1,
+    "column": 15,
+    "canonical": "MODULE::VAR_2"
+  },
+  {
+    "fixture": "py-unicode-offset",
+    "language": "python",
+    "binding": "a",
+    "name": "message",
+    "line": 2,
+    "column": 6,
+    "canonical": "MODULE::VAR_1"
+  },
+  {
+    "fixture": "py-unicode-offset",
+    "language": "python",
+    "binding": "b",
+    "name": "value",
+    "line": 2,
+    "column": 15,
+    "canonical": "MODULE::VAR_2"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "f",
+    "name": "fold",
+    "line": 1,
+    "column": 4,
+    "canonical": "MODULE::FUNC_1"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "a",
+    "name": "items",
+    "line": 1,
+    "column": 10,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "b",
+    "name": "step",
+    "line": 1,
+    "column": 17,
+    "canonical": "MODULE/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "c",
+    "name": "options",
+    "line": 1,
+    "column": 27,
+    "canonical": "MODULE/FUNC_1_1::PARAM_3"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "r",
+    "name": "total",
+    "line": 2,
+    "column": 4,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "a",
+    "name": "items",
+    "line": 2,
+    "column": 16,
+    "canonical": "MODULE/FUNC_1_1::PARAM_1"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "b",
+    "name": "step",
+    "line": 2,
+    "column": 25,
+    "canonical": "MODULE/FUNC_1_1::PARAM_2"
+  },
+  {
+    "fixture": "py-variadic-declarations",
+    "language": "python",
+    "binding": "r",
+    "name": "total",
+    "line": 3,
+    "column": 11,
+    "canonical": "MODULE/FUNC_1_1::VAR_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "c",
+    "name": "Main",
+    "line": 1,
+    "column": 6,
+    "canonical": "ROOT::CLASS_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "a",
+    "name": "value",
+    "line": 2,
+    "column": 8,
+    "canonical": "ROOT/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "f",
+    "name": "fold",
+    "line": 3,
+    "column": 8,
+    "canonical": "ROOT/SCOPE_1::FUNC_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "b",
+    "name": "first",
+    "line": 4,
+    "column": 12,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "a",
+    "name": "value",
+    "line": 4,
+    "column": 20,
+    "canonical": "ROOT/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "d",
+    "name": "value",
+    "line": 5,
+    "column": 12,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::VAR_2"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "b",
+    "name": "first",
+    "line": 6,
+    "column": 15,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "d",
+    "name": "value",
+    "line": 6,
+    "column": 23,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::VAR_2"
+  },
+  {
+    "fixture": "java-declaration-point",
+    "language": "java",
+    "binding": "a",
+    "name": "value",
+    "line": 6,
+    "column": 36,
+    "canonical": "ROOT/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "c",
+    "name": "Main",
+    "line": 1,
+    "column": 6,
+    "canonical": "ROOT::CLASS_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "f",
+    "name": "fold",
+    "line": 2,
+    "column": 8,
+    "canonical": "ROOT/SCOPE_1::FUNC_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 17,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 3,
+    "column": 12,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "a",
+    "name": "part",
+    "line": 3,
+    "column": 29,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 3,
+    "column": 36,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "a",
+    "name": "part",
+    "line": 3,
+    "column": 62,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1/SCOPE_1::VAR_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "b",
+    "name": "part",
+    "line": 4,
+    "column": 19,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1/SCOPE_2::VAR_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 4,
+    "column": 27,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "b",
+    "name": "part",
+    "line": 4,
+    "column": 53,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1/SCOPE_2::VAR_1"
+  },
+  {
+    "fixture": "java-block-locals",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 5,
+    "column": 15,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "c",
+    "name": "Main",
+    "line": 1,
+    "column": 6,
+    "canonical": "ROOT::CLASS_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "f",
+    "name": "fold",
+    "line": 2,
+    "column": 8,
+    "canonical": "ROOT/SCOPE_1::FUNC_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 17,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "p",
+    "name": "value",
+    "line": 2,
+    "column": 33,
+    "canonical": "ROOT/SCOPE_1/SCOPE_1::PARAM_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "g",
+    "name": "process",
+    "line": 3,
+    "column": 8,
+    "canonical": "ROOT/SCOPE_1::FUNC_2"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "q",
+    "name": "value",
+    "line": 3,
+    "column": 20,
+    "canonical": "ROOT/SCOPE_1/SCOPE_2::PARAM_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "f",
+    "name": "fold",
+    "line": 3,
+    "column": 36,
+    "canonical": "ROOT/SCOPE_1::FUNC_1"
+  },
+  {
+    "fixture": "java-internal-external-call",
+    "language": "java",
+    "binding": "q",
+    "name": "value",
+    "line": 3,
+    "column": 41,
+    "canonical": "ROOT/SCOPE_1/SCOPE_2::PARAM_1"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "client_work_date": "2026-10-10",
+  "status": "PINNED_INPUT_RECONSTRUCTION_VERIFIED",
+  "verification_results": {
+    "poolc": {
+      "verified": true,
+      "dataset": "poolc",
+      "source_records": 29280,
+      "selected_pairs": 30000,
+      "formal_eligible_pairs": 0
+    },
+    "xlcost": {
+      "verified": true,
+      "dataset": "xlcost",
+      "source_records": 57661,
+      "selected_pairs": 30893,
+      "formal_eligible_pairs": 0
+    }
+  },
+  "snapshot_sha256": {
+    "poolc/manifest.json": "d1327249c5e843f4f911772a7c4c68d9896ee802db1e3dddb2c5af070ab70707",
+    "poolc/audit_summary.json": "8da51bea33ec95345089860d3f5b5c0f038ad4d09988ca8bbb4f26891595dce2",
+    "xlcost/manifest.json": "0c18d8166768262360a4901eb84d742907b5179a0449f34e5ae2b3b1a3a4cac1",
+    "xlcost/audit_summary.json": "4f2b068942b70a1e0a15b4b72a9dd8bbfccf5e9de1c27c2148da1fcf4fade9bd"
+  },
+  "verifier_sha256": "cd3e03475f4ab1f6e89c8f1ce38ffea1cb25fb86ef95b21561febc11d5554acd",
+  "pin_config_sha256": "52e73ca7b05230f27c8897b1261acdacda923d7fd9f43e9a2b52a1e7965e8db2",
+  "python_version": "3.12.14",
+  "junit": {
+    "tests": 263,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "path": "E:\\ms\\output\\nonjava-all-tests-20261010-r2.xml",
+    "sha256": "e1fb98f27f44458f2434251ef96f12dc2f78b8d3d953399fa6f6329d18dcea35"
+  },
+  "detector_scored_pairs": 0,
+  "new_similarity_algorithms": 0,
+  "production_weights_changed": false,
+  "downloaded_code_executed": false,
+  "backend_frontend_mysql_jplag_rerun": false
+}

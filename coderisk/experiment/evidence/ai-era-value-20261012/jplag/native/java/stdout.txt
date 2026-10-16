@@ -1,0 +1,7 @@
+2026-10-12-07:09:07_409 [WARN] JPlagVersionChecker - There is a newer version (6.3.0) available. You can download the newest version here: https://github.com/jplag/JPlag/releases
+2026-10-12-07:09:08_305 [INFO] JPlag - Total time for comparing submissions: 0h 00min 00s 229ms
+2026-10-12-07:09:08_306 [WARN] ClusteringFactory - Cluster calculation disabled (as requested)!
+2026-10-12-07:09:08_396 [INFO] ReportObjectFactory - Start writing report...
+2026-10-12-07:09:08_397 [INFO] ReportObjectFactory - Start to export results...
+2026-10-12-07:09:08_478 [INFO] OutputFileGenerator - Successfully written the result: E:\ms\output\ai-era-value-20261012\jplag\native\java\results.jplag
+2026-10-12-07:09:08_478 [INFO] OutputFileGenerator - View the result using --mode

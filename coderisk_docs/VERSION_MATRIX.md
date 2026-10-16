@@ -1,5 +1,9 @@
 # VERSION_MATRIX.md
 
+> 2026-10-12 AI 时代 Stage V（任务书 V0—V5）是离线研究阶段，不是生产版本升级。会话导入/校验、六方法分布及只读预检/复核报告可运行；13 artifacts / 12 mock sessions / 22 pairs 均 DEVELOPMENT_ONLY，native JPlag 共同支持 14。真实模型、真实标签、教师效益尚 NOT_RUN，正式效果 INSUFFICIENT_EVIDENCE。生产公式/API/数据库冻结，V4 权重仍 0，双工作流未默认接入 Vue。最新 Python591/H2后端19/build通过；MySQL/浏览器未新验证。见 [协议](research/AI_CONVERGENCE_PROTOCOL.md)、[测试](research/TEST_AND_EVIDENCE_SUMMARY.md)。
+
+> 2026-10-11 开题S0—S5收口：有限Java/Python改名条件理论、独立性质gold和研究工具已加强；正式数据与统计收益仍BLOCKED，绝非版本升级为稳定语义检测。V4 IR/轻量摘要生产权重仍0；表达式交换/语句重排/完整α判定/完整CFG-DFG/AI来源检测不支持，LLM/Hybrid仅离线实验门禁。当前工作树回归Python523/H2后端19/build通过，MySQL实库和本轮浏览器E2E未验。见 [开题研究包](research/OPENING_RESEARCH_PACKAGE.md)。
+
 > 本文件定义 CodeRisk / PICAS 各版本承诺范围。开发、前端宣传、论文实验、软著说明和答辩演示不得把探索项提前包装为正式能力。
 
 ---

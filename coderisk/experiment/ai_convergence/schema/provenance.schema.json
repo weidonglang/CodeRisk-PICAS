@@ -1,0 +1,72 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "UNREGISTERED",
+        "FROZEN"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "registered_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Registered At"
+    },
+    "plan_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Plan Ref"
+    },
+    "config_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Config Sha256"
+    },
+    "split_preregistered": {
+      "title": "Split Preregistered",
+      "type": "boolean"
+    },
+    "user_study_consent_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "User Study Consent Ref"
+    }
+  },
+  "required": [
+    "status",
+    "registered_at",
+    "plan_ref",
+    "config_sha256",
+    "split_preregistered",
+    "user_study_consent_ref"
+  ],
+  "title": "Provenance",
+  "type": "object"
+}

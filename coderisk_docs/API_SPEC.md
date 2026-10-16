@@ -1,5 +1,7 @@
 # API_SPEC.md
 
+> 2026-10-09 后续接口行为：Python 已解析但规范化不可用时，PARSER_WARNING.metadata.normalizationReasonA/B 给出受限绑定理由及原文行号。GET results 极大正页码安全返回空页；创建任务显式 ID 超限/重复在逐项读取前返回既有 400 错误。响应字段保持兼容，状态读取后再取结果的客户端流程见 [技术记录](proposal/AI_REVIEW_HARDENING.md)。
+
 > 2026-10-09 本轮增量：POST /api/tasks/{id}/start 现在异步返回完整任务对象，受理状态 RUNNING（含等待工作线程）；重复 RUNNING/FINISHED 不重复调度，PARTIAL/FAILED 跳过持久化成功结果后恢复。满额返回 503/TASK_CAPACITY_EXCEEDED。GET /api/tasks/{id}/failures 返回 submissionAId/submissionBId/message/attempts/resolved/lastAttemptAt。任务对象增加 failedPairs/progress，最近任务摘要增加 failedPairs；progress 为成功覆盖率，停止状态下 failedPairs 含未尝试部分。创建上限 100 且提交 ID 不可重复。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 > 2026-10-09 API 增量：题目创建/查询新增可选 `starterLanguage`、`starterCode`（上限 20,000 字符）和 `starterSource`（上限 2,000）；有源码时须提供受支持语言和来源。上传 multipart 新增可选单行 `languageVersion`（64 字符），提交响应与内部分析请求保留该声明。新增复核内容通过已有 `REVIEW_NOTE.metadata.category` 的 `LANGUAGE_COMPATIBILITY`、`SHARED_TEMPLATE_CONTEXT`、`REVIEW_ASSESSMENT` 传递与持久化，无新增关系判定接口。规则详见 [说明](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。

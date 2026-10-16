@@ -1,0 +1,1017 @@
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+..................................................................FFFFFF [ 66%]
+FF...................................................................... [ 83%]
+.......................................................................  [100%]
+================================== FAILURES ===================================
+_ PublicIntakeTests.test_ad_repeated_rows_preserved_without_inferred_independent_labels _
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_ad_repeated_rows_preserved_without_inferred_independent_labels>
+
+    def test_ad_repeated_rows_preserved_without_inferred_independent_labels(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path, output = Path(tmp) / 'data.zip', Path(tmp) / 'intake'
+            code = 'int f() {\r\n return 1;\r\n}'
+>           with zipfile.ZipFile(path, 'w') as archive:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206B73380>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_ad_repeated_rows_preserved_without_inferred_independent_labels>
+
+    def test_ad_repeated_rows_preserved_without_inferred_independent_labels(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmp2qzkzpgd'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+_________ PublicIntakeTests.test_bad_checksum_rejected_before_intake __________
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_bad_checksum_rejected_before_intake>
+
+    def test_bad_checksum_rejected_before_intake(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'data.zip'
+>           path.write_bytes(b'changed')
+
+tests\test_public_dataset_intake.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/WDL/AppData/Local/Packages/sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}/AC/Temp/tmpsjxtr4f8/data.zip')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpsjxtr4f8\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpsjxtr4f8'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206BAE3E0>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpsjxtr4f8'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_bad_checksum_rejected_before_intake>
+
+    def test_bad_checksum_rejected_before_intake(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpsjxtr4f8'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpsjxtr4f8'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+_ PublicIntakeTests.test_csv_large_fields_and_embedded_line_endings_retained __
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_csv_large_fields_and_embedded_line_endings_retained>
+
+    def test_csv_large_fields_and_embedded_line_endings_retained(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'data.zip'
+            code = 'a\r\nb\n' + 'x' * 150000
+>           with zipfile.ZipFile(path, 'w') as archive:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206BAF380>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_csv_large_fields_and_embedded_line_endings_retained>
+
+    def test_csv_large_fields_and_embedded_line_endings_retained(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpu9s_78hp'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+_ PublicIntakeTests.test_headerless_split_keeps_first_pair_and_rejects_duplicates _
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_headerless_split_keeps_first_pair_and_rejects_duplicates>
+
+    def test_headerless_split_keeps_first_pair_and_rejects_duplicates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'data.zip'
+>           with zipfile.ZipFile(path, 'w') as archive:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206BAE5C0>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_headerless_split_keeps_first_pair_and_rejects_duplicates>
+
+    def test_headerless_split_keeps_first_pair_and_rejects_duplicates(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpuy3p_18_'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+_ PublicIntakeTests.test_intake_inventory_rejects_changed_code_and_outside_paths _
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_intake_inventory_rejects_changed_code_and_outside_paths>
+
+    def test_intake_inventory_rejects_changed_code_and_outside_paths(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+>           (output / 'code.java').write_bytes(b'class A {}')
+
+tests\test_public_dataset_intake.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/WDL/AppData/Local/Packages/sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}/AC/Temp/tmpiujkw1kt/code.java')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpiujkw1kt\\code.java'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpiujkw1kt'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206BAEE80>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpiujkw1kt'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_intake_inventory_rejects_changed_code_and_outside_paths>
+
+    def test_intake_inventory_rejects_changed_code_and_outside_paths(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpiujkw1kt'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpiujkw1kt'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+____________ PublicIntakeTests.test_unexpected_split_pair_rejected ____________
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_unexpected_split_pair_rejected>
+
+    def test_unexpected_split_pair_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'data.zip'
+>           conplag_fixture(path, unknown_split=True)
+
+tests\test_public_dataset_intake.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_public_dataset_intake.py:33: in conplag_fixture
+    with zipfile.ZipFile(path, 'w') as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020206B73060>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_unexpected_split_pair_rejected>
+
+    def test_unexpected_split_pair_rejected(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpcjrykq66'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+__________ PublicIntakeTests.test_untrusted_submission_path_rejected __________
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_untrusted_submission_path_rejected>
+
+    def test_untrusted_submission_path_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'data.zip'
+>           conplag_fixture(path, unsafe=True)
+
+tests\test_public_dataset_intake.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_public_dataset_intake.py:33: in conplag_fixture
+    with zipfile.ZipFile(path, 'w') as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x0000020207250540>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_untrusted_submission_path_rejected>
+
+    def test_untrusted_submission_path_rejected(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpvxyvngzg'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+_ PublicIntakeTests.test_variant_bytes_are_preserved_and_published_labels_are_not_promoted _
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_variant_bytes_are_preserved_and_published_labels_are_not_promoted>
+
+    def test_variant_bytes_are_preserved_and_published_labels_are_not_promoted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path, output = Path(tmp) / 'data.zip', Path(tmp) / 'intake'
+>           conplag_fixture(path)
+
+tests\test_public_dataset_intake.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_public_dataset_intake.py:33: in conplag_fixture
+    with zipfile.ZipFile(path, 'w') as archive:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <zipfile.ZipFile [closed]>
+file = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr\\data.zip'
+mode = 'w', compression = 0, allowZip64 = True, compresslevel = None
+
+    def __init__(self, file, mode="r", compression=ZIP_STORED, allowZip64=True,
+                 compresslevel=None, *, strict_timestamps=True, metadata_encoding=None):
+        """Open the ZIP file with mode read 'r', write 'w', exclusive create 'x',
+        or append 'a'."""
+        if mode not in ('r', 'w', 'x', 'a'):
+            raise ValueError("ZipFile requires mode 'r', 'w', 'x', or 'a'")
+    
+        _check_compression(compression)
+    
+        self._allowZip64 = allowZip64
+        self._didModify = False
+        self.debug = 0  # Level of printing: 0 through 3
+        self.NameToInfo = {}    # Find file info given name
+        self.filelist = []      # List of ZipInfo instances for archive
+        self.compression = compression  # Method of compression
+        self.compresslevel = compresslevel
+        self.mode = mode
+        self.pwd = None
+        self._comment = b''
+        self._strict_timestamps = strict_timestamps
+        self.metadata_encoding = metadata_encoding
+    
+        # Check that we don't try to write with nonconforming codecs
+        if self.metadata_encoding and mode != 'r':
+            raise ValueError(
+                "metadata_encoding is only supported for reading files")
+    
+        # Check if we were passed a file-like object
+        if isinstance(file, os.PathLike):
+            file = os.fspath(file)
+        if isinstance(file, str):
+            # No, it's a filename
+            self._filePassed = 0
+            self.filename = file
+            modeDict = {'r' : 'rb', 'w': 'w+b', 'x': 'x+b', 'a' : 'r+b',
+                        'r+b': 'w+b', 'w+b': 'wb', 'x+b': 'xb'}
+            filemode = modeDict[mode]
+            while True:
+                try:
+>                   self.fp = io.open(file, filemode)
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+E                   PermissionError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr\\data.zip'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py:1353: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr'
+onexc = <function TemporaryDirectory._rmtree.<locals>.onexc at 0x00000202072509A0>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.unlink(fullname)
+                except OSError as err:
+                    onexc(os.unlink, fullname, err)
+        try:
+>           os.rmdir(path)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:637: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_public_dataset_intake.PublicIntakeTests testMethod=test_variant_bytes_are_preserved_and_published_labels_are_not_promoted>
+
+    def test_variant_bytes_are_preserved_and_published_labels_are_not_promoted(self):
+>       with tempfile.TemporaryDirectory() as tmp:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_public_dataset_intake.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:950: in __exit__
+    self.cleanup()
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:954: in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:934: in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:639: in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:906: in onexc
+    _resetperms(path)
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:286: in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+func = <built-in function chmod>
+path = 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr'
+args = (448,)
+
+    def _dont_follow_symlinks(func, path, *args):
+        # Pass follow_symlinks=False, unless not supported on this platform.
+        if func in _os.supports_follow_symlinks:
+            func(path, *args, follow_symlinks=False)
+        elif _os.name == 'nt' or not _os.path.islink(path):
+>           func(path, *args)
+E           PermissionError: [WinError 5] �ܾ����ʡ�: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{0daad0c0-6a41-45f6-9afb-2e0e2c8e89bb}\\AC\\Temp\\tmpwxvld8zr'
+
+C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\tempfile.py:277: PermissionError
+============================== warnings summary ===============================
+..\..\.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1
+  E:\ms\.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: E:\ms\output\opening-research-20261011\s0\python-baseline.xml -
+=========================== short test summary info ===========================
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_ad_repeated_rows_preserved_without_inferred_independent_labels
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_bad_checksum_rejected_before_intake
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_csv_large_fields_and_embedded_line_endings_retained
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_headerless_split_keeps_first_pair_and_rejects_duplicates
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_intake_inventory_rejects_changed_code_and_outside_paths
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_unexpected_split_pair_rejected
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_untrusted_submission_path_rejected
+FAILED tests/test_public_dataset_intake.py::PublicIntakeTests::test_variant_bytes_are_preserved_and_published_labels_are_not_promoted
+8 failed, 423 passed, 1 warning in 37.00s

@@ -505,6 +505,28 @@ def _canonicalize_java(code: str, tokens: list[SourceToken]) -> CanonicalAnalysi
             declarations[index] = scopes[paths[index]].declare(value, "VAR")
             variable_declaration_indices[declarations[index].scoped_name] = index
 
+    # Brace scopes cannot represent the lifetime of a for/catch header binding.
+    # Reject known shadowing rather than attaching later uses to the wrong local.
+    for index, value in enumerate(values):
+        if value not in {"for", "catch"} or index + 1 >= len(values) or values[index + 1] != "(":
+            continue
+        close = _matching_token(values, index + 1, "(", ")")
+        if close is None:
+            continue
+        for declaration_index in range(index + 2, close):
+            symbol = declarations.get(declaration_index)
+            if symbol is None or symbol.kind != "VAR":
+                continue
+            parent = scopes[paths[declaration_index]].parent
+            shadows = any(other < index and candidate.scoped_name == symbol.scoped_name
+                          for other, candidate in declarations.items())
+            while parent is not None:
+                shadows = shadows or symbol.raw_name in parent.bindings
+                parent = parent.parent
+            if shadows:
+                return CanonicalAnalysis(values, [], "lexical-fallback",
+                    f"JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED: {value} at line {tokens[index].line}")
+
     overrides: dict[tuple[int, int], _Symbol] = {}
     for index, token in enumerate(tokens):
         symbol = declarations.get(index)

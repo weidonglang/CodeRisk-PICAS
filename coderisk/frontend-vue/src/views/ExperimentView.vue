@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import { Refresh } from '@element-plus/icons-vue'
 import { onMounted, ref } from 'vue'
+import { percent } from '../utils/presentation'
 
 import { getLatestExperiment, type ExperimentMetricRow, type LatestExperiment } from '../api/experimentApi'
 
 const loading = ref(false)
 const error = ref('')
 const experiment = ref<LatestExperiment | null>(null)
-
-function percent(value: number | undefined) {
-  return `${Math.round((value ?? 0) * 100)}%`
-}
 
 async function load() {
   loading.value = true

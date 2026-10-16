@@ -1,0 +1,212 @@
+{
+  "status": "EXTERNAL_EXPLORATORY_INTAKE_NOT_FORMAL_BENCHMARK",
+  "dataset": "xlcost",
+  "source_repository": "codeparrot/xlcost-text-to-code",
+  "source_revision": "60c5c133f043a5cffe162f9de1c62b9d88f309cf",
+  "pin_config_sha256": "52e73ca7b05230f27c8897b1261acdacda923d7fd9f43e9a2b52a1e7965e8db2",
+  "downloaded_at_utc": "2026-10-09T23:13:44.470096+00:00",
+  "random_seed": 20261010,
+  "quota": 2000,
+  "summary": {
+    "source_records": 57661,
+    "source_records_by_language": {
+      "c": 574,
+      "cpp": 11198,
+      "csharp": 10735,
+      "java": 11028,
+      "javascript": 9951,
+      "php": 3553,
+      "python": 10622
+    },
+    "sources_by_upstream_split": {
+      "test": 4851,
+      "train": 50168,
+      "valid": 2642
+    },
+    "unique_language_text_hashes": 57216,
+    "unique_problem_titles": 9473,
+    "source_records_without_alignment_title": 0,
+    "cross_split_language_text_hashes": 23,
+    "selected_pairs": 30893,
+    "candidate_pairs_by_language": {
+      "c/cpp": 173,
+      "c/csharp": 176,
+      "c/java": 180,
+      "c/javascript": 137,
+      "c/php": 63,
+      "c/python": 164,
+      "cpp/csharp": 2000,
+      "cpp/java": 2000,
+      "cpp/javascript": 2000,
+      "cpp/php": 2000,
+      "cpp/python": 2000,
+      "csharp/java": 2000,
+      "csharp/javascript": 2000,
+      "csharp/php": 2000,
+      "csharp/python": 2000,
+      "java/javascript": 2000,
+      "java/php": 2000,
+      "java/python": 2000,
+      "javascript/php": 2000,
+      "javascript/python": 2000,
+      "php/python": 2000
+    },
+    "exclusions": {
+      "ambiguous_same_language_titles_excluded": 1207,
+      "titles_across_upstream_splits_excluded": 25,
+      "identical_cross_language_token_text_excluded": 9,
+      "titles_with_split_shared_code_hashes_excluded": 3,
+      "duplicate_content_candidates_excluded": 2
+    },
+    "formal_eligible_pairs": 0,
+    "selection_uses_detector_scores": false,
+    "problem_disjoint_verified": false,
+    "source_disjoint_verified": false,
+    "official_parallel_alignment_verified": false
+  },
+  "upstream_files": [
+    {
+      "path": "README.md",
+      "size": 3322,
+      "git_blob": "f2923d257c891d9e2d6315eb27475bf3bc1eeddb",
+      "observed_sha256": "e48ffaf648e4eeb33f77924ff09fcf5496224ef8779d5ad456ed5e622171f185"
+    },
+    {
+      "path": "data/C++-program-level/test.json",
+      "size": 1000974,
+      "sha256": "88cddc054a905e017b73ff264b278fcee456d885f64111e606eac62e3fce5fc5",
+      "observed_sha256": "88cddc054a905e017b73ff264b278fcee456d885f64111e606eac62e3fce5fc5"
+    },
+    {
+      "path": "data/C++-program-level/train.json",
+      "size": 11749665,
+      "sha256": "31013e3fc4da2e3a301b40314ced8d8ce347333166b1e6a6f5167464c2ec8563",
+      "observed_sha256": "31013e3fc4da2e3a301b40314ced8d8ce347333166b1e6a6f5167464c2ec8563"
+    },
+    {
+      "path": "data/C++-program-level/valid.json",
+      "size": 556044,
+      "sha256": "1906e454c71474f981ce3872deeb267040122827c33c56aef3d5faa1e73cec5e",
+      "observed_sha256": "1906e454c71474f981ce3872deeb267040122827c33c56aef3d5faa1e73cec5e"
+    },
+    {
+      "path": "data/C-program-level/test.json",
+      "size": 40879,
+      "sha256": "f8aed4cf2b793bad7c3d67b7a4a50eb687a379656a1f358bb1a5566226fce5eb",
+      "observed_sha256": "f8aed4cf2b793bad7c3d67b7a4a50eb687a379656a1f358bb1a5566226fce5eb"
+    },
+    {
+      "path": "data/C-program-level/train.json",
+      "size": 589347,
+      "sha256": "33b033aa637f40013b957e6d40b33cf21852fc124f462a0007b00c19e44e4d69",
+      "observed_sha256": "33b033aa637f40013b957e6d40b33cf21852fc124f462a0007b00c19e44e4d69"
+    },
+    {
+      "path": "data/C-program-level/valid.json",
+      "size": 55308,
+      "sha256": "021684b0925273229ef849c331917371bf552817fc51cf9271c2ba5f1757a48a",
+      "observed_sha256": "021684b0925273229ef849c331917371bf552817fc51cf9271c2ba5f1757a48a"
+    },
+    {
+      "path": "data/Csharp-program-level/test.json",
+      "size": 1018926,
+      "sha256": "385306c1a850108f1e79c5ff954a2eea1e95766dc2c53eae8956a3dceb02a9c3",
+      "observed_sha256": "385306c1a850108f1e79c5ff954a2eea1e95766dc2c53eae8956a3dceb02a9c3"
+    },
+    {
+      "path": "data/Csharp-program-level/train.json",
+      "size": 11335152,
+      "sha256": "6b18b499b80ae9460a7aed27cc017e4af9ef818c581f4751f3984f91783e32ca",
+      "observed_sha256": "6b18b499b80ae9460a7aed27cc017e4af9ef818c581f4751f3984f91783e32ca"
+    },
+    {
+      "path": "data/Csharp-program-level/valid.json",
+      "size": 572380,
+      "sha256": "ee48fef242c41ce6a647eb33aeffee8a1a075e19da8aabc0ecab00c24b4858d9",
+      "observed_sha256": "ee48fef242c41ce6a647eb33aeffee8a1a075e19da8aabc0ecab00c24b4858d9"
+    },
+    {
+      "path": "data/Java-program-level/test.json",
+      "size": 1061434,
+      "sha256": "4c48bed16c13e0f694e233204254aeffe7faa84b57d1f717fa8708242cabb104",
+      "observed_sha256": "4c48bed16c13e0f694e233204254aeffe7faa84b57d1f717fa8708242cabb104"
+    },
+    {
+      "path": "data/Java-program-level/train.json",
+      "size": 12054488,
+      "sha256": "a7f546485180b7c1b17ac92d40969525ad44943776efca83ce8996d03d551792",
+      "observed_sha256": "a7f546485180b7c1b17ac92d40969525ad44943776efca83ce8996d03d551792"
+    },
+    {
+      "path": "data/Java-program-level/valid.json",
+      "size": 588528,
+      "sha256": "854f4b05dd38e5c61ca5080eaa3eee532cb836c739073fd718d1ab878bd4a3c1",
+      "observed_sha256": "854f4b05dd38e5c61ca5080eaa3eee532cb836c739073fd718d1ab878bd4a3c1"
+    },
+    {
+      "path": "data/Javascript-program-level/test.json",
+      "size": 854036,
+      "sha256": "9761eabed6912a347108cac79383c90a4840ec63270112ce1b2441c931c49323",
+      "observed_sha256": "9761eabed6912a347108cac79383c90a4840ec63270112ce1b2441c931c49323"
+    },
+    {
+      "path": "data/Javascript-program-level/train.json",
+      "size": 8518827,
+      "sha256": "5dba75d03730d1355eb38329e75be642b058dfc49c2f7a5cbe34a616eff9ca74",
+      "observed_sha256": "5dba75d03730d1355eb38329e75be642b058dfc49c2f7a5cbe34a616eff9ca74"
+    },
+    {
+      "path": "data/Javascript-program-level/valid.json",
+      "size": 471108,
+      "sha256": "270c207434227c9a2f8515ceb58c6ae3651c47e330f0c2c5ddaef578bea50b02",
+      "observed_sha256": "270c207434227c9a2f8515ceb58c6ae3651c47e330f0c2c5ddaef578bea50b02"
+    },
+    {
+      "path": "data/PHP-program-level/test.json",
+      "size": 236146,
+      "sha256": "08e0bb93a111b191b6089e19c9ec93a1761ca7237e00bcdf4fd4b5281a2ee578",
+      "observed_sha256": "08e0bb93a111b191b6089e19c9ec93a1761ca7237e00bcdf4fd4b5281a2ee578"
+    },
+    {
+      "path": "data/PHP-program-level/train.json",
+      "size": 2535364,
+      "sha256": "bfeb8b8c8d1b8269b7dd3ab05f4b8b04387a1f01b00147180e9c2ad8b014b6cc",
+      "observed_sha256": "bfeb8b8c8d1b8269b7dd3ab05f4b8b04387a1f01b00147180e9c2ad8b014b6cc"
+    },
+    {
+      "path": "data/PHP-program-level/valid.json",
+      "size": 132300,
+      "sha256": "c7f2466aeee6befee184e5e6aa6a2e86111f3da31fcd206dd9a56d3f8ba03fa8",
+      "observed_sha256": "c7f2466aeee6befee184e5e6aa6a2e86111f3da31fcd206dd9a56d3f8ba03fa8"
+    },
+    {
+      "path": "data/Python-program-level/test.json",
+      "size": 1024586,
+      "sha256": "bb117e56e82665fc9090363788381f228fa73c4adaafc53957b8c37d6b2cd6da",
+      "observed_sha256": "bb117e56e82665fc9090363788381f228fa73c4adaafc53957b8c37d6b2cd6da"
+    },
+    {
+      "path": "data/Python-program-level/train.json",
+      "size": 11488472,
+      "sha256": "29dc13f900e47677e1852055cbced6a3096e28ca1f88d0d6901f408244805214",
+      "observed_sha256": "29dc13f900e47677e1852055cbced6a3096e28ca1f88d0d6901f408244805214"
+    },
+    {
+      "path": "data/Python-program-level/valid.json",
+      "size": 569931,
+      "sha256": "77024ba2907a05dcfbfccd2b15c7bc4800eabd290b4effbbdbfe681d877b6cfa",
+      "observed_sha256": "77024ba2907a05dcfbfccd2b15c7bc4800eabd290b4effbbdbfe681d877b6cfa"
+    }
+  ],
+  "registry_sha256": {
+    "source_registry.jsonl": "63716f27d2e105fb1835e486a0795cbf67f052dcc59f57a6d00f8a3d9325e9bc",
+    "source_codes.jsonl": "a097514d7e4a5442dd90fda7ddb563525992355dab092709323c21f682bd1ff1",
+    "selected_pairs.jsonl": "bf03b62a7f8617297595d31acf0baaee280a061bbccd44a3dc85e9d31ee47c2d",
+    "audit_summary.json": "4f2b068942b70a1e0a15b4b72a9dd8bbfccf5e9de1c27c2148da1fcf4fade9bd"
+  },
+  "license_observation": "HF mirror declares CC-BY-SA-4.0; upstream XLCoST repository Apache-2.0 does not automatically license original GeeksForGeeks sources. Preserve provenance; raw records remain local.",
+  "detector_scored_pairs": 0,
+  "formal_eligible_pairs": 0,
+  "algorithm_changed": false,
+  "all_downloaded_programs_executed": false
+}

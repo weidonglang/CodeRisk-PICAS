@@ -1,5 +1,9 @@
 # ARCHITECTURE.md
 
+> 2026-10-16开发体验增量：Vue继续使用原API，新增共享后端连接状态、中文状态/缺失值展示和证据标签页；`scripts/start-dev.ps1`按分析→后端→前端启动并等待真实就绪，`stop-dev.ps1`按进程身份停止托管树，日志/状态仅存本地`.tmp`。未新增业务服务、生产评分或数据库迁移，分析地址配置不冒充实时健康。见 [运行流程与验证](FRONTEND_AND_DEV_WORKFLOW.md)。
+
+> 2026-10-09 后续修复：结果页先读取任务状态再取结果；启动恢复同步已有结果对应 failure.resolved。同题画像更新先锁 question 行并加入保存结果事务，保证首次写入串行化及每对快照保存。已做 H2 两事务验证，仍为单后端架构，未验证 MySQL 实库。见 [修复记录](proposal/AI_REVIEW_HARDENING.md)。
+
 > 2026-10-09 本轮增量：任务执行已使用 Spring ThreadPoolTaskExecutor 和数据库状态认领：默认 2 工作线程、8 等待任务、900 秒单次时间预算。逐对分析/保存，前端轮询；成功结果复用、失败历史、服务启动后的人工重试已贯通。单实例部署，未实现 Redis 队列或分布式租约。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 > 2026-10-09：Python `review_context.py` 新增评分之外的语言版本、登记模板与有效代码量复核层。Spring Boot 的题目/上传 DTO 与 Flyway V4 保存输入，TaskService 传至分析器，ResultRepository 沿用证据 JSON 快照；Vue 和 HTML 报告展示该快照。不得从待测集合挖掘模板或自动生成关系标签，边界见 [说明](proposal/VERSION_AND_NATURAL_SIMILARITY.md)。

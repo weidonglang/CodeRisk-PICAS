@@ -1,0 +1,165 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "sample_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Sample Id",
+      "type": "string"
+    },
+    "problem_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Problem Id",
+      "type": "string"
+    },
+    "source_family_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Source Family Id",
+      "type": "string"
+    },
+    "generation_session_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Generation Session Id"
+    },
+    "origin_type": {
+      "enum": [
+        "HUMAN",
+        "AI",
+        "UNKNOWN"
+      ],
+      "title": "Origin Type",
+      "type": "string"
+    },
+    "ai_assistance_type": {
+      "enum": [
+        "HUMAN_ONLY",
+        "PURE_AI",
+        "AI_ASSISTED",
+        "UNKNOWN"
+      ],
+      "title": "Ai Assistance Type",
+      "type": "string"
+    },
+    "parent_sample_id": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Parent Sample Id"
+    },
+    "code_path": {
+      "title": "Code Path",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "python",
+        "java"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "code_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Code Sha256",
+      "type": "string"
+    },
+    "syntax_status": {
+      "enum": [
+        "PASSED",
+        "FAILED",
+        "NOT_RUN"
+      ],
+      "title": "Syntax Status",
+      "type": "string"
+    },
+    "functional_check_status": {
+      "enum": [
+        "PASSED",
+        "FAILED",
+        "NOT_RUN"
+      ],
+      "title": "Functional Check Status",
+      "type": "string"
+    },
+    "functional_check_evidence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Functional Check Evidence"
+    },
+    "raw_output_ref": {
+      "title": "Raw Output Ref",
+      "type": "string"
+    },
+    "license_or_authorization_ref": {
+      "title": "License Or Authorization Ref",
+      "type": "string"
+    },
+    "redistribution_allowed": {
+      "title": "Redistribution Allowed",
+      "type": "boolean"
+    },
+    "privacy_status": {
+      "enum": [
+        "PUBLIC_AUTHORIZED",
+        "LOCAL_RESTRICTED",
+        "SYNTHETIC"
+      ],
+      "title": "Privacy Status",
+      "type": "string"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "split": {
+      "enum": [
+        "validation",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sample_id",
+    "problem_id",
+    "source_family_id",
+    "generation_session_id",
+    "origin_type",
+    "ai_assistance_type",
+    "parent_sample_id",
+    "code_path",
+    "language",
+    "code_sha256",
+    "syntax_status",
+    "functional_check_status",
+    "functional_check_evidence",
+    "raw_output_ref",
+    "license_or_authorization_ref",
+    "redistribution_allowed",
+    "privacy_status",
+    "synthetic",
+    "split"
+  ],
+  "title": "Artifact",
+  "type": "object"
+}

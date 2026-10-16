@@ -1,0 +1,1608 @@
+{
+  "preexisting_count": 197,
+  "intentionally_updated_existing_documents": [
+    {
+      "path": "README.md",
+      "before": "081dca4d76d5d54c61a733a03edaa9e477b0a32c07eeeafbfd2ccac3d31ae750",
+      "after": "e615a9ec0d3c7df3f8adda414f2b5fb0f86f0ab3b72336e1007ef3d3a670058a"
+    },
+    {
+      "path": "coderisk/KNOWN_ISSUES.md",
+      "before": "0b6b1b073fd71d99a7a08cd9e940553199e2e419a2ea79b1f52aa5d06d141567",
+      "after": "657d0cec09b4a41e9405a61fd77f230fea6b9c17b68d358a197805e015ec5b5a"
+    },
+    {
+      "path": "coderisk/TEST_REPORT.md",
+      "before": "affe9b06895624e2e82106d704378cf229472a8940e1af2d758551b2a1fc49cc",
+      "after": "7ed26756f1b4b74ee39022cc618727a1b7175846c57261ca8e9cc77862ebe43b"
+    },
+    {
+      "path": "coderisk_docs/EXPERIMENT_PLAN.md",
+      "before": "65fbc6553a4aef170815aff25f9fa48638455749f93fa95d2ce6a18bc569094a",
+      "after": "010e4600a402b05e6c6953f21849694f609dd098aa68da132f1c92c1a6473557"
+    },
+    {
+      "path": "coderisk_docs/PAPER_OUTLINE.md",
+      "before": "c527b75a2409031bf1854aae82c589d0ee861e0da85d365ea67d28099db68147",
+      "after": "7fa2c52e2bbd283c0034d094efb3f01f27b214bf4040cd003aede7540b67270f"
+    },
+    {
+      "path": "coderisk_docs/README.md",
+      "before": "97b0d384e2ae4dddaa20cafee2af6abc021a1568fc4890e7ecbb6dc9c00eab28",
+      "after": "bb6e30bb2a43baa2d69af5b61c65f4dea5f38ffd9930e778c4a7bbf54747838e"
+    },
+    {
+      "path": "coderisk_docs/ROADMAP.md",
+      "before": "3d6abec3eae614f00266c2e885ee788a9dd41daabb64ec696fc5d50544f79a30",
+      "after": "bd050907413ff9260506854d4e906bc77fed6bbe0f55a06855659fd285b24559"
+    },
+    {
+      "path": "coderisk_docs/TEST_PLAN.md",
+      "before": "0e1c10c5ec0b47fe6cb62bc4ec2e670be2afcb6985f02f9fe775c37010b123c6",
+      "after": "099f72f5981bab657df8fc063b45a6f28a9cd4a47dfcca134b569e86bc9ec8cb"
+    },
+    {
+      "path": "coderisk_docs/VERSION_MATRIX.md",
+      "before": "b3f8b46e720cb1cfdee78a6cd4ff4ebd8c2b2040f4998a4ecbb2caac18062c6a",
+      "after": "a8e4733cc75b3bf0994e335e57561b93d451794d421bc5b1ca494152d609791b"
+    },
+    {
+      "path": "coderisk_docs/proposal/LITERATURE_MATRIX.md",
+      "before": "b2c95c8206046b2999fb664521f7dc319b25d977ea0c9f427f58cc9ccc8deac8",
+      "after": "10cff26ad93547b5a7e6977983f1129136333f15f5d5ad0950e3fc9facb3824d"
+    },
+    {
+      "path": "coderisk_docs/proposal/PROPOSAL_DRAFT.md",
+      "before": "0f6c4340160afde964f4544ed6e970dab224fcdc65b08d56e428de557702c63c",
+      "after": "e0baf738652b4b2bf9bbb452438c6cac95fee53c8d13439d022e1e0e97a3cb15"
+    },
+    {
+      "path": "coderisk_docs/proposal/README.md",
+      "before": "00f93c1a8fbeb738f64aefd02423a08039306c84645c491108277236dddd128e",
+      "after": "7bb14e24baf65087872098e3dfe028b08c19ffa28a24784db3d815a3883058f0"
+    }
+  ],
+  "preexisting_other_files_preserved": [
+    "coderisk/README.md",
+    "coderisk/analysis-service-python/app/analyzers/canonicalization.py",
+    "coderisk/analysis-service-python/tests/test_irplag_intake.py",
+    "coderisk/analysis-service-python/tests/test_review_identity.py",
+    "coderisk/backend-springboot/src/main/java/com/coderisk/question/QuestionFeatureRepository.java",
+    "coderisk/backend-springboot/src/main/java/com/coderisk/task/TaskRepository.java",
+    "coderisk/backend-springboot/src/main/java/com/coderisk/task/TaskService.java",
+    "coderisk/backend-springboot/src/test/java/com/coderisk/SystemControllerTest.java",
+    "coderisk/experiment/RUN_RESEARCH_V4.md",
+    "coderisk/experiment/acquire_irplag.py",
+    "coderisk/experiment/add_research_v4_case.py",
+    "coderisk/experiment/annotation_workbench.html",
+    "coderisk/experiment/audit_irplag.py",
+    "coderisk/experiment/datasets/research-v4/DATA_CARD.md",
+    "coderisk/experiment/datasets/research-v4/DATA_COLLECTION_GUIDE.md",
+    "coderisk/experiment/datasets/research-v4/case.schema.json",
+    "coderisk/experiment/datasets/research-v4/manual_case.template.json",
+    "coderisk/experiment/datasets/research-v4/templates/ai_assisted_case.template.json",
+    "coderisk/experiment/datasets/research-v4/templates/external_case.template.json",
+    "coderisk/experiment/datasets/research-v4/templates/manual_case.template.json",
+    "coderisk/experiment/evidence/irplag-review-v2-20261009/README.md",
+    "coderisk/experiment/evidence/irplag-review-v2-20261009/blind_batch.jsonl",
+    "coderisk/experiment/evidence/irplag-review-v2-20261009/publisher_labels_for_adjudicator.jsonl",
+    "coderisk/experiment/evidence/irplag-review-v2-20261009/review_preparation.json",
+    "coderisk/experiment/evidence/review-hardening-20261009/README.md",
+    "coderisk/experiment/evidence/review-hardening-20261009/ai_technical_reviews.json",
+    "coderisk/experiment/evidence/review-hardening-20261009/browser_check.json",
+    "coderisk/experiment/evidence/review-hardening-20261009/runtime.json",
+    "coderisk/experiment/evidence/review-hardening-20261009/task-race.png",
+    "coderisk/experiment/evidence/review-hardening-20261009/verification.json",
+    "coderisk/experiment/prepare_annotation_workbench.py",
+    "coderisk/experiment/prepare_irplag_review.py",
+    "coderisk/experiment/research_protocol.py",
+    "coderisk/experiment/research_v4_dataset.py",
+    "coderisk/experiment/research_v4_jplag.py",
+    "coderisk/experiment/verify_task_result_browser.js",
+    "coderisk/frontend-vue/src/views/TaskResultView.vue",
+    "coderisk_docs/ALGORITHM_SPEC.md",
+    "coderisk_docs/API_SPEC.md",
+    "coderisk_docs/ARCHITECTURE.md",
+    "coderisk_docs/CANONICALIZATION_SPEC.md",
+    "coderisk_docs/DATABASE_SCHEMA.md",
+    "coderisk_docs/GRADUATION_READINESS_REVIEW.md",
+    "coderisk_docs/PROJECT_SPEC.md",
+    "coderisk_docs/proposal/AI_REVIEW_HARDENING.md",
+    "coderisk_docs/proposal/CORE_REVIEW.md",
+    "coderisk_docs/proposal/DATA_PROTOCOL.md",
+    "coderisk_docs/proposal/DATA_REVIEW_WORKBENCH.md",
+    "coderisk_docs/proposal/FAIR_EVALUATION.md",
+    "coderisk_docs/proposal/NEXT_THREE_PROGRESS.md",
+    "coderisk_docs/proposal/templates/pair_annotations.csv",
+    "coderisk_docs/research/GROUP_ACTION_INVARIANCE.md",
+    "CODEX_PICAS_.md",
+    "CODEX_PICAS_下一阶段_AI时代价值验证与研究开发任务书.md",
+    "coderisk/analysis-service-python/tests/test_codexglue_bcb_intake.py",
+    "coderisk/analysis-service-python/tests/test_development_fusion_probes.py",
+    "coderisk/analysis-service-python/tests/test_group_action_fallback_contracts.py",
+    "coderisk/analysis-service-python/tests/test_group_action_golden_bindings.py",
+    "coderisk/analysis-service-python/tests/test_group_action_noninvariance.py",
+    "coderisk/analysis-service-python/tests/test_group_action_orbits.py",
+    "coderisk/analysis-service-python/tests/test_group_action_runner.py",
+    "coderisk/analysis-service-python/tests/test_nonjava_intake.py",
+    "coderisk/analysis-service-python/tests/test_opening_formal_readiness.py",
+    "coderisk/analysis-service-python/tests/test_opening_readiness_runner.py",
+    "coderisk/analysis-service-python/tests/test_research_v4_eligibility.py",
+    "coderisk/experiment/acquire_codexglue_bcb.py",
+    "coderisk/experiment/acquire_nonjava_datasets.py",
+    "coderisk/experiment/check_formal_readiness.py",
+    "coderisk/experiment/datasets/development-fusion-probes/probes.json",
+    "coderisk/experiment/datasets/research-v4/templates/opening_review_extension.template.json",
+    "coderisk/experiment/diagnose_development_probes.py",
+    "coderisk/experiment/evidence/codexglue-bcb-intake-20261010/README.md",
+    "coderisk/experiment/evidence/codexglue-bcb-intake-20261010/audit_summary.json",
+    "coderisk/experiment/evidence/codexglue-bcb-intake-20261010/manifest.json",
+    "coderisk/experiment/evidence/codexglue-bcb-intake-20261010/verification.json",
+    "coderisk/experiment/evidence/development-fusion-20261010-r2/README.md",
+    "coderisk/experiment/evidence/development-fusion-20261010-r2/component_table.csv",
+    "coderisk/experiment/evidence/development-fusion-20261010-r2/manifest.json",
+    "coderisk/experiment/evidence/development-fusion-20261010-r2/pair_diagnostics.json",
+    "coderisk/experiment/evidence/development-fusion-20261010-r2/report.md",
+    "coderisk/experiment/evidence/development-fusion-20261010/component_table.csv",
+    "coderisk/experiment/evidence/development-fusion-20261010/manifest.json",
+    "coderisk/experiment/evidence/development-fusion-20261010/pair_diagnostics.json",
+    "coderisk/experiment/evidence/development-fusion-20261010/report.md",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/README.md",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/collection_summary.json",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/poolc/audit_summary.json",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/poolc/manifest.json",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/verification.json",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/xlcost/audit_summary.json",
+    "coderisk/experiment/evidence/nonjava-intake-20261010/xlcost/manifest.json",
+    "coderisk/experiment/evidence/opening-research-20261011/README.md",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/REPORT.md",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/borderline.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/config.json",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/coverage.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/dataset_validation.json",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/excluded.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/failures.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/metrics.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/parser_fallbacks.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/predictions.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/rename_stability.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/results.json",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/retrieval.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/run_manifest.json",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/scores.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/ablation/selection.json",
+    "coderisk/experiment/evidence/opening-research-20261011/artifact_hashes.before-repair.json",
+    "coderisk/experiment/evidence/opening-research-20261011/artifact_hashes.initial.json",
+    "coderisk/experiment/evidence/opening-research-20261011/artifact_hashes.json",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/changed_decision_cases.jsonl",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/component_contributions.png",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/component_summary.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/frozen_decision_summary.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/manifest.json",
+    "coderisk/experiment/evidence/opening-research-20261011/conplag-readonly/pair_decomposition.jsonl",
+    "coderisk/experiment/evidence/opening-research-20261011/failure_records.before-hash-repair.json",
+    "coderisk/experiment/evidence/opening-research-20261011/failure_records.initial.json",
+    "coderisk/experiment/evidence/opening-research-20261011/failure_records.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/REPORT.md",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/borderline.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/config.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/dataset_validation.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/excluded.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/failures.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/mathematical_contracts.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/metrics.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/parser_fallbacks.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/predictions.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/queries.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/reference_audit.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/results.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/run_manifest.json",
+    "coderisk/experiment/evidence/opening-research-20261011/natural/selection.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/REPORT.md",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-block-locals/0/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-block-locals/1/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-declaration-point/0/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-declaration-point/1/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-internal-external-call/0/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/compile/java-internal-external-call/1/Main.java",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/config.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/discrimination.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/discrimination.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/fixture_summary.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/fixture_summary.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/gold_bindings.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/gold_bindings.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/properties.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/properties.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/rename_sensitivity.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/rename_sensitivity.json",
+    "coderisk/experiment/evidence/opening-research-20261011/properties/run_manifest.json",
+    "coderisk/experiment/evidence/opening-research-20261011/readiness/REPORT.md",
+    "coderisk/experiment/evidence/opening-research-20261011/readiness/case_readiness.csv",
+    "coderisk/experiment/evidence/opening-research-20261011/readiness/dataset_validation.json",
+    "coderisk/experiment/evidence/opening-research-20261011/readiness/report.json",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/maven-SystemControllerTest.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-green.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/normalization-red.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/pip-freeze.txt",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline-r2.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/python-baseline.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/python-final-r2.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/python-final.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/python-pinned-parser.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/tests/tools-tests.xml",
+    "coderisk/experiment/evidence/opening-research-20261011/verification.initial.json",
+    "coderisk/experiment/evidence/opening-research-20261011/verification.json",
+    "coderisk/experiment/group_action_oracle.py",
+    "coderisk/experiment/group_action_properties.py",
+    "coderisk/experiment/nonjava_dataset_pins.json",
+    "coderisk/experiment/record_nonjava_intake_evidence.py",
+    "coderisk/experiment/requirements-intake.txt",
+    "coderisk_docs/proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md",
+    "coderisk_docs/research/FAIR_EVALUATION_PROTOCOL_V2.md",
+    "coderisk_docs/research/GROUP_ACTION_PROOF_OBLIGATIONS.md",
+    "coderisk_docs/research/HUMAN_REQUIRED_CHECKLIST.md",
+    "coderisk_docs/research/INVARIANCE_DISCRIMINABILITY_REPORT.md",
+    "coderisk_docs/research/OPENING_BASELINE_AUDIT.md",
+    "coderisk_docs/research/OPENING_DEFENSE_QA.md",
+    "coderisk_docs/research/OPENING_RESEARCH_PACKAGE.md",
+    "coderisk_docs/research/ORBIT_ALPHA_EQUIVALENCE.md",
+    "coderisk_docs/research/REAL_DATA_ACTION_GUIDE.md"
+  ],
+  "new_files_except_generated_archive": [
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_analysis.py",
+      "sha256": "0c5a8b53ca6a6e9a1cdd0e134db970d7348171cd85fc82156b94665d7b75a88e"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_privacy.py",
+      "sha256": "101bcad8d1680eaa259920d8ef178e6170b2b17b42ed576d64e7a9e6cff29862"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_protocol.py",
+      "sha256": "c3ba72f5d079857fd70c26c3e309938888f292609fa2b0f356ef4b6c64e7a92b"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/README.md",
+      "sha256": "87cd1b43f7a0c247db4b920ee837ce495b946a050916aa2df717cc305d11d39f"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/__init__.py",
+      "sha256": "ed9d03b6375a715033c17f71ae1200bed6ffd6ebeefa3e3d0eeb67bff1e4ee9e"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/analyze.py",
+      "sha256": "34dc6d87cae9af238752dee48cbd2f6c98613ce21a166281c96546fb82bbb508"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/budget.template.csv",
+      "sha256": "f92df02e263fd749889282a70e09163ce4ca5e69b3be8b20e3e38c330b190bc8"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/build_pairs.py",
+      "sha256": "e0464010106119e2dfe8979e5c1b9e3f48e534cd6c4654a2de85934e46d70880"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/config.example.json",
+      "sha256": "6fd87600ca05d00422cc9dd01768c42e63bbffc300f28b334f5d5a9feb3795c1"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/context.py",
+      "sha256": "326ea2dabac9d189313700d3796f01c0bbe8abc8e7a572273975443096590bc2"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/descriptive_stats.py",
+      "sha256": "3bf030e1f418c786c190a93217742ead7b0fe3b5995ecc14361c750148aea93f"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/examples/make_seed.py",
+      "sha256": "a8c9258839dc5eff4abfe44dde6d2873a8903657ffe5e54cdac46ea3bc40ed69"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/export_public.py",
+      "sha256": "a105aa829bae162fc5f071dc26afe5796d19d63a78939f70a8e939e778db33be"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/ingest.py",
+      "sha256": "65adfa0326eea2150ab528c71c867551f8bb15ac50e862b50a443e64d5d5af4f"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/jplag.py",
+      "sha256": "96d12ea47f5b31dca4f467a2e1c3c640b3ef902947802d96d79d22670e9e46bf"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/prepare_review.py",
+      "sha256": "43aff15623fd78afe26e383ec8f8d57c93e62979d7c4b6eb802eb6982d9c98df"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/protocol.py",
+      "sha256": "a8d467c0a8e63b644c7a7ad06338f666bec31c81253bd1badc6be9a00480b9de"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/report.py",
+      "sha256": "476f4e84d5c8d035252524a77ff7bbf33173bcd8b700c418ccfd2034fc091367"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/artifact.schema.json",
+      "sha256": "381cf4acb0b317486372320d569bef06cf24da61eafb41116e1cb45deea0cb1a"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/corpus.schema.json",
+      "sha256": "b33b282b7667b46827be9f724305290c123644fa8e3d6cfcfa5734eb578c4937"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/generation_session.schema.json",
+      "sha256": "30ac4e330f6a3efb97252dc5bcade4e1668d39628e60114cda0d7dce220cb13e"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/pair_relation.schema.json",
+      "sha256": "57e31b9061d6de64b27b63789c6ed5f6f70487b9c73f5cd239e403c5f0272b0e"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/provenance.schema.json",
+      "sha256": "8ed0ab509486822d4a47acff3b408d8c6314dfba361637205d3c285e6f7150d9"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/schema/question.schema.json",
+      "sha256": "f2bcf316fb6b7edc20d4738ce38d090092d77857e07e1dcc92274f687a287670"
+    },
+    {
+      "path": "coderisk/experiment/ai_convergence/validate.py",
+      "sha256": "40706eed0a31f9c7f671f411bf5075995f6971cbc78bc4b9a786ccdd5b86b9c8"
+    },
+    {
+      "path": "coderisk_docs/research/AI_CONTEXT_EXPLANATION_SPEC.md",
+      "sha256": "4271685b46aebfd7ce10105b0397f04eeb49044735052811b6f278a984de4790"
+    },
+    {
+      "path": "coderisk_docs/research/AI_CONVERGENCE_PROTOCOL.md",
+      "sha256": "eb2dfd32fa289ab9ac441190806939f37d33b856db09dc2587ede9fe380dd769"
+    },
+    {
+      "path": "coderisk_docs/research/AI_ERA_CONTINUATION_20261012.md",
+      "sha256": "dfe98a11199a2360cc126371a51c10996832bfa6bb7de969ae562abba50d8374"
+    },
+    {
+      "path": "coderisk_docs/research/AI_ERA_FINAL_REPORT_20261012.md",
+      "sha256": "b28e04b2adea6bbe8d996f91364a5113f39f5edd785d631c22fa908197927bd4"
+    },
+    {
+      "path": "coderisk_docs/research/AI_ERA_VALUE_AUDIT.md",
+      "sha256": "f86a8894c8a4d5fce99ef39b8e2a3ca2c3d24cee9a426063adbbb135c87d8a98"
+    },
+    {
+      "path": "coderisk_docs/research/LIVE_GENERATION_PLAYBOOK.md",
+      "sha256": "0738d6bfb8106a0939fee34ef44d9e57046f9373ca3e5f74827b62f0e5acca76"
+    },
+    {
+      "path": "coderisk_docs/research/PICAS_GO_NO_GO_DECISION.md",
+      "sha256": "43c41e0cb277cacccfc060e2c17a20793cf0306ecce5ee0435f42cef74ff3b62"
+    },
+    {
+      "path": "coderisk_docs/research/PROPOSAL_AI_ERA_APPENDIX.md",
+      "sha256": "498538cb4c3180252b7edf51c9ecc0c76e2ee7b9051154b38c1f27c2530335dd"
+    },
+    {
+      "path": "coderisk_docs/research/REPRODUCE_AI_CONVERGENCE.md",
+      "sha256": "82819ac3f036a9df50877d9af1493ad452f569ac081f712cdaaa02c56c06de45"
+    },
+    {
+      "path": "coderisk_docs/research/TEST_AND_EVIDENCE_SUMMARY.md",
+      "sha256": "daf86cc837f08200202c3064d9b0f064b4a24022afcb53c57a5eff00e49d25c9"
+    },
+    {
+      "path": "coderisk_docs/research/VALUE_CLAIM_EVIDENCE_MATRIX.csv",
+      "sha256": "e54ecc67ee40059d724e66b60b1c88b16b4fdc3f5c0c490d620787c5b2182ee9"
+    }
+  ],
+  "curated_copies": [
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/assignment_preflight.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/assignment_preflight.json",
+      "sha256": "ba74b26e44df8bbdeab7a695cc8a0da80b263a6ac1d32e554d571614b601b3dc"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/assignment_preflight.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/assignment_preflight.md",
+      "sha256": "9ee292654cdaeee642187a80dcd09e8edea3b61fd27845dfe9cee81a2b3c2a96"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/baseline_comparison_metrics.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/baseline_comparison_metrics.csv",
+      "sha256": "db0a7ead05297b89a8238a00f82ac69284d4effb070e13b1a1e2638d76c9abb7"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/borderline.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/borderline.csv",
+      "sha256": "7c901f463b71698892366070ae9e1ca3d1aeea1b532321afbc646f7964e42fec"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/config.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/config.json",
+      "sha256": "cd869560a4981bd433d5ab939197b248dc8e89b3d7ac4aad2a14741ab3a234bb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/context_evidence.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/context_evidence.json",
+      "sha256": "c62cb653c589bbcefeac0da34f38989c4fdd6f528794dc3821fa9447e745c99e"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/dataset.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/dataset.json",
+      "sha256": "0d6c7c82f5aef57edc86758f0c325b76babca499298e0df6583e2b521e19b290"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/existing_loader_validation.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/existing_loader_validation.json",
+      "sha256": "ef1aa282a431aac2fbdafa00fcbc3d65b23d2f053650376a46c83ce3ca3410a0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/pairs.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/pairs.json",
+      "sha256": "5ed4ca2db522e7159774e88db20ede1cada46e46dd993ae97631804a9708bc9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/pair_index.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/pair_index.json",
+      "sha256": "e0af2e100e8d6ce394550dc77fa750358e1c5ee01c8a96a7b0c6eb033d9efd5c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-count-0.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-count-0.java",
+      "sha256": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-count-1.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-count-1.java",
+      "sha256": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-count-2.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-count-2.java",
+      "sha256": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-count-3.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-count-3.java",
+      "sha256": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-maximum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-maximum-0.py",
+      "sha256": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-maximum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-maximum-1.py",
+      "sha256": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-maximum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-maximum-2.py",
+      "sha256": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-maximum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-maximum-3.py",
+      "sha256": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-sum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-sum-0.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-sum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-sum-1.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-sum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-sum-2.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-sum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-sum-3.py",
+      "sha256": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/dataset/samples/MOCK-sum-controlled-rename.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/dataset/samples/MOCK-sum-controlled-rename.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/distributions.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/distributions.csv",
+      "sha256": "6272a15943787b5900b99394d13bebf30e988f1bc245063bfd3ef5b6ae8b2283"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/existing_loader.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/existing_loader.json",
+      "sha256": "ef1aa282a431aac2fbdafa00fcbc3d65b23d2f053650376a46c83ce3ca3410a0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/failures.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/failures.csv",
+      "sha256": "df0c8c7eec0d3edf7efa07130472609d42a339bc12c5a990e9e8f3b142512f0c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/metrics.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/metrics.csv",
+      "sha256": "884bec41995d4cc31bc99ee26fa6277b93acc52e23b1980a7aa6e36f7e571e09"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/plot_status.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/plot_status.json",
+      "sha256": "5bcd549c30ecdabdaffc11a4520cb33becbd4bf8b424ec66004b47848ed47ebf"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/question_distributions.png",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/question_distributions.png",
+      "sha256": "fecfe60ad523443dcb43b9c18ce896709253c624f46f78f977ef0bc3c132bd73"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/relation_metrics.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/relation_metrics.csv",
+      "sha256": "2f4930f469300d1f84eae51a2d50c02b4d15616154496e9de4381a53397ed913"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/REPORT.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/REPORT.md",
+      "sha256": "0f0943ca56d45a4df6c8976fc89dbfa3060bcf3604b641b67ca1a79e6796469d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/results.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/results.json",
+      "sha256": "4df5eac13f63aedafc6f367f0fdb9d247f6a4c99ad3563bfebbea87c1a19a720"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/run_manifest.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/run_manifest.json",
+      "sha256": "4c952002586ec1cfe1247bcc1838eee665c38776213aebecfb49bf9ccc3f631b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/scores.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/scores.csv",
+      "sha256": "df0c8c7eec0d3edf7efa07130472609d42a339bc12c5a990e9e8f3b142512f0c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/submission_review.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/submission_review.md",
+      "sha256": "bd957f8416b115dea77c4714d6c345d890db56c42631da39719a803788689735"
+    },
+    {
+      "source": "output/ai-era-value-20261012/analysis-release/validation.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/analysis/validation.json",
+      "sha256": "f8ab23fe1341244507188f65c8ce5f8064ca451547d043d297500fa57e3290aa"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-count-0.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-count-0.java",
+      "sha256": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-count-1.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-count-1.java",
+      "sha256": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-count-2.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-count-2.java",
+      "sha256": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-count-3.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-count-3.java",
+      "sha256": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-maximum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-maximum-0.py",
+      "sha256": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-maximum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-maximum-1.py",
+      "sha256": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-maximum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-maximum-2.py",
+      "sha256": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-maximum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-maximum-3.py",
+      "sha256": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-sum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-sum-0.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-sum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-sum-1.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-sum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-sum-2.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-sum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-sum-3.py",
+      "sha256": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/code/MOCK-sum-controlled-rename.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/code/MOCK-sum-controlled-rename.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/corpus.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/corpus.json",
+      "sha256": "668cbab8a9c0d0aa6ff434a9f51cfe2130d0231ce4aac997e3b4ac89b7ccc0ff"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/ingest_report.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/ingest_report.json",
+      "sha256": "f8ab23fe1341244507188f65c8ce5f8064ca451547d043d297500fa57e3290aa"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/prompts/count.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/prompts/count.txt",
+      "sha256": "6ca2c12da931b99d5cfe8953bd98c561f8567d3046bfe0da768479b49f792052"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/prompts/maximum.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/prompts/maximum.txt",
+      "sha256": "fe4189d0d7c8d813ba30372f945d295402d79d6fae00430db71352289923e315"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/prompts/sum.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/prompts/sum.txt",
+      "sha256": "d055aeab012d4e29814dfddc12c79e95cc315b07b4c35e3f576b9ba7e3a1d30c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/questions/count.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/questions/count.txt",
+      "sha256": "2e7ffcef61f806dedcd807a8833acf916498d5f7ab7d321528d53e670ddeb1a7"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/questions/maximum.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/questions/maximum.txt",
+      "sha256": "aec46c0977b59b60bc97f4921aa6e472a4d2b93235ffe7812ad429376c101c51"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/questions/sum.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/questions/sum.txt",
+      "sha256": "f3e8958110a067c0f52fcdea931c4e5164b982fdc069540634ae6d58f942a2fd"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-count-0.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-count-0.txt",
+      "sha256": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-count-1.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-count-1.txt",
+      "sha256": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-count-2.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-count-2.txt",
+      "sha256": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-count-3.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-count-3.txt",
+      "sha256": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-maximum-0.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-maximum-0.txt",
+      "sha256": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-maximum-1.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-maximum-1.txt",
+      "sha256": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-maximum-2.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-maximum-2.txt",
+      "sha256": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-maximum-3.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-maximum-3.txt",
+      "sha256": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-sum-0.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-sum-0.txt",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-sum-1.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-sum-1.txt",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-sum-2.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-sum-2.txt",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/raw/MOCK-sum-3.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/raw/MOCK-sum-3.txt",
+      "sha256": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-count-0-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-count-0-SESSION.json",
+      "sha256": "7b60d0253e6c8d51f4400e7fbb598fbfb5ea286e0308b8f4e07de9d297ab1742"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-count-1-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-count-1-SESSION.json",
+      "sha256": "1e202e38f688c02651fe84baa290ed92aca049b03681778f75bbe0b71e281a22"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-count-2-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-count-2-SESSION.json",
+      "sha256": "f5ace05c1a3757fb6a0def86235d9b9994433d62322c2e4da2ef6a0f8fb1010b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-count-3-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-count-3-SESSION.json",
+      "sha256": "48d8e01f5da54b417529f271655bf65fae763bd475a69d5d6721ce270c3546dc"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-maximum-0-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-maximum-0-SESSION.json",
+      "sha256": "8bc327f819eee653123b8f64fdfaf917c1ddb78bae974b5dbb287dff6c137fa3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-maximum-1-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-maximum-1-SESSION.json",
+      "sha256": "ec99af3322782271fbff301e3912058b18468af001465ad9d8433c4fae54eec0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-maximum-2-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-maximum-2-SESSION.json",
+      "sha256": "f92161600b5e0ec69a0863d4b1695d13d700e59ca1d47dea8203022007c041de"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-maximum-3-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-maximum-3-SESSION.json",
+      "sha256": "b91a4f4b99a349329a7de700c7a6822108133805eb177221b69c48d1d0155a3c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-sum-0-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-sum-0-SESSION.json",
+      "sha256": "aec6df6f5c455975eb03593e3d40c680495293d6167187aa63cd823d088ff50e"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-sum-1-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-sum-1-SESSION.json",
+      "sha256": "fe1f8d71eb485781df8b2c8c94fd07cecb3fcc30eb9195ba9afc718915646093"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-sum-2-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-sum-2-SESSION.json",
+      "sha256": "97130be544613e4b3dfbe7be05eb8e19d71305bd0ab20a32ef41cb307594b757"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/sessions/MOCK-sum-3-SESSION.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/sessions/MOCK-sum-3-SESSION.json",
+      "sha256": "94aea4c4b75ded7e31c9be0b54b4acd7344bb0bfbabc0b1f58e28e5bd4377248"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/SYNTHETIC_NOTICE.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/SYNTHETIC_NOTICE.txt",
+      "sha256": "c534f0063ac9549d73bb88106b0876a14d3facda9aa02733bdc04eee4a53358d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/intake/templates/sum.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/intake/templates/sum.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/alignment.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/alignment.csv",
+      "sha256": "9d7456cbe1ff64df66c634786cf1e81de0f12e4212184ce339ff4925d52d4705"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/baseline_results.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/baseline_results.csv",
+      "sha256": "639c410ec0f6ab588a0ee090d1200471f22f7edc5082395bf97270e078568a69"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/excluded.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/excluded.csv",
+      "sha256": "28dffed1091c742821b93610cab4a7226b1df20b3e00f5a48b3a9d0b0215700e"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/manifest.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/manifest.json",
+      "sha256": "f72a7fe8bd756a12aaacac95a71d0698f97a73cf46883430938b598616d3cbe9"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/java/results/results-anonymous-names.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/java/results/results-anonymous-names.csv",
+      "sha256": "d3d60f52e26f84c94e9d93abd436faf57af657ef3eda899e0019d19596ba331c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/java/results/results-anonymous.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/java/results/results-anonymous.csv",
+      "sha256": "29843713e4314f73879e362b1d9a00439e7dee8f7daffd3008dbcb1464ddf226"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/java/results/results.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/java/results/results.csv",
+      "sha256": "2285b1797bc5b0519b1ac673355ac7a6beafce0d099b7fbd1240e670bf5b758c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/java/stderr.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/java/stderr.txt",
+      "sha256": "8d8eee6061a35698fabc62ab0fec638939b832b12196386bf459eb60808ed8d6"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/java/stdout.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/java/stdout.txt",
+      "sha256": "d3ed3821d83bb135427b4b7001d04eb62ccde86a6492aa98662a299cb25df0c9"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/python/results/results-anonymous-names.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/python/results/results-anonymous-names.csv",
+      "sha256": "016a478ce54310ffdeea7430fa003aa3162e64b0c88b27c86eef81a303399d26"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/python/results/results-anonymous.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/python/results/results-anonymous.csv",
+      "sha256": "c30a5829cb83b0d560ff7aeefda66a7c0be5183498cd93652200b2a89914b8a3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/python/results/results.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/python/results/results.csv",
+      "sha256": "cec738fb32501b6f2b12f2d1257301122979b3e506bde33bc396d4d5944986bf"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/python/stderr.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/python/stderr.txt",
+      "sha256": "a2e71f3b590649e0c9b118dfb4898d61279c7acdf8f365f629729daed3d4a227"
+    },
+    {
+      "source": "output/ai-era-value-20261012/jplag/native/python/stdout.txt",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/jplag/native/python/stdout.txt",
+      "sha256": "9555472d57c890a61793af9299383c4c74306b799aaf797d6c4d653eaf2fa7fd"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-block-locals/0/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-block-locals/0/Main.java",
+      "sha256": "29efb35edd5119527fc0b0d0fc32c3bc5ab264db21ed639a97ab806c5591dc61"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-block-locals/1/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-block-locals/1/Main.java",
+      "sha256": "1bc447e928522b071533abfd886a0d77fd8063fa9aef780b2a410dfa58220d14"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-declaration-point/0/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-declaration-point/0/Main.java",
+      "sha256": "766749b53f8218c2f5b8f8d80991051a3bf83d26685366afc969038a5f64f03c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-declaration-point/1/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-declaration-point/1/Main.java",
+      "sha256": "f63cf9155b2a7489c82ca79b59d8a62000e5cab61321a46310176b7d8fb74cdb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-internal-external-call/0/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-internal-external-call/0/Main.java",
+      "sha256": "72e6c31d9ece261e5c16c0b79d4c40f2c5ba9f317a36d373f596bd675d551d47"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/compile/java-internal-external-call/1/Main.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/compile/java-internal-external-call/1/Main.java",
+      "sha256": "f5ed693bebe6c6f8677df636b0102bd19e11ebf65dac580b5b7343aa62037146"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/config.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/config.json",
+      "sha256": "99453d538c9f1b2310cafee7776498629d982c7025d2baaed7cfe159405caa3d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/discrimination.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/discrimination.csv",
+      "sha256": "0efba9a46597ba2703778e2af36eae5ec68c58439aada7ebc02f86707a963bca"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/discrimination.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/discrimination.json",
+      "sha256": "336167dbac92aba0f4d83874824659190265c5eda01d152f14ceb0cdd13772e1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/fixture_summary.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/fixture_summary.csv",
+      "sha256": "59892c6322f21ba14b1095a38ebbd1caa8ba8d063acd78b7e4292e806201881d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/fixture_summary.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/fixture_summary.json",
+      "sha256": "8535ea7486fb74c0f9815b75e0dd6f5a32b047521bb20a8898449ad1952ba046"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/gold_bindings.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/gold_bindings.csv",
+      "sha256": "7253ce24bc140f5c123adbbfbf98c28ce18d0d25333a098b938c56869027fd40"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/gold_bindings.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/gold_bindings.json",
+      "sha256": "bb25da35d82dbea26beea138f370828f30a3e00e205b0cf0217102df05f0b78a"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/properties.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/properties.csv",
+      "sha256": "2193510e5bb8e9c135d6bdd6372bccf12921ee1cc1de0b9511dbb0d71d7c30a5"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/properties.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/properties.json",
+      "sha256": "f7f0c7fc7e72cb460dd6a72f7a13858482cc5c1091ab8a787b14544f06ad690b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/rename_sensitivity.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/rename_sensitivity.csv",
+      "sha256": "95154aaa43bdfdbd3c5bf40712123fb9128cc148601289d5a31bc4f9922061ac"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/rename_sensitivity.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/rename_sensitivity.json",
+      "sha256": "3d490c4f96c0204fd3bd40625d09713cf4582f2959a6cffe6f1dcbd7951ad032"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/REPORT.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/REPORT.md",
+      "sha256": "fbfa0b9a9b934cd14d9bf32aae75da8c50931b921d6e19a9b50395a89e251f70"
+    },
+    {
+      "source": "output/ai-era-value-20261012/properties/run_manifest.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/properties/run_manifest.json",
+      "sha256": "189f8171623fdc3ba5342a8719c2c881741c329e1ae1743ff3311e7d378853a9"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/changed_decision_cases.jsonl",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/changed_decision_cases.jsonl",
+      "sha256": "945884977aab7a29d07f8c7590c64dadb0a68e4b453607e3853f075b9c57c583"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/component_contributions.png",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/component_contributions.png",
+      "sha256": "f483277d9b8139ef55743e803cd45da6281dd3c48e8e7d034a26e25679d5819b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/component_summary.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/component_summary.csv",
+      "sha256": "f7bd4729f4c35fa3cb1baa8d5f860078e4e62ea7ec4be7af5a6c2819866d9023"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/frozen_decision_summary.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/frozen_decision_summary.csv",
+      "sha256": "c4663355cb51f4fe8e2c042e030a3fcfd77b477e0689ee0b8ced5f8bb05aeabf"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/manifest.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/manifest.json",
+      "sha256": "54cbc9fccc9aaa697060fdff1da468e7e12187aa5d917be82530411d9c1f49c8"
+    },
+    {
+      "source": "output/ai-era-value-20261012/conplag-readonly/pair_decomposition.jsonl",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/conplag-readonly/pair_decomposition.jsonl",
+      "sha256": "23ee8c2f31a1cd89726a1819e972ce97d96489990f30d886d4ee2d8cc8045b50"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/dataset.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/dataset.json",
+      "sha256": "0d6c7c82f5aef57edc86758f0c325b76babca499298e0df6583e2b521e19b290"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/existing_loader_validation.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/existing_loader_validation.json",
+      "sha256": "ef1aa282a431aac2fbdafa00fcbc3d65b23d2f053650376a46c83ce3ca3410a0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/pairs.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/pairs.json",
+      "sha256": "5ed4ca2db522e7159774e88db20ede1cada46e46dd993ae97631804a9708bc9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/pair_index.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/pair_index.json",
+      "sha256": "e0af2e100e8d6ce394550dc77fa750358e1c5ee01c8a96a7b0c6eb033d9efd5c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-count-0.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-count-0.java",
+      "sha256": "9fd96904361c3d4bee8ca17d2875a31ef549d78e14d3881b617e988ba563ce9d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-count-1.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-count-1.java",
+      "sha256": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-count-2.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-count-2.java",
+      "sha256": "3b399e68ee153b19f1988786fd22102817ee72bc8949fee134bb154d0733d813"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-count-3.java",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-count-3.java",
+      "sha256": "093c125898f6178a64cd267fc88ca8491df0361fd04ad3e9f788be219d20f709"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-0.py",
+      "sha256": "6a5d9c5ecf9d8e17bc86eb95de15fcc00838fd46538a1a0748bd43d33f4faec3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-1.py",
+      "sha256": "1c65d26747ff0c903d5f6501a1aee6a45dcde4c0c03f58082446f91454391367"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-2.py",
+      "sha256": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-maximum-3.py",
+      "sha256": "c3ae3cb19b1ffe5e29bcba8bc44d6f3469b2531e2c8d9cf85a8aafe1d550b1c1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-0.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-0.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-1.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-1.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-2.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-2.py",
+      "sha256": "cea19e0d052effa624dcdc43aa23a00fde7012aeb588787abf420094dfdc3ef0"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-3.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-3.py",
+      "sha256": "3ee9182f87ebe5887367398f401d1b7f138771dd27bddb79e8acfcfb14ff3e6d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-controlled-rename.py",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/dataset/samples/MOCK-sum-controlled-rename.py",
+      "sha256": "f6dbfe4c8fbb04165e88afddfc6bc495f4f5311b5dff6e6761c11d6e41b6c4cb"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/FORMAL_BLOCKED.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/FORMAL_BLOCKED.json",
+      "sha256": "fbe36be9cc317c86e8f4a31b95a55bf6e5d54ac46cd80ec01b63209d94383152"
+    },
+    {
+      "source": "output/ai-era-value-20261012/formal/FORMAL_BLOCKED.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/formal/FORMAL_BLOCKED.md",
+      "sha256": "f0b2e1b7ec1ef74d81a9505b953fc4f036437663a634fa92847bfff47c274218"
+    },
+    {
+      "source": "output/ai-era-value-20261012/review-release/blind_batch.jsonl",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/review/blind_batch.jsonl",
+      "sha256": "5f3d709cf05e3c5c866a5d003b71db30c7a64e9512828cc86aea52a8433fa445"
+    },
+    {
+      "source": "output/ai-era-value-20261012/review-release/FORMAL_BLOCKED.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/review/FORMAL_BLOCKED.json",
+      "sha256": "dbf9fe16697e1875292a0518df4cc37010955564942ecbe930a1f1fb2d7200c7"
+    },
+    {
+      "source": "output/ai-era-value-20261012/review-release/FORMAL_BLOCKED.md",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/review/FORMAL_BLOCKED.md",
+      "sha256": "33e36ded7989d22f5a2aed065844f0ea9c0c070df3207a0e0935236de8e3097f"
+    },
+    {
+      "source": "output/ai-era-value-20261012/review-release/usability_record_template.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/review/usability_record_template.csv",
+      "sha256": "513ee6eec229d1c218a73da94d454f16bfc29e5474333ee2d8712b71831acc7c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/review-release/workbench.html",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/review/workbench.html",
+      "sha256": "afd7e889596eefbdbefa046fee2196a8115c4a6e4e3a1ce2c46173f8bb8aaf3b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/public-aggregates-release/aggregate_distributions.csv",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/public-aggregates/aggregate_distributions.csv",
+      "sha256": "254f7c72240e94983e152ce72b4b25781e41f8deb86a8549dcd5730bf3550e6f"
+    },
+    {
+      "source": "output/ai-era-value-20261012/public-aggregates-release/public_summary.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/public-aggregates/public_summary.json",
+      "sha256": "96c94adeb3d822d2f63ccbabc8ce166f7070dadf574d59d21a482bb76da71d01"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analysis-tests-r2.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analysis-tests-r2.log",
+      "sha256": "f3d1cfe081efb23bddfd52890886f0d451f304c25a3bd75a9b1410ef96020789"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analysis-tests-r2.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analysis-tests-r2.xml",
+      "sha256": "1b72de40e1e39514632bd2bb36d80964e7245d4e364bf966139e6de7203eece8"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analysis-tests.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analysis-tests.log",
+      "sha256": "3b0cade275d40317cd6a552f461b67d37af3dd8a16109660a3bd7fe62f8bb17b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analysis-tests.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analysis-tests.xml",
+      "sha256": "27b918cca244e1d97830de40d479ffa7672dbc10a8d4c0b1425ad3d10ee498c6"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analyze-aligned.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analyze-aligned.log",
+      "sha256": "d3694d734a88e0d264bc46743bd35a63603bb9e8502d525a7f0b85f40de202a2"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analyze-final.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analyze-final.log",
+      "sha256": "d3694d734a88e0d264bc46743bd35a63603bb9e8502d525a7f0b85f40de202a2"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analyze-r2.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analyze-r2.log",
+      "sha256": "d3694d734a88e0d264bc46743bd35a63603bb9e8502d525a7f0b85f40de202a2"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analyze-release.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analyze-release.log",
+      "sha256": "d3694d734a88e0d264bc46743bd35a63603bb9e8502d525a7f0b85f40de202a2"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/analyze.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/analyze.log",
+      "sha256": "2178d5cc71152550ed638b26c665653522cfa2a508545e5fddaa8e0e2d1970a9"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/cli-red.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/cli-red.log",
+      "sha256": "69d44e46406f6642e83c3a5cc63bc68d516b9973203d8d55fdbc7d7f1c0964e4"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/cli-red.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/cli-red.xml",
+      "sha256": "d7f98e8f56f17bcaae6921b682577016228592f6783fedcb270f08b1cc2dba18"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/conplag.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/conplag.log",
+      "sha256": "9108bac63eb76cb33bf24fc5a4342d9f11a9365fd0b6792969f07ebc0015e99b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/formal.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/formal.log",
+      "sha256": "64f5180b35c5e8b9bccb2af4d809d46662d8bf20b1535aa8348ed79c5c3d18bc"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/frontend.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/frontend.log",
+      "sha256": "348580e2cdc7efbb574415537ad5dba48fea8fbc09ee86bfa3a5d32270f4865a"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/ingest.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/ingest.log",
+      "sha256": "8dbd67bb20b5ee5d18c49a8e70e7d863177cbe1a70b62ee7f684d7fff8132833"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/jplag.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/jplag.log",
+      "sha256": "17bb0c53c6c11f06b8c12dbc29dec0a58bf847c115c9824a7e1d406edbc01527"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/make-seed.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/make-seed.log",
+      "sha256": "b2aaf029632dc40e73c5bc5c68aef1589233fb6b4e5b91df8b4093b184561d0a"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/maven.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/maven.log",
+      "sha256": "0b510a39b163eecb5c548ec647be4f930f0c14ae6465eab09f6e63f13f835b7f"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/privacy-red.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/privacy-red.log",
+      "sha256": "1da45bb419fe858b36dda8ec8b5ef4ed17ea3696a4626172d86f480d65269ddd"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/privacy-red.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/privacy-red.xml",
+      "sha256": "c63f8e1a4045e7bf34fd9083309bdaae1796ef2a0c59fd2f1868d069fee587cf"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/properties.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/properties.log",
+      "sha256": "8b6f4da62a8ef0e7e7bd02592a3b29539797d9533dbcdb0ea367861f6d73e750"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/protocol-green.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/protocol-green.log",
+      "sha256": "0b0b95df17b60251137890323d4714bcd55e3c48795bba736df3d783d1e65b85"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/protocol-green.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/protocol-green.xml",
+      "sha256": "9cc41ab0053e5e0dfa5702670cd54e3b1a56c2fbab01d98d31246e1d8dc954f1"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/protocol-red.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/protocol-red.log",
+      "sha256": "df621264b8fa1edea2cc5195f90828b9b0d41b12bfc785a7909137d96325c456"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/protocol-red.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/protocol-red.xml",
+      "sha256": "8c9a5f6a102bf26466992fd25177d162f67db2ccf156762e3b3381c429a1f89d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/public-export.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/public-export.log",
+      "sha256": "b990ac72a5cf36d71f3de5a21feec896f7b0103ae96dfe0514051fcd42dd7628"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-final-r2.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-final-r2.log",
+      "sha256": "6327a99a188b35cf05398a196e544982cbe444c26b5ba6981c05e792c98ee5d9"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-final-r2.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-final-r2.xml",
+      "sha256": "493b1c25a1d76d3565fbfb7f0a7200316d48379d8993b9580200b7270df1515b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-final.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-final.log",
+      "sha256": "af01f6fcc3bf221e01ba37f8ba351b9069262010db1abb595b2ccf2616f82117"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-final.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-final.xml",
+      "sha256": "68747523322a18a807079973ac52afbd3ed97cebdf6c3f47c10dd3994f5de48a"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-r2.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-r2.log",
+      "sha256": "72dcea712e7cd09a58423b9ed4ab2fe5a762e6e45671c3759de2a0d511c2082d"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-r2.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-r2.xml",
+      "sha256": "db9817079f909959aa3bd03e1cd6b1b1ca6813304b60666d4990eaae49c2043b"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-release.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-release.log",
+      "sha256": "316fcaf0dcaf897ffcbaaf44e0237ad20c382701e07a43bc8e287cdf819fa1db"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python-release.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python-release.xml",
+      "sha256": "e4dbcc1625d985d8afbeb4e28c4d6c2d3bb2c5b468462e2083618bd2d38a1bb5"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python.log",
+      "sha256": "04fc86a68fd1f66fc05e77330b4f7829aa469b2a37cfa30a7d798f6af7e05259"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/python.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/python.xml",
+      "sha256": "f766b89125d7ddad839e52b0b5b4ab1123ea68901d6efa17594ccad9ddaf2e12"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/review.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/review.log",
+      "sha256": "a512a5bcdeea30f921758f7a216bc3f7fee30ee1ec292b0b890a29ecf6a779b7"
+    },
+    {
+      "source": "output/ai-era-value-20261012/baseline/snapshot.json",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/baseline/snapshot.json",
+      "sha256": "8e536ba1ddeeefa29698ce059ce8c2ed656616c9e489e88b2292e2e3c171d672"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/privacy-green.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/privacy-green.log",
+      "sha256": "ee79d23441724352e6d877243443684e132ebacf6f40d22c890b3a2609b903d3"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/privacy-green.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/privacy-green.xml",
+      "sha256": "6ce7f6c48f50423673aace4cca7197af2e0a26439ac83de9467f80ef16de6192"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/python-final.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/python-final.log",
+      "sha256": "8090523ac2a4e460259671db6f40751f08909326b6f2ff1cb18edd040187627a"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/python-final.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/python-final.xml",
+      "sha256": "bfeb63409683b27c080e43110d6795689f3a4749b871af714c02c58a9f8b6a3c"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/python.log",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/python.log",
+      "sha256": "20622718884c5ca6509949b8c13a7eca592498c3a82d533af022e010a1c46950"
+    },
+    {
+      "source": "output/ai-era-value-20261012/resume-validation/python.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/resume/python.xml",
+      "sha256": "4d18055bf6aae76cff96cac62655237433ecce0090e34f7e61dafa76b9a52a05"
+    },
+    {
+      "source": "coderisk/backend-springboot/target/surefire-reports/TEST-com.coderisk.SystemControllerTest.xml",
+      "target": "coderisk/experiment/evidence/ai-era-value-20261012/tests/maven/TEST-com.coderisk.SystemControllerTest.xml",
+      "sha256": "54744d8f4457be8c96f978a5bd372a4d5fced2f9d7a6d133a3cafe602c81eab8"
+    }
+  ],
+  "release_source_hashes": [
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\__init__.py",
+      "expected": "ed9d03b6375a715033c17f71ae1200bed6ffd6ebeefa3e3d0eeb67bff1e4ee9e",
+      "actual": "ed9d03b6375a715033c17f71ae1200bed6ffd6ebeefa3e3d0eeb67bff1e4ee9e"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\analyze.py",
+      "expected": "34dc6d87cae9af238752dee48cbd2f6c98613ce21a166281c96546fb82bbb508",
+      "actual": "34dc6d87cae9af238752dee48cbd2f6c98613ce21a166281c96546fb82bbb508"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\build_pairs.py",
+      "expected": "e0464010106119e2dfe8979e5c1b9e3f48e534cd6c4654a2de85934e46d70880",
+      "actual": "e0464010106119e2dfe8979e5c1b9e3f48e534cd6c4654a2de85934e46d70880"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\context.py",
+      "expected": "326ea2dabac9d189313700d3796f01c0bbe8abc8e7a572273975443096590bc2",
+      "actual": "326ea2dabac9d189313700d3796f01c0bbe8abc8e7a572273975443096590bc2"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\descriptive_stats.py",
+      "expected": "3bf030e1f418c786c190a93217742ead7b0fe3b5995ecc14361c750148aea93f",
+      "actual": "3bf030e1f418c786c190a93217742ead7b0fe3b5995ecc14361c750148aea93f"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\examples\\make_seed.py",
+      "expected": "a8c9258839dc5eff4abfe44dde6d2873a8903657ffe5e54cdac46ea3bc40ed69",
+      "actual": "a8c9258839dc5eff4abfe44dde6d2873a8903657ffe5e54cdac46ea3bc40ed69"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\export_public.py",
+      "expected": "a105aa829bae162fc5f071dc26afe5796d19d63a78939f70a8e939e778db33be",
+      "actual": "a105aa829bae162fc5f071dc26afe5796d19d63a78939f70a8e939e778db33be"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\ingest.py",
+      "expected": "65adfa0326eea2150ab528c71c867551f8bb15ac50e862b50a443e64d5d5af4f",
+      "actual": "65adfa0326eea2150ab528c71c867551f8bb15ac50e862b50a443e64d5d5af4f"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\jplag.py",
+      "expected": "96d12ea47f5b31dca4f467a2e1c3c640b3ef902947802d96d79d22670e9e46bf",
+      "actual": "96d12ea47f5b31dca4f467a2e1c3c640b3ef902947802d96d79d22670e9e46bf"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\prepare_review.py",
+      "expected": "43aff15623fd78afe26e383ec8f8d57c93e62979d7c4b6eb802eb6982d9c98df",
+      "actual": "43aff15623fd78afe26e383ec8f8d57c93e62979d7c4b6eb802eb6982d9c98df"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\protocol.py",
+      "expected": "a8d467c0a8e63b644c7a7ad06338f666bec31c81253bd1badc6be9a00480b9de",
+      "actual": "a8d467c0a8e63b644c7a7ad06338f666bec31c81253bd1badc6be9a00480b9de"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\report.py",
+      "expected": "476f4e84d5c8d035252524a77ff7bbf33173bcd8b700c418ccfd2034fc091367",
+      "actual": "476f4e84d5c8d035252524a77ff7bbf33173bcd8b700c418ccfd2034fc091367"
+    },
+    {
+      "path": "coderisk\\experiment\\ai_convergence\\validate.py",
+      "expected": "40706eed0a31f9c7f671f411bf5075995f6971cbc78bc4b9a786ccdd5b86b9c8",
+      "actual": "40706eed0a31f9c7f671f411bf5075995f6971cbc78bc4b9a786ccdd5b86b9c8"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\__init__.py",
+      "expected": "d0ad81aed2fec9e1a1337f340d3ebebb918b60485145e17a3e171c73f8b9ac9e",
+      "actual": "d0ad81aed2fec9e1a1337f340d3ebebb918b60485145e17a3e171c73f8b9ac9e"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\__init__.py",
+      "expected": "79bb183b730e00c055538b2a7800ca4a8f66ac32cf104124d4f2dd916502b6e4",
+      "actual": "79bb183b730e00c055538b2a7800ca4a8f66ac32cf104124d4f2dd916502b6e4"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\canonicalization.py",
+      "expected": "534021358f6198ecdbd4bfb745493249359807c5982e8d7f5eb9c7447c738612",
+      "actual": "534021358f6198ecdbd4bfb745493249359807c5982e8d7f5eb9c7447c738612"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\java_source.py",
+      "expected": "8670770a630b79c0a9c14d7a9990cb419d50757c3f6fbce3b1683405ce6b6868",
+      "actual": "8670770a630b79c0a9c14d7a9990cb419d50757c3f6fbce3b1683405ce6b6868"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\lightweight_summaries.py",
+      "expected": "0170fcd802f0520cb4a1c83a94980f1590baa53c9294cac7a439291b5757d599",
+      "actual": "0170fcd802f0520cb4a1c83a94980f1590baa53c9294cac7a439291b5757d599"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\normalized_ir.py",
+      "expected": "168a3e1eed732c3fa00ca02177410bf3f2d98a8bccbe8390b775341b1f8c39a0",
+      "actual": "168a3e1eed732c3fa00ca02177410bf3f2d98a8bccbe8390b775341b1f8c39a0"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\problem_profile.py",
+      "expected": "903e72309dbf871d6e6ba8daea853755adecde8c41d062c9b6065dbfd6c0a035",
+      "actual": "903e72309dbf871d6e6ba8daea853755adecde8c41d062c9b6065dbfd6c0a035"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\review_context.py",
+      "expected": "ccbda3ad0dc1a94777c24c61f5ab2e778f2531bf2ac7eafaa9c947cffda9e8b4",
+      "actual": "ccbda3ad0dc1a94777c24c61f5ab2e778f2531bf2ac7eafaa9c947cffda9e8b4"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\structured_languages.py",
+      "expected": "bbaf2ce03e73a26963cc5fdfbe2fc143c3b9be73aaba14d661ac4a4deb79e153",
+      "actual": "bbaf2ce03e73a26963cc5fdfbe2fc143c3b9be73aaba14d661ac4a4deb79e153"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\analyzers\\token_similarity.py",
+      "expected": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e",
+      "actual": "ab2c5866e2b617ed6536827409180af7fe3629994518922d7623ce13fcd7f65e"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\api\\__init__.py",
+      "expected": "e3c3dff0cd0d1b251795dc26df5cb6ed9b5c4bf8d4d302995b63117f340188c6",
+      "actual": "e3c3dff0cd0d1b251795dc26df5cb6ed9b5c4bf8d4d302995b63117f340188c6"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\api\\analyze_api.py",
+      "expected": "230427dd6ea5438a24839f49fd55c135ad151a40c12584855df79237dc6a5647",
+      "actual": "230427dd6ea5438a24839f49fd55c135ad151a40c12584855df79237dc6a5647"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\api\\health_api.py",
+      "expected": "c73ddc0d102ed16648cdac6c3f94115c5d46b4acebf828ee0a1b36b966d7c422",
+      "actual": "c73ddc0d102ed16648cdac6c3f94115c5d46b4acebf828ee0a1b36b966d7c422"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\api\\problem_api.py",
+      "expected": "516f5557228415a736ee33d37ec9d5319c8c9f1f3588b2625fb46ca32d9be0c4",
+      "actual": "516f5557228415a736ee33d37ec9d5319c8c9f1f3588b2625fb46ca32d9be0c4"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\config.py",
+      "expected": "fec6c26c1c08cc4822370f4b59caefa8871154b6659943077221d8638f46f75f",
+      "actual": "fec6c26c1c08cc4822370f4b59caefa8871154b6659943077221d8638f46f75f"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\core\\__init__.py",
+      "expected": "5c9d315683ff82fe25e8ffb49e67afb3a6ac2d20b1c2b218994f2d5cf04ab1ed",
+      "actual": "5c9d315683ff82fe25e8ffb49e67afb3a6ac2d20b1c2b218994f2d5cf04ab1ed"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\core\\path_guard.py",
+      "expected": "5163648b887899a2c3ad65428ac62d98ede734be4574fabdd791eb9be8b645dc",
+      "actual": "5163648b887899a2c3ad65428ac62d98ede734be4574fabdd791eb9be8b645dc"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\main.py",
+      "expected": "050119d7e4701a26406818babcc93bbaf5ddf596fbf7a65c326a099a68c24c15",
+      "actual": "050119d7e4701a26406818babcc93bbaf5ddf596fbf7a65c326a099a68c24c15"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\schemas\\__init__.py",
+      "expected": "58ee38c77647b53acc92d0aea926bb3a33b0002ff891c20a1bef9c418578e174",
+      "actual": "58ee38c77647b53acc92d0aea926bb3a33b0002ff891c20a1bef9c418578e174"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\schemas\\analyze_schema.py",
+      "expected": "a0d4be34c5dc020b4b12a7379bd8eadd485ed765ac1aa55335902330e7408005",
+      "actual": "a0d4be34c5dc020b4b12a7379bd8eadd485ed765ac1aa55335902330e7408005"
+    },
+    {
+      "path": "coderisk\\analysis-service-python\\app\\schemas\\common.py",
+      "expected": "b63b4c9dc651528248549b2fbcc6c07e46aacd6db2400749053e73fee5826e10",
+      "actual": "b63b4c9dc651528248549b2fbcc6c07e46aacd6db2400749053e73fee5826e10"
+    },
+    {
+      "path": "coderisk\\experiment\\similarity_ablation.py",
+      "expected": "fc6f8a68c41a48e2269cb619ff917c0600512919d0099b798fdb92672dcf3951",
+      "actual": "fc6f8a68c41a48e2269cb619ff917c0600512919d0099b798fdb92672dcf3951"
+    },
+    {
+      "path": "coderisk\\experiment\\run_fair_evaluation.py",
+      "expected": "fa6b3fd80e461d213fc6d3566124196b5043c2757a3a99f9d6902a4d764016f7",
+      "actual": "fa6b3fd80e461d213fc6d3566124196b5043c2757a3a99f9d6902a4d764016f7"
+    },
+    {
+      "path": "coderisk\\experiment\\research_v4_dataset.py",
+      "expected": "6e51937f3c2d241aa2d8a9f26107345184f30269354ae4d155c74dc7e462f3ac",
+      "actual": "6e51937f3c2d241aa2d8a9f26107345184f30269354ae4d155c74dc7e462f3ac"
+    },
+    {
+      "path": "coderisk\\experiment\\research_protocol.py",
+      "expected": "0f2cce269b15baf845ca876183530341d92556043c2f120addf8d25627827d85",
+      "actual": "0f2cce269b15baf845ca876183530341d92556043c2f120addf8d25627827d85"
+    },
+    {
+      "path": "coderisk\\experiment\\check_formal_readiness.py",
+      "expected": "5bcb9e3e83f9f2983482c6d92e8c69a233221e5c606c08f1194c29947aa7476e",
+      "actual": "5bcb9e3e83f9f2983482c6d92e8c69a233221e5c606c08f1194c29947aa7476e"
+    },
+    {
+      "path": "coderisk\\experiment\\run_research_v4.py",
+      "expected": "bd54ded49576fb97329a92ab3429f17f1cfe17f77126312b64a93e9d128a0b59",
+      "actual": "bd54ded49576fb97329a92ab3429f17f1cfe17f77126312b64a93e9d128a0b59"
+    },
+    {
+      "path": "coderisk\\experiment\\research_v4_jplag.py",
+      "expected": "b0d7bd4bd02ed097dea516305541652a2e7fb4edcd51ce08d3b40da397ec2824",
+      "actual": "b0d7bd4bd02ed097dea516305541652a2e7fb4edcd51ce08d3b40da397ec2824"
+    },
+    {
+      "path": "coderisk\\experiment\\prepare_annotation_workbench.py",
+      "expected": "b73ff190aa435b02a3e310fef05ebd00ba8d77d6ce6a91e64a2bd214ce4d72fc",
+      "actual": "b73ff190aa435b02a3e310fef05ebd00ba8d77d6ce6a91e64a2bd214ce4d72fc"
+    },
+    {
+      "path": "coderisk\\experiment\\annotation_workbench.html",
+      "expected": "ea680d9ecc59e7ed37c7fddaeafab7d143bf58528bcbb57a9fee1edb29fd2a7f",
+      "actual": "ea680d9ecc59e7ed37c7fddaeafab7d143bf58528bcbb57a9fee1edb29fd2a7f"
+    }
+  ],
+  "new_tests": [
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_analysis.py",
+      "sha256": "0c5a8b53ca6a6e9a1cdd0e134db970d7348171cd85fc82156b94665d7b75a88e"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_privacy.py",
+      "sha256": "101bcad8d1680eaa259920d8ef178e6170b2b17b42ed576d64e7a9e6cff29862"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/test_ai_convergence_protocol.py",
+      "sha256": "c3ba72f5d079857fd70c26c3e309938888f292609fa2b0f356ef4b6c64e7a92b"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/__pycache__/test_ai_convergence_analysis.cpython-312-pytest-8.4.2.pyc",
+      "sha256": "b8d1aac8c2d434d19fc1a53acb1e693002b13a7d5dff91460800598510df33c7"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/__pycache__/test_ai_convergence_privacy.cpython-312-pytest-8.4.2.pyc",
+      "sha256": "8c73a4cbef35eedb8445b6aba40d1800da61f9b7cdad52c467d1b47fb248295f"
+    },
+    {
+      "path": "coderisk/analysis-service-python/tests/__pycache__/test_ai_convergence_protocol.cpython-312-pytest-8.4.2.pyc",
+      "sha256": "2ea2b46ee64415e8888d3c7cac7dfd2cbe244dd03e406863e7590f42e6f0329e"
+    }
+  ]
+}

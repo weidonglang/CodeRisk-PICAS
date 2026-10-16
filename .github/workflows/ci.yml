@@ -51,4 +51,5 @@ jobs:
           cache: npm
           cache-dependency-path: coderisk/frontend-vue/package-lock.json
       - run: npm ci
+      - run: npm test
       - run: npm run build

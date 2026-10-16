@@ -43,7 +43,11 @@ CodeNet 官方说明元数据已不再单独提供，包含在完整数据包中
 python coderisk/experiment/prepare_annotation_workbench.py --merge reviewer-a.json reviewer-b.json --manifest coderisk/data/public-datasets/review-workbench-20261009-v2/first_batch_manifest.jsonl --output coderisk/data/public-datasets/merged-review-01
 ```
 
-合并器校验队列哈希、源码哈希、不同复核者 ID、合法标签、具体依据和带时区的日期。同意为 `AGREED`，分歧为 `DISAGREED`，缺失或不完整为 `INCOMPLETE`；未达成一致仍为 `UNCERTAIN`。合并不会自动设置正式指标资格，仍须核验来源/功能证据、冻结划分和研究方案。这里的“同意”是文件记录状态，不能据此证明两人确实独立完成。
+合并器校验队列哈希、源码哈希、不同复核者 ID、合法标签、具体依据和带时区的日期。新版导出 `coderisk-blind-review-2` 增加 `reviewer_type=HUMAN|AI`、`reviewer_context`，AI 来源必填，保存后全部身份字段锁定。旧导出视为 UNSPECIFIED，不推断真人。
+
+AI 参与且意见一致为 `AI_AGREED`，其他一致为 `AGREED`，分歧为 `DISAGREED`，缺失为 `INCOMPLETE`。另记录 `agreement_scope`、`declared_human_review_count`；`human_pair_identity_verified=false`、正式资格为 false。AGREED 是文件状态，不能证明两位真人。正式流程要求两份 HUMAN 声明及实际独立性确认，还须核验来源/功能证据与冻结方案。
+
+最新 IR-Plag 52 对工作台：`coderisk/data/public-datasets/irplag-20261009/review-v2/workbench.html`。全局打乱和 A/B 互换后，不与旧导出混用；公开裁决文件仅供初始独立复核完成后查看。该队列仍未实际标注。新版来源核验与身份边界见 [修复记录](AI_REVIEW_HARDENING.md)。前述 43 对旧工作台保留历史版本；若重新生成，须使用新的输出目录以获得新身份字段。
 
 ## 3. 防泄漏划分的现实限制
 

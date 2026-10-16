@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-16",
+  "candidateFiles": 1326,
+  "excludedUserTaskBooks": [
+    "CODEX_PICAS_.md",
+    "CODEX_PICAS_下一阶段_AI时代价值验证与研究开发任务书.md"
+  ],
+  "logsIncluded": 97,
+  "findings": [],
+  "jsonFilesValidated": 265,
+  "localLinks": 594,
+  "brokenLinks": [],
+  "archivedHashes": 368,
+  "changedArchivedHashes": [],
+  "scope": "Authorized UI and earlier research increments; no ignored database or downloaded dataset",
+  "remoteUrlsAndAnchorsChecked": false,
+  "snapshotScope": "Files examined before this report was added"
+}

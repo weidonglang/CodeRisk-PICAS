@@ -1,0 +1,24 @@
+
+> coderisk-frontend-vue@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ network errors name the unavailable backend (0.5189ms)
+✔ timeouts have their own actionable status (0.094ms)
+✔ server errors do not expose internal response messages (0.0727ms)
+✔ validation errors preserve the API message (0.0616ms)
+✔ non-string messages are not coerced into user-facing content (0.0809ms)
+✔ blank validation messages have a fallback (0.0646ms)
+✔ missing or invalid scores are not displayed as zero (0.5114ms)
+✔ margins retain sign and units (0.0995ms)
+✔ progress is finite, bounded, and honest for an empty task (0.0809ms)
+✔ search is literal, trimmed and case insensitive (0.138ms)
+✔ risk and task labels preserve server-defined states (0.1124ms)
+✔ timestamps use explicit Shanghai timezone and reject bad input (11.381ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.5766

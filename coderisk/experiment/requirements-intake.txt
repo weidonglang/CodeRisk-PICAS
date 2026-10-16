@@ -1,0 +1,2 @@
+# Only needed for pinned public Parquet intake; never a production service dependency.
+pyarrow>=17,<24

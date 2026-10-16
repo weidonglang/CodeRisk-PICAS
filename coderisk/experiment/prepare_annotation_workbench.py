@@ -11,6 +11,7 @@ from acquire_public_datasets import digest, write_json, write_rows
 from review_public_data import ROOT, jsonl
 
 LABELS = {'TRANSFORMED', 'SIMILAR', 'INDEPENDENT', 'NATURAL_SIMILAR', 'UNCERTAIN'}
+REVIEWER_TYPES = {'HUMAN', 'AI', 'UNSPECIFIED'}
 
 
 def stable_order(rows, key):
@@ -107,7 +108,13 @@ def merge_reviews(manifest, left, right):
         indexed = {r['review_id']: r for r in entries}
         if len(indexed) != len(entries) or set(indexed) - {r['review_id'] for r in rows}:
             raise ValueError('Duplicate or unknown review IDs')
-        reviewers.append((value['reviewer_id'].strip(), indexed))
+        reviewer_type = value.get('reviewer_type', 'UNSPECIFIED')
+        if not isinstance(reviewer_type, str) or reviewer_type not in REVIEWER_TYPES:
+            raise ValueError('Reviewer type must be HUMAN, AI or UNSPECIFIED')
+        context = value.get('reviewer_context', '')
+        if not isinstance(context, str) or (reviewer_type == 'AI' and not context.strip()):
+            raise ValueError('AI reviewer model/agent context is required')
+        reviewers.append((value['reviewer_id'].strip(), indexed, reviewer_type, context.strip()))
     if reviewers[0][0] == reviewers[1][0]:
         raise ValueError('Two distinct reviewer IDs required')
     merged = []
@@ -125,11 +132,20 @@ def merge_reviews(manifest, left, right):
         entries = [r[1].get(row['review_id']) for r in reviewers]
         ready = all(complete(r, row) for r in entries)
         agreed = ready and entries[0]['label'] == entries[1]['label']
+        types = [r[2] for r in reviewers]
+        human_pair = types == ['HUMAN', 'HUMAN']
+        ai_present = 'AI' in types
+        agreement_scope = 'DECLARED_HUMAN_PAIR' if human_pair else 'AI_INVOLVED' if ai_present else 'IDENTITY_UNSPECIFIED'
+        status = ('AI_AGREED' if ai_present else 'AGREED') if agreed else 'DISAGREED' if ready else 'INCOMPLETE'
         merged.append({'review_id': row['review_id'], 'reviewer_ids': [r[0] for r in reviewers],
-                       'reviews': entries, 'status': 'AGREED' if agreed else 'DISAGREED' if ready else 'INCOMPLETE',
+                       'reviewer_types': types, 'reviewer_contexts': [r[3] for r in reviewers],
+                       'agreement_scope': agreement_scope,
+                       'declared_human_review_count': sum(t == 'HUMAN' for t in types) if ready else 0,
+                       'human_pair_identity_verified': False,
+                       'reviews': entries, 'status': status,
                        'final_label': entries[0]['label'] if agreed else 'UNCERTAIN',
                        'eligible_for_core_metrics': False,
-                       'remaining_requirements': ['source/functional evidence review', 'leakage-free split and frozen study protocol']})
+                       'remaining_requirements': ['actual human identity and independence confirmation', 'source/functional evidence review', 'leakage-free split and frozen study protocol']})
     return merged
 
 

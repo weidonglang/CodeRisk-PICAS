@@ -51,7 +51,7 @@
 2. 两位复核者分别依据来源和代码记录标注；使用匿名复核者 ID，保留首次标签。
 3. 核对功能证据：同题输入输出要求、测试集版本、通过/失败记录。只在独立受控环境测试自己或已授权样本，业务上传检测继续不执行代码。
 4. 一致则记 `AGREED`；不一致时记录分歧和裁决依据，解决后更新最终标签，无法解决则 `UNCERTAIN` 且 `eligible_for_core_metrics=false`。
-5. 标注冻结后方可用于调参与评估。正式 runner 要求 `annotation.label` 与最终标签一致，并检查两名不同复核者、依据、日期、功能证据和来源家族。
+5. 标注冻结后方可用于调参与评估。正式 runner 要求 `annotation.label` 与最终标签一致，并检查两名不同复核者、两份 `HUMAN` 执行类型声明、`independence_confirmed=true`、依据、日期、功能证据和来源家族。执行类型/确认字段不能自动认证身份，实际执行及独立性由责任人核实。AI/子智能体意见可做辅助技术检查，不能登记为真人复核。
 
 两名复核者尚未落实时可以先做单人试标，状态标记 `PENDING_SECOND_REVIEW`。脚本不会把单人试标自动提升为正式实验。
 
@@ -65,6 +65,9 @@
     "label": "UNCERTAIN",
     "reviewer_a": "",
     "reviewer_b": "",
+    "reviewer_a_type": "UNSPECIFIED",
+    "reviewer_b_type": "UNSPECIFIED",
+    "independence_confirmed": false,
     "label_basis": "",
     "reviewed_at": "",
     "functional_evidence": ""

@@ -153,6 +153,15 @@ public class TaskRepository {
         List<Long> ids = jdbc.query("SELECT id FROM detection_task WHERE deleted = 0 AND status = 'RUNNING'",
                 (rs, row) -> rs.getLong("id"));
         for (long id : ids) {
+            jdbc.update("""
+                    UPDATE task_pair_failure SET resolved = 1
+                    WHERE task_id = ? AND EXISTS (
+                        SELECT 1 FROM analysis_result ar
+                        WHERE ar.task_id = task_pair_failure.task_id
+                          AND ar.submission_a_id = task_pair_failure.submission_a_id
+                          AND ar.submission_b_id = task_pair_failure.submission_b_id
+                    )
+                    """, id);
             int saved = jdbc.queryForObject("SELECT COUNT(*) FROM analysis_result WHERE task_id = ?", Integer.class, id);
             int total = find(id).totalPairs();
             updateState(id, saved == total ? TaskStatus.FINISHED : saved > 0 ? TaskStatus.PARTIAL : TaskStatus.FAILED,

@@ -1,0 +1,10 @@
+{
+  "status": "FORMAL_BLOCKED_NO_REAL_REVIEW_OR_USER_STUDY",
+  "pair_count": 22,
+  "human_reviews": 0,
+  "study_participants": 0,
+  "synthetic": true,
+  "workbench": "REUSED_EXISTING_OFFLINE_HUMAN_REVIEW_TOOL",
+  "consent_verified": false,
+  "label_basis": "Leave unknown; reviewer scores cannot establish missing source histories"
+}

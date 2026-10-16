@@ -1,0 +1,9 @@
+
+Python         : E:\ms\coderisk\analysis-service-python\.venv-coderisk\Scripts\python.exe
+JavaHome       : D:\DevEnvManager\envs\jdks\temurin-21
+Profile        : local
+AnalysisPort   : 8002
+BackendPort    : 8081
+FrontendPort   : 5174
+StartsServices : False
+

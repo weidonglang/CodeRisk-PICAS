@@ -1,0 +1,13 @@
+Collecting matplotlib
+  Downloading matplotlib-3.11.2-cp312-cp312-win_amd64.whl.metadata (80 kB)
+ERROR: Could not install packages due to an OSError: [Errno 13] Permission denied: 'C:\\Users\\WDL\\AppData\\Local\\Packages\\sandbox.{37676432-3536-4c1f-a10d-7f9210dc3183}\\AC\\Temp\\pip-unpack-zu68qm_l\\matplotlib-3.11.2-cp312-cp312-win_amd64.whl.metadata'
+Check the permissions.
+
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\WDL\AppData\Local\Packages\sandbox.{37676432-3536-4c1f-a10d-7f9210dc3183}\AC\Temp\pip-build-tracker-3m0s2nah'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\WDL\AppData\Local\Packages\sandbox.{37676432-3536-4c1f-a10d-7f9210dc3183}\AC\Temp\pip-unpack-zu68qm_l'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\WDL\AppData\Local\Packages\sandbox.{37676432-3536-4c1f-a10d-7f9210dc3183}\AC\Temp\pip-ephem-wheel-cache-5q821yok'.
+You can safely remove it manually.
+WARNING: Failed to remove contents in a temporary directory 'C:\Users\WDL\AppData\Local\Packages\sandbox.{37676432-3536-4c1f-a10d-7f9210dc3183}\AC\Temp\pip-install-kvm1058c'.
+You can safely remove it manually.

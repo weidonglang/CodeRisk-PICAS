@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="2.316" timestamp="2026-10-12T07:08:47.918865+08:00" hostname="小魏"><testcase classname="tests.test_ai_convergence_analysis" name="test_direct_command_entry_point_without_pytest_import_cache" time="1.261"><failure message="AssertionError: Traceback (most recent call last):&#10;    File &quot;E:\ms\coderisk\experiment\ai_convergence\analyze.py&quot;, line 214, in &lt;module&gt;&#10;      main()&#10;    File &quot;E:\ms\coderisk\experiment\ai_convergence\analyze.py&quot;, line 207, in main&#10;      result = run(args.input.resolve(), args.output.resolve(), args.config.resolve(), formal=args.formal,&#10;               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&#10;    File &quot;E:\ms\coderisk\experiment\ai_convergence\analyze.py&quot;, line 162, in run&#10;      **distribution([method_score(row, method) for row in group], len(group))})&#10;        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&#10;    File &quot;E:\ms\coderisk\experiment\ai_convergence\statistics.py&quot;, line 24, in distribution&#10;      &quot;mean&quot;: stdstats.mean(present) if present else None, &quot;median&quot;: percentile(present, .5),&#10;              ^^^^^^^^^^^^^&#10;  AttributeError: module 'statistics' has no attribute 'mean'&#10;  &#10;assert 1 == 0&#10; +  where 1 = CompletedProcess(args=['E:\\ms\\.tmp\\language-venv\\Scripts\\python.exe', 'E:\\ms\\coderisk\\experiment\\ai_convergen...ercentile(present, .5),\n            ^^^^^^^^^^^^^\nAttributeError: module \'statistics\' has no attribute \'mean\'\n').returncode">tmp_path = WindowsPath('E:/ms/.tmp/ai-era-cli-red-tests-20261012/test_direct_command_entry_poin0')
+
+    def test_direct_command_entry_point_without_pytest_import_cache(tmp_path):
+        source = make_seed(tmp_path / "source")
+        script = Path(__file__).resolve().parents[2] / "experiment/ai_convergence/analyze.py"
+        completed = subprocess.run([sys.executable, str(script), "--input", str(source), "--output", str(tmp_path / "cli"), "--no-network"],
+                                   capture_output=True, text=True, encoding="utf-8", timeout=45)
+&gt;       assert completed.returncode == 0, completed.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 214, in &lt;module&gt;
+E             main()
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 207, in main
+E             result = run(args.input.resolve(), args.output.resolve(), args.config.resolve(), formal=args.formal,
+E                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 162, in run
+E             **distribution([method_score(row, method) for row in group], len(group))})
+E               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "E:\ms\coderisk\experiment\ai_convergence\statistics.py", line 24, in distribution
+E             "mean": stdstats.mean(present) if present else None, "median": percentile(present, .5),
+E                     ^^^^^^^^^^^^^
+E         AttributeError: module 'statistics' has no attribute 'mean'
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['E:\\ms\\.tmp\\language-venv\\Scripts\\python.exe', 'E:\\ms\\coderisk\\experiment\\ai_convergen...ercentile(present, .5),\n            ^^^^^^^^^^^^^\nAttributeError: module \'statistics\' has no attribute \'mean\'\n').returncode
+
+coderisk\analysis-service-python\tests\test_ai_convergence_analysis.py:182: AssertionError</failure></testcase></testsuite></testsuites>

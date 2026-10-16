@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 214, in <module>
+    main()
+  File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 207, in main
+    result = run(args.input.resolve(), args.output.resolve(), args.config.resolve(), formal=args.formal,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ms\coderisk\experiment\ai_convergence\analyze.py", line 162, in run
+    **distribution([method_score(row, method) for row in group], len(group))})
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ms\coderisk\experiment\ai_convergence\statistics.py", line 24, in distribution
+    "mean": stdstats.mean(present) if present else None, "median": percentile(present, .5),
+            ^^^^^^^^^^^^^
+AttributeError: module 'statistics' has no attribute 'mean'

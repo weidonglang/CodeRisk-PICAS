@@ -1,0 +1,105 @@
+................................................F....................... [ 13%]
+........................................................................ [ 27%]
+........................................................................ [ 41%]
+........................................................................ [ 55%]
+........................................................................ [ 68%]
+........................................................................ [ 82%]
+........................................................................ [ 96%]
+...................                                                      [100%]
+================================== FAILURES ===================================
+________ test_diagnostics_record_sources_and_preserve_existing_outputs ________
+
+tmp_path = WindowsPath('E:/ms/.tmp/ai-era-baseline-tests-20261012/test_diagnostics_record_source0')
+
+    def test_diagnostics_record_sources_and_preserve_existing_outputs(tmp_path):
+        output = tmp_path / "development-only"
+>       manifest = run(DEFAULT_PROBES, output)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+coderisk\analysis-service-python\tests\test_development_fusion_probes.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+probes_path = WindowsPath('E:/ms/coderisk/experiment/datasets/development-fusion-probes/probes.json')
+output = WindowsPath('E:/ms/.tmp/ai-era-baseline-tests-20261012/test_diagnostics_record_source0/development-only')
+
+    def run(probes_path: Path, output: Path) -> dict:
+        data = json.loads(probes_path.read_text(encoding="utf-8"))
+        if data.get("source_type") != "synthetic" or data.get("eligible_for_core_metrics") is not False:
+            raise ValueError("Development probes must be synthetic and excluded from core metrics")
+        ids = [probe["pair_id"] for probe in data["probes"]]
+        if not ids or any(not isinstance(value, str) or not value.strip() for value in ids) or len(ids) != len(set(ids)):
+            raise ValueError("Development probes must have unique, nonempty pair IDs")
+        if output.exists():
+            raise FileExistsError("Use a fresh output directory; prior diagnostic records are immutable")
+        records = [compare_probe(probe, data["bases"]) for probe in data["probes"]]
+        output.mkdir(parents=True)
+        (output / "pair_diagnostics.json").write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        fields = ["pair_id", "language", "kind", "contract", "contract_passed", "source_type",
+                  "eligible_for_core_metrics", "raw", "ast", "canonical", "mapping", "full",
+                  "no_canonical_same_pair", "fusion_enabled", "canonical_contribution", "mapping_contribution", "fusion_change"]
+        with (output / "component_table.csv").open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(records)
+        lines = ["# Synthetic development fusion diagnostics", "",
+                 "Self-authored probes after observing ConPlag. No held-out accuracy, fitting, or benchmark claim.", "",
+                 "Full - no-canonical = .45*(C-.5*(R+A)) + .15*(M-.5*(R+A)); fallback uses raw on both sides.", "",
+                 "| Pair | Raw | AST | Canonical | Mapping | Full | No-canonical | Delta | Contract |",
+                 "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |"]
+        for row in records:
+            values = " | ".join(f"{row[field]:.6f}" for field in ("raw", "ast", "canonical", "mapping", "full", "no_canonical_same_pair", "fusion_change"))
+            lines.append(f"| {row['pair_id']} | {values} | {row['contract_passed']} |")
+        lines.extend(["", "Null contract means descriptive observation, not a passed invariance test.",
+                      "All production thresholds/weights are unchanged. Sources are inspected as text, never executed.", ""])
+        (output / "report.md").write_text("\n".join(lines), encoding="utf-8")
+        git = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True)
+        git_status = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True)
+        sources = sorted((ROOT / "analysis-service-python/app").rglob("*.py")) + [Path(__file__), probes_path]
+        source_hashes = {path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.as_posix(): digest(path.read_bytes()) for path in sources}
+        manifest = {
+            "run_id": output.name, "dataset_version": data["dataset_version"], "source_type": "synthetic",
+            "purpose": data["purpose"], "eligible_for_core_metrics": False, "probe_count": len(records),
+            "formula_version": "FORMULA_SPEC_V1", "algorithm_version": "picas-v2-rule-1.0",
+            "local_version_fingerprint": digest(json.dumps(source_hashes, sort_keys=True).encode()),
+            "git_commit": git.stdout.strip() if git.returncode == 0 else None,
+>           "git_dirty": bool(git_status.stdout.strip()) if git_status.returncode == 0 else None,
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+            "executed_at_utc": datetime.now(timezone.utc).isoformat(),
+            "client_work_date": "2026-10-10",
+            "python_version": platform.python_version(), "random_seed": None,
+            "production_formula_changed": False, "public_test_rescored": False,
+            "parameter_fitting": False, "source_sha256": source_hashes,
+            "contract_checks": sum(row["contract_passed"] is not None for row in records),
+            "failed_contracts": [row["pair_id"] for row in records if row["contract_passed"] is False],
+            "output_sha256": {path.name: digest(path.read_bytes()) for path in output.iterdir()},
+        }
+E       AttributeError: 'NoneType' object has no attribute 'strip'
+
+coderisk\experiment\diagnose_development_probes.py:137: AttributeError
+============================== warnings summary ===============================
+.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1
+  E:\ms\.tmp\language-venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+coderisk/analysis-service-python/tests/test_development_fusion_probes.py::test_diagnostics_record_sources_and_preserve_existing_outputs
+  E:\ms\.tmp\language-venv\Lib\site-packages\_pytest\threadexception.py:58: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-10 (_readerthread)
+  
+  Traceback (most recent call last):
+    File "C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075, in _bootstrap_inner
+      self.run()
+    File "C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012, in run
+      self._target(*self._args, **self._kwargs)
+    File "C:\Users\WDL\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1599, in _readerthread
+      buffer.append(fh.read())
+                    ^^^^^^^^^
+  UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 3477: illegal multibyte sequence
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: E:\ms\output\ai-era-value-20261012\baseline\python.xml --
+=========================== short test summary info ===========================
+FAILED coderisk/analysis-service-python/tests/test_development_fusion_probes.py::test_diagnostics_record_sources_and_preserve_existing_outputs
+1 failed, 522 passed, 2 warnings in 32.07s

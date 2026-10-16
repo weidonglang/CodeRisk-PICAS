@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from research_v4_dataset import load_research_dataset
+from research_v4_dataset import core_eligibility_issues, is_ai_assisted, load_research_dataset
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -107,6 +107,8 @@ def prepare_inputs(manifest_path: Path, output_dir: Path) -> dict[str, Any]:
             "language": language,
             "submissionA": submission_a,
             "submissionB": submission_b,
+            "codeASha256": case["code_a_sha256"],
+            "codeBSha256": case["code_b_sha256"],
             "sourceType": case["source_type"],
             "synthetic": case["synthetic"],
         })
@@ -193,10 +195,27 @@ def execute_jplag(
 
 def align_with_picas(jplag_rows: list[dict[str, Any]], predictions_path: Path) -> list[dict[str, Any]]:
     with predictions_path.open(encoding="utf-8-sig", newline="") as handle:
-        picas = {row.get("pairId") or row.get("caseId"): row for row in csv.DictReader(handle)}
+        picas = {}
+        for row in csv.DictReader(handle):
+            pair_id = row.get("pairId") or row.get("caseId")
+            if not pair_id or pair_id in picas:
+                raise ValueError(f"Missing or duplicate PICAS pair_id: {pair_id}")
+            picas[pair_id] = row
     comparison = []
     for row in jplag_rows:
         prediction = picas.get(row["pairId"])
+        hashes_verified = False
+        if prediction:
+            for baseline_key, prediction_keys in (
+                ("problemId", ("problemId",)), ("datasetSplit", ("datasetSplit", "split")),
+                ("experimentLabel", ("experimentLabel", "label")),
+                ("codeASha256", ("codeASha256",)), ("codeBSha256", ("codeBSha256",)),
+            ):
+                value = next((prediction[key] for key in prediction_keys if prediction.get(key)), None)
+                if value is not None and row.get(baseline_key) is not None and value != row[baseline_key]:
+                    raise ValueError(f"Alignment identity mismatch for {row['pairId']}: {baseline_key}")
+            hashes_verified = all(row.get(key) and prediction.get(key) == row[key]
+                                  for key in ("codeASha256", "codeBSha256"))
         comparison.append({
             "pairId": row["pairId"],
             "problemId": row["problemId"],
@@ -211,6 +230,7 @@ def align_with_picas(jplag_rows: list[dict[str, Any]], predictions_path: Path) -
             "picasDynamicThreshold": prediction.get("dynamicThreshold") if prediction else None,
             "picasExceedThreshold": prediction.get("exceedThreshold") if prediction else None,
             "aligned": prediction is not None,
+            "sourceHashesVerified": hashes_verified,
         })
     return comparison
 
@@ -220,8 +240,10 @@ def _exclusion_reason(case: dict[str, Any]) -> str | None:
         return "CROSS_LANGUAGE_PAIR"
     if case["language_a"] not in {"java", "python"}:
         return "LANGUAGE_NOT_ENABLED_FOR_RESEARCH_JPLAG"
-    if case["source_type"] == "placeholder" or case["case_type"] == "AI_REWRITE":
+    if case["source_type"] == "placeholder":
         return "PLACEHOLDER_NOT_ELIGIBLE"
+    if is_ai_assisted(case) and core_eligibility_issues(case):
+        return "AI_PROVENANCE_NOT_VERIFIED"
     if case["case_type"] in {"PARSER_FAILURE", "UNSUPPORTED_SYNTAX"}:
         return "PARSER_OR_UNSUPPORTED_SYNTAX_PROBE"
     if not case["eligible_for_core_metrics"]:

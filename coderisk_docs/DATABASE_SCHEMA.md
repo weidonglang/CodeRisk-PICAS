@@ -1,5 +1,7 @@
 # DATABASE_SCHEMA.md
 
+> 2026-10-09 后续修复无新增迁移：启动恢复 RUNNING 时，按 analysis_result 的任务与 A/B 匹配将历史 task_pair_failure.resolved 置 1，不删错误记录。同题画像更新用 SELECT question FOR UPDATE 加入结果事务；已存结果画像快照不覆盖。H2 MySQL 模式实测，MySQL 实库待验证。见 [技术记录](proposal/AI_REVIEW_HARDENING.md)。
+
 > 2026-10-09 本轮增量：Flyway V5 新增 task_pair_failure：id、task_id、submission_a_id、submission_b_id、message(VARCHAR2000)、attempts、resolved、last_attempt_at，唯一键为 task_id+A+B。attempts 表示累计失败次数，恢复后保留历史。遗留 RUNNING 的成功计数和进度从 analysis_result 重建，不依赖崩溃前计数；仅支持单后端实例。已在隔离 H2 验证，MySQL 实库未验证。 依据与边界见 [前三项推进记录](proposal/NEXT_THREE_PROGRESS.md)。
 
 > 2026-10-09 Flyway V4 增量：`submission.language_version VARCHAR(64) NOT NULL DEFAULT ''`；`question.starter_language VARCHAR(16) NOT NULL DEFAULT ''`、`starter_code TEXT NULL`、`starter_source VARCHAR(2000) NOT NULL DEFAULT ''`。历史缺失模板源码在响应中规范为空字符串；原始模板内容按输入保存，不裁剪行号。复核上下文沿用 evidence 的 JSON 元数据快照，无新增关系标签。具体实现为 `V4__review_context.sql`，旧迁移保持不变。

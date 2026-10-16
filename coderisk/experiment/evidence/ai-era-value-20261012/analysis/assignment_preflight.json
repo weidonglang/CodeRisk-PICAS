@@ -1,0 +1,107 @@
+[
+  {
+    "workflow": "ASSIGNMENT_PREFLIGHT",
+    "question_id": "MOCK-sum",
+    "reference": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 4,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "66d68b8b372049792c7be6925adc23e20c988fc7043d547b86da56671b2d2914": 3,
+        "dcafad4f8607bfba5492018028f979765067230a3089ca62147f2454d705c2fe": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "pair_count": 10,
+    "question_confidentiality": "SYNTHETIC",
+    "template_coverage_max": 1.0,
+    "warning": "不能依赖最终源码相似度判断个体来源；本报告不预测学生抄袭率。",
+    "teaching_options": [
+      "考虑分阶段提交并保留同意范围内的过程记录。",
+      "考虑学生自编测试、解释设计选择或口头复核。"
+    ],
+    "confidentiality_warning": "未发布题目未经许可不得提交第三方；本原型无网络。",
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。"
+    ],
+    "production_score_changed": false
+  },
+  {
+    "workflow": "ASSIGNMENT_PREFLIGHT",
+    "question_id": "MOCK-maximum",
+    "reference": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 2,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "27694e4787e85f47496691b8f7635ec2426732413d025f80cd0baeb6d8c1cf05": 1,
+        "6801ab58ab525d11de933e17bbe2ca7a9984c5a4c3b3e35a23156baf741dc213": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "pair_count": 6,
+    "question_confidentiality": "SYNTHETIC",
+    "template_coverage_max": 0.0,
+    "warning": "不能依赖最终源码相似度判断个体来源；本报告不预测学生抄袭率。",
+    "teaching_options": [
+      "考虑分阶段提交并保留同意范围内的过程记录。",
+      "考虑学生自编测试、解释设计选择或口头复核。"
+    ],
+    "confidentiality_warning": "未发布题目未经许可不得提交第三方；本原型无网络。",
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。"
+    ],
+    "production_score_changed": false
+  },
+  {
+    "workflow": "ASSIGNMENT_PREFLIGHT",
+    "question_id": "MOCK-count",
+    "reference": {
+      "mode": "DEVELOPMENT_ONLY",
+      "sample_count": 4,
+      "model_count": 2,
+      "session_count": 4,
+      "independent_reference_pool_size": 0,
+      "canonical_available": 3,
+      "unique_forms": 2,
+      "form_hash_counts": {
+        "3167a976ee2b7316051615cb43b3a5de1228b9e4be46d5f5f380bc4fdd82038a": 2,
+        "ce2114c5fd9c19029025a1fa5b5583db9f9a921ecc6538845203a5d3a16f75d1": 1
+      },
+      "message": "合成参考仅用于管线验证，不是真实模型趋同。",
+      "independence_authenticity_verified_by_tool": false
+    },
+    "pair_count": 6,
+    "question_confidentiality": "SYNTHETIC",
+    "template_coverage_max": 0.0,
+    "warning": "不能依赖最终源码相似度判断个体来源；本报告不预测学生抄袭率。",
+    "teaching_options": [
+      "考虑分阶段提交并保留同意范围内的过程记录。",
+      "考虑学生自编测试、解释设计选择或口头复核。"
+    ],
+    "confidentiality_warning": "未发布题目未经许可不得提交第三方；本原型无网络。",
+    "limitations": [
+      "相同题目与最终源码不能区分独立生成和复制这两种历史。",
+      "相似分数、规范化和参考匹配不能证明来源关系、AI使用、语义等价或课程合规性。",
+      "参考集合有选择偏差；分数更高不代表方法更好。",
+      "本卡只增加复核上下文，不修改生产分数、阈值、风险等级或处置。"
+    ],
+    "production_score_changed": false
+  }
+]

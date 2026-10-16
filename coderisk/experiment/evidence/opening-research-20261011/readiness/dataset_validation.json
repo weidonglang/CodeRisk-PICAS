@@ -1,0 +1,121 @@
+{
+  "valid": true,
+  "datasetId": "coderisk-research-v4-candidate",
+  "datasetVersion": "coderisk-research-v4-seed-1.0",
+  "datasetStatus": "SYNTHETIC_SEED_READY_AWAITING_REAL_DATA",
+  "caseCount": 91,
+  "eligibleCaseCount": 85,
+  "validationCaseCount": 41,
+  "testCaseCount": 50,
+  "validationProblemCount": 15,
+  "testProblemCount": 18,
+  "targetMinimum": 80,
+  "targetMaximum": 150,
+  "targetGap": 0,
+  "problemOverlap": [],
+  "sourceOverlap": [],
+  "sourceFamilyOverlap": [],
+  "exactCodeOverlapCases": [],
+  "nonPreregisteredSplitCaseCount": 7,
+  "nonPreregisteredSplitCases": [
+    "XL2-ARRAY-LOOP-02",
+    "XL2-BFS-03",
+    "XL2-COMMON-STRUCTURE-05",
+    "XL2-DP-04",
+    "XL2-PARSE-FAILURE-07",
+    "XL2-SIMPLE-IO-01",
+    "XL2-UNSUPPORTED-06"
+  ],
+  "missingProblemTypes": [],
+  "missingCaseTypes": [],
+  "coverageGaps": [
+    {
+      "dimension": "source_type",
+      "value": "manual",
+      "required": 20,
+      "current": 0,
+      "missing": 20
+    },
+    {
+      "dimension": "source_type",
+      "value": "ai_assisted",
+      "required": 8,
+      "current": 0,
+      "missing": 8
+    },
+    {
+      "dimension": "source_type",
+      "value": "external",
+      "required": 8,
+      "current": 0,
+      "missing": 8
+    }
+  ],
+  "countsBySplit": {
+    "test": 50,
+    "validation": 41
+  },
+  "countsByProblemType": {
+    "array_loop": 15,
+    "bfs_graph": 7,
+    "dfs_graph": 13,
+    "dp_variant": 14,
+    "simple_io": 15,
+    "simulation": 7,
+    "sort_template": 13,
+    "string_processing": 7
+  },
+  "countsByCaseType": {
+    "AI_REWRITE": 4,
+    "COMMON_STRUCTURE": 5,
+    "CROSSLANG_REWRITE": 8,
+    "FORMAT_COMMENT_CHANGE": 9,
+    "FUNCTION_RENAME": 5,
+    "HUMAN_REWRITE": 4,
+    "INDEPENDENT_SOLUTION": 14,
+    "LOCAL_REORDER": 4,
+    "NATURAL_TEMPLATE": 14,
+    "PARAMETER_RENAME": 7,
+    "PARSER_FAILURE": 1,
+    "SPLIT_MERGE": 4,
+    "UNSUPPORTED_SYNTAX": 4,
+    "VARIABLE_RENAME": 8
+  },
+  "countsByLabel": {
+    "INDEPENDENT": 19,
+    "NATURAL_SIMILAR": 14,
+    "SUSPICIOUS": 9,
+    "TRANSFORMED": 43,
+    "UNCERTAIN": 6
+  },
+  "countsByLanguage": {
+    "java": 8,
+    "java-python": 7,
+    "python": 72,
+    "python-java": 4
+  },
+  "countsByOrigin": {
+    "SYNTHETIC": 91
+  },
+  "countsBySourceType": {
+    "placeholder": 4,
+    "synthetic": 87
+  },
+  "sourceCounts": {
+    "v4-ready-synthetic": 36,
+    "v4-phase2-crosslang-synthetic": 7,
+    "research-v4-synthetic-seed": 48,
+    "manual-supplement": 0
+  },
+  "errors": [],
+  "warnings": [
+    "Case TEST-ARRAY-LOOP-01-PARSER-FALLBACK retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case XL2-PARSE-FAILURE-07 retained for analysis only: UNCERTAIN cannot enter core metrics",
+    "Case SEED-VALIDATION-04-STRING-PROCESSING-03-AI_REWRITE retained for analysis only: placeholder cannot enter core metrics, UNCERTAIN cannot enter core metrics, manual_check_status=VERIFIED, functional_check_status=PASSED",
+    "Case SEED-VALIDATION-08-SIMULATION-03-AI_REWRITE retained for analysis only: placeholder cannot enter core metrics, UNCERTAIN cannot enter core metrics, manual_check_status=VERIFIED, functional_check_status=PASSED",
+    "Case SEED-TEST-03-SORT-TEMPLATE-03-AI_REWRITE retained for analysis only: placeholder cannot enter core metrics, UNCERTAIN cannot enter core metrics, manual_check_status=VERIFIED, functional_check_status=PASSED",
+    "Case SEED-TEST-08-SIMULATION-03-AI_REWRITE retained for analysis only: placeholder cannot enter core metrics, UNCERTAIN cannot enter core metrics, manual_check_status=VERIFIED, functional_check_status=PASSED",
+    "7 cases use a non-preregistered bootstrap split and cannot support confirmatory claims",
+    "Dataset has 3 declared coverage deficits"
+  ]
+}

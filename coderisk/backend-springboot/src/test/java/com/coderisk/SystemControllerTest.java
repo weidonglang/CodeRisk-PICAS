@@ -57,6 +57,15 @@ class SystemControllerTest {
     @Autowired
     private com.coderisk.task.TaskService taskService;
 
+    @Autowired
+    private com.coderisk.task.TaskRepository taskRepository;
+
+    @Autowired
+    private com.coderisk.question.QuestionFeatureRepository featureRepository;
+
+    @Autowired
+    private org.springframework.transaction.PlatformTransactionManager transactionManager;
+
     @Test
     void healthReturnsUnifiedResponse() throws Exception {
         mockMvc.perform(get("/api/system/health").header("X-Trace-Id", "test-trace"))
@@ -427,6 +436,10 @@ class SystemControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.total").value(1))
                 .andExpect(jsonPath("$.data.items[0].riskMargin").value(-0.05));
+        mockMvc.perform(get("/api/tasks/%d/results?page=2147483647&pageSize=20".formatted(taskId)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.data.total").value(3))
+                .andExpect(jsonPath("$.data.items", hasSize(0)));
     }
 
     @Test
@@ -688,6 +701,94 @@ class SystemControllerTest {
                     .content(objectMapper.writeValueAsString(Map.of("questionId", q, "submissionIds", entry.getValue()))))
                     .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value(entry.getKey()));
         }
+    }
+
+    @Test
+    void invalidExplicitIdListsAreRejectedBeforeSubmissionLookupAndEmptyListSelectsQuestion() throws Exception {
+        long q = createQuestion("Early validation synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        long b = uploadSubmission(q, "b", "b.py", "print(2)");
+        List<Long> unknownIds = java.util.stream.LongStream.range(-101, 0).boxed().toList();
+        for (var entry : Map.of("TASK_DUPLICATE_SUBMISSION", List.of(-9999L, -9999L),
+                "TASK_TOO_MANY_SUBMISSIONS", unknownIds).entrySet()) {
+            mockMvc.perform(post("/api/tasks").contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(Map.of("questionId", q, "submissionIds", entry.getValue()))))
+                    .andExpect(status().isBadRequest()).andExpect(jsonPath("$.code").value(entry.getKey()));
+        }
+        long task = taskFor(q, List.of());
+        mockMvc.perform(get("/api/tasks/" + task))
+                .andExpect(jsonPath("$.data.submissionIds[0]").value(a))
+                .andExpect(jsonPath("$.data.submissionIds[1]").value(b))
+                .andExpect(jsonPath("$.data.totalPairs").value(1));
+    }
+
+    @Test
+    void completedCrashRecoveryResolvesPersistedFailureHistory() throws Exception {
+        long q = createQuestion("Completed recovery synthetic");
+        long a = uploadSubmission(q, "a", "a.py", "print(1)");
+        long b = uploadSubmission(q, "b", "b.py", "print(2)");
+        long task = taskFor(q, List.of(a, b));
+        when(analysisClient.analyzePair(any())).thenAnswer(inv -> executionFixture(inv.getArgument(0)));
+        startAndAwait(task);
+        // Recreate the durable state of a crash after a successful retry's result
+        // commit but before its failure history and task progress were updated.
+        taskRepository.recordFailure(task, a, b, "Earlier synthetic timeout");
+        jdbcTemplate.update("UPDATE detection_task SET status='RUNNING', finished_pairs=0, progress=0 WHERE id=?", task);
+        taskService.recoverInterruptedTasks();
+        mockMvc.perform(get("/api/tasks/" + task))
+                .andExpect(jsonPath("$.data.status").value("FINISHED"))
+                .andExpect(jsonPath("$.data.finishedPairs").value(1))
+                .andExpect(jsonPath("$.data.failedPairs").value(0))
+                .andExpect(jsonPath("$.data.progress").value(1.0));
+        mockMvc.perform(get("/api/tasks/" + task + "/failures"))
+                .andExpect(jsonPath("$.data[0].resolved").value(true))
+                .andExpect(jsonPath("$.data[0].attempts").value(1))
+                .andExpect(jsonPath("$.data[0].message").value("Earlier synthetic timeout"));
+    }
+
+    @Test
+    void sameQuestionFeatureWritesWaitForOuterTransactionAndRemainUnique() throws Exception {
+        long question = createQuestion("Concurrent feature synthetic");
+        var locked = new java.util.concurrent.CountDownLatch(1);
+        var release = new java.util.concurrent.CountDownLatch(1);
+        var secondStarted = new java.util.concurrent.CountDownLatch(1);
+        var workers = java.util.concurrent.Executors.newFixedThreadPool(2);
+        var transaction = new org.springframework.transaction.support.TransactionTemplate(transactionManager);
+        Map<String, Object> firstProfile = Map.of("featureVersion", "concurrency-test", "difficultyScore", 0.1);
+        Map<String, Object> secondProfile = Map.of("featureVersion", "concurrency-test", "difficultyScore", 0.9);
+        var first = workers.submit(() -> transaction.execute(status -> {
+            // A result save holds this transaction through its result snapshot.
+            jdbcTemplate.queryForObject("SELECT id FROM question WHERE id=? FOR UPDATE", Long.class, question);
+            locked.countDown();
+            try {
+                if (!release.await(5, java.util.concurrent.TimeUnit.SECONDS)) throw new IllegalStateException("Fixture release timeout");
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+                throw new IllegalStateException(exception);
+            }
+            return featureRepository.save(question, firstProfile, Map.of());
+        }));
+        java.util.concurrent.Future<Map<String, Object>> second = null;
+        try {
+            org.junit.jupiter.api.Assertions.assertTrue(locked.await(2, java.util.concurrent.TimeUnit.SECONDS));
+            second = workers.submit(() -> {
+                secondStarted.countDown();
+                return featureRepository.save(question, secondProfile, Map.of());
+            });
+            org.junit.jupiter.api.Assertions.assertTrue(secondStarted.await(2, java.util.concurrent.TimeUnit.SECONDS));
+            var pending = second;
+            org.junit.jupiter.api.Assertions.assertThrows(java.util.concurrent.TimeoutException.class,
+                    () -> pending.get(200, java.util.concurrent.TimeUnit.MILLISECONDS));
+        } finally {
+            release.countDown();
+            try {
+                first.get(5, java.util.concurrent.TimeUnit.SECONDS);
+                if (second != null) second.get(5, java.util.concurrent.TimeUnit.SECONDS);
+            } finally { workers.shutdownNow(); }
+        }
+        org.junit.jupiter.api.Assertions.assertEquals(1, jdbcTemplate.queryForObject(
+                "SELECT COUNT(*) FROM problem_feature WHERE question_id=? AND feature_version='concurrency-test'", Integer.class, question));
+        org.junit.jupiter.api.Assertions.assertEquals(0.9, (Double) featureRepository.latest(question).get("difficultyScore"));
     }
 
     private long createQuestion(String title) throws Exception {

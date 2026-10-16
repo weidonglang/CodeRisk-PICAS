@@ -6,7 +6,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from research_v4_dataset import VALID_CASE_TYPES
+from research_v4_dataset import (
+    VALID_CASE_TYPES, core_eligibility_issues, load_research_dataset,
+    validate_cases, DatasetValidationError,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +20,10 @@ def main() -> int:
     parser = _parser()
     args = parser.parse_args()
     dataset_root = args.dataset_root.resolve()
-    entry, pending = build_entry(args, dataset_root)
+    try:
+        entry, pending = build_entry(args, dataset_root)
+    except (OSError, ValueError) as error:
+        parser.error(str(error))
     result: dict[str, Any] = {
         "entry": entry,
         "pending_confirmation_fields": pending,
@@ -30,7 +36,12 @@ def main() -> int:
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return 2
         shard = dataset_root / "pairs/manual_pairs.json"
-        append_entry(shard, entry)
+        try:
+            append_entry(shard, entry)
+        except (OSError, ValueError) as error:
+            result["error"] = str(error)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 2
         result["appended"] = True
         result["manifestShard"] = str(shard)
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -43,10 +54,10 @@ def build_entry(args: argparse.Namespace, dataset_root: Path) -> tuple[dict[str,
     code_a = code_a_path.read_text(encoding="utf-8")
     code_b = code_b_path.read_text(encoding="utf-8")
     pending: list[str] = []
-    for name in ("title", "description"):
+    for name in ("pair_id", "problem_id", "source_id", "problem_type", "dataset_version", "title", "description"):
         if not str(getattr(args, name, "") or "").strip():
             pending.append(name)
-    if args.source_type in {"manual", "ai_assisted", "external"} and not args.license_or_authorization:
+    if args.source_type in {"manual", "ai_assisted", "external"} and not (args.license_or_authorization or "").strip():
         pending.append("license_or_authorization")
     if args.source_type == "ai_assisted" or args.case_type == "AI_REWRITE":
         for name in ("model_name", "prompt_template", "generation_time"):
@@ -58,7 +69,6 @@ def build_entry(args: argparse.Namespace, dataset_root: Path) -> tuple[dict[str,
             pending.append("functional_check_status=PASSED")
 
     requested_eligible = bool(args.eligible_for_core_metrics)
-    eligible = requested_eligible and not pending and args.experiment_label != "UNCERTAIN"
     synthetic = args.source_type in {"synthetic", "placeholder"}
     data_origin = {
         "synthetic": "SYNTHETIC",
@@ -85,7 +95,7 @@ def build_entry(args: argparse.Namespace, dataset_root: Path) -> tuple[dict[str,
         "data_origin": data_origin,
         "source_type": args.source_type,
         "synthetic": synthetic,
-        "eligible_for_core_metrics": eligible,
+        "eligible_for_core_metrics": False,
         "question": {
             "title": args.title or "PENDING HUMAN CONFIRMATION",
             "description": args.description or "PENDING HUMAN CONFIRMATION",
@@ -109,7 +119,10 @@ def build_entry(args: argparse.Namespace, dataset_root: Path) -> tuple[dict[str,
         },
         "notes": args.notes or "",
     }
-    if requested_eligible and not eligible:
+    eligibility_issues = core_eligibility_issues(entry)
+    entry["eligible_for_core_metrics"] = requested_eligible and not pending and not eligibility_issues
+    if requested_eligible and not entry["eligible_for_core_metrics"]:
+        pending.extend(eligibility_issues)
         pending.append("eligible_for_core_metrics blocked until pending fields are resolved")
     return entry, sorted(set(pending))
 
@@ -119,6 +132,19 @@ def append_entry(shard_path: Path, entry: dict[str, Any]) -> None:
     cases = payload.setdefault("cases", [])
     if any(case.get("pair_id") == entry["pair_id"] for case in cases):
         raise ValueError(f"Duplicate pair_id: {entry['pair_id']}")
+    dataset_root = shard_path.resolve().parent.parent
+    manifest, existing, _ = load_research_dataset(dataset_root / "dataset.json")
+    if entry["dataset_version"] != payload.get("dataset_version") or entry["dataset_version"] != manifest["dataset_version"]:
+        raise ValueError("Entry, shard and manifest dataset versions must match")
+    candidate = {
+        **entry, "case_id": entry["pair_id"], "split": entry["dataset_split"],
+        "source_dataset": "manual-supplement",
+        "code_a": _safe_path(dataset_root, Path(entry["code_a_path"])).read_text(encoding="utf-8"),
+        "code_b": _safe_path(dataset_root, Path(entry["code_b_path"])).read_text(encoding="utf-8"),
+    }
+    report = validate_cases(manifest, [*existing, candidate])
+    if not report["valid"]:
+        raise DatasetValidationError(report)
     cases.append(entry)
     shard_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

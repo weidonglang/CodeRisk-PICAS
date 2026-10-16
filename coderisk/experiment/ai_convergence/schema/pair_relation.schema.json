@@ -1,0 +1,121 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "sample_a": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Sample A",
+      "type": "string"
+    },
+    "sample_b": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+      "title": "Sample B",
+      "type": "string"
+    },
+    "claimed_relation": {
+      "enum": [
+        "HUMAN_INDEPENDENT",
+        "AI_INDEPENDENT_SAME_MODEL",
+        "AI_INDEPENDENT_CROSS_MODEL",
+        "KNOWN_DERIVED_HUMAN",
+        "KNOWN_DERIVED_AI_REWRITE",
+        "UNCERTAIN"
+      ],
+      "title": "Claimed Relation",
+      "type": "string"
+    },
+    "review_status": {
+      "enum": [
+        "NOT_REVIEWED",
+        "CONFLICT",
+        "AGREED"
+      ],
+      "title": "Review Status",
+      "type": "string"
+    },
+    "reviewer_ids": {
+      "items": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$",
+        "type": "string"
+      },
+      "title": "Reviewer Ids",
+      "type": "array"
+    },
+    "reviewer_types": {
+      "items": {
+        "enum": [
+          "HUMAN",
+          "AI",
+          "UNSPECIFIED"
+        ],
+        "type": "string"
+      },
+      "title": "Reviewer Types",
+      "type": "array"
+    },
+    "reviewer_independence_confirmed": {
+      "title": "Reviewer Independence Confirmed",
+      "type": "boolean"
+    },
+    "reviewed_code_sha256": {
+      "items": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "title": "Reviewed Code Sha256",
+      "type": "array"
+    },
+    "label_evidence_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Label Evidence Ref"
+    },
+    "independence_evidence_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Independence Evidence Ref"
+    },
+    "reviewed_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reviewed At"
+    },
+    "template_only_shared_upstream_confirmed": {
+      "title": "Template Only Shared Upstream Confirmed",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "sample_a",
+    "sample_b",
+    "claimed_relation",
+    "review_status",
+    "reviewer_ids",
+    "reviewer_types",
+    "reviewer_independence_confirmed",
+    "reviewed_code_sha256",
+    "label_evidence_ref",
+    "independence_evidence_ref",
+    "reviewed_at",
+    "template_only_shared_upstream_confirmed"
+  ],
+  "title": "PairRelation",
+  "type": "object"
+}

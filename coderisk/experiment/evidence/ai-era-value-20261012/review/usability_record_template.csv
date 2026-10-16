@@ -1,0 +1,5 @@
+﻿participant_id,consent_ref,question_id,counterbalanced_order,report_variant,task,answer,gold_answer_ref,elapsed_seconds,certainty_before,certainty_after,observer_note
+,,,,,IDENTIFY_SHARED_TEMPLATE,,,,,,
+,,,,,LOCATE_MATCHED_FRAGMENT,,,,,,
+,,,,,IDENTIFY_MISSING_PROVENANCE,,,,,,
+,,,,,AVOID_OVERCONFIDENT_SOURCE_CLAIM,,,,,,

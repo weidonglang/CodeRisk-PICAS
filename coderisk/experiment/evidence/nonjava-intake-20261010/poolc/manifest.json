@@ -1,0 +1,59 @@
+{
+  "status": "EXTERNAL_EXPLORATORY_INTAKE_NOT_FORMAL_BENCHMARK",
+  "dataset": "poolc",
+  "source_repository": "PoolC/1-fold-clone-detection-600k-5fold",
+  "source_revision": "c90e5302f9a4d306bacf278c08c043d5d7fa3e81",
+  "pin_config_sha256": "52e73ca7b05230f27c8897b1261acdacda923d7fd9f43e9a2b52a1e7965e8db2",
+  "downloaded_at_utc": "2026-10-09T23:11:31.609789+00:00",
+  "random_seed": 20261010,
+  "quota": 30000,
+  "summary": {
+    "upstream_rows": 598736,
+    "available_unique_label_0": 298773,
+    "available_unique_label_1": 299963,
+    "conflicting_text_pair_labels_quarantined": 0,
+    "code_text_hashes_in_multiple_opaque_groups": 1,
+    "selected_pairs": 30000,
+    "selected_unique_source_texts": 29280,
+    "selected_labels": {
+      "1": 15000,
+      "0": 15000
+    },
+    "selected_source_syntax": {
+      "PYTHON3_PARSE_OK_NOT_EXECUTED": 27961,
+      "PYTHON3_PARSE_FAILED_POSSIBLE_PYTHON2_OR_UNSUPPORTED": 1319
+    },
+    "selected_code_group_count": 240,
+    "scope": "first_of_nine_upstream_train_shards_only_no_validation_download",
+    "selection_uses_detector_scores": false,
+    "formal_eligible_pairs": 0,
+    "problem_disjoint_verified": false,
+    "source_disjoint_verified": false,
+    "validation_test_hash_isolation_verified": false
+  },
+  "upstream_files": [
+    {
+      "path": "dataset_infos.json",
+      "size": 1122,
+      "git_blob": "f36700be5a5cb28f59f6635f3d237c50ab090eda",
+      "observed_sha256": "c616f159ec2662e669f06e02acefdd378d1b503fb276d1f83774c1d2e014606a"
+    },
+    {
+      "path": "data/train-00000-of-00009.parquet",
+      "size": 228306945,
+      "sha256": "5e82fd545861ae213c81f180974d8e5202c2a8192627afdd63cef41c1eb609d9",
+      "observed_sha256": "5e82fd545861ae213c81f180974d8e5202c2a8192627afdd63cef41c1eb609d9"
+    }
+  ],
+  "registry_sha256": {
+    "source_registry.jsonl": "b1d30760893bd45da0a144a7eb14f64cffad797cc481270367cfcf59ea02df48",
+    "source_codes.jsonl": "791b0f0a5680693b547af459aaf50058105a9191356b9acaa333e304d04621f5",
+    "selected_pairs.jsonl": "4967d54655bce6cdf4c395addc059b16f36e101fed93e6896fac3cc58c8adcbd",
+    "audit_summary.json": "8da51bea33ec95345089860d3f5b5c0f038ad4d09988ca8bbb4f26891595dce2"
+  },
+  "license_observation": "PoolC dataset_infos.json has empty license; quarantine, no redistribution or formal metrics.",
+  "detector_scored_pairs": 0,
+  "formal_eligible_pairs": 0,
+  "algorithm_changed": false,
+  "all_downloaded_programs_executed": false
+}

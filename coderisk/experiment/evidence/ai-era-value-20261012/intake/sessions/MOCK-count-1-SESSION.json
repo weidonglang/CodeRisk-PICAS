@@ -1,0 +1,9 @@
+{
+  "generation_session_id": "MOCK-count-1-SESSION",
+  "problem_id": "MOCK-count",
+  "model_id": "MOCK-MODEL-A",
+  "prompt_sha256": "6ca2c12da931b99d5cfe8953bd98c561f8567d3046bfe0da768479b49f792052",
+  "raw_output_sha256": "94bb4a7f9c95d56a6d3df824fb9738cb7114369db6b44b08d0e683b33b757110",
+  "synthetic": true,
+  "note": "Hand-written fixture, not a model response"
+}

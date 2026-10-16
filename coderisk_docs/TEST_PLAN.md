@@ -1,5 +1,15 @@
 # TEST_PLAN.md
 
+> 2026-10-12 新增68项AI时代离线契约：路径/字节hash/会话捕获、来源与功能状态分离、共享上游及connected split泄漏、mock与未知标签排除、全C与指纹区分、同观测两历史、只读模板上下文、组件配对统计、JPlag参数/hash/缺失分母、真实raw输出目录与聚合门禁、独立CLI入口和源码指纹。全量591 passed/1既有warning；H2后端19、前端build通过。隐私测试根已隔离，另验证允许目录和解析后的路径逃逸，不依pytest basetemp位置。正式缺授权/标签拒绝应记录exit2而非伪造指标；真实用户与MySQL/浏览器不由单测代替。见 [实际测试/红测](research/TEST_AND_EVIDENCE_SUMMARY.md)。
+
+> 2026-10-11 S2/S4新契约：手写绑定gold必须不依生产索引生成；全C/gold/恒等/逆/复合逐次检查，所有unsupported/parse/capture/uncertain分母保留；稳定子及重复变体另统计。已知Java header遮蔽先红后raw回退、现有API warning/evidence位置验证。正式前检必须挡未知标签/占位/许可/真人/功能/模板/父版本/独立依据/连通泄漏/空池，测试声明不能成为真实人类标签。新增92项，全工作树523通过，结果及未跑项见 [测试报告](../coderisk/TEST_REPORT.md) 与 [研究包](research/OPENING_RESEARCH_PACKAGE.md)。
+
+2026-10-10 non-Java intake adds 24 self-authored tests: pinned Parquet/container identity, balanced quota rejection, content/reverse deduplication, label-conflict quarantine, Python 2 parsing disclosure without conversion, seven-language tokenized-source preservation, exact-title ambiguity and split/hash leakage exclusion, per-language quotas, immutable output, offline reconstruction/tamper rejection, and JavaScript-versus-Java count separation. Both live intakes are independently reconstructed from fixed upstream bytes. Downloaded programs must not execute and these rows must stay outside formal metrics. See [verified evidence](proposal/NONJAVA_PUBLIC_INTAKE.md).
+
+2026-10-10 BCB intake regression adds pinned blob/size checks, malformed/missing references, deterministic balanced sampling, reverse/text deduplication, contradictory label quarantine, truthful split-overlap reporting, quota failure without fabrication, immutable existing outputs, and offline reconstruction/tamper rejection. Tests use self-authored temporary fixtures; live verification additionally checks the downloaded source corpus. See [actual intake](proposal/LARGE_PUBLIC_PAIR_INTAKE.md).
+
+2026-10-10 added Research V4 intake regression: placeholder exclusion, AI-source verification regardless of case type, timezone-aware provenance, blank field rejection, pre-append split/hash/version checks with unchanged shard on rejection, and JPlag duplicate/source-identity validation. Development-probe checks cover pure renaming, explicit fallback, production-score decomposition, source fingerprints, immutable outputs and exclusion from core metrics. See [diagnostic scope](proposal/INTAKE_AND_FUSION_DIAGNOSTICS.md).
+
 > 本文件定义 CodeRisk / PICAS 的测试计划。测试目标不是简单证明“系统能跑”，而是证明系统在工程链路、算法正确性、题目感知动态阈值、置换不变规范化、证据输出、实验复现和安全边界上都可验证。
 
 ---

@@ -10,6 +10,8 @@
 
 正式运行默认要求非合成、预注册、双人标注一致与配置冻结记录。`--allow-development` 是显式开发模式，输出带 `DEVELOPMENT / SYNTHETIC SEED` 标记；若将来用于非合成试运行，该标记仍表示开发用途，具体来源以 manifest 为准。
 
+2026-10-09 补充身份门槛：annotation 必须包含 `reviewer_a_type=HUMAN`、`reviewer_b_type=HUMAN` 与 `independence_confirmed=true`。AI_AGREED、身份不明或无实际独立性确认的输入不能通过正式运行。字段是执行者声明及责任人确认，不是机器认证；不得把两个子智能体改名登记为真人。Python 新规范化边界会改变回退覆盖，必须冻结新源码/配置另行评测，不覆盖旧 ConPlag 快照。详见 [修复与验证](AI_REVIEW_HARDENING.md)。
+
 ## 2. 方法定义
 
 | 方法名 | 分数 | 阈值选择 |

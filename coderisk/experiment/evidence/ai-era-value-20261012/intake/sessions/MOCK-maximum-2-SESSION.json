@@ -1,0 +1,9 @@
+{
+  "generation_session_id": "MOCK-maximum-2-SESSION",
+  "problem_id": "MOCK-maximum",
+  "model_id": "MOCK-MODEL-B",
+  "prompt_sha256": "fe4189d0d7c8d813ba30372f945d295402d79d6fae00430db71352289923e315",
+  "raw_output_sha256": "0cf907b857df03f475a7753ff5a6e5ae20334838adbb277d5024415b97f82721",
+  "synthetic": true,
+  "note": "Hand-written fixture, not a model response"
+}

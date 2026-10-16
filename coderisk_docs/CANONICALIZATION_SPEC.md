@@ -1,6 +1,10 @@
 # CANONICALIZATION_SPEC.md
 
+> 2026-10-11 当前有限契约：C是完整有序token，不是集合指纹或G轨道完整代表元；D1—D3成立才有条件不变性。新增12手标绑定gold、独立stdlib/scanner改写、1,728有限置换和显式反例；Java已知for/catch遮蔽给`JAVA_HEADER_SHADOW_BINDING_UNSUPPORTED`，不伪造映射，未实现完整header作用域。见 [定义与α边界](research/ORBIT_ALPHA_EQUIVALENCE.md)、[证明义务](research/GROUP_ACTION_PROOF_OBLIGATIONS.md) 和 [新审计](research/OPENING_BASELINE_AUDIT.md)。下文交换、重排、CanonicalAST等保留为设计目标，不称当前已实现。
+
 > 2026-10-10 实现状态核对：普通 canonical 只实现有限作用域 token 绑定替换，不实现本文后续 Level 2–5 中的交换/重排/CanonicalAST/拆分合并。新增直接函数 keyword 参数绑定、动态名称访问 raw 回退及 Java 局部声明点修复；作用域模式不是任意改名的保证。固定 ASCII 名称域上的条件命题、例外和 288 个 synthetic 正确性探针见 [群作用与有限不变性](research/GROUP_ACTION_INVARIANCE.md)，测试/版本见 [第一批交付](research/FIRST_BATCH_REPORT.md)。不得将 canonical 序列不变扩大到整个加权分或语义等价。
+
+> 2026-10-09 Python 受限绑定修复：lambda 默认值用外层、函数体支持变长参数；方法体及嵌套类体跳过外层类命名空间。未覆盖的推导式、声明、捕获、注解及类动态绑定返回 lexical-fallback、raw tokens、空 identifiers；CanonicalAnalysis.reason 含类别/节点/行号，由 API 警告输出。整文件回退，不伪造绑定。完整列表和 39 项边界案例见 [技术记录](proposal/AI_REVIEW_HARDENING.md)。
 
 > 2026-10-08 C 新增 `scope-aware-c-subset`，HTML 新增 `html-structure-canonical`；解析失败或绑定超出子集返回 `lexical-fallback`，不产生伪造映射。HTML 保留 class/id/URL，不把属性值作为变量名重写。二者均保留原始行列证据。详细支持语法、降级原因和实际覆盖见 [多语言进展](proposal/MULTILANGUAGE_PROGRESS.md)。
 

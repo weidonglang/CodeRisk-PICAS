@@ -84,5 +84,36 @@
     },
     "notes": {"type": "string"}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"source_type": {"const": "placeholder"}}, "required": ["source_type"]},
+      "then": {"properties": {"eligible_for_core_metrics": {"const": false}, "synthetic": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"experiment_label": {"const": "UNCERTAIN"}}, "required": ["experiment_label"]},
+      "then": {"properties": {"eligible_for_core_metrics": {"const": false}}}
+    },
+    {
+      "if": {
+        "allOf": [
+          {"properties": {"eligible_for_core_metrics": {"const": true}}, "required": ["eligible_for_core_metrics"]},
+          {"anyOf": [
+            {"properties": {"source_type": {"const": "ai_assisted"}}, "required": ["source_type"]},
+            {"properties": {"case_type": {"const": "AI_REWRITE"}}, "required": ["case_type"]}
+          ]}
+        ]
+      },
+      "then": {"properties": {"provenance": {
+        "required": ["model_name", "prompt_template", "generation_time", "manual_check_status", "functional_check_status"],
+        "properties": {
+          "model_name": {"type": "string", "pattern": "\\S"},
+          "prompt_template": {"type": "string", "pattern": "\\S"},
+          "generation_time": {"type": "string", "format": "date-time"},
+          "manual_check_status": {"const": "VERIFIED"},
+          "functional_check_status": {"const": "PASSED"}
+        }
+      }}}
+    }
+  ],
   "additionalProperties": true
 }
